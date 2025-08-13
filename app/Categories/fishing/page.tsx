@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { ArrowLeft, Globe, Phone, MessageCircle, X, Check, Waves, Fish } from 'lucide-react';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
+const Celly = dynamic(() => import('@/components/CellyAssistant'), { ssr: false });
 
 export default function FishingCategory() {
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
@@ -364,7 +366,7 @@ export default function FishingCategory() {
           </div>
         </>
       )}
-     <CellyAssistant />
+     <Celly />
     </div>
   );
 }
