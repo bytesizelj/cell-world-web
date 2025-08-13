@@ -42,7 +42,7 @@ const CellyAssistant: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     { 
       type: 'bot', 
-      text: "👋 Hi! I'm Celly, your Cell World assistant! How can I help you today?" 
+      text: "👋 Hi! &apos; Celly, your Cell World assistant! How can I help you today?" 
     }
   ]);
   const [inputValue, setInputValue] = useState('');
@@ -74,7 +74,7 @@ const CellyAssistant: React.FC = () => {
       if (lowerQuery.includes('sunday')) {
         return {
           type: 'hours',
-          response: `Sorry, we're CLOSED on Sundays. 😊\n\n**Our Store Hours:**\n📅 Monday - Friday: 8:00 AM - 5:00 PM\n📅 Saturday: 8:00 AM - 2:00 PM\n📅 Sunday: CLOSED\n\n📍 Location: Opposite Old BOSVG Building, Halifax Street, Kingstown, St. Vincent\n📞 Call us: 1-784-451-2261 / 1-784-431-0777\n\nSee you Monday-Saturday!`
+          response: `Sorry, &apos; CLOSED on Sundays. 😊\n\n**Our Store Hours:**\n📅 Monday - Friday: 8:00 AM - 5:00 PM\n📅 Saturday: 8:00 AM - 2:00 PM\n📅 Sunday: CLOSED\n\n📍 Location: Opposite Old BOSVG Building, Halifax Street, Kingstown, St. Vincent\n📞 Call us: 1-784-451-2261 / 1-784-431-0777\n\nSee you Monday-Saturday!`
         };
       }
       
@@ -243,14 +243,14 @@ const CellyAssistant: React.FC = () => {
     if (lowerQuery.includes('thank') || lowerQuery.includes('thanks')) {
       return {
         type: 'thanks',
-        response: `You're very welcome! 😊\n\nIs there anything else I can help you with? Remember, you can always:\n📞 Call us: 1-784-451-2261\n💬 WhatsApp: 1-784-431-0777\n📍 Visit us in Kingstown\n\nWe're here to help!`
+        response: `&apos; very welcome! 😊\n\nIs there anything else I can help you with? Remember, you can always:\n📞 Call us: 1-784-451-2261\n💬 WhatsApp: 1-784-431-0777\n📍 Visit us in Kingstown\n\nWe're here to help!`
       };
     }
 
     // Default/Unknown queries
     return {
       type: 'default',
-      response: `I'd love to help you with that! While I can show you our online phone selection, we have MUCH more in store including:\n\n• Gaming accessories\n• Security cameras\n• Solar equipment\n• Fishing gear\n• And more!\n\n📞 Call us at 1-784-451-2261\n📍 Or visit our store in Kingstown\n\nMeanwhile, what type of phone are you looking for? I can help with our current online selection!`
+      response: `&apos; love to help you with that! While I can show you our online phone selection, we have MUCH more in store including:\n\n• Gaming accessories\n• Security cameras\n• Solar equipment\n• Fishing gear\n• And more!\n\n📞 Call us at 1-784-451-2261\n📍 Or visit our store in Kingstown\n\nMeanwhile, what type of phone are you looking for? I can help with our current online selection!`
     };
   };
 
@@ -381,7 +381,7 @@ const CellyAssistant: React.FC = () => {
             className="celly-tooltip"
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                ✨ <span>Hi! I'm Celly, your assistant!</span>
+                ✨ <span>Hi! &apos; Celly, your assistant!</span>
               </div>
               <div style={{ fontSize: '12px', color: '#999', marginTop: '4px' }}>
                 Click to chat with me
