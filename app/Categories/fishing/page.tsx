@@ -11,84 +11,123 @@ export default function FishingCategory() {
   const [language, setLanguage] = useState('en');
   const [filterCategory, setFilterCategory] = useState('all');
 
-  // Fishing products - you can add your actual products here
+  // Complete fishing products array
   const products = [
-    // RODS
-    { 
-      id: 'rod-pro-1', 
-      name: 'Professional Fishing Rod 7ft',
-      category: 'rods',
-      image: '/images/Products/fishing/rod-pro-1.png', // Update with your images
-      price: 299.00,
-      availability: 'In Stock',
+    // EXISTING PRODUCTS - Using placeholder image until you add actual images
+    {
+      id: 1,
+      name: "Professional Fishing Rod",
+      price: 150.00,
+      image: "/images/Products/fishing/rod-guides.png", // Temporary placeholder
+      description: "7ft carbon fiber rod perfect for experienced anglers",
+      category: "rods",
       specs: {
-        length: '7 feet',
-        material: 'Carbon Fiber',
-        action: 'Medium-Fast',
-        power: 'Medium',
-        pieces: '2-piece design',
-        suitable: 'Saltwater & Freshwater'
+        length: "7 feet",
+        material: "Carbon Fiber",
+        action: "Fast Action",
+        power: "Medium-Heavy"
       }
     },
-    { 
-      id: 'rod-beginner-1', 
-      name: 'Beginner Fishing Rod 6ft',
-      category: 'rods',
-      image: '/images/Products/fishing/rod-beginner-1.png',
-      price: 99.00,
-      availability: 'In Stock',
+    {
+      id: 2,
+      name: "Beginner Fishing Rod",
+      price: 89.00,
+      image: "/images/Products/fishing/rod-guides.png", // Temporary placeholder
+      description: "Perfect starter rod for new anglers",
+      category: "rods",
       specs: {
-        length: '6 feet',
-        material: 'Fiberglass',
-        action: 'Medium',
-        suitable: 'Freshwater'
+        length: "6 feet",
+        material: "Fiberglass Composite",
+        action: "Moderate Action",
+        power: "Medium"
       }
     },
-    // REELS
-    { 
-      id: 'reel-spinner-1', 
-      name: 'Spinning Reel 3000',
-      category: 'reels',
-      image: '/images/Products/fishing/reel-spinner-1.png',
-      price: 189.00,
-      availability: 'In Stock',
+    {
+      id: 3,
+      name: "Fishing Reel Spinner",
+      price: 120.00,
+      image: "/images/Products/fishing/mustad-lures.png", // Temporary placeholder
+      description: "High-quality spinning reel with smooth drag system",
+      category: "reels",
       specs: {
-        type: 'Spinning Reel',
-        size: '3000',
-        bearings: '9+1 Ball Bearings',
-        ratio: '5.2:1 Gear Ratio',
-        capacity: '270m/0.28mm'
+        bearings: "7+1 Ball Bearings",
+        ratio: "5.2:1 Gear Ratio",
+        capacity: "270 yards",
+        drag: "20 lbs Max Drag"
       }
     },
-    // TACKLE & ACCESSORIES
-    { 
-      id: 'tackle-box-1', 
-      name: 'Professional Tackle Box',
-      category: 'accessories',
-      image: '/images/Products/fishing/tackle-box-1.png',
-      price: 79.00,
-      availability: 'In Stock',
+    {
+      id: 4,
+      name: "Tackle Box Pro",
+      price: 45.00,
+      image: "/images/Products/fishing/jig-assist-hooks.png", // Temporary placeholder
+      description: "Complete tackle storage solution",
+      category: "accessories",
       specs: {
-        compartments: '24 Adjustable Compartments',
-        material: 'Heavy-duty Plastic',
-        waterproof: 'Yes',
-        dimensions: '14" x 9" x 3"'
+        compartments: "24 Adjustable Compartments",
+        material: "Heavy-Duty Plastic",
+        size: "14\" x 8\" x 7\"",
+        features: "Waterproof Design"
       }
     },
-    { 
-      id: 'lure-set-1', 
-      name: 'Assorted Lure Set (50pcs)',
-      category: 'accessories',
-      image: '/images/Products/fishing/lure-set-1.png',
-      price: 49.99,
-      availability: 'In Stock',
+    
+    // NEW PRODUCTS with correct file names
+    {
+      id: 5,
+      name: "Jig Assist Hooks - 5X Strong",
+      price: 25.00,
+      image: "/images/Products/fishing/jig-assist-hooks.png",
+      description: "Heavy-duty 5X strong assist hooks with durable braided cord. Perfect for jigging and big game fishing.",
+      category: "accessories",
       specs: {
-        quantity: '50 pieces',
-        types: 'Spoons, Spinners, Soft Plastics',
-        box: 'Included'
+        strength: "5X Strong",
+        material: "High-Carbon Steel",
+        coating: "Corrosion Resistant",
+        quantity: "Pack of 4"
       }
     },
-    // Add more products as needed
+    {
+      id: 6,
+      name: "Mustad UltraPoint Big Gun Hooks",
+      price: 35.00,
+      image: "/images/Products/fishing/mustad-big-gun-hooks.png",
+      description: "Premium Mustad hooks with UltraPoint technology. Stay sharp 3x longer.",
+      category: "accessories",
+      specs: {
+        size: "8/0",
+        technology: "UltraPoint MicroSharp 4.3",
+        quantity: "Pack of 3",
+        type: "Circle Hooks"
+      }
+    },
+    {
+      id: 7,
+      name: "Ceramic Fishing Rod Guides Set",
+      price: 45.00,
+      image: "/images/Products/fishing/rod-guides.png",
+      description: "High-quality ceramic rod guides in assorted colors and sizes.",
+      category: "accessories",
+      specs: {
+        material: "Ceramic Insert",
+        frame: "Stainless Steel",
+        sizes: "Assorted (5mm-20mm)",
+        quantity: "Set of 10"
+      }
+    },
+    {
+      id: 8,
+      name: "Mustad Saltwater Lure Collection",
+      price: 55.00,
+      image: "/images/Products/fishing/mustad-lures.png",
+      description: "Premium Mustad fishing lures designed for saltwater fishing.",
+      category: "accessories",
+      specs: {
+        type: "Jigs and Trolling Lures",
+        weight: "1oz - 3oz Assorted",
+        colors: "Vibrant Multicolor",
+        quantity: "Set of 5"
+      }
+    }
   ];
 
   const translations = {
@@ -207,7 +246,7 @@ export default function FishingCategory() {
           <Fish className="w-10 h-10 text-teal-400" />
           <h1 className="text-4xl md:text-5xl font-bold"
               style={{ 
-                color: '#40E0D0', // Turquoise for fishing theme
+                color: '#40E0D0',
                 textShadow: '0 4px 20px rgba(64, 224, 208, 0.4), 0 2px 8px rgba(0,0,0,0.9)' 
               }}>
             {t.title}
@@ -263,7 +302,7 @@ export default function FishingCategory() {
 
               {/* Price Badge */}
               <div className="absolute top-2 right-2 bg-yellow-500 text-black text-sm font-bold px-3 py-1 rounded-lg shadow-lg">
-                ${product.price}
+                ${product.price.toFixed(2)}
               </div>
 
               {/* Product Info */}
@@ -324,9 +363,11 @@ export default function FishingCategory() {
               <div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-2">{selectedProduct.name}</h2>
                 
-                <div className="text-4xl font-bold text-teal-600 mb-6">
+                <div className="text-4xl font-bold text-teal-600 mb-4">
                   ${selectedProduct.price.toFixed(2)}
                 </div>
+
+                <p className="text-gray-600 mb-6">{selectedProduct.description}</p>
 
                 <div className="mb-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-4 border-b-2 border-teal-400 pb-2">
@@ -366,7 +407,9 @@ export default function FishingCategory() {
           </div>
         </>
       )}
-     <Celly />
+      
+      {/* Celly Assistant */}
+      <Celly />
     </div>
   );
 }

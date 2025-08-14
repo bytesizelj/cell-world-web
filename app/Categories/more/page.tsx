@@ -1,269 +1,385 @@
 'use client';
 
-import dynamic from 'next/dynamic';
-const CellyAssistant = dynamic(() => import('../../../components/CellyAssistant'), { 
-  ssr: false 
-});
-
 import { useState } from 'react';
-import { ArrowLeft, Globe, Phone, MessageCircle, X, Check } from 'lucide-react';
+import { ArrowLeft, Globe, Phone, MessageCircle, X, Check, ShoppingBag, Sparkles } from 'lucide-react';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
+const Celly = dynamic(() => import('@/components/CellyAssistant'), { ssr: false });
 
 export default function MoreCategory() {
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
   const [language, setLanguage] = useState('en');
+  const [filterCategory, setFilterCategory] = useState('all');
 
-  // Your actual products
+  // Complete product catalog - 20 items
   const products = [
-    // JBL SPEAKERS
-    { 
-      id: 'jbl-boombox3', 
-      name: 'JBL Boombox 3',
-      image: '/images/Products/more/jbl-boombox3.png',
-      price: 1800.00,
-      availability: '2 Available',
-      color: '1 Black, 1 Camouflage',
-      specs: {
-        playtime: '24 Hours Playtime',
-        waterproof: 'IP67 Waterproof & Dustproof',
-        features: 'Power Bank Function',
-        connectivity: 'JBL PartyBoost'
-      }
-    },
-    { 
-      id: 'jbl-charge5', 
-      name: 'JBL Charge 5',
-      image: '/images/Products/more/jbl-charge5.png',
-      price: 599.00,
-      availability: '6 Remaining',
-      color: 'Red (2), Grey (1), Turquoise (2), Black (1)',
-      specs: {
-        playtime: '20 Hours Playtime',
-        waterproof: 'IP67 Waterproof',
-        features: 'Power Bank Function',
-        connectivity: 'JBL PartyBoost'
-      }
-    },
-    { 
-      id: 'jbl-pulse4', 
-      name: 'JBL Pulse 4',
-      image: '/images/Products/more/jbl-pulse4.png',
-      price: 599.00,
-      availability: '1 Left',
-      color: 'Available',
-      specs: {
-        playtime: '12 Hours Playtime',
-        lightshow: '360° Lightshow & Sound',
-        waterproof: 'IPX7 Waterproof',
-        connectivity: 'JBL PartyBoost'
-      }
-    },
-    { 
-      id: 'jbl-flip6', 
-      name: 'JBL Flip 6',
-      image: '/images/Products/more/jbl-flip6.png',
-      price: 499.00,
-      availability: '11 Available',
-      color: 'Red (6), Blue (3), Teal (1), Black (1)',
-      specs: {
-        playtime: '12 Hours Playtime',
-        waterproof: 'IP67 Waterproof & Dustproof',
-        connectivity: 'JBL PartyBoost',
-        portable: 'Ultra Portable Design'
-      }
-    },
-    { 
-      id: 'jbl-extreme4', 
-      name: 'JBL Extreme 4',
-      image: '/images/Products/more/jbl-extreme4.png',
-      price: 1250.00,
-      availability: '3 Available',
-      color: 'Black, Blue, Camouflage (1 each)',
-      specs: {
-        playtime: '24 Hours Playtime',
-        waterproof: 'IP67 Waterproof & Weatherproof',
-        features: 'Power Bank Function',
-        connectivity: 'Multi-Speaker Connection'
-      }
-    },
-    // POWER BANKS
-    { 
-      id: 'pocketjuice-10000', 
-      name: 'Pocket Juice Power Bank',
-      image: '/images/Products/more/pocketjuice-10000.png',
-      price: 99.00,
-      availability: 'In Stock',
-      specs: {
-        capacity: '10,000mAh',
-        charging: 'Wireless Charging',
-        features: 'Built-in Stand',
-        output: 'Up to 6X Charge',
-        ports: '1 USB Port'
-      }
-    },
-    { 
-      id: 'anker-10000', 
-      name: 'Anker Power Bank',
-      image: '/images/Products/more/anker-10000.png',
-      price: 120.00,
-      availability: '4 Remaining',
-      specs: {
-        capacity: '10,000mAh',
-        charging: 'High Speed 12W Charging',
-        ports: '2 USB Ports',
-        compatibility: 'Universal'
-      }
-    },
-    { 
-      id: 'bossbar-wireless', 
-      name: 'Boss Bar Wireless Power Bank',
-      image: '/images/Products/more/bossbar-wireless.png',
-      price: 180.00,
-      availability: 'In Stock',
-      specs: {
-        capacity: '10,000mAh',
-        compatibility: 'Samsung & iPhone Compatible',
-        charging: '15W Fast Wireless Charging',
-        display: 'Digital Display',
-        ports: '1 USB + 1 Type-C Port'
-      }
-    },
-    // EARBUDS & HEADPHONES
-    { 
-      id: 'yesido-tws32', 
-      name: 'Yesido TWS32',
-      image: '/images/Products/more/yesido-tws32.png',
-      price: 140.00,
-      availability: 'Limited Stock',
-      specs: {
-        anc: 'ANC Noise Cancelling',
-        charging: 'Wireless Charging Case',
-        battery: '5H-20H Long Duration',
-        features: 'Premium Sound Quality'
-      }
-    },
-    { 
-      id: 'hypergear-aeroflex', 
-      name: 'HyperGear Aeroflex 360',
-      image: '/images/Products/more/hypergear-aeroflex.png',
-      price: 160.00,
-      availability: '1 Left',
-      specs: {
-        design: 'Open Ear Design',
-        controls: 'Easy Touch Control',
-        waterproof: 'Sweat-Proof',
-        battery: '7 Hours Playtime per Charge'
-      }
-    },
-    { 
-      id: 'jbl-vibebuds', 
-      name: 'JBL Vibe Buds',
-      image: '/images/Products/more/jbl-vibebuds.png',
+    // JBL SPEAKERS (1-10)
+    {
+      id: 1,
+      name: "JBL GO 4 Portable Speaker - Navy Blue",
       price: 220.00,
-      availability: 'Limited Stock',
-      color: 'Black, White',
+      image: "/images/Products/more/jbl-go4-navy.png",
+      description: "Ultra-portable waterproof Bluetooth speaker with bold JBL Pro Sound. Features 7 hours playtime, IP67 waterproof and dustproof rating.",
+      category: "speakers",
       specs: {
-        calls: 'Hands-Free Calls with Voice Aware',
-        waterproof: 'Water & Dust Resistant',
-        battery: 'Up to 32 Hours Total',
-        features: 'Premium JBL Sound'
+        bluetooth: "Bluetooth 5.3",
+        battery: "7 hours battery life",
+        waterproof: "IP67 Waterproof",
+        design: "Compact with loop"
       }
     },
-    // GAMING ACCESSORIES
-    { 
-      id: 'ps5-controller', 
-      name: 'PS5 DualSense Controller',
-      image: '/images/Products/more/ps5-controller.png',
-      price: 349.00,
-      availability: 'In Stock',
-      color: 'White, Black',
+    {
+      id: 2,
+      name: "JBL GO 4 Portable Speaker - Color Options",
+      price: 220.00,
+      image: "/images/Products/more/jbl-go4-colors.png",
+      description: "Choose your style! Ultra-portable waterproof speaker available in multiple vibrant colors including Camo, White, Red, and Blue.",
+      category: "speakers",
       specs: {
-        compatibility: 'PlayStation 5',
-        connectivity: 'Wireless Bluetooth',
-        battery: 'Built-in rechargeable',
-        features: 'Haptic feedback, Adaptive triggers'
+        bluetooth: "Bluetooth 5.3",
+        battery: "7 hours battery life",
+        waterproof: "IP67 Waterproof",
+        colors: "Multiple options"
       }
     },
-    { 
-      id: 'xbox-controller', 
-      name: 'Xbox Wireless Controller',
-      image: '/images/Products/more/xbox-controller.png',
+    {
+      id: 3,
+      name: "JBL GO 3 Portable Speaker Collection",
+      price: 180.00,
+      image: "/images/Products/more/jbl-go3-collection.png",
+      description: "Portable waterproof speaker with powerful audio and bold design. Available in Gray/Blue, Blue, Black, Teal/Green colors.",
+      category: "speakers",
+      specs: {
+        bluetooth: "Bluetooth 5.1",
+        battery: "5 hours playtime",
+        waterproof: "IP67 Waterproof",
+        colors: "Vibrant options"
+      }
+    },
+    {
+      id: 4,
+      name: "JBL Pulse 5 Portable Speaker",
+      price: 350.00,
+      image: "/images/Products/more/jbl-pulse5.png",
+      description: "360-degree sound with customizable lightshow. Features ambient light effects that sync with your music for an immersive audiovisual experience.",
+      category: "speakers",
+      specs: {
+        feature: "360° LED Lightshow",
+        battery: "12 hours playtime",
+        waterproof: "IP67 Waterproof",
+        connectivity: "PartyBoost compatible"
+      }
+    },
+    {
+      id: 5,
+      name: "JBL Flip 6 Waterproof Speaker - Multiple Colors",
       price: 299.00,
-      availability: 'In Stock',
-      color: 'Carbon Black',
+      image: "/images/Products/more/jbl-flip6-colors.png",
+      description: "Powerful portable Bluetooth speaker with 12 hours of playtime. IP67 waterproof and dustproof. Available in Red, Black, Teal, and Black/Red.",
+      category: "speakers",
       specs: {
-        compatibility: 'Xbox Series X/S, PC',
-        connectivity: 'Wireless/USB-C',
-        battery: 'AA batteries',
-        features: 'Textured grip, Button mapping'
+        bluetooth: "Bluetooth 5.1",
+        battery: "12 hours battery life",
+        waterproof: "IP67 Waterproof & Dustproof",
+        feature: "PartyBoost & 2-way speakers"
+      }
+    },
+    {
+      id: 6,
+      name: "JBL Boombox 3 Portable Speaker - Black",
+      price: 599.00,
+      image: "/images/Products/more/jbl-boombox3-black.png",
+      description: "Massive JBL Original Pro Sound with the deepest bass. 24 hours of playtime, IP67 waterproof, and built-in powerbank.",
+      category: "speakers",
+      specs: {
+        battery: "24 hours battery life",
+        waterproof: "IP67 Waterproof & Dustproof",
+        feature: "Built-in powerbank",
+        speakers: "3-way speakers"
+      }
+    },
+    {
+      id: 7,
+      name: "JBL Boombox 3 Portable Speaker - Squad Camo",
+      price: 629.00,
+      image: "/images/Products/more/jbl-boombox3-camo.png",
+      description: "Limited edition Squad camouflage design. Massive sound, deepest bass, 24-hour battery life with military-inspired aesthetics.",
+      category: "speakers",
+      specs: {
+        battery: "24 hours battery life",
+        waterproof: "IP67 Waterproof & Dustproof",
+        design: "Squad Camo edition",
+        feature: "PartyBoost compatible"
+      }
+    },
+    {
+      id: 9,
+      name: "JBL Xtreme 4 Portable Speaker - Multiple Colors",
+      price: 450.00,
+      image: "/images/Products/more/jbl-xtreme4-colors.png",
+      description: "Powerful portable speaker with shoulder strap. 24 hours playtime, IP67 waterproof. Available in Black, Blue, and Camo editions.",
+      category: "speakers",
+      specs: {
+        bluetooth: "Bluetooth 5.3",
+        battery: "24 hours battery life",
+        waterproof: "IP67 Waterproof & Dustproof",
+        feature: "Dual JBL Bass Radiators"
+      }
+    },
+    {
+      id: 10,
+      name: "JBL Charge 5 Portable Speaker Collection",
+      price: 320.00,
+      image: "/images/Products/more/jbl-charge5-colors.png",
+      description: "Bold JBL Original Pro Sound with IP67 waterproof rating. 20 hours playtime. Available in Gray, Black, Red, and Teal colors.",
+      category: "speakers",
+      specs: {
+        bluetooth: "Bluetooth 5.1",
+        battery: "20 hours battery life",
+        waterproof: "IP67 Waterproof & Dustproof",
+        feature: "Built-in powerbank"
+      }
+    },
+
+    // POWER BANKS (8, 11-15)
+    {
+      id: 8,
+      name: "Mophie Juice Pack Connect 5000mAh",
+      price: 125.00,
+      image: "/images/Products/more/mophie-juicepack-5000.png",
+      description: "Compact wireless charging battery pack with 5000mAh capacity. Detachable design works with wireless phones. Includes stand.",
+      category: "powerbanks",
+      specs: {
+        capacity: "5000mAh capacity",
+        charging: "Wireless charging",
+        battery: "70% extra battery",
+        design: "Detachable with stand"
+      }
+    },
+    {
+      id: 11,
+      name: "Pocket Juice Air Plus Wireless Power Bank 10000mAh",
+      price: 99.00,
+      image: "/images/Products/more/pocketjuice-air-10000.png",
+      description: "Magnetic wireless charger with built-in stand. 10000mAh capacity provides up to 6 full charges. Magnetically attaches to any phone.",
+      category: "powerbanks",
+      specs: {
+        capacity: "10000mAh capacity",
+        charging: "Wireless charging",
+        attachment: "Magnetic attachment",
+        feature: "6X charges"
+      }
+    },
+    {
+      id: 12,
+      name: "Anker PowerCore Select 10000mAh Power Bank",
+      price: 85.00,
+      image: "/images/Products/more/anker-powercore-10000.png",
+      description: "High-speed portable charger with 10000mAh capacity. Provides 46+ hours of extra power with 12W high-speed charging.",
+      category: "powerbanks",
+      specs: {
+        capacity: "10000mAh capacity",
+        charging: "12W high-speed charging",
+        battery: "46+ hours extra power",
+        ports: "Dual USB-A ports"
+      }
+    },
+    {
+      id: 13,
+      name: "Boss Bar Wireless Power Bank 10000mAh",
+      price: 110.00,
+      image: "/images/Products/more/bossbar-wireless-10000.png",
+      description: "Premium wireless power bank with digital display. Features 15W wireless fast charging, 22.5W super fast charge output.",
+      category: "powerbanks",
+      specs: {
+        capacity: "10000mAh capacity",
+        wireless: "15W Wireless charging",
+        wired: "22.5W PD Fast Charge",
+        display: "Digital LED display"
+      }
+    },
+    {
+      id: 14,
+      name: "Anker Pocket-Sized Power Bank 10000mAh",
+      price: 75.00,
+      image: "/images/Products/more/anker-pocket-10k.png",
+      description: "Ultra-compact power bank with 22.5W max output. Perfect pocket size for Apple, Samsung, and more devices.",
+      category: "powerbanks",
+      specs: {
+        capacity: "10000mAh capacity",
+        output: "22.5W MAX output",
+        design: "Ultra-compact",
+        compatibility: "Universal"
+      }
+    },
+    {
+      id: 15,
+      name: "Yesido Wireless Power Bank with Built-in Cables",
+      price: 95.00,
+      image: "/images/Products/more/yesido-wireless-10000.png",
+      description: "All-in-one power bank with wireless charging pad and two built-in cables. Digital display shows battery level.",
+      category: "powerbanks",
+      specs: {
+        capacity: "10000mAh capacity",
+        wireless: "Wireless charging pad",
+        cables: "Two built-in cables",
+        display: "Digital display"
+      }
+    },
+
+    // EARBUDS & HEADPHONES (16-20)
+    {
+      id: 16,
+      name: "Premium Wireless Earbuds Pro with ANC",
+      price: 89.00,
+      image: "/images/Products/more/airpods-pro-style.png",
+      description: "High-quality wireless earbuds with active noise cancellation. Premium sound quality with charging case.",
+      category: "earbuds",
+      specs: {
+        feature: "Active Noise Cancellation",
+        mode: "Transparency mode",
+        charging: "Wireless charging case",
+        battery: "24+ hours battery life"
+      }
+    },
+    {
+      id: 17,
+      name: "HyperGear AeroFlex 360 Open-Ear Wireless Earbuds",
+      price: 160.00,
+      image: "/images/Products/more/hypergear-aeroflex-360.png",
+      description: "Revolutionary open-ear design for 360° situational awareness. Enjoy music while staying aware of surroundings. 25 hours extended playtime.",
+      category: "earbuds",
+      specs: {
+        design: "Open-ear design",
+        awareness: "360° awareness",
+        battery: "25 hours playtime",
+        comfort: "Rests on ears"
+      }
+    },
+    {
+      id: 18,
+      name: "Yesido TWS32 Wireless Earbuds with ANC",
+      price: 140.00,
+      image: "/images/Products/more/yesido-tws32-anc.png",
+      description: "Premium wireless earbuds with active noise cancellation. Heavy bass effect, Bluetooth 5.4, ergonomic design.",
+      category: "earbuds",
+      specs: {
+        anc: "Active Noise Cancellation",
+        sound: "Heavy Bass Effect",
+        bluetooth: "Bluetooth 5.4",
+        detection: "Human ear detection"
+      }
+    },
+    {
+      id: 19,
+      name: "2000 Series Wireless Headphones - Pink",
+      price: 150.00,
+      image: "/images/Products/more/2000series-headphones-pink.png",
+      description: "Stylish wireless headphones with IPX4 water resistance. Perfect for workouts with 18 hours playtime.",
+      category: "headphones",
+      specs: {
+        waterproof: "IPX4 splash & sweat resistant",
+        battery: "18 hours play time",
+        connectivity: "Wireless",
+        color: "Pink"
+      }
+    },
+    {
+      id: 20,
+      name: "Buds2 Pro Premium Earbuds - Purple & White",
+      price: 120.00,
+      image: "/images/Products/more/buds2-pro-colors.png",
+      description: "Premium wireless earbuds with studio-quality sound. Available in elegant Purple and classic White colors.",
+      category: "earbuds",
+      specs: {
+        sound: "Premium sound quality",
+        charging: "Wireless charging case",
+        controls: "Touch controls",
+        colors: "Purple & White options"
       }
     }
   ];
 
   const translations = {
     en: {
-      title: "More Products",
-      subtitle: "Speakers • Power Banks • Audio • Gaming",
+      title: "Electronics & Accessories",
+      subtitle: "Premium Audio, Power Solutions & More",
       backToHome: "Back to Home",
-      viewDetails: "View",
+      viewDetails: "View Details",
       specifications: "Specifications",
       availability: "Availability",
       callToOrder: "Call to Order",
       whatsappOrder: "WhatsApp Order",
       closeModal: "Close",
       inStock: "In Stock",
-      available: "Available in"
+      all: "All Products",
+      speakers: "Speakers",
+      powerbanks: "Power Banks",
+      earbuds: "Earbuds",
+      headphones: "Headphones",
+      filterBy: "Filter by:"
     },
     fr: {
-      title: "Plus de Produits",
-      subtitle: "Haut-parleurs • Batteries • Audio • Jeux",
+      title: "Électronique et Accessoires",
+      subtitle: "Audio Premium, Solutions d'Alimentation et Plus",
       backToHome: "Retour à l'Accueil",
-      viewDetails: "Voir",
+      viewDetails: "Voir Détails",
       specifications: "Spécifications",
       availability: "Disponibilité",
       callToOrder: "Appeler pour Commander",
       whatsappOrder: "Commander via WhatsApp",
       closeModal: "Fermer",
       inStock: "En Stock",
-      available: "Disponible en"
+      all: "Tous les Produits",
+      speakers: "Haut-parleurs",
+      powerbanks: "Batteries Externes",
+      earbuds: "Écouteurs",
+      headphones: "Casques",
+      filterBy: "Filtrer par:"
     },
     es: {
-      title: "Más Productos",
-      subtitle: "Altavoces • Baterías • Audio • Juegos",
+      title: "Electrónica y Accesorios",
+      subtitle: "Audio Premium, Soluciones de Energía y Más",
       backToHome: "Volver al Inicio",
-      viewDetails: "Ver",
+      viewDetails: "Ver Detalles",
       specifications: "Especificaciones",
       availability: "Disponibilidad",
       callToOrder: "Llamar para Ordenar",
       whatsappOrder: "Ordenar por WhatsApp",
       closeModal: "Cerrar",
       inStock: "En Stock",
-      available: "Disponible en"
+      all: "Todos los Productos",
+      speakers: "Altavoces",
+      powerbanks: "Bancos de Energía",
+      earbuds: "Auriculares",
+      headphones: "Audífonos",
+      filterBy: "Filtrar por:"
     }
   };
 
   const t = translations[language as keyof typeof translations];
 
-  // Handle product selection
-  const handleProductClick = (product: any) => {
-    console.log('Product clicked:', product.name);
-    setSelectedProduct(product);
-  };
-
-  // Close modal
-  const handleCloseModal = () => {
-    console.log('Closing modal');
-    setSelectedProduct(null);
-  };
+  // Filter products based on selected category
+  const filteredProducts = filterCategory === 'all' 
+    ? products 
+    : filterCategory === 'headphones'
+    ? products.filter(p => p.category === 'earbuds' || p.category === 'headphones')
+    : products.filter(p => p.category === filterCategory);
 
   return (
     <div className="relative min-h-screen bg-black">
-      {/* Background with gradient - SAME AS PHONES */}
+      {/* Dynamic gradient background */}
       <div className="fixed inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-blue-900/20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-pink-900/10 to-orange-900/20" />
+        <div className="absolute inset-0 opacity-10">
+          <div style={{
+            backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.05) 35px, rgba(255,255,255,.05) 70px)`,
+            height: '100%'
+          }} />
+        </div>
       </div>
 
-      {/* Navigation - SAME AS PHONES */}
+      {/* Navigation */}
       <nav className="relative z-20 flex justify-between items-center p-6 bg-black/50 backdrop-blur-sm">
         <div className="flex items-center space-x-4">
           <Link 
@@ -299,75 +415,79 @@ export default function MoreCategory() {
         </button>
       </nav>
 
-      {/* Header - SAME STYLE AS PHONES */}
-      <div className="relative z-10 text-center py-6 px-4">
-        <h1 className="text-3xl md:text-5xl font-bold mb-2 text-center"
-            style={{ 
-              color: '#FFD700',
-              textShadow: '0 4px 20px rgba(255, 215, 0, 0.4), 0 2px 8px rgba(0,0,0,0.9)',
-              textAlign: 'center' 
-            }}>
-          {t.title}
-        </h1>
-        <p className="text-sm md:text-base text-yellow-400/80 text-center" 
-           style={{ 
-             textShadow: '0 2px 8px rgba(0,0,0,0.8)',
-             textAlign: 'center'
-           }}>
+      {/* Header */}
+      <div className="relative z-10 text-center py-8 px-4">
+        <div className="flex justify-center items-center gap-3 mb-4">
+          <ShoppingBag className="w-10 h-10 text-purple-400" />
+          <h1 className="text-4xl md:text-5xl font-bold"
+              style={{ 
+                background: 'linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                textShadow: '0 4px 20px rgba(255, 107, 107, 0.3)' 
+              }}>
+            {t.title}
+          </h1>
+          <Sparkles className="w-10 h-10 text-pink-400" />
+        </div>
+        <p className="text-lg text-gray-300" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>
           {t.subtitle}
         </p>
       </div>
 
-      {/* Products Grid - EXACT SAME STRUCTURE AS PHONES */}
-      <div className="relative z-10 container mx-auto px-3 pb-20">
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
-          {products.map((product) => (
+      {/* Category Filter */}
+      <div className="relative z-10 flex justify-center mb-8 px-4">
+        <div className="bg-black/50 backdrop-blur-sm rounded-full p-2 flex gap-2 flex-wrap justify-center">
+          <span className="text-white px-3 py-2">{t.filterBy}</span>
+          {['all', 'speakers', 'powerbanks', 'headphones'].map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setFilterCategory(cat)}
+              className={`px-4 py-2 rounded-full transition-all duration-300 ${
+                filterCategory === cat 
+                  ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white' 
+                  : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50'
+              }`}
+            >
+              {t[cat as keyof typeof t]}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Products Grid */}
+      <div className="relative z-10 container mx-auto px-4 pb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {filteredProducts.map((product) => (
             <div 
               key={product.id}
-              className="group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300 hover:shadow-xl"
-              style={{ height: '350px', zIndex: 1 }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.zIndex = '10';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.zIndex = '1';
-              }}
+              className="group relative bg-gradient-to-br from-gray-900/60 via-purple-900/20 to-gray-900/60 backdrop-blur-sm rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20"
             >
               {/* Product Image */}
-              <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-3" style={{ height: '260px' }}>
+              <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-4" style={{ height: '240px' }}>
                 <img 
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-full object-contain p-2"
+                  className="w-full h-full object-contain"
                 />
+                
+                {/* Category Badge */}
+                <div className="absolute top-2 left-2 bg-purple-500/80 text-white text-xs font-bold px-2 py-1 rounded-full">
+                  {product.category.toUpperCase()}
+                </div>
               </div>
 
-              {/* Price Badge - Centered */}
-              {product.price && (
-                <div 
-                  className="absolute top-2 bg-yellow-500 text-black text-sm font-bold px-3 py-1 rounded-lg shadow-lg z-20"
-                  style={{
-                    left: '50%',
-                    transform: 'translateX(-50%)'
-                  }}
-                >
-                  ${product.price}
-                </div>
-              )}
+              {/* Price Badge */}
+              <div className="absolute top-2 right-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white text-sm font-bold px-3 py-1 rounded-lg shadow-lg">
+                ${product.price.toFixed(2)}
+              </div>
 
-              {/* Info Bar with Button */}
-              <div className="p-3 bg-black/50" style={{ height: '90px' }}>
-                <h3 className="text-base font-bold text-white truncate mb-2 text-center" 
-                    style={{ textAlign: 'center' }}>
-                  {product.name}
-                </h3>
+              {/* Product Info */}
+              <div className="p-4 bg-black/60">
+                <h3 className="text-sm font-bold text-white mb-2 line-clamp-2">{product.name}</h3>
                 <button 
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleProductClick(product);
-                  }}
-                  className="w-full bg-yellow-500 hover:bg-yellow-400 text-black text-sm font-bold py-2 rounded transition-colors duration-200"
-                  type="button"
+                  onClick={() => setSelectedProduct(product)}
+                  className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400 text-white font-bold py-2 rounded-lg transition-all duration-300"
                 >
                   {t.viewDetails}
                 </button>
@@ -377,54 +497,32 @@ export default function MoreCategory() {
         </div>
       </div>
 
-      {/* Modal - EXACT SAME AS PHONES */}
+      {/* Product Modal */}
       {selectedProduct && (
         <>
-          {/* Backdrop */}
           <div 
-            className="fixed inset-0 z-40"
-            onClick={handleCloseModal}
-            style={{ 
-              position: 'fixed', 
-              top: 0, 
-              left: 0, 
-              right: 0, 
-              bottom: 0,
-              backgroundColor: 'rgba(0, 0, 0, 0.95)'
-            }}
+            className="fixed inset-0 z-40 bg-black/95"
+            onClick={() => setSelectedProduct(null)}
           />
           
-          {/* Modal Content */}
           <div 
-            className="fixed z-50 overflow-y-auto"
+            className="fixed z-50 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-4xl max-h-[90vh] overflow-y-auto bg-white rounded-2xl p-6"
             style={{
-              position: 'fixed',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              maxWidth: '90vw',
-              width: '900px',
-              maxHeight: '90vh',
-              padding: '24px',
-              backgroundColor: '#FFFFFF',
-              borderRadius: '16px',
-              border: '3px solid #FFD700',
-              boxShadow: '0 0 50px rgba(0,0,0,0.9)'
+              background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+              boxShadow: '0 0 50px rgba(102, 126, 234, 0.5)'
             }}
           >
-            {/* Close Button */}
             <button 
-              onClick={handleCloseModal}
-              className="absolute top-4 right-4 text-gray-700 hover:text-red-500 transition-colors p-2 bg-gray-100 hover:bg-gray-200 rounded-full"
-              style={{ zIndex: 60 }}
+              onClick={() => setSelectedProduct(null)}
+              className="absolute top-4 right-4 text-white hover:text-gray-200 transition-colors p-2 bg-white/20 hover:bg-white/30 rounded-full backdrop-blur"
             >
               <X className="w-6 h-6" />
             </button>
 
             <div className="grid md:grid-cols-2 gap-8">
-              {/* Left side - Image */}
+              {/* Image */}
               <div>
-                <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl p-6 mb-4">
+                <div className="bg-white/90 rounded-xl p-6 mb-4">
                   <img 
                     src={selectedProduct.image}
                     alt={selectedProduct.name}
@@ -432,36 +530,31 @@ export default function MoreCategory() {
                   />
                 </div>
                 
-                <div className="bg-green-50 border-2 border-green-500 text-green-700 text-center py-3 rounded-lg font-bold">
+                <div className="bg-green-400/90 text-green-900 text-center py-3 rounded-lg font-bold">
                   <Check className="inline w-5 h-5 mr-2" />
-                  {selectedProduct.availability || t.inStock}
+                  {t.inStock}
                 </div>
               </div>
 
-              {/* Right side - Details */}
-              <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">{selectedProduct.name}</h2>
+              {/* Details */}
+              <div className="text-white">
+                <h2 className="text-3xl font-bold mb-2">{selectedProduct.name}</h2>
                 
-                <div className="text-4xl font-bold text-yellow-600 mb-6">
+                <div className="text-4xl font-bold mb-4">
                   ${selectedProduct.price.toFixed(2)}
                 </div>
 
-                {selectedProduct.color && (
-                  <div className="mb-6 p-3 bg-gray-100 rounded-lg border border-gray-300">
-                    <p className="text-sm text-gray-600">{t.available}:</p>
-                    <p className="text-gray-900 font-semibold">{selectedProduct.color}</p>
-                  </div>
-                )}
+                <p className="text-white/90 mb-6">{selectedProduct.description}</p>
 
                 <div className="mb-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 border-b-2 border-yellow-400 pb-2">
+                  <h3 className="text-xl font-bold mb-4 border-b-2 border-white/30 pb-2">
                     {t.specifications}
                   </h3>
                   <div className="space-y-3">
                     {selectedProduct.specs && Object.entries(selectedProduct.specs).map(([key, value]) => (
                       <div key={key} className="flex items-start space-x-2">
-                        <div className="w-2 h-2 bg-yellow-500 rounded-full mt-1.5"></div>
-                        <span className="text-gray-700">{value as string}</span>
+                        <div className="w-2 h-2 bg-white rounded-full mt-1.5"></div>
+                        <span className="text-white/90">{value as string}</span>
                       </div>
                     ))}
                   </div>
@@ -470,7 +563,7 @@ export default function MoreCategory() {
                 <div className="space-y-3">
                   <a 
                     href="tel:+17844512261"
-                    className="block w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold py-3 rounded-lg text-center hover:from-blue-400 hover:to-blue-500 transition-all duration-300 shadow-lg"
+                    className="block w-full bg-white text-purple-700 font-bold py-3 rounded-lg text-center hover:bg-gray-100 transition-all duration-300 shadow-lg"
                   >
                     <Phone className="inline w-5 h-5 mr-2" />
                     {t.callToOrder}: 1-784-451-2261
@@ -480,7 +573,7 @@ export default function MoreCategory() {
                     href={`https://wa.me/17844310777?text=Hi, I'm interested in ${selectedProduct.name}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full bg-gradient-to-r from-green-500 to-green-600 text-white font-bold py-3 rounded-lg text-center hover:from-green-400 hover:to-green-500 transition-all duration-300 shadow-lg"
+                    className="block w-full bg-green-500 text-white font-bold py-3 rounded-lg text-center hover:bg-green-400 transition-all duration-300 shadow-lg"
                   >
                     <MessageCircle className="inline w-5 h-5 mr-2" />
                     {t.whatsappOrder}: 1-784-431-0777
@@ -491,9 +584,9 @@ export default function MoreCategory() {
           </div>
         </>
       )}
-
+      
       {/* Celly Assistant */}
-      <CellyAssistant />
+      <Celly />
     </div>
   );
 }
