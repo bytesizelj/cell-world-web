@@ -60,7 +60,7 @@ export default function ContactPage() {
             }}
           >
             {/* Dark overlay to ensure text readability */}
-            <div className="absolute inset-0 bg-black/85" />
+            <div className="absolute inset-0 bg-black/65" />
           </div>
         ))}
         
@@ -83,10 +83,13 @@ export default function ContactPage() {
       <div className="relative z-10 container mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4"
+          <h1 className="text-4xl md:text-5xl mb-4"
               style={{ 
                 color: '#FFD700',
-                textShadow: '0 4px 20px rgba(255, 215, 0, 0.4), 0 2px 8px rgba(0,0,0,0.9)' 
+                fontFamily: '"Brush Script MT", "Lucida Handwriting", "Lucida Calligraphy", cursive',
+                fontWeight: '400',
+                textShadow: '0 4px 20px rgba(255, 215, 0, 0.4), 0 2px 8px rgba(0,0,0,0.9)',
+                letterSpacing: '1px'
               }}>
             Contact Cell World
           </h1>

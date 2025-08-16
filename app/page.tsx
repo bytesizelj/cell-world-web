@@ -184,7 +184,8 @@ export default function Home() {
       </nav>
 
       {/* Hero Content */}
-      <div className="relative z-20 flex flex-col items-start justify-center min-h-[60vh] text-center px-6" style={{ marginTop: '-60px' }}>
+      {/* Hero Content */}
+      <div className="relative z-20 flex flex-col items-start justify-center min-h-[100vh] px-6" style={{ marginTop: '-60px' }}>
         {/* centered Logo */}
         <div className="mb-8 opacity-0 animate-fade-up">
           <img 
@@ -325,7 +326,7 @@ export default function Home() {
           textShadow: '0 3px 15px rgba(255, 215, 0, 0.4), 0 2px 8px rgba(0,0,0,0.9)',
           letterSpacing: '1px'
         }}>
-      {t.welcome}
+      Cell World St. Vincent
     </h2>
     
     {/* Tagline - smaller size */}
