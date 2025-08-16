@@ -33,8 +33,8 @@ export default function ContactPage() {
     whatsapp: '+1-784-431-0777',
     email: 'musicworld@vincysurf.com',
     hours: {
-      weekday: 'Monday - Friday: 8:00 AM - 6:00 PM',
-      saturday: 'Saturday: 9:00 AM - 5:00 PM',
+      weekday: 'Monday - Friday: 8:00 AM - 5:00 PM',
+      saturday: 'Saturday: 8:00 AM - 2:00 PM',
       sunday: 'Sunday: CLOSED'
     },
     location: 'St. Vincent and the Grenadines',

@@ -151,11 +151,9 @@ export default function Home() {
 
       {/* Navigation */}
       <nav className="relative z-20 p-6">
-        <div className="flex flex-col items-start space-y-4">
-          {/* Left side controls */}
+        <div className="flex items-center justify-end">
+          {/* Right side - Controls only */}
           <div className="flex items-center space-x-4">
-            <Menu className="text-white w-6 h-6 cursor-pointer" />
-            
             {/* Language Selector */}
             <button 
               className="group flex items-center space-x-2 text-white bg-gradient-to-r from-yellow-600/20 to-orange-600/20 backdrop-blur-md px-3 py-2 rounded-full hover:from-yellow-600/30 hover:to-orange-600/30 border border-yellow-500/30 transition-all duration-300 shadow-lg hover:shadow-yellow-500/25"
@@ -186,15 +184,15 @@ export default function Home() {
       </nav>
 
       {/* Hero Content */}
-      <div className="relative z-20 flex flex-col items-center justify-center min-h-[60vh] text-center px-6" style={{ marginTop: '-60px' }}>
-        {/* Centered Logo */}
+      <div className="relative z-20 flex flex-col items-start justify-center min-h-[60vh] text-center px-6" style={{ marginTop: '-60px' }}>
+        {/* centered Logo */}
         <div className="mb-8 opacity-0 animate-fade-up">
           <img 
             src="/images/cell-world-logo.png"
             alt="Cell World"
             style={{ 
-              height: '140px',
-              maxHeight: '140px', 
+              height: '200px',
+              maxHeight: '200px', 
               width: 'auto', 
               objectFit: 'contain',
               filter: 'drop-shadow(0 0 4px rgba(255,255,255,0.9)) drop-shadow(0 0 8px rgba(255,215,0,0.6)) drop-shadow(0 0 12px rgba(255,165,0,0.4))',
@@ -202,113 +200,8 @@ export default function Home() {
             }}
           />
         </div>
+        </div>
         
-        {/* Text Content Box */}
-        <div style={{ 
-          backgroundColor: 'rgba(20, 20, 20, 0.4)', 
-          backdropFilter: 'blur(6px)', 
-          borderRadius: '1rem', 
-          padding: '1.5rem 2rem', 
-          maxWidth: '48rem', 
-          margin: '0 auto'
-        }}>
-          <h2 className="text-5xl md:text-7xl lg:text-8xl mb-6 opacity-0 animate-fade-up animation-delay-200 leading-tight"
-              style={{ 
-                color: '#FFFFFF',
-                fontFamily: "'Great Vibes', cursive",
-                fontWeight: '400',
-                textShadow: '0 4px 20px rgba(0,0,0,0.8)',
-                fontSize: '3.5rem'
-              }}>
-            {t.welcome}
-          </h2>
-          <p className="text-xl md:text-2xl mb-1 opacity-0 animate-fade-up animation-delay-300"
-             style={{ color: '#FFD700', fontWeight: '600', textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
-            {t.tagline}
-          </p>
-          <p className="text-lg md:text-xl mb-6 opacity-0 animate-fade-up animation-delay-400"
-             style={{ color: '#FFC107', textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>
-            {t.delivery}
-          </p>
-          <Link 
-            href="/contact"
-            className="group relative inline-block opacity-0 animate-fade-up animation-delay-500"
-            style={{
-              padding: '16px 40px',
-              borderRadius: '50px',
-              background: 'linear-gradient(135deg, #FFD700, #FFA500)',
-              fontSize: '18px',
-              fontWeight: 'bold',
-              color: '#000',
-              textDecoration: 'none',
-              boxShadow: '0 4px 15px rgba(255, 215, 0, 0.4), 0 8px 30px rgba(255, 165, 0, 0.3)',
-              filter: 'drop-shadow(0 0 20px rgba(255, 215, 0, 0.5))',
-              transition: 'all 0.3s ease',
-              display: 'inline-block',
-              position: 'relative',
-              overflow: 'hidden'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'scale(1.05)';
-              e.currentTarget.style.filter = 'drop-shadow(0 0 30px rgba(255, 215, 0, 0.7))';
-              e.currentTarget.style.boxShadow = '0 6px 20px rgba(255, 215, 0, 0.5), 0 12px 40px rgba(255, 165, 0, 0.4)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'scale(1)';
-              e.currentTarget.style.filter = 'drop-shadow(0 0 20px rgba(255, 215, 0, 0.5))';
-              e.currentTarget.style.boxShadow = '0 4px 15px rgba(255, 215, 0, 0.4), 0 8px 30px rgba(255, 165, 0, 0.3)';
-            }}
-          >
-            <span style={{ position: 'relative', zIndex: 2 }}>{t.contactNow}</span>
-            <div style={{
-              position: 'absolute',
-              top: 0,
-              left: '-100%',
-              width: '100%',
-              height: '100%',
-              background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)',
-              transition: 'left 0.5s',
-              animation: 'shimmer 3s infinite'
-            }} />
-          </Link>
-        </div>
-      </div>
-
-      {/* Ready to Shop Section - Enhanced */}
-      <section className="relative z-20 py-16 text-center bg-transparent">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="inline-block">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-3"
-                style={{ 
-                  textShadow: '0 4px 20px rgba(0,0,0,0.9)',
-                  background: 'linear-gradient(135deg, #FFD700, #FFA500)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}>
-              {t.readyToShop}
-            </h2>
-            <p className="text-lg text-gray-200 mb-4"
-               style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
-              {t.shopSubtext}
-            </p>
-            
-            {/* Animated arrows pointing down */}
-            <div className="flex justify-center space-x-8 mt-6">
-              <div style={{ animation: 'bounce 2s infinite' }}>
-                <ChevronDown className="w-8 h-8 text-yellow-400" />
-              </div>
-              <div style={{ animation: 'bounce 2s infinite', animationDelay: '0.2s' }}>
-                <ChevronDown className="w-8 h-8 text-orange-400" />
-              </div>
-              <div style={{ animation: 'bounce 2s infinite', animationDelay: '0.4s' }}>
-                <ChevronDown className="w-8 h-8 text-yellow-400" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Category Section with CTA Buttons */}
       <section className="relative z-20 bg-black/90 py-20">
         <div className="max-w-7xl mx-auto px-6">
@@ -420,109 +313,78 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Enhanced Contact Section */}
-      <section className="relative z-20 py-24 bg-black/80">
-        <div className="max-w-5xl mx-auto px-6">
-          {/* Section Header */}
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4"
-                style={{ 
-                  color: '#FFD700',
-                  textShadow: '0 6px 30px rgba(255, 215, 0, 0.4), 0 2px 8px rgba(0,0,0,0.9)' 
-                }}>
-              {t.getInTouch}
-            </h2>
-            <p className="text-xl" style={{ 
-              color: '#FFC107',
-              textShadow: '0 3px 15px rgba(255, 193, 7, 0.3), 0 2px 6px rgba(0,0,0,0.8)'
-            }}>
-              {t.contactSubtext}
-            </p>
-            <div className="w-32 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto mt-6"></div>
-          </div>
-          
-          {/* Contact Buttons - Simple Layout with Shadows */}
-          <div className="flex flex-col items-center space-y-6">
-            {/* Phone and WhatsApp Row */}
-            <div className="flex flex-col md:flex-row gap-6 justify-center">
-              {/* Phone Button */}
-              <a 
-                href="tel:+17844512261"
-                className="group flex items-center space-x-3 hover:scale-105 transition-all duration-300 transform hover:-translate-y-1"
-                style={{
-                  filter: 'drop-shadow(0 8px 20px rgba(255, 215, 0, 0.25)) drop-shadow(0 4px 10px rgba(0,0,0,0.8))'
-                }}
-              >
-                <Phone className="w-8 h-8" style={{ 
-                  color: '#FFD700',
-                  filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.6))'
-                }} />
-                <div className="text-left">
-                  <div className="text-sm" style={{ 
-                    color: '#FFC107',
-                    textShadow: '0 2px 8px rgba(255, 193, 7, 0.4), 0 1px 3px rgba(0,0,0,0.8)'
-                  }}>
-                    {t.callUs}
-                  </div>
-                  <div className="text-2xl font-bold" style={{ 
-                    color: '#FFD700',
-                    textShadow: '0 4px 15px rgba(255, 215, 0, 0.5), 0 2px 6px rgba(0,0,0,0.9)'
-                  }}>
-                    1-784-451-2261
-                  </div>
-                </div>
-              </a>
-              
-              {/* WhatsApp Button */}
-              <a 
-                href="https://wa.me/17844310777"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center space-x-3 hover:scale-105 transition-all duration-300 transform hover:-translate-y-1 md:ml-12"
-                style={{
-                  filter: 'drop-shadow(0 8px 20px rgba(255, 215, 0, 0.25)) drop-shadow(0 4px 10px rgba(0,0,0,0.8))'
-                }}
-              >
-                <span className="text-4xl" style={{
-                  filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.6))'
-                }}>💬</span>
-                <div className="text-left">
-                  <div className="text-sm" style={{ 
-                    color: '#FFC107',
-                    textShadow: '0 2px 8px rgba(255, 193, 7, 0.4), 0 1px 3px rgba(0,0,0,0.8)'
-                  }}>
-                    {t.whatsapp}
-                  </div>
-                  <div className="text-2xl font-bold" style={{ 
-                    color: '#FFD700',
-                    textShadow: '0 4px 15px rgba(255, 215, 0, 0.5), 0 2px 6px rgba(0,0,0,0.9)'
-                  }}>
-                    1-784-431-0777
-                  </div>
-                </div>
-              </a>
-            </div>
-            
-            {/* Visit Store Button */}
-            <button className="group hover:scale-105 transition-all duration-300 transform hover:-translate-y-1 mt-6"
-              style={{
-                filter: 'drop-shadow(0 8px 20px rgba(255, 215, 0, 0.3)) drop-shadow(0 4px 10px rgba(0,0,0,0.8))'
-              }}
-            >
-              <div className="flex items-center justify-center space-x-3">
-                <span className="text-3xl" style={{
-                  filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.6))'
-                }}>📍</span>
-                <span className="text-2xl font-bold" style={{ 
-                  color: '#FFD700',
-                  textShadow: '0 4px 15px rgba(255, 215, 0, 0.5), 0 2px 6px rgba(0,0,0,0.9)'
-                }}>{t.visitStore}</span>
-              </div>
-            </button>
-          </div>
-        </div>
-      </section>
-      
+  {/* Hero Text at Bottom */}
+<section className="relative z-20 py-20 bg-black/80">
+  <div className="max-w-4xl mx-auto px-6 text-center">
+    {/* Welcome - Cell World St. Vincent - NEW */}
+    <h2 className="text-3xl md:text-4xl mb-4 opacity-0 animate-fade-up"
+        style={{ 
+          color: '#FFD700', 
+          fontFamily: '"Brush Script MT", "Lucida Handwriting", "Lucida Calligraphy", cursive',
+          fontWeight: '400',
+          textShadow: '0 3px 15px rgba(255, 215, 0, 0.4), 0 2px 8px rgba(0,0,0,0.9)',
+          letterSpacing: '1px'
+        }}>
+      {t.welcome}
+    </h2>
+    
+    {/* Tagline - smaller size */}
+    <p className="text-lg md:text-xl mb-6 opacity-0 animate-fade-up animation-delay-300"
+       style={{ color: '#FFD700', fontWeight: '600', textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
+      {t.tagline}
+    </p>
+    
+    {/* Delivery Promise */}
+    <p className="text-md md:text-lg mb-8 opacity-0 animate-fade-up animation-delay-400"
+       style={{ color: '#FFA500', fontWeight: '500', textShadow: '0 2px 8px rgba(0,0,0,0.7)' }}>
+      {t.delivery}
+    </p>
+    
+    {/* Contact Us Button - keeping all your existing button code */}
+    <Link 
+      href="/contact"
+      className="group relative inline-block opacity-0 animate-fade-up animation-delay-500"
+      style={{
+        padding: '14px 40px',
+        borderRadius: '50px',
+        background: 'linear-gradient(135deg, #FFD700, #FFA500)',
+        fontSize: '18px',
+        fontWeight: 'bold',
+        color: '#000',
+        textDecoration: 'none',
+        boxShadow: '0 4px 15px rgba(255, 215, 0, 0.4), 0 8px 30px rgba(255, 165, 0, 0.3)',
+        filter: 'drop-shadow(0 0 20px rgba(255, 215, 0, 0.5))',
+        transition: 'all 0.3s ease',
+        display: 'inline-block',
+        position: 'relative',
+        overflow: 'hidden'
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = 'scale(1.05)';
+        e.currentTarget.style.filter = 'drop-shadow(0 0 30px rgba(255, 215, 0, 0.7))';
+        e.currentTarget.style.boxShadow = '0 6px 20px rgba(255, 215, 0, 0.5), 0 12px 40px rgba(255, 165, 0, 0.4)';
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = 'scale(1)';
+        e.currentTarget.style.filter = 'drop-shadow(0 0 20px rgba(255, 215, 0, 0.5))';
+        e.currentTarget.style.boxShadow = '0 4px 15px rgba(255, 215, 0, 0.4), 0 8px 30px rgba(255, 165, 0, 0.3)';
+      }}
+    >
+      <span style={{ position: 'relative', zIndex: 2 }}>{t.contactNow}</span>
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: '-100%',
+        width: '100%',
+        height: '100%',
+        background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)',
+        transition: 'left 0.5s',
+        animation: 'shimmer 3s infinite'
+      }} />
+    </Link>
+  </div>
+</section>
+        
       <CellyAssistant />
       
       {/* Add pulse animation for CTA buttons */}
