@@ -317,7 +317,7 @@ export default function Home() {
   {/* Hero Text at Bottom */}
 <section className="relative z-20 py-20 bg-black/80">
   <div className="max-w-4xl mx-auto px-6 text-center">
-    {/* Welcome - Cell World St. Vincent - NEW */}
+    {/* Cell World St. Vincent - Scripted */}
     <h2 className="text-3xl md:text-4xl mb-4 opacity-0 animate-fade-up"
         style={{ 
           color: '#FFD700', 
@@ -336,12 +336,33 @@ export default function Home() {
     </p>
     
     {/* Delivery Promise */}
-    <p className="text-md md:text-lg mb-8 opacity-0 animate-fade-up animation-delay-400"
+    <p className="text-md md:text-lg mb-6 opacity-0 animate-fade-up animation-delay-400"
        style={{ color: '#FFA500', fontWeight: '500', textShadow: '0 2px 8px rgba(0,0,0,0.7)' }}>
       {t.delivery}
     </p>
     
-    {/* Contact Us Button - keeping all your existing button code */}
+    {/* Celly Assistant Notice - WITH AVATAR */}
+<div className="flex items-center justify-center mb-8 opacity-0 animate-fade-up animation-delay-450">
+  <img 
+    src="/images/celly/celly-avatar-icon.png" 
+    alt="Celly AI Assistant" 
+    className="w-14 h-14 mr-3"
+    style={{ 
+      filter: 'drop-shadow(0 0 20px rgba(64, 224, 208, 0.5))'
+    }}
+  />
+  <p className="text-md md:text-lg"
+     style={{ 
+       color: '#40E0D0', 
+       fontWeight: '600',
+       textShadow: '0 0 20px rgba(64, 224, 208, 0.6), 0 0 35px rgba(64, 224, 208, 0.4), 0 2px 10px rgba(0,0,0,0.9)',
+       fontStyle: 'italic'
+     }}>
+    Need Help? Celly, Our AI Assistant, is Available 24/7
+  </p>
+</div>
+    
+    {/* Contact Us Button */}
     <Link 
       href="/contact"
       className="group relative inline-block opacity-0 animate-fade-up animation-delay-500"
@@ -383,8 +404,8 @@ export default function Home() {
         animation: 'shimmer 3s infinite'
       }} />
     </Link>
-  </div>
-</section>
+  </div>  {/* CLOSING DIV */}
+</section>  {/* CLOSING SECTION */}
         
       <CellyAssistant />
       
