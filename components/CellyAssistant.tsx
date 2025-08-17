@@ -448,7 +448,7 @@ export default function Celly() {
 
   return (
     <>
-      {/* Chat Button with Pulsating Effect */}
+      {/* Chat Button with Celly Avatar */}
       <button
         onClick={() => setIsOpen(true)}
         className="fixed bottom-4 right-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-full shadow-2xl hover:scale-110 transition-all duration-300 z-50 group pulsate"
@@ -459,10 +459,15 @@ export default function Celly() {
         aria-label="Open chat with Celly"
       >
         <div className="relative w-full h-full flex items-center justify-center">
-          {/* Agent Avatar with Headphones Icon */}
-          <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg">
-            <Headphones className="w-8 h-8 text-orange-500" />
-          </div>
+          {/* Celly Avatar */}
+          <img 
+            src="/images/celly/celly-avatar-main.png"
+            alt="Celly AI Assistant"
+            className="w-16 h-16 rounded-full object-cover bg-white"
+            style={{
+              objectPosition: 'top center'
+            }}
+          />
           {/* Online indicator */}
           <span className="absolute top-0 right-0 w-4 h-4 bg-green-500 rounded-full animate-pulse border-2 border-white"></span>
         </div>
@@ -473,15 +478,20 @@ export default function Celly() {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-4 right-4 w-96 h-[600px] bg-white rounded-2xl shadow-2xl z-50 flex flex-col overflow-hidden animate-slideUp">
+        <div className="fixed bottom-4 right-4 w-96 h-[500px] bg-white rounded-2xl shadow-2xl z-50 flex flex-col overflow-hidden animate-slideUp">
           {/* Header */}
           <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white p-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="relative">
-                {/* Agent Avatar with Headphones */}
-                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg">
-                  <Headphones className="w-6 h-6 text-orange-500" />
-                </div>
+                {/* Celly Avatar */}
+                <img 
+                  src="/images/celly/celly-avatar-main.png"
+                  alt="Celly"
+                  className="w-12 h-12 rounded-full object-cover bg-white border-2 border-white/50"
+                  style={{
+                    objectPosition: 'top center'
+                  }}
+                />
                 {/* Online status */}
                 <span className="absolute -bottom-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-white animate-pulse"></span>
               </div>
@@ -525,10 +535,12 @@ export default function Celly() {
                 <div className={`max-w-[80%] ${message.isBot ? 'order-2' : 'order-1'}`}>
                   <div className="flex items-end gap-2">
                     {message.isBot && (
-                      <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
-                        <Headphones className="w-5 h-5 text-orange-600" />
-                      </div>
-                    )}
+  <img 
+    src="/images/celly/celly-avatar-icon.png"
+    alt="Celly"
+    className="w-8 h-8 rounded-full"
+  />
+)}
                     <div
                       className={`p-3 rounded-2xl ${
                         message.isBot
@@ -553,10 +565,11 @@ export default function Celly() {
             {isTyping && (
               <div className="flex justify-start">
                 <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
-                    <Headphones className="w-5 h-5 text-orange-600" />
-                  </div>
-                  <div className="bg-white p-3 rounded-2xl rounded-bl-none shadow-sm">
+                  <img 
+  src="/images/celly/celly-avatar-icon.png"
+  alt="Celly"
+  className="w-8 h-8 rounded-full"
+/>                  <div className="bg-white p-3 rounded-2xl rounded-bl-none shadow-sm">
                     <div className="flex gap-1">
                       <span className="w-2 h-2 bg-orange-400 rounded-full animate-bounce" style={{animationDelay: '0ms'}}></span>
                       <span className="w-2 h-2 bg-orange-400 rounded-full animate-bounce" style={{animationDelay: '150ms'}}></span>

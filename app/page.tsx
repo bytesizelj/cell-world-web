@@ -184,9 +184,8 @@ export default function Home() {
       </nav>
 
       {/* Hero Content */}
-      {/* Hero Content */}
-      <div className="relative z-20 flex flex-col items-start justify-center min-h-[100vh] px-6" style={{ marginTop: '-60px' }}>
-        {/* centered Logo */}
+      <div className="relative z-20 flex flex-col items-start justify-start min-h-[85vh] px-3" style={{ marginTop: '-40px' }}>
+        {/* Logo - top left */}
         <div className="mb-8 opacity-0 animate-fade-up">
           <img 
             src="/images/cell-world-logo.png"
@@ -196,8 +195,7 @@ export default function Home() {
               maxHeight: '200px', 
               width: 'auto', 
               objectFit: 'contain',
-              filter: 'drop-shadow(0 0 4px rgba(255,255,255,0.9)) drop-shadow(0 0 8px rgba(255,215,0,0.6)) drop-shadow(0 0 12px rgba(255,165,0,0.4))',
-              margin: '0 auto'
+              filter: 'drop-shadow(0 0 4px rgba(255,255,255,0.9)) drop-shadow(0 0 8px rgba(255,215,0,0.6)) drop-shadow(0 0 12px rgba(255,165,0,0.4))'
             }}
           />
         </div>
