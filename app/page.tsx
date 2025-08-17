@@ -32,7 +32,7 @@ export default function Home() {
   const translations = {
     en: {
       welcome: "Welcome to Cell World St. Vincent",
-      tagline: "Bringing the store to your fingertips",
+      tagline: "Bringing the Store to Your Fingertips",
       delivery: "Quality Products • Expert Service • Best Prices",
       contactNow: "Contact Us",
       readyToShop: "Ready to Shop?",
@@ -57,7 +57,7 @@ export default function Home() {
     },
     fr: {
       welcome: "Bienvenue chez Cell World St. Vincent",
-      tagline: "La boutique au bout de vos doigts",
+      tagline: "La Boutique au Bout de Vos Doigts",
       delivery: "Produits de Qualité • Service Expert • Meilleurs Prix",
       contactNow: "Contactez-nous",
       readyToShop: "Prêt à Magasiner?",
@@ -82,7 +82,7 @@ export default function Home() {
     },
     es: {
       welcome: "Bienvenido a Cell World St. Vincent",
-      tagline: "Llevando la tienda a tus dedos",
+      tagline: "Llevando la Tienda a Tus Dedos",
       delivery: "Productos de Calidad • Servicio Experto • Mejores Precios",
       contactNow: "Contáctanos",
       readyToShop: "¿Listo para Comprar?",
@@ -184,7 +184,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Content */}
-      <div className="relative z-20 flex flex-col items-start justify-start min-h-[85vh] px-3" style={{ marginTop: '-40px' }}>
+      <div className="relative z-20 flex flex-col items-start justify-start min-h-screen px-3" style={{ marginTop: '-40px' }}>
         {/* Logo - top left */}
         <div className="mb-8 opacity-0 animate-fade-up">
           <img 
@@ -328,10 +328,16 @@ export default function Home() {
     </h2>
     
     {/* Tagline - smaller size */}
-    <p className="text-lg md:text-xl mb-6 opacity-0 animate-fade-up animation-delay-300"
-       style={{ color: '#FFD700', fontWeight: '600', textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
-      {t.tagline}
-    </p>
+<p className="text-lg md:text-xl mb-6 opacity-0 animate-fade-up animation-delay-300"
+   style={{ 
+     color: '#FFFFFF',  // Changed to white
+     fontFamily: '"Brush Script MT", "Dancing Script", cursive',
+     fontWeight: '500', 
+     textShadow: '0 2px 10px rgba(0,0,0,0.8)', 
+     fontStyle: 'italic' 
+   }}>
+  {t.tagline}
+</p>
     
     {/* Delivery Promise */}
     <p className="text-md md:text-lg mb-6 opacity-0 animate-fade-up animation-delay-400"
