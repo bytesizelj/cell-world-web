@@ -315,7 +315,6 @@ export default function MarineWorldPage() {  // Simple function name
     closeModal: "Close",
     inStock: "In Stock",
     all: "All Products",
-    // ADD THESE NEW LINES:
     "boat-parts": "Boat Parts",
     "boat-accessories": "Boat Accessories",
     "fishing-lures": "Fishing Lures",
@@ -323,20 +322,40 @@ export default function MarineWorldPage() {  // Simple function name
     filterBy: "Filter by:"
   },
   fr: {
-    // ... your existing French translations ...
-    // ADD THESE:
+    title: "Monde Marin",
+    subtitle: "Fournitures Marines et de Pêche Professionnelles",
+    backToHome: "Retour à l'Accueil",
+    viewDetails: "Voir Détails",
+    specifications: "Spécifications",
+    availability: "Disponibilité",
+    callToOrder: "Appeler pour Commander",
+    whatsappOrder: "Commander via WhatsApp",
+    closeModal: "Fermer",
+    inStock: "En Stock",
+    all: "Tous les Produits",
     "boat-parts": "Pièces de Bateau",
     "boat-accessories": "Accessoires de Bateau",
     "fishing-lures": "Leurres de Pêche",
     "fishing-gear": "Matériel de Pêche",
+    filterBy: "Filtrer par:"
   },
   es: {
-    // ... your existing Spanish translations ...
-    // ADD THESE:
+    title: "Mundo Marino",
+    subtitle: "Suministros Marinos y de Pesca Profesionales",
+    backToHome: "Volver al Inicio",
+    viewDetails: "Ver Detalles",
+    specifications: "Especificaciones",
+    availability: "Disponibilidad",
+    callToOrder: "Llamar para Ordenar",
+    whatsappOrder: "Ordenar por WhatsApp",
+    closeModal: "Cerrar",
+    inStock: "En Stock",
+    all: "Todos los Productos",
     "boat-parts": "Partes de Barco",
     "boat-accessories": "Accesorios de Barco",
     "fishing-lures": "Señuelos de Pesca",
     "fishing-gear": "Equipo de Pesca",
+    filterBy: "Filtrar por:"
   }
 };
 
