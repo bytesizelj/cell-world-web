@@ -192,19 +192,19 @@ export default function ContactPage() {
           </div>
 
           {/* Interactive Map Embed */}
-          <div className="rounded-xl overflow-hidden shadow-2xl">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15880.251854346967!2d-61.22789!3d13.15536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c0e7505c5b5b5b5%3A0x0!2sKingstown%2C%20St.%20Vincent!5e0!3m2!1sen!2s!4v1234567890"
-              width="100%"
-              height="400"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="w-full"
-              title="Cell World Location Map"
-            ></iframe>
-          </div>
+<div className="rounded-xl overflow-hidden shadow-2xl">
+  <iframe
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB6XxgZF7jeGL6uAv-_E33JWDWg9QsO3wU&q=Cell+World,Kingstown,Saint+Vincent&zoom=17"
+    width="100%"
+    height="400"
+    style={{ border: 0 }}
+    allowFullScreen
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    className="w-full"
+    title="Cell World Location Map"
+  />
+</div>
 
           {/* Directions Button */}
           <div className="mt-6 flex flex-col sm:flex-row gap-4">
