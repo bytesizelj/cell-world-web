@@ -6,183 +6,339 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 const Celly = dynamic(() => import('@/components/CellyAssistant'), { ssr: false });
 
-export default function FishingCategory() {
+export default function MarineWorldPage() {  // Simple function name
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
   const [language, setLanguage] = useState('en');
   const [filterCategory, setFilterCategory] = useState('all');
 
-  // Complete fishing products array
+  // Complete marine products array
   const products = [
-    // EXISTING PRODUCTS - Using placeholder image until you add actual images
-    {
-      id: 1,
-      name: "Professional Fishing Rod",
-      price: 150.00,
-      image: "/images/Products/fishing/rod-guides.png", // Temporary placeholder
-      description: "7ft carbon fiber rod perfect for experienced anglers",
-      category: "rods",
-      specs: {
-        length: "7 feet",
-        material: "Carbon Fiber",
-        action: "Fast Action",
-        power: "Medium-Heavy"
-      }
-    },
-    {
-      id: 2,
-      name: "Beginner Fishing Rod",
-      price: 89.00,
-      image: "/images/Products/fishing/rod-guides.png", // Temporary placeholder
-      description: "Perfect starter rod for new anglers",
-      category: "rods",
-      specs: {
-        length: "6 feet",
-        material: "Fiberglass Composite",
-        action: "Moderate Action",
-        power: "Medium"
-      }
-    },
-    {
-      id: 3,
-      name: "Fishing Reel Spinner",
-      price: 120.00,
-      image: "/images/Products/fishing/mustad-lures.png", // Temporary placeholder
-      description: "High-quality spinning reel with smooth drag system",
-      category: "reels",
-      specs: {
-        bearings: "7+1 Ball Bearings",
-        ratio: "5.2:1 Gear Ratio",
-        capacity: "270 yards",
-        drag: "20 lbs Max Drag"
-      }
-    },
-    {
-      id: 4,
-      name: "Tackle Box Pro",
-      price: 45.00,
-      image: "/images/Products/fishing/jig-assist-hooks.png", // Temporary placeholder
-      description: "Complete tackle storage solution",
-      category: "accessories",
-      specs: {
-        compartments: "24 Adjustable Compartments",
-        material: "Heavy-Duty Plastic",
-        size: "14\" x 8\" x 7\"",
-        features: "Waterproof Design"
-      }
-    },
-    
-    // NEW PRODUCTS with correct file names
-    {
-      id: 5,
-      name: "Jig Assist Hooks - 5X Strong",
-      price: 25.00,
-      image: "/images/Products/fishing/jig-assist-hooks.png",
-      description: "Heavy-duty 5X strong assist hooks with durable braided cord. Perfect for jigging and big game fishing.",
-      category: "accessories",
-      specs: {
-        strength: "5X Strong",
-        material: "High-Carbon Steel",
-        coating: "Corrosion Resistant",
-        quantity: "Pack of 4"
-      }
-    },
-    {
-      id: 6,
-      name: "Mustad UltraPoint Big Gun Hooks",
-      price: 35.00,
-      image: "/images/Products/fishing/mustad-big-gun-hooks.png",
-      description: "Premium Mustad hooks with UltraPoint technology. Stay sharp 3x longer.",
-      category: "accessories",
-      specs: {
-        size: "8/0",
-        technology: "UltraPoint MicroSharp 4.3",
-        quantity: "Pack of 3",
-        type: "Circle Hooks"
-      }
-    },
-    {
-      id: 7,
-      name: "Ceramic Fishing Rod Guides Set",
-      price: 45.00,
-      image: "/images/Products/fishing/rod-guides.png",
-      description: "High-quality ceramic rod guides in assorted colors and sizes.",
-      category: "accessories",
-      specs: {
-        material: "Ceramic Insert",
-        frame: "Stainless Steel",
-        sizes: "Assorted (5mm-20mm)",
-        quantity: "Set of 10"
-      }
-    },
-    {
-      id: 8,
-      name: "Mustad Saltwater Lure Collection",
-      price: 55.00,
-      image: "/images/Products/fishing/mustad-lures.png",
-      description: "Premium Mustad fishing lures designed for saltwater fishing.",
-      category: "accessories",
-      specs: {
-        type: "Jigs and Trolling Lures",
-        weight: "1oz - 3oz Assorted",
-        colors: "Vibrant Multicolor",
-        quantity: "Set of 5"
-      }
+  // FISHING GEAR PRODUCTS
+  {
+    id: 1,
+    name: "Professional Fishing Rod",
+    price: 150.00,
+    image: "/images/Products/fishing/rod-guides.png",
+    description: "7ft carbon fiber rod perfect for experienced anglers",
+    category: "fishing-gear",
+    specs: {
+      length: "7 feet",
+      material: "Carbon Fiber",
+      action: "Fast Action",
+      power: "Medium-Heavy"
     }
-  ];
+  },
+  {
+    id: 2,
+    name: "Beginner Fishing Rod",
+    price: 89.00,
+    image: "/images/Products/fishing/rod-guides.png",
+    description: "Perfect starter rod for new anglers",
+    category: "fishing-gear",
+    specs: {
+      length: "6 feet",
+      material: "Fiberglass Composite",
+      action: "Moderate Action",
+      power: "Medium"
+    }
+  },
+  {
+    id: 3,
+    name: "Fishing Reel Spinner",
+    price: 120.00,
+    image: "/images/Products/fishing/mustad-lures.png",
+    description: "High-quality spinning reel with smooth drag system",
+    category: "fishing-gear",
+    specs: {
+      bearings: "7+1 Ball Bearings",
+      ratio: "5.2:1 Gear Ratio",
+      capacity: "270 yards",
+      drag: "20 lbs Max Drag"
+    }
+  },
+  {
+    id: 4,
+    name: "Tackle Box Pro",
+    price: 45.00,
+    image: "/images/Products/fishing/jig-assist-hooks.png",
+    description: "Complete tackle storage solution",
+    category: "fishing-gear",
+    specs: {
+      compartments: "24 Adjustable Compartments",
+      material: "Heavy-Duty Plastic",
+      size: "14\" x 8\" x 7\"",
+      features: "Waterproof Design"
+    }
+  },
+  {
+    id: 5,
+    name: "Jig Assist Hooks - 5X Strong",
+    price: 25.00,
+    image: "/images/Products/fishing/jig-assist-hooks.png",
+    description: "Heavy-duty 5X strong assist hooks with durable braided cord",
+    category: "fishing-gear",
+    specs: {
+      strength: "5X Strong",
+      material: "High-Carbon Steel",
+      coating: "Corrosion Resistant",
+      quantity: "Pack of 4"
+    }
+  },
+  {
+    id: 6,
+    name: "Mustad UltraPoint Big Gun Hooks",
+    price: 35.00,
+    image: "/images/Products/fishing/mustad-big-gun-hooks.png",
+    description: "Premium Mustad hooks with UltraPoint technology",
+    category: "fishing-gear",
+    specs: {
+      size: "8/0",
+      technology: "UltraPoint MicroSharp 4.3",
+      quantity: "Pack of 3",
+      type: "Circle Hooks"
+    }
+  },
+  {
+    id: 7,
+    name: "Ceramic Fishing Rod Guides Set",
+    price: 45.00,
+    image: "/images/Products/fishing/rod-guides.png",
+    description: "High-quality ceramic rod guides in assorted colors and sizes",
+    category: "fishing-gear",
+    specs: {
+      material: "Ceramic Insert",
+      frame: "Stainless Steel",
+      sizes: "Assorted (5mm-20mm)",
+      quantity: "Set of 10"
+    }
+  },
+
+  // BOAT PARTS PRODUCTS
+  {
+    id: 8,
+    name: "Marine Propeller - 3 Blade",
+    price: 285.00,
+    image: "/images/Products/fishing/rod-guides.png",
+    description: "High-performance aluminum propeller for outboard motors",
+    category: "boat-parts",
+    specs: {
+      diameter: "13.25 inches",
+      pitch: "17 inches",
+      material: "Aluminum",
+      blades: "3 Blades"
+    }
+  },
+  {
+    id: 9,
+    name: "Boat Steering Cable",
+    price: 125.00,
+    image: "/images/Products/fishing/rod-guides.png",
+    description: "Heavy-duty steering cable for smooth boat control",
+    category: "boat-parts",
+    specs: {
+      length: "16 feet",
+      type: "Rotary Steering",
+      material: "Stainless Steel",
+      compatibility: "Universal Fit"
+    }
+  },
+  {
+    id: 10,
+    name: "Bilge Pump 1100 GPH",
+    price: 95.00,
+    image: "/images/Products/fishing/rod-guides.png",
+    description: "Automatic bilge pump for boat water removal",
+    category: "boat-parts",
+    specs: {
+      capacity: "1100 GPH",
+      voltage: "12V DC",
+      type: "Automatic with Float Switch",
+      hose: "1-1/8 inch outlet"
+    }
+  },
+  {
+    id: 11,
+    name: "Marine Battery Switch",
+    price: 55.00,
+    image: "/images/Products/fishing/rod-guides.png",
+    description: "Heavy-duty battery selector switch for dual battery systems",
+    category: "boat-parts",
+    specs: {
+      positions: "1-2-Both-Off",
+      rating: "300 Amp Continuous",
+      material: "Marine Grade",
+      mounting: "Surface Mount"
+    }
+  },
+
+  // BOAT ACCESSORIES PRODUCTS
+  {
+    id: 12,
+    name: "Marine GPS Navigator",
+    price: 450.00,
+    image: "/images/Products/fishing/rod-guides.png",
+    description: "Waterproof GPS with chart plotter for marine navigation",
+    category: "boat-accessories",
+    specs: {
+      screen: "7 inch Color Display",
+      waterproof: "IPX7 Rated",
+      features: "Chart Plotter, Fish Finder",
+      maps: "Preloaded Caribbean Maps"
+    }
+  },
+  {
+    id: 13,
+    name: "Boat Fender Set",
+    price: 89.00,
+    image: "/images/Products/fishing/rod-guides.png",
+    description: "Premium boat fenders to protect your vessel",
+    category: "boat-accessories",
+    specs: {
+      size: "8.5 x 27 inches",
+      material: "Marine-Grade Vinyl",
+      quantity: "Set of 4",
+      color: "Navy Blue"
+    }
+  },
+  {
+    id: 14,
+    name: "Marine VHF Radio",
+    price: 165.00,
+    image: "/images/Products/fishing/rod-guides.png",
+    description: "Waterproof VHF marine radio with DSC",
+    category: "boat-accessories",
+    specs: {
+      channels: "All US/International/Canadian",
+      waterproof: "IPX8 Submersible",
+      features: "DSC, GPS, NOAA Weather",
+      power: "25 Watts"
+    }
+  },
+  {
+    id: 15,
+    name: "Boat Anchor Kit",
+    price: 125.00,
+    image: "/images/Products/fishing/rod-guides.png",
+    description: "Complete anchoring system for boats up to 24ft",
+    category: "boat-accessories",
+    specs: {
+      anchor: "8 lb Galvanized",
+      chain: "6ft x 1/4 inch",
+      rope: "100ft Marine Rope",
+      storage: "Anchor Bag Included"
+    }
+  },
+
+  // FISHING LURES PRODUCTS
+  {
+    id: 16,
+    name: "Trolling Lure Set - Mahi Special",
+    price: 65.00,
+    image: "/images/Products/fishing/mustad-lures.png",
+    description: "Proven mahi-mahi and dorado trolling lures",
+    category: "fishing-lures",
+    specs: {
+      type: "Trolling Lures",
+      target: "Mahi, Dorado, Tuna",
+      colors: "Green, Blue, Yellow",
+      quantity: "Set of 6"
+    }
+  },
+  {
+    id: 17,
+    name: "Deep Sea Jig Collection",
+    price: 48.00,
+    image: "/images/Products/fishing/jig-assist-hooks.png",
+    description: "Heavy jigs for deep water fishing",
+    category: "fishing-lures",
+    specs: {
+      weight: "4oz - 8oz",
+      type: "Vertical Jigs",
+      colors: "Glow, Silver, Blue",
+      quantity: "Set of 4"
+    }
+  },
+  {
+    id: 18,
+    name: "Mustad Saltwater Lure Collection",
+    price: 55.00,
+    image: "/images/Products/fishing/mustad-lures.png",
+    description: "Premium Mustad fishing lures designed for saltwater",
+    category: "fishing-lures",
+    specs: {
+      type: "Jigs and Spoons",
+      weight: "1oz - 3oz Assorted",
+      colors: "Vibrant Multicolor",
+      quantity: "Set of 5"
+    }
+  },
+  {
+    id: 19,
+    name: "Topwater Popper Set",
+    price: 38.00,
+    image: "/images/Products/fishing/mustad-lures.png",
+    description: "Surface lures for explosive strikes",
+    category: "fishing-lures",
+    specs: {
+      type: "Poppers",
+      action: "Topwater",
+      sizes: "3-5 inches",
+      quantity: "Set of 4"
+    }
+  },
+  {
+    id: 20,
+    name: "Soft Plastic Bait Kit",
+    price: 29.00,
+    image: "/images/Products/fishing/mustad-lures.png",
+    description: "Assorted soft plastic baits for all conditions",
+    category: "fishing-lures",
+    specs: {
+      type: "Soft Plastics",
+      styles: "Shrimp, Minnow, Worm",
+      colors: "Natural Colors",
+      quantity: "50 Piece Set"
+    }
+  }
+];
 
   const translations = {
-    en: {
-      title: "Fishing Gear & Equipment",
-      subtitle: "Professional Fishing Supplies for Every Angler",
-      backToHome: "Back to Home",
-      viewDetails: "View Details",
-      specifications: "Specifications",
-      availability: "Availability",
-      callToOrder: "Call to Order",
-      whatsappOrder: "WhatsApp Order",
-      closeModal: "Close",
-      inStock: "In Stock",
-      all: "All Products",
-      rods: "Fishing Rods",
-      reels: "Reels",
-      accessories: "Tackle & Accessories",
-      filterBy: "Filter by:"
-    },
-    fr: {
-      title: "Matériel de Pêche",
-      subtitle: "Fournitures de Pêche Professionnelles",
-      backToHome: "Retour à l'Accueil",
-      viewDetails: "Voir Détails",
-      specifications: "Spécifications",
-      availability: "Disponibilité",
-      callToOrder: "Appeler pour Commander",
-      whatsappOrder: "Commander via WhatsApp",
-      closeModal: "Fermer",
-      inStock: "En Stock",
-      all: "Tous les Produits",
-      rods: "Cannes à Pêche",
-      reels: "Moulinets",
-      accessories: "Accessoires",
-      filterBy: "Filtrer par:"
-    },
-    es: {
-      title: "Equipo de Pesca",
-      subtitle: "Suministros de Pesca Profesionales",
-      backToHome: "Volver al Inicio",
-      viewDetails: "Ver Detalles",
-      specifications: "Especificaciones",
-      availability: "Disponibilidad",
-      callToOrder: "Llamar para Ordenar",
-      whatsappOrder: "Ordenar por WhatsApp",
-      closeModal: "Cerrar",
-      inStock: "En Stock",
-      all: "Todos los Productos",
-      rods: "Cañas de Pescar",
-      reels: "Carretes",
-      accessories: "Accesorios",
-      filterBy: "Filtrar por:"
-    }
-  };
+  en: {
+    title: "Marine World",
+    subtitle: "Professional Marine & Fishing Supplies",
+    backToHome: "Back to Home",
+    viewDetails: "View Details",
+    specifications: "Specifications",
+    availability: "Availability",
+    callToOrder: "Call to Order",
+    whatsappOrder: "WhatsApp Order",
+    closeModal: "Close",
+    inStock: "In Stock",
+    all: "All Products",
+    // ADD THESE NEW LINES:
+    "boat-parts": "Boat Parts",
+    "boat-accessories": "Boat Accessories",
+    "fishing-lures": "Fishing Lures",
+    "fishing-gear": "Fishing Gear",
+    filterBy: "Filter by:"
+  },
+  fr: {
+    // ... your existing French translations ...
+    // ADD THESE:
+    "boat-parts": "Pièces de Bateau",
+    "boat-accessories": "Accessoires de Bateau",
+    "fishing-lures": "Leurres de Pêche",
+    "fishing-gear": "Matériel de Pêche",
+  },
+  es: {
+    // ... your existing Spanish translations ...
+    // ADD THESE:
+    "boat-parts": "Partes de Barco",
+    "boat-accessories": "Accesorios de Barco",
+    "fishing-lures": "Señuelos de Pesca",
+    "fishing-gear": "Equipo de Pesca",
+  }
+};
 
   const t = translations[language as keyof typeof translations];
 
@@ -240,7 +396,7 @@ export default function FishingCategory() {
         </button>
       </nav>
 
-      {/* Header with fishing theme */}
+      {/* Header with marine theme */}
       <div className="relative z-10 text-center py-8 px-4">
         <div className="flex justify-center items-center gap-3 mb-4">
           <Fish className="w-10 h-10 text-teal-400" />
@@ -259,10 +415,10 @@ export default function FishingCategory() {
       </div>
 
       {/* Category Filter */}
-      <div className="relative z-10 flex justify-center mb-8 px-4">
-        <div className="bg-black/50 backdrop-blur-sm rounded-full p-2 flex gap-2">
-          <span className="text-white px-3 py-2">{t.filterBy}</span>
-          {['all', 'rods', 'reels', 'accessories'].map((cat) => (
+<div className="relative z-10 flex justify-center mb-8 px-4">
+  <div className="bg-black/50 backdrop-blur-sm rounded-full p-2 flex flex-wrap gap-2 justify-center">
+    <span className="text-white px-3 py-2">{t.filterBy}</span>
+    {['all', 'boat-parts', 'boat-accessories', 'fishing-lures', 'fishing-gear'].map((cat) => (
             <button
               key={cat}
               onClick={() => setFilterCategory(cat)}

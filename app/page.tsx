@@ -38,10 +38,10 @@ export default function Home() {
       readyToShop: "Ready to Shop?",
       shopSubtext: "Click below to explore our premium products",
       phones: "Mobile Phones",
-      fishing: "Fishing Gear",
+      fishing: "Marine World",
       moreProducts: "More Products",
       phoneDesc: "Latest smartphones & accessories",
-      fishingDesc: "Professional fishing equipment",
+      fishingDesc: "Marine equipment, fishing lures & acessories",
       moreDesc: "Gaming, security, solar & more",
       viewProducts: "View Products",
       callUs: "Call",
@@ -63,10 +63,10 @@ export default function Home() {
       readyToShop: "Prêt à Magasiner?",
       shopSubtext: "Cliquez ci-dessous pour explorer nos produits premium",
       phones: "Téléphones Mobiles",
-      fishing: "Matériel de Pêche",
+      fishing: "Monde Marin",
       moreProducts: "Plus de Produits",
       phoneDesc: "Derniers smartphones et accessoires",
-      fishingDesc: "Équipement de pêche professionnel",
+      fishingDesc: "Équipement marin et accessoires de pêche",
       moreDesc: "Jeux, sécurité, solaire et plus",
       viewProducts: "Voir les Produits",
       callUs: "Appeler",
@@ -88,10 +88,10 @@ export default function Home() {
       readyToShop: "¿Listo para Comprar?",
       shopSubtext: "Haz clic abajo para explorar nuestros productos premium",
       phones: "Teléfonos Móviles",
-      fishing: "Equipo de Pesca",
+      fishing: "Mundo Marino",
       moreProducts: "Más Productos",
       phoneDesc: "Últimos smartphones y accesorios",
-      fishingDesc: "Equipo de pesca profesional",
+      fishingDesc: "Equipos marinos y accesorios de pesca",
       moreDesc: "Juegos, seguridad, solar y más",
       viewProducts: "Ver Productos",
       callUs: "Llamar",
@@ -242,7 +242,7 @@ export default function Home() {
 
             {/* Fishing Gear Category */}
             <Link 
-              href="/Categories/fishing"
+              href="/Categories/marine-world"
               className="group relative overflow-hidden rounded-xl shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-3xl cursor-pointer block"
             >
               <div className="aspect-[4/3] relative">
