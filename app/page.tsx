@@ -1,4 +1,5 @@
 'use client';
+import NavigationMenu from '@/components/NavigationMenu';
 import dynamic from 'next/dynamic';
 const CellyAssistant = dynamic(() => 
 import('@/components/CellyAssistant'), { ssr: 
@@ -12,6 +13,7 @@ export default function Home() {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [language, setLanguage] = useState('en');
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   
   // Array of video paths - add your video files here
   const videos = [
@@ -150,39 +152,92 @@ export default function Home() {
       </div>
 
       {/* Navigation */}
-      <nav className="relative z-20 p-6">
-        <div className="flex items-center justify-end">
-          {/* Right side - Controls only */}
-          <div className="flex items-center space-x-4">
-            {/* Language Selector */}
-            <button 
-              className="group flex items-center space-x-2 text-white bg-gradient-to-r from-yellow-600/20 to-orange-600/20 backdrop-blur-md px-3 py-2 rounded-full hover:from-yellow-600/30 hover:to-orange-600/30 border border-yellow-500/30 transition-all duration-300 shadow-lg hover:shadow-yellow-500/25"
-              onClick={() => {
-                const langs = ['en', 'fr', 'es'];
-                const currentIndex = langs.indexOf(language);
-                setLanguage(langs[(currentIndex + 1) % langs.length]);
-              }}
-              title="Change Language"
-            >
-              <div className="relative">
-                <Globe className="w-4 h-4 text-yellow-400" />
-                <div className="absolute -inset-1 bg-yellow-400 opacity-30 blur-sm rounded-full group-hover:opacity-50 transition-opacity"></div>
-              </div>
-              <span className="text-xs uppercase font-bold text-yellow-400">{language}</span>
-            </button>
-            
-            {/* Quick Contact Button */}
-            <a 
-              href="tel:+17844512261"
-              className="text-white bg-white/10 p-2 rounded-lg backdrop-blur-md hover:bg-white/20 transition-all duration-300"
-              title="Call Us"
-            >
-              <Phone className="w-4 h-4" />
-            </a>
-          </div>
+<nav className="relative z-20 p-6">
+  <div className="flex items-center justify-between">
+    {/* Left side - Menu (Using normal flow, not fixed) */}
+    <div className="relative">
+      <button 
+        onClick={() => setIsMenuOpen(!isMenuOpen)} 
+        className="p-2 bg-white rounded-lg shadow-lg hover:bg-gray-100 transition-colors"
+      >
+        {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+    </div>
+  
+    {/* Right side - Controls */}
+    <div className="flex items-center space-x-4">
+      {/* Language Selector */}
+      <button 
+        className="group flex items-center space-x-2 text-white bg-gradient-to-r from-yellow-600/20 to-orange-600/20 backdrop-blur-md px-3 py-2 rounded-full hover:from-yellow-600/30 hover:to-orange-600/30 border border-yellow-500/30 transition-all duration-300 shadow-lg hover:shadow-yellow-500/25"
+        onClick={() => {
+          const langs = ['en', 'fr', 'es'];
+          const currentIndex = langs.indexOf(language);
+          setLanguage(langs[(currentIndex + 1) % langs.length]);
+        }}
+        title="Change Language"
+      >
+        <div className="relative">
+          <Globe className="w-4 h-4 text-yellow-400" />
+          <div className="absolute -inset-1 bg-yellow-400 opacity-30 blur-sm rounded-full group-hover:opacity-50 transition-opacity"></div>
         </div>
-      </nav>
+        <span className="text-xs uppercase font-bold text-yellow-400">{language}</span>
+      </button>
+      
+      {/* Quick Contact Button */}
+      <a 
+        href="tel:+17844512261"
+        className="text-white bg-white/10 p-2 rounded-lg backdrop-blur-md hover:bg-white/20 transition-all duration-300"
+        title="Call Us"
+      >
+        <Phone className="w-4 h-4" />
+      </a>
+    </div>
+  </div>
+</nav>
 
+{/* Menu Panel - Outside of nav, controlled by state */}
+{isMenuOpen && (
+  <div 
+    className="fixed top-0 left-0 w-64 h-full bg-white shadow-2xl"
+    style={{ zIndex: 9999999999 }}
+  >
+    <div className="p-6 pt-20">
+      <button
+        onClick={() => setIsMenuOpen(false)}
+        className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-lg"
+      >
+        <X size={24} />
+      </button>
+      
+      <div className="space-y-2">
+        <a href="/" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+          🏠 Home
+        </a>
+        <a href="/Categories/phones" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+          📱 Phones
+        </a>
+        <a href="/Categories/marine-world" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+          🚤 Marine World
+        </a>
+        
+	<a href="/Categories/more" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+  	  📦 More Products
+	</a>
+
+	<a href="/reviews" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+          ⭐ Reviews
+        </a>
+        <a href="/contact" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+          📞 Contact
+        </a>
+        <a href="/order" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+          🛒 Order
+        </a>
+      </div>
+    </div>
+  </div>
+)}
+      
       {/* Hero Content */}
       <div className="relative z-20 flex flex-col items-start justify-start min-h-screen px-3" style={{ marginTop: '-40px' }}>
         {/* Logo - top left */}
@@ -408,8 +463,8 @@ export default function Home() {
         animation: 'shimmer 3s infinite'
       }} />
     </Link>
-  </div>  {/* CLOSING DIV */}
-</section>  {/* CLOSING SECTION */}
+  </div>  
+</section>  
         
       <CellyAssistant />
       

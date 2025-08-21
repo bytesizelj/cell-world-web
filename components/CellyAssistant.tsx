@@ -11,12 +11,12 @@ const cellWorldKnowledge = {
     email: "musicworld@vincysurf.com",
     phone: "Contact us in store", // Add actual number when available
     hours: {
-      monday: "8:00 AM - 6:00 PM",
-      tuesday: "8:00 AM - 6:00 PM", 
-      wednesday: "8:00 AM - 6:00 PM",
-      thursday: "8:00 AM - 6:00 PM",
-      friday: "8:00 AM - 6:00 PM",
-      saturday: "9:00 AM - 5:00 PM",
+      monday: "8:00 AM - 5:00 PM",
+      tuesday: "8:00 AM - 5:00 PM", 
+      wednesday: "8:00 AM - 5:00 PM",
+      thursday: "8:00 AM - 5:00 PM",
+      friday: "8:00 AM - 5:00 PM",
+      saturday: "8:00 AM - 5:00 PM",
       sunday: "CLOSED"
     },
     services: [
@@ -471,9 +471,9 @@ export default function Celly() {
           {/* Online indicator */}
           <span className="absolute top-0 right-0 w-4 h-4 bg-green-500 rounded-full animate-pulse border-2 border-white"></span>
         </div>
-        <span className="absolute bottom-full mb-2 right-0 bg-gray-800 text-white text-sm px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-          Hi! I'm Celly 👋 Ask me anything!
-        </span>
+        <span className="absolute bottom-full mb-2 right-0 bg-gray-800 text-white text-sm px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10 pointer-events-none">
+  Hi Im Celly - Ask me anything
+</span>
       </button>
 
       {/* Chat Window */}
