@@ -76,13 +76,13 @@ export default function ReviewsPage() {
   // Calculate stats
   const totalReviews = reviews.length;
   const averageRating = (reviews.reduce((sum, r) => sum + r.rating, 0) / totalReviews).toFixed(1);
-  const ratingCounts = {
-    5: reviews.filter(r => r.rating === 5).length,
-    4: reviews.filter(r => r.rating === 4).length,
-    3: reviews.filter(r => r.rating === 3).length,
-    2: reviews.filter(r => r.rating === 2).length,
-    1: reviews.filter(r => r.rating === 1).length,
-  };
+  const ratingCounts: Record<number, number> = {
+  5: reviews.filter(r => r.rating === 5).length,
+  4: reviews.filter(r => r.rating === 4).length,
+  3: reviews.filter(r => r.rating === 3).length,
+  2: reviews.filter(r => r.rating === 2).length,
+  1: reviews.filter(r => r.rating === 1).length,
+};
 
   // Filter reviews
   const filteredReviews = filterRating === 'all' 
