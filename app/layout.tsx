@@ -25,24 +25,58 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
+	<script
+	type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Store",
+              "name": "Cell World St. Vincent",
+              "url": "https://cellworldsvg.vercel.app",
+              "telephone": "+17844512261",
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "VC",
+                "addressLocality": "St. Vincent and the Grenadines"
+              },
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Products"
+              },
+              "potentialAction": {
+                "@type": "OrderAction",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "https://cellworldsvg.vercel.app/order"
+                },
+                "deliveryMethod": [
+                  "http://purl.org/goodrelations/v1#DeliveryModePickUp",
+                  "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet"
+                ]
+              }
+            })
+          }}
+        />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-  <Script
-  src="https://www.googletagmanager.com/gtag/js?id=G-E9RDJE166F"
-  strategy="afterInteractive"
-/>
-<Script id="google-analytics" strategy="afterInteractive">
-  {`
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-E9RDJE166F');
-  `}
-</Script>
-  {children}
-</body>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-E9RDJE166F"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-E9RDJE166F');
+          `}
+        </Script>
+        {children}
+      </body>
     </html>
   );
 }
+      
