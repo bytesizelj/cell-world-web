@@ -22,7 +22,7 @@ export default function PhonesCategory() {
       image: '/images/Products/phones/cropped/samsung-s24fe.png',
       price: 2999.00,
       category: 'flagship',
-      availability: 'In Stock',
+      availability: 'Out of Stock',
       color: 'Graphite',
       specs: {
         ram: '8GB RAM',
@@ -217,6 +217,111 @@ export default function PhonesCategory() {
         selfieCamera: '5MP Front Camera',
         charging: '22.5W Fast Charging'
       }
+    },
+    { 
+      id: 'samsung-a05', 
+      name: 'Samsung Galaxy A05', 
+      image: '/images/Products/phones/cropped/samsung-a05-4g.png',
+      price: 499.00,
+      category: 'budget',
+      availability: 'Limited Stock',
+      color: 'Black',
+      specs: {
+        ram: '4GB RAM',
+        storage: '64GB ROM',
+        camera: 'Dual Camera',
+        mainCamera: '50MP Main Camera',
+        selfieCamera: '8MP Front Camera',
+        charging: '25W Fast Charging',
+        sim: 'Dual SIM'
+      }
+    },
+    { 
+      id: 'samsung-a26-mint', 
+      name: 'Samsung Galaxy A26 5G', 
+      image: '/images/Products/phones/cropped/samsung-a26-1.png',
+      price: 1200.00,
+      category: 'midrange',
+      availability: 'Limited Stock',
+      color: 'Mint - 1 left',
+      specs: {
+        ram: '6GB RAM',
+        storage: '128GB ROM',
+        network: '5G',
+        mainCamera: '50MP Main Camera',
+        selfieCamera: '13MP Selfie Camera',
+        charging: '25W Fast Charging'
+      }
+    },
+    { 
+      id: 'samsung-a26-white', 
+      name: 'Samsung Galaxy A26 5G', 
+      image: '/images/Products/phones/cropped/samsung-a26-2.png',
+      price: 1200.00,
+      category: 'midrange',
+      availability: 'Limited Stock',
+      color: 'White - 1 left',
+      specs: {
+        ram: '6GB RAM',
+        storage: '128GB ROM',
+        network: '5G',
+        mainCamera: '50MP Main Camera',
+        selfieCamera: '13MP Selfie Camera',
+        charging: '25W Fast Charging'
+      }
+    },
+    { 
+      id: 'samsung-a15', 
+      name: 'Samsung Galaxy A15', 
+      image: '/images/Products/phones/cropped/samsung-a15.png',
+      price: 649.00,
+      category: 'budget',
+      availability: 'Limited Stock',
+      color: 'Blue Black - 1 left',
+      specs: {
+        ram: '6GB RAM',
+        storage: '128GB ROM',
+        mainCamera: '50MP Main Camera',
+        selfieCamera: '13MP Selfie Camera',
+        sim: 'Dual SIM',
+        charging: '25W Fast Charging'
+      }
+    },
+    { 
+      id: 'samsung-a16-black', 
+      name: 'Samsung Galaxy A16', 
+      image: '/images/Products/phones/cropped/samsung-a16.png',
+      price: 649.00,
+      category: 'budget',
+      availability: 'Limited Stock',
+      color: 'Black - 1 left',
+      specs: {
+        ram: '4GB RAM',
+        storage: '128GB ROM',
+        mainCamera: '50MP Main Camera',
+        selfieCamera: '13MP Selfie Camera',
+        sim: 'Dual SIM',
+        charging: '25W Fast Charging'
+   
+      }
+    },
+    { 
+      id: 'itel-a90', 
+      name: 'Itel A90', 
+      image: '/images/Products/phones/cropped/itel-a90.png',
+      price: 475.00,
+      category: 'budget',
+      availability: 'Limited Stock',
+      color: 'Starlit Black - 1 left',
+      specs: {
+        ram: '12GB RAM',
+        storage: '256GB ROM',
+        sim: 'Dual SIM',
+        mainCamera: '13MP Main Camera',
+        selfieCamera: '5MP Selfie Camera',
+        charging: '15W Fast Charging',
+        protection: 'IP54 Dust and Water Resistance'
+      }
     }
   ];
 
@@ -390,7 +495,9 @@ export default function PhonesCategory() {
           {filteredProducts.map((product) => (
             <div 
               key={product.id}
-              className="group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300 hover:shadow-xl"
+              className={`group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300 hover:shadow-xl ${
+                product.availability === 'Out of Stock' ? 'opacity-60' : ''
+              }`}
               style={{ height: '350px', zIndex: 1 }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.zIndex = '10';
@@ -399,8 +506,21 @@ export default function PhonesCategory() {
                 e.currentTarget.style.zIndex = '1';
               }}
             >
+              {/* Out of Stock Badge */}
+              {product.availability === 'Out of Stock' && (
+                <div className="absolute top-2 right-2 z-30 bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                  SOLD OUT
+                </div>
+              )}
+              
               {/* Product Image */}
               <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-3" style={{ height: '260px' }}>
+                {/* Overlay for out of stock items */}
+                {product.availability === 'Out of Stock' && (
+                  <div className="absolute inset-0 bg-black/50 z-10 flex items-center justify-center">
+                    <span className="text-white font-bold text-xl rotate-[-15deg] bg-red-600 px-4 py-2 rounded">OUT OF STOCK</span>
+                  </div>
+                )}
                 <img 
                   src={product.image}
                   alt={product.name}
@@ -408,8 +528,8 @@ export default function PhonesCategory() {
                 />
               </div>
 
-              {/* Price Badge - Centered at top */}
-              {product.price && (
+              {/* Price Badge - Centered at top (hide if out of stock) */}
+              {product.price && product.availability !== 'Out of Stock' && (
                 <div 
                   className="absolute top-2 bg-yellow-500 text-black text-sm font-bold px-3 py-1 rounded-lg shadow-lg z-20"
                   style={{
@@ -421,7 +541,7 @@ export default function PhonesCategory() {
                 </div>
               )}
 
-              {/* Info Bar with Button - FIXED TEXT ALIGNMENT */}
+              {/* Info Bar with Button */}
               <div className="p-3 bg-black/50" style={{ height: '90px' }}>
                 <h3 className="text-base font-bold text-white truncate mb-2 text-center" 
                     style={{ textAlign: 'center' }}>
@@ -432,10 +552,15 @@ export default function PhonesCategory() {
                     e.stopPropagation();
                     handleProductClick(product);
                   }}
-                  className="w-full bg-yellow-500 hover:bg-yellow-400 text-black text-sm font-bold py-2 rounded transition-colors duration-200"
+                  className={`w-full ${
+                    product.availability === 'Out of Stock' 
+                      ? 'bg-gray-500 cursor-not-allowed' 
+                      : 'bg-yellow-500 hover:bg-yellow-400'
+                  } text-black text-sm font-bold py-2 rounded transition-colors duration-200`}
                   type="button"
+                  disabled={product.availability === 'Out of Stock'}
                 >
-                  {t.viewDetails}
+                  {product.availability === 'Out of Stock' ? 'Sold Out' : t.viewDetails}
                 </button>
               </div>
             </div>
