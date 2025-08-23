@@ -351,7 +351,7 @@ export default function MarineWorldPage() {  // Simple function name
 
               {/* Price Badge */}
               <div className="absolute top-2 right-2 bg-yellow-500 text-black text-sm font-bold px-3 py-1 rounded-lg shadow-lg">
-                ${product.price.toFixed(2)}
+                {product.priceRange || `$${product.price.toFixed(2)}`}
               </div>
 
               {/* Product Info */}
