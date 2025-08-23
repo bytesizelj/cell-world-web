@@ -193,17 +193,17 @@ export default function OrderPage() {
             <div className="text-center">
               <div className="bg-green-500/20 rounded-xl p-6">
                 <Truck className="w-12 h-12 text-green-400 mx-auto mb-3" />
-                <h4 className="text-white font-bold text-lg mb-2">Free Island Delivery</h4>
-                <p className="text-gray-300 text-sm mb-4">Orders over $100</p>
-                <p className="text-gray-400 text-xs">Same-day delivery available for orders before 2 PM</p>
+                <h4 className="text-white font-bold text-lg mb-2">Islands Delivery</h4>
+                <p className="text-gray-300 text-sm mb-4">Delivery cost $10</p>
+                <p className="text-gray-400 text-xs">Same-day delivery available</p>
               </div>
             </div>
             <div className="text-center">
               <div className="bg-blue-500/20 rounded-xl p-6">
                 <ShoppingCart className="w-12 h-12 text-blue-400 mx-auto mb-3" />
                 <h4 className="text-white font-bold text-lg mb-2">In-Store Pickup</h4>
-                <p className="text-gray-300 text-sm mb-4">Ready in 30 minutes</p>
-                <p className="text-gray-400 text-xs">Mon-Sat: 8 AM - 6 PM</p>
+                <p className="text-gray-300 text-sm mb-4">Ready in 5 minutes</p>
+                <p className="text-gray-400 text-xs">Mon-Sat: 8 AM - 5 PM</p>
               </div>
             </div>
           </div>

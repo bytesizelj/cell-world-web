@@ -158,6 +158,38 @@ export default function PhonesCategory() {
       }
     },
     { 
+      id: 'fangor-tablet', 
+      name: 'FANGOR Tablet 8"', 
+      image: '/images/Products/phones/cropped/fangor-tablet.png',
+      price: 250.00,
+      category: 'tablet',
+      availability: 'Limited Stock',
+      color: 'Black',
+      specs: {
+        display: '8 inch Display',
+        os: 'Android 11.0',
+        battery: '5000 mAh Battery',
+        ram: '2GB RAM',
+        storage: '32GB ROM',
+        camera: 'Dual Camera'
+      }
+    },
+    { 
+      id: 'lenovo-laptop', 
+      name: 'Lenovo IdeaPad Slim 3', 
+      image: '/images/Products/phones/cropped/lenovo-laptop.png',
+      price: 1800.00,
+      category: 'laptop',
+      availability: 'Limited Stock',
+      color: 'Silver - 1 left',
+      specs: {
+        display: '15.8 inch Display',
+        ram: '8GB RAM',
+        storage: '128GB SSD',
+        type: 'Laptop Computer'
+      }
+    },
+    { 
       id: 'blu-a140', 
       name: 'BLU A140', 
       image: '/images/Products/phones/cropped/blu-a140.png',

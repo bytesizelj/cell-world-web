@@ -13,35 +13,92 @@ export default function MarineWorldPage() {  // Simple function name
 
   // Complete marine products array
   const products = [
-  // FISHING GEAR PRODUCTS
+// BOAT ACCESSORIES PRODUCTS
   {
-    id: 1,
-    name: "Professional Fishing Rod",
-    price: 150.00,
-    image: "/images/Products/fishing/rod-guides.png",
-    description: "7ft carbon fiber rod perfect for experienced anglers",
-    category: "fishing-gear",
-    specs: {
-      length: "7 feet",
-      material: "Carbon Fiber",
-      action: "Fast Action",
-      power: "Medium-Heavy"
-    }
-  },
-  {
-    id: 2,
-    name: "Beginner Fishing Rod",
-    price: 89.00,
-    image: "/images/Products/fishing/rod-guides.png",
-    description: "Perfect starter rod for new anglers",
-    category: "fishing-gear",
-    specs: {
-      length: "6 feet",
-      material: "Fiberglass Composite",
-      action: "Moderate Action",
-      power: "Medium"
-    }
-  },
+      id: 'switch-panel',
+      name: 'Switch Panel',
+      image: '/images/Products/marine/switch-panel.png',
+      price: 350.00,
+      priceRange: 'from $350 up',
+      category: 'boat-accessories',  // ← Changed to boat-accessories
+      availability: 'In Stock',
+      specs: {
+        type: 'Boat Control Panel',
+        material: 'Marine Grade',
+        installation: 'Dashboard Mount'
+      }
+    },
+    {
+      id: 'battery-selector-switch',
+      name: 'Battery Selector Switch',
+      image: '/images/Products/marine/battery-selector-switch.png',
+      price: 250.00,
+      category: 'boat-accessories',  // ← Changed to boat-accessories
+      availability: 'In Stock',
+      specs: {
+        type: 'Electrical Switch',
+        positions: 'Multiple Position',
+        rating: 'Marine Rated'
+      }
+    },
+    {
+      id: 'landhoow-bilge-pump',
+      name: 'Landhoow Boat Bilge Water Pump',
+      image: '/images/Products/marine/landhoow-boat-bilge-water-pump.png',
+      price: 150.00,
+      priceRange: '$150 up',
+      category: 'boat-accessories',  // ← Changed to boat-accessories
+      availability: 'In Stock',
+      specs: {
+        type: 'Bilge Pump',
+        capacity: 'High Volume',
+        power: '12V DC'
+      }
+    },
+    {
+      id: 'boat-fender-holders',
+      name: 'Boat Fender Holders Wewean',
+      image: '/images/Products/marine/boat-fender-holders-wewean.png',
+      price: 150.00,
+      priceRange: '$150 up',
+      category: 'boat-accessories',  // ← Already correct
+      availability: 'In Stock',
+      specs: {
+        type: 'Fender Holders',
+        material: 'Stainless Steel',
+        mounting: 'Rail Mount'
+      }
+    },
+    {
+      id: 'boat-navigation-lights',
+      name: 'Boat Navigation Lights',
+      image: '/images/Products/marine/boat-navigation-lights.png',
+      price: 100.00,
+      priceRange: '$100 up',
+      category: 'boat-accessories',  // ← Changed to boat-accessories
+      availability: 'In Stock',
+      specs: {
+        type: 'Navigation Lights',
+        compliance: 'USCG Approved',
+        visibility: '2 Mile Range'
+      }
+    },
+    {
+      id: 'shop-boat-anchors',
+      name: 'Shop Boat Anchors',
+      image: '/images/Products/marine/shop-boat-anchors.png',
+      price: 120.00,
+      priceRange: '$120 up',
+      category: 'boat-accessories',  // ← Already correct
+      availability: 'In Stock',
+      specs: {
+        type: 'Marine Anchor',
+        material: 'Galvanized Steel',
+        weight: 'Various Sizes Available'
+      }
+    },  
+
+// FISHING GEAR PRODUCTS
   {
     id: 3,
     name: "Fishing Reel Spinner",
@@ -54,20 +111,6 @@ export default function MarineWorldPage() {  // Simple function name
       ratio: "5.2:1 Gear Ratio",
       capacity: "270 yards",
       drag: "20 lbs Max Drag"
-    }
-  },
-  {
-    id: 4,
-    name: "Tackle Box Pro",
-    price: 45.00,
-    image: "/images/Products/fishing/jig-assist-hooks.png",
-    description: "Complete tackle storage solution",
-    category: "fishing-gear",
-    specs: {
-      compartments: "24 Adjustable Compartments",
-      material: "Heavy-Duty Plastic",
-      size: "14\" x 8\" x 7\"",
-      features: "Waterproof Design"
     }
   },
   {
@@ -98,20 +141,7 @@ export default function MarineWorldPage() {  // Simple function name
       type: "Circle Hooks"
     }
   },
-  {
-    id: 7,
-    name: "Ceramic Fishing Rod Guides Set",
-    price: 45.00,
-    image: "/images/Products/fishing/rod-guides.png",
-    description: "High-quality ceramic rod guides in assorted colors and sizes",
-    category: "fishing-gear",
-    specs: {
-      material: "Ceramic Insert",
-      frame: "Stainless Steel",
-      sizes: "Assorted (5mm-20mm)",
-      quantity: "Set of 10"
-    }
-  },
+
 
   // BOAT PARTS PRODUCTS
   {
@@ -126,106 +156,6 @@ export default function MarineWorldPage() {  // Simple function name
       pitch: "17 inches",
       material: "Aluminum",
       blades: "3 Blades"
-    }
-  },
-  {
-    id: 9,
-    name: "Boat Steering Cable",
-    price: 125.00,
-    image: "/images/Products/fishing/rod-guides.png",
-    description: "Heavy-duty steering cable for smooth boat control",
-    category: "boat-parts",
-    specs: {
-      length: "16 feet",
-      type: "Rotary Steering",
-      material: "Stainless Steel",
-      compatibility: "Universal Fit"
-    }
-  },
-  {
-    id: 10,
-    name: "Bilge Pump 1100 GPH",
-    price: 95.00,
-    image: "/images/Products/fishing/rod-guides.png",
-    description: "Automatic bilge pump for boat water removal",
-    category: "boat-parts",
-    specs: {
-      capacity: "1100 GPH",
-      voltage: "12V DC",
-      type: "Automatic with Float Switch",
-      hose: "1-1/8 inch outlet"
-    }
-  },
-  {
-    id: 11,
-    name: "Marine Battery Switch",
-    price: 55.00,
-    image: "/images/Products/fishing/rod-guides.png",
-    description: "Heavy-duty battery selector switch for dual battery systems",
-    category: "boat-parts",
-    specs: {
-      positions: "1-2-Both-Off",
-      rating: "300 Amp Continuous",
-      material: "Marine Grade",
-      mounting: "Surface Mount"
-    }
-  },
-
-  // BOAT ACCESSORIES PRODUCTS
-  {
-    id: 12,
-    name: "Marine GPS Navigator",
-    price: 450.00,
-    image: "/images/Products/fishing/rod-guides.png",
-    description: "Waterproof GPS with chart plotter for marine navigation",
-    category: "boat-accessories",
-    specs: {
-      screen: "7 inch Color Display",
-      waterproof: "IPX7 Rated",
-      features: "Chart Plotter, Fish Finder",
-      maps: "Preloaded Caribbean Maps"
-    }
-  },
-  {
-    id: 13,
-    name: "Boat Fender Set",
-    price: 89.00,
-    image: "/images/Products/fishing/rod-guides.png",
-    description: "Premium boat fenders to protect your vessel",
-    category: "boat-accessories",
-    specs: {
-      size: "8.5 x 27 inches",
-      material: "Marine-Grade Vinyl",
-      quantity: "Set of 4",
-      color: "Navy Blue"
-    }
-  },
-  {
-    id: 14,
-    name: "Marine VHF Radio",
-    price: 165.00,
-    image: "/images/Products/fishing/rod-guides.png",
-    description: "Waterproof VHF marine radio with DSC",
-    category: "boat-accessories",
-    specs: {
-      channels: "All US/International/Canadian",
-      waterproof: "IPX8 Submersible",
-      features: "DSC, GPS, NOAA Weather",
-      power: "25 Watts"
-    }
-  },
-  {
-    id: 15,
-    name: "Boat Anchor Kit",
-    price: 125.00,
-    image: "/images/Products/fishing/rod-guides.png",
-    description: "Complete anchoring system for boats up to 24ft",
-    category: "boat-accessories",
-    specs: {
-      anchor: "8 lb Galvanized",
-      chain: "6ft x 1/4 inch",
-      rope: "100ft Marine Rope",
-      storage: "Anchor Bag Included"
     }
   },
 
@@ -244,62 +174,6 @@ export default function MarineWorldPage() {  // Simple function name
       quantity: "Set of 6"
     }
   },
-  {
-    id: 17,
-    name: "Deep Sea Jig Collection",
-    price: 48.00,
-    image: "/images/Products/fishing/jig-assist-hooks.png",
-    description: "Heavy jigs for deep water fishing",
-    category: "fishing-lures",
-    specs: {
-      weight: "4oz - 8oz",
-      type: "Vertical Jigs",
-      colors: "Glow, Silver, Blue",
-      quantity: "Set of 4"
-    }
-  },
-  {
-    id: 18,
-    name: "Mustad Saltwater Lure Collection",
-    price: 55.00,
-    image: "/images/Products/fishing/mustad-lures.png",
-    description: "Premium Mustad fishing lures designed for saltwater",
-    category: "fishing-lures",
-    specs: {
-      type: "Jigs and Spoons",
-      weight: "1oz - 3oz Assorted",
-      colors: "Vibrant Multicolor",
-      quantity: "Set of 5"
-    }
-  },
-  {
-    id: 19,
-    name: "Topwater Popper Set",
-    price: 38.00,
-    image: "/images/Products/fishing/mustad-lures.png",
-    description: "Surface lures for explosive strikes",
-    category: "fishing-lures",
-    specs: {
-      type: "Poppers",
-      action: "Topwater",
-      sizes: "3-5 inches",
-      quantity: "Set of 4"
-    }
-  },
-  {
-    id: 20,
-    name: "Soft Plastic Bait Kit",
-    price: 29.00,
-    image: "/images/Products/fishing/mustad-lures.png",
-    description: "Assorted soft plastic baits for all conditions",
-    category: "fishing-lures",
-    specs: {
-      type: "Soft Plastics",
-      styles: "Shrimp, Minnow, Worm",
-      colors: "Natural Colors",
-      quantity: "50 Piece Set"
-    }
-  }
 ];
 
   const translations = {
