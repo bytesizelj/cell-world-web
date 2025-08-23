@@ -144,7 +144,7 @@ export default function PhonesCategory() {
       id: 'ipad-9th-gen', 
       name: 'iPad 9th Generation', 
       image: '/images/Products/phones/cropped/ipad-9th-gen.png',
-      price: 1799.00,
+      price: 1500.00,
       category: 'tablet',
       availability: 'Low Stock',
       color: 'Space Grey - 1 left',
