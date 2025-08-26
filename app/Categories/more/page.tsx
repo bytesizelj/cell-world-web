@@ -264,7 +264,7 @@ export default function MoreCategory() {
 {
   id: 'yesido-c267',
   name: 'Yesido Car Holder C267',
-  image: '/images/Products/more/yesido-car-holder-C267.png',
+  image: '/images/Products/more/yesido-car-holder-c267.png',
   price: 50.00,
   category: 'car-accessories',
   availability: 'In Stock',
