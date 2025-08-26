@@ -61,7 +61,7 @@ export default function MoreCategory() {
 {
   id: 'universal-smart-remote',
   name: 'Universal Smart TV Remote',
-  image: '/images/Products/more/universal-smart-tv-remote.png',
+  image: '/images/Products/more/universal-remote.png',
   price: 65.00,
   category: 'tv-accessories',
   availability: 'Low Stock',
