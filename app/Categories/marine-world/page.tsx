@@ -100,25 +100,12 @@ export default function MarineWorldPage() {  // Simple function name
 
 // FISHING GEAR PRODUCTS
   {
-    id: 3,
-    name: "Fishing Reel Spinner",
-    price: 120.00,
-    image: "/images/Products/fishing/mustad-lures.png",
-    description: "High-quality spinning reel with smooth drag system",
-    category: "fishing-gear",
-    specs: {
-      bearings: "7+1 Ball Bearings",
-      ratio: "5.2:1 Gear Ratio",
-      capacity: "270 yards",
-      drag: "20 lbs Max Drag"
-    }
-  },
-  {
     id: 5,
     name: "Jig Assist Hooks - 5X Strong",
     price: 25.00,
     image: "/images/Products/fishing/jig-assist-hooks.png",
     description: "Heavy-duty 5X strong assist hooks with durable braided cord",
+    priceRange: '$6 up',
     category: "fishing-gear",
     specs: {
       strength: "5X Strong",
@@ -130,7 +117,7 @@ export default function MarineWorldPage() {  // Simple function name
   {
     id: 6,
     name: "Mustad UltraPoint Big Gun Hooks",
-    price: 35.00,
+    price: 15.00,
     image: "/images/Products/fishing/mustad-big-gun-hooks.png",
     description: "Premium Mustad hooks with UltraPoint technology",
     category: "fishing-gear",
@@ -145,24 +132,25 @@ export default function MarineWorldPage() {  // Simple function name
 
   // BOAT PARTS PRODUCTS
   {
-    id: 8,
-    name: "Marine Propeller - 3 Blade",
-    price: 285.00,
-    image: "/images/Products/fishing/rod-guides.png",
-    description: "High-performance aluminum propeller for outboard motors",
-    category: "boat-parts",
-    specs: {
-      diameter: "13.25 inches",
-      pitch: "17 inches",
-      material: "Aluminum",
-      blades: "3 Blades"
+  id: 8,
+  name: "Boat Trailer Rollers (Bow & Keel)",
+  price: 85.00,
+  image: "/images/Products/marine/boat-trailer-rollers.png", // update to your actual filename
+  description: "Durable boat trailer rollers for bow and keel support. Multiple colors and sizes available.",
+  category: "boat-parts",  
+  specs: {
+    type: "Bow & Keel Rollers",
+    colors: "Blue, Yellow, Red available",
+    material: "Marine-grade rubber/polymer",
+    sizes: "Various diameters",
+    application: "Boat trailer guide and support"
     }
   },
 
   // FISHING LURES PRODUCTS
   {
     id: 16,
-    name: "Trolling Lure Set - Mahi Special",
+    name: "Fishing Reel Spinner",
     price: 65.00,
     image: "/images/Products/fishing/mustad-lures.png",
     description: "Proven mahi-mahi and dorado trolling lures",
@@ -311,7 +299,7 @@ export default function MarineWorldPage() {  // Simple function name
 <div className="relative z-10 flex justify-center mb-8 px-4">
   <div className="bg-black/50 backdrop-blur-sm rounded-full p-2 flex flex-wrap gap-2 justify-center">
     <span className="text-white px-3 py-2">{t.filterBy}</span>
-    {['all', 'boat-parts', 'boat-accessories', 'fishing-lures', 'fishing-gear'].map((cat) => (
+   {['all', 'boat-parts', 'boat-accessories', 'fishing-lures', 'fishing-gear'].map((cat) => (
             <button
               key={cat}
               onClick={() => setFilterCategory(cat)}

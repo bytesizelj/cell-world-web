@@ -13,373 +13,332 @@ export default function MoreCategory() {
 
   // Complete product catalog - 69 items
   const products = [
-  
-  // Gaming Controllers
+
+// Add these products to your existing products array
+// Make sure to add a comma after your last existing product before pasting these
+
 {
-  id: 'xbox-series-black',
-  name: 'Xbox Controller for Xbox Series X|S',
-  image: '/images/Products/more/xbox-seriesxs.png',
-  price: 350.00,
-  category: 'gaming',
-  availability: 'Limited Stock',
-  color: 'Black - 1 left',
-  specs: {
-    compatibility: 'Xbox Series X|S, Xbox One, Windows, Android & iOS',
-    type: 'Wireless Controller'
-  }
-},
-{
-  id: 'xbox-series-pulsered',
-  name: 'Xbox Controller - Pulse Red',
-  image: '/images/Products/more/xbox-series-pulsered.png',
-  price: 350.00,
-  category: 'gaming',
-  availability: 'Limited Stock',
-  color: 'Pulse Red - 1 left',
-  specs: {
-    compatibility: 'Xbox Series X|S, Xbox One, Windows, Android & iOS',
-    type: 'Wireless Controller',
-    includes: 'AA Batteries'
-  }
-},
-{
-  id: 'ps5-dualsense',
-  name: 'PlayStation 5 DualSense Wireless Controller',
-  image: '/images/Products/more/playstation5-dualsense-controller.png',
-  price: 350.00,
+  id: 'steel-series-stratus',
+  name: 'SteelSeries Stratus+ Wireless Mobile Gaming Controller',
+  image: '/images/Products/more/steel-series-stratus-controller.png',
+  price: 160.00,
   category: 'gaming',
   availability: 'In Stock',
-  color: 'Camouflage (1), Black (2)',
+  color: 'Black - 5 available',
+  specs: {
+    compatibility: 'Android 4+ (wireless), Windows PC (wired)',
+    battery: '90 hours per charge',
+    includes: 'USB-C to USB-A cable & phone holder',
+    type: 'Wireless Mobile Gaming Controller'
+  }
+},
+{
+  id: 'ps4-dualshock',
+  name: 'PlayStation 4 DualShock Wireless Controller',
+  image: '/images/Products/more/sony-play-station-4-dual-shock.png',
+  price: 280.00,
+  category: 'gaming',
+  availability: 'Limited Stock',
+  color: 'Black - 2 left',
   specs: {
     type: 'Wireless Controller',
-    compatibility: 'PlayStation 5'
+    compatibility: 'PlayStation 4'
   }
 },
-
-// Emergency Lights & Radios
 {
-  id: 'ludger-lantern',
-  name: 'LUDGER Power & Light Lantern EL-1830LED',
-  image: '/images/Products/more/ludger-powerlight-lantern.png',
-  price: 125.00,
-  category: 'emergency',
-  availability: 'Low Stock',
-  color: '3 left',
+  id: 'razer-charging-stand',
+  name: 'Razer Legendary Duo Bundle - PS5 Charging Stand',
+  image: '/images/Products/more/razer-quick-charging-stand.png',
+  price: 399.00,
+  category: 'gaming',
+  availability: 'Limited Stock',
+  color: '1 left',
   specs: {
-    power: 'AC 110-220V/60Hz',
-    charging: '20-24 hours charge time',
-    duration: '1 tube: 5hrs, 2 tubes: 2.5hrs, Radio: 18hrs',
-    battery: '4V 4000mAh Lead Acid',
-    features: '360° light, FM scan radio, Overcharge protection'
+    type: 'Quick Charging Stand',
+    compatibility: 'PS5 DualSense Wireless Controller'
   }
 },
 {
-  id: 'ludger-handy-light',
-  name: 'LUDGER Rechargeable Handy Light EL-8003L',
-  image: '/images/Products/more/ludger-rechargeable-light.png',
-  price: 75.00,
-  category: 'emergency',
-  availability: 'Low Stock',
-  color: '5 left',
-  specs: {
-    power: 'AC 110-220V',
-    charging: '20-24 hours charge time',
-    duration: 'Approx. 14 hours',
-    battery: '4V 3.0AH Sealed Lead-Acid'
-  }
-},
-{
-  id: 'ludger-emergency-lantern',
-  name: 'LUDGER Emergency Lantern EL-536USV',
-  image: '/images/Products/more/ludger-power-light-rechargeable-emergency-lantern.png',
-  price: 120.00,
-  category: 'emergency',
+  id: 'universal-smart-remote',
+  name: 'Universal Smart TV Remote',
+  image: '/images/Products/more/universal-smart-tv-remote.png',
+  price: 65.00,
+  category: 'tv-accessories',
   availability: 'Low Stock',
   color: '2 left',
   specs: {
-    power: '110-220V/60Hz',
-    battery: '4V 6Ah sealed lead-acid',
-    charging: '20-24 hours',
-    duration: '8-10hrs strong light, >25hrs weak light',
-    features: '360° light, DC 12V input, USB 5V charger, Solar panel, 36x0.5W LED'
+    function: '4 in 1 (TV, DVD, Blu-Ray & Satellite)',
+    compatibility: 'Universal'
   }
 },
 {
-  id: 'studioz-pkt421',
-  name: 'StudioZ Radio PKT-421-AFB',
-  image: '/images/Products/more/studio-z-radio-pkt-421.png',
+  id: 'lg-smart-remote',
+  name: 'LG Smart TV Remote',
+  image: '/images/Products/more/lg-smart-tv-remote.png',
   price: 40.00,
+  category: 'tv-accessories',
+  availability: 'In Stock',
+  color: '7 left'
+},
+{
+  id: 'vizio-smart-remote',
+  name: 'Vizio Smart TV Remote',
+  image: '/images/Products/more/vizio-smart-tv-remote.png',
+  price: 40.00,
+  category: 'tv-accessories',
+  availability: 'In Stock',
+  color: '12 left'
+},
+{
+  id: 'hisense-smart-remote',
+  name: 'Hisense Smart TV Remote',
+  image: '/images/Products/more/high-sense-smart-tv-remote.png',
+  price: 40.00,
+  category: 'tv-accessories',
+  availability: 'Low Stock',
+  color: '5 left'
+},
+{
+  id: 'samsung-smart-remote',
+  name: 'Samsung Smart TV Remote',
+  image: '/images/Products/more/samsung-smarttvremote.png',
+  price: 40.00,
+  category: 'tv-accessories',
+  availability: 'In Stock',
+  color: '11 left'
+},
+{
+  id: 'roku-tv-remote',
+  name: 'Roku TV Remote',
+  image: '/images/Products/more/roku-tv-remote.png',
+  price: 40.00,
+  category: 'tv-accessories',
+  availability: 'Low Stock',
+  color: '2 left'
+},
+{
+  id: 'firestick-remotes',
+  name: 'Fire Stick Remotes',
+  image: '/images/Products/more/fire-stick-remotes.png',
+  price: 40.00,
+  category: 'tv-accessories',
+  availability: 'In Stock',
+  color: '27 total (8, 8, 11)'
+},
+{
+  id: 'fire-tv-stick-4k',
+  name: 'Fire TV Stick 4K Ultra HD',
+  image: '/images/Products/more/fire-tv-stick-4K-ultra-HD.png',
+  price: 199.00,
+  category: 'tv-accessories',
+  availability: 'Low Stock',
+  color: '3 left',
+  specs: {
+    feature: 'Wi-Fi 6',
+    resolution: '4K Ultra HD'
+  }
+},
+{
+  id: 'nippon-wifi-repeater',
+  name: 'Nippon America Wireless Repeater',
+  image: '/images/Products/more/nippon-america-wireless-repeater.png',
+  price: 135.00,
+  category: 'network',
+  availability: 'Low Stock',
+  color: '4 left',
+  specs: {
+    model: 'IBM-WR400ANT',
+    type: 'Wi-Fi Extender',
+    frequency: '2.412 - 2.4835 GHz',
+    speed: '300mbps'
+  }
+},
+{
+  id: 'ludger-rechargeable-fan',
+  name: 'LUDGER Rechargeable Fan EL-8210F',
+  image: '/images/Products/more/ludger-power-light-rechargeable-fan.png',
+  price: 220.00,
   category: 'emergency',
   availability: 'Low Stock',
-  color: '6 left',
+  color: '4 left',
   specs: {
-    type: 'AM/FM 2 Bands World Receiver'
+    power: '110-240V, 50/60Hz, 17W',
+    battery: '6V 4.5Ah lead acid',
+    features: '10" 2-speed fan, 4 LED lights, Radio',
+    charging: '10-15 hours charge time',
+    runtime: 'High: 3hrs, Low: 4.5hrs, LED: 90hrs, Radio: 15hrs',
+    extras: 'DC Input & USB output'
   }
 },
 {
-  id: 'studioz-pkt523',
-  name: 'StudioZ Radio PKT-523WB',
-  image: '/images/Products/more/studio-z-radio-pkt-523.png',
-  price: 45.00,
-  category: 'emergency',
+  id: 'ludger-battery-charger-100a',
+  name: 'LUDGER Battery Charger LBCG-12-100',
+  image: '/images/Products/more/ledger-power-light-battery-charger.png',
+  price: 600.00,
+  category: 'power',
+  availability: 'Low Stock',
+  color: '2 left',
+  specs: {
+    input: '120V AC / 60Hz',
+    battery: '12V Lead-acid',
+    power: '<330W',
+    modes: '12V/2A, 12V/15A, 12V/100A engine start',
+    features: 'LED display, Regular & AGM settings',
+    weight: '7.3kg (16.1lbs)'
+  }
+},
+{
+  id: 'ludger-battery-charger-6a',
+  name: 'LUDGER Battery Charger LBCG-612-6',
+  image: '/images/Products/more/ledger-power-light-battery-charger-LBCG-612-6.png',
+  price: 375.00,
+  category: 'power',
+  availability: 'Low Stock',
+  color: '2 left',
+  specs: {
+    input: '120V AC / 60Hz',
+    battery: '6/12V Lead-acid',
+    power: '<130W',
+    modes: '12V/2A, 12V/6A, 6V/2A',
+    protection: 'Built-in circuit protection',
+    weight: '2.7kg (5.9lbs)'
+  }
+},
+{
+  id: 'hypergear-powerpack-mini',
+  name: 'HyperGear PowerPack Mini',
+  image: '/images/Products/more/hyper-gear-power-pack-mini.png',
+  price: 99.00,
+  category: 'powerbanks',
+  availability: 'Low Stock',
+  color: '3 left',
+  specs: {
+    capacity: '5000mAh',
+    output: '20W USB-C PD Fast Charge, 18W USB Fast Charge'
+  }
+},
+{
+  id: 'hypergear-clearcharge-xl',
+  name: 'HyperGear ClearCharge XL Power Bank',
+  image: '/images/Products/more/hyper-gear-clear-charge-power-bank.png',
+  price: 180.00,
+  category: 'powerbanks',
+  availability: 'Limited Stock',
+  color: '1 left',
+  specs: {
+    capacity: '20000mAh',
+    battery: '48+ hours extra battery life',
+    charging: 'Charges 3 devices simultaneously',
+    ports: '2 USB Fast Charge, 1 USB-C 20W input/output'
+  }
+},
+{
+  id: 'rca-car-holder',
+  name: 'RCA Car Holder',
+  image: '/images/Products/more/rca-car-holder.png',
+  price: 60.00,
+  category: 'car-accessories',
+  availability: 'Low Stock',
+  color: '2 left',
+  specs: {
+    mount: 'Suction Dashboard & Windshield',
+    features: 'Adjust to any angle, 360° rotation',
+    adjustment: 'Telescopic adjustment'
+  }
+},
+{
+  id: 'hypergear-universal-holder',
+  name: 'HyperGear Universal Phone Holder',
+  image: '/images/Products/more/hypergear-universal-phone-holder.png',
+  price: 80.00,
+  category: 'car-accessories',
+  availability: 'Low Stock',
+  color: '2 left',
+  specs: {
+    mount: 'Suction Dashboard, Vent & Windshield',
+    attachment: 'Easy magnetic attachment',
+    compatibility: 'MagSafe compatible',
+    includes: 'Adapter for non-MagSafe devices'
+  }
+},
+{
+  id: 'yesido-c267',
+  name: 'Yesido Car Holder C267',
+  image: '/images/Products/more/yesido-car-holder-C267.png',
+  price: 50.00,
+  category: 'car-accessories',
   availability: 'In Stock',
   color: '8 left',
   specs: {
-    type: 'AM/FM/WB 3 Bands Receiver'
+    mount: 'Suction cup & windshield',
+    features: 'Press to unlock, Horizontal & vertical',
+    arm: 'Adjustable telescopic arm',
+    suction: 'Vacuum suction cup'
   }
 },
 {
-  id: 'studioz-prt742',
-  name: 'StudioZ Radio PRT-742-WB',
-  image: '/images/Products/more/studio-z-radio-prt-742.png',
-  price: 0.00, // Price not specified
-  category: 'emergency',
-  availability: 'In Stock',
-  specs: {
-    type: 'AM/FM/WB 3 Bands',
-    features: 'High sensitivity receiver',
-    power: 'DC 3V (D Size x2) or AC 110V/60Hz',
-    frequency: 'AM 520-1710 KHz, FM 87-108MHz',
-    output: '300mw'
-  }
-},
-{
-  id: 'audiobox-solar-fan',
-  name: 'AudioBox Solar Rechargeable Emergency Fan + Radio',
-  image: '/images/Products/more/audiobox-solar-rechargeable-emergency-fan-radio.png',
-  price: 75.00,
-  category: 'emergency',
-  availability: 'Low Stock',
-  color: '2 left',
-  specs: {
-    features: 'FM Radio, MP3 Player, Solar Panel, Fan',
-    extras: 'TWS, Rechargeable battery, USB port, TF card slot'
-  }
-},
-
-// Cables & Adapters
-{
-  id: 'generic-micro-usb',
-  name: 'Generic Micro to USB Cable',
-  image: '/images/Products/more/generic-micro-usb-cable .png',
-  price: 40.00,
-  category: 'cables',
-  availability: 'In Stock',
-  specs: {
-    type: 'Fast Charge Cable'
-  }
-},
-{
-  id: 'generic-type-c',
-  name: 'Generic Type-C to Type-C Cable',
-  image: '/images/Products/more/generic-type-c-cable.png',
-  price: 40.00,
-  category: 'cables',
-  availability: 'In Stock',
-  specs: {
-    type: 'Fast Charge Cable'
-  }
-},
-{
-  id: 'generic-type-c-lightning',
-  name: 'Generic Type-C to Lightning Cable',
-  image: '/images/Products/more/generic-type-c-2-lightning.png',
-  price: 40.00,
-  category: 'cables',
-  availability: 'In Stock',
-  specs: {
-    type: 'Charging Cable'
-  }
-},
-{
-  id: 'generic-3in1',
-  name: 'Generic Universal 3-in-1 Braided USB Cable',
-  image: '/images/Products/more/generic-universal-charge.png',
-  price: 40.00,
-  category: 'cables',
-  availability: 'In Stock',
-  specs: {
-    type: 'USB-C, Lightning, Micro USB',
-    length: '6ft'
-  }
-},
-{
-  id: 'yesido-4in1',
-  name: 'YESIDO 4-in-1 Cable CA200',
-  image: '/images/Products/more/yesido-4in1-cable.png',
-  price: 50.00,
-  category: 'cables',
-  availability: 'In Stock',
-  color: '20 available',
-  specs: {
-    type: 'USB-A/Type-C to USB-C/Lightning',
-    charging: '3A Fast Charge'
-  }
-},
-{
-  id: '3in1-hdtv',
-  name: '3-in-1 HDTV Cable',
-  image: '/images/Products/more/3-in-1-hdtv-cable.png',
-  price: 95.00,
-  category: 'cables',
-  availability: 'Low Stock',
-  color: '10 left',
-  specs: {
-    type: 'Lightning, Micro USB & USB Connector',
-    compatibility: 'iOS and Android',
-    features: 'Stream to TV, Monitor, Projector'
-  }
-},
-{
-  id: '3in1-cable',
-  name: '3-in-1 Phone to HDTV Cable',
-  image: '/images/Products/more/3-in-1-cable.png',
-  price: 100.00,
-  category: 'cables',
-  availability: 'Low Stock',
-  color: '3 left',
-  specs: {
-    type: 'Lightning, Micro & Type-C'
-  }
-},
-
-// Samsung Accessories
-{
-  id: 'samsung-micro-usb',
-  name: 'Samsung Micro-USB Charging Cable',
-  image: '/images/Products/more/samsung-micro-usb.png',
-  price: 75.00,
-  category: 'samsung',
-  availability: 'In Stock',
-  specs: {
-    type: 'Original Samsung Cable'
-  }
-},
-{
-  id: 'samsung-galaxy-watch-charger',
-  name: 'Samsung Galaxy Watch Fast Wireless Charger',
-  image: '/images/Products/more/samsung-galaxy-watch.png',
-  price: 120.00,
-  category: 'samsung',
-  availability: 'In Stock',
-  specs: {
-    compatibility: 'Galaxy Watch Active, Active 2, Watch 3-5 series & later'
-  }
-},
-{
-  id: 'samsung-usb-a-charger',
-  name: 'Samsung USB-A Brick',
-  image: '/images/Products/more/samsung-usb-a-charger.png',
+  id: 'yesido-c173',
+  name: 'Yesido Car Holder C173',
+  image: '/images/Products/more/yesido-car-holder-c173.png',
   price: 60.00,
-  category: 'samsung',
+  category: 'car-accessories',
   availability: 'In Stock',
+  color: '9 left',
   specs: {
-    type: 'Fast Charge Adapter'
+    mount: 'Suction cup & windshield',
+    features: 'Horizontal & vertical',
+    arm: 'Adjustable telescopic arm',
+    rotation: '360° rotation suction cup'
   }
 },
 {
-  id: 'samsung-type-c-usb',
-  name: 'Samsung Type-C to USB Cable',
-  image: '/images/Products/more/samsung-type-c-usb-cable.png',
-  price: 75.00,
-  category: 'samsung',
-  availability: 'In Stock'
-},
-{
-  id: 'samsung-wireless-charger',
-  name: 'Samsung Super Fast Wireless Charger',
-  image: '/images/Products/more/samsung-super-fast-wireless-charger.png',
-  price: 220.00,
-  category: 'samsung',
-  availability: 'Low Stock',
-  color: '2 left',
-  specs: {
-    power: '15W',
-    includes: 'Power Adapter',
-    features: 'Also charges Galaxy Buds'
-  }
-},
-{
-  id: 'samsung-25w-type-c',
-  name: 'Samsung 25W Type-C Power Adapter',
-  image: '/images/Products/more/samsung-25w-type-c-power-adapter.png',
-  price: 75.00,
-  category: 'samsung',
-  availability: 'In Stock'
-},
-{
-  id: 'samsung-type-c-akg',
-  name: 'Samsung Type-C AKG Earphone',
-  image: '/images/Products/more/samsung-type-c-akg-earphone.png',
-  price: 80.00,
-  category: 'samsung',
-  availability: 'In Stock'
-},
-{
-  id: 'samsung-25w-adapter-cable',
-  name: 'Samsung 25W Power Adapter and Charging Cable',
-  image: '/images/Products/more/samsung-25w-power-adapter.png',
-  price: 150.00,
-  category: 'samsung',
-  availability: 'In Stock'
-},
-{
-  id: 'samsung-type-c-c',
-  name: 'Samsung Type C-C Cable',
-  image: '/images/Products/more/samsung-type-c-c-cable.png',
-  price: 75.00,
-  category: 'samsung',
+  id: 'yesido-c261',
+  name: 'Yesido Car Holder C261',
+  image: '/images/Products/more/yesido-car-holder-c261.png',
+  price: 60.00,
+  category: 'car-accessories',
   availability: 'In Stock',
+  color: '6 left',
   specs: {
-    length: '1m'
-  }
-},
-
-// Power & Accessories
-{
-  id: '65w-pd-adapter',
-  name: '65W PD Power Adapter Trio',
-  image: '/images/Products/more/65w-pd-power-adapter.png',
-  price: 200.00,
-  category: 'power',
-  availability: 'In Stock',
-  specs: {
-    ports: 'USB-C x2 (65W & 25W), USB-A (15W)'
+    features: 'One hand operation',
+    mount: 'Suction cup & windshield',
+    orientation: 'Horizontal & vertical',
+    arm: 'Adjustable telescopic arm',
+    rotation: '360° rotation'
   }
 },
 {
-  id: 'airbro-fan-powerbank',
-  name: 'Airbro ONE Portable Fan with Powerbank',
-  image: '/images/Products/more/airbro-one-portable-fan-powerbank.png',
-  price: 140.00,
-  category: 'power',
-  availability: 'Low Stock',
-  color: '3 left',
+  id: 'skullcandy-barrel',
+  name: 'Skull Candy Barrel Speaker',
+  image: '/images/Products/more/skull-candy-barrel-speaker.png',
+  price: 999.00,
+  category: 'speakers',
+  availability: 'Limited Stock',
+  color: 'Blue & Black (1), Orange & Black (1)',
   specs: {
-    battery: '2600mAh lithium-ion',
-    duration: '3hrs high speed, 9hrs low speed',
-    features: 'Detachable powerbank, 6 blade design, 5 speed settings'
+    battery: '12 hours battery life',
+    waterproof: 'IPX5 water resistant',
+    features: 'Skull Candy multi-link',
+    lighting: 'LED light show'
   }
 },
 {
-  id: 'fanttik-x8-apex',
-  name: 'Fanttik X8 Apex Air Inflator',
-  image: '/images/Products/more/fanttik-x8-apex-air-inflator.png',
-  price: 450.00,
-  category: 'power',
-  availability: 'Low Stock',
-  color: '2 left',
+  id: 'skullcandy-stomp',
+  name: 'Skull Candy STOMP',
+  image: '/images/Products/more/skull-candy-stomp.png',
+  price: 950.00,
+  category: 'speakers',
+  availability: 'Limited Stock',
+  color: '1 left',
   specs: {
-    battery: '11.1V/28.86Wh',
-    pressure: '3-150 PSI',
-    noise: '<80db',
-    ports: 'USB-C Input (5V/3A), USB-A Output (5V/2A)',
-    weight: '1028g'
+    battery: '12 hours battery life',
+    waterproof: 'IPX7 Waterproof',
+    features: 'Skull Candy multi-link',
+    lighting: 'LED light show'
   }
-}
-
+},
  // JBL SPEAKERS (1-10)
-    ,{
+    {
       id: 1,
       name: "JBL GO 4 Portable Speaker - Navy Blue",
       price: 220.00,
@@ -665,77 +624,86 @@ export default function MoreCategory() {
     }
   ];
 
-  const translations = {
-    en: {
-      title: "Electronics & Accessories",
-      subtitle: "Premium Audio, Power Solutions & More",
-      backToHome: "Back to Home",
-      viewDetails: "View Details",
-      specifications: "Specifications",
-      availability: "Availability",
-      callToOrder: "Call to Order",
-      whatsappOrder: "WhatsApp Order",
-      closeModal: "Close",
-      inStock: "In Stock",
-      all: "All Products",
-      speakers: "Speakers",
-      powerbanks: "Power Banks",
-      earbuds: "Earbuds",
-      headphones: "Headphones",
-      filterBy: "Filter by:",
-      gaming: "Gaming",
-      emergency: "Emergency",
-      cables: "Cables",
-      samsung: "Samsung",
-      power: "Power"
-    },
-    fr: {
-      title: "Électronique et Accessoires",
-      subtitle: "Audio Premium, Solutions d'Alimentation et Plus",
-      backToHome: "Retour à l'Accueil",
-      viewDetails: "Voir Détails",
-      specifications: "Spécifications",
-      availability: "Disponibilité",
-      callToOrder: "Appeler pour Commander",
-      whatsappOrder: "Commander via WhatsApp",
-      closeModal: "Fermer",
-      inStock: "En Stock",
-      all: "Tous les Produits",
-      speakers: "Haut-parleurs",
-      powerbanks: "Batteries Externes",
-      earbuds: "Écouteurs",
-      headphones: "Casques",
-      filterBy: "Filtrer par:",
-      gaming: "Jeux",
-      emergency: "Urgence",
-      cables: "Câbles",
-      samsung: "Samsung",
-      power: "Alimentation"
-    },
-    es: {
-      title: "Electrónica y Accesorios",
-      subtitle: "Audio Premium, Soluciones de Energía y Más",
-      backToHome: "Volver al Inicio",
-      viewDetails: "Ver Detalles",
-      specifications: "Especificaciones",
-      availability: "Disponibilidad",
-      callToOrder: "Llamar para Ordenar",
-      whatsappOrder: "Ordenar por WhatsApp",
-      closeModal: "Cerrar",
-      inStock: "En Stock",
-      all: "Todos los Productos",
-      speakers: "Altavoces",
-      powerbanks: "Bancos de Energía",
-      earbuds: "Auriculares",
-      headphones: "Audífonos",
-      filterBy: "Filtrar por:",
-      gaming: "Juegos",
-      emergency: "Emergencia",
-      cables: "Cables",
-      samsung: "Samsung",
-      power: "Energía"
-    }
-  };
+const translations = {
+  en: {
+    title: "Electronics & Accessories",
+    subtitle: "Premium Audio, Power Solutions & More",
+    backToHome: "Back to Home",
+    viewDetails: "View Details",
+    specifications: "Specifications",
+    availability: "Availability",
+    callToOrder: "Call to Order",
+    whatsappOrder: "WhatsApp Order",
+    closeModal: "Close",
+    inStock: "In Stock",
+    all: "All Products",
+    speakers: "Speakers",
+    powerbanks: "Power Banks",
+    earbuds: "Earbuds",
+    headphones: "Headphones",
+    filterBy: "Filter by:",
+    gaming: "Gaming",
+    emergency: "Emergency",
+    cables: "Cables",
+    samsung: "Samsung",
+    power: "Power",
+    "tv-accessories": "TV & Streaming",
+    "network": "Network",
+    "car-accessories": "Car Accessories"
+  },
+  fr: {
+    title: "Électronique et Accessoires",
+    subtitle: "Audio Premium, Solutions d'Alimentation et Plus",
+    backToHome: "Retour à l'Accueil",
+    viewDetails: "Voir Détails",
+    specifications: "Spécifications",
+    availability: "Disponibilité",
+    callToOrder: "Appeler pour Commander",
+    whatsappOrder: "Commander via WhatsApp",
+    closeModal: "Fermer",
+    inStock: "En Stock",
+    all: "Tous les Produits",
+    speakers: "Haut-parleurs",
+    powerbanks: "Batteries Portables",
+    earbuds: "Écouteurs",
+    headphones: "Casques",
+    filterBy: "Filtrer par:",
+    gaming: "Jeux",
+    emergency: "Urgence",
+    cables: "Câbles",
+    samsung: "Samsung",
+    power: "Alimentation",
+    "tv-accessories": "TV et Streaming",
+    "network": "Réseau",
+    "car-accessories": "Accessoires Auto"
+  },
+  es: {
+    title: "Electrónica y Accesorios",
+    subtitle: "Audio Premium, Soluciones de Energía y Más",
+    backToHome: "Volver al Inicio",
+    viewDetails: "Ver Detalles",
+    specifications: "Especificaciones",
+    availability: "Disponibilidad",
+    callToOrder: "Llamar para Ordenar",
+    whatsappOrder: "Ordenar por WhatsApp",
+    closeModal: "Cerrar",
+    inStock: "En Stock",
+    all: "Todos los Productos",
+    speakers: "Altavoces",
+    powerbanks: "Baterías Portátiles",
+    earbuds: "Auriculares",
+    headphones: "Audífonos",
+    filterBy: "Filtrar por:",
+    gaming: "Juegos",
+    emergency: "Emergencia",
+    cables: "Cables",
+    samsung: "Samsung",
+    power: "Energía",
+    "tv-accessories": "TV y Streaming",
+    "network": "Red",
+    "car-accessories": "Accesorios para Auto"
+  }
+};
 
   const t = translations[language as keyof typeof translations];
 
@@ -819,7 +787,7 @@ export default function MoreCategory() {
       <div className="relative z-10 flex justify-center mb-8 px-4">
         <div className="bg-black/50 backdrop-blur-sm rounded-full p-2 flex gap-2 flex-wrap justify-center">
           <span className="text-white px-3 py-2">{t.filterBy}</span>
-          {['all', 'gaming', 'emergency', 'cables', 'samsung', 'power'].map((cat) => (
+          {['all', 'speakers', 'powerbanks', 'earbuds', 'headphones', 'gaming', 'emergency', 'cables', 'samsung', 'power', 'tv-accessories', 'network', 'car-accessories'].map((cat) => (
             <button
               key={cat}
               onClick={() => setFilterCategory(cat)}
