@@ -117,9 +117,10 @@ export default function MarineWorldPage() {  // Simple function name
   {
     id: 6,
     name: "Mustad UltraPoint Big Gun Hooks",
-    price: 15.00,
+    price: 10.00,
     image: "/images/Products/fishing/mustad-big-gun-hooks.png",
     description: "Premium Mustad hooks with UltraPoint technology",
+    priceRange: '$6 up',
     category: "fishing-gear",
     specs: {
       size: "8/0",
@@ -131,23 +132,43 @@ export default function MarineWorldPage() {  // Simple function name
 
 
   // BOAT PARTS PRODUCTS
+
+{
+  id: 'yamaha-power-head-gasket',
+  name: 'Yamaha Power Head Gasket',
+  image: '/images/Products/marine/yamaha-power-head-gasket.png',
+  price: 450.00, 
+  category: 'boat-parts',
+  availability: 'In Stock',
+  description: 'Premium quality replacement power head gasket for Yamaha outboard motors. Essential for maintaining compression and preventing water/oil mixing in the engine block.',
+  specs: {
+    type: 'Power Head Gasket Set',
+    compatibility: 'Yamaha Outboard Motors',
+    material: 'Marine-grade composite material',
+    includes: 'Complete gasket set with seals',
+    application: 'Cylinder head to engine block seal'
+  }
+ },
+
+    
+ // FISHING LURES PRODUCTS
+
   {
   id: 8,
-  name: "Boat Trailer Rollers (Bow & Keel)",
-  price: 85.00,
-  image: "/images/Products/marine/boat-trailer-rollers.png", // update to your actual filename
-  description: "Durable boat trailer rollers for bow and keel support. Multiple colors and sizes available.",
-  category: "boat-parts",  
+  name: "Fishing Reels YoYo",
+  price: 6.00,
+  image: "/images/Products/marine/fishing-reels-yoyo.png", // update to your actual filename
+  description: "Durable fishing reels yoyo. Multiple colors and sizes available.",
+  priceRange: '$6 up',
+  category: "fishing-lures",  
   specs: {
-    type: "Bow & Keel Rollers",
+    type: "Fishing Reels YoYo",
     colors: "Blue, Yellow, Red available",
     material: "Marine-grade rubber/polymer",
     sizes: "Various diameters",
-    application: "Boat trailer guide and support"
+    application: "Fishing Reels Yoyo guide and support"
     }
-  },
-
-  // FISHING LURES PRODUCTS
+   },
   {
     id: 16,
     name: "Fishing Reel Spinner",
