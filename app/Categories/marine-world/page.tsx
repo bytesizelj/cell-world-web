@@ -135,7 +135,7 @@ export default function MarineWorldPage() {  // Simple function name
 
 {
   id: 'yamaha-power-head-gasket',
-  name: 'Yamaha Power Head Gasket',
+  name: 'Yamaha Power Head Gasket Kit',
   image: '/images/Products/marine/yamaha-power-head-gasket.png',
   price: 450.00, 
   category: 'boat-parts',
