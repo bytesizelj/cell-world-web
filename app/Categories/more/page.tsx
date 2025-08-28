@@ -205,6 +205,270 @@ export default function MoreCategory() {
   }
 },
 {
+  id: 'ludger-rechargeable-handy-light-7005',
+  name: 'LUDGER Rechargeable Handy Light EL-7005L',
+  image: '/images/Products/more/ludger-rechargeable-handy-light.png',
+  price: 50.00,
+  category: 'emergency',
+  availability: 'Low Stock',
+  color: '4 left',
+  specs: {
+    power: 'AC 110-220V',
+    charging: '20-24 hours charge time',
+    duration: 'Approx. 4 hours',
+    battery: '4V 0.4AH Sealed Lead-Acid'
+  }
+},
+{
+  id: 'ludger-lantern-cream-1830',
+  name: 'LUDGER Lantern EL-1830LED (Cream)',
+  image: '/images/Products/more/ludger-rechargeable-lantern-cream.png',
+  price: 125.00,
+  category: 'emergency',
+  availability: 'Low Stock',
+  color: '3 left',
+  specs: {
+    power: 'AC 110-220V/60Hz',
+    charging: '20-24 hours charge time',
+    duration: '1 tube: 5hrs, 2 tubes: 2.5hrs, Radio: 18hrs',
+    battery: '4V 4000mAh Lead Acid',
+    features: '360° light, FM scan radio, Overcharge protection'
+  }
+},
+{
+  id: 'ludger-lantern-blue-536',
+  name: 'LUDGER Emergency Lantern EL-536USV (Blue)',
+  image: '/images/Products/more/ludger-rechargeable-lantern-blue.png',
+  price: 120.00,
+  category: 'emergency',
+  availability: 'Low Stock',
+  color: '2 left',
+  specs: {
+    power: '110-220V/60Hz',
+    battery: '4V 6Ah sealed lead-acid',
+    charging: '20-24 hours',
+    duration: '8-10hrs strong light, >25hrs weak light',
+    features: '360° light, DC 12V input, USB 5V charger, Solar panel, 36x0.5W LED'
+  }
+},
+{
+  id: 'airbro-portable-fan-2600',
+  name: 'Airbro ONE Portable Fan with Powerbank',
+  image: '/images/Products/more/airbro-one-portable-fan-powerbank.png',
+  price: 140.00,
+  category: 'power',
+  availability: 'Low Stock',
+  color: '3 left',
+  specs: {
+    battery: '2600mAh lithium-ion',
+    duration: '3hrs high speed, 9hrs low speed',
+    features: 'Detachable powerbank, 6 blade design',
+    settings: '5 speed settings, charging dock'
+  }
+},
+{
+  id: 'samsung-type-cc-cable',
+  name: 'Samsung Type C-C Cable',
+  image: '/images/Products/more/samsung-type-c-c-cable.png',
+  price: 75.00,
+  category: 'samsung',
+  availability: 'In Stock',
+  specs: {
+    length: '1m'
+  }
+},
+{
+  id: 'samsung-25w-adapter-cable-bundle',
+  name: 'Samsung 25W Power Adapter and Charging Cable',
+  image: '/images/Products/more/samsung-25w-power-adapter.png',
+  price: 150.00,
+  category: 'samsung',
+  availability: 'In Stock'
+},
+{
+  id: '65w-pd-power-trio',
+  name: '65W PD Power Adapter Trio',
+  image: '/images/Products/more/65w-pd-power-adapter.png',
+  price: 200.00,
+  category: 'power',
+  availability: 'In Stock',
+  specs: {
+  ports: 'USB-C x2 (65W & 25W), USB-A (15W)'
+  }
+},
+{
+  id: 'samsung-25w-type-c-adapter',
+  name: 'Samsung 25W Type-C Power Adapter',
+  image: '/images/Products/more/samsung-25w-type-c-power-adapter.png',
+  price: 75.00,
+  category: 'samsung',
+  availability: 'In Stock'
+},
+{
+  id: 'samsung-galaxy-watch-7',
+  name: 'Samsung Galaxy Watch 7',
+  image: '/images/Products/more/samsung-galaxy-watch.png',
+  price: 1100.00,
+  category: 'samsung',
+  availability: 'Limited Stock',
+  color: '1 left',
+  specs: {
+    connectivity: 'Bluetooth, Wi-Fi & GPS',
+    compatibility: 'Android 11.0+ with 1.5GB+ memory'
+  }
+},
+{
+  id: 'samsung-wireless-charger-15w',
+  name: 'Samsung Super Fast Wireless Charger',
+  image: '/images/Products/more/samsung-super-fast-wireless-charger.png',
+  price: 220.00,
+  category: 'samsung',
+  availability: 'Low Stock',
+  color: '2 left',
+  specs: {
+    power: '15W',
+    includes: 'Power Adapter',
+    features: 'Also charges Galaxy Buds'
+  }
+},
+{
+  id: 'samsung-type-c-usb',
+  name: 'Samsung Type-C to USB Cable',
+  image: '/images/Products/more/samsung-type-c-usb-cable.png',
+  price: 75.00,
+  category: 'samsung',
+  availability: 'In Stock'
+},
+{
+  id: 'samsung-usb-brick',
+  name: 'Samsung USB-A Brick',
+  image: '/images/Products/more/samsung-usb-a-charger.png',
+  price: 60.00,
+  category: 'samsung',
+  availability: 'In Stock',
+  specs: {
+    type: 'Fast Charge Adapter'
+  }
+},
+{
+  id: 'samsung-micro-cable',
+  name: 'Samsung Micro-USB Charging Cable',
+  image: '/images/Products/more/samsung-micro-usb.png',
+  price: 75.00,
+  category: 'samsung',
+  availability: 'In Stock'
+},
+{
+  id: 'generic-type-c-lightning',
+  name: 'Generic Type-C to Lightning Cable',
+  image: '/images/Products/more/generic-type-c-2-lightning.png',
+  price: 40.00,
+  category: 'cables',
+  availability: 'In Stock'
+},
+{
+  id: '3in1-hdtv-cable',
+  name: '3-in-1 Phone to HDTV Cable',
+  image: '/images/Products/more/3-in-1-cable.png',
+  price: 100.00,
+  category: 'cables',
+  availability: 'Low Stock',
+  color: '3 left',
+  specs: {
+    type: 'Lightning, Micro & Type-C'
+  }
+},
+{
+  id: '3in1-hdtv-streaming',
+  name: '3-in-1 HDTV Streaming Cable',
+  image: '/images/Products/more/3-in-1-hdtv-cable.png',
+  price: 95.00,
+  category: 'cables',
+  availability: 'Low Stock',
+  color: '10 left',
+  specs: {
+    type: 'Lightning, Micro USB & USB Connector',
+    compatibility: 'iOS and Android',
+    features: 'Stream to TV, Monitor, Projector'
+  }
+},
+{
+  id: 'yesido-4in1-ca200',
+  name: 'YESIDO 4-in-1 Cable CA200',
+  image: '/images/Products/more/yesido-4in1-cable.png',
+  price: 50.00,
+  category: 'cables',
+  availability: 'In Stock',
+  color: '20 available',
+  specs: {
+    type: 'USB-A/Type-C to USB-C/Lightning',
+    charging: '3A Fast Charge'
+  }
+},
+{
+  id: 'generic-type-c',
+  name: 'Generic Type-C to Type-C Cable',
+  image: '/images/Products/more/generic-type-c-cable.png',
+  price: 40.00,
+  category: 'cables',
+  availability: 'In Stock',
+  specs: {
+    type: 'Fast Charge Cable'
+  }
+},
+{
+  id: 'generic-micro-usb',
+  name: 'Generic Micro to USB Cable',
+  image: '/images/Products/more/generic-micro-usb.png',
+  price: 40.00,
+  category: 'cables',
+  availability: 'In Stock',
+  specs: {
+    type: 'Fast Charge Cable'
+  }
+},
+{
+  id: 'ps5-controller-camo',
+  name: 'PlayStation 5 DualSense Controller',
+  image: '/images/Products/more/playstation5-dualsense-controller.png',
+  price: 350.00,
+  category: 'gaming',
+  availability: 'In Stock',
+  color: 'Camouflage (1), Black (2)',
+  specs: {
+    type: 'Wireless Controller',
+    compatibility: 'PlayStation 5'
+  }
+},
+{
+  id: 'xbox-controller-pulse',
+  name: 'Xbox Controller - Pulse Red',
+  image: '/images/Products/more/xbox-series-pulsered.png',
+  price: 350.00,
+  category: 'gaming',
+  availability: 'Limited Stock',
+  color: 'Pulse Red - 1 left',
+  specs: {
+    compatibility: 'Xbox Series X|S, Xbox One, Windows, Android & iOS',
+    type: 'Wireless Controller',
+    includes: 'AA Batteries'
+  }
+},
+{
+  id: 'xbox-controller-black',
+  name: 'Xbox Controller for Xbox Series X|S',
+  image: '/images/Products/more/xbox-seriesxs.png',
+  price: 350.00,
+  category: 'gaming',
+  availability: 'Limited Stock',
+  color: 'Black - 1 left',
+  specs: {
+    compatibility: 'Xbox Series X|S, Xbox One, Windows, Android & iOS',
+    type: 'Wireless Controller'
+  }
+},
+
+{
   id: 'hypergear-powerpack-mini',
   name: 'HyperGear PowerPack Mini',
   image: '/images/Products/more/hyper-gear-power-pack-mini.png',

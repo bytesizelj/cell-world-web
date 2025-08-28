@@ -134,10 +134,62 @@ export default function MarineWorldPage() {  // Simple function name
   // BOAT PARTS PRODUCTS
 
 {
+  id: 'engine-mount',
+  name: 'Engine Mount',
+  image: '/images/Products/marine/engine-mount.png',
+  price: 100.00,
+  priceRange: '$100.00 up',
+  category: 'boat-parts',
+  availability: 'In Stock',
+  description: 'Heavy-duty rubber engine mount damper designed to reduce vibration and noise from outboard motors. Absorbs shock and extends motor life.',
+  specs: {
+    type: 'Engine Mount',
+    material: 'Marine-grade rubber compound',
+    function: 'Vibration dampening & shock absorption',
+    compatibility: 'Universal fit for most outboard motors',
+    benefits: 'Reduces engine noise and hull stress'
+  }
+},
+{
+  id: 'outboard-head-gasket',
+  name: 'Outboard Head Gasket',
+  image: '/images/Products/marine/outboard-head-gasket.png',
+  price: 65.00, 
+  priceRange: '$65.00 up', 
+  category: 'boat-parts',
+  availability: 'In Stock',
+  description: 'Precision-cut outboard head gasket for marine engines. Creates a critical seal between cylinder head and engine block to maintain compression.',
+  specs: {
+    type: 'Outboard Head Gasket',
+    material: 'Multi-layer steel or composite',
+    function: 'Seals combustion chamber',
+    application: 'Marine engine rebuild/repair',
+    importance: 'Prevents coolant/oil mixing and compression loss'
+  }
+},
+{
+  id: 'outboard-gasket-base',
+  name: 'Outboard Base Gasket',
+  image: '/images/Products/marine/outboard-gasket-base.png',
+  price: 25.00, 
+  priceRange: '$25.00 up',
+  category: 'boat-parts',
+  availability: 'In Stock',
+  description: 'Outboard Base Gasket for outboard motor powerhead. Essential seal between engine block and lower unit, preventing water intrusion and maintaining proper compression.',
+  specs: {
+    type: 'Outboard Base Gasket',
+    material: 'High-temperature resistant material',
+    function: 'Seals powerhead to exhaust housing',
+    compatibility: 'Engine-specific sizing required',
+    critical: 'Prevents exhaust leaks and water damage'
+  }
+},
+
+{
   id: 'yamaha-power-head-gasket',
   name: 'Yamaha Power Head Gasket Kit',
   image: '/images/Products/marine/yamaha-power-head-gasket.png',
-  price: 450.00, 
+  price: 450.00,
   category: 'boat-parts',
   availability: 'In Stock',
   description: 'Premium quality replacement power head gasket for Yamaha outboard motors. Essential for maintaining compression and preventing water/oil mixing in the engine block.',
