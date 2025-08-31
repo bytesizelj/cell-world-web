@@ -256,7 +256,7 @@ export default function MoreCategory() {
   name: 'Airbro ONE Portable Fan with Powerbank',
   image: '/images/Products/more/airbro-one-portable-fan-powerbank.png',
   price: 140.00,
-  category: 'power',
+  category: 'powerbanks',
   availability: 'Low Stock',
   color: '3 left',
   specs: {
@@ -290,7 +290,7 @@ export default function MoreCategory() {
   name: '65W PD Power Adapter Trio',
   image: '/images/Products/more/65w-pd-power-adapter.png',
   price: 200.00,
-  category: 'power',
+  category: 'samsung',
   availability: 'In Stock',
   specs: {
   ports: 'USB-C x2 (65W & 25W), USB-A (15W)'
@@ -885,7 +885,366 @@ export default function MoreCategory() {
         controls: "Touch controls",
         colors: "Purple & White options"
       }
-    }
+    },
+    // HEADPHONES - New additions
+  {
+  id: 'motorola-kids-headphones',
+  name: 'Motorola Kids Wireless Headphones',
+  image: '/images/Products/more/motorola-kids-wireless-headphones.png',
+  price: 150.00,
+  category: 'headphones',
+  availability: 'Limited Stock',
+  color: 'Blue - 1 left',
+  specs: {
+    feature: "Kids\' safe volume limit",
+    battery: '24 hours playtime',
+    comfort: 'Soft cushion headband',
+    mic: 'In-line microphone',
+    extra: 'Audio splitter for easy sharing'
+  }
+},
+{
+  id: 'jbl-tune-525',
+  name: 'JBL TUNE 525 Wireless Headphones',
+  image: '/images/Products/more/jbl-tune-525.png',
+  price: 225.00,
+  category: 'headphones',
+  availability: 'Low Stock',
+  color: 'Navy Blue - 2 left',
+  specs: {
+    calls: 'Hands-free calls',
+    connection: 'Multi-point connection',
+    battery: '57 hours battery life',
+    modes: 'Audio video modes',
+    feature: 'Voice aware'
+  }
+},
+{
+  id: 'jbl-tune-520',
+  name: 'JBL TUNE 520 Wireless Headphones',
+  image: '/images/Products/more/jbl-tune-520.png',
+  price: 199.00,
+  category: 'headphones',
+  availability: 'Low Stock',
+  color: 'White - 3 left',
+  specs: {
+    calls: 'Hands-free calls',
+    connection: 'Multi-point connection',
+    feature: 'Voice aware',
+    battery: '57 hours battery life'
+  }
+},
+{
+  id: 'hypergear-vibe-headphones',
+  name: 'HyperGear VIBE Wireless Headphones',
+  image: '/images/Products/more/hypergear-vibe-wireless-headphone.png',
+  price: 90.00,
+  category: 'headphones',
+  availability: 'Low Stock',
+  color: 'White - 2 left',
+  specs: {
+    battery: '10 hours total battery life',
+    fit: 'Noise isolating fit',
+    comfort: 'Adjustable padded headband',
+    cushions: 'Memory foam ear cups',
+    mic: 'Built-in microphone',
+    input: 'Aux input'
+  }
+},
+{
+  id: 'hypergear-2in1-headphones',
+  name: 'HyperGear 2-in-1 Wireless Headphones',
+  image: '/images/Products/more/hypergear-2in1-wireless-headphones.png',
+  price: 110.00,
+  category: 'headphones',
+  availability: 'Low Stock',
+  color: 'White - 2 left',
+  specs: {
+    modes: 'Flip in: Headphone mode | Flip out: Speaker mode',
+    eq: '3 EQ Settings: Classic, Voice Boost, Bass Boost',
+    audio: '4 modes: Bluetooth, 3.5mm aux, Micro SD, FM Radio',
+    features: 'Adjustable headband, rotating ear cups'
+  }
+},
+
+// MOUSE - New category
+{
+  id: 'nippon-usb-mouse',
+  name: 'Nipponamerica USB Mouse',
+  image: '/images/Products/more/nipponamerica-usb-mouse.png',
+  price: 40.00,
+  category: 'mouse',
+  availability: 'In Stock',
+  color: '5 left',
+  specs: {
+    compatibility: 'Windows 95/98/ME/NT/XP/WIN7, MAC OS',
+    connection: 'USB Wired'
+  }
+},
+{
+  id: 'nippon-wireless-mouse',
+  name: 'Nipponamerica Wireless Mouse',
+  image: '/images/Products/more/nipponamerica-wireless-mouse.png',
+  price: 60.00,
+  category: 'mouse',
+  availability: 'In Stock',
+  color: '9 left',
+  specs: {
+    frequency: '2.40GHz ~ 2.483GHz',
+    range: '12 meters',
+    battery: 'AAA x2 batteries (not included)'
+  }
+},
+{
+  id: 'philips-m344-mouse',
+  name: 'Philips M344 Wireless Mouse',
+  image: '/images/Products/more/philips-m344-wireless-mouse.png',
+  price: 75.00,
+  category: 'mouse',
+  availability: 'Low Stock',
+  color: '2 left',
+  specs: {
+    buttons: '3 buttons',
+    frequency: '2.4GHz wireless',
+    sensor: 'Optical sensor',
+    battery: 'AA batteries (not included)'
+  }
+},
+{
+  id: 'philips-m413-mouse',
+  name: 'Philips M413 Wireless Mouse',
+  image: '/images/Products/more/philips-m413-wireless-mouse.png',
+  price: 75.00,
+  category: 'mouse',
+  availability: 'Low Stock',
+  color: '2 left',
+  specs: {
+    buttons: '4 buttons',
+    battery: 'Rechargeable',
+    surface: 'Alloy surface'
+  }
+},
+
+// SPEAKERS - Additional Skull Candy
+{
+  id: 'skullcandy-ounce-red',
+  name: 'Skull Candy Ounce',
+  image: '/images/Products/more/skull-candy-ounce-red.png',
+  price: 160.00,
+  category: 'speakers',
+  availability: 'Limited Stock',
+  color: 'Red - 1 left',
+  specs: {
+    battery: '16 hours battery',
+    waterproof: 'IPX7 waterproof'
+  }
+},
+{
+  id: 'skullcandy-kilo-black',
+  name: 'Skull Candy Kilo',
+  image: '/images/Products/more/skull-candy-kilo-black.png',
+  price: 210.00,
+  category: 'speakers',
+  availability: 'Limited Stock',
+  color: 'Black - 1 left',
+  specs: {
+    battery: '24 hours battery',
+    waterproof: 'IPX7 waterproof'
+  }
+},
+{
+  id: 'skullcandy-terrain-mini',
+  name: 'Skull Candy Terrain Mini',
+  image: '/images/Products/more/skull-candy-terrain-mini.png',
+  price: 230.00,
+  category: 'speakers',
+  availability: 'Limited Stock',
+  color: 'Red - 1 left',
+  specs: {
+    battery: '14 hours battery',
+    waterproof: 'IPX7 waterproof',
+    feature: 'Skull Candy Multi-link'
+  }
+},
+{
+  id: 'skullcandy-terrain-blue',
+  name: 'Skull Candy Terrain',
+  image: '/images/Products/more/skull-candy-terrain-blue.png',
+  price: 330.00,
+  category: 'speakers',
+  availability: 'Low Stock',
+  color: 'Blue - 2 left',
+  specs: {
+    battery: '14 hours battery',
+    waterproof: 'IPX7 waterproof',
+    feature: 'Skull Candy Multi-link'
+  }
+},
+{
+  id: 'skullcandy-terrain-xl',
+  name: 'Skull Candy Terrain XL',
+  image: '/images/Products/more/skull-candy-terrain-xl.png',
+  price: 420.00,
+  category: 'speakers',
+  availability: 'Low Stock',
+  color: 'Blue (2), Red (1)',
+  specs: {
+    battery: '18 hours battery',
+    waterproof: 'IPX7 waterproof',
+    feature: 'Skull Candy Multi-link'
+  }
+},
+{
+  id: 'fugoo-tough-speaker',
+  name: 'Fugoo Tough Bluetooth Speaker',
+  image: '/images/Products/more/fugoo-tough-bluetooth-speaker.png',
+  price: 200.00,
+  category: 'speakers',
+  availability: 'Limited Stock',
+  color: '1 left',
+  specs: {
+    waterproof: 'Waterproof design',
+    battery: '12 hours battery life',
+    sound: '360° sound'
+  }
+},
+
+// STORAGE - New category
+{
+  id: 'sandisk-16gb',
+  name: 'SanDisk Cruzer Blade USB 2.0 - 16GB',
+  image: '/images/Products/more/sandisk-cruzer-blade-usb-2.0-16gb.png',
+  price: 50.00,
+  category: 'storage',
+  availability: 'In Stock',
+  color: '12 left',
+  specs: {
+    capacity: '16GB',
+    interface: 'USB 2.0',
+    type: 'Flash Drive'
+  }
+},
+{
+  id: 'adata-32gb',
+  name: 'ADATA USB 3.2 Flash Drive - 32GB',
+  image: '/images/Products/more/adata-usb-3.2-flash-drive-32gb.png',
+  price: 80.00,
+  category: 'storage',
+  availability: 'In Stock',
+  color: '13 left',
+  specs: {
+    capacity: '32GB',
+    interface: 'USB 3.2',
+    type: 'Flash Drive'
+  }
+},
+{
+  id: 'sandisk-64gb',
+  name: 'SanDisk Cruzer Blade USB 2.0 - 64GB',
+  image: '/images/Products/more/sandisk-cruzer-blade-usb-2.0-64gb.png',
+  price: 100.00,
+  category: 'storage',
+  availability: 'In Stock',
+  color: '16 left',
+  specs: {
+    capacity: '64GB',
+    interface: 'USB 2.0',
+    type: 'Flash Drive'
+  }
+},
+{
+  id: 'sandisk-dual-64gb',
+  name: 'SanDisk Ultra Dual Drive Go USB 3.1 - 64GB',
+  image: '/images/Products/more/sandisk-ultra-dual-drive-go-usb-3.1-4gb.png',
+  price: 100.00,
+  category: 'storage',
+  availability: 'Low Stock',
+  color: '4 left',
+  specs: {
+    capacity: '64GB',
+    interface: 'USB 3.1',
+    type: 'Dual Drive Flash Drive'
+  }
+},
+{
+  id: 'sandisk-128gb',
+  name: 'SanDisk Cruzer Blade USB 2.0 - 128GB',
+  image: '/images/Products/more/sandisk-cruzer-blade-usb-2.0-128gb.png',
+  price: 120.00,
+  category: 'storage',
+  availability: 'In Stock',
+  color: '15 left',
+  specs: {
+    capacity: '128GB',
+    interface: 'USB 2.0',
+    type: 'Flash Drive'
+  }
+},
+{
+  id: 'memory-card-16gb',
+  name: 'SanDisk Ultra Memory Card - 16GB',
+  image: '/images/Products/more/sandisk-ultra-memory-card-16gb.png',
+  price: 50.00,
+  category: 'storage',
+  availability: 'In Stock',
+  specs: {
+    capacity: '16GB',
+    speed: 'Up to 80 MB/s',
+    type: 'Memory Card'
+  }
+},
+{
+  id: 'memory-card-32gb',
+  name: 'ADATA Memory Card - 32GB',
+  image: '/images/Products/more/adata-memory-card-32gb.png',
+  price: 80.00,
+  category: 'storage',
+  availability: 'In Stock',
+  specs: {
+    capacity: '32GB',
+    speed: 'Up to 100 MB/s',
+    type: 'Memory Card'
+  }
+},
+{
+  id: 'memory-card-64gb',
+  name: 'SanDisk Ultra Memory Card - 64GB',
+  image: '/images/Products/more/sandisk-ultra memory-card-64gb.png',
+  price: 100.00,
+  category: 'storage',
+  availability: 'In Stock',
+  specs: {
+    capacity: '64GB',
+    speed: 'Up to 100 MB/s',
+    type: 'Memory Card'
+  }
+},
+{
+  id: 'memory-card-128gb',
+  name: 'SanDisk Ultra Memory Card - 128GB',
+  image: '/images/Products/more/sandisk-ultra-memory-card-128gb.png',
+  price: 120.00,
+  category: 'storage',
+  availability: 'In Stock',
+  specs: {
+    capacity: '128GB',
+    speed: 'Up to 100 MB/s',
+    type: 'Memory Card'
+  }
+},
+{
+  id: 'memory-card-256gb',
+  name: 'SanDisk Ultra Memory Card - 256GB',
+  image: '/images/Products/more/sandisk-ultra-memory-card-256gb.png',
+  price: 160.00,
+  category: 'storage',
+  availability: 'In Stock',
+  specs: {
+    capacity: '256GB',
+    speed: 'Up to 100 MB/s',
+    type: 'Memory Card'
+  }
+},
   ];
 
 const translations = {
@@ -913,7 +1272,9 @@ const translations = {
     power: "Power",
     "tv-accessories": "TV & Streaming",
     "network": "Network",
-    "car-accessories": "Car Accessories"
+    "car-accessories": "Car Accessories",
+    "mouse": "Mouse",
+    "storage": "Storage"
   },
   fr: {
     title: "Électronique et Accessoires",
@@ -939,7 +1300,9 @@ const translations = {
     power: "Alimentation",
     "tv-accessories": "TV et Streaming",
     "network": "Réseau",
-    "car-accessories": "Accessoires Auto"
+    "car-accessories": "Accessoires Auto",
+    "mouse": "Souris",
+    "storage": "Stocrage"
   },
   es: {
     title: "Electrónica y Accesorios",
@@ -965,7 +1328,9 @@ const translations = {
     power: "Energía",
     "tv-accessories": "TV y Streaming",
     "network": "Red",
-    "car-accessories": "Accesorios para Auto"
+    "car-accessories": "Accesorios para Auto",
+    "mouse": "Ratón",
+    "storage": "Almacenamiento"
   }
 };
 
@@ -1051,7 +1416,7 @@ const translations = {
       <div className="relative z-10 flex justify-center mb-8 px-4">
         <div className="bg-black/50 backdrop-blur-sm rounded-full p-2 flex gap-2 flex-wrap justify-center">
           <span className="text-white px-3 py-2">{t.filterBy}</span>
-          {['all', 'speakers', 'powerbanks', 'earbuds', 'headphones', 'gaming', 'emergency', 'cables', 'samsung', 'power', 'tv-accessories', 'network', 'car-accessories'].map((cat) => (
+          {['all', 'speakers', 'powerbanks', 'earbuds', 'headphones', 'gaming', 'emergency', 'cables', 'samsung', 'power', 'tv-accessories', 'network', 'car-accessories', 'mouse', 'storage'].map((cat) => (
             <button
               key={cat}
               onClick={() => setFilterCategory(cat)}
@@ -1201,4 +1566,3 @@ const translations = {
       <Celly />
     </div>
   );
-}
