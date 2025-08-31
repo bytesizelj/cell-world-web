@@ -110,7 +110,7 @@ export default function BoatPartsPage() {
         "Propeller Hubs & Bushings",
         "Prop Nuts & Hardware"
       ],
-      status: "call"
+      status: "in-stock"
     },
     {
       icon: "⛽",
@@ -122,7 +122,7 @@ export default function BoatPartsPage() {
         "Fuel Filters",
         "Tank Sending Units"
       ],
-      status: "call"
+      status: "in-stock"
     },
     {
       icon: "📡",
@@ -158,7 +158,7 @@ export default function BoatPartsPage() {
         "Throttle Controls",
         "Steering Cable Kits"
       ],
-      status: "call"
+      status: "in-stock"
     },
     {
       icon: "💧",
@@ -194,7 +194,7 @@ export default function BoatPartsPage() {
         "Cooling Hoses",
         "Antifreeze & Coolants"
       ],
-      status: "call"
+      status: "in-stock"
     },
     {
       icon: "🔌",
@@ -218,7 +218,7 @@ export default function BoatPartsPage() {
         "Hatches & Ports",
         "Non-Skid Products"
       ],
-      status: "call"
+      status: "in-stock"
     },
     {
       icon: "🚛",
@@ -230,7 +230,7 @@ export default function BoatPartsPage() {
         "Wheel Bearings",
         "Coupler & Jacks"
       ],
-      status: "call"
+      status: "in-stock"
     }
   ];
 
@@ -422,6 +422,12 @@ export default function BoatPartsPage() {
                 <MessageCircle className="w-5 h-5 mr-2" />
                 {t.whatsapp}
               </a>
+              <Link 
+                href="/order"
+                className="bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold px-8 py-3 rounded-full hover:scale-105 transition-transform inline-flex items-center justify-center"
+              >
+                🛒 Order Now
+              </Link>
             </div>
           </div>
         </section>
