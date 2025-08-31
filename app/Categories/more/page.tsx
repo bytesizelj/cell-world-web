@@ -1566,3 +1566,4 @@ const translations = {
       <Celly />
     </div>
   );
+}
