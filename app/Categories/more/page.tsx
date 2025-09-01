@@ -17,6 +17,199 @@ export default function MoreCategory() {
 // Add these products to your existing products array
 // Make sure to add a comma after your last existing product before pasting these
 
+// Add these Apple and accessory products to your existing products array
+
+// APPLE PRODUCTS
+{
+  id: 'apple-type-c-brick',
+  name: 'Apple 20W USB-C Power Adapter',
+  image: '/images/Products/more/apple-type-c-brick.png',
+  price: 85.00,
+  category: 'apple',
+  availability: 'In Stock',
+  specs: {
+    power: '20W Fast Charging',
+    compatibility: 'iPhone 8 and later',
+    type: 'USB-C Power Adapter'
+  }
+},
+
+{
+  id: 'apple-usb-c-cable',
+  name: 'Apple USB-C Cable',
+  image: '/images/Products/more/apple-usb-c-cable.png',
+  price: 75.00,
+  category: 'apple',
+  availability: 'In Stock',
+  specs: {
+    length: '1 meter',
+    type: 'USB-C Charge Cable',
+    compatibility: 'USB-C devices'
+  }
+},
+{
+  id: 'apple-lightning-usb',
+  name: 'Apple Lightning to USB Cable',
+  image: '/images/Products/more/apple-lightning-to-usb.png',
+  price: 80.00,
+  category: 'apple',
+  availability: 'In Stock',
+  specs: {
+    length: '2 meters',
+    type: 'Lightning Cable',
+    compatibility: 'iPhone, iPad, iPod'
+  }
+},
+{
+  id: 'apple-usb-c-earphone',
+  name: 'Apple USB-C EarPods',
+  image: '/images/Products/more/apple-usb-c-earphone.png',
+  price: 120.00,
+  category: 'apple',
+  availability: 'In Stock',
+  specs: {
+    connection: 'USB-C',
+    features: 'Built-in remote',
+    compatibility: 'USB-C devices'
+  }
+},
+{
+  id: 'apple-airpod-3rd',
+  name: 'Apple AirPods 3rd Generation',
+  image: '/images/Products/more/apple-airpod-3rd-gen.png',
+  price: 650.00,
+  category: 'apple',
+  availability: 'Limited Stock',
+  color: '3 left',
+  specs: {
+    generation: '3rd Gen',
+    battery: '6 hours listening time',
+    charging: 'MagSafe & Lightning',
+    features: 'Spatial audio, Adaptive EQ'
+  }
+},
+{
+  id: 'apple-watch-magnetic',
+  name: 'Apple Watch Magnetic Charger to USB',
+  image: '/images/Products/more/apple-watch-magnetic-charger.png',
+  price: 130.00,
+  category: 'apple',
+  availability: 'Limited Stock',
+  specs: {
+    length: '1 meter',
+    type: 'Magnetic Charging Cable',
+    compatibility: 'All Apple Watch models'
+  }
+},
+{
+  id: 'air-tag',
+  name: 'Apple AirTag',
+  image: '/images/Products/more/air-tag-personal-belonging-tracker.png',
+  price: 220.00,
+  category: 'apple',
+  availability: 'Limited Stock',
+  color: '2 left',
+  specs: {
+    feature: 'Precision Finding',
+    battery: 'User-replaceable CR2032',
+    water: 'IP67 water resistant',
+    description: 'Keep track of personal belongings'
+  }
+},
+
+// EARBUDS
+{
+  id: '2nd-gen-earpod',
+  name: '2nd Generation EarPods with ANC',
+  image: '/images/Products/more/2nd-gen-earpod.png',
+  price: 140.00,
+  category: 'earbuds',
+  availability: 'Limited Stock',
+  color: 'White only',
+  specs: {
+    feature: 'ANC Noise Cancelling',
+    generation: '2nd Generation',
+    color: 'White',
+    type: 'Wireless EarPods'
+  }
+},
+{
+  id: 'jbl-vibe-buds',
+  name: 'JBL Vibe Buds',
+  image: '/images/Products/more/jbl-vibe-bud.png',
+  price: 220.00,
+  category: 'earbuds',
+  availability: 'Limited Stock',
+  color: 'Black & White',
+  specs: {
+    battery: 'Up to 32 hours',
+    features: 'Hands-free calls with Voice Aware',
+    waterproof: 'Water and dust resistant',
+    colors: 'Black, White'
+  }
+},
+{
+  id: 'jbl-endurance-race',
+  name: 'JBL Endurance Race',
+  image: '/images/Products/more/jbl-endurance-race.png',
+  price: 250.00,
+  category: 'earbuds',
+  availability: 'In Stock',
+  specs: {
+    type: 'Sport Earbuds',
+    waterproof: 'IPX7 Waterproof',
+    battery: '30 hours total',
+    design: 'Secure wing fit'
+  }
+},
+
+// PHONE CASES
+{
+  id: 'i-like-cases-samsung',
+  name: 'i-Like MagSafe Cases for Samsung',
+  image: '/images/Products/more/i-like-phone-cases.png',
+  price: 80.00,
+  category: 'cases',
+  availability: 'In Stock',
+  specs: {
+    type: 'MagSafe Compatible',
+    models: 'Samsung Galaxy S25 Ultra, S24 Ultra',
+    feature: 'Magnetic attachment',
+    protection: 'Drop protection'
+  }
+},
+{
+  id: 'i-like-cases-iphone',
+  name: 'i-Like MagSafe Cases for iPhone',
+  image: '/images/Products/more/i-like-for-iphones.png',
+  price: 80.00,
+  category: 'cases',
+  availability: 'In Stock',
+  specs: {
+    type: 'MagSafe Compatible',
+    models: 'iPhone 11, 12/12 Pro, 12 Pro Max, 13/14, 13 Pro Max, 14 Pro Max, 15, 15 Pro Max, 16/16+/16 Pro Max',
+    feature: 'Magnetic attachment',
+    protection: 'Drop protection'
+  }
+},
+
+// POWER BANK (add this one too if you haven't already)
+{
+  id: 'pocket-juice-flashlight',
+  name: 'Pocket Juice Power Bank with Flashlight',
+  image: '/images/Products/more/pocket-juice-power-bank-with-flashlight.png', // You'll need to add this image
+  price: 100.00,
+  category: 'powerbanks',
+  availability: 'Limited Stock',
+  color: '1 remaining',
+  specs: {
+    capacity: '2600mAh',
+    charging: 'Up to 1X charge',
+    ports: '1 USB port',
+    feature: 'Weather proof with flashlight'
+  }
+},
+
 {
   id: 'steel-series-stratus',
   name: 'SteelSeries Stratus+ Wireless Mobile Gaming Controller',
@@ -815,7 +1008,7 @@ export default function MoreCategory() {
       }
     },
 
-    // EARBUDS & HEADPHONES (16-20)
+    // EARBUDS
     {
       id: 16,
       name: "Premium Wireless Earbuds Pro with ANC",
@@ -864,7 +1057,7 @@ export default function MoreCategory() {
       price: 150.00,
       image: "/images/Products/more/2000series-headphones-pink.png",
       description: "Stylish wireless headphones with IPX4 water resistance. Perfect for workouts with 18 hours playtime.",
-      category: "headphones",
+      category: "earbuds",
       specs: {
         waterproof: "IPX4 splash & sweat resistant",
         battery: "18 hours play time",
@@ -1274,7 +1467,9 @@ const translations = {
     "network": "Network",
     "car-accessories": "Car Accessories",
     "mouse": "Mouse",
-    "storage": "Storage"
+    "storage": "Storage",
+    apple: "Apple",
+    cases: "Phone Cases",
   },
   fr: {
     title: "Électronique et Accessoires",
@@ -1302,7 +1497,9 @@ const translations = {
     "network": "Réseau",
     "car-accessories": "Accessoires Auto",
     "mouse": "Souris",
-    "storage": "Stocrage"
+    "storage": "Stocrage",
+    apple: "Apple",
+    cases: "Étuis de Téléphone",
   },
   es: {
     title: "Electrónica y Accesorios",
@@ -1330,7 +1527,9 @@ const translations = {
     "network": "Red",
     "car-accessories": "Accesorios para Auto",
     "mouse": "Ratón",
-    "storage": "Almacenamiento"
+    "storage": "Almacenamiento",
+    apple: "Apple",
+    cases: "Fundas de Teléfono",
   }
 };
 
@@ -1338,10 +1537,8 @@ const translations = {
 
   // Filter products based on selected category
   const filteredProducts = filterCategory === 'all' 
-    ? products 
-    : filterCategory === 'headphones'
-    ? products.filter(p => p.category === 'earbuds' || p.category === 'headphones')
-    : products.filter(p => p.category === filterCategory);
+  ? products 
+  : products.filter(p => p.category === filterCategory);
 
   return (
     <div className="relative min-h-screen bg-black">
@@ -1416,7 +1613,7 @@ const translations = {
       <div className="relative z-10 flex justify-center mb-8 px-4">
         <div className="bg-black/50 backdrop-blur-sm rounded-full p-2 flex gap-2 flex-wrap justify-center">
           <span className="text-white px-3 py-2">{t.filterBy}</span>
-          {['all', 'speakers', 'powerbanks', 'earbuds', 'headphones', 'gaming', 'emergency', 'cables', 'samsung', 'power', 'tv-accessories', 'network', 'car-accessories', 'mouse', 'storage'].map((cat) => (
+          {['all', 'speakers', 'powerbanks', 'earbuds', 'headphones', 'gaming', 'emergency', 'cables', 'samsung', 'apple', 'cases', 'power', 'tv-accessories', 'network', 'car-accessories', 'mouse', 'storage'].map((cat) => (
             <button
               key={cat}
               onClick={() => setFilterCategory(cat)}

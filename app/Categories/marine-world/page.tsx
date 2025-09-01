@@ -352,15 +352,15 @@ export default function MarineWorldPage() {
             </Link>
             
             <img 
-              src="/images/cell-world-logo.png"
-              alt="Cell World Marine World"
-              style={{ 
-                height: '80px',
-                width: 'auto', 
-                objectFit: 'contain',
-                filter: 'drop-shadow(0 0 2px rgba(255,255,255,0.8))'
-              }}
-            />
+  src="/images/marine-logo.png"
+  alt="Marine World"
+  style={{ 
+    height: '80px',
+    width: 'auto', 
+    objectFit: 'contain',
+    filter: 'drop-shadow(0 0 10px rgba(255,255,255,0.5)) drop-shadow(0 0 20px rgba(64, 224, 208, 0.4))'
+  }}
+/>
           </div>
           
           <button 

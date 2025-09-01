@@ -283,12 +283,15 @@ export default function BoatPartsPage() {
                 </Link>
                 
                 <img 
-                  src="/images/cell-world-logo.png"
-                  alt="Cell World"
-                  className="h-12 md:h-16 filter drop-shadow-lg"
-                  style={{ filter: 'drop-shadow(0 0 10px rgba(64, 224, 208, 0.5))' }}
-                />
+  src="/images/marine-logo.png"
+  alt="Marine World"
+  className="h-12 md:h-16"
+  style={{ 
+    filter: 'drop-shadow(0 0 15px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 25px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 35px rgba(255, 255, 255, 0.4))' 
+  }}
+/>
               </div>
+              
               
               <button 
                 className="flex items-center space-x-2 bg-gradient-to-r from-yellow-600/20 to-orange-600/20 backdrop-blur-md px-3 py-2 rounded-full hover:from-yellow-600/30 hover:to-orange-600/30 border border-yellow-500/30 transition-all"
@@ -309,55 +312,69 @@ export default function BoatPartsPage() {
         <section 
           className="relative py-12 md:py-20 px-4 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('/images/boat-page.jpg')`,
-            minHeight: '500px'
-          }}
+  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('/images/boat-page.jpg')`,
+  minHeight: '500px'
+}}
         >
           <div className="max-w-6xl mx-auto text-center relative z-10">
             {/* Logo */}
             <div className="mb-8 flex justify-center">
               <img 
-                src="/images/cell-world-logo.png"
-                alt="Cell World"
-                className="h-32 md:h-40 w-auto"
-                style={{ 
-                  filter: 'drop-shadow(0 0 20px rgba(64, 224, 208, 0.5)) drop-shadow(0 0 10px rgba(255, 215, 0, 0.4))'
-                }}
-              />
+  src="/images/marine-logo.png"
+  alt="Marine World"
+  className="h-32 md:h-40 w-auto"
+  style={{ 
+    filter: 'drop-shadow(0 0 20px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 35px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 50px rgba(255, 255, 255, 0.5))'
+  }}
+/>
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-teal-400 to-yellow-400 bg-clip-text text-transparent">
               {t.title}
             </h1>
-            <p className="text-xl md:text-2xl text-yellow-400 mb-6">
+            <p className="text-xl md:text-2xl font-bold text-yellow-400 mb-6" 
+   style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.4)' }}>
               {t.subtitle}
             </p>
-            <p className="text-lg text-gray-300 max-w-4xl mx-auto mb-8">
+            <p className="text-lg font-medium text-white max-w-4xl mx-auto mb-8"
+   style={{ textShadow: '2px 2px 6px rgba(0, 0, 0, 0.9), 0 0 10px rgba(0, 0, 0, 0.5)' }}>
               Cell World is St Vincent and the Grenadines' trusted source for premium boat parts and marine equipment. 
               From outboard engines to propellers, electronics to safety gear, we supply everything you need 
               to keep your vessel running smoothly.
             </p>
             
             {/* Trust Badges */}
-            <div className="flex justify-center flex-wrap gap-6 md:gap-12 mt-8">
-              <div className="text-center">
-                <div className="text-3xl mb-2">🚚</div>
-                <div className="text-sm text-teal-400">Island-wide<br/>Delivery</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl mb-2">✓</div>
-                <div className="text-sm text-teal-400">Genuine OEM<br/>Parts</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl mb-2">📍</div>
-                <div className="text-sm text-teal-400">Kingstown<br/>Location</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl mb-2">🔧</div>
-                <div className="text-sm text-teal-400">Quality Marine<br/>Products</div>
-              </div>
-            </div>
-          </div>
+<div className="flex justify-center flex-wrap gap-6 md:gap-12 mt-8">
+  <div className="text-center">
+    <div className="text-4xl mb-2 bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto">🚚</div>
+    <div className="text-sm font-bold text-yellow-400" 
+         style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.9)' }}>
+      Island-wide<br/>Delivery
+    </div>
+  </div>
+  <div className="text-center">
+    <div className="text-4xl mb-2 bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto">✓</div>
+    <div className="text-sm font-bold text-yellow-400" 
+         style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.9)' }}>
+      Genuine OEM<br/>Parts
+    </div>
+  </div>
+  <div className="text-center">
+    <div className="text-4xl mb-2 bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto">📍</div>
+    <div className="text-sm font-bold text-yellow-400" 
+         style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.9)' }}>
+      Kingstown<br/>Location
+    </div>
+  </div>
+  <div className="text-center">
+    <div className="text-4xl mb-2 bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto">🔧</div>
+    <div className="text-sm font-bold text-yellow-400" 
+         style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.9)' }}>
+      Quality Marine<br/>Products
+    </div>
+  </div>
+</div>
+</div>  
         </section>
 
         {/* Categories Grid */}
@@ -370,13 +387,15 @@ export default function BoatPartsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {categories.map((category, index) => (
                 <div 
-                  key={index}
-                  className="bg-white/5 backdrop-blur-sm border-2 border-teal-400 rounded-xl p-6 hover:bg-teal-400/10 hover:transform hover:-translate-y-1 transition-all duration-300"
-                >
-                  <h3 className="text-xl font-bold text-yellow-400 mb-4 flex items-center">
-                    <span className="text-2xl mr-2">{category.icon}</span>
-                    {category.title}
-                  </h3>
+  key={index}
+  className="bg-white/5 backdrop-blur-sm border-2 border-teal-400 rounded-xl p-6 hover:bg-teal-400/10 hover:transform hover:-translate-y-1 transition-all duration-300"
+>
+  <h3 className="text-xl font-bold text-yellow-400 mb-4 flex items-center">
+    <span className="text-2xl mr-3 bg-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
+      {category.icon}
+    </span>
+    {category.title}
+  </h3>
                   <ul className="space-y-2 mb-4">
                     {category.items.map((item, i) => (
                       <li key={i} className="text-gray-300 text-sm pl-4 border-l-2 border-teal-400/30">
