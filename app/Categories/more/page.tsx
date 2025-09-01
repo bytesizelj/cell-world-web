@@ -166,9 +166,9 @@ export default function MoreCategory() {
 // PHONE CASES
 {
   id: 'i-like-cases-samsung',
-  name: 'i-Like MagSafe Cases for Samsung',
+  name: 'Cases for Samsung and iPhone',
   image: '/images/Products/more/i-like-phone-cases.png',
-  price: 80.00,
+  price: 40.00,
   category: 'cases',
   availability: 'In Stock',
   specs: {
@@ -180,9 +180,9 @@ export default function MoreCategory() {
 },
 {
   id: 'i-like-cases-iphone',
-  name: 'i-Like MagSafe Cases for iPhone',
+  name: 'i-Like MagSafe Cases for iPhone and Samsung',
   image: '/images/Products/more/i-like-for-iphones.png',
-  price: 80.00,
+  price: 50.00,
   category: 'cases',
   availability: 'In Stock',
   specs: {
