@@ -16,6 +16,42 @@ export default function PhonesCategory() {
 
   // Enhanced product data with categories
   const products = [
+  {
+  id: 'samsung-galaxy-a05',
+  name: 'Samsung Galaxy A05',
+  image: '/images/Products/phones/samsung1-galaxy-a05.png',
+  price: 420.00,
+  category: 'samsung',
+  availability: 'In Stock',
+  isBestSeller: true, // Add this flag
+  description: 'Entry-level smartphone with 6.7" HD+ display, dual camera system, and long-lasting 5000mAh battery. Perfect for everyday use with reliable performance.',
+  specs: {
+    display: '6.7" HD+ PLS LCD',
+    processor: 'MediaTek Helio G85',
+    camera: '50MP main + 2MP depth',
+    battery: '5000mAh',
+    storage: '64GB/128GB options',
+    ram: '4GB/6GB RAM'
+  }
+},
+{
+  id: 'samsung-galaxy-f05',
+  name: 'Samsung Galaxy F05',
+  image: '/images/Products/phones/samsung2-galaxy-f05.png',
+  price: 450.00,
+  category: 'samsung',
+  availability: 'In Stock',
+  isBestSeller: true, // Add this flag
+  description: 'Budget-friendly smartphone featuring 6.74" display, dual cameras, and massive 5000mAh battery. Great value with essential features for daily communication.',
+  specs: {
+    display: '6.74" HD+ LCD',
+    processor: 'MediaTek Helio P35',
+    camera: '50MP main + depth sensor',
+    battery: '5000mAh with 25W charging',
+    storage: '64GB expandable',
+    ram: '4GB RAM'
+  }
+    },
     { 
       id: 'samsung-s24fe', 
       name: 'Samsung Galaxy S24FE', 
@@ -525,55 +561,62 @@ export default function PhonesCategory() {
       <div className="relative z-10 container mx-auto px-3 pb-20">
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
           {filteredProducts.map((product) => (
-            <div 
-              key={product.id}
-              className={`group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300 hover:shadow-xl ${
-                product.availability === 'Out of Stock' ? 'opacity-60' : ''
-              }`}
-              style={{ height: '350px', zIndex: 1 }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.zIndex = '10';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.zIndex = '1';
-              }}
-            >
-              {/* Out of Stock Badge */}
-              {product.availability === 'Out of Stock' && (
-                <div className="absolute top-2 right-2 z-30 bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                  SOLD OUT
-                </div>
-              )}
-              
-              {/* Product Image */}
-              <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-3" style={{ height: '260px' }}>
-                {/* Overlay for out of stock items */}
-                {product.availability === 'Out of Stock' && (
-                  <div className="absolute inset-0 bg-black/50 z-10 flex items-center justify-center">
-                    <span className="text-white font-bold text-xl rotate-[-15deg] bg-red-600 px-4 py-2 rounded">OUT OF STOCK</span>
-                  </div>
-                )}
-                <img 
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-contain p-2"
-                />
-              </div>
+  <div 
+    key={product.id}
+    className={`group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300 hover:shadow-xl ${
+      product.availability === 'Out of Stock' ? 'opacity-60' : ''
+    }`}
+    style={{ height: '350px', zIndex: 1 }}
+    onMouseEnter={(e) => {
+      e.currentTarget.style.zIndex = '10';
+    }}
+    onMouseLeave={(e) => {
+      e.currentTarget.style.zIndex = '1';
+    }}
+  >
+    {/* Out of Stock Badge */}
+    {product.availability === 'Out of Stock' && (
+      <div className="absolute top-2 right-2 z-30 bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+        SOLD OUT
+      </div>
+    )}
+    
+    {/* ADD THIS: Best Seller Badge */}
+    {product.isBestSeller && product.availability !== 'Out of Stock' && (
+      <div className="absolute top-2 left-2 z-30 bg-gradient-to-r from-red-500 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg animate-pulse">
+        🔥 BEST SELLER
+      </div>
+    )}
+    
+    {/* Product Image */}
+    <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-3" style={{ height: '260px' }}>
+      {/* Overlay for out of stock items */}
+      {product.availability === 'Out of Stock' && (
+        <div className="absolute inset-0 bg-black/50 z-10 flex items-center justify-center">
+          <span className="text-white font-bold text-xl rotate-[-15deg] bg-red-600 px-4 py-2 rounded">OUT OF STOCK</span>
+        </div>
+      )}
+      <img 
+        src={product.image}
+        alt={product.name}
+        className="w-full h-full object-contain p-2"
+      />
+    </div>
 
-              {/* Price Badge - Centered at top (hide if out of stock) */}
-              {product.price && product.availability !== 'Out of Stock' && (
-                <div 
-                  className="absolute top-2 bg-yellow-500 text-black text-sm font-bold px-3 py-1 rounded-lg shadow-lg z-20"
-                  style={{
-                    left: '50%',
-                    transform: 'translateX(-50%)'
-                  }}
-                >
-                  ${product.price}
-                </div>
-              )}
-
-              {/* Info Bar with Button */}
+    {/* Price Badge - Centered at top (hide if out of stock) */}
+    {product.price && product.availability !== 'Out of Stock' && (
+      <div 
+        className="absolute top-2 bg-yellow-500 text-black text-sm font-bold px-3 py-1 rounded-lg shadow-lg z-20"
+        style={{
+          left: '50%',
+          transform: 'translateX(-50%)'
+        }}
+      >
+        ${product.price}
+      </div>
+    )}
+    
+            {/* Info Bar with Button */}
               <div className="p-3 bg-black/50" style={{ height: '90px' }}>
                 <h3 className="text-base font-bold text-white truncate mb-2 text-center" 
                     style={{ textAlign: 'center' }}>
