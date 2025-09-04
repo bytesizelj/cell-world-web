@@ -9,8 +9,8 @@ export default function NotFound() {
     console.error('404 Error - Attempted URL:', window.location.href);
     
     // Track in Google Analytics
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'page_view', {
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'page_view', {
         page_title: '404 Error',
         page_location: window.location.href,
         page_path: window.location.pathname

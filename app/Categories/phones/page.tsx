@@ -20,7 +20,7 @@ export default function PhonesCategory() {
   id: 'samsung-galaxy-a05',
   name: 'Samsung Galaxy A05',
   image: '/images/Products/phones/samsung1-galaxy-a05.png',
-  price: 420.00,
+  price: 450.00,
   category: 'samsung',
   availability: 'In Stock',
   isBestSeller: true, // Add this flag
@@ -38,7 +38,7 @@ export default function PhonesCategory() {
   id: 'samsung-galaxy-f05',
   name: 'Samsung Galaxy F05',
   image: '/images/Products/phones/samsung2-galaxy-f05.png',
-  price: 450.00,
+  price: 420.00,
   category: 'samsung',
   availability: 'In Stock',
   isBestSeller: true, // Add this flag
