@@ -14,6 +14,7 @@ export default function Home() {
   const [language, setLanguage] = useState('en');
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   
   // Array of video paths - add your video files here
   const videos = [
@@ -30,6 +31,29 @@ export default function Home() {
     
     return () => clearInterval(interval);
   }, [videos.length]);
+  
+  // ADD THIS: Preload critical images
+useEffect(() => {
+  const criticalImages = [
+    '/images/cell-world-logo.png',
+    '/images/phones.jpg',
+    '/images/fishing.jpg',
+    '/images/more.jpg'
+  ];
+  
+  Promise.all(
+    criticalImages.map(src => {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.onload = resolve;
+        img.onerror = resolve; // Still continue if image fails
+        img.src = src;
+      });
+    })
+  ).then(() => {
+    setIsLoading(false);
+  });
+}, []);
   
   const translations = {
     en: {
@@ -113,6 +137,16 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-black">
+      {/* ADD THIS: Loading Screen */}
+    {isLoading && (
+      <div className="fixed inset-0 z-50 bg-black flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-yellow-400 mb-4 mx-auto"></div>
+          <p className="text-yellow-400 text-xl">Loading...</p>
+        </div>
+      </div>
+    )}
+         
       {/* Video Background with Rotation */}
       <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}>
         <div className="absolute inset-0 z-10" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.4), rgba(0,0,0,0.8))' }} />
