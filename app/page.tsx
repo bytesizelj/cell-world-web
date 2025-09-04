@@ -497,9 +497,110 @@ useEffect(() => {
         animation: 'shimmer 3s infinite'
       }} />
     </Link>
-  </div>  
+</div>  
 </section>  
+
+{/* Island Delivery Links */}
+<section className="relative z-20 py-12 bg-black/80">
+  <div className="max-w-4xl mx-auto px-6 text-center">
+    <h3 
+      className="text-2xl md:text-3xl mb-6"
+      style={{ 
+        color: '#FFFFFF',
+        fontFamily: '"Brush Script MT", "Lucida Handwriting", "Dancing Script", cursive',
+        fontWeight: '400',
+        textShadow: '0 2px 8px rgba(255, 215, 0, 0.4), 0 4px 16px rgba(255, 215, 0, 0.2)',
+        animation: 'slideInFromLeft 1.5s ease-out, pulse 2s ease-in-out 1.5s infinite'
+      }}
+    >
+      We Deliver Throughout the Grenadines
+    </h3>
+    <div className="flex flex-wrap justify-center gap-4">
+      <a href="/grenadines/bequia" className="text-teal-300 hover:text-yellow-400 px-3 py-2 border border-teal-400/30 rounded-full hover:border-yellow-400 transition-all">
+        Bequia
+      </a>
+      <a href="/grenadines/mustique" className="text-teal-300 hover:text-yellow-400 px-3 py-2 border border-teal-400/30 rounded-full hover:border-yellow-400 transition-all">
+        Mustique
+      </a>
+      <a href="/grenadines/canouan" className="text-teal-300 hover:text-yellow-400 px-3 py-2 border border-teal-400/30 rounded-full hover:border-yellow-400 transition-all">
+        Canouan
+      </a>
+      <a href="/grenadines/union-island" className="text-teal-300 hover:text-yellow-400 px-3 py-2 border border-teal-400/30 rounded-full hover:border-yellow-400 transition-all">
+        Union Island
+      </a>
+      <a href="/grenadines/mayreau" className="text-teal-300 hover:text-yellow-400 px-3 py-2 border border-teal-400/30 rounded-full hover:border-yellow-400 transition-all">
+        Mayreau
+      </a>
+    </div>
+  </div>
+</section>
         
+      <CellyAssistant />
+      
+      {/* Add pulse animation for CTA buttons */}
+      <style jsx>{`
+        @keyframes pulse {
+          0%, 100% {
+            transform: scale(1);
+            opacity: 0.9;
+          }
+          50% {
+            transform: scale(1.05);
+            opacity: 1;
+          }
+        }
+        
+        @keyframes shimmer {
+          0% { left: -100%; }
+          100% { left: 200%; }
+        }
+        
+        @keyframes slideInFromLeft {
+          0% {
+            opacity: 0;
+            transform: translateX(-100%);
+          }
+          100% {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+      `}</style>
+        
+      <CellyAssistant />
+      
+      {/* Add pulse animation for CTA buttons */}
+      <style jsx>{`
+        @keyframes pulse {
+          0%, 100% {
+            transform: scale(1);
+            opacity: 0.9;
+          }
+          50% {
+            transform: scale(1.05);
+            opacity: 1;
+          }
+        }
+        
+        @keyframes shimmer {
+          0% { left: -100%; }
+          100% { left: 200%; }
+        }
+        
+        @keyframes slideInFromLeft {
+          0% {
+            opacity: 0;
+            transform: translateX(-100%);
+          }
+          100% {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+      `}</style>
+       
+     
+         
       <CellyAssistant />
       
       {/* Add pulse animation for CTA buttons */}
