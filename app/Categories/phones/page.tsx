@@ -93,7 +93,7 @@ export default function PhonesCategory() {
       image: '/images/Products/phones/cropped/samsung-a16.png',
       price: 649.00,
       category: 'budget',
-      availability: 'In Stock',
+      availability: 'Out of Stock',
       color: 'Black',
       specs: {
         ram: '4GB RAM',
@@ -310,7 +310,7 @@ export default function PhonesCategory() {
       image: '/images/Products/phones/cropped/samsung-a26-1.png',
       price: 1200.00,
       category: 'midrange',
-      availability: 'Limited Stock',
+      availability: 'Out of Stock',
       color: 'Mint - 1 left',
       specs: {
         ram: '6GB RAM',
@@ -344,7 +344,7 @@ export default function PhonesCategory() {
       image: '/images/Products/phones/cropped/samsung-a15.png',
       price: 649.00,
       category: 'budget',
-      availability: 'Limited Stock',
+      availability: 'Out of Stock',
       color: 'Blue Black - 1 left',
       specs: {
         ram: '6GB RAM',
@@ -361,7 +361,7 @@ export default function PhonesCategory() {
       image: '/images/Products/phones/cropped/samsung-a16.png',
       price: 649.00,
       category: 'budget',
-      availability: 'Limited Stock',
+      availability: 'Out of Stock',
       color: 'Black - 1 left',
       specs: {
         ram: '4GB RAM',

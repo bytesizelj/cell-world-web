@@ -14,12 +14,483 @@ export default function MoreCategory() {
   // Complete product catalog - 69 items
   const products = [
 
-// Add these products to your existing products array
-// Make sure to add a comma after your last existing product before pasting these
+// CAR AUDIO & ACCESSORIES
+{
+  id: 'yesido-usb-transmitter',
+  name: 'YESIDO USB Transmitter - Wireless Audio Adapter',
+  image: '/images/Products/more/yesido-usb-transmitter.png',
+  price: 60.00,
+  category: 'car-accessories',
+  availability: 'In Stock',
+  color: '8 left',
+  specs: {
+    type: 'Wireless Aux adapter audio transmitter receiver',
+    range: '10m range with BT 5.0',
+    feature: 'Efficient signal reception'
+  }
+},
+{
+  id: 'yesido-audio-adapter',
+  name: 'Yesido Audio Adapter - Transmitter & Receiver',
+  image: '/images/Products/more/yesido-audio-adapter.png',
+  price: 60.00,
+  category: 'car-accessories',
+  availability: 'Low Stock',
+  color: '6 left',
+  specs: {
+    type: 'Rechargeable audio transmitter & receiver',
+    features: 'Hands-free calls, 10hrs music time',
+    extra: 'Supports TF Card'
+  }
+},
+{
+  id: 'yesido-wireless-carplay',
+  name: 'Yesido Wireless CarPlay Adapter',
+  image: '/images/Products/more/yesido-wireless-carplay.png',
+  price: 120.00,
+  category: 'car-accessories',
+  availability: 'Limited Stock',
+  color: '2 left',
+  specs: {
+    compatibility: 'iOS 10+',
+    memory: '1GB RAM',
+    wifi: '5G/2.4G Dual-Band',
+    feature: 'Converts wired to wireless CarPlay, OTA updates'
+  }
+},
+{
+  id: 'car-mp3-player-c15',
+  name: 'C15 Car MP3 Player with RGB Lighting',
+  image: '/images/Products/more/car-mp3-player-c15.png',
+  price: 100.00,
+  category: 'car-accessories',
+  availability: 'Limited Stock',
+  color: '1 left',
+  specs: {
+    compatibility: 'iPad, iPhone, MP3, MP4, PSP & camera',
+    bluetooth: 'BT 5.0 with noise reduction',
+    features: 'RGB ambient lighting, 3.1A + Type-C'
+  }
+},
+{
+  id: 'car-f2-transmitter',
+  name: 'Car F2 FM Transmitter with Digital Display',
+  image: '/images/Products/more/car-f2-transmitter.png',
+  price: 100.00,
+  category: 'car-accessories',
+  availability: 'Low Stock',
+  color: '5 left',
+  specs: {
+    frequency: '87.5-108.0 MHz',
+    supports: 'U Disk, TF Card, MP3 format',
+    features: 'Digital display, hands-free calls'
+  }
+},
+{
+  id: 'audiobox-fm-transmitter',
+  name: 'AudioBox FM Transmitter',
+  image: '/images/Products/more/audiobox-fm-transmitter.png',
+  price: 100.00,
+  category: 'car-accessories',
+  availability: 'Low Stock',
+  color: '3 left',
+  specs: {
+    charging: 'USB Fast charge, 3.1A output',
+    features: 'Hands-free calls, TF card support',
+    extra: 'Bluetooth music, MP3 support'
+  }
+},
 
-// Add these Apple and accessory products to your existing products array
+// MICROPHONES
+{
+  id: 'hypergear-stream-record-mic',
+  name: 'HyperGear Sound Advantage Pro Condenser Microphone',
+  image: '/images/Products/more/hypergear-stream-record-mic.png',
+  price: 180.00,
+  category: 'microphones',
+  availability: 'Limited Stock',
+  color: '2 left',
+  specs: {
+    type: 'Pro-Audio Condenser Microphone',
+    use: 'Podcasting, Gaming, Streaming, Music Recording',
+    features: 'Noise reduction, Omnidirectional pickup'
+  }
+},
+{
+  id: 'yesido-lavalier-mic',
+  name: 'Yesido Lavalier Mic - 3-in-1 Wireless',
+  image: '/images/Products/more/yesido-lavalier-mic.png',
+  price: 170.00,
+  category: 'microphones',
+  availability: 'In Stock',
+  color: '8 left',
+  specs: {
+    compatibility: '3-in-1 compatible with multiple devices',
+    transmission: '50M transmission range',
+    battery: '7hrs working time, 80min charging',
+    features: 'Noise reduction, automatic pairing'
+  }
+},
+{
+  id: 'vivitar-mini-lavalier-streaming-microphone',
+  name: 'Vivitar Mini Lavalier Streaming Microphone',
+  image: '/images/Products/more/vivitar-mini-lavalier-streaming-microphone.png',
+  price: 140.00,
+  category: 'microphones',
+  availability: 'Limited Stock',
+  color: '1 left',
+  specs: {
+    compatibility: 'Smartphones, DSLR, Camcorders, PCs',
+    includes: 'Windproof sponge, cable clip, mic clip, pouch, USB adapter'
+  }
+},
+{
+  id: 'studioz-pro-dynamic-microphone',
+  name: 'StudioZ Microphone - 2M 1/4" Mono to XLR',
+  image: '/images/Products/more/studioz-pro-dynamic-microphone.png',
+  price: 80.00,
+  category: 'microphones',
+  availability: 'In Stock',
+  color: '8 left',
+  specs: {
+    cable: '2M 1/4" Mono to XLR',
+    type: 'Professional dynamic microphone'
+  }
+},
+{
+  id: 'dolphin-mcx11-rechargeable-mic',
+  name: 'Dolphin MCX11 50-Channel UHF Wireless Microphone',
+  image: '/images/Products/more/dolphin-mcx11-rechargeable-mic.png',
+  price: 200.00,
+  category: 'microphones',
+  availability: 'In Stock',
+  color: 'Black (2), Blue (2), Red (2)',
+  specs: {
+    channels: '50 Channel UHF',
+    features: 'Long range, penetrates walls',
+    extra: 'Anti-interference, multiple simultaneous use'
+  }
+},
+{
+  id: 'studioz-wired-wireless-microphone',
+  name: 'StudioZ Wired & Wireless Microphone',
+  image: '/images/Products/more/studioz-wired-wireless-microphone.png',
+  price: 80.00,
+  category: 'microphones',
+  availability: 'Limited Stock',
+  color: '2 left',
+  specs: {
+    type: 'Dual mode - wired & wireless'
+  }
+},
+{
+  id: 'sunflash-pro-microphone',
+  name: 'Digital Sunflash Microphone',
+  image: '/images/Products/more/sunflash-pro-microphone.png',
+  price: 80.00,
+  category: 'microphones',
+  availability: 'Low Stock',
+  color: '3 left',
+  specs: {
+    feature: 'Reduces background noise and feedback',
+    type: 'Digital microphone'
+  }
+},
 
-// APPLE PRODUCTS
+// AUDIO INTERFACES
+{
+  id: 'audiopipe-2channel-transmission',
+  name: 'Audiopipe 2 Channel Audio Interface',
+  image: '/images/Products/more/audiopipe-2channel-transmission.png',
+  price: 450.00,
+  category: 'audio-interfaces',
+  availability: 'Limited Stock',
+  color: '2 left',
+  specs: {
+    channels: '2 Channel interface',
+    power: '+48V Phantom Power',
+    inputs: '2 Combo XLR',
+    features: 'Data transmission, Monitor level'
+  }
+},
+{
+  id: 'audiopipe-2channel-guitar-singer-mixing-console',
+  name: 'Audiopipe 2 Channel Guitar-Singer Mixing Console',
+  image: '/images/Products/more/audiopipe-2channel-guitar-singer-mixing-console.png',
+  price: 350.00,
+  category: 'audio-interfaces',
+  availability: 'Limited Stock',
+  color: '1 left',
+  specs: {
+    input: 'XLR input',
+    converter: '16 bit delta sigma',
+    eq: '2 band EQ',
+    features: 'Data transmission'
+  }
+},
+{
+  id: 'wave-mixer-multi-channel-interface-audioeq-soundeffects',
+  name: 'WaveMixer Bluetooth Multi-Channel Interface',
+  image: '/images/Products/more/wave-mixer-multi-channel-interface-audioeq-soundeffects.png',
+  price: 75.00,
+  category: 'audio-interfaces',
+  availability: 'Limited Stock',
+  color: '1 left',
+  specs: {
+    compatibility: 'Mobile devices, microphones, instruments',
+    inputs: 'Micro USB, Aux 3.5mm',
+    features: 'Audio EQ, Sound effects'
+  }
+},
+
+// RCA SPEAKERS
+{
+  id: 'rca-tws-gamerbeat-speaker',
+  name: 'RCA TWS GamerBeat Bluetooth Party Speaker',
+  image: '/images/Products/more/rca-tws-gamerbeat-speaker.png',
+  price: 220.00,
+  category: 'speakers',
+  availability: 'Limited Stock',
+  color: '2 left',
+  specs: {
+    features: 'Disco lights, FM Radio',
+    inputs: 'Aux input, Memory device',
+    battery: 'Long battery life'
+  }
+},
+{
+  id: 'rca-beatbox-speaker',
+  name: 'RCA BeatBox Bluetooth Speaker',
+  image: '/images/Products/more/rca-beatbox-speaker.png',
+  price: 200.00,
+  category: 'speakers',
+  availability: 'Limited Stock',
+  color: '2 left',
+  specs: {
+    features: 'Illuminated display, FM Radio, Disco lights',
+    inputs: 'Memory device, Mic port, Aux port',
+    extras: 'Remote control'
+  }
+},
+{
+  id: 'rca-holosound-speaker',
+  name: 'RCA HoloSound Bluetooth Speaker',
+  image: '/images/Products/more/rca-holosound-speaker.png',
+  price: 580.00,
+  category: 'speakers',
+  availability: 'Limited Stock',
+  color: '2 left',
+  specs: {
+    features: 'LED Color Flame, Karaoke mode',
+    display: 'Illuminated display',
+    inputs: 'Memory device, Mic port, Aux port',
+    extras: 'FM Radio, Remote control'
+  }
+},
+{
+  id: 'rca-beatwaves-speaker',
+  name: 'RCA BeatWaves Bluetooth Speaker with Wireless Mic',
+  image: '/images/Products/more/rca-beatwaves-speaker.png',
+  price: 499.00,
+  category: 'speakers',
+  availability: 'Limited Stock',
+  color: '2 left',
+  specs: {
+    includes: 'Wireless microphone',
+    features: 'Karaoke mode, FM Radio',
+    display: 'Illuminated display',
+    extras: 'Portable with back straps'
+  }
+},
+{
+  id: 'rca-levelup-speaker',
+  name: 'RCA CrystalBeat Bluetooth Speaker',
+  image: '/images/Products/more/rca-levelup-speaker.png',
+  price: 450.00,
+  category: 'speakers',
+  availability: 'Limited Stock',
+  color: '2 left',
+  specs: {
+    features: 'Illuminated, Karaoke mode',
+    inputs: 'Memory device, Mic port, Aux port',
+    extras: 'FM Radio, Remote control'
+  }
+},
+{
+  id: 'rca-shock-wave-speaker',
+  name: 'RCA Shock-Wave Bluetooth Speaker',
+  image: '/images/Products/more/rca-shock-wave-speaker.png',
+  price: 380.00,
+  category: 'speakers',
+  availability: 'Limited Stock',
+  color: '2 left',
+  specs: {
+    features: 'LED Color Flame Effect, High Fidelity',
+    modes: 'Karaoke mode, FM Radio',
+    inputs: 'Memory device, Mic port, Aux port'
+  }
+},
+
+// CAR AUDIO SPEAKERS & ACCESSORIES
+{
+  id: 'pioneer-ts-s20',
+  name: 'Pioneer Dome Tweeter TS-S20',
+  image: '/images/Products/more/pioneer-ts-s20.png',
+  price: 300.00,
+  category: 'car-audio',
+  availability: 'Low Stock',
+  color: '5 left',
+  specs: {
+    size: '3/4" dome tweeter',
+    power: '200W Max, 50W Nominal',
+    impedance: '8 OHMS'
+  }
+},
+{
+  id: 'pioneer-speaker-ts-f1034r',
+  name: 'Pioneer 4" Speaker TS-F1034R',
+  image: '/images/Products/more/pioneer-speaker-ts-f1034r.png',
+  price: 155.00,
+  category: 'car-audio',
+  availability: 'Limited Stock',
+  color: '2 left',
+  specs: {
+    size: '4 inch',
+    power: '150W MAX',
+    type: '2-way voices'
+  }
+},
+{
+  id: 'pioneer-speaker-2-wayspeaker',
+  name: 'Pioneer 5 1/4" 2-Way Speaker',
+  image: '/images/Products/more/pioneer-speaker-2-wayspeaker.png',
+  price: 160.00,
+  category: 'car-audio',
+  availability: 'Low Stock',
+  color: '4 left',
+  specs: {
+    size: '5 1/4 inch',
+    power: '35W Nominal',
+    impedance: '4 OHMS'
+  }
+},
+{
+  id: 'xxx-3-way-impp-cone-triaxial-car-speaker',
+  name: 'XXX 3-Way IMPP Cone Triaxial Car Speaker',
+  image: '/images/Products/more/xxx-3-way-impp-cone-triaxial-car-speaker.png',
+  price: 160.00,
+  category: 'car-audio',
+  availability: 'Limited Stock',
+  color: '2 left',
+  specs: {
+    power: '350W P.M.P.O, 175W R.M.S',
+    impedance: '4 OHM',
+    type: '3-way IMPP Cone'
+  }
+},
+{
+  id: 'blaupunkt-4-way-coaxial-speaker',
+  name: 'BLAUPUNKT 4-Way 6"×9" Coaxial Speakers',
+  image: '/images/Products/more/blaupunkt-4-way-coaxial-speaker.png',
+  price: 320.00,
+  category: 'car-audio',
+  availability: 'Limited Stock',
+  color: '2 left',
+  specs: {
+    size: '6×9 inch',
+    power: '450W MAX',
+    impedance: '4 OHM',
+    type: '4-Way Coaxial'
+  }
+},
+{
+  id: 'pipeman-car-audio-accessories',
+  name: 'Pipeman Speaker Grills - Multiple Sizes',
+  image: '/images/Products/more/pipeman-car-audio-accessories.png',
+  price: 25.00,
+  category: 'car-audio',
+  availability: 'In Stock',
+  specs: {
+    '8inch': '9 left - $25',
+    '10inch': '3 left - $35',
+    '12inch': '5 left - $40',
+    '15inch': '6 left - $45'
+  }
+},
+{
+  id: 'audiopipe-pvc-speaker-ring',
+  name: 'Audiopipe 8" PVC Speaker Ring',
+  image: '/images/Products/more/audiopipe-pvc-speaker-ring.png',
+  price: 55.00,
+  category: 'car-audio',
+  availability: 'Low Stock',
+  color: '5 left',
+  specs: {
+    size: '8 inch',
+    material: 'PVC'
+  }
+},
+{
+  id: 'pipeman-speaker-kit',
+  name: "Pipeman's Speaker Kit Bulk Package",
+  image: '/images/Products/more/pipeman-speaker-kit.png',
+  price: 50.00,
+  category: 'car-audio',
+  availability: 'Limited Stock',
+  color: '2 left',
+  specs: {
+    includes: '10×12 inch sheets',
+    type: 'Bulk package'
+  }
+},
+{
+  id: 'pipeman-trunk-kit',
+  name: "Pipeman's Trunk Kit Bulk Package",
+  image: '/images/Products/more/pipeman-trunk-kit.png',
+  price: 200.00,
+  category: 'car-audio',
+  availability: 'Limited Stock',
+  color: '2 left',
+  specs: {
+    includes: 'Ten 12×24 inch sheets',
+    feature: 'Eliminates road noise'
+  }
+},
+
+// NETWORK & CABLES
+{
+  id: 'na-indoor-tv-antenna',
+  name: 'Indoor TV Antenna (Push On)',
+  image: '/images/Products/more/na-indoor-tv-antenna.png',
+  price: 20.00,
+  category: 'tv-accessories',
+  availability: 'Low Stock',
+  color: '6 left',
+  specs: {
+    type: 'UHF/VHF Antenna',
+    includes: 'Coaxial cable & quick connect plug'
+  }
+},
+{
+  id: 'cat5-patch-cord',
+  name: 'Nippon America CAT5 Patch Cord - Multiple Lengths',
+  image: '/images/Products/more/cat5-patch-cord.png',
+  price: 10.00, // Starting price
+  category: 'network',
+  availability: 'In Stock',
+  specs: {
+    '3FT': '$10',
+    '6FT': '$15',
+    '10FT': '$20',
+    '15FT': '$25',
+    '25FT': '$35',
+    '50FT': '$40',
+    '75FT': '$50',
+    '100FT': '$75'
+  }
+},
+
+    // APPLE PRODUCTS
 {
   id: 'apple-type-c-brick',
   name: 'Apple 20W USB-C Power Adapter',
@@ -124,7 +595,7 @@ export default function MoreCategory() {
   image: '/images/Products/more/2nd-gen-earpod.png',
   price: 140.00,
   category: 'earbuds',
-  availability: 'Limited Stock',
+  availability: 'Out of Stock',
   color: 'White only',
   specs: {
     feature: 'ANC Noise Cancelling',
@@ -306,7 +777,7 @@ export default function MoreCategory() {
   image: '/images/Products/more/roku-tv-remote.png',
   price: 40.00,
   category: 'tv-accessories',
-  availability: 'Low Stock',
+  availability: 'Out of Stock',
   color: '2 left'
 },
 {
@@ -324,7 +795,7 @@ export default function MoreCategory() {
   image: '/images/Products/more/fire-tv-stick-4K-ultra-HD.png',
   price: 199.00,
   category: 'tv-accessories',
-  availability: 'Low Stock',
+  availability: 'Out of Stock',
   color: '3 left',
   specs: {
     feature: 'Wi-Fi 6',
@@ -337,8 +808,7 @@ export default function MoreCategory() {
   image: '/images/Products/more/nippon-america-wireless-repeater.png',
   price: 135.00,
   category: 'network',
-  availability: 'Low Stock',
-  color: '4 left',
+  availability: '3 left',
   specs: {
     model: 'IBM-WR400ANT',
     type: 'Wi-Fi Extender',
@@ -1470,6 +1940,9 @@ const translations = {
     "storage": "Storage",
     apple: "Apple",
     cases: "Phone Cases",
+    microphones: "Microphones",
+    "audio-interfaces": "Audio Interfaces", 
+    "car-audio": "Car Audio",
   },
   fr: {
     title: "Électronique et Accessoires",
@@ -1613,7 +2086,7 @@ const translations = {
       <div className="relative z-10 flex justify-center mb-8 px-4">
         <div className="bg-black/50 backdrop-blur-sm rounded-full p-2 flex gap-2 flex-wrap justify-center">
           <span className="text-white px-3 py-2">{t.filterBy}</span>
-          {['all', 'speakers', 'powerbanks', 'earbuds', 'headphones', 'gaming', 'emergency', 'cables', 'samsung', 'apple', 'cases', 'power', 'tv-accessories', 'network', 'car-accessories', 'mouse', 'storage'].map((cat) => (
+          {['all', 'speakers', 'powerbanks', 'earbuds', 'headphones', 'gaming', 'emergency', 'cables', 'samsung', 'apple', 'cases', 'power', 'tv-accessories', 'network', 'car-accessories', 'mouse', 'storage', 'microphones', 'audio-interfaces', 'car-audio'].map((cat) => (
             <button
               key={cat}
               onClick={() => setFilterCategory(cat)}
@@ -1633,41 +2106,66 @@ const translations = {
       <div className="relative z-10 container mx-auto px-4 pb-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {filteredProducts.map((product) => (
-            <div 
-              key={product.id}
-              className="group relative bg-gradient-to-br from-gray-900/60 via-purple-900/20 to-gray-900/60 backdrop-blur-sm rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20"
-            >
-              {/* Product Image */}
-              <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-4" style={{ height: '240px' }}>
-                <img 
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-contain"
-                />
-                
-                {/* Category Badge */}
-                <div className="absolute top-2 left-2 bg-purple-500/80 text-white text-xs font-bold px-2 py-1 rounded-full">
-                  {product.category.toUpperCase()}
-                </div>
-              </div>
+  <div 
+    key={product.id}
+    className={`group relative bg-gradient-to-br from-gray-900/60 via-purple-900/20 to-gray-900/60 backdrop-blur-sm rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20 ${
+      product.availability === 'Out of Stock' ? 'opacity-75' : ''
+    }`}
+  >
+    {/* Product Image */}
+    <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-4" style={{ height: '240px' }}>
+      {/* Out of Stock Overlay */}
+      {product.availability === 'Out of Stock' && (
+        <div className="absolute inset-0 bg-black/60 z-10 flex items-center justify-center">
+          <span className="text-white font-bold text-xl rotate-[-15deg] bg-red-600 px-4 py-2 rounded shadow-lg">
+            OUT OF STOCK
+          </span>
+        </div>
+      )}
+      
+      <img 
+        src={product.image}
+        alt={product.name}
+        className="w-full h-full object-contain"
+      />
+      
+      {/* Category Badge */}
+      <div className="absolute top-2 left-2 bg-purple-500/80 text-white text-xs font-bold px-2 py-1 rounded-full">
+        {product.category.toUpperCase()}
+      </div>
+    </div>
 
-              {/* Price Badge */}
-              <div className="absolute top-2 right-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white text-sm font-bold px-3 py-1 rounded-lg shadow-lg">
-                ${product.price.toFixed(2)}
-              </div>
+    {/* Price Badge - Hide if out of stock */}
+    {product.availability !== 'Out of Stock' && (
+      <div className="absolute top-2 right-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white text-sm font-bold px-3 py-1 rounded-lg shadow-lg">
+        ${product.price.toFixed(2)}
+      </div>
+    )}
 
-              {/* Product Info */}
-              <div className="p-4 bg-black/60">
-                <h3 className="text-sm font-bold text-white mb-2 line-clamp-2">{product.name}</h3>
-                <button 
-                  onClick={() => setSelectedProduct(product)}
-                  className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400 text-white font-bold py-2 rounded-lg transition-all duration-300"
-                >
-                  {t.viewDetails}
-                </button>
-              </div>
-            </div>
-          ))}
+    {/* Out of Stock Badge */}
+    {product.availability === 'Out of Stock' && (
+      <div className="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-20">
+        SOLD OUT
+      </div>
+    )}
+
+    {/* Product Info */}
+    <div className="p-4 bg-black/60">
+      <h3 className="text-sm font-bold text-white mb-2 line-clamp-2">{product.name}</h3>
+      <button 
+        onClick={() => setSelectedProduct(product)}
+        className={`w-full ${
+          product.availability === 'Out of Stock' 
+            ? 'bg-gray-500 cursor-not-allowed' 
+            : 'bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400'
+        } text-white font-bold py-2 rounded-lg transition-all duration-300`}
+        disabled={product.availability === 'Out of Stock'}
+      >
+        {product.availability === 'Out of Stock' ? 'Out of Stock' : t.viewDetails}
+      </button>
+    </div>
+  </div>
+))}
         </div>
       </div>
 
