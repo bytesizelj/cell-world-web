@@ -595,7 +595,7 @@ export default function MoreCategory() {
   image: '/images/Products/more/2nd-gen-earpod.png',
   price: 140.00,
   category: 'earbuds',
-  availability: 'Out of Stock',
+  availability: 'More Coming Soon',
   color: 'White only',
   specs: {
     feature: 'ANC Noise Cancelling',
@@ -777,7 +777,7 @@ export default function MoreCategory() {
   image: '/images/Products/more/roku-tv-remote.png',
   price: 40.00,
   category: 'tv-accessories',
-  availability: 'Out of Stock',
+  availability: 'More Coming Soon',
   color: '2 left'
 },
 {
@@ -795,7 +795,7 @@ export default function MoreCategory() {
   image: '/images/Products/more/fire-tv-stick-4K-ultra-HD.png',
   price: 199.00,
   category: 'tv-accessories',
-  availability: 'Out of Stock',
+  availability: 'More Coming Soon',
   color: '3 left',
   specs: {
     feature: 'Wi-Fi 6',
@@ -2108,17 +2108,15 @@ const translations = {
           {filteredProducts.map((product) => (
   <div 
     key={product.id}
-    className={`group relative bg-gradient-to-br from-gray-900/60 via-purple-900/20 to-gray-900/60 backdrop-blur-sm rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20 ${
-      product.availability === 'Out of Stock' ? 'opacity-75' : ''
-    }`}
+    className="group relative bg-gradient-to-br from-gray-900/60 via-purple-900/20 to-gray-900/60 backdrop-blur-sm rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20"
   >
     {/* Product Image */}
     <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-4" style={{ height: '240px' }}>
-      {/* Out of Stock Overlay */}
-      {product.availability === 'Out of Stock' && (
-        <div className="absolute inset-0 bg-black/60 z-10 flex items-center justify-center">
-          <span className="text-white font-bold text-xl rotate-[-15deg] bg-red-600 px-4 py-2 rounded shadow-lg">
-            OUT OF STOCK
+      {/* More Coming Soon Overlay */}
+      {product.availability === 'More Coming Soon' && (
+        <div className="absolute inset-0 bg-black/30 z-10 flex items-center justify-center pointer-events-none">
+          <span className="text-black font-bold text-xl rotate-[-15deg] bg-yellow-400 px-4 py-2 rounded shadow-lg pointer-events-none">
+            MORE COMING SOON
           </span>
         </div>
       )}
@@ -2135,33 +2133,19 @@ const translations = {
       </div>
     </div>
 
-    {/* Price Badge - Hide if out of stock */}
-    {product.availability !== 'Out of Stock' && (
-      <div className="absolute top-2 right-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white text-sm font-bold px-3 py-1 rounded-lg shadow-lg">
-        ${product.price.toFixed(2)}
-      </div>
-    )}
-
-    {/* Out of Stock Badge */}
-    {product.availability === 'Out of Stock' && (
-      <div className="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-20">
-        SOLD OUT
-      </div>
-    )}
+    {/* Price Badge - Always show for all products */}
+    <div className="absolute top-2 right-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white text-sm font-bold px-3 py-1 rounded-lg shadow-lg">
+      ${product.price.toFixed(2)}
+    </div>
 
     {/* Product Info */}
     <div className="p-4 bg-black/60">
       <h3 className="text-sm font-bold text-white mb-2 line-clamp-2">{product.name}</h3>
       <button 
         onClick={() => setSelectedProduct(product)}
-        className={`w-full ${
-          product.availability === 'Out of Stock' 
-            ? 'bg-gray-500 cursor-not-allowed' 
-            : 'bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400'
-        } text-white font-bold py-2 rounded-lg transition-all duration-300`}
-        disabled={product.availability === 'Out of Stock'}
+        className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400 text-white font-bold py-2 rounded-lg transition-all duration-300"
       >
-        {product.availability === 'Out of Stock' ? 'Out of Stock' : t.viewDetails}
+        {t.viewDetails}
       </button>
     </div>
   </div>
@@ -2193,20 +2177,28 @@ const translations = {
 
             <div className="grid md:grid-cols-2 gap-8">
               {/* Image */}
-              <div>
-                <div className="bg-white/90 rounded-xl p-6 mb-4">
-                  <img 
-                    src={selectedProduct.image}
-                    alt={selectedProduct.name}
-                    className="w-full h-64 object-contain"
-                  />
-                </div>
-                
-                <div className="bg-green-400/90 text-green-900 text-center py-3 rounded-lg font-bold">
-                  <Check className="inline w-5 h-5 mr-2" />
-                  {t.inStock}
-                </div>
-              </div>
+<div>
+  <div className="bg-white/90 rounded-xl p-6 mb-4">
+    <img 
+      src={selectedProduct.image}
+      alt={selectedProduct.name}
+      className="w-full h-64 object-contain"
+    />
+  </div>
+  
+  {/* Status Badge - Conditional */}
+  {selectedProduct.availability === 'More Coming Soon' ? (
+    <div className="bg-red-500/90 text-white text-center py-3 rounded-lg font-bold">
+      <X className="inline w-5 h-5 mr-2" />
+      SOLD OUT
+    </div>
+  ) : (
+    <div className="bg-green-400/90 text-green-900 text-center py-3 rounded-lg font-bold">
+      <Check className="inline w-5 h-5 mr-2" />
+      {t.inStock}
+    </div>
+  )}
+</div>
 
               {/* Details */}
               <div className="text-white">
@@ -2231,7 +2223,14 @@ const translations = {
                     ))}
                   </div>
                 </div>
-
+                {/* More Coming Soon Message */}
+{selectedProduct.availability === 'More Coming Soon' && (
+  <div className="bg-yellow-100 border-l-4 border-yellow-400 p-4 mb-6 rounded-r-lg">
+    <p className="text-yellow-700 font-semibold">
+      📦 This item is sold out, but will be coming back soon! Check back later or contact us for updates.
+    </p>
+  </div>
+)}
                 <div className="space-y-3">
                   <a 
                     href="tel:+17844512261"

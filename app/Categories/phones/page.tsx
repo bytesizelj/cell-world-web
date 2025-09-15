@@ -23,7 +23,7 @@ export default function PhonesCategory() {
   price: 450.00,
   category: 'samsung',
   availability: 'In Stock',
-  isBestSeller: true, // Add this flag
+  isBestSeller: true,
   description: 'Entry-level smartphone with 6.7" HD+ display, dual camera system, and long-lasting 5000mAh battery. Perfect for everyday use with reliable performance.',
   specs: {
     display: '6.7" HD+ PLS LCD',
@@ -41,7 +41,7 @@ export default function PhonesCategory() {
   price: 420.00,
   category: 'samsung',
   availability: 'In Stock',
-  isBestSeller: true, // Add this flag
+  isBestSeller: true,
   description: 'Budget-friendly smartphone featuring 6.74" display, dual cameras, and massive 5000mAh battery. Great value with essential features for daily communication.',
   specs: {
     display: '6.74" HD+ LCD',
@@ -58,7 +58,7 @@ export default function PhonesCategory() {
       image: '/images/Products/phones/cropped/samsung-s24fe.png',
       price: 2999.00,
       category: 'flagship',
-      availability: 'Out of Stock',
+      availability: 'More Coming Soon',
       color: 'Graphite',
       specs: {
         ram: '8GB RAM',
@@ -93,7 +93,7 @@ export default function PhonesCategory() {
       image: '/images/Products/phones/cropped/samsung-a16.png',
       price: 649.00,
       category: 'budget',
-      availability: 'Out of Stock',
+      availability: 'More Coming Soon',
       color: 'Black',
       specs: {
         ram: '4GB RAM',
@@ -310,7 +310,7 @@ export default function PhonesCategory() {
       image: '/images/Products/phones/cropped/samsung-a26-1.png',
       price: 1200.00,
       category: 'midrange',
-      availability: 'Out of Stock',
+      availability: 'More Coming Soon',
       color: 'Mint - 1 left',
       specs: {
         ram: '6GB RAM',
@@ -344,7 +344,7 @@ export default function PhonesCategory() {
       image: '/images/Products/phones/cropped/samsung-a15.png',
       price: 649.00,
       category: 'budget',
-      availability: 'Out of Stock',
+      availability: 'More Coming Soon',
       color: 'Blue Black - 1 left',
       specs: {
         ram: '6GB RAM',
@@ -361,7 +361,7 @@ export default function PhonesCategory() {
       image: '/images/Products/phones/cropped/samsung-a16.png',
       price: 649.00,
       category: 'budget',
-      availability: 'Out of Stock',
+      availability: 'More Coming Soon',
       color: 'Black - 1 left',
       specs: {
         ram: '4GB RAM',
@@ -518,7 +518,7 @@ export default function PhonesCategory() {
         </button>
       </nav>
 
-      {/* Header - FIXED CENTERING */}
+      {/* Header */}
       <div className="relative z-10 text-center py-6 px-4">
         <h1 className="text-3xl md:text-5xl font-bold mb-2 text-center"
             style={{ 
@@ -561,62 +561,55 @@ export default function PhonesCategory() {
       <div className="relative z-10 container mx-auto px-3 pb-20">
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
           {filteredProducts.map((product) => (
-  <div 
-    key={product.id}
-    className={`group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300 hover:shadow-xl ${
-      product.availability === 'Out of Stock' ? 'opacity-60' : ''
-    }`}
-    style={{ height: '350px', zIndex: 1 }}
-    onMouseEnter={(e) => {
-      e.currentTarget.style.zIndex = '10';
-    }}
-    onMouseLeave={(e) => {
-      e.currentTarget.style.zIndex = '1';
-    }}
-  >
-    {/* Out of Stock Badge */}
-    {product.availability === 'Out of Stock' && (
-      <div className="absolute top-2 right-2 z-30 bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-        SOLD OUT
-      </div>
-    )}
-    
-    {/* ADD THIS: Best Seller Badge */}
-    {product.isBestSeller && product.availability !== 'Out of Stock' && (
-      <div className="absolute top-2 left-2 z-30 bg-gradient-to-r from-red-500 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg animate-pulse">
-        🔥 BEST SELLER
-      </div>
-    )}
-    
-    {/* Product Image */}
-    <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-3" style={{ height: '260px' }}>
-      {/* Overlay for out of stock items */}
-      {product.availability === 'Out of Stock' && (
-        <div className="absolute inset-0 bg-black/50 z-10 flex items-center justify-center">
-          <span className="text-white font-bold text-xl rotate-[-15deg] bg-red-600 px-4 py-2 rounded">OUT OF STOCK</span>
-        </div>
-      )}
-      <img 
-        src={product.image}
-        alt={product.name}
-        className="w-full h-full object-contain p-2"
-      />
-    </div>
+            <div 
+              key={product.id}
+              className="group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300 hover:shadow-xl"
+              style={{ height: '350px', zIndex: 1 }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.zIndex = '10';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.zIndex = '1';
+              }}
+            >
+              {/* Best Seller Badge */}
+              {product.isBestSeller && product.availability !== 'More Coming Soon' && (
+                <div className="absolute top-2 left-2 z-30 bg-gradient-to-r from-red-500 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg animate-pulse">
+                  🔥 BEST SELLER
+                </div>
+              )}
+              
+              {/* Product Image */}
+              <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-3" style={{ height: '260px' }}>
+                {/* More Coming Soon Overlay */}
+                {product.availability === 'More Coming Soon' && (
+                  <div className="absolute inset-0 bg-black/30 z-10 flex items-center justify-center pointer-events-none">
+                    <span className="text-black font-bold text-xl rotate-[-15deg] bg-yellow-400 px-4 py-2 rounded shadow-lg pointer-events-none">
+                      MORE COMING SOON
+                    </span>
+                  </div>
+                )}
+                <img 
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-full object-contain p-2"
+                />
+              </div>
 
-    {/* Price Badge - Centered at top (hide if out of stock) */}
-    {product.price && product.availability !== 'Out of Stock' && (
-      <div 
-        className="absolute top-2 bg-yellow-500 text-black text-sm font-bold px-3 py-1 rounded-lg shadow-lg z-20"
-        style={{
-          left: '50%',
-          transform: 'translateX(-50%)'
-        }}
-      >
-        ${product.price}
-      </div>
-    )}
-    
-            {/* Info Bar with Button */}
+              {/* Price Badge - Always show */}
+              {product.price && (
+                <div 
+                  className="absolute top-2 bg-yellow-500 text-black text-sm font-bold px-3 py-1 rounded-lg shadow-lg z-20"
+                  style={{
+                    left: '50%',
+                    transform: 'translateX(-50%)'
+                  }}
+                >
+                  ${product.price}
+                </div>
+              )}
+              
+              {/* Info Bar with Button */}
               <div className="p-3 bg-black/50" style={{ height: '90px' }}>
                 <h3 className="text-base font-bold text-white truncate mb-2 text-center" 
                     style={{ textAlign: 'center' }}>
@@ -627,15 +620,10 @@ export default function PhonesCategory() {
                     e.stopPropagation();
                     handleProductClick(product);
                   }}
-                  className={`w-full ${
-                    product.availability === 'Out of Stock' 
-                      ? 'bg-gray-500 cursor-not-allowed' 
-                      : 'bg-yellow-500 hover:bg-yellow-400'
-                  } text-black text-sm font-bold py-2 rounded transition-colors duration-200`}
+                  className="w-full bg-yellow-500 hover:bg-yellow-400 text-black text-sm font-bold py-2 rounded transition-colors duration-200"
                   type="button"
-                  disabled={product.availability === 'Out of Stock'}
                 >
-                  {product.availability === 'Out of Stock' ? 'Sold Out' : t.viewDetails}
+                  {t.viewDetails}
                 </button>
               </div>
             </div>
@@ -643,7 +631,7 @@ export default function PhonesCategory() {
         </div>
       </div>
 
-      {/* Modal - Simplified Implementation */}
+      {/* Modal */}
       {selectedProduct && (
         <>
           {/* Backdrop */}
@@ -701,10 +689,18 @@ export default function PhonesCategory() {
                     />
                   </div>
                   
-                  <div className="bg-green-50 border-2 border-green-500 text-green-700 text-center py-3 rounded-lg font-bold">
-                    <Check className="inline w-5 h-5 mr-2" />
-                    {t.inStock}
-                  </div>
+                  {/* Status Badge - Conditional */}
+                  {selectedProduct.availability === 'More Coming Soon' ? (
+                    <div className="bg-red-500/90 text-white text-center py-3 rounded-lg font-bold">
+                      <X className="inline w-5 h-5 mr-2" />
+                      SOLD OUT
+                    </div>
+                  ) : (
+                    <div className="bg-green-50 border-2 border-green-500 text-green-700 text-center py-3 rounded-lg font-bold">
+                      <Check className="inline w-5 h-5 mr-2" />
+                      {t.inStock}
+                    </div>
+                  )}
                 </div>
 
                 {/* Right side - Details */}
@@ -735,6 +731,15 @@ export default function PhonesCategory() {
                       ))}
                     </div>
                   </div>
+
+                  {/* More Coming Soon Message */}
+                  {selectedProduct.availability === 'More Coming Soon' && (
+                    <div className="bg-yellow-100 border-l-4 border-yellow-400 p-4 mb-6 rounded-r-lg">
+                      <p className="text-yellow-700 font-semibold">
+                        📦 This item is coming back soon! Check back later or contact us for updates.
+                      </p>
+                    </div>
+                  )}
 
                   <div className="space-y-3">
                     <a 
