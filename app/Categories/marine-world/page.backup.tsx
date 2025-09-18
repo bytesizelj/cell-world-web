@@ -3,17 +3,17 @@
 import { useState } from 'react';
 import { ArrowLeft, Globe, Phone, MessageCircle, X, Check, Waves, Fish, Anchor, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
-const Celly = dynamic(() => import('@/components/CellyAssistant'), { ssr: false });
+//import dynamic from 'next/dynamic';
+//const Celly = dynamic(() => import('@/components/CellyAssistant'), { ssr: false });
 
 export default function MarineWorldPage() {
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
   const [language, setLanguage] = useState('en');
   const [filterCategory, setFilterCategory] = useState('all');
 
-  // Complete marine products array with YOUR NEW FUEL PRODUCTS ADDED
+  // Complete marine products array (same as before)
   const products = [
-    // BOAT ACCESSORIES PRODUCTS (KEEPING YOUR EXISTING)
+    // BOAT ACCESSORIES PRODUCTS
     {
       id: 'switch-panel',
       name: 'Switch Panel',
@@ -98,7 +98,7 @@ export default function MarineWorldPage() {
       }
     },  
 
-    // FISHING GEAR PRODUCTS (KEEPING YOUR EXISTING)
+    // FISHING GEAR PRODUCTS
     {
       id: 5,
       name: "Jig Assist Hooks - 5X Strong",
@@ -130,7 +130,7 @@ export default function MarineWorldPage() {
       }
     },
 
-    // BOAT PARTS PRODUCTS (KEEPING YOUR EXISTING)
+    // BOAT PARTS PRODUCTS
     {
       id: 'engine-mount',
       name: 'Engine Mount',
@@ -198,61 +198,8 @@ export default function MarineWorldPage() {
         application: 'Cylinder head to engine block seal'
       }
     },
-
-    // *** YOUR 3 NEW FUEL PRODUCTS ADDED HERE ***
-    {
-      id: 'fuel-primer-bulb',
-      name: 'Fuel Primer Bulb Pump Assy 1/4 for Yamaha Outboard Motors',
-      image: '/images/Products/marine/fuel-primer-bulb.png',
-      price: 75.00,
-      priceRange: '$75.00',
-      category: 'boat-parts',
-      availability: 'In Stock',
-      description: 'Premium quality fuel primer bulb pump assembly (1/4") specifically designed for Yamaha outboard motors. Essential for maintaining proper fuel flow and easy engine starting. Durable construction ensures long-lasting performance in marine environments.',
-      specs: {
-        type: 'Fuel Primer Bulb Pump Assembly',
-        size: '1/4 inch',
-        compatibility: 'Yamaha Outboard Motors',
-        partNumber: '6Y1-24360-52',
-        material: 'Marine-grade rubber/polymer'
-      }
-    },
-    {
-      id: 'fuel-clip',
-      name: 'Fuel Clip - Yamaha OEM Fuel Line Connector',
-      image: '/images/Products/marine/fuel-clip.png',
-      price: 60.00,
-      priceRange: '$60.00',
-      category: 'boat-parts',
-      availability: 'In Stock',
-      description: 'Genuine Yamaha OEM fuel line connector clip for secure and leak-free fuel line connections. Features 8mm (3/8") fitting for standard marine fuel lines. Manufactured to exact specifications for perfect fit and reliability.',
-      specs: {
-        type: 'Fuel Line Connector Clip',
-        size: '8mm (3/8 inch)',
-        partNumber: '6E5-24305-06-00',
-        brand: 'Yamaha OEM',
-        material: 'Marine-grade materials'
-      }
-    },
-    {
-      id: 'fuel-line-kit',
-      name: 'Fuel Line Kit - Yamaha OEM with Connectors',
-      image: '/images/Products/marine/fuel-line-kit.png',
-      price: 250.00,
-      priceRange: '$250.00',
-      category: 'boat-parts',
-      availability: 'In Stock',
-      description: 'Complete Yamaha OEM fuel line kit with all necessary connectors included. Professional-grade marine fuel line assembly ensures optimal fuel delivery and engine performance. Resistant to ethanol and marine conditions.',
-      specs: {
-        type: 'Complete Fuel Line Kit',
-        partNumber: '6YK-24306-64-00',
-        brand: 'Yamaha OEM',
-        includes: 'Fuel line with all connectors',
-        features: 'Ethanol-resistant, UV-resistant'
-      }
-    },
     
-    // FISHING LURES PRODUCTS (KEEPING YOUR EXISTING)
+    // FISHING LURES PRODUCTS
     {
       id: 8,
       name: "Fishing Reels YoYo",
@@ -405,15 +352,15 @@ export default function MarineWorldPage() {
             </Link>
             
             <img 
-              src="/images/marine-logo.png"
-              alt="Marine World"
-              style={{ 
-                height: '80px',
-                width: 'auto', 
-                objectFit: 'contain',
-                filter: 'drop-shadow(0 0 10px rgba(255,255,255,0.5)) drop-shadow(0 0 20px rgba(64, 224, 208, 0.4))'
-              }}
-            />
+  src="/images/marine-logo.png"
+  alt="Marine World"
+  style={{ 
+    height: '80px',
+    width: 'auto', 
+    objectFit: 'contain',
+    filter: 'drop-shadow(0 0 10px rgba(255,255,255,0.5)) drop-shadow(0 0 20px rgba(64, 224, 208, 0.4))'
+  }}
+/>
           </div>
           
           <button 
@@ -635,8 +582,8 @@ export default function MarineWorldPage() {
           </>
         )}
         
-        {/* Celly Assistant - KEEPING THIS! */}
-        <Celly />
+        {/* Celly Assistant */}
+         {/*<Celly />*/}
       </div>
     </>
   );
