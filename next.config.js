@@ -6,24 +6,27 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/images/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-      {
         source: '/:path*',
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=0, must-revalidate',
+            value: 'no-cache, no-store, must-revalidate',
+          },
+          {
+            key: 'Pragma',
+            value: 'no-cache',
+          },
+          {
+            key: 'Expires',
+            value: '0',
           },
         ],
       },
     ]
+  },
+  generateBuildId: async () => {
+    // This ensures each build has a unique ID
+    return Date.now().toString()
   },
 }
 module.exports = nextConfig

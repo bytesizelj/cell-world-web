@@ -623,9 +623,9 @@ export default function MoreCategory() {
   id: 'jbl-endurance-race',
   name: 'JBL Endurance Race',
   image: '/images/Products/more/jbl-endurance-race.png',
-  price: 250.00,
+  price: 280.00,
   category: 'earbuds',
-  availability: 'In Stock',
+  availability: 'More Coming Soon',
   specs: {
     type: 'Sport Earbuds',
     waterproof: 'IPX7 Waterproof',
@@ -1442,6 +1442,7 @@ export default function MoreCategory() {
       image: "/images/Products/more/bossbar-wireless-10000.png",
       description: "Premium wireless power bank with digital display. Features 15W wireless fast charging, 22.5W super fast charge output.",
       category: "powerbanks",
+      availability: 'More Coming Soon',
       specs: {
         capacity: "10000mAh capacity",
         wireless: "15W Wireless charging",
@@ -1500,6 +1501,7 @@ export default function MoreCategory() {
       image: "/images/Products/more/hypergear-aeroflex-360.png",
       description: "Revolutionary open-ear design for 360° situational awareness. Enjoy music while staying aware of surroundings. 25 hours extended playtime.",
       category: "earbuds",
+      availability: 'More Coming Soon',
       specs: {
         design: "Open-ear design",
         awareness: "360° awareness",
@@ -1556,7 +1558,7 @@ export default function MoreCategory() {
   image: '/images/Products/more/motorola-kids-wireless-headphones.png',
   price: 150.00,
   category: 'headphones',
-  availability: 'Limited Stock',
+  availability: 'More Coming Soon',
   color: 'Blue - 1 left',
   specs: {
     feature: "Kids\' safe volume limit",
@@ -1572,7 +1574,7 @@ export default function MoreCategory() {
   image: '/images/Products/more/jbl-tune-525.png',
   price: 225.00,
   category: 'headphones',
-  availability: 'Low Stock',
+  availability: 'More Coming Soon',
   color: 'Navy Blue - 2 left',
   specs: {
     calls: 'Hands-free calls',
@@ -1588,7 +1590,7 @@ export default function MoreCategory() {
   image: '/images/Products/more/jbl-tune-520.png',
   price: 199.00,
   category: 'headphones',
-  availability: 'Low Stock',
+  availability: 'More Coming Soon',
   color: 'White - 3 left',
   specs: {
     calls: 'Hands-free calls',
@@ -1603,7 +1605,7 @@ export default function MoreCategory() {
   image: '/images/Products/more/hypergear-vibe-wireless-headphone.png',
   price: 90.00,
   category: 'headphones',
-  availability: 'Low Stock',
+  availability: 'More Coming Soon',
   color: 'White - 2 left',
   specs: {
     battery: '10 hours total battery life',
@@ -1620,7 +1622,7 @@ export default function MoreCategory() {
   image: '/images/Products/more/hypergear-2in1-wireless-headphones.png',
   price: 110.00,
   category: 'headphones',
-  availability: 'Low Stock',
+  availability: 'More Coming Soon',
   color: 'White - 2 left',
   specs: {
     modes: 'Flip in: Headphone mode | Flip out: Speaker mode',

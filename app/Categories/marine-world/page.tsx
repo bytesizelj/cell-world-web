@@ -202,52 +202,46 @@ export default function MarineWorldPage() {
     // *** YOUR 3 NEW FUEL PRODUCTS ADDED HERE ***
     {
       id: 'fuel-primer-bulb',
-      name: 'Fuel Primer Bulb Pump Assy 1/4 for Yamaha Outboard Motors',
-      image: '/images/Products/marine/fuel-primer-bulb.png',
+      name: 'Fuel Primer Bulb Pump',
+      image: '/images/Products/marine/fuel-primer-bulb.png?v=2',
       price: 75.00,
       priceRange: '$75.00',
       category: 'boat-parts',
       availability: 'In Stock',
-      description: 'Premium quality fuel primer bulb pump assembly (1/4") specifically designed for Yamaha outboard motors. Essential for maintaining proper fuel flow and easy engine starting. Durable construction ensures long-lasting performance in marine environments.',
+      description: 'Premium quality fuel primer bulb pump assembly. Essential for maintaining proper fuel flow and easy engine starting. Durable construction ensures long-lasting performance in marine environments.',
       specs: {
         type: 'Fuel Primer Bulb Pump Assembly',
         size: '1/4 inch',
-        compatibility: 'Yamaha Outboard Motors',
-        partNumber: '6Y1-24360-52',
+        compatibility: 'Outboard Motors',
         material: 'Marine-grade rubber/polymer'
       }
     },
     {
       id: 'fuel-clip',
-      name: 'Fuel Clip - Yamaha OEM Fuel Line Connector',
-      image: '/images/Products/marine/fuel-clip.png',
+      name: 'Fuel Clip',
+      image: '/images/Products/marine/fuel-clip.png?v=2',
       price: 60.00,
       priceRange: '$60.00',
       category: 'boat-parts',
       availability: 'In Stock',
-      description: 'Genuine Yamaha OEM fuel line connector clip for secure and leak-free fuel line connections. Features 8mm (3/8") fitting for standard marine fuel lines. Manufactured to exact specifications for perfect fit and reliability.',
+      description: 'Genuine fuel line connector clip for secure and leak-free fuel line connections. Manufactured to exact specifications for perfect fit and reliability.',
       specs: {
         type: 'Fuel Line Connector Clip',
-        size: '8mm (3/8 inch)',
-        partNumber: '6E5-24305-06-00',
-        brand: 'Yamaha OEM',
         material: 'Marine-grade materials'
       }
     },
     {
       id: 'fuel-line-kit',
-      name: 'Fuel Line Kit - Yamaha OEM with Connectors',
-      image: '/images/Products/marine/fuel-line-kit.png',
+      name: 'Fuel Line Kit',
+      image: '/images/Products/marine/fuel-line-kit.png?v=2',
       price: 250.00,
       priceRange: '$250.00',
       category: 'boat-parts',
       availability: 'In Stock',
-      description: 'Complete Yamaha OEM fuel line kit with all necessary connectors included. Professional-grade marine fuel line assembly ensures optimal fuel delivery and engine performance. Resistant to ethanol and marine conditions.',
+      description: 'Complete fuel line kit with all necessary connectors included. Professional-grade marine fuel line assembly ensures optimal fuel delivery and engine performance. Resistant to ethanol and marine conditions.',
       specs: {
         type: 'Complete Fuel Line Kit',
-        partNumber: '6YK-24306-64-00',
-        brand: 'Yamaha OEM',
-        includes: 'Fuel line with all connectors',
+        includes: 'Fuel line',
         features: 'Ethanol-resistant, UV-resistant'
       }
     },
