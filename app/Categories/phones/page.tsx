@@ -13,6 +13,7 @@ export default function PhonesCategory() {
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
   const [language, setLanguage] = useState('en');
   const [filterCategory, setFilterCategory] = useState('all');
+  const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({});
 
   // Enhanced product data with categories
   const products = [
@@ -73,6 +74,10 @@ export default function PhonesCategory() {
       id: 'samsung-a25', 
       name: 'Samsung Galaxy A25', 
       image: '/images/Products/phones/cropped/samsung-a25.png',
+      additionalImages: [
+    '/images/Products/phones/cropped/samsung-a25-angle2.png',
+    '/images/Products/phones/cropped/samsung-a25-angle3.png'
+  ],
       price: 1199.00,
       category: 'midrange',
       availability: 'In Stock',
@@ -579,8 +584,8 @@ export default function PhonesCategory() {
                 </div>
               )}
               
-              {/* Product Image */}
-              <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-3" style={{ height: '260px' }}>
+              {/* Product Image with HOVER ZOOM */}
+              <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-3 overflow-hidden" style={{ height: '260px' }}>
                 {/* More Coming Soon Overlay */}
                 {product.availability === 'More Coming Soon' && (
                   <div className="absolute inset-0 bg-black/30 z-10 flex items-center justify-center pointer-events-none">
@@ -590,10 +595,43 @@ export default function PhonesCategory() {
                   </div>
                 )}
                 <img 
-                  src={product.image}
+                  src={
+                    product.additionalImages && selectedImages[product.id as string] !== undefined
+                      ? product.additionalImages[selectedImages[product.id as string]]
+                      : product.image
+                  }
                   alt={product.name}
-                  className="w-full h-full object-contain p-2"
+                  className="w-full h-full object-contain p-2 transition-transform duration-700 hover:scale-125 cursor-zoom-in"
                 />
+                
+                {/* Image selector dots if there are additional images - TYPESCRIPT FIX */}
+                {product.additionalImages && (
+                  <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-2 z-20">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        const newSelectedImages = {...selectedImages};
+                        delete newSelectedImages[product.id as string];
+                        setSelectedImages(newSelectedImages);
+                      }}
+                      className={`w-2 h-2 rounded-full ${
+                        selectedImages[product.id as string] === undefined ? 'bg-yellow-400' : 'bg-gray-400'
+                      }`}
+                    />
+                    {product.additionalImages.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedImages({...selectedImages, [product.id as string]: index});
+                        }}
+                        className={`w-2 h-2 rounded-full ${
+                          selectedImages[product.id as string] === index ? 'bg-yellow-400' : 'bg-gray-400'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                )}
               </div>
 
               {/* Price Badge - Always show */}
