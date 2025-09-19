@@ -32,28 +32,36 @@ export default function Home() {
     return () => clearInterval(interval);
   }, [videos.length]);
   
-  // ADD THIS: Preload critical images
-useEffect(() => {
-  const criticalImages = [
-    '/images/cell-world-logo.png',
-    '/images/phones.jpg',
-    '/images/fishing.jpg',
-    '/images/more.jpg'
-  ];
-  
-  Promise.all(
-    criticalImages.map(src => {
-      return new Promise((resolve) => {
-        const img = new Image();
-        img.onload = resolve;
-        img.onerror = resolve; // Still continue if image fails
-        img.src = src;
-      });
-    })
-  ).then(() => {
-    setIsLoading(false);
-  });
-}, []);
+  // IMPROVED: Faster loading with timeout fallback
+  useEffect(() => {
+    const criticalImages = [
+      '/images/cell-world-logo.png',
+      '/images/phones.jpg',
+      '/images/fishing.jpg',
+      '/images/more.jpg'
+    ];
+    
+    // Set a maximum loading time of 2 seconds
+    const loadingTimeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+    
+    Promise.all(
+      criticalImages.map(src => {
+        return new Promise((resolve) => {
+          const img = new Image();
+          img.onload = resolve;
+          img.onerror = resolve;
+          img.src = src;
+        });
+      })
+    ).then(() => {
+      clearTimeout(loadingTimeout);
+      setIsLoading(false);
+    });
+    
+    return () => clearTimeout(loadingTimeout);
+  }, []);
   
   const translations = {
     en: {
@@ -137,15 +145,23 @@ useEffect(() => {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-black">
-      {/* ADD THIS: Loading Screen */}
-    {isLoading && (
-      <div className="fixed inset-0 z-50 bg-black flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-yellow-400 mb-4 mx-auto"></div>
-          <p className="text-yellow-400 text-xl">Loading...</p>
+      {/* IMPROVED: Better loading screen with logo */}
+      {isLoading && (
+        <div className="fixed inset-0 z-50 bg-gradient-to-br from-purple-900/90 via-black to-blue-900/90 flex items-center justify-center">
+          <div className="text-center">
+            <img 
+              src="/images/cell-world-logo.png"
+              alt="Cell World"
+              className="h-32 w-auto mb-6 mx-auto animate-pulse"
+              style={{ 
+                filter: 'drop-shadow(0 0 20px rgba(255,215,0,0.6))'
+              }}
+            />
+            <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-yellow-400 mb-4 mx-auto"></div>
+            <p className="text-yellow-400 text-xl font-semibold">Loading Cell World...</p>
+          </div>
         </div>
-      </div>
-    )}
+      )}
          
       {/* Video Background with Rotation */}
       <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}>
@@ -175,10 +191,10 @@ useEffect(() => {
           </video>
         ))}
         
-        {/* Loading state */}
+        {/* Fallback gradient if video hasn't loaded */}
         {!isVideoLoaded && (
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-blue-900">
-            <div className="absolute inset-0 opacity-30">
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/50 via-black to-blue-900/50">
+            <div className="absolute inset-0 opacity-20">
               <div className="h-full w-full bg-gradient-to-r from-transparent via-white to-transparent animate-shimmer" />
             </div>
           </div>
@@ -186,91 +202,89 @@ useEffect(() => {
       </div>
 
       {/* Navigation */}
-<nav className="relative z-20 p-6">
-  <div className="flex items-center justify-between">
-    {/* Left side - Menu (Using normal flow, not fixed) */}
-    <div className="relative">
-      <button 
-        onClick={() => setIsMenuOpen(!isMenuOpen)} 
-        className="p-2 bg-white rounded-lg shadow-lg hover:bg-gray-100 transition-colors"
-      >
-        {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-      </button>
-    </div>
-  
-    {/* Right side - Controls */}
-    <div className="flex items-center space-x-4">
-      {/* Language Selector */}
-      <button 
-        className="group flex items-center space-x-2 text-white bg-gradient-to-r from-yellow-600/20 to-orange-600/20 backdrop-blur-md px-3 py-2 rounded-full hover:from-yellow-600/30 hover:to-orange-600/30 border border-yellow-500/30 transition-all duration-300 shadow-lg hover:shadow-yellow-500/25"
-        onClick={() => {
-          const langs = ['en', 'fr', 'es'];
-          const currentIndex = langs.indexOf(language);
-          setLanguage(langs[(currentIndex + 1) % langs.length]);
-        }}
-        title="Change Language"
-      >
-        <div className="relative">
-          <Globe className="w-4 h-4 text-yellow-400" />
-          <div className="absolute -inset-1 bg-yellow-400 opacity-30 blur-sm rounded-full group-hover:opacity-50 transition-opacity"></div>
-        </div>
-        <span className="text-xs uppercase font-bold text-yellow-400">{language}</span>
-      </button>
-      
-      {/* Quick Contact Button */}
-      <a 
-        href="tel:+17844512261"
-        className="text-white bg-white/10 p-2 rounded-lg backdrop-blur-md hover:bg-white/20 transition-all duration-300"
-        title="Call Us"
-      >
-        <Phone className="w-4 h-4" />
-      </a>
-    </div>
-  </div>
-</nav>
-
-{/* Menu Panel - Outside of nav, controlled by state */}
-{isMenuOpen && (
-  <div 
-    className="fixed top-0 left-0 w-64 h-full bg-white shadow-2xl"
-    style={{ zIndex: 9999999999 }}
-  >
-    <div className="p-6 pt-20">
-      <button
-        onClick={() => setIsMenuOpen(false)}
-        className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-lg"
-      >
-        <X size={24} />
-      </button>
-      
-      <div className="space-y-2">
-        <a href="/" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
-          🏠 Home
-        </a>
-        <a href="/Categories/phones" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
-          📱 Phones
-        </a>
-        <a href="/Categories/marine-world" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
-          🚤 Marine World
-        </a>
+      <nav className="relative z-20 p-6">
+        <div className="flex items-center justify-between">
+          {/* Left side - Menu (Using normal flow, not fixed) */}
+          <div className="relative">
+            <button 
+              onClick={() => setIsMenuOpen(!isMenuOpen)} 
+              className="p-2 bg-white rounded-lg shadow-lg hover:bg-gray-100 transition-colors"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         
-	<a href="/Categories/more" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
-  	  📦 More Products
-	</a>
+          {/* Right side - Controls */}
+          <div className="flex items-center space-x-4">
+            {/* Language Selector */}
+            <button 
+              className="group flex items-center space-x-2 text-white bg-gradient-to-r from-yellow-600/20 to-orange-600/20 backdrop-blur-md px-3 py-2 rounded-full hover:from-yellow-600/30 hover:to-orange-600/30 border border-yellow-500/30 transition-all duration-300 shadow-lg hover:shadow-yellow-500/25"
+              onClick={() => {
+                const langs = ['en', 'fr', 'es'];
+                const currentIndex = langs.indexOf(language);
+                setLanguage(langs[(currentIndex + 1) % langs.length]);
+              }}
+              title="Change Language"
+            >
+              <div className="relative">
+                <Globe className="w-4 h-4 text-yellow-400" />
+                <div className="absolute -inset-1 bg-yellow-400 opacity-30 blur-sm rounded-full group-hover:opacity-50 transition-opacity"></div>
+              </div>
+              <span className="text-xs uppercase font-bold text-yellow-400">{language}</span>
+            </button>
+            
+            {/* Quick Contact Button */}
+            <a 
+              href="tel:+17844512261"
+              className="text-white bg-white/10 p-2 rounded-lg backdrop-blur-md hover:bg-white/20 transition-all duration-300"
+              title="Call Us"
+            >
+              <Phone className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+      </nav>
 
-	<a href="/reviews" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
-          ⭐ Reviews
-        </a>
-        <a href="/contact" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
-          📞 Contact
-        </a>
-        <a href="/order" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
-          🛒 Order
-        </a>
-      </div>
-    </div>
-  </div>
-)}
+      {/* Menu Panel - Outside of nav, controlled by state */}
+      {isMenuOpen && (
+        <div 
+          className="fixed top-0 left-0 w-64 h-full bg-white shadow-2xl"
+          style={{ zIndex: 9999999999 }}
+        >
+          <div className="p-6 pt-20">
+            <button
+              onClick={() => setIsMenuOpen(false)}
+              className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-lg"
+            >
+              <X size={24} />
+            </button>
+            
+            <div className="space-y-2">
+              <a href="/" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+                🏠 Home
+              </a>
+              <a href="/Categories/phones" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+                📱 Phones
+              </a>
+              <a href="/Categories/marine-world" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+                🚤 Marine World
+              </a>
+              <a href="/Categories/more" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+                📦 More Products
+              </a>
+              <a href="/reviews" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+                ⭐ Reviews
+              </a>
+              <a href="/contact" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+                📞 Contact
+              </a>
+              <a href="/order" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+                🛒 Order
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
       
       {/* Hero Content */}
       <div className="relative z-20 flex flex-col items-start justify-start min-h-screen px-3" style={{ marginTop: '-40px' }}>
@@ -288,23 +302,23 @@ useEffect(() => {
             }}
           />
         </div>
-        </div>
+      </div>
         
-      {/* Category Section with CTA Buttons */}
+      {/* Category Section with HOVER ZOOM for images */}
       <section className="relative z-20 bg-black/90 py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             
-            {/* Mobile Phones Category */}
+            {/* Mobile Phones Category with HOVER ZOOM */}
             <Link 
               href="/Categories/phones"
               className="group relative overflow-hidden rounded-xl shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-3xl cursor-pointer block"
             >
-              <div className="aspect-[4/3] relative">
+              <div className="aspect-[4/3] relative overflow-hidden">
                 <img 
                   src="/images/phones.jpg" 
                   alt="Mobile Phones"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
                 
@@ -329,16 +343,16 @@ useEffect(() => {
               </div>
             </Link>
 
-            {/* Fishing Gear Category */}
+            {/* Fishing Gear Category with HOVER ZOOM */}
             <Link 
               href="/Categories/marine-world"
               className="group relative overflow-hidden rounded-xl shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-3xl cursor-pointer block"
             >
-              <div className="aspect-[4/3] relative">
+              <div className="aspect-[4/3] relative overflow-hidden">
                 <img 
                   src="/images/fishing.jpg" 
                   alt="Fishing Gear"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
                 
@@ -363,16 +377,16 @@ useEffect(() => {
               </div>
             </Link>
 
-            {/* More Products Category */}
+            {/* More Products Category with HOVER ZOOM */}
             <Link 
               href="/Categories/more"
               className="group relative overflow-hidden rounded-xl shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-3xl cursor-pointer block"
             >
-              <div className="aspect-[4/3] relative">
+              <div className="aspect-[4/3] relative overflow-hidden">
                 <img 
                   src="/images/more.jpg" 
                   alt="More Products"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
                 
@@ -401,139 +415,139 @@ useEffect(() => {
         </div>
       </section>
 
-  {/* Hero Text at Bottom */}
-<section className="relative z-20 py-20 bg-black/80">
-  <div className="max-w-4xl mx-auto px-6 text-center">
-    {/* Cell World St. Vincent - Scripted */}
-    <h2 className="text-3xl md:text-4xl mb-4 opacity-0 animate-fade-up"
-        style={{ 
-          color: '#FFD700', 
-          fontFamily: '"Brush Script MT", "Lucida Handwriting", "Lucida Calligraphy", cursive',
-          fontWeight: '400',
-          textShadow: '0 3px 15px rgba(255, 215, 0, 0.4), 0 2px 8px rgba(0,0,0,0.9)',
-          letterSpacing: '1px'
-        }}>
-      Cell World St. Vincent
-    </h2>
-    
-    {/* Tagline - smaller size */}
-<p className="text-lg md:text-xl mb-6 opacity-0 animate-fade-up animation-delay-300"
-   style={{ 
-     color: '#FFFFFF',  // Changed to white
-     fontFamily: '"Brush Script MT", "Dancing Script", cursive',
-     fontWeight: '500', 
-     textShadow: '0 2px 10px rgba(0,0,0,0.8)', 
-     fontStyle: 'italic' 
-   }}>
-  {t.tagline}
-</p>
-    
-    {/* Delivery Promise */}
-    <p className="text-md md:text-lg mb-6 opacity-0 animate-fade-up animation-delay-400"
-       style={{ color: '#FFA500', fontWeight: '500', textShadow: '0 2px 8px rgba(0,0,0,0.7)' }}>
-      {t.delivery}
-    </p>
-    
-    {/* Celly Assistant Notice - WITH AVATAR */}
-<div className="flex items-center justify-center mb-8 opacity-0 animate-fade-up animation-delay-450">
-  <img 
-    src="/images/celly/celly-avatar-icon.png" 
-    alt="Celly AI Assistant" 
-    className="w-14 h-14 mr-3"
-    style={{ 
-      filter: 'drop-shadow(0 0 20px rgba(64, 224, 208, 0.5))'
-    }}
-  />
-  <p className="text-md md:text-lg"
-     style={{ 
-       color: '#40E0D0', 
-       fontWeight: '600',
-       textShadow: '0 0 20px rgba(64, 224, 208, 0.6), 0 0 35px rgba(64, 224, 208, 0.4), 0 2px 10px rgba(0,0,0,0.9)',
-       fontStyle: 'italic'
-     }}>
-    Need Help? Celly, Our AI Assistant, is Available 24/7
-  </p>
-</div>
-    
-    {/* Contact Us Button */}
-    <Link 
-      href="/contact"
-      className="group relative inline-block opacity-0 animate-fade-up animation-delay-500"
-      style={{
-        padding: '14px 40px',
-        borderRadius: '50px',
-        background: 'linear-gradient(135deg, #FFD700, #FFA500)',
-        fontSize: '18px',
-        fontWeight: 'bold',
-        color: '#000',
-        textDecoration: 'none',
-        boxShadow: '0 4px 15px rgba(255, 215, 0, 0.4), 0 8px 30px rgba(255, 165, 0, 0.3)',
-        filter: 'drop-shadow(0 0 20px rgba(255, 215, 0, 0.5))',
-        transition: 'all 0.3s ease',
-        display: 'inline-block',
-        position: 'relative',
-        overflow: 'hidden'
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.transform = 'scale(1.05)';
-        e.currentTarget.style.filter = 'drop-shadow(0 0 30px rgba(255, 215, 0, 0.7))';
-        e.currentTarget.style.boxShadow = '0 6px 20px rgba(255, 215, 0, 0.5), 0 12px 40px rgba(255, 165, 0, 0.4)';
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.transform = 'scale(1)';
-        e.currentTarget.style.filter = 'drop-shadow(0 0 20px rgba(255, 215, 0, 0.5))';
-        e.currentTarget.style.boxShadow = '0 4px 15px rgba(255, 215, 0, 0.4), 0 8px 30px rgba(255, 165, 0, 0.3)';
-      }}
-    >
-      <span style={{ position: 'relative', zIndex: 2 }}>{t.contactNow}</span>
-      <div style={{
-        position: 'absolute',
-        top: 0,
-        left: '-100%',
-        width: '100%',
-        height: '100%',
-        background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)',
-        transition: 'left 0.5s',
-        animation: 'shimmer 3s infinite'
-      }} />
-    </Link>
-</div>  
-</section>  
+      {/* Hero Text at Bottom */}
+      <section className="relative z-20 py-20 bg-black/80">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          {/* Cell World St. Vincent - Scripted */}
+          <h2 className="text-3xl md:text-4xl mb-4 opacity-0 animate-fade-up"
+              style={{ 
+                color: '#FFD700', 
+                fontFamily: '"Brush Script MT", "Lucida Handwriting", "Lucida Calligraphy", cursive',
+                fontWeight: '400',
+                textShadow: '0 3px 15px rgba(255, 215, 0, 0.4), 0 2px 8px rgba(0,0,0,0.9)',
+                letterSpacing: '1px'
+              }}>
+            Cell World St. Vincent
+          </h2>
+          
+          {/* Tagline - smaller size */}
+          <p className="text-lg md:text-xl mb-6 opacity-0 animate-fade-up animation-delay-300"
+             style={{ 
+               color: '#FFFFFF',
+               fontFamily: '"Brush Script MT", "Dancing Script", cursive',
+               fontWeight: '500', 
+               textShadow: '0 2px 10px rgba(0,0,0,0.8)', 
+               fontStyle: 'italic' 
+             }}>
+            {t.tagline}
+          </p>
+          
+          {/* Delivery Promise */}
+          <p className="text-md md:text-lg mb-6 opacity-0 animate-fade-up animation-delay-400"
+             style={{ color: '#FFA500', fontWeight: '500', textShadow: '0 2px 8px rgba(0,0,0,0.7)' }}>
+            {t.delivery}
+          </p>
+          
+          {/* Celly Assistant Notice - WITH AVATAR */}
+          <div className="flex items-center justify-center mb-8 opacity-0 animate-fade-up animation-delay-450">
+            <img 
+              src="/images/celly/celly-avatar-icon.png" 
+              alt="Celly AI Assistant" 
+              className="w-14 h-14 mr-3"
+              style={{ 
+                filter: 'drop-shadow(0 0 20px rgba(64, 224, 208, 0.5))'
+              }}
+            />
+            <p className="text-md md:text-lg"
+               style={{ 
+                 color: '#40E0D0', 
+                 fontWeight: '600',
+                 textShadow: '0 0 20px rgba(64, 224, 208, 0.6), 0 0 35px rgba(64, 224, 208, 0.4), 0 2px 10px rgba(0,0,0,0.9)',
+                 fontStyle: 'italic'
+               }}>
+              Need Help? Celly, Our AI Assistant, is Available 24/7
+            </p>
+          </div>
+          
+          {/* Contact Us Button */}
+          <Link 
+            href="/contact"
+            className="group relative inline-block opacity-0 animate-fade-up animation-delay-500"
+            style={{
+              padding: '14px 40px',
+              borderRadius: '50px',
+              background: 'linear-gradient(135deg, #FFD700, #FFA500)',
+              fontSize: '18px',
+              fontWeight: 'bold',
+              color: '#000',
+              textDecoration: 'none',
+              boxShadow: '0 4px 15px rgba(255, 215, 0, 0.4), 0 8px 30px rgba(255, 165, 0, 0.3)',
+              filter: 'drop-shadow(0 0 20px rgba(255, 215, 0, 0.5))',
+              transition: 'all 0.3s ease',
+              display: 'inline-block',
+              position: 'relative',
+              overflow: 'hidden'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'scale(1.05)';
+              e.currentTarget.style.filter = 'drop-shadow(0 0 30px rgba(255, 215, 0, 0.7))';
+              e.currentTarget.style.boxShadow = '0 6px 20px rgba(255, 215, 0, 0.5), 0 12px 40px rgba(255, 165, 0, 0.4)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'scale(1)';
+              e.currentTarget.style.filter = 'drop-shadow(0 0 20px rgba(255, 215, 0, 0.5))';
+              e.currentTarget.style.boxShadow = '0 4px 15px rgba(255, 215, 0, 0.4), 0 8px 30px rgba(255, 165, 0, 0.3)';
+            }}
+          >
+            <span style={{ position: 'relative', zIndex: 2 }}>{t.contactNow}</span>
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              left: '-100%',
+              width: '100%',
+              height: '100%',
+              background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)',
+              transition: 'left 0.5s',
+              animation: 'shimmer 3s infinite'
+            }} />
+          </Link>
+        </div>  
+      </section>  
 
-{/* Island Delivery Links */}
-<section className="relative z-20 py-12 bg-black/80">
-  <div className="max-w-4xl mx-auto px-6 text-center">
-    <h3 
-      className="text-2xl md:text-3xl mb-6"
-      style={{ 
-        color: '#FFFFFF',
-        fontFamily: '"Brush Script MT", "Lucida Handwriting", "Dancing Script", cursive',
-        fontWeight: '400',
-        textShadow: '0 2px 8px rgba(255, 215, 0, 0.4), 0 4px 16px rgba(255, 215, 0, 0.2)',
-        animation: 'slideInFromLeft 1.5s ease-out, pulse 2s ease-in-out 1.5s infinite'
-      }}
-    >
-      We Deliver Throughout the Grenadines
-    </h3>
-    <div className="flex flex-wrap justify-center gap-4">
-      <a href="/grenadines/bequia" className="text-teal-300 hover:text-yellow-400 px-3 py-2 border border-teal-400/30 rounded-full hover:border-yellow-400 transition-all">
-        Bequia
-      </a>
-      <a href="/grenadines/mustique" className="text-teal-300 hover:text-yellow-400 px-3 py-2 border border-teal-400/30 rounded-full hover:border-yellow-400 transition-all">
-        Mustique
-      </a>
-      <a href="/grenadines/canouan" className="text-teal-300 hover:text-yellow-400 px-3 py-2 border border-teal-400/30 rounded-full hover:border-yellow-400 transition-all">
-        Canouan
-      </a>
-      <a href="/grenadines/union-island" className="text-teal-300 hover:text-yellow-400 px-3 py-2 border border-teal-400/30 rounded-full hover:border-yellow-400 transition-all">
-        Union Island
-      </a>
-      <a href="/grenadines/mayreau" className="text-teal-300 hover:text-yellow-400 px-3 py-2 border border-teal-400/30 rounded-full hover:border-yellow-400 transition-all">
-        Mayreau
-      </a>
-    </div>
-  </div>
-</section>
+      {/* Island Delivery Links */}
+      <section className="relative z-20 py-12 bg-black/80">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h3 
+            className="text-2xl md:text-3xl mb-6"
+            style={{ 
+              color: '#FFFFFF',
+              fontFamily: '"Brush Script MT", "Lucida Handwriting", "Dancing Script", cursive',
+              fontWeight: '400',
+              textShadow: '0 2px 8px rgba(255, 215, 0, 0.4), 0 4px 16px rgba(255, 215, 0, 0.2)',
+              animation: 'slideInFromLeft 1.5s ease-out, pulse 2s ease-in-out 1.5s infinite'
+            }}
+          >
+            We Deliver Throughout the Grenadines
+          </h3>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a href="/grenadines/bequia" className="text-teal-300 hover:text-yellow-400 px-3 py-2 border border-teal-400/30 rounded-full hover:border-yellow-400 transition-all">
+              Bequia
+            </a>
+            <a href="/grenadines/mustique" className="text-teal-300 hover:text-yellow-400 px-3 py-2 border border-teal-400/30 rounded-full hover:border-yellow-400 transition-all">
+              Mustique
+            </a>
+            <a href="/grenadines/canouan" className="text-teal-300 hover:text-yellow-400 px-3 py-2 border border-teal-400/30 rounded-full hover:border-yellow-400 transition-all">
+              Canouan
+            </a>
+            <a href="/grenadines/union-island" className="text-teal-300 hover:text-yellow-400 px-3 py-2 border border-teal-400/30 rounded-full hover:border-yellow-400 transition-all">
+              Union Island
+            </a>
+            <a href="/grenadines/mayreau" className="text-teal-300 hover:text-yellow-400 px-3 py-2 border border-teal-400/30 rounded-full hover:border-yellow-400 transition-all">
+              Mayreau
+            </a>
+          </div>
+        </div>
+      </section>
         
       <CellyAssistant />
       
@@ -565,60 +579,36 @@ useEffect(() => {
             transform: translateX(0);
           }
         }
-      `}</style>
         
-      <CellyAssistant />
-      
-      {/* Add pulse animation for CTA buttons */}
-      <style jsx>{`
-        @keyframes pulse {
-          0%, 100% {
-            transform: scale(1);
-            opacity: 0.9;
-          }
-          50% {
-            transform: scale(1.05);
-            opacity: 1;
-          }
-        }
-        
-        @keyframes shimmer {
-          0% { left: -100%; }
-          100% { left: 200%; }
-        }
-        
-        @keyframes slideInFromLeft {
-          0% {
+        @keyframes fade-up {
+          from {
             opacity: 0;
-            transform: translateX(-100%);
+            transform: translateY(20px);
           }
-          100% {
+          to {
             opacity: 1;
-            transform: translateX(0);
-          }
-        }
-      `}</style>
-       
-     
-         
-      <CellyAssistant />
-      
-      {/* Add pulse animation for CTA buttons */}
-      <style jsx>{`
-        @keyframes pulse {
-          0%, 100% {
-            transform: scale(1);
-            opacity: 0.9;
-          }
-          50% {
-            transform: scale(1.05);
-            opacity: 1;
+            transform: translateY(0);
           }
         }
         
-        @keyframes shimmer {
-          0% { left: -100%; }
-          100% { left: 200%; }
+        .animate-fade-up {
+          animation: fade-up 1s ease-out forwards;
+        }
+        
+        .animation-delay-300 {
+          animation-delay: 300ms;
+        }
+        
+        .animation-delay-400 {
+          animation-delay: 400ms;
+        }
+        
+        .animation-delay-450 {
+          animation-delay: 450ms;
+        }
+        
+        .animation-delay-500 {
+          animation-delay: 500ms;
         }
       `}</style>
     </div>
