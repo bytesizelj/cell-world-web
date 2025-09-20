@@ -2113,7 +2113,7 @@ const translations = {
     className="group relative bg-gradient-to-br from-gray-900/60 via-purple-900/20 to-gray-900/60 backdrop-blur-sm rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20"
   >
     {/* Product Image */}
-    <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-4" style={{ height: '240px' }}>
+    <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-4 overflow-hidden" style={{ height: '240px' }}>
       {/* More Coming Soon Overlay */}
       {product.availability === 'More Coming Soon' && (
         <div className="absolute inset-0 bg-black/30 z-10 flex items-center justify-center pointer-events-none">
@@ -2124,10 +2124,10 @@ const translations = {
       )}
       
       <img 
-        src={product.image}
-        alt={product.name}
-        className="w-full h-full object-contain"
-      />
+  src={product.image}
+  alt={product.name}
+  className="w-full h-full object-contain transition-transform duration-700 hover:scale-125"
+/>
       
       {/* Category Badge */}
       <div className="absolute top-2 left-2 bg-purple-500/80 text-white text-xs font-bold px-2 py-1 rounded-full">
