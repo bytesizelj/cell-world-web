@@ -150,7 +150,7 @@ export default function PhonesCategory() {
       image: '/images/Products/phones/cropped/samsung-a26.png',
       price: 1250.00,
       category: 'midrange',
-      availability: 'In Stock',
+      availability: 'More Coming Soon',
       color: 'Black',
       specs: {
         ram: '6GB RAM',
@@ -204,7 +204,7 @@ export default function PhonesCategory() {
       image: '/images/Products/phones/cropped/fangor-tablet.png',
       price: 250.00,
       category: 'tablet',
-      availability: 'Limited Stock',
+      availability: 'More Coming Soon',
       color: 'Black',
       specs: {
         display: '8 inch Display',

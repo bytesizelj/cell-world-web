@@ -199,7 +199,40 @@ export default function MarineWorldPage() {
       }
     },
 
-    // *** YOUR 3 NEW FUEL PRODUCTS ADDED HERE ***
+    // *** YOUR NEW PRODUCTS ADDED HERE ***
+   {
+  id: 'boat-anchor',
+  name: 'Boat Anchor',
+  price: 150.00,
+  image: '/images/Products/marine/boat-anchor.png',
+  description: 'Heavy-duty galvanized steel anchor for secure mooring. Designed for reliable holding power in various seabed conditions.',
+  priceRange: '$150 up',
+  category: 'anchoring',
+  availability: 'In Stock',
+  specs: {
+    material: 'Galvanized steel construction',
+    type: 'Fluke-style design',
+    feature: 'Corrosion resistant coating',
+    use: 'Suitable for sand, mud, and rocky bottoms'
+  }
+},
+{
+  id: 'boat-switch',
+  name: 'Boat Switch',
+  price: 50.00,
+  image: '/images/Products/marine/boat-switch.png',
+  description: 'Waterproof switch panel for boat electrical systems. Multiple circuit control with LED indicators for easy operation.',
+  priceRange: '$50 up',
+  category: 'electrical',
+  availability: 'In Stock',
+  specs: {
+    type: 'Multi-circuit switch panel',
+    features: 'Waterproof construction with LED indicators',
+    protection: 'Circuit breaker protection',
+    mounting: 'Surface mount design'
+  }
+},
+    
     {
       id: 'fuel-primer-bulb',
       name: 'Fuel Primer Bulb Pump',
@@ -211,7 +244,6 @@ export default function MarineWorldPage() {
       description: 'Premium quality fuel primer bulb pump assembly. Essential for maintaining proper fuel flow and easy engine starting. Durable construction ensures long-lasting performance in marine environments.',
       specs: {
         type: 'Fuel Primer Bulb Pump Assembly',
-        size: '1/4 inch',
         compatibility: 'Outboard Motors',
         material: 'Marine-grade rubber/polymer'
       }
@@ -299,7 +331,9 @@ export default function MarineWorldPage() {
       filterBy: "Filter by:",
       viewAllBoatParts: "View All Boat Parts",
       boatPartsHero: "Looking for more boat parts? Check out our complete inventory!",
-      exploreBoatParts: "Explore Boat Parts Catalog"
+      exploreBoatParts: "Explore Boat Parts Catalog",
+      electrical: "Electrical",
+      anchoring: "Anchoring"
     },
     fr: {
       title: "Monde Marin",
@@ -320,7 +354,10 @@ export default function MarineWorldPage() {
       filterBy: "Filtrer par:",
       viewAllBoatParts: "Voir Toutes les Pièces",
       boatPartsHero: "Vous cherchez plus de pièces de bateau? Consultez notre inventaire complet!",
-      exploreBoatParts: "Explorer le Catalogue de Pièces"
+      exploreBoatParts: "Explorer le Catalogue de Pièces",
+      electrical: "Électrique",
+      anchoring: "Ancrage"
+
     },
     es: {
       title: "Mundo Marino",
@@ -341,7 +378,10 @@ export default function MarineWorldPage() {
       filterBy: "Filtrar por:",
       viewAllBoatParts: "Ver Todas las Partes",
       boatPartsHero: "¿Buscas más partes de barco? ¡Consulta nuestro inventario completo!",
-      exploreBoatParts: "Explorar Catálogo de Partes"
+      exploreBoatParts: "Explorar Catálogo de Partes",
+      electrical: "Eléctrico",
+      anchoring: "Anclaje"
+
     }
   };
 
@@ -470,7 +510,7 @@ export default function MarineWorldPage() {
         <div className="relative z-10 flex justify-center mb-8 px-4">
           <div className="bg-black/50 backdrop-blur-sm rounded-full p-2 flex flex-wrap gap-2 justify-center">
             <span className="text-white px-3 py-2">{t.filterBy}</span>
-            {['all', 'boat-parts', 'boat-accessories', 'fishing-lures', 'fishing-gear'].map((cat) => (
+            {['all', 'safety', 'navigation', 'accessories', 'fishing', 'maintenance', 'electrical', 'anchoring'].map((cat) => (
               <button
                 key={cat}
                 onClick={() => setFilterCategory(cat)}
@@ -495,11 +535,11 @@ export default function MarineWorldPage() {
                 className="group relative bg-gradient-to-br from-gray-900/60 via-teal-900/20 to-gray-900/60 backdrop-blur-sm rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-teal-500/20"
               >
                 {/* Product Image */}
-                <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-4" style={{ height: '240px' }}>
+                <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-4 overflow-hidden" style={{ height: '240px' }}>
                   <img 
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-contain transition-transform duration-700 hover:scale-125"
                   />
                   
                   {/* Category Badge */}
