@@ -85,11 +85,11 @@ export default function MarineWorldPage() {
     },
     {
       id: 'shop-boat-anchors',
-      name: 'Shop Boat Anchors',
+      name: 'Boat-Anchor',
       image: '/images/Products/marine/shop-boat-anchors.png',
       price: 120.00,
       priceRange: '$120 up',
-      category: 'boat-accessories',
+      category: 'anchoring',
       availability: 'In Stock',
       specs: {
         type: 'Marine Anchor',
@@ -510,7 +510,7 @@ export default function MarineWorldPage() {
         <div className="relative z-10 flex justify-center mb-8 px-4">
           <div className="bg-black/50 backdrop-blur-sm rounded-full p-2 flex flex-wrap gap-2 justify-center">
             <span className="text-white px-3 py-2">{t.filterBy}</span>
-            {['all', 'safety', 'navigation', 'accessories', 'fishing', 'maintenance', 'electrical', 'anchoring'].map((cat) => (
+            {['all', 'boat-parts', 'boat-accessories', 'fishing-lures', 'fishing-gear', 'electrical', 'anchoring'].map((cat) => (
               <button
                 key={cat}
                 onClick={() => setFilterCategory(cat)}
