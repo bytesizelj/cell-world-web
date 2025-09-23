@@ -191,14 +191,12 @@ export default function Home() {
           </video>
         ))}
         
-        {/* Fallback gradient if video hasn't loaded */}
-        {!isVideoLoaded && (
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/50 via-black to-blue-900/50">
-            <div className="absolute inset-0 opacity-20">
-              <div className="h-full w-full bg-gradient-to-r from-transparent via-white to-transparent animate-shimmer" />
-            </div>
-          </div>
-        )}
+       {/* Fallback gradient if video hasn't loaded */}
+{!isVideoLoaded && (
+  <div className="absolute inset-0 bg-black" style={{
+    background: 'radial-gradient(circle at center, rgba(147, 51, 234, 0.3) 0%, rgba(0, 0, 0, 0.9) 100%)'
+  }} />
+)}
       </div>
 
       {/* Navigation */}
@@ -287,25 +285,36 @@ export default function Home() {
       )}
       
       {/* Hero Content */}
-      <div className="relative z-20 flex flex-col items-start justify-start min-h-screen px-3" style={{ marginTop: '-40px' }}>
-        {/* Logo - top left */}
-        <div className="mb-8 opacity-0 animate-fade-up">
-          <img 
-            src="/images/cell-world-logo.png"
-            alt="Cell World"
-            style={{ 
-              height: '200px',
-              maxHeight: '200px', 
-              width: 'auto', 
-              objectFit: 'contain',
-              filter: 'drop-shadow(0 0 4px rgba(255,255,255,0.9)) drop-shadow(0 0 8px rgba(255,215,0,0.6)) drop-shadow(0 0 12px rgba(255,165,0,0.4))'
-            }}
-          />
-        </div>
-      </div>
+<div className="relative z-20 flex flex-col items-start justify-start min-h-screen px-3" style={{ marginTop: '-40px' }}>
+  {/* Logo - top left */}
+  <div className="mb-8 opacity-0 animate-fade-up">
+    <img 
+      src="/images/cell-world-logo.png"
+      alt="Cell World"
+      style={{ 
+        height: '200px',
+        maxHeight: '200px', 
+        width: 'auto', 
+        objectFit: 'contain',
+        filter: 'drop-shadow(0 0 4px rgba(255,255,255,0.9)) drop-shadow(0 0 8px rgba(255,215,0,0.6)) drop-shadow(0 0 12px rgba(255,165,0,0.4))'
+      }}
+    />
+  </div>
+  
+  {/* Shop Now CTA Button */}
+<button 
+  onClick={() => {
+    document.getElementById('products-section')?.scrollIntoView({ behavior: 'smooth' });
+  }}
+  className="ml-8 opacity-0 animate-fade-up animation-delay-300 inline-flex items-center px-12 py-4 text-xl font-bold text-black bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full hover:from-yellow-300 hover:to-yellow-400 transform hover:scale-105 transition-all duration-300 shadow-lg animate-pulse"
+>
+  Shop Now 
+  <span className="ml-2">→</span>
+</button>
+</div>
         
       {/* Category Section with HOVER ZOOM for images */}
-      <section className="relative z-20 bg-black/90 py-20">
+      <section className="relative z-20 bg-black/90 py-20" id="products-section">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             
