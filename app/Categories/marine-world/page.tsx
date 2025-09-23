@@ -20,7 +20,7 @@ export default function MarineWorldPage() {
       image: '/images/Products/marine/switch-panel.png',
       price: 350.00,
       priceRange: 'from $350 up',
-      category: 'boat-accessories',
+      category: 'electrical',
       availability: 'In Stock',
       specs: {
         type: 'Boat Control Panel',
@@ -33,7 +33,7 @@ export default function MarineWorldPage() {
       name: 'Battery Selector Switch',
       image: '/images/Products/marine/battery-selector-switch.png',
       price: 250.00,
-      category: 'boat-accessories',
+      category: 'electrical',
       availability: 'In Stock',
       specs: {
         type: 'Electrical Switch',
