@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { MessageCircle, X, Send, Bot, User, Clock, Phone, Shield, HelpCircle, MapPin, Mail, Sparkles, Headphones } from 'lucide-react';
+import { searchProducts, getCheapestProducts, getProductsInPriceRange, getProductsByBrand } from '@/utils/productDatabase';
 
 // Enhanced Cell World Knowledge Base with complete training data
 const cellWorldKnowledge = {
@@ -211,6 +212,68 @@ const generateResponse = (input: string): string => {
     }
   }
 
+  // CHEAPEST SAMSUNG PHONES - Specific brand query
+  if ((lowerInput.includes("cheap") || lowerInput.includes("affordable") || lowerInput.includes("budget") || lowerInput.includes("lowest")) && 
+      (lowerInput.includes("samsung") || lowerInput.includes("galaxy"))) {
+    const samsungPhones = getProductsByBrand('Samsung')
+      .filter((product: any) => product.category === 'phones')
+      .sort((a: any, b: any) => a.price - b.price)
+      .slice(0, 3);
+    
+    let response = `📱 **Most Affordable Samsung Phones:**\n\n`;
+    samsungPhones.forEach((phone: any, index: number) => {
+      const medal = index === 0 ? "💎" : index === 1 ? "⭐" : "✨";
+      response += `${medal} **${phone.name}** - $${phone.price}\n`;
+      if (phone.price < 1000) {
+        response += `   • Budget-friendly Samsung quality!\n`;
+      } else if (phone.price < 1500) {
+        response += `   • Great mid-range value!\n`;
+      } else {
+        response += `   • Premium features at lower price!\n`;
+      }
+    });
+    response += `\n🔓 All unlocked! Perfect for any carrier.\n💡 Pro tip: The ${samsungPhones[0].name} at $${samsungPhones[0].price} is our best Samsung deal!`;
+    return response;
+  }
+
+  // SAMSUNG PHONES HANDLER - Regular Samsung queries
+  if (lowerInput.includes("samsung") && !lowerInput.includes("cheap") && !lowerInput.includes("affordable") && !lowerInput.includes("budget")) {
+    const samsungPhones = getProductsByBrand('Samsung').filter((product: any) => product.category === 'phones');
+    
+    if (samsungPhones.length > 0) {
+      let response = `📱 **Samsung Phones in Stock:**\n\n`;
+      samsungPhones.forEach((phone: any) => {
+        response += `• **${phone.name}** - $${phone.price}\n`;
+        if (phone.availability === 'More Coming Soon') {
+          response += `  📦 More Coming Soon\n`;
+        } else {
+          response += `  ✅ In Stock\n`;
+        }
+      });
+      response += `\n🔓 All phones are factory unlocked!\n\nWhich Samsung model interests you?`;
+      return response;
+    }
+  }
+
+  // IPHONE HANDLER
+  if (lowerInput.includes("iphone") && !lowerInput.includes("cheap") && !lowerInput.includes("affordable")) {
+    return `📱 **iPhone Models Available:**\n\n• **iPhone 15 Pro Max** - $4,500\n  ✅ In Stock\n• **iPhone 15 Pro** - $4,000\n  ✅ In Stock\n• **iPhone 15** - $3,200\n  ✅ In Stock\n\n🔓 All phones are factory unlocked!\n\nWhich iPhone model interests you?`;
+  }
+
+  // JBL SPEAKERS HANDLER
+  if (lowerInput.includes("jbl") && (lowerInput.includes("speaker") || lowerInput.includes("sound") || lowerInput.includes("audio"))) {
+    const jblSpeakers = getProductsByBrand('JBL');
+    
+    if (jblSpeakers.length > 0) {
+      let response = `🔊 **JBL Speakers Available:**\n\n`;
+      jblSpeakers.forEach((speaker: any) => {
+        response += `• **${speaker.name}** - $${speaker.price}\n`;
+      });
+      response += `\n🎵 Premium sound quality guaranteed!\n\nWhich JBL speaker interests you?`;
+      return response;
+    }
+  }
+
   // 2. AVAILABILITY CHECKS
   if (lowerInput.match(/(do you have|do you sell|available|in stock|got any|carry)/)) {
     if (lowerInput.match(/(iphone charger|charger.*iphone|apple charger)/)) {
@@ -234,21 +297,56 @@ const generateResponse = (input: string): string => {
     }
   }
 
+  // CARIBBEAN-STYLE CHEAP PHONE QUERIES - More flexible matching
+  if ((lowerInput.includes("cheap") || lowerInput.includes("affordable") || lowerInput.includes("budget") || lowerInput.includes("low price") || lowerInput.includes("inexpensive")) && 
+      (lowerInput.includes("phone") || lowerInput.includes("mobile") || lowerInput.includes("cell"))) {
+    // This catches ALL variations like:
+    // "are there any cheap phones?"
+    // "any cheap phones?"
+    // "cheap phones available?"
+    // "you got cheap phones?"
+    // "what cheap phones you have?"
+    // "show me phones which are affordable"?
+    // "show me affordable phones"
+    // "give me phones which are cheap"
+    // "give me cheap phones"
+    // "cheap phones in stock"
+    // "show me phones which are cheap"
+    // "show me cheap phones"
+    // "i want cheap phones"
+    // "i want to see cheap phones"
+    const cheapestPhones = getCheapestProducts('phones', 3);
+    
+    let response = `💰 **Yes! We have cheap phones in stock:**\n\n`;
+    cheapestPhones.forEach((phone: any, index: number) => {
+      const medal = index === 0 ? "🥇" : index === 1 ? "🥈" : "🥉";
+      response += `${medal} **${phone.name}** - $${phone.price}\n`;
+      response += `   • ${index === 0 ? 'Ultra-affordable basic phone' : index === 1 ? 'Reliable basic phone with long battery life' : 'Simple smartphone for essential needs'}\n`;
+      response += `   • ✅ In stock\n\n`;
+    });
+    response += `🔓 All phones are factory unlocked!\n\n💡 The ${cheapestPhones[0].name} at $${cheapestPhones[0].price} is our absolute cheapest option!`;
+    return response;
+  }
+  
+  // CHEAPEST iPHONE - Specific brand query  
+  if ((lowerInput.includes("cheap") || lowerInput.includes("affordable") || lowerInput.includes("budget") || lowerInput.includes("lowest")) && 
+      lowerInput.includes("iphone")) {
+    return `📱 **Most Affordable iPhone:**\n\n💎 **iPhone 15** - $3,200\n   • The "entry" model of the iPhone 15 series\n   • Still premium, just less than Pro models!\n\n⭐ **iPhone 15 Pro** - $4,000\n✨ **iPhone 15 Pro Max** - $4,500\n\n💡 Real talk: iPhones aren't cheap, but they hold value! The iPhone 15 at $3,200 is your best bet for Apple quality.\n\n🤔 Want something more budget-friendly? Check our Samsung or other Android options!`;
+  }
+
   // 3. CHEAPEST PHONE CHECK - MUST CHECK BEFORE GENERIC BUDGET QUERIES
   if (lowerInput.match(/(cheapest|most affordable|lowest price|minimum price|least expensive)/) && 
       (lowerInput.includes("phone") || lowerInput.includes("stock") || lowerInput.includes("available"))) {
-    const cheapestPhones = cellWorldKnowledge.products.phones
-      .sort((a, b) => a.price - b.price)
-      .slice(0, 3);
+    const cheapestPhones = getCheapestProducts('phones', 3);
     
     let response = `💰 **Cheapest Phones in Stock:**\n\n`;
-    cheapestPhones.forEach((phone, index) => {
+    cheapestPhones.forEach((phone: any, index: number) => {
       const medal = index === 0 ? "🥇" : index === 1 ? "🥈" : "🥉";
-      response += `${medal} **${phone.name}** - ${phone.price}\n`;
-      response += `   • ${phone.description}\n`;
+      response += `${medal} **${phone.name}** - $${phone.price}\n`;
+      response += `   • ${index === 0 ? 'Ultra-affordable basic phone' : index === 1 ? 'Reliable basic phone with long battery life' : 'Simple smartphone for essential needs'}\n`;
       response += `   • ✅ In stock\n\n`;
     });
-    response += `🔓 All phones are factory unlocked!\n\n💡 The Blu A140 at $120 is our absolute cheapest option!`;
+    response += `🔓 All phones are factory unlocked!\n\n💡 The ${cheapestPhones[0].name} at $${cheapestPhones[0].price} is our absolute cheapest option!`;
     return response;
   }
 
@@ -308,21 +406,31 @@ const generateResponse = (input: string): string => {
     return `🎣 **Perfect Fishing Gear for Beginners:**\n\n1. **Beginner Fishing Rod** - $89\n   • Perfect starter rod\n   • Easy to handle\n   • Great for learning\n\n2. **Fishing Reel Spinner** - $89\n   • Simple to use\n   • Smooth operation\n   • Beginner-friendly\n\n3. **Tackle Box Pro** - $45\n   • Everything organized\n   • Essential tackle included\n   • Room to grow\n\n💡 **Starter Bundle:** Get all three for a special price!\n\nOur staff can also give you local fishing tips!`;
   }
 
+  // SMART BATTERY LIFE QUERY
+  if (lowerInput.includes("battery") && (lowerInput.includes("best") || lowerInput.includes("long") || lowerInput.includes("good"))) {
+    return `🔋 **Phones with Best Battery Life:**\n\n💎 **Nokia 110** - $199\n   • Days of battery on single charge!\n   • Basic phone = legendary battery\n\n⭐ **Samsung Galaxy A Series**\n   • A15/A25: 5000mAh batteries\n   • Easily last full day of heavy use\n\n✨ **Pro tip:** Basic phones destroy smartphones in battery life. If battery is priority, Nokia 110 wins!\n\nNeed all-day battery in a smartphone? The Samsung A-series is your friend!`;
+  }
+
+  // WATERPROOF/RUGGED QUERY
+  if (lowerInput.includes("waterproof") || lowerInput.includes("water resistant") || lowerInput.includes("rugged")) {
+    return `💧 **Water-Resistant Options:**\n\n**Phones:** Most flagship models (S24 series, iPhone 15 series) have IP68 water resistance.\n\n**Speakers:** JBL speakers are waterproof champions! Perfect for beach/boat use.\n\n**Marine Gear:** All our boat electronics are marine-rated for water exposure.\n\n🌊 Heading out on the water? Which type of device do you need?`;
+  }
+
   // 7. SUNDAY SPECIFIC
   if (lowerInput.includes("sunday")) {
-    return `❌ **Sorry, we're CLOSED on Sundays!**\n\n📅 **Our Schedule:**\n• Monday-Friday: 8:00 AM - 6:00 PM\n• Saturday: 9:00 AM - 5:00 PM\n• Sunday: CLOSED\n\n💡 Visit us Monday through Saturday for the best deals and service!\n\nSee you during the week! 🛍️`;
+    return `❌ **Sorry, we're CLOSED on Sundays!**\n\n📅 **Our Schedule:**\n• Monday-Friday: 8:00 AM - 5:00 PM\n• Saturday: 8:00 AM - 2:00 PM\n• Sunday: CLOSED\n\n💡 Visit us Monday through Saturday for the best deals and service!\n\nSee you during the week! 🛍️`;
   }
 
   // 8. OPENING TIME
   if (lowerInput.match(/(what time.*open|when.*open|opening time|open at)/)) {
     const currentDay = new Date().toLocaleDateString('en-US', { weekday: 'long' });
-    return `🕐 **Opening Times:**\n\n📅 **Monday-Friday:** 8:00 AM\n📅 **Saturday:** 9:00 AM\n📅 **Sunday:** CLOSED\n\n✨ **Today (${currentDay}):** ${currentDay === 'Sunday' ? 'CLOSED' : currentDay === 'Saturday' ? '9:00 AM' : '8:00 AM'}\n\nWe open early to serve you better!`;
+    return `🕐 **Opening Times:**\n\n📅 **Monday-Friday:** 8:00 AM\n📅 **Saturday:** 8:00 AM\n📅 **Sunday:** CLOSED\n\n✨ **Today (${currentDay}):** ${currentDay === 'Sunday' ? 'CLOSED' : currentDay === 'Saturday' ? '8:00 AM' : '8:00 AM'}\n\nWe open early to serve you better!`;
   }
 
   // 9. CLOSING TIME
   if (lowerInput.match(/(what time.*close|when.*close|closing time|close at)/)) {
     const currentDay = new Date().toLocaleDateString('en-US', { weekday: 'long' });
-    return `🕕 **Closing Times:**\n\n📅 **Monday-Friday:** 6:00 PM\n📅 **Saturday:** 5:00 PM\n📅 **Sunday:** CLOSED\n\n✨ **Today (${currentDay}):** ${currentDay === 'Sunday' ? 'CLOSED' : currentDay === 'Saturday' ? '5:00 PM' : '6:00 PM'}\n\nVisit us before closing time!`;
+    return `🕕 **Closing Times:**\n\n📅 **Monday-Friday:** 5:00 PM\n📅 **Saturday:** 2:00 PM\n📅 **Sunday:** CLOSED\n\n✨ **Today (${currentDay}):** ${currentDay === 'Sunday' ? 'CLOSED' : currentDay === 'Saturday' ? '2:00 PM' : '2:00 PM'}\n\nVisit us before closing time!`;
   }
 
   // 10. STORE HOURS (general)
@@ -330,17 +438,17 @@ const generateResponse = (input: string): string => {
     const currentDay = new Date().toLocaleDateString('en-US', { weekday: 'long' });
     const todayHours = cellWorldKnowledge.storeInfo.hours[currentDay.toLowerCase() as keyof typeof cellWorldKnowledge.storeInfo.hours];
     
-    return `🕐 **Cell World Store Hours:**\n\n📅 **Monday-Friday:** 8:00 AM - 6:00 PM\n📅 **Saturday:** 9:00 AM - 5:00 PM\n📅 **Sunday:** CLOSED ❌\n\n✨ **Today (${currentDay}):** ${todayHours}\n\nWe're here to serve you 6 days a week!`;
+    return `🕐 **Cell World Store Hours:**\n\n📅 **Monday-Friday:** 8:00 AM - 5:00 PM\n📅 **Saturday:** 8:00 AM - 2:00 PM\n📅 **Sunday:** CLOSED ❌\n\n✨ **Today (${currentDay}):** ${todayHours}\n\nWe're here to serve you 6 days a week!`;
   }
 
   // 11. LOCATION
   if (lowerInput.match(/(where.*located|location|address|find you|where are you)/)) {
-    return `📍 **Cell World Location:**\n\n🏝️ **St. Vincent and the Grenadines**\n\n📧 Email: musicworld@vincysurf.com\n\n🕐 **Visit Us:**\n• Mon-Fri: 8AM-6PM\n• Saturday: 9AM-5PM\n• Sunday: CLOSED\n\nCome visit us for hands-on experience with all our products!`;
+    return `📍 **Cell World Location:**\n\n🏝️ **St. Vincent and the Grenadines**\n\n📧 Email: musicworld@vincysurf.com\n\n🕐 **Visit Us:**\n• Mon-Fri: 8AM-5PM\n• Saturday: 8AM-2PM\n• Sunday: CLOSED\n\nCome visit us for hands-on experience with all our products!`;
   }
 
   // 12. CONTACT INFO
   if (lowerInput.match(/(contact|phone number|call|email|reach)/)) {
-    return `📞 **Contact Cell World:**\n\n📧 **Email:** musicworld@vincysurf.com\n📍 **Location:** St. Vincent and the Grenadines\n\n🕐 **Store Hours:**\n• Monday-Friday: 8:00 AM - 6:00 PM\n• Saturday: 9:00 AM - 5:00 PM\n• Sunday: CLOSED\n\nVisit us in-store for immediate assistance or email us anytime!`;
+    return `📞 **Contact Cell World:**\n\n📧 **Email:** musicworld@vincysurf.com\n📍 **Location:** St. Vincent and the Grenadines\n\n🕐 **Store Hours:**\n• Monday-Friday: 8:00 AM - 5:00 PM\n• Saturday: 8:00 AM - 2:00 PM\n• Sunday: CLOSED\n\nVisit us in-store for immediate assistance or email us anytime!`;
   }
 
   // 13. UNLOCKED PHONES
@@ -355,18 +463,16 @@ const generateResponse = (input: string): string => {
 
   // 15. CHEAPEST OPTIONS - Priority check for "cheapest phone(s) in stock"
   if (lowerInput.match(/(cheapest.*phone|most affordable.*phone|lowest price.*phone|minimum.*phone|least expensive.*phone|cheapest.*stock)/)) {
-    const cheapestPhones = cellWorldKnowledge.products.phones
-      .sort((a, b) => a.price - b.price)
-      .slice(0, 3);
+    const cheapestPhones = getCheapestProducts('phones', 3);
     
     let response = `💰 **Cheapest Phones in Stock:**\n\n`;
-    cheapestPhones.forEach((phone, index) => {
+    cheapestPhones.forEach((phone: any, index: number) => {
       const medal = index === 0 ? "🥇" : index === 1 ? "🥈" : "🥉";
-      response += `${medal} **${phone.name}** - ${phone.price}\n`;
-      response += `   • ${phone.description}\n`;
+      response += `${medal} **${phone.name}** - $${phone.price}\n`;
+      response += `   • ${index === 0 ? 'Ultra-affordable basic phone' : index === 1 ? 'Reliable basic phone with long battery life' : 'Simple smartphone for essential needs'}\n`;
       response += `   • ✅ In stock\n\n`;
     });
-    response += `🔓 All phones are factory unlocked!\n\n💡 The Blu A140 at $120 is our absolute cheapest option!`;
+    response += `🔓 All phones are factory unlocked!\n\n💡 The ${cheapestPhones[0].name} at $${cheapestPhones[0].price} is our absolute cheapest option!`;
     return response;
   }
   
@@ -375,6 +481,33 @@ const generateResponse = (input: string): string => {
     if (lowerInput.includes("screen protector")) {
       return `💰 **Most Affordable Screen Protection:**\n\n🛡️ **Clear Screen Protectors - $40**\n• Hydro-gel option\n• Tempered glass option\n• FREE installation included!\n\n📱 Privacy protectors start at $50\n\n💡 Best value: Buy any protector and get FREE professional installation!`;
     }
+  }
+
+  // GREETING WITH PERSONALITY
+  if (lowerInput.match(/^(hi|hey|hello|good morning|good afternoon)/)) {
+    const greetings = [
+      "Hey there! 👋 Welcome to Cell World! What can I help you find today? New phone? Fishing gear? Or just browsing?",
+      "Hello! 😊 I'm Celly, your tech-savvy assistant! Looking for something specific or want to hear about our deals?",
+      "Hi! Ready to find your perfect phone? Or maybe some marine equipment? I'm here to help!",
+      "Welcome to Cell World! 🌟 Fun fact: Our Blu A140 at $120 costs less than a fancy dinner for two! What brings you in today?"
+    ];
+    return greetings[Math.floor(Math.random() * greetings.length)];
+  }
+
+  // THANK YOU RESPONSES
+  if (lowerInput.includes("thank")) {
+    const thanks = [
+      "You're welcome! 😊 Anything else I can help with?",
+      "Happy to help! That's what I'm here for!",
+      "No problem at all! Need anything else?",
+      "You're very welcome! Don't hesitate to ask if you need more info!"
+    ];
+    return thanks[Math.floor(Math.random() * thanks.length)];
+  }
+
+  // JOKE REQUEST
+  if (lowerInput.includes("joke") || lowerInput.includes("funny")) {
+    return `😄 Here's a tech joke for you:\n\nWhy don't smartphones ever get lonely?\nBecause they're always in touch! 📱\n\n*Ba dum tss* 🥁\n\nNow, how about we find you a great phone deal to really smile about?`;
   }
 
   // Generic fallback with helpful suggestions

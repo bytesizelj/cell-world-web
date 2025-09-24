@@ -85,10 +85,10 @@ export default function MarineWorldPage() {
     },
     {
       id: 'shop-boat-anchors',
-      name: 'Boat-Anchor',
+      name: 'Boat Anchor Kit',
       image: '/images/Products/marine/shop-boat-anchors.png',
-      price: 120.00,
-      priceRange: '$120 up',
+      price: 500.00,
+      priceRange: '$500 up',
       category: 'anchoring',
       availability: 'In Stock',
       specs: {
