@@ -19,7 +19,7 @@ const HeroCarousel = () => {
             Screen Protectors Now Available!
           </h2>
           <p className="text-lg mb-4">
-            Phone Cases • FREE Installation • All Devices
+            Phone Cases - FREE Installation - All Devices
           </p>
           
           {/* Simple buttons */}
