@@ -54,23 +54,6 @@ export default function PhonesCategory() {
   }
     },
     { 
-      id: 'samsung-s24fe', 
-      name: 'Samsung Galaxy S24FE', 
-      image: '/images/Products/phones/cropped/samsung-s24fe.png',
-      price: 2999.00,
-      category: 'flagship',
-      availability: 'More Coming Soon',
-      color: 'Graphite',
-      specs: {
-        ram: '8GB RAM',
-        storage: '256GB ROM',
-        camera: 'Triple Camera',
-        mainCamera: '50MP Main Camera',
-        selfieCamera: '10MP Selfie Camera',
-        charging: '25W Fast Charging'
-      }
-    },
-    { 
       id: 'samsung-a25', 
       name: 'Samsung Galaxy A25', 
       image: '/images/Products/phones/cropped/samsung-a25.png',
