@@ -320,7 +320,7 @@ export default function Home() {
   <div className="w-full bg-gradient-to-r from-yellow-400 to-orange-400 py-2 overflow-hidden mb-4">
     <div className="ticker-content whitespace-nowrap">
       <span className="inline-block px-8 text-black font-semibold">
-        💰 Buy a Samsung Phone + Get a FREE Screen Protector!
+        💰 Buy a Samsung Phone + Get FREE Screen Protector!
       </span>
       <span className="inline-block px-8 text-black font-semibold">
         🛡️ Screen Protectors Available For All Devices!
@@ -330,7 +330,7 @@ export default function Home() {
       </span>
       {/* Duplicate for seamless loop */}
       <span className="inline-block px-8 text-black font-semibold">
-        💰 Buy a Samsung Phone + Screen Protector, Get FREE Installation!
+        💰 Buy a Samsung Phone + Get FREE Screen Protector!
       </span>
       <span className="inline-block px-8 text-black font-semibold">
         🛡️ Screen Protectors Available For All Devices!
@@ -383,7 +383,7 @@ export default function Home() {
               <span style={{
                 textShadow: '0 0 40px rgba(255,255,255,0.5), 0 0 80px rgba(255,255,255,0.3)'
               }}>
-                Screen Protectors for all Devices
+                Screen Protectors for all Your Devices
               </span>
             </h2>
             
@@ -395,7 +395,7 @@ export default function Home() {
             {/* Animated badge */}
 <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-orange-400 text-black px-6 py-2 rounded-full font-bold mb-8 shadow-lg animate-bounce-zoom">
   <span>🎉</span>
-  <span>FREE Installation when You Buy a Samsung Phone & Screen Protector</span>
+  <span>FREE Screen Protector When You Buy a Phone Today!</span>
   <span>🎉</span>
 </div>
             
