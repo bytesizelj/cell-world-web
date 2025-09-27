@@ -320,7 +320,7 @@ export default function Home() {
   <div className="w-full bg-gradient-to-r from-yellow-400 to-orange-400 py-2 overflow-hidden mb-4">
     <div className="ticker-content whitespace-nowrap">
       <span className="inline-block px-8 text-black font-semibold">
-        💰 Buy a Samsung Phone + Screen Protector, Get FREE Installation!
+        💰 Buy a Samsung Phone + Get a FREE Screen Protector!
       </span>
       <span className="inline-block px-8 text-black font-semibold">
         🛡️ Screen Protectors Available For All Devices!
