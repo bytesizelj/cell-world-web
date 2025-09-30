@@ -636,6 +636,51 @@ export default function MoreCategory() {
 
 // PHONE CASES
 {
+  id: 'magsafe-deep-blue',
+  name: 'Premium MagSafe Case - Deep Blue',
+  price: '$40',
+  image: '/images/Products/more/magsafe-deep-blue.png',
+  category: 'cases',  // <- TO THIS
+  description: '...',
+  inStock: true
+},
+{
+  id: 'jeweled-butterfly',
+  name: 'Jeweled Butterfly Case',
+  price: '$40',
+  image: '/images/Products/more/jeweled-red-butterfly.png',
+  category: 'cases',
+  description: 'iPhone 16 Pro • Jeweled Red Butterfly • Ornate Jeweled Design • High-Gloss Finish • Scratch-Resistant',
+  inStock: true
+},
+{
+  id: 'transparent-magsafe',
+  name: 'Transparent MagSafe Case',
+  price: '$40',
+  image: '/images/Products/more/transparent-magsafe-case.png',
+  category: 'cases',
+  description: 'iPhone 16 Pro Max • Frosted Clear • MagSafe Compatible • Anti-Yellowing • Shock Absorption • Slim Design',
+  inStock: true
+},
+{
+  id: 'carbon-fiber-kickstand',
+  name: 'Carbon Fiber MagSafe Case with Kickstand',
+  price: '$40',
+  image: '/images/Products/more/carbon-fiber-magsafe-case.png',
+  category: 'cases',
+  description: 'iPhone 16 Pro • Dark Grey Carbon Fiber • MagSafe Compatible • Integrated Kickstand • Durable • Scratch-Resistant • Slim Design',
+  inStock: true
+},
+{
+  id: 'rugged-camera-slide',
+  name: 'Rugged Camera Slide Case',
+  price: '$40s',
+  image: '/images/Products/more/rugged-camera-slide.png',  // Note: You'll need to add this image
+  category: 'cases',
+  description: 'iPhone 16 Pro • Matte Black • Sliding Camera Cover for Privacy • Military-Grade Drop Protection • Anti-Slip Grip • Raised Edges',
+  inStock: true
+},
+{
   id: 'i-like-cases-samsung',
   name: 'Cases for Samsung and iPhone',
   image: '/images/Products/more/i-like-phone-cases.png',
@@ -2137,7 +2182,7 @@ const translations = {
 
     {/* Price Badge - Always show for all products */}
     <div className="absolute top-2 right-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white text-sm font-bold px-3 py-1 rounded-lg shadow-lg">
-      ${product.price.toFixed(2)}
+      ${product.price}
     </div>
 
     {/* Product Info */}
