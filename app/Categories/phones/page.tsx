@@ -33,9 +33,9 @@ export default function PhonesCategory() {
     battery: '5000mAh',
     storage: '64GB/128GB options',
     ram: '4GB/6GB RAM'
-  }
-},
-{
+}
+  },
+  {
   id: 'samsung-galaxy-f05',
   name: 'Samsung Galaxy F05',
   image: '/images/Products/phones/samsung2-galaxy-f05.png',
@@ -52,6 +52,67 @@ export default function PhonesCategory() {
     storage: '64GB expandable',
     ram: '4GB RAM'
   }
+    },  
+    { 
+      id: 'blu-a140', 
+      name: 'BLU A140', 
+      image: '/images/Products/phones/cropped/blu-a140.png',
+      price: 120.00,
+      category: 'basic',
+      availability: 'In Stock',
+      color: 'Available',
+      specs: {
+        sim: 'Dual SIM',
+        storage: 'MicroSD Support up to 64GB',
+        features: 'Torch'
+      }
+    },
+    { 
+      id: 'logic-z1l', 
+      name: 'Logic Z1L Flip Phone', 
+      image: '/images/Products/phones/cropped/logic-z1l.png',
+      price: 199.00,
+      category: 'basic',
+      availability: 'In Stock',
+      color: 'White Only',
+      specs: {
+        type: 'Flip Phone',
+        sim: 'Dual SIM',
+        storage: 'MicroSD Card Support'
+      }
+    },
+    { 
+      id: 'nokia-110', 
+      name: 'Nokia 110 4G', 
+      image: '/images/Products/phones/cropped/nokia-110.png',
+      price: 199.00,
+      category: 'basic',
+      availability: 'In Stock',
+      color: 'Black',
+      specs: {
+        network: '4G',
+        charging: 'Micro USB Charging',
+        storage: 'MicroSD Support up to 32GB',
+        features: 'Torch',
+        sim: 'Dual SIM'
+      }
+    },
+    { 
+      id: 'zteblade-a72s', 
+      name: 'ZTE Blade A72s', 
+      image: '/images/Products/phones/cropped/zteblade-a72s.png',
+      price: 499.00,
+      category: 'budget',
+      availability: 'Low Stock',
+      color: 'Sky Blue - 1 left',
+      specs: {
+        ram: '4GB RAM',
+        storage: '64GB ROM',
+        camera: 'Triple Camera',
+        mainCamera: '50MP Main Camera',
+        selfieCamera: '5MP Front Camera',
+        charging: '22.5W Fast Charging'
+      }
     },
     { 
       id: 'samsung-a25', 
@@ -81,7 +142,7 @@ export default function PhonesCategory() {
       image: '/images/Products/phones/cropped/samsung-a16.png',
       price: 649.00,
       category: 'budget',
-      availability: 'More Coming Soon',
+      availability: 'In Stock',
       color: 'Black',
       specs: {
         ram: '4GB RAM',
@@ -214,67 +275,6 @@ export default function PhonesCategory() {
       }
     },
     { 
-      id: 'blu-a140', 
-      name: 'BLU A140', 
-      image: '/images/Products/phones/cropped/blu-a140.png',
-      price: 120.00,
-      category: 'basic',
-      availability: 'In Stock',
-      color: 'Available',
-      specs: {
-        sim: 'Dual SIM',
-        storage: 'MicroSD Support up to 64GB',
-        features: 'Torch'
-      }
-    },
-    { 
-      id: 'logic-z1l', 
-      name: 'Logic Z1L Flip Phone', 
-      image: '/images/Products/phones/cropped/logic-z1l.png',
-      price: 199.00,
-      category: 'basic',
-      availability: 'In Stock',
-      color: 'White Only',
-      specs: {
-        type: 'Flip Phone',
-        sim: 'Dual SIM',
-        storage: 'MicroSD Card Support'
-      }
-    },
-    { 
-      id: 'nokia-110', 
-      name: 'Nokia 110 4G', 
-      image: '/images/Products/phones/cropped/nokia-110.png',
-      price: 199.00,
-      category: 'basic',
-      availability: 'In Stock',
-      color: 'Black',
-      specs: {
-        network: '4G',
-        charging: 'Micro USB Charging',
-        storage: 'MicroSD Support up to 32GB',
-        features: 'Torch',
-        sim: 'Dual SIM'
-      }
-    },
-    { 
-      id: 'zteblade-a72s', 
-      name: 'ZTE Blade A72s', 
-      image: '/images/Products/phones/cropped/zteblade-a72s.png',
-      price: 499.00,
-      category: 'budget',
-      availability: 'Low Stock',
-      color: 'Sky Blue - 1 left',
-      specs: {
-        ram: '4GB RAM',
-        storage: '64GB ROM',
-        camera: 'Triple Camera',
-        mainCamera: '50MP Main Camera',
-        selfieCamera: '5MP Front Camera',
-        charging: '22.5W Fast Charging'
-      }
-    },
-    { 
       id: 'samsung-a05', 
       name: 'Samsung Galaxy A05', 
       image: '/images/Products/phones/cropped/samsung-a05-4g.png',
@@ -349,7 +349,7 @@ export default function PhonesCategory() {
       image: '/images/Products/phones/cropped/samsung-a16.png',
       price: 649.00,
       category: 'budget',
-      availability: 'More Coming Soon',
+      availability: 'In Stock',
       color: 'Black - 1 left',
       specs: {
         ram: '4GB RAM',

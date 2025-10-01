@@ -88,7 +88,8 @@ export default function Home() {
       office: "Office",
       mobile: "Mobile",
       email: "Email",
-      clickToView: "Click to View"
+      clickToView: "Click to View",
+      repairService: "Repair Service"
     },
     fr: {
       welcome: "Bienvenue chez Cell World St. Vincent",
@@ -113,7 +114,8 @@ export default function Home() {
       office: "Bureau",
       mobile: "Mobile",
       email: "Courriel",
-      clickToView: "Cliquez pour Voir"
+      clickToView: "Cliquez pour Voir",
+      repairService: "Service de Réparation"
     },
     es: {
       welcome: "Bienvenido a Cell World St. Vincent",
@@ -138,7 +140,8 @@ export default function Home() {
       office: "Oficina",
       mobile: "Móvil",
       email: "Correo",
-      clickToView: "Haz Clic para Ver"
+      clickToView: "Haz Clic para Ver",
+      repairService: "Servicio de Reparación"
     }
   };
 
@@ -330,7 +333,7 @@ export default function Home() {
       </span>
       {/* Duplicate for seamless loop */}
       <span className="inline-block px-8 text-black font-semibold">
-        💰 Buy a Samsung Phone + Get FREE Screen Protector!
+        💰 Buy a Phone + Get FREE Screen Protector!
       </span>
       <span className="inline-block px-8 text-black font-semibold">
         🛡️ Screen Protectors Available For All Devices!
@@ -506,116 +509,150 @@ export default function Home() {
   `}</style>
 </div>
         
-      {/* Category Section with HOVER ZOOM for images */}
-      <section className="relative z-20 bg-black/90 py-20" id="products-section">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            {/* Mobile Phones Category with HOVER ZOOM */}
-            <Link 
-              href="/Categories/phones"
-              className="group relative overflow-hidden rounded-xl shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-3xl cursor-pointer block"
+{/* Category Section with HOVER ZOOM for images */}
+<section className="relative z-20 bg-black/90 py-20" id="products-section">
+  <div className="max-w-7xl mx-auto px-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      
+      {/* Mobile Phones Category with HOVER ZOOM */}
+      <Link 
+        href="/Categories/phones"
+        className="group relative overflow-hidden rounded-xl shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-3xl cursor-pointer block"
+      >
+        <div className="aspect-[4/3] relative overflow-hidden">
+          <img 
+            src="/images/phones.jpg" 
+            alt="Mobile Phones"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
+          
+          {/* Center Call to Action - Enhanced */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <h3 className="text-white text-3xl font-bold mb-4 drop-shadow-2xl">
+              {t.phones}
+            </h3>
+            <div 
+              className="bg-blue-600/90 backdrop-blur-sm px-8 py-4 rounded-full transform group-hover:scale-110 transition-all duration-300 shadow-2xl"
+              style={{
+                background: 'linear-gradient(135deg, #2563eb, #1d4ed8)',
+                boxShadow: '0 4px 15px rgba(37, 99, 235, 0.5), 0 8px 30px rgba(29, 78, 216, 0.3)',
+                animation: 'pulse 2s infinite'
+              }}
             >
-              <div className="aspect-[4/3] relative overflow-hidden">
-                <img 
-                  src="/images/phones.jpg" 
-                  alt="Mobile Phones"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
-                
-                {/* Center Call to Action - Enhanced */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <h3 className="text-white text-3xl font-bold mb-4 drop-shadow-2xl">
-                    {t.phones}
-                  </h3>
-                  <div 
-                    className="bg-blue-600/90 backdrop-blur-sm px-8 py-4 rounded-full transform group-hover:scale-110 transition-all duration-300 shadow-2xl"
-                    style={{
-                      background: 'linear-gradient(135deg, #2563eb, #1d4ed8)',
-                      boxShadow: '0 4px 15px rgba(37, 99, 235, 0.5), 0 8px 30px rgba(29, 78, 216, 0.3)',
-                      animation: 'pulse 2s infinite'
-                    }}
-                  >
-                    <span className="text-white text-xl font-bold uppercase tracking-wide flex items-center">
-                      {t.clickToView} <ArrowRight className="ml-2 w-5 h-5" />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </Link>
-
-            {/* Fishing Gear Category with HOVER ZOOM */}
-            <Link 
-              href="/Categories/marine-world"
-              className="group relative overflow-hidden rounded-xl shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-3xl cursor-pointer block"
-            >
-              <div className="aspect-[4/3] relative overflow-hidden">
-                <img 
-                  src="/images/fishing.jpg" 
-                  alt="Fishing Gear"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
-                
-                {/* Center Call to Action - Enhanced */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <h3 className="text-white text-3xl font-bold mb-4 drop-shadow-2xl">
-                    {t.fishing}
-                  </h3>
-                  <div 
-                    className="bg-teal-600/90 backdrop-blur-sm px-8 py-4 rounded-full transform group-hover:scale-110 transition-all duration-300 shadow-2xl"
-                    style={{
-                      background: 'linear-gradient(135deg, #14b8a6, #0d9488)',
-                      boxShadow: '0 4px 15px rgba(20, 184, 166, 0.5), 0 8px 30px rgba(13, 148, 136, 0.3)',
-                      animation: 'pulse 2s infinite'
-                    }}
-                  >
-                    <span className="text-white text-xl font-bold uppercase tracking-wide flex items-center">
-                      {t.clickToView} <ArrowRight className="ml-2 w-5 h-5" />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </Link>
-
-            {/* More Products Category with HOVER ZOOM */}
-            <Link 
-              href="/Categories/more"
-              className="group relative overflow-hidden rounded-xl shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-3xl cursor-pointer block"
-            >
-              <div className="aspect-[4/3] relative overflow-hidden">
-                <img 
-                  src="/images/more.jpg" 
-                  alt="More Products"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
-                
-                {/* Center Call to Action - Enhanced */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <h3 className="text-white text-3xl font-bold mb-4 drop-shadow-2xl">
-                    {t.moreProducts}
-                  </h3>
-                  <div 
-                    className="bg-purple-600/90 backdrop-blur-sm px-8 py-4 rounded-full transform group-hover:scale-110 transition-all duration-300 shadow-2xl"
-                    style={{
-                      background: 'linear-gradient(135deg, #9333ea, #7c3aed)',
-                      boxShadow: '0 4px 15px rgba(147, 51, 234, 0.5), 0 8px 30px rgba(124, 58, 237, 0.3)',
-                      animation: 'pulse 2s infinite'
-                    }}
-                  >
-                    <span className="text-white text-xl font-bold uppercase tracking-wide flex items-center">
-                      {t.clickToView} <ArrowRight className="ml-2 w-5 h-5" />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </Link>
-
+              <span className="text-white text-xl font-bold uppercase tracking-wide flex items-center">
+                {t.clickToView} <ArrowRight className="ml-2 w-5 h-5" />
+              </span>
+            </div>
           </div>
         </div>
-      </section>
+      </Link>
+
+      {/* Fishing Gear Category with HOVER ZOOM */}
+      <Link 
+        href="/Categories/marine-world"
+        className="group relative overflow-hidden rounded-xl shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-3xl cursor-pointer block"
+      >
+        <div className="aspect-[4/3] relative overflow-hidden">
+          <img 
+            src="/images/fishing.jpg" 
+            alt="Fishing Gear"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
+          
+          {/* Center Call to Action - Enhanced */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <h3 className="text-white text-3xl font-bold mb-4 drop-shadow-2xl">
+              {t.fishing}
+            </h3>
+            <div 
+              className="bg-teal-600/90 backdrop-blur-sm px-8 py-4 rounded-full transform group-hover:scale-110 transition-all duration-300 shadow-2xl"
+              style={{
+                background: 'linear-gradient(135deg, #14b8a6, #0d9488)',
+                boxShadow: '0 4px 15px rgba(20, 184, 166, 0.5), 0 8px 30px rgba(13, 148, 136, 0.3)',
+                animation: 'pulse 2s infinite'
+              }}
+            >
+              <span className="text-white text-xl font-bold uppercase tracking-wide flex items-center">
+                {t.clickToView} <ArrowRight className="ml-2 w-5 h-5" />
+              </span>
+            </div>
+          </div>
+        </div>
+      </Link>
+
+      {/* More Products Category with HOVER ZOOM */}
+      <Link 
+        href="/Categories/more"
+        className="group relative overflow-hidden rounded-xl shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-3xl cursor-pointer block"
+      >
+        <div className="aspect-[4/3] relative overflow-hidden">
+          <img 
+            src="/images/more.jpg" 
+            alt="More Products"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
+          
+          {/* Center Call to Action - Enhanced */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <h3 className="text-white text-3xl font-bold mb-4 drop-shadow-2xl">
+              {t.moreProducts}
+            </h3>
+            <div 
+              className="bg-purple-600/90 backdrop-blur-sm px-8 py-4 rounded-full transform group-hover:scale-110 transition-all duration-300 shadow-2xl"
+              style={{
+                background: 'linear-gradient(135deg, #9333ea, #7c3aed)',
+                boxShadow: '0 4px 15px rgba(147, 51, 234, 0.5), 0 8px 30px rgba(124, 58, 237, 0.3)',
+                animation: 'pulse 2s infinite'
+              }}
+            >
+              <span className="text-white text-xl font-bold uppercase tracking-wide flex items-center">
+                {t.clickToView} <ArrowRight className="ml-2 w-5 h-5" />
+              </span>
+            </div>
+          </div>
+        </div>
+      </Link>
+
+      {/* NEW: Repair Service Category with HOVER ZOOM */}
+      <Link 
+        href="/Categories/repair-service"
+        className="group relative overflow-hidden rounded-xl shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-3xl cursor-pointer block"
+      >
+        <div className="aspect-[4/3] relative overflow-hidden">
+          <img 
+            src="/images/repair-service.jpg" 
+            alt="Repair Service"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
+          
+          {/* Center Call to Action - Enhanced */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <h3 className="text-white text-3xl font-bold mb-4 drop-shadow-2xl">
+              {t.repairService}
+            </h3>
+            <div 
+              className="bg-orange-600/90 backdrop-blur-sm px-8 py-4 rounded-full transform group-hover:scale-110 transition-all duration-300 shadow-2xl"
+              style={{
+                background: 'linear-gradient(135deg, #ea580c, #dc2626)',
+                boxShadow: '0 4px 15px rgba(234, 88, 12, 0.5), 0 8px 30px rgba(220, 38, 38, 0.3)',
+                animation: 'pulse 2s infinite'
+              }}
+            >
+              <span className="text-white text-xl font-bold uppercase tracking-wide flex items-center">
+                {t.clickToView} <ArrowRight className="ml-2 w-5 h-5" />
+              </span>
+            </div>
+          </div>
+        </div>
+      </Link>
+
+    </div>
+  </div>
+</section>
 
       {/* Hero Text at Bottom */}
       <section className="relative z-20 py-20 bg-black/80">
