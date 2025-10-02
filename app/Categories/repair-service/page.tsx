@@ -23,14 +23,13 @@ export default function RepairServicePage() {
     'Same-day service'
   ],
   turnaround: '1-3 hours',
-  warranty: '30 days'
-},
+  },
 {
   id: 'network-unlock',
   title: 'Network/Carrier Unlock',
   icon: <Shield className="w-8 h-8" />,
   description: 'Unlock your phone to use with any carrier worldwide',
-  basePrice: 'From $275 up',
+  basePrice: 'From $100 up',
   details: [
     'All major carriers supported',
     'iPhone carrier unlock',
@@ -39,8 +38,7 @@ export default function RepairServicePage() {
     'Permanent unlock solution'
   ],
   turnaround: '1-24 hours',
-  warranty: '60 days'
-},
+  },
     {
       id: 'screen-replacement',
       title: 'LCD Screen Replacement',
@@ -56,8 +54,7 @@ export default function RepairServicePage() {
         'Genuine and aftermarket options'
       ],
       turnaround: '1-2 hours',
-      warranty: '90 days'
-    },
+  },
     {
       id: 'charging-port',
       title: 'Charging Port Repair',
@@ -72,8 +69,7 @@ export default function RepairServicePage() {
         'Moisture damage assessment'
       ],
       turnaround: '1-2 hours',
-      warranty: '60 days'
-    },
+  },
     {
       id: 'battery-replacement',
       title: 'Battery Replacement',
@@ -88,8 +84,7 @@ export default function RepairServicePage() {
         'Performance optimization'
       ],
       turnaround: '30-45 minutes',
-      warranty: '6 months'
-    },
+ },
     {
       id: 'water-damage',
       title: 'Water Damage Repair',
@@ -104,8 +99,7 @@ export default function RepairServicePage() {
         'Data recovery attempts'
       ],
       turnaround: '24-48 hours',
-      warranty: 'Assessment based'
-    },
+ },
     {
   id: 'laptop-repair',
   title: 'Laptop Repair Services',
@@ -122,9 +116,8 @@ export default function RepairServicePage() {
     'Operating system reinstall'
   ],
   turnaround: '1-3 days',
-  warranty: '90 days'
 },
-{
+  {
   id: 'tablet-repair',
   title: 'Tablet Repair Services',
   icon: <Smartphone className="w-8 h-8" />,
@@ -140,7 +133,6 @@ export default function RepairServicePage() {
     'Software issues'
   ],
   turnaround: '1-2 days',
-  warranty: '90 days'
 },
     {
       id: 'software-repair',
@@ -156,8 +148,7 @@ export default function RepairServicePage() {
         'Data backup and recovery'
       ],
       turnaround: '1-3 hours',
-      warranty: '30 days'
-    },
+},
     {
       id: 'diagnostic',
       title: 'Diagnostic Service',
@@ -172,8 +163,7 @@ export default function RepairServicePage() {
         'Free with any repair service'
       ],
       turnaround: '30 minutes',
-      warranty: 'N/A'
-    }
+ }
     
   ];
 
@@ -203,7 +193,7 @@ export default function RepairServicePage() {
       hero: {
       badge: 'Certified Technicians',
       mainText: 'Get Your Device Fixed Today',
-      subText: 'Professional repair service with quality parts and warranty'
+      subText: 'Professional repair service with quality parts'
       },
       ourServices: 'Our Services',
       bringYourParts: 'Bring Your Own Parts',
@@ -213,7 +203,6 @@ export default function RepairServicePage() {
       bookRepair: 'Book Your Repair',
       viewDetails: 'View Details',
       startingFrom: 'Starting from',
-      warranty: 'Warranty',
       turnaround: 'Turnaround',
       included: 'What\'s Included',
       scheduleRepair: 'Schedule Repair',
@@ -237,7 +226,6 @@ export default function RepairServicePage() {
       bookRepair: 'Réservez Votre Réparation',
       viewDetails: 'Voir Détails',
       startingFrom: 'À partir de',
-      warranty: 'Garantie',
       turnaround: 'Délai',
       included: 'Ce qui est Inclus',
       scheduleRepair: 'Planifier Réparation',
@@ -261,7 +249,6 @@ export default function RepairServicePage() {
       bookRepair: 'Reserva Tu Reparación',
       viewDetails: 'Ver Detalles',
       startingFrom: 'Desde',
-      warranty: 'Garantía',
       turnaround: 'Tiempo',
       included: 'Qué Incluye',
       scheduleRepair: 'Programar Reparación',
@@ -276,8 +263,8 @@ export default function RepairServicePage() {
   const whyChooseUs = [
     {
       icon: <Shield className="w-6 h-6" />,
-      title: 'Warranty Protection',
-      description: 'All repairs come with warranty for your peace of mind'
+      title: 'Guranteed Protection',
+      description: 'Reliable repairs, for your peace of mind'
     },
     {
       icon: <Clock className="w-6 h-6" />,
@@ -580,11 +567,7 @@ export default function RepairServicePage() {
                   <p className="text-sm text-gray-400">{t.turnaround}</p>
                   <p className="text-lg font-semibold">{selectedService.turnaround}</p>
                 </div>
-                <div className="bg-black/30 rounded-lg p-4">
-                  <p className="text-sm text-gray-400">{t.warranty}</p>
-                  <p className="text-lg font-semibold">{selectedService.warranty}</p>
-                </div>
-              </div>
+                 </div>
             </div>
             
             <div className="flex gap-4">
