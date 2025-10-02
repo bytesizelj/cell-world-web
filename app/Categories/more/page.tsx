@@ -14,6 +14,417 @@ export default function MoreCategory() {
   // Complete product catalog - 69 items
   const products = [
 
+// PHONE CASES
+{
+  id: 'magsafe-deep-blue',
+  name: 'Premium MagSafe Case - Deep Blue',
+  price: '$40',
+  image: '/images/Products/more/magsafe-deep-blue.png',
+  category: 'cases',  // <- TO THIS
+  description: '...',
+  inStock: true
+},
+{
+  id: 'jeweled-butterfly',
+  name: 'Jeweled Butterfly Case',
+  price: '$40',
+  image: '/images/Products/more/jeweled-red-butterfly.png',
+  category: 'cases',
+  description: 'iPhone 16 Pro • Jeweled Red Butterfly • Ornate Jeweled Design • High-Gloss Finish • Scratch-Resistant',
+  inStock: true
+},
+{
+  id: 'transparent-magsafe',
+  name: 'Transparent MagSafe Case',
+  price: '$40',
+  image: '/images/Products/more/transparent-magsafe-case.png',
+  category: 'cases',
+  description: 'iPhone 16 Pro Max • Frosted Clear • MagSafe Compatible • Anti-Yellowing • Shock Absorption • Slim Design',
+  inStock: true
+},
+{
+  id: 'carbon-fiber-kickstand',
+  name: 'Carbon Fiber MagSafe Case with Kickstand',
+  price: '$40',
+  image: '/images/Products/more/carbon-fiber-magsafe-case.png',
+  category: 'cases',
+  description: 'iPhone 16 Pro • Dark Grey Carbon Fiber • MagSafe Compatible • Integrated Kickstand • Durable • Scratch-Resistant • Slim Design',
+  inStock: true
+},
+{
+  id: 'rugged-camera-slide',
+  name: 'Rugged Camera Slide Case',
+  price: '$40s',
+  image: '/images/Products/more/rugged-camera-slide.png',  // Note: You'll need to add this image
+  category: 'cases',
+  description: 'iPhone 16 Pro • Matte Black • Sliding Camera Cover for Privacy • Military-Grade Drop Protection • Anti-Slip Grip • Raised Edges',
+  inStock: true
+},
+{
+  id: 'i-like-cases-samsung',
+  name: 'Cases for Samsung and iPhone',
+  image: '/images/Products/more/i-like-phone-cases.png',
+  price: 40.00,
+  category: 'cases',
+  availability: 'In Stock',
+  specs: {
+    type: 'MagSafe Compatible',
+    models: 'Samsung Galaxy S25 Ultra, S24 Ultra',
+    feature: 'Magnetic attachment',
+    protection: 'Drop protection'
+  }
+},
+{
+  id: 'i-like-cases-iphone',
+  name: 'i-Like MagSafe Cases for iPhone and Samsung',
+  image: '/images/Products/more/i-like-for-iphones.png',
+  price: 50.00,
+  category: 'cases',
+  availability: 'In Stock',
+  specs: {
+    type: 'MagSafe Compatible',
+    models: 'iPhone 11, 12/12 Pro, 12 Pro Max, 13/14, 13 Pro Max, 14 Pro Max, 15, 15 Pro Max, 16/16+/16 Pro Max',
+    feature: 'Magnetic attachment',
+    protection: 'Drop protection'
+  }
+},
+
+// POWER STRIPS & SURGE PROTECTORS
+{
+  id: 'nipponamerica-power-strip',
+  name: 'Nipponamerica 6-Outlet AC Power Strip',
+  image: '/images/Products/more/nipponamerica-6outlet-power-strip.png',
+  price: 35.00,
+  category: 'power-strips',
+  availability: 'In Stock',
+  specs: {
+    outlets: '6 grounded outlets',
+    power: '110v',
+    surge: '90 Joules surge protection',
+    cable: '6ft heavy-duty cord',
+    safety: 'Fire-retardant housing, UL listed'
+  }
+},
+{
+  id: 'ldnio-power-socket',
+  name: 'LDNIO Power Socket 3.1A with USB',
+  image: '/images/Products/more/ldnio-power-socket-usb.png',
+  price: 70.00,
+  category: 'power-strips',
+  availability: 'In Stock',
+  specs: {
+    outlets: '3 universal outlets + 3 USB ports',
+    output: '3.1A USB charging',
+    power: '220v',
+    safety: 'Child safety shutters',
+    feature: 'Anti-static protection'
+  }
+},
+{
+  id: 'ldnio-4u-power-strip',
+  name: 'LDNIO 4U Power Strip with 4 USB',
+  image: '/images/Products/more/ldnio-4u-power-strip.png',
+  price: 70.00,
+  category: 'power-strips',
+  availability: 'In Stock',
+  specs: {
+    outlets: '4 universal outlets + 4 USB ports',
+    output: '2.4A per USB port',
+    power: '220v',
+    feature: 'Smart IC chip technology'
+  }
+},
+
+    // APPLE PRODUCTS
+{
+  id: 'apple-type-c-brick',
+  name: 'Apple 20W USB-C Power Adapter',
+  image: '/images/Products/more/apple-type-c-brick.png',
+  price: 85.00,
+  category: 'apple',
+  availability: 'In Stock',
+  specs: {
+    power: '20W Fast Charging',
+    compatibility: 'iPhone 8 and later',
+    type: 'USB-C Power Adapter'
+  }
+},
+
+{
+  id: 'apple-usb-c-cable',
+  name: 'Apple USB-C Cable',
+  image: '/images/Products/more/apple-usb-c-cable.png',
+  price: 75.00,
+  category: 'apple',
+  availability: 'In Stock',
+  specs: {
+    length: '1 meter',
+    type: 'USB-C Charge Cable',
+    compatibility: 'USB-C devices'
+  }
+},
+{
+  id: 'apple-lightning-usb',
+  name: 'Apple Lightning to USB Cable',
+  image: '/images/Products/more/apple-lightning-to-usb.png',
+  price: 80.00,
+  category: 'apple',
+  availability: 'In Stock',
+  specs: {
+    length: '2 meters',
+    type: 'Lightning Cable',
+    compatibility: 'iPhone, iPad, iPod'
+  }
+},
+{
+  id: 'apple-usb-c-earphone',
+  name: 'Apple USB-C EarPods',
+  image: '/images/Products/more/apple-usb-c-earphone.png',
+  price: 120.00,
+  category: 'apple',
+  availability: 'In Stock',
+  specs: {
+    connection: 'USB-C',
+    features: 'Built-in remote',
+    compatibility: 'USB-C devices'
+  }
+},
+{
+  id: 'apple-airpod-3rd',
+  name: 'Apple AirPods 3rd Generation',
+  image: '/images/Products/more/apple-airpod-3rd-gen.png',
+  price: 650.00,
+  category: 'apple',
+  availability: 'Limited Stock',
+  color: '3 left',
+  specs: {
+    generation: '3rd Gen',
+    battery: '6 hours listening time',
+    charging: 'MagSafe & Lightning',
+    features: 'Spatial audio, Adaptive EQ'
+  }
+},
+{
+  id: 'apple-watch-magnetic',
+  name: 'Apple Watch Magnetic Charger to USB',
+  image: '/images/Products/more/apple-watch-magnetic-charger.png',
+  price: 130.00,
+  category: 'apple',
+  availability: 'Limited Stock',
+  specs: {
+    length: '1 meter',
+    type: 'Magnetic Charging Cable',
+    compatibility: 'All Apple Watch models'
+  }
+},
+{
+  id: 'air-tag',
+  name: 'Apple AirTag',
+  image: '/images/Products/more/air-tag-personal-belonging-tracker.png',
+  price: 220.00,
+  category: 'apple',
+  availability: 'Limited Stock',
+  color: '2 left',
+  specs: {
+    feature: 'Precision Finding',
+    battery: 'User-replaceable CR2032',
+    water: 'IP67 water resistant',
+    description: 'Keep track of personal belongings'
+  }
+},
+
+// EARBUDS
+{
+  id: '2nd-gen-earpod',
+  name: '2nd Generation EarPods with ANC',
+  image: '/images/Products/more/2nd-gen-earpod.png',
+  price: 140.00,
+  category: 'earbuds',
+  availability: 'More Coming Soon',
+  color: 'White only',
+  specs: {
+    feature: 'ANC Noise Cancelling',
+    generation: '2nd Generation',
+    color: 'White',
+    type: 'Wireless EarPods'
+  }
+},
+{
+  id: 'jbl-vibe-buds',
+  name: 'JBL Vibe Buds',
+  image: '/images/Products/more/jbl-vibe-bud.png',
+  price: 220.00,
+  category: 'earbuds',
+  availability: 'Limited Stock',
+  color: 'Black & White',
+  specs: {
+    battery: 'Up to 32 hours',
+    features: 'Hands-free calls with Voice Aware',
+    waterproof: 'Water and dust resistant',
+    colors: 'Black, White'
+  }
+},
+{
+  id: 'jbl-endurance-race',
+  name: 'JBL Endurance Race',
+  image: '/images/Products/more/jbl-endurance-race.png',
+  price: 280.00,
+  category: 'earbuds',
+  availability: 'More Coming Soon',
+  specs: {
+    type: 'Sport Earbuds',
+    waterproof: 'IPX7 Waterproof',
+    battery: '30 hours total',
+    design: 'Secure wing fit'
+  }
+},
+
+// MOUSE - New category
+{
+  id: 'nippon-usb-mouse',
+  name: 'Nipponamerica USB Mouse',
+  image: '/images/Products/more/nipponamerica-usb-mouse.png',
+  price: 40.00,
+  category: 'mouse',
+  availability: 'In Stock',
+  color: '5 left',
+  specs: {
+    compatibility: 'Windows 95/98/ME/NT/XP/WIN7, MAC OS',
+    connection: 'USB Wired'
+  }
+},
+{
+  id: 'nippon-wireless-mouse',
+  name: 'Nipponamerica Wireless Mouse',
+  image: '/images/Products/more/nipponamerica-wireless-mouse.png',
+  price: 60.00,
+  category: 'mouse',
+  availability: 'In Stock',
+  color: '9 left',
+  specs: {
+    frequency: '2.40GHz ~ 2.483GHz',
+    range: '12 meters',
+    battery: 'AAA x2 batteries (not included)'
+  }
+},
+{
+  id: 'philips-m344-mouse',
+  name: 'Philips M344 Wireless Mouse',
+  image: '/images/Products/more/philips-m344-wireless-mouse.png',
+  price: 75.00,
+  category: 'mouse',
+  availability: 'Low Stock',
+  color: '2 left',
+  specs: {
+    buttons: '3 buttons',
+    frequency: '2.4GHz wireless',
+    sensor: 'Optical sensor',
+    battery: 'AA batteries (not included)'
+  }
+},
+{
+  id: 'philips-m413-mouse',
+  name: 'Philips M413 Wireless Mouse',
+  image: '/images/Products/more/philips-m413-wireless-mouse.png',
+  price: 75.00,
+  category: 'mouse',
+  availability: 'Low Stock',
+  color: '2 left',
+  specs: {
+    buttons: '4 buttons',
+    battery: 'Rechargeable',
+    surface: 'Alloy surface'
+  }
+},
+
+// RCA SPEAKERS
+{
+  id: 'rca-tws-gamerbeat-speaker',
+  name: 'RCA TWS GamerBeat Bluetooth Party Speaker',
+  image: '/images/Products/more/rca-tws-gamerbeat-speaker.png',
+  price: 220.00,
+  category: 'speakers',
+  availability: 'Limited Stock',
+  color: '2 left',
+  specs: {
+    features: 'Disco lights, FM Radio',
+    inputs: 'Aux input, Memory device',
+    battery: 'Long battery life'
+  }
+},
+{
+  id: 'rca-beatbox-speaker',
+  name: 'RCA BeatBox Bluetooth Speaker',
+  image: '/images/Products/more/rca-beatbox-speaker.png',
+  price: 200.00,
+  category: 'speakers',
+  availability: 'Limited Stock',
+  color: '2 left',
+  specs: {
+    features: 'Illuminated display, FM Radio, Disco lights',
+    inputs: 'Memory device, Mic port, Aux port',
+    extras: 'Remote control'
+  }
+},
+{
+  id: 'rca-holosound-speaker',
+  name: 'RCA HoloSound Bluetooth Speaker',
+  image: '/images/Products/more/rca-holosound-speaker.png',
+  price: 580.00,
+  category: 'speakers',
+  availability: 'Limited Stock',
+  color: '2 left',
+  specs: {
+    features: 'LED Color Flame, Karaoke mode',
+    display: 'Illuminated display',
+    inputs: 'Memory device, Mic port, Aux port',
+    extras: 'FM Radio, Remote control'
+  }
+},
+{
+  id: 'rca-beatwaves-speaker',
+  name: 'RCA BeatWaves Bluetooth Speaker with Wireless Mic',
+  image: '/images/Products/more/rca-beatwaves-speaker.png',
+  price: 499.00,
+  category: 'speakers',
+  availability: 'Limited Stock',
+  color: '2 left',
+  specs: {
+    includes: 'Wireless microphone',
+    features: 'Karaoke mode, FM Radio',
+    display: 'Illuminated display',
+    extras: 'Portable with back straps'
+  }
+},
+{
+  id: 'rca-levelup-speaker',
+  name: 'RCA CrystalBeat Bluetooth Speaker',
+  image: '/images/Products/more/rca-levelup-speaker.png',
+  price: 450.00,
+  category: 'speakers',
+  availability: 'Limited Stock',
+  color: '2 left',
+  specs: {
+    features: 'Illuminated, Karaoke mode',
+    inputs: 'Memory device, Mic port, Aux port',
+    extras: 'FM Radio, Remote control'
+  }
+},
+{
+  id: 'rca-shock-wave-speaker',
+  name: 'RCA Shock-Wave Bluetooth Speaker',
+  image: '/images/Products/more/rca-shock-wave-speaker.png',
+  price: 380.00,
+  category: 'speakers',
+  availability: 'Limited Stock',
+  color: '2 left',
+  specs: {
+    features: 'LED Color Flame Effect, High Fidelity',
+    modes: 'Karaoke mode, FM Radio',
+    inputs: 'Memory device, Mic port, Aux port'
+  }
+},
+
 // CAR AUDIO & ACCESSORIES
 {
   id: 'yesido-usb-transmitter',
@@ -243,94 +654,6 @@ export default function MoreCategory() {
   }
 },
 
-// RCA SPEAKERS
-{
-  id: 'rca-tws-gamerbeat-speaker',
-  name: 'RCA TWS GamerBeat Bluetooth Party Speaker',
-  image: '/images/Products/more/rca-tws-gamerbeat-speaker.png',
-  price: 220.00,
-  category: 'speakers',
-  availability: 'Limited Stock',
-  color: '2 left',
-  specs: {
-    features: 'Disco lights, FM Radio',
-    inputs: 'Aux input, Memory device',
-    battery: 'Long battery life'
-  }
-},
-{
-  id: 'rca-beatbox-speaker',
-  name: 'RCA BeatBox Bluetooth Speaker',
-  image: '/images/Products/more/rca-beatbox-speaker.png',
-  price: 200.00,
-  category: 'speakers',
-  availability: 'Limited Stock',
-  color: '2 left',
-  specs: {
-    features: 'Illuminated display, FM Radio, Disco lights',
-    inputs: 'Memory device, Mic port, Aux port',
-    extras: 'Remote control'
-  }
-},
-{
-  id: 'rca-holosound-speaker',
-  name: 'RCA HoloSound Bluetooth Speaker',
-  image: '/images/Products/more/rca-holosound-speaker.png',
-  price: 580.00,
-  category: 'speakers',
-  availability: 'Limited Stock',
-  color: '2 left',
-  specs: {
-    features: 'LED Color Flame, Karaoke mode',
-    display: 'Illuminated display',
-    inputs: 'Memory device, Mic port, Aux port',
-    extras: 'FM Radio, Remote control'
-  }
-},
-{
-  id: 'rca-beatwaves-speaker',
-  name: 'RCA BeatWaves Bluetooth Speaker with Wireless Mic',
-  image: '/images/Products/more/rca-beatwaves-speaker.png',
-  price: 499.00,
-  category: 'speakers',
-  availability: 'Limited Stock',
-  color: '2 left',
-  specs: {
-    includes: 'Wireless microphone',
-    features: 'Karaoke mode, FM Radio',
-    display: 'Illuminated display',
-    extras: 'Portable with back straps'
-  }
-},
-{
-  id: 'rca-levelup-speaker',
-  name: 'RCA CrystalBeat Bluetooth Speaker',
-  image: '/images/Products/more/rca-levelup-speaker.png',
-  price: 450.00,
-  category: 'speakers',
-  availability: 'Limited Stock',
-  color: '2 left',
-  specs: {
-    features: 'Illuminated, Karaoke mode',
-    inputs: 'Memory device, Mic port, Aux port',
-    extras: 'FM Radio, Remote control'
-  }
-},
-{
-  id: 'rca-shock-wave-speaker',
-  name: 'RCA Shock-Wave Bluetooth Speaker',
-  image: '/images/Products/more/rca-shock-wave-speaker.png',
-  price: 380.00,
-  category: 'speakers',
-  availability: 'Limited Stock',
-  color: '2 left',
-  specs: {
-    features: 'LED Color Flame Effect, High Fidelity',
-    modes: 'Karaoke mode, FM Radio',
-    inputs: 'Memory device, Mic port, Aux port'
-  }
-},
-
 // CAR AUDIO SPEAKERS & ACCESSORIES
 {
   id: 'pioneer-ts-s20',
@@ -487,225 +810,6 @@ export default function MoreCategory() {
     '50FT': '$40',
     '75FT': '$50',
     '100FT': '$75'
-  }
-},
-
-    // APPLE PRODUCTS
-{
-  id: 'apple-type-c-brick',
-  name: 'Apple 20W USB-C Power Adapter',
-  image: '/images/Products/more/apple-type-c-brick.png',
-  price: 85.00,
-  category: 'apple',
-  availability: 'In Stock',
-  specs: {
-    power: '20W Fast Charging',
-    compatibility: 'iPhone 8 and later',
-    type: 'USB-C Power Adapter'
-  }
-},
-
-{
-  id: 'apple-usb-c-cable',
-  name: 'Apple USB-C Cable',
-  image: '/images/Products/more/apple-usb-c-cable.png',
-  price: 75.00,
-  category: 'apple',
-  availability: 'In Stock',
-  specs: {
-    length: '1 meter',
-    type: 'USB-C Charge Cable',
-    compatibility: 'USB-C devices'
-  }
-},
-{
-  id: 'apple-lightning-usb',
-  name: 'Apple Lightning to USB Cable',
-  image: '/images/Products/more/apple-lightning-to-usb.png',
-  price: 80.00,
-  category: 'apple',
-  availability: 'In Stock',
-  specs: {
-    length: '2 meters',
-    type: 'Lightning Cable',
-    compatibility: 'iPhone, iPad, iPod'
-  }
-},
-{
-  id: 'apple-usb-c-earphone',
-  name: 'Apple USB-C EarPods',
-  image: '/images/Products/more/apple-usb-c-earphone.png',
-  price: 120.00,
-  category: 'apple',
-  availability: 'In Stock',
-  specs: {
-    connection: 'USB-C',
-    features: 'Built-in remote',
-    compatibility: 'USB-C devices'
-  }
-},
-{
-  id: 'apple-airpod-3rd',
-  name: 'Apple AirPods 3rd Generation',
-  image: '/images/Products/more/apple-airpod-3rd-gen.png',
-  price: 650.00,
-  category: 'apple',
-  availability: 'Limited Stock',
-  color: '3 left',
-  specs: {
-    generation: '3rd Gen',
-    battery: '6 hours listening time',
-    charging: 'MagSafe & Lightning',
-    features: 'Spatial audio, Adaptive EQ'
-  }
-},
-{
-  id: 'apple-watch-magnetic',
-  name: 'Apple Watch Magnetic Charger to USB',
-  image: '/images/Products/more/apple-watch-magnetic-charger.png',
-  price: 130.00,
-  category: 'apple',
-  availability: 'Limited Stock',
-  specs: {
-    length: '1 meter',
-    type: 'Magnetic Charging Cable',
-    compatibility: 'All Apple Watch models'
-  }
-},
-{
-  id: 'air-tag',
-  name: 'Apple AirTag',
-  image: '/images/Products/more/air-tag-personal-belonging-tracker.png',
-  price: 220.00,
-  category: 'apple',
-  availability: 'Limited Stock',
-  color: '2 left',
-  specs: {
-    feature: 'Precision Finding',
-    battery: 'User-replaceable CR2032',
-    water: 'IP67 water resistant',
-    description: 'Keep track of personal belongings'
-  }
-},
-
-// EARBUDS
-{
-  id: '2nd-gen-earpod',
-  name: '2nd Generation EarPods with ANC',
-  image: '/images/Products/more/2nd-gen-earpod.png',
-  price: 140.00,
-  category: 'earbuds',
-  availability: 'More Coming Soon',
-  color: 'White only',
-  specs: {
-    feature: 'ANC Noise Cancelling',
-    generation: '2nd Generation',
-    color: 'White',
-    type: 'Wireless EarPods'
-  }
-},
-{
-  id: 'jbl-vibe-buds',
-  name: 'JBL Vibe Buds',
-  image: '/images/Products/more/jbl-vibe-bud.png',
-  price: 220.00,
-  category: 'earbuds',
-  availability: 'Limited Stock',
-  color: 'Black & White',
-  specs: {
-    battery: 'Up to 32 hours',
-    features: 'Hands-free calls with Voice Aware',
-    waterproof: 'Water and dust resistant',
-    colors: 'Black, White'
-  }
-},
-{
-  id: 'jbl-endurance-race',
-  name: 'JBL Endurance Race',
-  image: '/images/Products/more/jbl-endurance-race.png',
-  price: 280.00,
-  category: 'earbuds',
-  availability: 'More Coming Soon',
-  specs: {
-    type: 'Sport Earbuds',
-    waterproof: 'IPX7 Waterproof',
-    battery: '30 hours total',
-    design: 'Secure wing fit'
-  }
-},
-
-// PHONE CASES
-{
-  id: 'magsafe-deep-blue',
-  name: 'Premium MagSafe Case - Deep Blue',
-  price: '$40',
-  image: '/images/Products/more/magsafe-deep-blue.png',
-  category: 'cases',  // <- TO THIS
-  description: '...',
-  inStock: true
-},
-{
-  id: 'jeweled-butterfly',
-  name: 'Jeweled Butterfly Case',
-  price: '$40',
-  image: '/images/Products/more/jeweled-red-butterfly.png',
-  category: 'cases',
-  description: 'iPhone 16 Pro • Jeweled Red Butterfly • Ornate Jeweled Design • High-Gloss Finish • Scratch-Resistant',
-  inStock: true
-},
-{
-  id: 'transparent-magsafe',
-  name: 'Transparent MagSafe Case',
-  price: '$40',
-  image: '/images/Products/more/transparent-magsafe-case.png',
-  category: 'cases',
-  description: 'iPhone 16 Pro Max • Frosted Clear • MagSafe Compatible • Anti-Yellowing • Shock Absorption • Slim Design',
-  inStock: true
-},
-{
-  id: 'carbon-fiber-kickstand',
-  name: 'Carbon Fiber MagSafe Case with Kickstand',
-  price: '$40',
-  image: '/images/Products/more/carbon-fiber-magsafe-case.png',
-  category: 'cases',
-  description: 'iPhone 16 Pro • Dark Grey Carbon Fiber • MagSafe Compatible • Integrated Kickstand • Durable • Scratch-Resistant • Slim Design',
-  inStock: true
-},
-{
-  id: 'rugged-camera-slide',
-  name: 'Rugged Camera Slide Case',
-  price: '$40s',
-  image: '/images/Products/more/rugged-camera-slide.png',  // Note: You'll need to add this image
-  category: 'cases',
-  description: 'iPhone 16 Pro • Matte Black • Sliding Camera Cover for Privacy • Military-Grade Drop Protection • Anti-Slip Grip • Raised Edges',
-  inStock: true
-},
-{
-  id: 'i-like-cases-samsung',
-  name: 'Cases for Samsung and iPhone',
-  image: '/images/Products/more/i-like-phone-cases.png',
-  price: 40.00,
-  category: 'cases',
-  availability: 'In Stock',
-  specs: {
-    type: 'MagSafe Compatible',
-    models: 'Samsung Galaxy S25 Ultra, S24 Ultra',
-    feature: 'Magnetic attachment',
-    protection: 'Drop protection'
-  }
-},
-{
-  id: 'i-like-cases-iphone',
-  name: 'i-Like MagSafe Cases for iPhone and Samsung',
-  image: '/images/Products/more/i-like-for-iphones.png',
-  price: 50.00,
-  category: 'cases',
-  availability: 'In Stock',
-  specs: {
-    type: 'MagSafe Compatible',
-    models: 'iPhone 11, 12/12 Pro, 12 Pro Max, 13/14, 13 Pro Max, 14 Pro Max, 15, 15 Pro Max, 16/16+/16 Pro Max',
-    feature: 'Magnetic attachment',
-    protection: 'Drop protection'
   }
 },
 
@@ -1677,64 +1781,6 @@ export default function MoreCategory() {
   }
 },
 
-// MOUSE - New category
-{
-  id: 'nippon-usb-mouse',
-  name: 'Nipponamerica USB Mouse',
-  image: '/images/Products/more/nipponamerica-usb-mouse.png',
-  price: 40.00,
-  category: 'mouse',
-  availability: 'In Stock',
-  color: '5 left',
-  specs: {
-    compatibility: 'Windows 95/98/ME/NT/XP/WIN7, MAC OS',
-    connection: 'USB Wired'
-  }
-},
-{
-  id: 'nippon-wireless-mouse',
-  name: 'Nipponamerica Wireless Mouse',
-  image: '/images/Products/more/nipponamerica-wireless-mouse.png',
-  price: 60.00,
-  category: 'mouse',
-  availability: 'In Stock',
-  color: '9 left',
-  specs: {
-    frequency: '2.40GHz ~ 2.483GHz',
-    range: '12 meters',
-    battery: 'AAA x2 batteries (not included)'
-  }
-},
-{
-  id: 'philips-m344-mouse',
-  name: 'Philips M344 Wireless Mouse',
-  image: '/images/Products/more/philips-m344-wireless-mouse.png',
-  price: 75.00,
-  category: 'mouse',
-  availability: 'Low Stock',
-  color: '2 left',
-  specs: {
-    buttons: '3 buttons',
-    frequency: '2.4GHz wireless',
-    sensor: 'Optical sensor',
-    battery: 'AA batteries (not included)'
-  }
-},
-{
-  id: 'philips-m413-mouse',
-  name: 'Philips M413 Wireless Mouse',
-  image: '/images/Products/more/philips-m413-wireless-mouse.png',
-  price: 75.00,
-  category: 'mouse',
-  availability: 'Low Stock',
-  color: '2 left',
-  specs: {
-    buttons: '4 buttons',
-    battery: 'Rechargeable',
-    surface: 'Alloy surface'
-  }
-},
-
 // SPEAKERS - Additional Skull Candy
 {
   id: 'skullcandy-ounce-red',
@@ -1990,6 +2036,7 @@ const translations = {
     microphones: "Microphones",
     "audio-interfaces": "Audio Interfaces", 
     "car-audio": "Car Audio",
+    "power-strips": "Power Strips",
   },
   fr: {
     title: "Électronique et Accessoires",
@@ -2020,6 +2067,7 @@ const translations = {
     "storage": "Stocrage",
     apple: "Apple",
     cases: "Étuis de Téléphone",
+    "power-strips": "Multiprises",
   },
   es: {
     title: "Electrónica y Accesorios",
@@ -2050,6 +2098,7 @@ const translations = {
     "storage": "Almacenamiento",
     apple: "Apple",
     cases: "Fundas de Teléfono",
+    "power-strips": "Regletas",
   }
 };
 
@@ -2133,7 +2182,7 @@ const translations = {
       <div className="relative z-10 flex justify-center mb-8 px-4">
         <div className="bg-black/50 backdrop-blur-sm rounded-full p-2 flex gap-2 flex-wrap justify-center">
           <span className="text-white px-3 py-2">{t.filterBy}</span>
-          {['all', 'speakers', 'powerbanks', 'earbuds', 'headphones', 'gaming', 'emergency', 'cables', 'samsung', 'apple', 'cases', 'power', 'tv-accessories', 'network', 'car-accessories', 'mouse', 'storage', 'microphones', 'audio-interfaces', 'car-audio'].map((cat) => (
+          {['all', 'speakers', 'powerbanks', 'earbuds', 'headphones', 'gaming', 'emergency', 'cables', 'samsung', 'apple', 'cases', 'power', 'tv-accessories', 'network', 'car-accessories', 'mouse', 'storage', 'microphones', 'audio-interfaces', 'car-audio', 'power-strips'].map((cat) => (
             <button
               key={cat}
               onClick={() => setFilterCategory(cat)}

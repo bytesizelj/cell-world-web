@@ -9,13 +9,46 @@ export default function RepairServicePage() {
 
   // Repair services data
   const repairServices = [
+  {
+  id: 'google-unlock',
+  title: 'Google Account Unlock (FRP)',
+  icon: <Smartphone className="w-8 h-8" />,
+  description: 'Factory Reset Protection removal - regain access to your locked device',
+  basePrice: 'From $100 up',
+  details: [
+    'Google FRP bypass',
+    'All Android models supported',
+    'Samsung specialist unlocking',
+    'Data preservation when possible',
+    'Same-day service'
+  ],
+  turnaround: '1-3 hours',
+  warranty: '30 days'
+},
+{
+  id: 'network-unlock',
+  title: 'Network/Carrier Unlock',
+  icon: <Shield className="w-8 h-8" />,
+  description: 'Unlock your phone to use with any carrier worldwide',
+  basePrice: 'From $275 up',
+  details: [
+    'All major carriers supported',
+    'iPhone carrier unlock',
+    'Samsung network unlock',
+    'International compatibility',
+    'Permanent unlock solution'
+  ],
+  turnaround: '1-24 hours',
+  warranty: '60 days'
+},
     {
       id: 'screen-replacement',
       title: 'LCD Screen Replacement',
       icon: <Monitor className="w-8 h-8" />,
       description: 'Professional LCD screen replacement for Samsung and iPhone devices',
-      basePrice: 'From $80',
+      basePrice: 'From $200 up',
       details: [
+        'FREE Installation If You Buy From Us',
         'Samsung Galaxy S Series',
         'Samsung Galaxy A Series', 
         'iPhone 11 through iPhone 16 Pro Max',
@@ -30,7 +63,7 @@ export default function RepairServicePage() {
       title: 'Charging Port Repair',
       icon: <Battery className="w-8 h-8" />,
       description: 'Fix charging issues with professional port replacement',
-      basePrice: 'From $60',
+      basePrice: 'From $120 up',
       details: [
         'All Samsung models',
         'All iPhone models',
@@ -46,7 +79,7 @@ export default function RepairServicePage() {
       title: 'Battery Replacement',
       icon: <Zap className="w-8 h-8" />,
       description: 'Restore your phone\'s battery life with genuine replacement batteries',
-      basePrice: 'From $50',
+      basePrice: 'From $120 up',
       details: [
         'iPhone and Samsung batteries in stock',
         'Battery health diagnostics',
@@ -62,7 +95,7 @@ export default function RepairServicePage() {
       title: 'Water Damage Repair',
       icon: <Shield className="w-8 h-8" />,
       description: 'Emergency water damage assessment and repair services',
-      basePrice: 'From $75',
+      basePrice: 'From $40 up',
       details: [
         'Immediate diagnostic assessment',
         'Component cleaning and drying',
@@ -74,11 +107,47 @@ export default function RepairServicePage() {
       warranty: 'Assessment based'
     },
     {
+  id: 'laptop-repair',
+  title: 'Laptop Repair Services',
+  icon: <Monitor className="w-8 h-8" />,
+  description: 'Complete laptop repair and maintenance for all brands',
+  basePrice: 'From $100 up',
+  details: [
+    'Windows & Mac laptops',
+    'Screen replacement',
+    'Keyboard repair/replacement',
+    'Hard drive upgrades',
+    'RAM upgrades',
+    'Virus removal',
+    'Operating system reinstall'
+  ],
+  turnaround: '1-3 days',
+  warranty: '90 days'
+},
+{
+  id: 'tablet-repair',
+  title: 'Tablet Repair Services',
+  icon: <Smartphone className="w-8 h-8" />,
+  description: 'Professional tablet repair for iPad and Android tablets',
+  basePrice: 'From $75 up',
+  details: [
+    'iPad all models',
+    'Samsung Galaxy Tab series',
+    'Android tablets',
+    'Screen replacement',
+    'Battery replacement',
+    'Charging port repair',
+    'Software issues'
+  ],
+  turnaround: '1-2 days',
+  warranty: '90 days'
+},
+    {
       id: 'software-repair',
       title: 'Software & System Repair',
       icon: <Cpu className="w-8 h-8" />,
       description: 'Fix software issues, crashes, and system errors',
-      basePrice: 'From $40',
+      basePrice: 'From $100 up',
       details: [
         'Operating system restoration',
         'App crash fixes',
@@ -94,7 +163,7 @@ export default function RepairServicePage() {
       title: 'Diagnostic Service',
       icon: <Wrench className="w-8 h-8" />,
       description: 'Complete phone diagnostic to identify all issues',
-      basePrice: '$25',
+      basePrice: '$40 up',
       details: [
         'Full hardware testing',
         'Software analysis',
@@ -105,35 +174,36 @@ export default function RepairServicePage() {
       turnaround: '30 minutes',
       warranty: 'N/A'
     }
+    
   ];
 
   // Pricing tiers for customer-supplied parts
   const installationPricing = {
     simple: {
-      price: '$40',
-      description: 'Basic installations',
-      examples: ['Battery replacement', 'SIM card tray', 'External buttons']
-    },
-    moderate: {
-      price: '$60',
-      description: 'Intermediate repairs',
-      examples: ['Charging port', 'Speaker replacement', 'Camera lens']
-    },
-    complex: {
-      price: '$80+',
-      description: 'Advanced repairs',
-      examples: ['Screen replacement', 'Motherboard repair', 'Multiple components']
-    }
-  };
+    price: '$120+',
+    description: 'Basic installations',
+    examples: ['Battery replacement', 'RAM upgrade', 'External buttons']
+  },
+  moderate: {
+    price: '$60-100',
+    description: 'Intermediate repairs',
+    examples: ['Charging port', 'Keyboard replacement', 'Camera lens']
+  },
+  complex: {
+    price: '$150+',
+    description: 'Advanced repairs',
+    examples: ['Screen replacement', 'Motherboard repair', 'Laptop screen replacement']
+  }
+};
 
   const translations = {
     en: {
-      title: 'Professional Phone Repair Services',
-      subtitle: 'Expert repairs for Samsung and iPhone devices',
+      title: 'Professional Phone, Tablet, Laptop Repairs & Unlocking Services',
+      subtitle: 'Expert repairs & unlocking for all devices',
       hero: {
-        badge: 'Certified Technicians',
-        mainText: 'Get Your Phone Fixed Today',
-        subText: 'Professional repair service with quality parts and warranty'
+      badge: 'Certified Technicians',
+      mainText: 'Get Your Device Fixed Today',
+      subText: 'Professional repair service with quality parts and warranty'
       },
       ourServices: 'Our Services',
       bringYourParts: 'Bring Your Own Parts',
@@ -152,12 +222,12 @@ export default function RepairServicePage() {
       backToHome: 'Back to Home'
     },
     fr: {
-      title: 'Services de Réparation Professionnels',
-      subtitle: 'Réparations expertes pour appareils Samsung et iPhone',
+      title: 'Réparations Professionnelles - Téléphones, Tablettes, Ordinateurs et Déverrouillage',
+      subtitle: 'Réparations et déverrouillage experts pour tous les appareils',
       hero: {
-        badge: 'Techniciens Certifiés',
-        mainText: 'Faites Réparer Votre Téléphone Aujourd\'hui',
-        subText: 'Service de réparation professionnel avec pièces de qualité et garantie'
+      badge: 'Techniciens Certifiés',
+      mainText: 'Faites Réparer Votre Appareil Aujourd\'hui',
+      subText: 'Service de réparation professionnel avec pièces de qualité et garantie'
       },
       ourServices: 'Nos Services',
       bringYourParts: 'Apportez Vos Pièces',
@@ -176,12 +246,12 @@ export default function RepairServicePage() {
       backToHome: 'Retour à l\'Accueil'
     },
     es: {
-      title: 'Servicios Profesionales de Reparación',
-      subtitle: 'Reparaciones expertas para dispositivos Samsung e iPhone',
+      title: 'Reparaciones Profesionales - Teléfonos, Tabletas, Laptops y Desbloqueo',
+      subtitle: 'Reparaciones y desbloqueo expertos para todos los dispositivos',
       hero: {
-        badge: 'Técnicos Certificados',
-        mainText: 'Repara Tu Teléfono Hoy',
-        subText: 'Servicio de reparación profesional con piezas de calidad y garantía'
+      badge: 'Técnicos Certificados',
+      mainText: 'Repara Tu Dispositivo Hoy',
+      subText: 'Servicio de reparación profesional con piezas de calidad y garantía'
       },
       ourServices: 'Nuestros Servicios',
       bringYourParts: 'Trae Tus Propias Piezas',
@@ -442,7 +512,7 @@ export default function RepairServicePage() {
               }}>
             {t.bookRepair}
           </h2>
-          <p className="text-white text-xl mb-8 font-semibold drop-shadow-lg">Walk-ins welcome • Free diagnostics with repair</p>
+          <p className="text-white text-xl mb-8 font-semibold drop-shadow-lg">Walk-ins welcome • Free diagnostics • Phone unlocking available</p>
           <div className="flex justify-center gap-4 flex-wrap">
             <a 
               href="tel:+17844512261"
