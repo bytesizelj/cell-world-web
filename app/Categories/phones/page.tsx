@@ -143,7 +143,7 @@ export default function PhonesCategory() {
       price: 649.00,
       category: 'budget',
       availability: 'In Stock',
-      color: 'Black',
+      color: 'Black and Mint Green',
       specs: {
         ram: '4GB RAM',
         storage: '128GB ROM',
@@ -232,7 +232,7 @@ export default function PhonesCategory() {
       price: 1500.00,
       category: 'tablet',
       availability: 'Low Stock',
-      color: 'Space Grey - 1 left',
+      color: 'Space Grey',
       specs: {
         display: '10.2 inch Display',
         ram: '3GB RAM',
@@ -266,7 +266,7 @@ export default function PhonesCategory() {
       price: 1800.00,
       category: 'laptop',
       availability: 'Limited Stock',
-      color: 'Silver - 1 left',
+      color: 'Silver',
       specs: {
         display: '15.8 inch Display',
         ram: '8GB RAM',
@@ -299,7 +299,7 @@ export default function PhonesCategory() {
       price: 1200.00,
       category: 'midrange',
       availability: 'More Coming Soon',
-      color: 'Mint - 1 left',
+      color: 'Mint',
       specs: {
         ram: '6GB RAM',
         storage: '128GB ROM',
@@ -316,7 +316,7 @@ export default function PhonesCategory() {
       price: 1200.00,
       category: 'midrange',
       availability: 'Limited Stock',
-      color: 'White - 1 left',
+      color: 'White',
       specs: {
         ram: '6GB RAM',
         storage: '128GB ROM',
@@ -333,7 +333,7 @@ export default function PhonesCategory() {
       price: 649.00,
       category: 'budget',
       availability: 'More Coming Soon',
-      color: 'Blue Black - 1 left',
+      color: 'Blue Black',
       specs: {
         ram: '6GB RAM',
         storage: '128GB ROM',
@@ -344,31 +344,13 @@ export default function PhonesCategory() {
       }
     },
     { 
-      id: 'samsung-a16-black', 
-      name: 'Samsung Galaxy A16', 
-      image: '/images/Products/phones/cropped/samsung-a16.png',
-      price: 649.00,
-      category: 'budget',
-      availability: 'In Stock',
-      color: 'Black - 1 left',
-      specs: {
-        ram: '4GB RAM',
-        storage: '128GB ROM',
-        mainCamera: '50MP Main Camera',
-        selfieCamera: '13MP Selfie Camera',
-        sim: 'Dual SIM',
-        charging: '25W Fast Charging'
-   
-      }
-    },
-    { 
       id: 'itel-a90', 
       name: 'Itel A90', 
       image: '/images/Products/phones/cropped/itel-a90.png',
       price: 475.00,
       category: 'budget',
       availability: 'Limited Stock',
-      color: 'Starlit Black - 1 left',
+      color: 'Starlit Black',
       specs: {
         ram: '12GB RAM',
         storage: '256GB ROM',

@@ -499,7 +499,7 @@ export default function RepairServicePage() {
               }}>
             {t.bookRepair}
           </h2>
-          <p className="text-white text-xl mb-8 font-semibold drop-shadow-lg">Walk-ins welcome • Free diagnostics • Phone unlocking available</p>
+          <p className="text-white text-xl mb-8 font-semibold drop-shadow-lg">Walk-ins welcome • Phone unlocking available</p>
           <div className="flex justify-center gap-4 flex-wrap">
             <a 
               href="tel:+17844512261"
