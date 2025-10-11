@@ -18,7 +18,7 @@ export default function MoreCategory() {
 {
   id: 'magsafe-deep-blue',
   name: 'Premium MagSafe Case - Deep Blue',
-  price: '$40',
+  price: 40,
   image: '/images/Products/more/magsafe-deep-blue.png',
   category: 'cases',  // <- TO THIS
   description: '...',
@@ -27,7 +27,7 @@ export default function MoreCategory() {
 {
   id: 'jeweled-butterfly',
   name: 'Jeweled Butterfly Case',
-  price: '$40',
+  price: 40,
   image: '/images/Products/more/jeweled-red-butterfly.png',
   category: 'cases',
   description: 'iPhone 16 Pro • Jeweled Red Butterfly • Ornate Jeweled Design • High-Gloss Finish • Scratch-Resistant',
@@ -36,7 +36,7 @@ export default function MoreCategory() {
 {
   id: 'transparent-magsafe',
   name: 'Transparent MagSafe Case',
-  price: '$40',
+  price: 40,
   image: '/images/Products/more/transparent-magsafe-case.png',
   category: 'cases',
   description: 'iPhone 16 Pro Max • Frosted Clear • MagSafe Compatible • Anti-Yellowing • Shock Absorption • Slim Design',
@@ -45,7 +45,7 @@ export default function MoreCategory() {
 {
   id: 'carbon-fiber-kickstand',
   name: 'Carbon Fiber MagSafe Case with Kickstand',
-  price: '$40',
+  price: 40,
   image: '/images/Products/more/carbon-fiber-magsafe-case.png',
   category: 'cases',
   description: 'iPhone 16 Pro • Dark Grey Carbon Fiber • MagSafe Compatible • Integrated Kickstand • Durable • Scratch-Resistant • Slim Design',
@@ -54,7 +54,7 @@ export default function MoreCategory() {
 {
   id: 'rugged-camera-slide',
   name: 'Rugged Camera Slide Case',
-  price: '$40s',
+  price: 40,
   image: '/images/Products/more/rugged-camera-slide.png',  // Note: You'll need to add this image
   category: 'cases',
   description: 'iPhone 16 Pro • Matte Black • Sliding Camera Cover for Privacy • Military-Grade Drop Protection • Anti-Slip Grip • Raised Edges',
@@ -64,7 +64,7 @@ export default function MoreCategory() {
   id: 'i-like-cases-samsung',
   name: 'Cases for Samsung and iPhone',
   image: '/images/Products/more/i-like-phone-cases.png',
-  price: 40.00,
+  price: 40,
   category: 'cases',
   availability: 'In Stock',
   specs: {
@@ -78,7 +78,7 @@ export default function MoreCategory() {
   id: 'i-like-cases-iphone',
   name: 'i-Like MagSafe Cases for iPhone and Samsung',
   image: '/images/Products/more/i-like-for-iphones.png',
-  price: 50.00,
+  price: 50,
   category: 'cases',
   availability: 'In Stock',
   specs: {
