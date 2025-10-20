@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { ArrowLeft, Globe, Phone, MessageCircle, X, Check, ShoppingBag, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import { trackEvent } from '@/lib/analytics';
 const Celly = dynamic(() => import('@/components/CellyAssistant'), { ssr: false });
 
 export default function MoreCategory() {
@@ -2238,11 +2239,18 @@ const translations = {
     <div className="p-4 bg-black/60">
       <h3 className="text-sm font-bold text-white mb-2 line-clamp-2">{product.name}</h3>
       <button 
-        onClick={() => setSelectedProduct(product)}
-        className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400 text-white font-bold py-2 rounded-lg transition-all duration-300"
-      >
-        {t.viewDetails}
-      </button>
+  onClick={() => {
+    trackEvent('view_product_details', { 
+      product: product.name, 
+      price: product.price,
+      category: product.category 
+    });
+    setSelectedProduct(product);
+  }}
+  className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400 text-white font-bold py-2 rounded-lg transition-all duration-300"
+>
+  {t.viewDetails}
+</button>
     </div>
   </div>
 ))}
@@ -2329,22 +2337,32 @@ const translations = {
 )}
                 <div className="space-y-3">
                   <a 
-                    href="tel:+17844512261"
-                    className="block w-full bg-white text-purple-700 font-bold py-3 rounded-lg text-center hover:bg-gray-100 transition-all duration-300 shadow-lg"
-                  >
-                    <Phone className="inline w-5 h-5 mr-2" />
-                    {t.callToOrder}: 1-784-451-2261
-                  </a>
+  href="tel:+17844512261"
+  onClick={() => trackEvent('phone_click', { 
+    product: selectedProduct.name, 
+    price: selectedProduct.price,
+    category: selectedProduct.category 
+  })}
+  className="block w-full bg-white text-purple-700 font-bold py-3 rounded-lg text-center hover:bg-gray-100 transition-all duration-300 shadow-lg"
+>
+  <Phone className="inline w-5 h-5 mr-2" />
+  {t.callToOrder}: 1-784-451-2261
+</a>
                   
                   <a 
-                    href={`https://wa.me/17844310777?text=Hi, I'm interested in ${selectedProduct.name}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full bg-green-500 text-white font-bold py-3 rounded-lg text-center hover:bg-green-400 transition-all duration-300 shadow-lg"
-                  >
-                    <MessageCircle className="inline w-5 h-5 mr-2" />
-                    {t.whatsappOrder}: 1-784-431-0777
-                  </a>
+  href={`https://wa.me/17844310777?text=Hi, I'm interested in ${selectedProduct.name}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  onClick={() => trackEvent('whatsapp_click', { 
+    product: selectedProduct.name, 
+    price: selectedProduct.price,
+    category: selectedProduct.category 
+  })}
+  className="block w-full bg-green-500 text-white font-bold py-3 rounded-lg text-center hover:bg-green-400 transition-all duration-300 shadow-lg"
+>
+  <MessageCircle className="inline w-5 h-5 mr-2" />
+  {t.whatsappOrder}: 1-784-431-0777
+</a>
                 </div>
               </div>
             </div>
