@@ -30,7 +30,8 @@ export default function RootLayout({
 
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
-	<script
+	      <link rel="manifest" href="/manifest.json" />
+  <script
 	type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
