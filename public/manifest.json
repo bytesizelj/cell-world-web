@@ -9,19 +9,13 @@
   "icons": [
     {
       "src": "/images/cell-world-logo.png",
-      "sizes": "192x192",
+      "sizes": "any",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/images/cell-world-logo.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/images/cell-world-logo.png",
-      "sizes": "192x192",
+      "src": "/images/cell-world-logo.png", 
+      "sizes": "1120x1120",
       "type": "image/png",
       "purpose": "maskable"
     }
