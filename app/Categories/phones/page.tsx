@@ -158,7 +158,8 @@ export default function PhonesCategory() {
       id: 'samsung-a06', 
       name: 'Samsung Galaxy A06', 
       image: '/images/Products/phones/cropped/samsung-a06.png',
-      price: 499.00,
+      price: 460.00,
+      priceDropped: true,
       category: 'budget',
       availability: 'In Stock',
       color: 'Silver and Black',
@@ -611,6 +612,20 @@ export default function PhonesCategory() {
                   ${product.price}
                 </div>
               )}
+
+            {product.priceDropped && (
+  <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
+    <span 
+      className="text-white font-bold text-2xl rotate-[-15deg] bg-red-500 px-4 py-2 rounded shadow-lg"
+      style={{
+        animation: 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        animationDuration: '0.5s'
+      }}
+    >
+      PRICE DROP!
+    </span>
+  </div>
+)}
               
               {/* Info Bar with Button */}
               <div className="p-3 bg-black/50" style={{ height: '90px' }}>
