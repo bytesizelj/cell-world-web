@@ -241,7 +241,7 @@ export default function MoreCategory() {
   image: '/images/Products/more/2nd-gen-earpod.png',
   price: 140.00,
   category: 'earbuds',
-  availability: 'More Coming Soon',
+  availability: 'Back Soon',
   color: 'White only',
   specs: {
     feature: 'ANC Noise Cancelling',
@@ -271,7 +271,7 @@ export default function MoreCategory() {
   image: '/images/Products/more/jbl-endurance-race.png',
   price: 280.00,
   category: 'earbuds',
-  availability: 'More Coming Soon',
+  availability: 'Back Soon',
   specs: {
     type: 'Sport Earbuds',
     waterproof: 'IPX7 Waterproof',
@@ -927,9 +927,8 @@ export default function MoreCategory() {
   image: '/images/Products/more/roku-tv-remote.png',
   price: 40.00,
   category: 'tv-accessories',
-  availability: 'More Coming Soon',
-  color: '2 left'
-},
+  availability: 'Back Soon',
+  },
 {
   id: 'firestick-remotes',
   name: 'Fire Stick Remotes',
@@ -945,8 +944,7 @@ export default function MoreCategory() {
   image: '/images/Products/more/fire-tv-stick-4K-ultra-HD.png',
   price: 199.00,
   category: 'tv-accessories',
-  availability: 'More Coming Soon',
-  color: '3 left',
+  availability: 'Back Soon',
   specs: {
     feature: 'Wi-Fi 6',
     resolution: '4K Ultra HD'
@@ -1592,7 +1590,7 @@ export default function MoreCategory() {
       image: "/images/Products/more/bossbar-wireless-10000.png",
       description: "Premium wireless power bank with digital display. Features 15W wireless fast charging, 22.5W super fast charge output.",
       category: "powerbanks",
-      availability: 'More Coming Soon',
+      availability: 'Back Soon',
       specs: {
         capacity: "10000mAh capacity",
         wireless: "15W Wireless charging",
@@ -1651,7 +1649,7 @@ export default function MoreCategory() {
       image: "/images/Products/more/hypergear-aeroflex-360.png",
       description: "Revolutionary open-ear design for 360° situational awareness. Enjoy music while staying aware of surroundings. 25 hours extended playtime.",
       category: "earbuds",
-      availability: 'More Coming Soon',
+      availability: 'Back Soon',
       specs: {
         design: "Open-ear design",
         awareness: "360° awareness",
@@ -1708,8 +1706,8 @@ export default function MoreCategory() {
   image: '/images/Products/more/motorola-kids-wireless-headphones.png',
   price: 150.00,
   category: 'headphones',
-  availability: 'More Coming Soon',
-  color: 'Blue - 1 left',
+  availability: 'Back Soon',
+  color: 'Blue',
   specs: {
     feature: "Kids\' safe volume limit",
     battery: '24 hours playtime',
@@ -1724,8 +1722,8 @@ export default function MoreCategory() {
   image: '/images/Products/more/jbl-tune-525.png',
   price: 225.00,
   category: 'headphones',
-  availability: 'More Coming Soon',
-  color: 'Navy Blue - 2 left',
+  availability: 'Back Soon',
+  color: 'Navy Blue',
   specs: {
     calls: 'Hands-free calls',
     connection: 'Multi-point connection',
@@ -1740,8 +1738,8 @@ export default function MoreCategory() {
   image: '/images/Products/more/jbl-tune-520.png',
   price: 199.00,
   category: 'headphones',
-  availability: 'More Coming Soon',
-  color: 'White - 3 left',
+  availability: 'Back Soon',
+  color: 'White',
   specs: {
     calls: 'Hands-free calls',
     connection: 'Multi-point connection',
@@ -1755,8 +1753,8 @@ export default function MoreCategory() {
   image: '/images/Products/more/hypergear-vibe-wireless-headphone.png',
   price: 90.00,
   category: 'headphones',
-  availability: 'More Coming Soon',
-  color: 'White - 2 left',
+  availability: 'Back Soon',
+  color: 'White',
   specs: {
     battery: '10 hours total battery life',
     fit: 'Noise isolating fit',
@@ -1772,8 +1770,8 @@ export default function MoreCategory() {
   image: '/images/Products/more/hypergear-2in1-wireless-headphones.png',
   price: 110.00,
   category: 'headphones',
-  availability: 'More Coming Soon',
-  color: 'White - 2 left',
+  availability: 'Back Soon',
+  color: 'White',
   specs: {
     modes: 'Flip in: Headphone mode | Flip out: Speaker mode',
     eq: '3 EQ Settings: Classic, Voice Boost, Bass Boost',
@@ -2209,11 +2207,11 @@ const translations = {
   >
     {/* Product Image */}
     <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-4 overflow-hidden" style={{ height: '240px' }}>
-      {/* More Coming Soon Overlay */}
-      {product.availability === 'More Coming Soon' && (
+      {/* Back Soon Overlay */}
+      {product.availability === 'Back Soon' && (
         <div className="absolute inset-0 bg-black/30 z-10 flex items-center justify-center pointer-events-none">
           <span className="text-black font-bold text-xl rotate-[-15deg] bg-yellow-400 px-4 py-2 rounded shadow-lg pointer-events-none">
-            MORE COMING SOON
+            BACK SOON
           </span>
         </div>
       )}
@@ -2291,7 +2289,7 @@ const translations = {
   </div>
   
   {/* Status Badge - Conditional */}
-  {selectedProduct.availability === 'More Coming Soon' ? (
+  {selectedProduct.availability === 'Back Soon' ? (
     <div className="bg-red-500/90 text-white text-center py-3 rounded-lg font-bold">
       <X className="inline w-5 h-5 mr-2" />
       SOLD OUT
@@ -2327,8 +2325,8 @@ const translations = {
                     ))}
                   </div>
                 </div>
-                {/* More Coming Soon Message */}
-{selectedProduct.availability === 'More Coming Soon' && (
+                {/* Back Soon Message */}
+{selectedProduct.availability === 'Back Soon' && (
   <div className="bg-yellow-100 border-l-4 border-yellow-400 p-4 mb-6 rounded-r-lg">
     <p className="text-yellow-700 font-semibold">
       📦 This item is sold out, but will be coming back soon! Check back later or contact us for updates.

@@ -98,6 +98,25 @@ export default function PhonesCategory() {
       }
     },
     { 
+      id: 'samsung-a06', 
+      name: 'Samsung Galaxy A06', 
+      image: '/images/Products/phones/cropped/samsung-a06.png',
+      price: 460.00,
+      priceDropped: true,
+      category: 'budget',
+      availability: 'In Stock',
+      color: 'Silver and Black',
+      specs: {
+        ram: '4GB RAM',
+        storage: '64GB ROM',
+        camera: 'Dual Camera',
+        mainCamera: '50MP Main Camera',
+        selfieCamera: '8MP Front Camera',
+        charging: '25W Fast Charging',
+        sim: 'Dual SIM'
+      }
+    },
+    { 
       id: 'zteblade-a72s', 
       name: 'ZTE Blade A72s', 
       image: '/images/Products/phones/cropped/zteblade-a72s.png',
@@ -155,25 +174,6 @@ export default function PhonesCategory() {
       }
     },
     { 
-      id: 'samsung-a06', 
-      name: 'Samsung Galaxy A06', 
-      image: '/images/Products/phones/cropped/samsung-a06.png',
-      price: 460.00,
-      priceDropped: true,
-      category: 'budget',
-      availability: 'In Stock',
-      color: 'Silver and Black',
-      specs: {
-        ram: '4GB RAM',
-        storage: '64GB ROM',
-        camera: 'Dual Camera',
-        mainCamera: '50MP Main Camera',
-        selfieCamera: '8MP Front Camera',
-        charging: '25W Fast Charging',
-        sim: 'Dual SIM'
-      }
-    },
-    { 
       id: 'samsung-a05s', 
       name: 'Samsung Galaxy A05s', 
       image: '/images/Products/phones/cropped/samsung-a05s.png',
@@ -195,7 +195,7 @@ export default function PhonesCategory() {
       image: '/images/Products/phones/cropped/samsung-a26.png',
       price: 1250.00,
       category: 'midrange',
-      availability: 'More Coming Soon',
+      availability: 'Back Soon',
       color: 'Black',
       specs: {
         ram: '6GB RAM',
@@ -249,7 +249,7 @@ export default function PhonesCategory() {
       image: '/images/Products/phones/cropped/fangor-tablet.png',
       price: 250.00,
       category: 'tablet',
-      availability: 'More Coming Soon',
+      availability: 'Back Soon',
       color: 'Black',
       specs: {
         display: '8 inch Display',
@@ -299,7 +299,7 @@ export default function PhonesCategory() {
       image: '/images/Products/phones/cropped/samsung-a26-1.png',
       price: 1200.00,
       category: 'midrange',
-      availability: 'More Coming Soon',
+      availability: 'Back Soon',
       color: 'Mint',
       specs: {
         ram: '6GB RAM',
@@ -333,7 +333,7 @@ export default function PhonesCategory() {
       image: '/images/Products/phones/cropped/samsung-a15.png',
       price: 649.00,
       category: 'budget',
-      availability: 'More Coming Soon',
+      availability: 'Back Soon',
       color: 'Blue Black',
       specs: {
         ram: '6GB RAM',
@@ -544,7 +544,7 @@ export default function PhonesCategory() {
               }}
             >
               {/* Best Seller Badge */}
-              {product.isBestSeller && product.availability !== 'More Coming Soon' && (
+              {product.isBestSeller && product.availability !== 'Back Soon' && (
                 <div className="absolute top-2 left-2 z-30 bg-gradient-to-r from-red-500 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg animate-pulse">
                   🔥 BEST SELLER
                 </div>
@@ -552,11 +552,11 @@ export default function PhonesCategory() {
               
               {/* Product Image with HOVER ZOOM */}
               <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-3 overflow-hidden" style={{ height: '260px' }}>
-                {/* More Coming Soon Overlay */}
-                {product.availability === 'More Coming Soon' && (
+                {/* Back Soon Overlay */}
+                {product.availability === 'Back Soon' && (
                   <div className="absolute inset-0 bg-black/30 z-10 flex items-center justify-center pointer-events-none">
                     <span className="text-black font-bold text-xl rotate-[-15deg] bg-yellow-400 px-4 py-2 rounded shadow-lg pointer-events-none">
-                      MORE COMING SOON
+                      BACK SOON
                     </span>
                   </div>
                 )}
@@ -616,7 +616,7 @@ export default function PhonesCategory() {
             {product.priceDropped && (
   <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
     <span 
-      className="text-white font-bold text-2xl rotate-[-15deg] bg-red-500 px-4 py-2 rounded shadow-lg"
+      className="text-white font-bold text-xl rotate-[-15deg] bg-red-500 px-4 py-2 rounded shadow-lg"
       style={{
         animation: 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         animationDuration: '0.5s'
@@ -708,7 +708,7 @@ export default function PhonesCategory() {
                   </div>
                   
                   {/* Status Badge - Conditional */}
-                  {selectedProduct.availability === 'More Coming Soon' ? (
+                  {selectedProduct.availability === 'Back Soon' ? (
                     <div className="bg-red-500/90 text-white text-center py-3 rounded-lg font-bold">
                       <X className="inline w-5 h-5 mr-2" />
                       SOLD OUT
@@ -750,8 +750,8 @@ export default function PhonesCategory() {
                     </div>
                   </div>
 
-                  {/* More Coming Soon Message */}
-                  {selectedProduct.availability === 'More Coming Soon' && (
+                  {/* Back Soon Message */}
+                  {selectedProduct.availability === 'Back Soon' && (
                     <div className="bg-yellow-100 border-l-4 border-yellow-400 p-4 mb-6 rounded-r-lg">
                       <p className="text-yellow-700 font-semibold">
                         📦 This item is coming back soon! Check back later or contact us for updates.
