@@ -582,39 +582,71 @@ export default function Home() {
         </div>
       </Link>
 
-      {/* More Products Category with HOVER ZOOM */}
-      <Link 
-        href="/Categories/more"
-        className="group relative overflow-hidden rounded-xl shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-3xl cursor-pointer block"
-      >
-        <div className="aspect-[4/3] relative overflow-hidden">
-          <img 
-            src="/images/more.jpg" 
-            alt="More Products"
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
-          
-          {/* Center Call to Action - Enhanced */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <h3 className="text-white text-3xl font-bold mb-4 drop-shadow-2xl">
-              {t.moreProducts}
-            </h3>
-            <div 
-              className="bg-purple-600/90 backdrop-blur-sm px-8 py-4 rounded-full transform group-hover:scale-110 transition-all duration-300 shadow-2xl"
-              style={{
-                background: 'linear-gradient(135deg, #9333ea, #7c3aed)',
-                boxShadow: '0 4px 15px rgba(147, 51, 234, 0.5), 0 8px 30px rgba(124, 58, 237, 0.3)',
-                animation: 'pulse 2s infinite'
-              }}
-            >
-              <span className="text-white text-xl font-bold uppercase tracking-wide flex items-center">
-                {t.clickToView} <ArrowRight className="ml-2 w-5 h-5" />
-              </span>
-            </div>
-          </div>
-        </div>
-      </Link>
+      {/* Tech & Audio Category */}
+<Link 
+  href="/Categories/tech-audio"
+  className="group relative overflow-hidden rounded-xl shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-3xl cursor-pointer block"
+>
+  <div className="aspect-[4/3] relative overflow-hidden">
+    <img 
+      src="/images/tech-audio.jpg" 
+      alt="Tech & Audio"
+      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125"
+    />
+    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
+    <div className="absolute inset-0 flex flex-col items-center justify-center">
+  <h3 className="text-white text-3xl font-bold mb-2 drop-shadow-2xl">
+    Tech & Audio
+  </h3>
+  <p className="text-gray-200 mb-4 drop-shadow-lg">Speakers, Gaming, Audio Equipment</p>
+  <div 
+  className="bg-yellow-600/90 backdrop-blur-sm px-8 py-4 rounded-full transform group-hover:scale-110 transition-all duration-300 shadow-2xl"
+  style={{
+    background: 'linear-gradient(135deg, #eab308, #ca8a04)',
+    boxShadow: '0 4px 15px rgba(234, 179, 8, 0.5), 0 8px 30px rgba(202, 138, 4, 0.3)',
+    animation: 'pulse 2s infinite'
+  }}
+>
+    <span className="text-white text-xl font-bold uppercase tracking-wide flex items-center">
+      CLICK TO VIEW <ArrowRight className="ml-2 w-5 h-5" />
+    </span>
+  </div>
+</div>
+  </div>
+</Link>
+
+{/* Accessories & Power Category */}
+<Link 
+  href="/Categories/accessories-power"
+  className="group relative overflow-hidden rounded-xl shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-3xl cursor-pointer block"
+>
+  <div className="aspect-[4/3] relative overflow-hidden">
+    <img 
+      src="/images/accessories-power.jpg" 
+      alt="Accessories & Power"
+      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125"
+    />
+    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
+    <div className="absolute inset-0 flex flex-col items-center justify-center">
+  <h3 className="text-white text-3xl font-bold mb-2 drop-shadow-2xl">
+    Accessories & Power
+  </h3>
+  <p className="text-gray-200 mb-4 drop-shadow-lg">Cases, Cables, Power Solutions</p>
+  <div 
+    className="bg-purple-600/90 backdrop-blur-sm px-8 py-4 rounded-full transform group-hover:scale-110 transition-all duration-300 shadow-2xl"
+    style={{
+      background: 'linear-gradient(135deg, #9333ea, #7e22ce)',
+      boxShadow: '0 4px 15px rgba(147, 51, 234, 0.5), 0 8px 30px rgba(126, 34, 206, 0.3)',
+      animation: 'pulse 2s infinite'
+    }}
+  >
+    <span className="text-white text-xl font-bold uppercase tracking-wide flex items-center">
+      CLICK TO VIEW <ArrowRight className="ml-2 w-5 h-5" />
+    </span>
+  </div>
+</div>
+  </div>
+</Link>
 
       {/* NEW: Repair Service Category with HOVER ZOOM */}
       <Link 

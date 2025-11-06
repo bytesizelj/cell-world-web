@@ -52,6 +52,25 @@ export default function PhonesCategory() {
     storage: '64GB expandable',
     ram: '4GB RAM'
   }
+    },
+    { 
+      id: 'samsung-a06', 
+      name: 'Samsung Galaxy A06', 
+      image: '/images/Products/phones/cropped/samsung-a06.png',
+      price: 460.00,
+      priceDropped: true,
+      category: 'budget',
+      availability: 'In Stock',
+      color: 'Silver and Black',
+      specs: {
+        ram: '4GB RAM',
+        storage: '64GB ROM',
+        camera: 'Dual Camera',
+        mainCamera: '50MP Main Camera',
+        selfieCamera: '8MP Front Camera',
+        charging: '25W Fast Charging',
+        sim: 'Dual SIM'
+      }
     },  
     { 
       id: 'blu-a140', 
@@ -59,8 +78,7 @@ export default function PhonesCategory() {
       image: '/images/Products/phones/cropped/blu-a140.png',
       price: 120.00,
       category: 'basic',
-      availability: 'In Stock',
-      color: 'Available',
+      inStock: 'true',
       specs: {
         sim: 'Dual SIM',
         storage: 'MicroSD Support up to 64GB',
@@ -97,32 +115,106 @@ export default function PhonesCategory() {
         sim: 'Dual SIM'
       }
     },
-    { 
-      id: 'samsung-a06', 
-      name: 'Samsung Galaxy A06', 
-      image: '/images/Products/phones/cropped/samsung-a06.png',
-      price: 460.00,
-      priceDropped: true,
-      category: 'budget',
-      availability: 'In Stock',
-      color: 'Silver and Black',
-      specs: {
-        ram: '4GB RAM',
-        storage: '64GB ROM',
-        camera: 'Dual Camera',
-        mainCamera: '50MP Main Camera',
-        selfieCamera: '8MP Front Camera',
-        charging: '25W Fast Charging',
-        sim: 'Dual SIM'
-      }
-    },
+  {
+  id: 'samsung-galaxy-a17',
+  name: "Samsung Galaxy A17",
+  price: 900,
+  category: 'midrange',
+  image: "/images/products/phones/samsung-galaxy-a17.png",
+  inStock: 'true',
+  colors: 'Blue',
+  specs: {
+     display: '6.7\ HD+ Display', 
+     camera: '50MP Camera', 
+     battery: '5000mAh Battery', 
+     storage: '128GB Storage', 
+     performance: 'Fast Performance | All-Day Battery Life' 
+ }
+  },
+  {
+  id: 'samsung-galaxy-a36',
+  name: "Samsung Galaxy A36",
+  category: 'midrange',
+  price: 1500,
+  image: "/images/products/phones/samsung-a36.png",
+  inStock: 'true',
+  colors: 'Black',
+  specs: {
+    display: '6.6\ Super AMOLED Display', 
+    camera: '50MP Triple Camera', 
+    battery: '5000mAh Fast Charging', 
+    performance: 'Premium Performance', 
+    other: 'IP67 Water Resistant | Gorilla Glass Victus+'  
+}
+},
+ {
+  id: 'samsung-galaxy-a56',
+  name: "Samsung Galaxy A56",
+  category: 'midrange',
+  price: 1800,
+  image: "/images/products/phones/samsung-a56.png",
+  inStock: true,
+  colors: 'Light Grey',
+  specs: {
+    display: '6.7\ Super AMOLED 120Hz',
+    camera: '50MP OIS Camera',
+    battery: '5000mAh Super Fast Charging', 
+    other: 'IP67 Water Resistant | Premium Glass & Metal Design | Flagship Features'  
+}
+},
+ {
+  id: 'iphone-12',
+  name: "iPhone 12",
+  category: 'midrange',
+  price: 1100,
+  image: "/images/products/phones/iphone-12.png",
+  inStock: true,
+  colors: 'Black',
+  specs: {
+    display: '6.1\ Super Retina XDR Display',
+    chipset: 'A14 Bionic Chip | 5G Enabled', 
+    camera: 'Dual 12MP Camera System', 
+    other: 'MagSafe Compatible | Premium Build Quality'  
+}
+},
+  {
+  id: 'iphone-13-pro-max',
+  name: "iPhone 13 Pro Max",
+  category: 'flagship',
+  price: 2300,
+  image: "/images/products/phones/iphone-13-pro-max.png",
+  inStock: true,
+  colors: 'Green',
+  specs: {
+    display: '6.7\ ProMotion 120Hz Display',
+    chipset: 'A15 Bionic',
+    camera: 'Pro Camera System',
+    storage: 'TB Storage',
+    other: 'Cinematic Mode | All-Day Battery | 5G Ultra Fast'  
+}
+},
+  {
+  id: 'iphone-14',
+  name: "iPhone 14",
+  category: 'flagship',
+  price: 2100,
+  image: "/images/products/phones/iphone-14.png",
+  inStock: true,
+  colors: 'Black',
+  specs: {
+    display: '6.1\" Super Retina XDR',
+    chipset: 'A15 Bionic Chip',
+    camera: 'Advanced Dual Camera', 
+    other: 'Photonic Engine | Action Mode Video | 5G | Premium Design'  
+}
+},
     { 
       id: 'zteblade-a72s', 
       name: 'ZTE Blade A72s', 
       image: '/images/Products/phones/cropped/zteblade-a72s.png',
       price: 499.00,
       category: 'budget',
-      availability: 'Low Stock',
+      availability: 'In Stock',
       color: 'Sky Blue - 1 left',
       specs: {
         ram: '4GB RAM',
@@ -195,7 +287,7 @@ export default function PhonesCategory() {
       image: '/images/Products/phones/cropped/samsung-a26.png',
       price: 1250.00,
       category: 'midrange',
-      availability: 'Back Soon',
+      availability: 'In Stock',
       color: 'Black',
       specs: {
         ram: '6GB RAM',
@@ -232,7 +324,7 @@ export default function PhonesCategory() {
       image: '/images/Products/phones/cropped/ipad-9th-gen.png',
       price: 1500.00,
       category: 'tablet',
-      availability: 'Low Stock',
+      availability: 'In Stock',
       color: 'Space Grey',
       specs: {
         display: '10.2 inch Display',
@@ -249,7 +341,7 @@ export default function PhonesCategory() {
       image: '/images/Products/phones/cropped/fangor-tablet.png',
       price: 250.00,
       category: 'tablet',
-      availability: 'Back Soon',
+      availability: 'In Stock',
       color: 'Black',
       specs: {
         display: '8 inch Display',
@@ -266,7 +358,7 @@ export default function PhonesCategory() {
       image: '/images/Products/phones/cropped/lenovo-laptop.png',
       price: 1800.00,
       category: 'laptop',
-      availability: 'Limited Stock',
+      availability: 'Back Soon',
       color: 'Silver',
       specs: {
         display: '15.8 inch Display',
@@ -281,7 +373,7 @@ export default function PhonesCategory() {
       image: '/images/Products/phones/cropped/samsung-a05-4g.png',
       price: 499.00,
       category: 'budget',
-      availability: 'Limited Stock',
+      availability: 'In Stock',
       color: 'Black',
       specs: {
         ram: '4GB RAM',
@@ -299,7 +391,7 @@ export default function PhonesCategory() {
       image: '/images/Products/phones/cropped/samsung-a26-1.png',
       price: 1200.00,
       category: 'midrange',
-      availability: 'Back Soon',
+      availability: 'In Stock',
       color: 'Mint',
       specs: {
         ram: '6GB RAM',
@@ -316,7 +408,7 @@ export default function PhonesCategory() {
       image: '/images/Products/phones/cropped/samsung-a26-2.png',
       price: 1200.00,
       category: 'midrange',
-      availability: 'Limited Stock',
+      availability: 'In Stock',
       color: 'White',
       specs: {
         ram: '6GB RAM',
@@ -350,7 +442,7 @@ export default function PhonesCategory() {
       image: '/images/Products/phones/cropped/itel-a90.png',
       price: 475.00,
       category: 'budget',
-      availability: 'Limited Stock',
+      availability: 'In Stock',
       color: 'Starlit Black',
       specs: {
         ram: '12GB RAM',
