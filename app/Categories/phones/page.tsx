@@ -120,7 +120,7 @@ export default function PhonesCategory() {
   name: "Samsung Galaxy A17",
   price: 900,
   category: 'midrange',
-  image: "/images/products/phones/samsung-galaxy-a17.png",
+  image: "/images/Products/phones/samsung-galaxy-a17.png",
   inStock: 'true',
   colors: 'Blue',
   specs: {
@@ -136,7 +136,7 @@ export default function PhonesCategory() {
   name: "Samsung Galaxy A36",
   category: 'midrange',
   price: 1500,
-  image: "/images/products/phones/samsung-a36.png",
+  image: "/images/Products/phones/samsung-a36.png",
   inStock: 'true',
   colors: 'Black',
   specs: {
@@ -152,7 +152,7 @@ export default function PhonesCategory() {
   name: "Samsung Galaxy A56",
   category: 'midrange',
   price: 1800,
-  image: "/images/products/phones/samsung-a56.png",
+  image: "/images/Products/phones/samsung-a56.png",
   inStock: true,
   colors: 'Light Grey',
   specs: {
@@ -167,7 +167,7 @@ export default function PhonesCategory() {
   name: "iPhone 12",
   category: 'midrange',
   price: 1100,
-  image: "/images/products/phones/iphone-12.png",
+  image: "/images/Products/phones/iphone-12.png",
   inStock: true,
   colors: 'Black',
   specs: {
@@ -182,7 +182,7 @@ export default function PhonesCategory() {
   name: "iPhone 13 Pro Max",
   category: 'flagship',
   price: 2300,
-  image: "/images/products/phones/iphone-13-pro-max.png",
+  image: "/images/Products/phones/iphone-13-pro-max.png",
   inStock: true,
   colors: 'Green',
   specs: {
@@ -198,7 +198,7 @@ export default function PhonesCategory() {
   name: "iPhone 14",
   category: 'flagship',
   price: 2100,
-  image: "/images/products/phones/iphone-14.png",
+  image: "/images/Products/phones/iphone-14.png",
   inStock: true,
   colors: 'Black',
   specs: {
