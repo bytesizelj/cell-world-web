@@ -17,9 +17,28 @@ export default function PhonesCategory() {
 
   // Enhanced product data with categories
   const products = [
+  { 
+      id: 'samsung-a06', 
+      name: 'Samsung A06', 
+      image: '/images/Products/phones/cropped/samsung-a06.png',
+      price: 460.00,
+      priceDropped: true,
+      category: 'budget',
+      availability: 'In Stock',
+      color: 'Silver and Black',
+      specs: {
+        ram: '4GB RAM',
+        storage: '64GB ROM',
+        camera: 'Dual Camera',
+        mainCamera: '50MP Main Camera',
+        selfieCamera: '8MP Front Camera',
+        charging: '25W Fast Charging',
+        sim: 'Dual SIM'
+      }
+    }, 
   {
   id: 'samsung-galaxy-a05',
-  name: 'Samsung Galaxy A05',
+  name: 'Samsung A05',
   image: '/images/Products/phones/samsung1-galaxy-a05.png',
   price: 450.00,
   category: 'samsung',
@@ -37,7 +56,7 @@ export default function PhonesCategory() {
   },
   {
   id: 'samsung-galaxy-f05',
-  name: 'Samsung Galaxy F05',
+  name: 'Samsung F05',
   image: '/images/Products/phones/samsung2-galaxy-f05.png',
   price: 420.00,
   category: 'samsung',
@@ -53,25 +72,10 @@ export default function PhonesCategory() {
     ram: '4GB RAM'
   }
     },
-    { 
-      id: 'samsung-a06', 
-      name: 'Samsung Galaxy A06', 
-      image: '/images/Products/phones/cropped/samsung-a06.png',
-      price: 460.00,
-      priceDropped: true,
-      category: 'budget',
-      availability: 'In Stock',
-      color: 'Silver and Black',
-      specs: {
-        ram: '4GB RAM',
-        storage: '64GB ROM',
-        camera: 'Dual Camera',
-        mainCamera: '50MP Main Camera',
-        selfieCamera: '8MP Front Camera',
-        charging: '25W Fast Charging',
-        sim: 'Dual SIM'
-      }
-    },  
+    
+    
+
+
     { 
       id: 'blu-a140', 
       name: 'BLU A140', 
@@ -117,7 +121,7 @@ export default function PhonesCategory() {
     },
   {
   id: 'samsung-galaxy-a17',
-  name: "Samsung Galaxy A17",
+  name: "Samsung A17",
   price: 900,
   category: 'midrange',
   image: "/images/Products/phones/samsung-galaxy-a17.png",
@@ -133,7 +137,7 @@ export default function PhonesCategory() {
   },
   {
   id: 'samsung-galaxy-a36',
-  name: "Samsung Galaxy A36",
+  name: "Samsung A36",
   category: 'midrange',
   price: 1500,
   image: "/images/Products/phones/samsung-a36.png",
@@ -149,7 +153,7 @@ export default function PhonesCategory() {
 },
  {
   id: 'samsung-galaxy-a56',
-  name: "Samsung Galaxy A56",
+  name: "Samsung A56",
   category: 'midrange',
   price: 1800,
   image: "/images/Products/phones/samsung-a56.png",
@@ -227,7 +231,7 @@ export default function PhonesCategory() {
     },
     { 
       id: 'samsung-a25', 
-      name: 'Samsung Galaxy A25', 
+      name: 'Samsung A25', 
       image: '/images/Products/phones/cropped/samsung-a25.png',
       additionalImages: [
     '/images/Products/phones/cropped/samsung-a25-angle2.png',
@@ -249,7 +253,7 @@ export default function PhonesCategory() {
     },
     { 
       id: 'samsung-a16', 
-      name: 'Samsung Galaxy A16', 
+      name: 'Samsung A16', 
       image: '/images/Products/phones/cropped/samsung-a16.png',
       price: 649.00,
       category: 'budget',
@@ -267,7 +271,7 @@ export default function PhonesCategory() {
     },
     { 
       id: 'samsung-a05s', 
-      name: 'Samsung Galaxy A05s', 
+      name: 'Samsung A05s', 
       image: '/images/Products/phones/cropped/samsung-a05s.png',
       price: 549.00,
       category: 'budget',
@@ -283,7 +287,7 @@ export default function PhonesCategory() {
     },
     { 
       id: 'samsung-a26', 
-      name: 'Samsung Galaxy A26 5G', 
+      name: 'Samsung A26 5G', 
       image: '/images/Products/phones/cropped/samsung-a26.png',
       price: 1250.00,
       category: 'midrange',
@@ -302,7 +306,7 @@ export default function PhonesCategory() {
     },
     { 
       id: 'samsung-f05', 
-      name: 'Samsung Galaxy F05', 
+      name: 'Samsung F05', 
       image: '/images/Products/phones/cropped/samsung-f05.png',
       price: 420.00,
       category: 'budget',
@@ -369,7 +373,7 @@ export default function PhonesCategory() {
     },
     { 
       id: 'samsung-a05', 
-      name: 'Samsung Galaxy A05', 
+      name: 'Samsung A05', 
       image: '/images/Products/phones/cropped/samsung-a05-4g.png',
       price: 499.00,
       category: 'budget',
@@ -387,7 +391,7 @@ export default function PhonesCategory() {
     },
     { 
       id: 'samsung-a26-mint', 
-      name: 'Samsung Galaxy A26 5G', 
+      name: 'Samsung A26 5G', 
       image: '/images/Products/phones/cropped/samsung-a26-1.png',
       price: 1200.00,
       category: 'midrange',
@@ -404,7 +408,7 @@ export default function PhonesCategory() {
     },
     { 
       id: 'samsung-a26-white', 
-      name: 'Samsung Galaxy A26 5G', 
+      name: 'Samsung A26 5G', 
       image: '/images/Products/phones/cropped/samsung-a26-2.png',
       price: 1200.00,
       category: 'midrange',
@@ -421,7 +425,7 @@ export default function PhonesCategory() {
     },
     { 
       id: 'samsung-a15', 
-      name: 'Samsung Galaxy A15', 
+      name: 'Samsung A15', 
       image: '/images/Products/phones/cropped/samsung-a15.png',
       price: 649.00,
       category: 'budget',
