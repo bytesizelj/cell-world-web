@@ -14,8 +14,107 @@ export default function TechAudioCategory() {
 
   // Complete product catalog - 69 items
   const products = [
-
- {
+{
+  id: 'peje-smartwatch-rose-gold',
+  name: 'PEJE Smartwatch',
+  image: '/images/Products/tech-audio/smartwatch1.png',
+  price: 175.00,
+  category: 'smartwatch',
+  inStock: true,
+  specs: {
+    display: '1.43" AMOLED',
+    waterproof: 'IP68',
+    battery: '7-Day Battery',
+    colors: '4 Color Options',
+    features: 'Heart Rate, Bluetooth Calling'
+  }
+},
+{
+  id: 'peje-classic-round-collection',
+  name: 'PEJE Classic Round Collection',
+  image: '/images/Products/tech-audio/smartwatch2.png',
+  price: 175.00,
+  category: 'smartwatch',
+  inStock: true,
+  specs: {
+    display: 'AMOLED',
+    features: 'Fitness Tracking, Customizable'
+  }
+},
+{
+  id: 'peje-sport-smartwatch-black-red',
+  name: 'PEJE Sport Smartwatch',
+  image: '/images/Products/tech-audio/smartwatch3.png',
+  price: 175.00,
+  category: 'smartwatch',
+  inStock: true,
+  specs: {
+    display: '1.43" AMOLED',
+    waterproof: 'IP68',
+    battery: '7-Day Battery',
+    features: 'Multi-Sport Modes, Advanced Fitness Tracking',
+    extras: 'Dual Straps Included'
+  }
+},
+{
+  id: 'm900-watch-pro',
+  name: 'M900 Watch Pro',
+  image: '/images/Products/tech-audio/smartwatch4.png',
+  price: 175.00,
+  category: 'smartwatch',
+  inStock: true,
+  specs: {
+    display: '2.21" AMOLED Infinite',
+    features: 'Bluetooth Calling, Water Resistant',
+    charging: 'Magnetic',
+    extras: 'Multiple Bands'
+  }
+},
+{
+  id: 'peje-zw-series-10',
+  name: 'PEJE ZW Series 10',
+  image: '/images/Products/tech-audio/smartwatch5.png',
+  price: 175.00,
+  category: 'smartwatch',
+  inStock: true,
+  specs: {
+    waterproof: '1ATM',
+    nfc: 'NFC Support',
+    ai: 'ChatGPT Integration',
+    extras: 'Multiple Bands Included'
+  }
+},
+{
+  id: 'peje-zw-ultra-x',
+  name: 'PEJE ZW Ultra X',
+  image: '/images/Products/tech-audio/smartwatch6.png',
+  price: 175.00,
+  category: 'smartwatch',
+  inStock: true,
+  specs: {
+    display: '2.01" Sport Display',
+    waterproof: 'IP68',
+    nfc: 'NFC',
+    ai: 'ChatGPT',
+    features: 'Advanced Health Monitoring',
+    extras: '3 Premium Bands'
+  }
+},
+{
+  id: 'peje-t800-ultra-2-max',
+  name: 'PEJE T800 Ultra 2 Max',
+  image: '/images/Products/tech-audio/smartwatch7.png',
+  price: 175.00,
+  category: 'smartwatch',
+  inStock: true,
+  specs: {
+    display: '2.01 sport Display',
+    charging: 'Wireless'
+    }
+  },
+  
+  // EARPODS 
+  {
   id: 'apple-usb-c-earphone',
   name: 'Apple USB-C EarPods',
   image: '/images/Products/more/apple-usb-c-earphone.png',
@@ -34,7 +133,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/apple-airpod-3rd-gen.png',
   price: 650.00,
   category: 'apple',
-  availability: 'Limited Stock',
+  availability: 'In Stock',
   specs: {
     generation: '3rd Gen',
     battery: '6 hours listening time',
@@ -48,7 +147,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/air-tag-personal-belonging-tracker.png',
   price: 220.00,
   category: 'apple',
-  availability: 'Limited Stock',
+  availability: 'In Stock',
   specs: {
     feature: 'Precision Finding',
     battery: 'User-replaceable CR2032',
@@ -79,7 +178,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/jbl-vibe-bud.png',
   price: 220.00,
   category: 'earbuds',
-  availability: 'Limited Stock',
+  availability: 'In Stock',
   color: 'Black & White',
   specs: {
     battery: 'Up to 32 hours',
@@ -110,7 +209,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/rca-tws-gamerbeat-speaker.png',
   price: 220.00,
   category: 'speakers',
-  availability: 'Limited Stock',
+  availability: 'In Stock',
   specs: {
     features: 'Disco lights, FM Radio',
     inputs: 'Aux input, Memory device',
@@ -123,7 +222,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/rca-beatbox-speaker.png',
   price: 200.00,
   category: 'speakers',
-  availability: 'Limited Stock',
+  availability: 'In Stock',
   specs: {
     features: 'Illuminated display, FM Radio, Disco lights',
     inputs: 'Memory device, Mic port, Aux port',
@@ -136,7 +235,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/rca-holosound-speaker.png',
   price: 580.00,
   category: 'speakers',
-  availability: 'Limited Stock',
+  availability: 'In Stock',
   specs: {
     features: 'LED Color Flame, Karaoke mode',
     display: 'Illuminated display',
@@ -150,7 +249,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/rca-beatwaves-speaker.png',
   price: 499.00,
   category: 'speakers',
-  availability: 'Limited Stock',
+  availability: 'In Stock',
   specs: {
     includes: 'Wireless microphone',
     features: 'Karaoke mode, FM Radio',
@@ -164,7 +263,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/rca-levelup-speaker.png',
   price: 450.00,
   category: 'speakers',
-  availability: 'Limited Stock',
+  availability: 'In Stock',
   specs: {
     features: 'Illuminated, Karaoke mode',
     inputs: 'Memory device, Mic port, Aux port',
@@ -177,7 +276,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/rca-shock-wave-speaker.png',
   price: 380.00,
   category: 'speakers',
-  availability: 'Limited Stock',
+  availability: 'In Stock',
   specs: {
     features: 'LED Color Flame Effect, High Fidelity',
     modes: 'Karaoke mode, FM Radio',
@@ -192,7 +291,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/hypergear-stream-record-mic.png',
   price: 180.00,
   category: 'microphones',
-  availability: 'Limited Stock',
+  availability: 'In Stock',
   specs: {
     type: 'Pro-Audio Condenser Microphone',
     use: 'Podcasting, Gaming, Streaming, Music Recording',
@@ -219,7 +318,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/vivitar-mini-lavalier-streaming-microphone.png',
   price: 140.00,
   category: 'microphones',
-  availability: 'Limited Stock',
+  availability: 'In Stock',
   specs: {
     compatibility: 'Smartphones, DSLR, Camcorders, PCs',
     includes: 'Windproof sponge, cable clip, mic clip, pouch, USB adapter'
@@ -257,7 +356,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/studioz-wired-wireless-microphone.png',
   price: 80.00,
   category: 'microphones',
-  availability: 'Limited Stock',
+  availability: 'In Stock',
   specs: {
     type: 'Dual mode - wired & wireless'
   }
@@ -282,7 +381,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/audiopipe-2channel-transmission.png',
   price: 450.00,
   category: 'audio-interfaces',
-  availability: 'Limited Stock',
+  availability: 'In Stock',
   specs: {
     channels: '2 Channel interface',
     power: '+48V Phantom Power',
@@ -296,7 +395,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/audiopipe-2channel-guitar-singer-mixing-console.png',
   price: 350.00,
   category: 'audio-interfaces',
-  availability: 'Limited Stock',
+  availability: 'In Stock',
   specs: {
     input: 'XLR input',
     converter: '16 bit delta sigma',
@@ -310,7 +409,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/wave-mixer-multi-channel-interface-audioeq-soundeffects.png',
   price: 75.00,
   category: 'audio-interfaces',
-  availability: 'Limited Stock',
+  availability: 'In Stock',
   specs: {
     compatibility: 'Mobile devices, microphones, instruments',
     inputs: 'Micro USB, Aux 3.5mm',
@@ -338,7 +437,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/pioneer-speaker-ts-f1034r.png',
   price: 155.00,
   category: 'car-audio',
-  availability: 'Limited Stock',
+  availability: 'In Stock',
   specs: {
     size: '4 inch',
     power: '150W MAX',
@@ -364,7 +463,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/xxx-3-way-impp-cone-triaxial-car-speaker.png',
   price: 160.00,
   category: 'car-audio',
-  availability: 'Limited Stock',
+  availability: 'In Stock',
   specs: {
     power: '350W P.M.P.O, 175W R.M.S',
     impedance: '4 OHM',
@@ -377,7 +476,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/blaupunkt-4-way-coaxial-speaker.png',
   price: 320.00,
   category: 'car-audio',
-  availability: 'Limited Stock',
+  availability: 'In Stock',
   specs: {
     size: '6×9 inch',
     power: '450W MAX',
@@ -417,7 +516,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/pipeman-speaker-kit.png',
   price: 50.00,
   category: 'car-audio',
-  availability: 'Limited Stock',
+  availability: 'In Stock',
   specs: {
     includes: '10×12 inch sheets',
     type: 'Bulk package'
@@ -429,7 +528,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/pipeman-trunk-kit.png',
   price: 200.00,
   category: 'car-audio',
-  availability: 'Limited Stock',
+  availability: 'In Stock',
   specs: {
     includes: 'Ten 12×24 inch sheets',
     feature: 'Eliminates road noise'
@@ -472,7 +571,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/sony-play-station-4-dual-shock.png',
   price: 280.00,
   category: 'gaming',
-  availability: 'Limited Stock',
+  availability: 'In Stock',
   color: 'Black',
   specs: {
     type: 'Wireless Controller',
@@ -485,7 +584,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/razer-quick-charging-stand.png',
   price: 399.00,
   category: 'gaming',
-  availability: 'Limited Stock',
+  availability: 'In Stock',
     specs: {
     type: 'Quick Charging Stand',
     compatibility: 'PS5 DualSense Wireless Controller'
@@ -624,7 +723,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/skull-candy-barrel-speaker.png',
   price: 999.00,
   category: 'speakers',
-  availability: 'Limited Stock',
+  availability: 'In Stock',
   color: 'Blue & Black (1), Orange & Black (1)',
   specs: {
     battery: '12 hours battery life',
@@ -639,7 +738,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/skull-candy-stomp.png',
   price: 950.00,
   category: 'speakers',
-  availability: 'Limited Stock',
+  availability: 'In Stock',
   specs: {
     battery: '12 hours battery life',
     waterproof: 'IPX7 Waterproof',
@@ -935,7 +1034,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/skull-candy-ounce-red.png',
   price: 160.00,
   category: 'speakers',
-  availability: 'Limited Stock',
+  availability: 'In Stock',
   specs: {
     battery: '16 hours battery',
     waterproof: 'IPX7 waterproof'
@@ -947,7 +1046,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/skull-candy-kilo-black.png',
   price: 210.00,
   category: 'speakers',
-  availability: 'Limited Stock',
+  availability: 'In Stock',
   color: 'Black',
   specs: {
     battery: '24 hours battery',
@@ -960,7 +1059,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/skull-candy-terrain-mini.png',
   price: 230.00,
   category: 'speakers',
-  availability: 'Limited Stock',
+  availability: 'In Stock',
   color: 'Red',
   specs: {
     battery: '14 hours battery',
@@ -1002,7 +1101,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/fugoo-tough-bluetooth-speaker.png',
   price: 200.00,
   category: 'speakers',
-  availability: 'Limited Stock',
+  availability: 'In Stock',
   specs: {
     waterproof: 'Waterproof design',
     battery: '12 hours battery life',

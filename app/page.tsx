@@ -386,32 +386,32 @@ export default function Home() {
               <span style={{
                 textShadow: '0 0 40px rgba(255,255,255,0.5), 0 0 80px rgba(255,255,255,0.3)'
               }}>
-                Screen Protectors for all Your Devices
+                ✨ JUST IN: Latest iPhones Available! 
               </span>
             </h2>
             
             {/* Subheading */}
             <p className="text-xl md:text-2xl mb-3 opacity-95">
-              Phones - Tablets - Watches and more
+              Premium Performance, Stunning Cameras, All-Day Power
             </p>
             
             {/* Animated badge */}
 <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-orange-400 text-black px-6 py-2 rounded-full font-bold mb-8 shadow-lg animate-bounce-zoom">
   <span>🎉</span>
-  <span>FREE Screen Protector When You Buy a Phone Today!</span>
+  <span>iPhone 12 | iPhone 13 Pro Max | iPhone 14 - Limited Stock! Shop Today </span>
   <span>🎉</span>
 </div>
             
             {/* Feature pills */}
             <div className="flex flex-wrap justify-center gap-3 mb-8">
               <div className="bg-white/15 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 hover:bg-white/20 transition-colors">
-                ✓ All Device Models
+                ✓ Pro Camera System
               </div>
               <div className="bg-white/15 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 hover:bg-white/20 transition-colors">
-                ✓ Premium Quality
+                ✓ 4K Video Recording
               </div>
               <div className="bg-white/15 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 hover:bg-white/20 transition-colors">
-                ✓ Expert Service
+                ✓ Night Mode Photography
               </div>
             </div>
             
@@ -423,7 +423,7 @@ export default function Home() {
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-purple-100 to-pink-100 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                 <span className="relative flex items-center">
-                  Browse Phone Cases 
+                  📱 Phone Cases 
                   <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
                 </span>
               </a>
@@ -433,7 +433,7 @@ export default function Home() {
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-yellow-300 to-orange-300 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                 <span className="relative flex items-center">
-                  Samsung F05 Best Seller
+                  🔥 HOT DEAL 
                   <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
                 </span>
               </a>
