@@ -382,16 +382,16 @@ export default function Home() {
             </div>
             
             {/* Main heading with enhanced glow */}
-            <h2 className="text-4xl md:text-5xl font-bold mb-3 text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3 text-white">
               <span style={{
                 textShadow: '0 0 40px rgba(255,255,255,0.5), 0 0 80px rgba(255,255,255,0.3)'
               }}>
-                ✨ JUST IN: Latest iPhones Available! 
+                🔥 HOT DEALS! 🔥 Latest iPhones Available! 
               </span>
             </h2>
             
             {/* Subheading */}
-            <p className="text-xl md:text-2xl mb-3 opacity-95">
+            <p className="text-xl md:text-1xl mb-3 opacity-95">
               Premium Performance, Stunning Cameras, All-Day Power
             </p>
             
@@ -418,7 +418,7 @@ export default function Home() {
             {/* CTA Buttons with enhanced styling */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a 
-                href="/Categories/more" 
+                href="/Categories/accessories & power" 
                 className="group relative bg-white text-purple-600 px-10 py-3 rounded-full font-bold text-lg overflow-hidden hover:scale-105 transform transition-all duration-300 shadow-xl"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-purple-100 to-pink-100 opacity-0 group-hover:opacity-100 transition-opacity"></span>
@@ -433,7 +433,7 @@ export default function Home() {
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-yellow-300 to-orange-300 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                 <span className="relative flex items-center">
-                  🔥 HOT DEAL 
+                  💥 SPECIAL OFFER 💥 
                   <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
                 </span>
               </a>
@@ -821,7 +821,26 @@ export default function Home() {
       </section>
         
       <CellyAssistant />
+      <CellyAssistant />
+
+      {/* Footer */}
+      <footer className="relative z-10 bg-black/80 backdrop-blur-sm border-t border-gray-800 py-8 mt-20">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-gray-400 text-sm mb-2">
+            © 2025 Cell World SVG. All Rights Reserved.
+          </p>
+          <p className="text-gray-500 text-xs mb-1">
+            Website by <span className="text-yellow-400 font-semibold">Designs by LJ</span>
+          </p>
+          <p className="text-gray-500 text-xs">
+            Contact: <a href="tel:+17844977245" className="text-blue-400 hover:text-blue-300">+1 (784) 497-7245</a> | 
+            <a href="mailto:bytesofknowledgelj@gmail.com" className="text-blue-400 hover:text-blue-300 ml-1">bytesofknowledgelj@gmail.com</a>
+          </p>
+        </div>
+      </footer>
       
      </div>
   );
 }
+     
+  

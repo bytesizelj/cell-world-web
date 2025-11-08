@@ -40,7 +40,7 @@ export default function ContactPage() {
     location: 'St. Vincent and the Grenadines',
     // Add more specific location details for the map
     address: 'Kingstown, St. Vincent and the Grenadines',
-    mapNote: 'Located in the heart of Kingstown - Look for Cell World signage'
+    mapNote: 'Located in the heart of Kingstown - St. Hill Insurance Business Centre - Opposite SVG High Court'
   };
 
   return (
@@ -225,15 +225,7 @@ export default function ContactPage() {
               Find Nearby Landmarks
             </button>
           </div>
-
-          {/* Additional Instructions */}
-          <div className="mt-6 p-4 bg-yellow-500/10 border border-yellow-500/30 rounded-lg">
-            <p className="text-yellow-400 text-sm">
-              <strong>Note:</strong> While we set up our Google Business listing, use the map above to navigate to central Kingstown. 
-              Look for Cell World signage or call us for precise directions!
-            </p>
-          </div>
-        </div>
+         </div>
 
         {/* Call to Action */}
         <div className="mt-12 text-center">
