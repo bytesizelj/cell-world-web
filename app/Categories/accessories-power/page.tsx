@@ -14,7 +14,86 @@ export default function AccessoriesPowerCategory() {
 
   // Complete product catalog - 69 items
   const products = [
-
+{
+  id: 'smart-m2-pro-selfie-stick',
+  name: 'Smart M2 Pro Selfie Stick',
+  image: '/images/Products/accessories-power/smart-m2-pro.png',
+  price: 250.00,
+  category: 'accessories',
+  inStock: true,
+  description: 'All-in-One Selfie Stick | Bluetooth Remote | Extendable | Portable | Perfect for Photos & Videos',
+  specs: {
+    type: 'All-in-One',
+    features: 'Bluetooth Remote, Extendable'
+  }
+},
+{
+  id: 'digipower-quikpod-selfie',
+  name: 'Digipower Quikpod Selfie Stick',
+  image: '/images/Products/accessories-power/digipower-quikpod.png',
+  price: 60.00,
+  category: 'accessories',
+  inStock: true,
+  description: 'Compact Selfie Stick | Easy to Use | Lightweight | Great for Travel & Everyday Use',
+  specs: {
+    features: 'Compact, Lightweight'
+  }
+},
+{
+  id: 'f5-3axis-gimbal',
+  name: 'F-5 3 Axis Foldable Handheld Gimbal',
+  image: '/images/Products/accessories-power/f5-gimbal.png',
+  price: 300.00,
+  category: 'accessories',
+  inStock: true,
+  description: '3-Axis Stabilization | Foldable Design | Professional Video Shooting | Smooth Motion Control',
+  specs: {
+    stabilization: '3-Axis',
+    design: 'Foldable Handheld',
+    features: 'Professional Video'
+  }
+},
+{
+  id: 'm02-3axis-gimbal',
+  name: 'M02 3 Axis Gimbal Stabilizer',
+  image: '/images/Products/accessories-power/m02-gimbal.png',
+  price: 320.00,
+  category: 'accessories',
+  inStock: true,
+  description: 'Magnetic Remote Control | Stable Tripod | Compatible with iOS & Android | Professional Stabilization',
+  specs: {
+    stabilization: '3-Axis',
+    remote: 'Magnetic Remote Control',
+    tripod: 'Stable Tripod',
+    compatible: 'iOS & Android'
+  }
+},
+{
+  id: 'r16k-selfie-stick',
+  name: 'R16K Selfie Stick with Grip Handle & Tripod',
+  image: '/images/Products/accessories-power/r16k-selfie.png',
+  price: 75.00,
+  category: 'accessories',
+  inStock: true,
+  description: 'Grip Handle & Tripod Included | Versatile Design | Stable Shots | Perfect for Group Photos',
+  specs: {
+    features: 'Grip Handle, Tripod Included'
+  }
+},
+{
+  id: 'multi-function-violent-fan',
+  name: 'Multi-Function Violent Fan',
+  image: '/images/Products/accessories-power/violent-fan.png',
+  price: 250.00,
+  category: 'power',
+  inStock: true,
+  description: 'Super Strong Wind | Super High Speed | Magic Vacuum Cleaner Function | Over Temperature Protection',
+  specs: {
+    power: 'Super Strong Wind',
+    speed: 'Super High Speed',
+    features: 'Vacuum Cleaner, Temperature Protection'
+  }
+},
 // PHONE CASES
 {
   id: 'magsafe-deep-blue',

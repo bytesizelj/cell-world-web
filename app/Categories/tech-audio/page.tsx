@@ -15,6 +15,63 @@ export default function TechAudioCategory() {
   // Complete product catalog - 69 items
   const products = [
 {
+  id: 'ps5-digital-edition',
+  name: 'PS5 Digital Edition',
+  image: '/images/Products/tech-audio/ps5-digital.png',
+  price: 2600.00,
+  category: 'gaming',
+  inStock: true,
+  description: '1TB Disc-Free Console | Ultra-Fast SSD | Stunning Graphics | Immersive Gaming Experience',
+  specs: {
+    storage: '1TB',
+    type: 'Disc-Free Console',
+    features: 'Ultra-Fast SSD, 4K Gaming'
+  }
+},
+{
+  id: 'ps5-console-disc',
+  name: 'PS5 Console',
+  image: '/images/Products/tech-audio/ps5-disc.png',
+  price: 2900.00,
+  category: 'gaming',
+  inStock: true,
+  description: 'Disc Drive Attaches to Console | DualSense Wireless Controller | 4K Gaming | Ultra HD Blu-ray',
+  specs: {
+    disc: 'Disc Drive',
+    controller: 'DualSense Wireless',
+    features: '4K Gaming, Ultra HD Blu-ray'
+  }
+},
+{
+  id: 'kotion-each-pro-headset',
+  name: 'Kotion Each Pro Gaming Headset',
+  image: '/images/Products/tech-audio/kotion-headset.png',
+  price: 175.00,
+  category: 'headphones',
+  inStock: true,
+  description: '2.4GHz Wireless Mode | Bluetooth Mode | Wired Mode | Pro Gaming Audio | Comfortable Design',
+  specs: {
+    connectivity: '2.4GHz Wireless, BT, Wired',
+    features: 'Pro Gaming Audio'
+  }
+},
+{
+  id: 'bl500-gaming-headset',
+  name: 'BL500 Gaming Headset',
+  image: '/images/Products/tech-audio/bl500-headset.png',
+  price: 150.00,
+  category: 'headphones',
+  inStock: true,
+  description: '2.4GHz Wireless Mode | Up to 30 Hours Battery | Noise Reduction Mic | For PC, MAC, PS4 & PS5',
+  specs: {
+    connectivity: '2.4GHz Wireless',
+    battery: 'Up to 30 Hours',
+    mic: 'Noise Reduction',
+    compatible: 'PC, MAC, PS4, PS5'
+  }
+},
+// SMART WATCHES
+{
   id: 'peje-smartwatch-rose-gold',
   name: 'PEJE Smartwatch',
   image: '/images/Products/tech-audio/smartwatch1.png',
