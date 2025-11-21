@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-import { ArrowLeft, Globe, Phone, MessageCircle, X, Check, ShoppingBag, Sparkles } from 'lucide-react';
+import { useState, useRef } from 'react';
+import { ArrowLeft, Globe, Phone, MessageCircle, X, Check, ZoomIn, ZoomOut, ShoppingBag, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { trackEvent } from '@/lib/analytics';
@@ -10,9 +10,51 @@ const Celly = dynamic(() => import('@/components/CellyAssistant'), { ssr: false 
 export default function TechAudioCategory() {
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
   const [language, setLanguage] = useState('en');
+  const [imageZoom, setImageZoom] = useState(1);
+  const [imagePosition, setImagePosition] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+  const imageRef = useRef<HTMLDivElement>(null);
   const [filterCategory, setFilterCategory] = useState('all');
 
-  // Complete product catalog - 69 items
+  // Zoom handler functions
+  const handleZoomIn = () => {
+    setImageZoom(prev => Math.min(prev + 0.5, 3));
+  };
+
+  const handleZoomOut = () => {
+    setImageZoom(prev => Math.max(prev - 0.5, 1));
+    if (imageZoom <= 1.5) {
+      setImagePosition({ x: 0, y: 0 });
+    }
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (imageZoom > 1) {
+      setIsDragging(true);
+      setDragStart({ x: e.clientX - imagePosition.x, y: e.clientY - imagePosition.y });
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (isDragging && imageZoom > 1) {
+      setImagePosition({
+        x: e.clientX - dragStart.x,
+        y: e.clientY - dragStart.y
+      });
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const resetZoom = () => {
+    setImageZoom(1);
+    setImagePosition({ x: 0, y: 0 });
+  };
+
+  // Enhanced product data with categories
   const products = [
 {
   id: 'ps5-digital-edition',
@@ -1418,12 +1460,50 @@ const translations = {
             <div className="grid md:grid-cols-2 gap-8">
               {/* Image */}
 <div>
-  <div className="bg-white/90 rounded-xl p-6 mb-4">
+  <div 
+    ref={imageRef}
+    className="bg-white/90 rounded-xl p-6 mb-4 relative overflow-hidden cursor-move"
+    onMouseDown={handleMouseDown}
+    onMouseMove={handleMouseMove}
+    onMouseUp={handleMouseUp}
+    onMouseLeave={handleMouseUp}
+  >
     <img 
       src={selectedProduct.image}
       alt={selectedProduct.name}
-      className="w-full h-64 object-contain"
+      className="w-full h-64 object-contain transition-transform duration-200"
+      style={{
+        transform: `scale(${imageZoom}) translate(${imagePosition.x / imageZoom}px, ${imagePosition.y / imageZoom}px)`,
+        cursor: imageZoom > 1 ? 'move' : 'zoom-in'
+      }}
+      onClick={() => imageZoom === 1 && handleZoomIn()}
     />
+    
+    {/* Zoom controls */}
+    <div className="absolute top-2 right-2 flex gap-2">
+      <button
+        onClick={handleZoomIn}
+        className="bg-white/90 p-2 rounded-lg shadow-lg hover:bg-white transition-colors"
+        disabled={imageZoom >= 3}
+      >
+        <ZoomIn className="w-5 h-5 text-gray-700" />
+      </button>
+      <button
+        onClick={handleZoomOut}
+        className="bg-white/90 p-2 rounded-lg shadow-lg hover:bg-white transition-colors"
+        disabled={imageZoom <= 1}
+      >
+        <ZoomOut className="w-5 h-5 text-gray-700" />
+      </button>
+      {imageZoom > 1 && (
+        <button
+          onClick={resetZoom}
+          className="bg-white/90 px-3 py-2 rounded-lg shadow-lg hover:bg-white transition-colors text-xs font-semibold"
+        >
+          Reset
+        </button>
+      )}
+    </div>
   </div>
   
   {/* Status Badge - Conditional */}
