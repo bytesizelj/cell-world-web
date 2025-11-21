@@ -72,7 +72,7 @@ export default function TechAudioCategory() {
 },
 {
   id: 'ps5-console-disc',
-  name: 'PS5 Console',
+  name: 'PS5 Console Disc Drive',
   image: '/images/Products/tech-audio/ps5-disc.png',
   price: 2900.00,
   category: 'gaming',

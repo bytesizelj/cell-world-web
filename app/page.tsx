@@ -288,16 +288,16 @@ export default function Home() {
         </div>
       )}
       
-      {/* Hero Content */}
-<div className="relative z-20 flex flex-col items-start justify-start min-h-screen px-3" style={{ marginTop: '-40px' }}>
+{/* Hero Content */}
+<div className="relative z-20 flex flex-col items-start justify-start px-3 pt-4">
   {/* Logo - top left */}
-  <div className="mb-8 opacity-0 animate-fade-up">
+  <div className="mb-4 opacity-0 animate-fade-up">
     <img 
       src="/images/cell-world-logo.png"
       alt="Cell World"
       style={{ 
-        height: '200px',
-        maxHeight: '200px', 
+        height: '150px',
+        maxHeight: '150px', 
         width: 'auto', 
         objectFit: 'contain',
         filter: 'drop-shadow(0 0 4px rgba(255,255,255,0.9)) drop-shadow(0 0 8px rgba(255,215,0,0.6)) drop-shadow(0 0 12px rgba(255,165,0,0.4))'
@@ -318,7 +318,7 @@ export default function Home() {
 </div>
 
 {/* Add Promotional Carousel */}
-<div className="relative z-20 mt-8">
+<div className="relative z-20 -mt-4">
   {/* Scrolling Ticker Strip */}
   <div className="w-full bg-gradient-to-r from-yellow-400 to-orange-400 py-2 overflow-hidden mb-4">
     <div className="ticker-content whitespace-nowrap">
