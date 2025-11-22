@@ -40,7 +40,7 @@ export default function Home() {
 useEffect(() => {
   const timer = setTimeout(() => {
     setShowBanner(true);
-  }, 1000);
+  }, 3000);
   
   return () => clearTimeout(timer);
 }, []);
