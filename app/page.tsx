@@ -49,7 +49,7 @@ useEffect(() => {
 useEffect(() => {
   const timer = setTimeout(() => {
     setShowPromo(true);
-  }, 1000);
+  }, 3000);
   
   return () => clearTimeout(timer);
 }, []);
