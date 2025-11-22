@@ -16,6 +16,7 @@ export default function Home() {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [showBanner, setShowBanner] = useState(false);
   
   // Array of video paths - add your video files here
   const videos = [
@@ -26,12 +27,21 @@ export default function Home() {
   
   // Rotate videos every 10 seconds
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentVideoIndex((prev) => (prev + 1) % videos.length);
-    }, 10000);
-    
-    return () => clearInterval(interval);
-  }, [videos.length]);
+  const interval = setInterval(() => {
+    setCurrentVideoIndex((prev) => (prev + 1) % videos.length);
+  }, 10000);
+  
+  return () => clearInterval(interval);
+}, [videos.length]);
+
+// Show banner after 1 second
+useEffect(() => {
+  const timer = setTimeout(() => {
+    setShowBanner(true);
+  }, 1000);
+  
+  return () => clearTimeout(timer);
+}, []);
   
   // IMPROVED: Faster loading with timeout fallback
   useEffect(() => {
@@ -289,7 +299,7 @@ export default function Home() {
       )}
       
 {/* Hero Content */}
-<div className="relative z-20 flex flex-col items-start justify-start px-3 pt-4">
+<div className="relative z-20 flex flex-col items-start justify-start min-h-screen px-3 pt-4">
   {/* Logo - top left */}
   <div className="mb-4 opacity-0 animate-fade-up">
     <img 
@@ -317,197 +327,85 @@ export default function Home() {
 </button>
 </div>
 
-{/* Add Promotional Carousel */}
-<div className="relative z-20 -mt-4">
-  {/* Scrolling Ticker Strip */}
-  <div className="w-full bg-gradient-to-r from-yellow-400 to-orange-400 py-2 overflow-hidden mb-4">
-    <div className="ticker-content whitespace-nowrap">
-      <span className="inline-block px-8 text-black font-semibold">
-        💰 Buy a Samsung Phone + Get FREE Screen Protector!
-      </span>
-      <span className="inline-block px-8 text-black font-semibold">
-        🛡️ Screen Protectors Available For All Devices!
-      </span>
-      <span className="inline-block px-8 text-black font-semibold">
-        📱 Phone Cases Available for All Samsung and iPhone Devices
-      </span>
-      {/* Duplicate for seamless loop */}
-      <span className="inline-block px-8 text-black font-semibold">
-        💰 Buy a Phone + Get FREE Screen Protector!
-      </span>
-      <span className="inline-block px-8 text-black font-semibold">
-        🛡️ Screen Protectors Available For All Devices!
-      </span>
-      <span className="inline-block px-8 text-black font-semibold">
-        📱 Phone Cases Available for All Samsung and iPhone Devices
-      </span>
-    </div>
-  </div>
-
-  {/* Enhanced Banner Container */}
-  <div className="px-6">
-    <div className="w-full max-w-5xl mx-auto">
-      {/* Main Banner */}
-      <div className="relative overflow-hidden rounded-3xl shadow-2xl mb-4">
-        {/* Animated gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-blue-600 to-cyan-500">
-          <div className="absolute inset-0 bg-gradient-to-tr from-pink-500/30 via-transparent to-yellow-500/30 animate-gradient-shift"></div>
-        </div>
-        
-        {/* Pattern overlay */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.1) 35px, rgba(255,255,255,.1) 70px)'
-          }}></div>
-        </div>
-        
-        {/* Floating elements for depth */}
-        <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full blur-xl animate-float"></div>
-        <div className="absolute bottom-10 right-10 w-32 h-32 bg-yellow-400/10 rounded-full blur-2xl animate-float-delayed"></div>
-        
-        {/* Content */}
-        <div className="relative z-10 p-8 md:p-12">
-          <div className="text-center text-white">
-            {/* Animated icons */}
-            <div className="flex justify-center gap-4 mb-6">
-              <div className="p-3 bg-white/20 rounded-2xl backdrop-blur-sm transform hover:rotate-12 transition-transform">
-                🛡️
-              </div>
-              <div className="p-3 bg-white/20 rounded-2xl backdrop-blur-sm transform hover:-rotate-12 transition-transform">
-                📱
-              </div>
-              <div className="p-3 bg-white/20 rounded-2xl backdrop-blur-sm transform hover:rotate-12 transition-transform">
-                ✨
-              </div>
-            </div>
-            
-            {/* Main heading with enhanced glow */}
-            <h2 className="text-3xl md:text-4xl font-bold mb-3 text-white">
-              <span style={{
-                textShadow: '0 0 40px rgba(255,255,255,0.5), 0 0 80px rgba(255,255,255,0.3)'
-              }}>
-                🔥 HOT DEALS! 🔥 Latest iPhones Available! 
-              </span>
-            </h2>
-            
-            {/* Subheading */}
-            <p className="text-xl md:text-1xl mb-3 opacity-95">
-              Premium Performance, Stunning Cameras, All-Day Power
-            </p>
-            
-            {/* Animated badge */}
-<div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-orange-400 text-black px-6 py-2 rounded-full font-bold mb-8 shadow-lg animate-bounce-zoom">
-  <span>🎉</span>
-  <span>iPhone 12 | iPhone 13 Pro Max | iPhone 14 - Limited Stock! Shop Today </span>
-  <span>🎉</span>
-</div>
-            
-            {/* Feature pills */}
-            <div className="flex flex-wrap justify-center gap-3 mb-8">
-              <div className="bg-white/15 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 hover:bg-white/20 transition-colors">
-                ✓ Pro Camera System
-              </div>
-              <div className="bg-white/15 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 hover:bg-white/20 transition-colors">
-                ✓ 4K Video Recording
-              </div>
-              <div className="bg-white/15 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 hover:bg-white/20 transition-colors">
-                ✓ Night Mode Photography
-              </div>
-            </div>
-            
-            {/* CTA Buttons with enhanced styling */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a 
-                href="/Categories/accessories & power" 
-                className="group relative bg-white text-purple-600 px-10 py-3 rounded-full font-bold text-lg overflow-hidden hover:scale-105 transform transition-all duration-300 shadow-xl"
-              >
-                <span className="absolute inset-0 bg-gradient-to-r from-purple-100 to-pink-100 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                <span className="relative flex items-center">
-                  📱 Phone Cases 
-                  <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
-                </span>
-              </a>
-              <a 
-                href="/Categories/phones" 
-                className="group relative bg-gradient-to-r from-yellow-400 to-orange-400 text-black px-10 py-3 rounded-full font-bold text-lg overflow-hidden hover:scale-105 transform transition-all duration-300 shadow-xl"
-              >
-                <span className="absolute inset-0 bg-gradient-to-r from-yellow-300 to-orange-300 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                <span className="relative flex items-center">
-                  💥 SPECIAL OFFER 💥 
-                  <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      {/* Separate Contact Strip with enhanced styling */}
-      <div className="bg-white rounded-2xl shadow-lg p-4 border border-gray-100">
-        <div className="flex flex-wrap justify-center items-center gap-4 text-gray-700">
-          <div className="flex items-center gap-2 font-medium">
-            <span className="text-2xl">📍</span>
-            <span>Visit Us In-Store</span>
-          </div>
-          <div className="hidden sm:block text-gray-300">|</div>
-          <div className="flex items-center gap-2 font-medium">
-            <span className="text-2xl">📞</span>
-            <span>784-451-2261</span>
-          </div>
-          <div className="hidden sm:block text-gray-300">|</div>
-          <div className="flex items-center gap-2 font-medium">
-            <span className="text-2xl">🕐</span>
-            <span>Mon-Fri 8AM-5PM, Sat 8AM-2PM</span>
-          </div>
+{/* Sliding Banner - Compact Version */}
+{showBanner && (
+  <div 
+    className="fixed bottom-0 left-0 right-0 z-50 animate-slide-up bg-gradient-to-r from-yellow-400 to-orange-400"
+  >
+    <div className="relative py-3 px-4">
+           
+      {/* Scrolling Content */}
+      <div className="overflow-hidden">
+        <div className="ticker-content whitespace-nowrap text-black font-semibold text-sm">
+          <span className="inline-block px-6">💰 Buy a Samsung Phone + Get FREE Screen Protector!</span>
+          <span className="inline-block px-6">🛡️ Screen Protectors Available For All Devices!</span>
+          <span className="inline-block px-6">📱 Phone Cases Available - <a href="/Categories/accessories-power" className="underline">Shop Now</a></span>
+          <span className="inline-block px-6">🔥 iPhone 12, 13 Pro Max, 14 - <a href="/Categories/phones" className="underline">Limited Stock!</a></span>
+          {/* Duplicate for loop */}
+          <span className="inline-block px-6">💰 Buy a Samsung Phone + Get FREE Screen Protector!</span>
+          <span className="inline-block px-6">🛡️ Screen Protectors Available For All Devices!</span>
+          <span className="inline-block px-6">📱 Phone Cases Available - <a href="/Categories/accessories-power" className="underline">Shop Now</a></span>
+          <span className="inline-block px-6">🔥 iPhone 12, 13 Pro Max, 14 - <a href="/Categories/phones" className="underline">Limited Stock!</a></span>
         </div>
       </div>
     </div>
   </div>
-
+)}
+  
  {/* CSS for animations */}
-  <style jsx>{`
-    .ticker-content {
-      display: inline-block;
-      animation: scroll-left 30s linear infinite;
+<style jsx>{`
+  .ticker-content {
+    display: inline-block;
+    animation: scroll-left 30s linear infinite;
+  }
+  @keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes gradient-shift {
+    0%, 100% { opacity: 0.3; transform: translateX(-100%); }
+    50% { opacity: 0.5; transform: translateX(100%); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  @keyframes float-delayed {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+  }
+  @keyframes bounce-zoom {
+    0%, 100% { 
+      transform: scale(1); 
     }
-    @keyframes scroll-left {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+    50% { 
+      transform: scale(1.05); 
     }
-    @keyframes gradient-shift {
-      0%, 100% { opacity: 0.3; transform: translateX(-100%); }
-      50% { opacity: 0.5; transform: translateX(100%); }
+  }
+  .animate-gradient-shift {
+    animation: gradient-shift 8s ease-in-out infinite;
+  }
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  .animate-float-delayed {
+    animation: float-delayed 6s ease-in-out infinite 1s;
+  }
+  .animate-bounce-zoom {
+    animation: bounce-zoom 2s ease-in-out infinite;
+  }
+  @keyframes slide-up {
+    from {
+      transform: translateY(100%);
     }
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-20px); }
+    to {
+      transform: translateY(0);
     }
-    @keyframes float-delayed {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-15px); }
-    }
-    @keyframes bounce-zoom {
-      0%, 100% { 
-        transform: scale(1); 
-      }
-      50% { 
-        transform: scale(1.05); 
-      }
-    }
-    .animate-gradient-shift {
-      animation: gradient-shift 8s ease-in-out infinite;
-    }
-    .animate-float {
-      animation: float 6s ease-in-out infinite;
-    }
-    .animate-float-delayed {
-      animation: float-delayed 6s ease-in-out infinite 1s;
-    }
-    .animate-bounce-zoom {
-      animation: bounce-zoom 2s ease-in-out infinite;
-    }
-  `}</style>
-</div>
+  }
+  .animate-slide-up {
+    animation: slide-up 1s ease-out forwards;
+  }
+`}</style>
         
 {/* Category Section with HOVER ZOOM for images */}
 <section className="relative z-20 bg-black/90 py-20" id="products-section">
@@ -786,61 +684,58 @@ export default function Home() {
       </section>  
 
       {/* Island Delivery Links */}
-      <section className="relative z-20 py-12 bg-black/80">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h3 
-            className="text-2xl md:text-3xl mb-6"
-            style={{ 
-              color: '#FFFFFF',
-              fontFamily: '"Brush Script MT", "Lucida Handwriting", "Dancing Script", cursive',
-              fontWeight: '400',
-              textShadow: '0 2px 8px rgba(255, 215, 0, 0.4), 0 4px 16px rgba(255, 215, 0, 0.2)',
-              animation: 'slideInFromLeft 1.5s ease-out, pulse 2s ease-in-out 1.5s infinite'
-            }}
-          >
-            We Deliver Throughout the Grenadines
-          </h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a href="/grenadines/bequia" className="text-teal-300 hover:text-yellow-400 px-3 py-2 border border-teal-400/30 rounded-full hover:border-yellow-400 transition-all">
-              Bequia
-            </a>
-            <a href="/grenadines/mustique" className="text-teal-300 hover:text-yellow-400 px-3 py-2 border border-teal-400/30 rounded-full hover:border-yellow-400 transition-all">
-              Mustique
-            </a>
-            <a href="/grenadines/canouan" className="text-teal-300 hover:text-yellow-400 px-3 py-2 border border-teal-400/30 rounded-full hover:border-yellow-400 transition-all">
-              Canouan
-            </a>
-            <a href="/grenadines/union-island" className="text-teal-300 hover:text-yellow-400 px-3 py-2 border border-teal-400/30 rounded-full hover:border-yellow-400 transition-all">
-              Union Island
-            </a>
-            <a href="/grenadines/mayreau" className="text-teal-300 hover:text-yellow-400 px-3 py-2 border border-teal-400/30 rounded-full hover:border-yellow-400 transition-all">
-              Mayreau
-            </a>
-          </div>
-        </div>
-      </section>
-        
-      <CellyAssistant />
-      <CellyAssistant />
+<section className="relative z-20 py-12 bg-black/80">
+  <div className="max-w-4xl mx-auto px-6 text-center">
+    <h3 
+      className="text-2xl md:text-3xl mb-6"
+      style={{ 
+        color: '#FFFFFF',
+        fontFamily: '"Brush Script MT", "Lucida Handwriting", "Dancing Script", cursive',
+        fontWeight: '400',
+        textShadow: '0 2px 8px rgba(255, 215, 0, 0.4), 0 4px 16px rgba(255, 215, 0, 0.2)'
+      }}
+    >
+      We Deliver Throughout the Grenadines
+    </h3>
+    <div className="flex flex-wrap justify-center gap-4">
+      <a href="/grenadines/bequia" className="text-teal-300 hover:text-yellow-400 px-3 py-2 border border-teal-400/30 rounded-full hover:border-yellow-400 transition-all">
+        Bequia
+      </a>
+      <a href="/grenadines/mustique" className="text-teal-300 hover:text-yellow-400 px-3 py-2 border border-teal-400/30 rounded-full hover:border-yellow-400 transition-all">
+        Mustique
+      </a>
+      <a href="/grenadines/canouan" className="text-teal-300 hover:text-yellow-400 px-3 py-2 border border-teal-400/30 rounded-full hover:border-yellow-400 transition-all">
+        Canouan
+      </a>
+      <a href="/grenadines/union-island" className="text-teal-300 hover:text-yellow-400 px-3 py-2 border border-teal-400/30 rounded-full hover:border-yellow-400 transition-all">
+        Union Island
+      </a>
+      <a href="/grenadines/mayreau" className="text-teal-300 hover:text-yellow-400 px-3 py-2 border border-teal-400/30 rounded-full hover:border-yellow-400 transition-all">
+        Mayreau
+      </a>
+    </div>
+  </div>
+</section>
+  
+<CellyAssistant />
 
-      {/* Footer */}
-      <footer className="relative z-10 bg-black/80 backdrop-blur-sm border-t border-gray-800 py-8 mt-20">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-400 text-sm mb-2">
-            © 2025 Cell World SVG. All Rights Reserved.
-          </p>
-          <p className="text-gray-500 text-xs mb-1">
-            Website by <span className="text-yellow-400 font-semibold">Designs by LJ</span>
-          </p>
-          <p className="text-gray-500 text-xs">
-            Contact: <a href="tel:+17844977245" className="text-blue-400 hover:text-blue-300">+1 (784) 497-7245</a> | 
-            <a href="mailto:bytesofknowledgelj@gmail.com" className="text-blue-400 hover:text-blue-300 ml-1">bytesofknowledgelj@gmail.com</a>
-          </p>
-        </div>
-      </footer>
-      
-     </div>
-  );
-}
-     
+{/* Footer */}
+<footer className="relative z-10 bg-black/80 backdrop-blur-sm border-t border-gray-800 py-8 mt-20">
+  <div className="container mx-auto px-4 text-center">
+    <p className="text-gray-400 text-sm mb-2">
+      © 2025 Cell World SVG. All Rights Reserved.
+    </p>
+    <p className="text-gray-500 text-xs mb-1">
+      Website by <span className="text-yellow-400 font-semibold">Designs by LJ</span>
+    </p>
+    <p className="text-gray-500 text-xs">
+      Contact: <a href="tel:+17844977245" className="text-blue-400 hover:text-blue-300">+1 (784) 497-7245</a> | 
+      <a href="mailto:bytesofknowledgelj@gmail.com" className="text-blue-400 hover:text-blue-300 ml-1">bytesofknowledgelj@gmail.com</a>
+    </p>
+  </div>
+</footer>
+
+</div>
+);
+}     
   
