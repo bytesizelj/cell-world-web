@@ -17,6 +17,7 @@ export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [showBanner, setShowBanner] = useState(false);
+  const [showPromo, setShowPromo] = useState(false);
   
   // Array of video paths - add your video files here
   const videos = [
@@ -34,10 +35,20 @@ export default function Home() {
   return () => clearInterval(interval);
 }, [videos.length]);
 
+
 // Show banner after 1 second
 useEffect(() => {
   const timer = setTimeout(() => {
     setShowBanner(true);
+  }, 1000);
+  
+  return () => clearTimeout(timer);
+}, []);
+
+// Show iPhone promo after 1 second
+useEffect(() => {
+  const timer = setTimeout(() => {
+    setShowPromo(true);
   }, 1000);
   
   return () => clearTimeout(timer);
@@ -326,27 +337,95 @@ useEffect(() => {
   <span className="ml-2">→</span>
 </button>
 </div>
-
-{/* Sliding Banner - Compact Version */}
-{showBanner && (
+{/* iPhone Promo Popup - ATTENTION GRABBING */}
+{showPromo && (
   <div 
-    className="fixed bottom-0 left-0 right-0 z-50 animate-slide-up bg-gradient-to-r from-yellow-400 to-orange-400"
+    className="fixed inset-0 z-[60] flex items-center justify-center animate-fade-in"
+    onClick={() => setShowPromo(false)}
+    style={{
+      background: 'radial-gradient(circle at center, rgba(147, 51, 234, 0.95), rgba(0, 0, 0, 0.98))',
+      backdropFilter: 'blur(10px)'
+    }}
   >
-    <div className="relative py-3 px-4">
-           
-      {/* Scrolling Content */}
-      <div className="overflow-hidden">
-        <div className="ticker-content whitespace-nowrap text-black font-semibold text-sm">
-          <span className="inline-block px-6">💰 Buy a Samsung Phone + Get FREE Screen Protector!</span>
-          <span className="inline-block px-6">🛡️ Screen Protectors Available For All Devices!</span>
-          <span className="inline-block px-6">📱 Phone Cases Available - <a href="/Categories/accessories-power" className="underline">Shop Now</a></span>
-          <span className="inline-block px-6">🔥 iPhone 12, 13 Pro Max, 14 - <a href="/Categories/phones" className="underline">Limited Stock!</a></span>
-          {/* Duplicate for loop */}
-          <span className="inline-block px-6">💰 Buy a Samsung Phone + Get FREE Screen Protector!</span>
-          <span className="inline-block px-6">🛡️ Screen Protectors Available For All Devices!</span>
-          <span className="inline-block px-6">📱 Phone Cases Available - <a href="/Categories/accessories-power" className="underline">Shop Now</a></span>
-          <span className="inline-block px-6">🔥 iPhone 12, 13 Pro Max, 14 - <a href="/Categories/phones" className="underline">Limited Stock!</a></span>
+    <div 
+      className="relative rounded-3xl p-8 max-w-4xl w-full mx-4 shadow-2xl animate-zoom-bounce overflow-hidden"
+      onClick={(e) => e.stopPropagation()}
+      style={{
+        background: 'linear-gradient(135deg, #8B5CF6 0%, #3B82F6 50%, #06B6D4 100%)',
+        boxShadow: '0 0 80px rgba(139, 92, 246, 0.8), 0 0 120px rgba(59, 130, 246, 0.6)'
+      }}
+    >
+      {/* Animated Rotating Gradient Background */}
+      <div className="absolute inset-0 animate-rotate-gradient" style={{
+        background: 'conic-gradient(from 0deg at 50% 50%, rgba(236, 72, 153, 0.4) 0deg, transparent 60deg, rgba(251, 191, 36, 0.4) 120deg, transparent 180deg, rgba(236, 72, 153, 0.4) 240deg, transparent 300deg, rgba(251, 191, 36, 0.4) 360deg)',
+      }}></div>
+      
+      {/* Pulsing Circles */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-30">
+        <div className="absolute top-10 left-10 w-40 h-40 bg-pink-400 rounded-full animate-pulse-scale"></div>
+        <div className="absolute bottom-10 right-10 w-56 h-56 bg-yellow-400 rounded-full animate-pulse-scale-delayed"></div>
+        <div className="absolute top-1/2 left-1/2 w-32 h-32 bg-cyan-400 rounded-full animate-pulse-scale" style={{animationDelay: '0.5s'}}></div>
+      </div>
+      
+      {/* Close Button */}
+      <button
+        onClick={() => setShowPromo(false)}
+        className="absolute top-4 right-4 bg-white hover:bg-gray-100 p-3 rounded-full transition-all z-20 shadow-xl hover:scale-110 animate-bounce-slow"
+      >
+        <X className="w-6 h-6 text-gray-700" />
+      </button>
+
+      <div className="relative z-10 text-center text-white">
+        {/* Animated Icon Row */}
+        <div className="flex justify-center gap-6 mb-6">
+          <div className="p-4 bg-white/30 rounded-2xl backdrop-blur-md animate-wiggle shadow-lg">
+            <span className="text-5xl">📱</span>
+          </div>
+          <div className="p-4 bg-white/30 rounded-2xl backdrop-blur-md animate-wiggle-delayed shadow-lg">
+            <span className="text-5xl">✨</span>
+          </div>
+          <div className="p-4 bg-white/30 rounded-2xl backdrop-blur-md animate-wiggle" style={{animationDelay: '0.4s'}}>
+            <span className="text-5xl">🔥</span>
+          </div>
         </div>
+        
+        {/* Main Heading with Glow */}
+        <h2 className="text-5xl md:text-6xl font-black mb-4 animate-glow-pulse" style={{
+          textShadow: '0 0 20px rgba(255,255,255,1), 0 0 40px rgba(255,215,0,0.8), 0 0 60px rgba(255,165,0,0.6), 0 4px 20px rgba(0,0,0,0.5)'
+        }}>
+          🔥 HOT DEALS! 🔥
+        </h2>
+        
+        {/* Subheading */}
+        <p className="text-3xl md:text-4xl font-bold mb-4 animate-slide-in-left">
+          Latest iPhones Available!
+        </p>
+        
+        {/* iPhone Models Badge with Shine */}
+        <div className="relative inline-block mb-6">
+          <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 blur-2xl animate-pulse"></div>
+          <div className="relative bg-gradient-to-r from-yellow-400 via-yellow-300 to-orange-400 text-black px-8 py-4 rounded-full font-black text-xl shadow-2xl animate-shine overflow-hidden">
+            <span className="relative z-10">iPhone 12 • iPhone 13 Pro Max • iPhone 14</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent animate-shimmer"></div>
+          </div>
+        </div>
+        
+        {/* Urgency Text */}
+        <p className="text-2xl font-bold mb-6 animate-flash">
+          ⚠️ LIMITED STOCK - ACT NOW! ⚠️
+        </p>
+        
+        {/* CTA Button with Hover Effect */}
+        <a 
+          href="/Categories/phones"
+          className="group relative inline-block bg-white text-purple-600 px-12 py-5 rounded-full font-black text-xl overflow-hidden shadow-2xl hover:shadow-yellow-400/50 transition-all duration-300 animate-bounce-gentle"
+        >
+          <span className="absolute inset-0 bg-gradient-to-r from-yellow-200 to-orange-200 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+          <span className="relative flex items-center justify-center">
+            SHOP IPHONES NOW
+            <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform" />
+          </span>
+        </a>
       </div>
     </div>
   </div>
@@ -362,48 +441,137 @@ useEffect(() => {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
-  @keyframes gradient-shift {
-    0%, 100% { opacity: 0.3; transform: translateX(-100%); }
-    50% { opacity: 0.5; transform: translateX(100%); }
+  @keyframes slide-up {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
   }
-  @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
-  @keyframes float-delayed {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
+  @keyframes zoom-bounce {
+    0% { 
+      opacity: 0;
+      transform: scale(0.3) rotate(-5deg);
+    }
+    50% {
+      transform: scale(1.05) rotate(2deg);
+    }
+    100% { 
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
   }
-  @keyframes bounce-zoom {
+  @keyframes rotate-gradient {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  @keyframes pulse-scale {
     0%, 100% { 
-      transform: scale(1); 
+      transform: scale(1);
+      opacity: 0.3;
     }
     50% { 
-      transform: scale(1.05); 
+      transform: scale(1.5);
+      opacity: 0.1;
     }
   }
-  .animate-gradient-shift {
-    animation: gradient-shift 8s ease-in-out infinite;
+  @keyframes pulse-scale-delayed {
+    0%, 100% { 
+      transform: scale(1);
+      opacity: 0.3;
+    }
+    50% { 
+      transform: scale(1.3);
+      opacity: 0.1;
+    }
   }
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    75% { transform: rotate(10deg); }
   }
-  .animate-float-delayed {
-    animation: float-delayed 6s ease-in-out infinite 1s;
+  @keyframes wiggle-delayed {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    75% { transform: rotate(-10deg); }
   }
-  .animate-bounce-zoom {
-    animation: bounce-zoom 2s ease-in-out infinite;
+  @keyframes glow-pulse {
+    0%, 100% {
+      text-shadow: 0 0 20px rgba(255,255,255,1), 0 0 40px rgba(255,215,0,0.8), 0 0 60px rgba(255,165,0,0.6);
+    }
+    50% {
+      text-shadow: 0 0 30px rgba(255,255,255,1), 0 0 60px rgba(255,215,0,1), 0 0 90px rgba(255,165,0,0.8);
+    }
   }
-  @keyframes slide-up {
+  @keyframes slide-in-left {
     from {
-      transform: translateY(100%);
+      opacity: 0;
+      transform: translateX(-50px);
     }
     to {
-      transform: translateY(0);
+      opacity: 1;
+      transform: translateX(0);
     }
   }
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(200%); }
+  }
+  @keyframes flash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  @keyframes bounce-gentle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+  @keyframes bounce-slow {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+  
   .animate-slide-up {
     animation: slide-up 1s ease-out forwards;
+  }
+  .animate-fade-in {
+    animation: fade-in 0.4s ease-out;
+  }
+  .animate-zoom-bounce {
+    animation: zoom-bounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .animate-rotate-gradient {
+    animation: rotate-gradient 8s linear infinite;
+  }
+  .animate-pulse-scale {
+    animation: pulse-scale 3s ease-in-out infinite;
+  }
+  .animate-pulse-scale-delayed {
+    animation: pulse-scale-delayed 3s ease-in-out infinite 1s;
+  }
+  .animate-wiggle {
+    animation: wiggle 1s ease-in-out infinite;
+  }
+  .animate-wiggle-delayed {
+    animation: wiggle-delayed 1s ease-in-out infinite 0.2s;
+  }
+  .animate-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+  .animate-slide-in-left {
+    animation: slide-in-left 0.6s ease-out 0.2s both;
+  }
+  .animate-shimmer {
+    animation: shimmer 2s ease-in-out infinite;
+  }
+  .animate-flash {
+    animation: flash 1.5s ease-in-out infinite;
+  }
+  .animate-bounce-gentle {
+    animation: bounce-gentle 2s ease-in-out infinite;
+  }
+  .animate-bounce-slow {
+    animation: bounce-slow 2s ease-in-out infinite;
   }
 `}</style>
         
