@@ -8,28 +8,35 @@ export default function OrderPage() {
   const router = useRouter();
 
   const categories = [
-    {
-      title: "📱 Mobile Phones",
-      description: "Latest smartphones & accessories",
-      href: "/Categories/phones",
-      bgColor: "from-yellow-500 to-yellow-600",
-      icon: Phone
-    },
-    {
-      title: "🐟 Marine World",
-      description: "Boat parts, fishing gear & marine equipment",
-      href: "/Categories/marine-world",
-      bgColor: "from-blue-500 to-blue-600",
-      icon: Fish
-    },
-    {
-      title: "📦 More Products",
-      description: "Gaming, solar, security & more",
-      href: "/Categories/more",
-      bgColor: "from-purple-500 to-purple-600",
-      icon: Package
-    }
-  ];
+  {
+    title: "📱 Mobile Phones",
+    description: "Latest smartphones & accessories",
+    href: "/Categories/phones",
+    bgColor: "from-yellow-500 to-yellow-600",
+    icon: Phone
+  },
+  {
+    title: "🐟 Marine World",
+    description: "Boat parts, fishing gear & marine equipment",
+    href: "/Categories/marine-world",
+    bgColor: "from-blue-500 to-blue-600",
+    icon: Fish
+  },
+  {
+    title: "🎵 Tech & Audio",
+    description: "Speakers, gaming, audio equipment & more",
+    href: "/Categories/tech-audio",
+    bgColor: "from-cyan-500 to-teal-600",
+    icon: Package
+  },
+  {
+    title: "🔌 Accessories & Power",
+    description: "Cases, cables, power banks & car accessories",
+    href: "/Categories/accessories-power",
+    bgColor: "from-purple-500 to-fuchsia-600",
+    icon: ShoppingCart
+  }
+];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 relative">

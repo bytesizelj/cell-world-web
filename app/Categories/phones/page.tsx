@@ -59,7 +59,56 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
 
   // Enhanced product data with categories
   const products = [
-  { 
+  {
+  id: 'iphone-12',
+  name: "iPhone 12",
+  category: 'midrange',
+  price: 1100,
+  image: "/images/Products/phones/iphone-12.png",
+  inStock: true,
+  isDeal: true,
+  colors: 'Black',
+  specs: {
+    display: '6.1\ Super Retina XDR Display',
+    chipset: 'A14 Bionic Chip | 5G Enabled', 
+    camera: 'Dual 12MP Camera System', 
+    other: 'MagSafe Compatible | Premium Build Quality'  
+}
+},
+  {
+  id: 'iphone-13-pro-max',
+  name: "iPhone 13 Pro Max",
+  category: 'flagship',
+  price: 2300,
+  image: "/images/Products/phones/iphone-13-pro-max.png",
+  inStock: true,
+  isDeal: true,
+  colors: 'Green',
+  specs: {
+    display: '6.7\ ProMotion 120Hz Display',
+    chipset: 'A15 Bionic',
+    camera: 'Pro Camera System',
+    storage: 'TB Storage',
+    other: 'Cinematic Mode | All-Day Battery | 5G Ultra Fast'  
+}
+},
+  {
+  id: 'iphone-14',
+  name: "iPhone 14",
+  category: 'flagship',
+  price: 2100,
+  image: "/images/Products/phones/iphone-14.png",
+  inStock: true,
+  isDeal: true,
+  colors: 'Black',
+  specs: {
+    display: '6.1\" Super Retina XDR',
+    chipset: 'A15 Bionic Chip',
+    camera: 'Advanced Dual Camera', 
+    other: 'Photonic Engine | Action Mode Video | 5G | Premium Design'  
+}
+},
+    { 
       id: 'samsung-a06', 
       name: 'Samsung A06', 
       image: '/images/Products/phones/cropped/samsung-a06.png',
@@ -76,8 +125,8 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
         selfieCamera: '8MP Front Camera',
         charging: '25W Fast Charging',
         sim: 'Dual SIM'
-      }
-    }, 
+}
+}, 
   {
   id: 'samsung-galaxy-a05',
   name: 'Samsung A05',
@@ -114,10 +163,6 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
     ram: '4GB RAM'
   }
     },
-    
-    
-
-
     { 
       id: 'blu-a140', 
       name: 'BLU A140', 
@@ -208,53 +253,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
     other: 'IP67 Water Resistant | Premium Glass & Metal Design | Flagship Features'  
 }
 },
- {
-  id: 'iphone-12',
-  name: "iPhone 12",
-  category: 'midrange',
-  price: 1100,
-  image: "/images/Products/phones/iphone-12.png",
-  inStock: true,
-  colors: 'Black',
-  specs: {
-    display: '6.1\ Super Retina XDR Display',
-    chipset: 'A14 Bionic Chip | 5G Enabled', 
-    camera: 'Dual 12MP Camera System', 
-    other: 'MagSafe Compatible | Premium Build Quality'  
-}
-},
-  {
-  id: 'iphone-13-pro-max',
-  name: "iPhone 13 Pro Max",
-  category: 'flagship',
-  price: 2300,
-  image: "/images/Products/phones/iphone-13-pro-max.png",
-  inStock: true,
-  colors: 'Green',
-  specs: {
-    display: '6.7\ ProMotion 120Hz Display',
-    chipset: 'A15 Bionic',
-    camera: 'Pro Camera System',
-    storage: 'TB Storage',
-    other: 'Cinematic Mode | All-Day Battery | 5G Ultra Fast'  
-}
-},
-  {
-  id: 'iphone-14',
-  name: "iPhone 14",
-  category: 'flagship',
-  price: 2100,
-  image: "/images/Products/phones/iphone-14.png",
-  inStock: true,
-  colors: 'Black',
-  specs: {
-    display: '6.1\" Super Retina XDR',
-    chipset: 'A15 Bionic Chip',
-    camera: 'Advanced Dual Camera', 
-    other: 'Photonic Engine | Action Mode Video | 5G | Premium Design'  
-}
-},
-    { 
+  { 
       id: 'zteblade-a72s', 
       name: 'ZTE Blade A72s', 
       image: '/images/Products/phones/cropped/zteblade-a72s.png',
@@ -585,11 +584,14 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
   };
 
   return (
-    <div className="relative min-h-screen bg-black">
-      {/* Background with gradient */}
-      <div className="fixed inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-blue-900/20" />
-      </div>
+  <div className="relative min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-slate-900 overflow-hidden">
+    {/* Animated Particles Background */}
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-float"></div>
+      <div className="absolute top-40 right-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-float-delayed"></div>
+      <div className="absolute bottom-20 left-1/4 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl animate-float" style={{animationDelay: '1s'}}></div>
+      <div className="absolute bottom-40 right-1/3 w-64 h-64 bg-purple-400/10 rounded-full blur-3xl animate-float-delayed"></div>
+    </div>
 
       {/* Navigation */}
       <nav className="relative z-20 flex justify-between items-center p-6 bg-black/50 backdrop-blur-sm">
@@ -687,6 +689,12 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
                   🔥 BEST SELLER
                 </div>
               )}
+              {/* Deal Badge */}
+{product.isDeal && product.availability !== 'Back Soon' && (
+  <div className="absolute top-2 left-2 z-30 bg-gradient-to-r from-yellow-400 to-orange-400 text-black px-3 py-1 rounded-full text-xs font-bold shadow-lg animate-pulse">
+    💥 HOT DEAL
+  </div>
+)}
               
               {/* Product Image with HOVER ZOOM */}
               <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-3 overflow-hidden" style={{ height: '260px' }}>
@@ -996,6 +1004,24 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
       
       {/* Celly Assistant */}
       <CellyAssistant />
+      
+      {/* CSS for animations */}
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) translateX(0px); }
+          50% { transform: translateY(-30px) translateX(20px); }
+        }
+        @keyframes float-delayed {
+          0%, 100% { transform: translateY(0px) translateX(0px); }
+          50% { transform: translateY(-40px) translateX(-20px); }
+        }
+        .animate-float {
+          animation: float 8s ease-in-out infinite;
+        }
+        .animate-float-delayed {
+          animation: float-delayed 10s ease-in-out infinite;
+        }
+      `}</style>
     </div>
   );
 }

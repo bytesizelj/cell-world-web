@@ -39,28 +39,13 @@ export default function ReviewsPage() {
   }, []);
 
   const fetchGoogleReviews = async () => {
-    try {
-      setLoading(true);
-      setError(null);
-      
-      const response = await fetch('/api/google-reviews');
-      const data = await response.json();
-      
-      if (data.success && data.data) {
-        setGoogleReviews(data.data);
-        console.log(`Loaded ${data.data.reviews?.length || 0} reviews from Google`);
-      } else {
-        throw new Error(data.error || 'Failed to load reviews');
-      }
-    } catch (error) {
-      console.error('Error loading reviews:', error);
-      setError(error instanceof Error ? error.message : 'Failed to load reviews');
-      // Fallback to sample data if API fails
-      setGoogleReviews(getSampleData());
-    } finally {
-      setLoading(false);
-    }
-  };
+  setLoading(true);
+  // Load sample data directly without API call
+  setTimeout(() => {
+    setGoogleReviews(getSampleData());
+    setLoading(false);
+  }, 500); // Brief loading animation
+};
 
   // Sample data fallback (in case API fails)
   const getSampleData = (): GoogleReviewsData => ({
@@ -187,17 +172,7 @@ export default function ReviewsPage() {
         </div>
       )}
 
-      {/* Error State */}
-      {error && !loading && (
-        <div className="relative z-10 max-w-2xl mx-auto px-4 py-10">
-          <div className="bg-red-900/30 border border-red-500 rounded-lg p-6 text-center">
-            <p className="text-red-400 mb-2">Unable to load live Google Reviews</p>
-            <p className="text-gray-300 text-sm">Showing sample reviews instead</p>
-          </div>
-        </div>
-      )}
-
-      {/* Stats Section */}
+    {/* Stats Section */}
       {!loading && googleReviews && (
         <div className="relative z-10 max-w-6xl mx-auto px-4 mb-8">
           <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm rounded-xl p-6">

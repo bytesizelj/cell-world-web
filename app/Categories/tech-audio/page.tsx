@@ -1289,17 +1289,30 @@ const translations = {
   : products.filter(p => p.category === filterCategory);
 
   return (
-    <div className="relative min-h-screen bg-black">
-      {/* Dynamic gradient background */}
-      <div className="fixed inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-pink-900/10 to-orange-900/20" />
-        <div className="absolute inset-0 opacity-10">
-          <div style={{
-            backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.05) 35px, rgba(255,255,255,.05) 70px)`,
-            height: '100%'
-          }} />
-        </div>
-      </div>
+  <div className="relative min-h-screen bg-gradient-to-br from-cyan-900 via-teal-900 to-slate-900 overflow-hidden">
+    {/* Animated Particles Background - BOLD VERSION */}
+<div className="absolute inset-0 overflow-hidden pointer-events-none">
+  {/* BOLD floating orbs with stronger colors */}
+  <div className="absolute top-20 left-10 w-[500px] h-[500px] bg-cyan-400/50 rounded-full blur-3xl animate-float"></div>
+  <div className="absolute top-40 right-20 w-[600px] h-[600px] bg-teal-400/45 rounded-full blur-3xl animate-float-delayed"></div>
+  <div className="absolute bottom-20 left-1/4 w-[550px] h-[550px] bg-blue-400/50 rounded-full blur-3xl animate-float" style={{animationDelay: '1s'}}></div>
+  <div className="absolute bottom-40 right-1/3 w-96 h-96 bg-cyan-300/45 rounded-full blur-3xl animate-float-delayed"></div>
+  <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-teal-300/40 rounded-full blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
+      
+      {/* Animated grid pattern overlay */}
+      <div className="absolute inset-0 opacity-20 animate-pulse-slow" style={{
+        backgroundImage: `
+          linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)
+        `,
+        backgroundSize: '50px 50px'
+      }}></div>
+      
+      {/* Diagonal moving lines */}
+      <div className="absolute inset-0 opacity-10 animate-slide-diagonal" style={{
+        backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,0.1) 35px, rgba(255,255,255,0.1) 70px)'
+      }}></div>
+    </div>
 
       {/* Navigation */}
       <nav className="relative z-20 flex justify-between items-center p-6 bg-black/50 backdrop-blur-sm">
@@ -1588,6 +1601,38 @@ const translations = {
       
       {/* Celly Assistant */}
       <Celly />
+      
+      {/* CSS for animations */}
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) translateX(0px); }
+          50% { transform: translateY(-30px) translateX(20px); }
+        }
+        @keyframes float-delayed {
+          0%, 100% { transform: translateY(0px) translateX(0px); }
+          50% { transform: translateY(-40px) translateX(-20px); }
+        }
+        @keyframes pulse-slow {
+          0%, 100% { opacity: 0.2; }
+          50% { opacity: 0.3; }
+        }
+        @keyframes slide-diagonal {
+          0% { transform: translateX(-50px) translateY(-50px); }
+          100% { transform: translateX(50px) translateY(50px); }
+        }
+        .animate-float {
+          animation: float 8s ease-in-out infinite;
+        }
+        .animate-float-delayed {
+          animation: float-delayed 10s ease-in-out infinite;
+        }
+        .animate-pulse-slow {
+          animation: pulse-slow 4s ease-in-out infinite;
+        }
+        .animate-slide-diagonal {
+          animation: slide-diagonal 20s linear infinite;
+        }
+      `}</style>
     </div>
   );
 }

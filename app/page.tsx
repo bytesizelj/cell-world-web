@@ -283,28 +283,31 @@ useEffect(() => {
             </button>
             
             <div className="space-y-2">
-              <a href="/" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
-                🏠 Home
-              </a>
-              <a href="/Categories/phones" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
-                📱 Phones
-              </a>
-              <a href="/Categories/marine-world" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
-                🚤 Marine World
-              </a>
-              <a href="/Categories/more" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
-                📦 More Products
-              </a>
-              <a href="/reviews" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
-                ⭐ Reviews
-              </a>
-              <a href="/contact" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
-                📞 Contact
-              </a>
-              <a href="/order" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
-                🛒 Order
-              </a>
-            </div>
+  <a href="/" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+    🏠 Home
+  </a>
+  <a href="/Categories/phones" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+    📱 Phones
+  </a>
+  <a href="/Categories/marine-world" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+    🚤 Marine World
+  </a>
+  <a href="/Categories/tech-audio" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+    🎵 Tech & Audio
+  </a>
+  <a href="/Categories/accessories-power" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+    🔌 Accessories & Power
+  </a>
+  <a href="/reviews" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+    ⭐ Reviews
+  </a>
+  <a href="/contact" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+    📞 Contact
+  </a>
+  <a href="/order" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+    🛒 Order
+  </a>
+</div>
           </div>
         </div>
       )}

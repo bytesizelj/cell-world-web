@@ -415,17 +415,30 @@ export default function MarineWorldPage() {
         }}
       />
 
-      <div className="relative min-h-screen bg-black">
-        {/* Ocean-themed gradient background */}
-        <div className="fixed inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-teal-900/20 to-blue-900/30" />
-          <div className="absolute inset-0 opacity-10">
-            <div style={{
-              backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.05) 35px, rgba(255,255,255,.05) 70px)`,
-              height: '100%'
-            }} />
-          </div>
-        </div>
+      <div className="relative min-h-screen bg-gradient-to-br from-blue-900 via-cyan-900 to-teal-900 overflow-hidden">
+  {/* Animated Ocean Particles Background */}
+  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    {/* BOLD ocean wave-like orbs */}
+    <div className="absolute top-20 left-10 w-[500px] h-[500px] bg-cyan-400/50 rounded-full blur-3xl animate-float"></div>
+    <div className="absolute top-40 right-20 w-[600px] h-[600px] bg-blue-400/45 rounded-full blur-3xl animate-float-delayed"></div>
+    <div className="absolute bottom-20 left-1/4 w-[550px] h-[550px] bg-teal-400/50 rounded-full blur-3xl animate-float" style={{animationDelay: '1s'}}></div>
+    <div className="absolute bottom-40 right-1/3 w-96 h-96 bg-cyan-300/45 rounded-full blur-3xl animate-float-delayed"></div>
+    <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-blue-300/40 rounded-full blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
+    
+    {/* Animated wave pattern overlay */}
+    <div className="absolute inset-0 opacity-20 animate-pulse-slow" style={{
+      backgroundImage: `
+        linear-gradient(rgba(64, 224, 208, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(64, 224, 208, 0.05) 1px, transparent 1px)
+      `,
+      backgroundSize: '50px 50px'
+    }}></div>
+    
+    {/* Flowing wave lines */}
+    <div className="absolute inset-0 opacity-15 animate-slide-diagonal" style={{
+      backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(64, 224, 208, 0.15) 35px, rgba(64, 224, 208, 0.15) 70px)'
+    }}></div>
+  </div>
 
         {/* Navigation */}
         <nav className="relative z-20 flex justify-between items-center p-6 bg-black/50 backdrop-blur-sm">
@@ -464,22 +477,25 @@ export default function MarineWorldPage() {
         </nav>
 
         {/* Header with marine theme */}
-        <div className="relative z-10 text-center py-8 px-4">
-          <div className="flex justify-center items-center gap-3 mb-4">
-            <Fish className="w-10 h-10 text-teal-400" />
-            <h1 className="text-4xl md:text-5xl font-bold"
-                style={{ 
-                  color: '#40E0D0',
-                  textShadow: '0 4px 20px rgba(64, 224, 208, 0.4), 0 2px 8px rgba(0,0,0,0.9)' 
-                }}>
-              {t.title}
-            </h1>
-            <Waves className="w-10 h-10 text-teal-400" />
-          </div>
-          <p className="text-lg text-teal-300/80" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>
-            {t.subtitle}
-          </p>
-        </div>
+<div className="relative z-10 text-center py-8 px-4">
+  <div className="flex justify-center items-center gap-3 mb-4">
+    <Fish className="w-10 h-10 text-teal-400" />
+    <h1 className="text-4xl md:text-5xl font-bold"
+        style={{ 
+          color: '#40E0D0',
+          textShadow: '0 4px 20px rgba(64, 224, 208, 0.4), 0 2px 8px rgba(0,0,0,0.9)' 
+        }}>
+      {t.title}
+    </h1>
+    <Waves className="w-10 h-10 text-teal-400" />
+  </div>
+  <p className="text-xl font-semibold text-white" 
+     style={{ 
+       textShadow: '0 0 20px rgba(0,0,0,0.9), 0 4px 15px rgba(64, 224, 208, 0.6)' 
+     }}>
+    {t.subtitle}
+  </p>
+</div>
 
         {/* NEW: Boat Parts Hero Banner */}
         <div className="relative z-10 mx-4 mb-8">
@@ -491,9 +507,12 @@ export default function MarineWorldPage() {
                     <Anchor className="w-6 h-6 mr-2" />
                     {t.boatPartsHero}
                   </h2>
-                  <p className="text-teal-300">
-                    Engines • Propellers • Electronics • Safety Equipment • Fuel Systems • Cooling • Electrical • And More!
-                  </p>
+                  <p className="text-white font-medium" 
+   style={{ 
+     textShadow: '0 2px 10px rgba(0,0,0,0.8)' 
+   }}>
+  Engines • Propellers • Electronics • Safety Equipment • Fuel Systems • Cooling • Electrical • And More!
+</p>
                 </div>
                 <div className="flex items-center">
                   <span className="bg-teal-500 text-black font-bold px-6 py-3 rounded-full flex items-center hover:bg-teal-400 transition-colors">
@@ -671,6 +690,38 @@ export default function MarineWorldPage() {
         
         {/* Celly Assistant - KEEPING THIS! */}
         <Celly />
+        
+        {/* CSS for animations */}
+        <style jsx>{`
+          @keyframes float {
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            50% { transform: translateY(-30px) translateX(20px); }
+          }
+          @keyframes float-delayed {
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            50% { transform: translateY(-40px) translateX(-20px); }
+          }
+          @keyframes pulse-slow {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 0.3; }
+          }
+          @keyframes slide-diagonal {
+            0% { transform: translateX(-50px) translateY(-50px); }
+            100% { transform: translateX(50px) translateY(50px); }
+          }
+          .animate-float {
+            animation: float 8s ease-in-out infinite;
+          }
+          .animate-float-delayed {
+            animation: float-delayed 10s ease-in-out infinite;
+          }
+          .animate-pulse-slow {
+            animation: pulse-slow 4s ease-in-out infinite;
+          }
+          .animate-slide-diagonal {
+            animation: slide-diagonal 20s linear infinite;
+          }
+        `}</style>
       </div>
     </>
   );
