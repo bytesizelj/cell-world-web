@@ -59,56 +59,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
 
   // Enhanced product data with categories
   const products = [
-  {
-  id: 'iphone-12',
-  name: "iPhone 12",
-  category: 'midrange',
-  price: 1100,
-  image: "/images/Products/phones/iphone-12.png",
-  inStock: true,
-  isDeal: true,
-  colors: 'Black',
-  specs: {
-    display: '6.1\ Super Retina XDR Display',
-    chipset: 'A14 Bionic Chip | 5G Enabled', 
-    camera: 'Dual 12MP Camera System', 
-    other: 'MagSafe Compatible | Premium Build Quality'  
-}
-},
-  {
-  id: 'iphone-13-pro-max',
-  name: "iPhone 13 Pro Max",
-  category: 'flagship',
-  price: 2300,
-  image: "/images/Products/phones/iphone-13-pro-max.png",
-  inStock: true,
-  isDeal: true,
-  colors: 'Green',
-  specs: {
-    display: '6.7\ ProMotion 120Hz Display',
-    chipset: 'A15 Bionic',
-    camera: 'Pro Camera System',
-    storage: 'TB Storage',
-    other: 'Cinematic Mode | All-Day Battery | 5G Ultra Fast'  
-}
-},
-  {
-  id: 'iphone-14',
-  name: "iPhone 14",
-  category: 'flagship',
-  price: 2100,
-  image: "/images/Products/phones/iphone-14.png",
-  inStock: true,
-  isDeal: true,
-  colors: 'Black',
-  specs: {
-    display: '6.1\" Super Retina XDR',
-    chipset: 'A15 Bionic Chip',
-    camera: 'Advanced Dual Camera', 
-    other: 'Photonic Engine | Action Mode Video | 5G | Premium Design'  
-}
-},
-    { 
+      { 
       id: 'samsung-a06', 
       name: 'Samsung A06', 
       image: '/images/Products/phones/cropped/samsung-a06.png',
@@ -132,6 +83,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
   name: 'Samsung A05',
   image: '/images/Products/phones/samsung1-galaxy-a05.png',
   price: 450.00,
+  priceDropped: true,
   category: 'samsung',
   availability: 'In Stock',
   isBestSeller: true,
@@ -206,6 +158,55 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
         sim: 'Dual SIM'
       }
     },
+  {
+  id: 'iphone-12',
+  name: "iPhone 12",
+  category: 'midrange',
+  price: 1100,
+  image: "/images/Products/phones/iphone-12.png",
+  inStock: true,
+  isDeal: true,
+  colors: 'Black',
+  specs: {
+    display: '6.1\ Super Retina XDR Display',
+    chipset: 'A14 Bionic Chip | 5G Enabled', 
+    camera: 'Dual 12MP Camera System', 
+    other: 'MagSafe Compatible | Premium Build Quality'  
+}
+},
+  {
+  id: 'iphone-13-pro-max',
+  name: "iPhone 13 Pro Max",
+  category: 'flagship',
+  price: 2300,
+  image: "/images/Products/phones/iphone-13-pro-max.png",
+  inStock: true,
+  isDeal: true,
+  colors: 'Green',
+  specs: {
+    display: '6.7\ ProMotion 120Hz Display',
+    chipset: 'A15 Bionic',
+    camera: 'Pro Camera System',
+    storage: 'TB Storage',
+    other: 'Cinematic Mode | All-Day Battery | 5G Ultra Fast'  
+}
+},
+  {
+  id: 'iphone-14',
+  name: "iPhone 14",
+  category: 'flagship',
+  price: 2100,
+  image: "/images/Products/phones/iphone-14.png",
+  inStock: true,
+  isDeal: true,
+  colors: 'Black',
+  specs: {
+    display: '6.1\" Super Retina XDR',
+    chipset: 'A15 Bionic Chip',
+    camera: 'Advanced Dual Camera', 
+    other: 'Photonic Engine | Action Mode Video | 5G | Premium Design'  
+}
+},
   {
   id: 'samsung-galaxy-a17',
   name: "Samsung A17",

@@ -401,21 +401,21 @@ useEffect(() => {
         
         {/* Subheading */}
         <p className="text-3xl md:text-4xl font-bold mb-4 animate-slide-in-left">
-          Latest iPhones Available!
+          Best Priced Samsung Phones Available!
         </p>
         
-        {/* iPhone Models Badge with Shine */}
+        {/* Models Badge with Shine */}
         <div className="relative inline-block mb-6">
           <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 blur-2xl animate-pulse"></div>
           <div className="relative bg-gradient-to-r from-yellow-400 via-yellow-300 to-orange-400 text-black px-8 py-4 rounded-full font-black text-xl shadow-2xl animate-shine overflow-hidden">
-            <span className="relative z-10">iPhone 12 • iPhone 13 Pro Max • iPhone 14</span>
+            <span className="relative z-10">Samsung A05 • Samsung A06 • Samsung F05</span>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent animate-shimmer"></div>
           </div>
         </div>
         
         {/* Urgency Text */}
         <p className="text-2xl font-bold mb-6 animate-flash">
-          ⚠️ LIMITED STOCK - ACT NOW! ⚠️
+          ⚠️ GOING FAST - GET YOURS NOW! ⚠️
         </p>
         
         {/* CTA Button with Hover Effect */}
@@ -425,7 +425,7 @@ useEffect(() => {
         >
           <span className="absolute inset-0 bg-gradient-to-r from-yellow-200 to-orange-200 opacity-0 group-hover:opacity-100 transition-opacity"></span>
           <span className="relative flex items-center justify-center">
-            SHOP IPHONES NOW
+            SHOP SAMSUNG PHONES NOW
             <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform" />
           </span>
         </a>
