@@ -877,7 +877,7 @@ export default function TechAudioCategory() {
     {
       id: 3,
       name: "JBL GO 3 Portable Speaker Collection",
-      price: 180.00,
+      price: 199.00,
       image: "/images/Products/more/jbl-go3-collection.png",
       description: "Portable waterproof speaker with powerful audio and bold design. Available in Gray/Blue, Blue, Black, Teal/Green colors.",
       category: "speakers",
@@ -891,7 +891,7 @@ export default function TechAudioCategory() {
     {
       id: 4,
       name: "JBL Pulse 5 Portable Speaker",
-      price: 350.00,
+      price: 599.00,
       image: "/images/Products/more/jbl-pulse5.png",
       description: "360-degree sound with customizable lightshow. Features ambient light effects that sync with your music for an immersive audiovisual experience.",
       category: "speakers",
@@ -905,7 +905,7 @@ export default function TechAudioCategory() {
     {
       id: 5,
       name: "JBL Flip 6 Waterproof Speaker - Multiple Colors",
-      price: 299.00,
+      price: 499.00,
       image: "/images/Products/more/jbl-flip6-colors.png",
       description: "Powerful portable Bluetooth speaker with 12 hours of playtime. IP67 waterproof and dustproof. Available in Red, Black, Teal, and Black/Red.",
       category: "speakers",
@@ -919,7 +919,7 @@ export default function TechAudioCategory() {
     {
       id: 6,
       name: "JBL Boombox 3 Portable Speaker - Black",
-      price: 599.00,
+      price: 1800.00,
       image: "/images/Products/more/jbl-boombox3-black.png",
       description: "Massive JBL Original Pro Sound with the deepest bass. 24 hours of playtime, IP67 waterproof, and built-in powerbank.",
       category: "speakers",
@@ -933,7 +933,7 @@ export default function TechAudioCategory() {
     {
       id: 7,
       name: "JBL Boombox 3 Portable Speaker - Squad Camo",
-      price: 629.00,
+      price: 1800.00,
       image: "/images/Products/more/jbl-boombox3-camo.png",
       description: "Limited edition Squad camouflage design. Massive sound, deepest bass, 24-hour battery life with military-inspired aesthetics.",
       category: "speakers",
@@ -947,7 +947,7 @@ export default function TechAudioCategory() {
     {
       id: 9,
       name: "JBL Xtreme 4 Portable Speaker - Multiple Colors",
-      price: 450.00,
+      price: 1250.00,
       image: "/images/Products/more/jbl-xtreme4-colors.png",
       description: "Powerful portable speaker with shoulder strap. 24 hours playtime, IP67 waterproof. Available in Black, Blue, and Camo editions.",
       category: "speakers",
@@ -961,7 +961,7 @@ export default function TechAudioCategory() {
     {
       id: 10,
       name: "JBL Charge 5 Portable Speaker Collection",
-      price: 320.00,
+      price: 599.00,
       image: "/images/Products/more/jbl-charge5-colors.png",
       description: "Bold JBL Original Pro Sound with IP67 waterproof rating. 20 hours playtime. Available in Gray, Black, Red, and Teal colors.",
       category: "speakers",
