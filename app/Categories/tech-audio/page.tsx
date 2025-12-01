@@ -86,8 +86,8 @@ export default function TechAudioCategory() {
   }
 },
 {
-  id: 'kotion-each-pro-headset',
-  name: 'Kotion Each Pro Gaming Headset',
+  id: 'kotion-each-pro-headphones',
+  name: 'Kotion Each Pro Gaming Headphones',
   image: '/images/Products/tech-audio/kotion-headset.png',
   price: 175.00,
   category: 'headphones',
@@ -99,8 +99,8 @@ export default function TechAudioCategory() {
   }
 },
 {
-  id: 'bl500-gaming-headset',
-  name: 'BL500 Gaming Headset',
+  id: 'bl500-gaming-headphones',
+  name: 'BL500 Gaming Headphones',
   image: '/images/Products/tech-audio/bl500-headset.png',
   price: 150.00,
   category: 'headphones',
