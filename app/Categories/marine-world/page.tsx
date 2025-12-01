@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { ArrowLeft, Globe, Phone, MessageCircle, X, Check, Waves, Fish, Anchor, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 const Celly = dynamic(() => import('@/components/CellyAssistant'), { ssr: false });
 
 export default function MarineWorldPage() {
@@ -554,12 +555,15 @@ export default function MarineWorldPage() {
                 className="group relative bg-gradient-to-br from-gray-900/60 via-teal-900/20 to-gray-900/60 backdrop-blur-sm rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-teal-500/20"
               >
                 {/* Product Image */}
-                <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-4 overflow-hidden" style={{ height: '240px' }}>
-                  <img 
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-full object-contain transition-transform duration-700 hover:scale-125"
-                  />
+                <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-4 overflow-hidden" style={{ height: '240px', position: 'relative' }}>
+                  <Image 
+  src={product.image}
+  alt={product.name}
+  fill
+  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+  className="object-contain transition-transform duration-700 hover:scale-125"
+  loading="lazy"
+/>
                   
                   {/* Category Badge */}
                   <div className="absolute top-2 left-2 bg-teal-500/80 text-white text-xs font-bold px-2 py-1 rounded-full">
@@ -625,12 +629,15 @@ export default function MarineWorldPage() {
               <div className="grid md:grid-cols-2 gap-8">
                 {/* Image */}
                 <div>
-                  <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl p-6 mb-4">
-                    <img 
+                  <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl p-6 mb-4" style={{ height: '280px', position: 'relative' }}>
+                  <Image 
                       src={selectedProduct.image}
                       alt={selectedProduct.name}
-                      className="w-full h-64 object-contain"
-                    />
+                      fill
+                      sizes="(max-width: 768px) 80vw, 400px"
+                      className="object-contain"
+                      priority
+                  />
                   </div>
                   
                   <div className="bg-green-50 border-2 border-green-500 text-green-700 text-center py-3 rounded-lg font-bold">

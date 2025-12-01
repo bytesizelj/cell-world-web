@@ -8,6 +8,7 @@ const CellyAssistant = dynamic(() => import('../../../components/CellyAssistant'
 import { useState, useRef } from 'react';
 import { ArrowLeft, Globe, Phone, MessageCircle, X, Check, ZoomIn, ZoomOut } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function PhonesCategory() {
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
@@ -698,7 +699,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
 )}
               
               {/* Product Image with HOVER ZOOM */}
-              <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-3 overflow-hidden" style={{ height: '260px' }}>
+              <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-3 overflow-hidden" style={{ height: '260px', position: 'relative' }}>
                 {/* Back Soon Overlay */}
                 {product.availability === 'Back Soon' && (
                   <div className="absolute inset-0 bg-black/30 z-10 flex items-center justify-center pointer-events-none">
@@ -707,15 +708,18 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
                     </span>
                   </div>
                 )}
-                <img 
-                  src={
-                    product.additionalImages && selectedImages[product.id as string] !== undefined
-                      ? product.additionalImages[selectedImages[product.id as string]]
-                      : product.image
-                  }
-                  alt={product.name}
-                  className="w-full h-full object-contain p-2 transition-transform duration-700 hover:scale-125 cursor-zoom-in"
-                />
+                <Image 
+  src={
+    product.additionalImages && selectedImages[product.id as string] !== undefined
+      ? product.additionalImages[selectedImages[product.id as string]]
+      : product.image
+  }
+  alt={product.name}
+  fill
+  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+  className="object-contain p-2 transition-transform duration-700 hover:scale-125 cursor-zoom-in"
+  loading="lazy"
+/>
                 
                 {/* Image selector dots if there are additional images - TYPESCRIPT FIX */}
                 {product.additionalImages && (
@@ -849,21 +853,25 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
   <div 
     ref={imageRef}
     className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl p-6 mb-4 relative overflow-hidden cursor-move"
+    style={{ height: '280px', position: 'relative' }}
     onMouseDown={handleMouseDown}
     onMouseMove={handleMouseMove}
     onMouseUp={handleMouseUp}
     onMouseLeave={handleMouseUp}
   >
-    <img 
-      src={selectedProduct.image}
-      alt={selectedProduct.name}
-      className="w-full h-64 object-contain transition-transform duration-200"
-      style={{
-        transform: `scale(${imageZoom}) translate(${imagePosition.x / imageZoom}px, ${imagePosition.y / imageZoom}px)`,
-        cursor: imageZoom > 1 ? 'move' : 'zoom-in'
-      }}
-      onClick={() => imageZoom === 1 && handleZoomIn()}
-    />
+    <Image 
+  src={selectedProduct.image}
+  alt={selectedProduct.name}
+  fill
+  sizes="(max-width: 768px) 80vw, 400px"
+  className="object-contain transition-transform duration-200"
+  style={{
+    transform: `scale(${imageZoom}) translate(${imagePosition.x / imageZoom}px, ${imagePosition.y / imageZoom}px)`,
+    cursor: imageZoom > 1 ? 'move' : 'zoom-in'
+  }}
+  onClick={() => imageZoom === 1 && handleZoomIn()}
+  priority
+/>
     
     {/* Zoom controls */}
     <div className="absolute top-2 right-2 flex gap-2">

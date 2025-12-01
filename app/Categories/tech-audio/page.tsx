@@ -5,6 +5,7 @@ import { ArrowLeft, Globe, Phone, MessageCircle, X, Check, ZoomIn, ZoomOut, Shop
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { trackEvent } from '@/lib/analytics';
+import Image from 'next/image';
 const Celly = dynamic(() => import('@/components/CellyAssistant'), { ssr: false });
 
 export default function TechAudioCategory() {
@@ -1399,7 +1400,7 @@ const translations = {
     className="group relative bg-gradient-to-br from-gray-900/60 via-purple-900/20 to-gray-900/60 backdrop-blur-sm rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20"
   >
     {/* Product Image */}
-    <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-4 overflow-hidden" style={{ height: '240px' }}>
+    <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-4 overflow-hidden" style={{ height: '240px', position: 'relative' }}>
       {/* Back Soon Overlay */}
       {product.availability === 'Back Soon' && (
         <div className="absolute inset-0 bg-black/30 z-10 flex items-center justify-center pointer-events-none">
@@ -1409,10 +1410,13 @@ const translations = {
         </div>
       )}
       
-      <img 
+      <Image 
   src={product.image}
   alt={product.name}
-  className="w-full h-full object-contain transition-transform duration-700 hover:scale-125"
+  fill
+  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+  className="object-contain transition-transform duration-700 hover:scale-125"
+  loading="lazy"
 />
       
       {/* Category Badge */}
@@ -1474,23 +1478,27 @@ const translations = {
               {/* Image */}
 <div>
   <div 
-    ref={imageRef}
-    className="bg-white/90 rounded-xl p-6 mb-4 relative overflow-hidden cursor-move"
+  ref={imageRef}
+  className="bg-white/90 rounded-xl p-6 mb-4 relative overflow-hidden cursor-move"
+  style={{ height: '280px', position: 'relative' }}
     onMouseDown={handleMouseDown}
     onMouseMove={handleMouseMove}
     onMouseUp={handleMouseUp}
     onMouseLeave={handleMouseUp}
   >
-    <img 
-      src={selectedProduct.image}
-      alt={selectedProduct.name}
-      className="w-full h-64 object-contain transition-transform duration-200"
-      style={{
-        transform: `scale(${imageZoom}) translate(${imagePosition.x / imageZoom}px, ${imagePosition.y / imageZoom}px)`,
-        cursor: imageZoom > 1 ? 'move' : 'zoom-in'
-      }}
-      onClick={() => imageZoom === 1 && handleZoomIn()}
-    />
+    <Image 
+  src={selectedProduct.image}
+  alt={selectedProduct.name}
+  fill
+  sizes="(max-width: 768px) 80vw, 400px"
+  className="object-contain transition-transform duration-200"
+  style={{
+    transform: `scale(${imageZoom}) translate(${imagePosition.x / imageZoom}px, ${imagePosition.y / imageZoom}px)`,
+    cursor: imageZoom > 1 ? 'move' : 'zoom-in'
+  }}
+  onClick={() => imageZoom === 1 && handleZoomIn()}
+  priority
+/>
     
     {/* Zoom controls */}
     <div className="absolute top-2 right-2 flex gap-2">
