@@ -849,7 +849,7 @@ export default function TechAudioCategory() {
  // JBL SPEAKERS (1-10)
     {
       id: 1,
-      name: "JBL GO 4 Portable Speaker - Navy Blue",
+      name: "JBL Clip 4 Portable Speaker - Navy Blue",
       price: 220.00,
       image: "/images/Products/more/jbl-go4-navy.png",
       description: "Ultra-portable waterproof Bluetooth speaker with bold JBL Pro Sound. Features 7 hours playtime, IP67 waterproof and dustproof rating.",
@@ -891,7 +891,7 @@ export default function TechAudioCategory() {
     },
     {
       id: 4,
-      name: "JBL Pulse 5 Portable Speaker",
+      name: "JBL Pulse 4 Portable Speaker",
       price: 599.00,
       image: "/images/Products/more/jbl-pulse5.png",
       description: "360-degree sound with customizable lightshow. Features ambient light effects that sync with your music for an immersive audiovisual experience.",
@@ -973,7 +973,23 @@ export default function TechAudioCategory() {
         feature: "Built-in powerbank"
       }
     },
-
+    {
+  id: 11,
+  name: "JBL Charge 6 Portable Speaker",
+  price: 720.00,
+  image: "/images/Products/tech-audio/jbl-charge-6.png",
+  description: "Portable Waterproof & Drop-Proof Bluetooth Speaker. Bold Pro Sound with AI Sound Boost, 28Hrs of Playtime, Built-in powerbank.",
+  category: "speakers",
+  specs: {
+    bluetooth: "Bluetooth with USB Connectivity",
+    battery: "28 hours battery life",
+    waterproof: "Waterproof & Drop-Proof",
+    power: "45W Maximum Output",
+    frequency: "20 KHz Frequency Response",
+    audio: "Stereo Audio Output Mode",
+    feature: "Built-in powerbank with AI Sound Boost"
+  }
+ },
     // EARBUDS
     {
       id: 16,
