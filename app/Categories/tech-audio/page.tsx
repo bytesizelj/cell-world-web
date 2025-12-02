@@ -849,7 +849,7 @@ export default function TechAudioCategory() {
  // JBL SPEAKERS (1-10)
     {
       id: 1,
-      name: "JBL Clip 4 Portable Speaker - Navy Blue",
+      name: "JBL GO 4 Portable Speaker - Navy Blue",
       price: 220.00,
       image: "/images/Products/more/jbl-go4-navy.png",
       description: "Ultra-portable waterproof Bluetooth speaker with bold JBL Pro Sound. Features 7 hours playtime, IP67 waterproof and dustproof rating.",
@@ -863,7 +863,7 @@ export default function TechAudioCategory() {
     },
     {
       id: 2,
-      name: "JBL GO 4 Portable Speaker - Color Options",
+      name: "JBL CLIP 4 Portable Speaker - Color Options",
       price: 220.00,
       image: "/images/Products/more/jbl-go4-colors.png",
       description: "Choose your style! Ultra-portable waterproof speaker available in multiple vibrant colors including Camo, White, Red, and Blue.",
