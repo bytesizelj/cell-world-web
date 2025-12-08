@@ -333,7 +333,7 @@ export default function TechAudioCategory() {
   id: 'rca-holosound-speaker',
   name: 'RCA HoloSound Bluetooth Speaker',
   image: '/images/Products/more/rca-holosound-speaker.png',
-  price: 580.00,
+  price: 599.00,
   category: 'speakers',
   availability: 'In Stock',
   specs: {

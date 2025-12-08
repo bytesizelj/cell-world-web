@@ -57,12 +57,116 @@ export default function AccessoriesPowerCategory() {
 
   // Complete product catalog - 69 items
   const products = [
+// Keyboards
+{
+  id: 'SENIMO-wireless-keyboard-lightblue-white',
+  name: "SENIMO Wireless Keyboard & Mouse Combo - Light Blue & White",
+  price: 90.00,
+  image: "/images/Products/accessories-power/SENIMO-light-blue-white.png",
+  description: "Wireless keyboard + mouse combo. Compatible with all four major operating systems supporting Bluetooth (iOS, Android, macOS and Windows). Works with iPods, phones and Bluetooth enabled tablets and mobile phones such as iPad Air, iPad Mini, iPad Pro, iPhone XS Max.",
+  category: "keyboards",
+  subcategory: "keyboard-mouse",
+  brand: "SENIMO",
+  specs: {
+    connectivity: "Bluetooth Wireless",
+    compatibility: "iOS, Android, macOS, Windows",
+    devices: "iPad, iPhone, Tablets, Mobile Phones",
+    combo: "Keyboard + Mouse included"
+  },
+  tags: ['senimo', 'wireless', 'keyboard', 'mouse', 'bluetooth', 'combo', 'blue', 'white']
+},
+{
+  id: 'SENIMO-wireless-keyboard-white',
+  name: "SENIMO Wireless Keyboard & Mouse Combo - White",
+  price: 90.00,
+  image: "/images/Products/accessories-power/SENIMO-white.png",
+  description: "Wireless keyboard + mouse combo. Compatible with all four major operating systems supporting Bluetooth (iOS, Android, macOS and Windows). Works with iPods, phones and Bluetooth enabled tablets and mobile phones such as iPad Air, iPad Mini, iPad Pro, iPhone XS Max.",
+  category: "keyboards",
+  subcategory: "keyboard-mouse",
+  brand: "SENIMO",
+  specs: {
+    connectivity: "Bluetooth Wireless",
+    compatibility: "iOS, Android, macOS, Windows",
+    devices: "iPad, iPhone, Tablets, Mobile Phones",
+    combo: "Keyboard + Mouse included"
+  },
+  tags: ['senimo', 'wireless', 'keyboard', 'mouse', 'bluetooth', 'combo', 'white']
+},
+{
+  id: 'SENIMO-wireless-keyboard-drk-blu-white',
+  name: "SENIMO Wireless Keyboard & Mouse Combo - Dark Blue & White",
+  price: 90.00,
+  image: "/images/Products/accessories-power/SENIMO-dark-blue-white.png",
+  description: "Wireless keyboard + mouse combo. Compatible with all four major operating systems supporting Bluetooth (iOS, Android, macOS and Windows). Works with iPods, phones and Bluetooth enabled tablets and mobile phones such as iPad Air, iPad Mini, iPad Pro, iPhone XS Max.",
+  category: "keyboards",
+  subcategory: "keyboard-mouse",
+  brand: "SENIMO",
+  specs: {
+    connectivity: "Bluetooth Wireless",
+    compatibility: "iOS, Android, macOS, Windows",
+    devices: "iPad, iPhone, Tablets, Mobile Phones",
+    combo: "Keyboard + Mouse included"
+  },
+  tags: ['senimo', 'wireless', 'keyboard', 'mouse', 'bluetooth', 'combo', 'blue', 'white']
+},
+{
+  id: 'SENIMO-wireless-keyboard-black',
+  name: "SENIMO Wireless Keyboard & Mouse Combo - Black",
+  price: 90.00,
+  image: "/images/Products/accessories-power/SENIMO-black.png",
+  description: "Wireless keyboard + mouse combo. Compatible with all four major operating systems supporting Bluetooth (iOS, Android, macOS and Windows). Works with iPods, phones and Bluetooth enabled tablets and mobile phones such as iPad Air, iPad Mini, iPad Pro, iPhone XS Max.",
+  category: "keyboards",
+  subcategory: "keyboard-mouse",
+  brand: "SENIMO",
+  specs: {
+    connectivity: "Bluetooth Wireless",
+    compatibility: "iOS, Android, macOS, Windows",
+    devices: "iPad, iPhone, Tablets, Mobile Phones",
+    combo: "Keyboard + Mouse included"
+  },
+  tags: ['senimo', 'wireless', 'keyboard', 'mouse', 'bluetooth', 'combo', 'black']
+},
+{
+  id: 'SENIMO-wireless-keyboard-pink-white',
+  name: "SENIMO Wireless Keyboard & Mouse Combo - Pink & White",
+  price: 90.00,
+  image: "/images/Products/accessories-power/SENIMO-pink-white.png",
+  description: "Wireless keyboard + mouse combo. Compatible with all four major operating systems supporting Bluetooth (iOS, Android, macOS and Windows). Works with iPods, phones and Bluetooth enabled tablets and mobile phones such as iPad Air, iPad Mini, iPad Pro, iPhone XS Max.",
+  category: "keyboards",
+  subcategory: "keyboard-mouse",
+  brand: "SENIMO",
+  specs: {
+    connectivity: "Bluetooth Wireless",
+    compatibility: "iOS, Android, macOS, Windows",
+    devices: "iPad, iPhone, Tablets, Mobile Phones",
+    combo: "Keyboard + Mouse included"
+  },
+  tags: ['senimo', 'wireless', 'keyboard', 'mouse', 'bluetooth', 'combo', 'pink', 'white']
+},
+{
+  id: 'SENIMO-wireless-keyboard-green-white',
+  name: "SENIMO Wireless Keyboard & Mouse Combo - Green & White",
+  price: 90.00,
+  image: "/images/Products/accessories-power/SENIMO-green-white.png",
+  description: "Wireless keyboard + mouse combo. Compatible with all four major operating systems supporting Bluetooth (iOS, Android, macOS and Windows). Works with iPods, phones and Bluetooth enabled tablets and mobile phones such as iPad Air, iPad Mini, iPad Pro, iPhone XS Max.",
+  category: "keyboards",
+  subcategory: "keyboard-mouse",
+  brand: "SENIMO",
+  specs: {
+    connectivity: "Bluetooth Wireless",
+    compatibility: "iOS, Android, macOS, Windows",
+    devices: "iPad, iPhone, Tablets, Mobile Phones",
+    combo: "Keyboard + Mouse included"
+  },
+  tags: ['senimo', 'wireless', 'keyboard', 'mouse', 'bluetooth', 'combo', 'green', 'white']
+},
+// SELFIE Sticks
 {
   id: 'smart-m2-pro-selfie-stick',
   name: 'Smart M2 Pro Selfie Stick',
   image: '/images/Products/accessories-power/smart-m2-pro.png',
   price: 250.00,
-  category: 'accessories',
+  category: 'selfie-sticks',
   inStock: true,
   description: 'All-in-One Selfie Stick | Bluetooth Remote | Extendable | Portable | Perfect for Photos & Videos',
   specs: {
@@ -75,7 +179,7 @@ export default function AccessoriesPowerCategory() {
   name: 'Digipower Quikpod Selfie Stick',
   image: '/images/Products/accessories-power/digipower-quikpod.png',
   price: 60.00,
-  category: 'accessories',
+  category: 'selfie-sticks',
   inStock: true,
   description: 'Compact Selfie Stick | Easy to Use | Lightweight | Great for Travel & Everyday Use',
   specs: {
@@ -87,7 +191,7 @@ export default function AccessoriesPowerCategory() {
   name: 'F-5 3 Axis Foldable Handheld Gimbal',
   image: '/images/Products/accessories-power/f5-gimbal.png',
   price: 300.00,
-  category: 'accessories',
+  category: 'selfie-sticks',
   inStock: true,
   description: '3-Axis Stabilization | Foldable Design | Professional Video Shooting | Smooth Motion Control',
   specs: {
@@ -101,7 +205,7 @@ export default function AccessoriesPowerCategory() {
   name: 'M02 3 Axis Gimbal Stabilizer',
   image: '/images/Products/accessories-power/m02-gimbal.png',
   price: 320.00,
-  category: 'accessories',
+  category: 'selfie-sticks',
   inStock: true,
   description: 'Magnetic Remote Control | Stable Tripod | Compatible with iOS & Android | Professional Stabilization',
   specs: {
@@ -116,7 +220,7 @@ export default function AccessoriesPowerCategory() {
   name: 'R16K Selfie Stick with Grip Handle & Tripod',
   image: '/images/Products/accessories-power/r16k-selfie.png',
   price: 75.00,
-  category: 'accessories',
+  category: 'selfie-sticks',
   inStock: true,
   description: 'Grip Handle & Tripod Included | Versatile Design | Stable Shots | Perfect for Group Photos',
   specs: {
@@ -1222,6 +1326,8 @@ const translations = {
     "storage": "Storage",
     cases: "Phone Cases",
     "car-audio": "Car Audio",
+    keyboards: "Keyboards",
+    "selfie-sticks": "Selfie Sticks",
   },
   fr: {
     title: "Électronique et Accessoires",
@@ -1246,6 +1352,8 @@ const translations = {
     "mouse": "Souris",
     "storage": "Stocrage",
     cases: "Étuis de Téléphone",
+      keyboards: "Claviers",
+    "selfie-sticks": "Bâtons à Selfie",
   },
   es: {
     title: "Electrónica y Accesorios",
@@ -1269,6 +1377,8 @@ const translations = {
     "mouse": "Ratón",
     "storage": "Almacenamiento",
     cases: "Fundas de Teléfono",
+       keyboards: "Teclados",
+    "selfie-sticks": "Palos de Selfie",
   }
 };
 
@@ -1365,7 +1475,7 @@ const translations = {
       <div className="relative z-10 flex justify-center mb-8 px-4">
         <div className="bg-black/50 backdrop-blur-sm rounded-full p-2 flex gap-2 flex-wrap justify-center">
           <span className="text-white px-3 py-2">{t.filterBy}</span>
-          {['all', 'powerbanks', 'emergency', 'cables', 'samsung', 'apple', 'cases', 'power', 'network', 'car-accessories', 'mouse', 'storage',].map((cat) => (
+          {['all', 'keyboards', 'selfie-sticks','powerbanks', 'emergency', 'cables', 'samsung', 'apple', 'cases', 'power', 'network', 'car-accessories', 'mouse', 'storage',].map((cat) => (
             <button
               key={cat}
               onClick={() => setFilterCategory(cat)}

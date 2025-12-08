@@ -18,6 +18,7 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [showBanner, setShowBanner] = useState(false);
   const [showPromo, setShowPromo] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
   
   // Array of video paths - add your video files here
   const videos = [
@@ -26,34 +27,42 @@ export default function Home() {
     '/videos/cell-world-bg3.mp4'   // Add third video when available
   ];
   
-  // Rotate videos every 10 seconds
+// Rotate videos every 10 seconds
   useEffect(() => {
-  const interval = setInterval(() => {
-    setCurrentVideoIndex((prev) => (prev + 1) % videos.length);
-  }, 10000);
-  
-  return () => clearInterval(interval);
-}, [videos.length]);
+    const interval = setInterval(() => {
+      setCurrentVideoIndex((prev) => (prev + 1) % videos.length);
+    }, 10000);
+    
+    return () => clearInterval(interval);
+  }, [videos.length]);
 
+  // Show banner after 1 second
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowBanner(true);
+    }, 100);
+    
+    return () => clearTimeout(timer);
+  }, []);
 
-// Show banner after 1 second
-useEffect(() => {
-  const timer = setTimeout(() => {
-    setShowBanner(true);
-  }, 3000);
-  
-  return () => clearTimeout(timer);
-}, []);
+  // Show iPhone promo after 1 second
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPromo(true);
+    }, 3000);
+    
+    return () => clearTimeout(timer);
+  }, []);
 
-// Show iPhone promo after 1 second
-useEffect(() => {
-  const timer = setTimeout(() => {
-    setShowPromo(true);
-  }, 3000);
-  
-  return () => clearTimeout(timer);
-}, []);
-  
+  // Auto-rotate hot deals banner every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % 2);
+    }, 5000);
+    
+    return () => clearInterval(interval);
+  }, []);
+
   // IMPROVED: Faster loading with timeout fallback
   useEffect(() => {
     const criticalImages = [
@@ -340,7 +349,8 @@ useEffect(() => {
   <span className="ml-2">→</span>
 </button>
 </div>
-{/* iPhone Promo Popup - ATTENTION GRABBING */}
+
+{/* COMMENTED OUT - HOT DEALS POPUP (Keep for later use)
 {showPromo && (
   <div 
     className="fixed inset-0 z-[60] flex items-center justify-center animate-fade-in"
@@ -358,19 +368,16 @@ useEffect(() => {
         boxShadow: '0 0 80px rgba(139, 92, 246, 0.8), 0 0 120px rgba(59, 130, 246, 0.6)'
       }}
     >
-      {/* Animated Rotating Gradient Background */}
       <div className="absolute inset-0 animate-rotate-gradient" style={{
         background: 'conic-gradient(from 0deg at 50% 50%, rgba(236, 72, 153, 0.4) 0deg, transparent 60deg, rgba(251, 191, 36, 0.4) 120deg, transparent 180deg, rgba(236, 72, 153, 0.4) 240deg, transparent 300deg, rgba(251, 191, 36, 0.4) 360deg)',
       }}></div>
       
-      {/* Pulsing Circles */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-30">
         <div className="absolute top-10 left-10 w-40 h-40 bg-pink-400 rounded-full animate-pulse-scale"></div>
         <div className="absolute bottom-10 right-10 w-56 h-56 bg-yellow-400 rounded-full animate-pulse-scale-delayed"></div>
         <div className="absolute top-1/2 left-1/2 w-32 h-32 bg-cyan-400 rounded-full animate-pulse-scale" style={{animationDelay: '0.5s'}}></div>
       </div>
       
-      {/* Close Button */}
       <button
         onClick={() => setShowPromo(false)}
         className="absolute top-4 right-4 bg-white hover:bg-gray-100 p-3 rounded-full transition-all z-20 shadow-xl hover:scale-110 animate-bounce-slow"
@@ -379,7 +386,6 @@ useEffect(() => {
       </button>
 
       <div className="relative z-10 text-center text-white">
-        {/* Animated Icon Row */}
         <div className="flex justify-center gap-6 mb-6">
           <div className="p-4 bg-white/30 rounded-2xl backdrop-blur-md animate-wiggle shadow-lg">
             <span className="text-5xl">📱</span>
@@ -392,19 +398,16 @@ useEffect(() => {
           </div>
         </div>
         
-        {/* Main Heading with Glow */}
         <h2 className="text-5xl md:text-6xl font-black mb-4 animate-glow-pulse" style={{
           textShadow: '0 0 20px rgba(255,255,255,1), 0 0 40px rgba(255,215,0,0.8), 0 0 60px rgba(255,165,0,0.6), 0 4px 20px rgba(0,0,0,0.5)'
         }}>
           🔥 HOT DEALS! 🔥
         </h2>
         
-        {/* Subheading */}
         <p className="text-3xl md:text-4xl font-bold mb-4 animate-slide-in-left">
           Best Priced Samsung Phones Available!
         </p>
         
-        {/* Models Badge with Shine */}
         <div className="relative inline-block mb-6">
           <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 blur-2xl animate-pulse"></div>
           <div className="relative bg-gradient-to-r from-yellow-400 via-yellow-300 to-orange-400 text-black px-8 py-4 rounded-full font-black text-xl shadow-2xl animate-shine overflow-hidden">
@@ -413,12 +416,10 @@ useEffect(() => {
           </div>
         </div>
         
-        {/* Urgency Text */}
         <p className="text-2xl font-bold mb-6 animate-flash">
           ⚠️ GOING FAST - GET YOURS NOW! ⚠️
         </p>
         
-        {/* CTA Button with Hover Effect */}
         <a 
           href="/Categories/phones"
           className="group relative inline-block bg-white text-purple-600 px-12 py-5 rounded-full font-black text-xl overflow-hidden shadow-2xl hover:shadow-yellow-400/50 transition-all duration-300 animate-bounce-gentle"
@@ -433,7 +434,217 @@ useEffect(() => {
     </div>
   </div>
 )}
-  
+END COMMENT */}
+
+{/* AUTO-ROTATING HOT DEALS BANNER - CHRISTMAS EDITION POPUP */}
+{showBanner && (
+  <div 
+    className="fixed inset-0 z-[60] flex items-center justify-center animate-fade-in"
+    onClick={() => setShowBanner(false)}
+    style={{
+      background: 'radial-gradient(circle at center, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.95))',
+      backdropFilter: 'blur(10px)'
+    }}
+  >
+    <div className="max-w-6xl w-full mx-4" onClick={(e) => e.stopPropagation()}>
+      <div className="relative overflow-hidden rounded-3xl shadow-2xl" style={{ height: '500px' }}>
+        {/* Close Button */}
+        <button
+          onClick={() => setShowBanner(false)}
+          className="absolute top-4 right-4 bg-white hover:bg-gray-100 p-3 rounded-full transition-all z-30 shadow-xl hover:scale-110"
+        >
+          <X className="w-6 h-6 text-gray-700" />
+        </button>
+
+        {/* Slide 1: Samsung Phones - Christmas Red & Green */}
+<div 
+  className={`absolute inset-0 transition-all duration-1000 ${
+    currentSlide === 0 
+      ? 'opacity-100 translate-x-0' 
+      : 'opacity-0 -translate-x-full'
+  }`}
+  style={{
+    background: 'linear-gradient(135deg, #c41e3a 0%, #165b33 50%, #c41e3a 100%)',
+  }}
+>
+  {/* Animated Snowflakes Background */}
+  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className="absolute top-10 left-10 text-white text-4xl animate-float opacity-70">❄️</div>
+    <div className="absolute top-20 right-20 text-white text-3xl animate-float opacity-60" style={{animationDelay: '0.5s'}}>❄️</div>
+    <div className="absolute bottom-20 left-1/4 text-white text-5xl animate-float opacity-50" style={{animationDelay: '1s'}}>❄️</div>
+    <div className="absolute top-1/3 right-1/3 text-white text-3xl animate-float opacity-70" style={{animationDelay: '1.5s'}}>❄️</div>
+    <div className="absolute bottom-10 right-10 text-white text-4xl animate-float opacity-60" style={{animationDelay: '2s'}}>❄️</div>
+    <div className="absolute top-40 left-1/2 text-white text-6xl animate-float opacity-40" style={{animationDelay: '0.8s'}}>❄️</div>
+  </div>
+
+  {/* Christmas Lights Border Effect */}
+  <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-500 via-green-500 to-red-500 animate-shimmer"></div>
+  <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-green-500 via-red-500 to-green-500 animate-shimmer"></div>
+
+  <div className="relative h-full flex items-center justify-between px-12 z-10">
+    {/* Left: Image with Zoom Animation */}
+    <div className="w-1/2 flex justify-center">
+      <img 
+        src="/images/Products/phones/samsung2-galaxy-f05.png"
+        alt="Samsung F05"
+        className="h-96 object-contain drop-shadow-2xl animate-zoom-in"
+        style={{
+        filter: 'drop-shadow(0 0 30px rgba(255, 255, 255, 0.8))'
+  }}
+/>
+    </div>
+    
+    {/* Right: Details */}
+    <div className="w-1/2 text-white animate-slide-in-right">
+      <div className="bg-red-600 text-white px-6 py-3 rounded-full inline-block mb-4 font-bold animate-pulse shadow-xl">
+        🎄 CHRISTMAS SPECIAL 🎄
+      </div>
+      <h2 className="text-6xl font-black mb-4 animate-glow-pulse" style={{
+        textShadow: '0 0 20px rgba(255,255,255,1), 0 0 40px rgba(255,215,0,0.8)'
+      }}>
+        Samsung F05 • A05 • A06 • 
+      </h2>
+      <p className="text-2xl mb-6 font-semibold">Best Priced Samsung Phones • Great Performance</p>
+      <div className="text-7xl font-black mb-6 animate-bounce-gentle" style={{
+        textShadow: '0 4px 20px rgba(255,215,0,0.8)'
+      }}>
+        From $420
+      </div>
+      <a 
+        href="/Categories/phones"
+        className="inline-block bg-white text-red-700 px-10 py-5 rounded-full font-black text-2xl hover:bg-yellow-400 hover:text-red-800 transition-all shadow-2xl hover:scale-110"
+        onClick={() => setShowBanner(false)}
+      >
+        🎁 SHOP NOW →
+      </a>
+    </div>
+  </div>
+</div>
+
+        {/* Slide 2: Speakers - IT'S PARANG TIME - Gold & Red Festive */}
+        <div 
+          className={`absolute inset-0 transition-all duration-1000 ${
+            currentSlide === 1 
+              ? 'opacity-100 translate-x-0' 
+              : 'opacity-0 translate-x-full'
+          }`}
+          style={{
+            background: 'linear-gradient(135deg, #FFD700 0%, #DC143C 50%, #FFD700 100%)',
+          }}
+        >
+          {/* Animated Party Confetti */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-10 left-10 text-5xl animate-wiggle">🎉</div>
+            <div className="absolute top-20 right-20 text-4xl animate-wiggle-delayed">🎊</div>
+            <div className="absolute bottom-20 left-1/4 text-6xl animate-wiggle" style={{animationDelay: '0.8s'}}>🎵</div>
+            <div className="absolute top-1/3 right-1/3 text-4xl animate-wiggle-delayed">✨</div>
+            <div className="absolute bottom-10 right-10 text-5xl animate-wiggle">🎶</div>
+            <div className="absolute top-40 left-1/2 text-7xl animate-wiggle" style={{animationDelay: '1.2s'}}>🔊</div>
+          </div>
+
+          {/* Glowing Border Effect */}
+          <div className="absolute top-0 left-0 w-full h-3 bg-gradient-to-r from-yellow-300 via-red-500 to-yellow-300 animate-pulse"></div>
+          <div className="absolute bottom-0 left-0 w-full h-3 bg-gradient-to-r from-red-500 via-yellow-300 to-red-500 animate-pulse"></div>
+
+          <div className="relative h-full flex items-center justify-between px-12 z-10">
+            {/* Left: Speaker Collage with Stagger Animation */}
+            <div className="w-1/2 grid grid-cols-2 gap-6">
+              <img 
+                src="/images/Products/more/rca-levelup-speaker.png" 
+                alt="RCA CrystalBeat" 
+                className="h-36 object-contain animate-slide-in-left" 
+                style={{
+                  animationDelay: '0.1s',
+                  filter: 'drop-shadow(0 0 20px rgba(255, 215, 0, 0.6))'
+                }}
+              />
+              <img 
+                src="/images/Products/more/rca-tws-gamerbeat-speaker.png" 
+                alt="RCA GamerBeat" 
+                className="h-36 object-contain animate-slide-in-left" 
+                style={{
+                  animationDelay: '0.2s',
+                  filter: 'drop-shadow(0 0 20px rgba(220, 20, 60, 0.6))'
+                }}
+              />
+              <img 
+                src="/images/Products/more/rca-holosound-speaker.png" 
+                alt="RCA HoloSound" 
+                className="h-36 object-contain animate-slide-in-left" 
+                style={{
+                  animationDelay: '0.3s',
+                  filter: 'drop-shadow(0 0 20px rgba(255, 215, 0, 0.6))'
+                }}
+              />
+              <img 
+                src="/images/Products/more/skull-candy-barrel-speaker.png" 
+                alt="Skull Candy Barrel" 
+                className="h-36 object-contain animate-slide-in-left" 
+                style={{
+                  animationDelay: '0.4s',
+                  filter: 'drop-shadow(0 0 20px rgba(220, 20, 60, 0.6))'
+                }}
+              />
+              <img 
+                src="/images/Products/more/jbl-boombox3-camo.png" 
+                alt="JBL Boombox 3" 
+                className="h-36 col-span-2 object-contain animate-slide-in-left" 
+                style={{
+                  animationDelay: '0.5s',
+                  filter: 'drop-shadow(0 0 20px rgba(255, 215, 0, 0.8))'
+                }}
+              />
+            </div>
+            
+            {/* Right: Details */}
+            <div className="w-1/2 text-center animate-slide-in-right px-4">
+              <div className="text-7xl mb-3 animate-bounce-gentle">🎉</div>
+              <h2 className="text-6xl font-black mb-3 text-red-700 animate-glow-pulse" style={{
+                textShadow: '0 0 30px rgba(255,255,255,1), 0 0 50px rgba(255,215,0,1), 0 4px 20px rgba(220, 20, 60, 0.8)'
+              }}>
+                IT'S PARANG TIME!
+              </h2>
+              <p className="text-xl mb-4 font-bold text-red-800">Get Our Best-Selling Speakers for Clean, Powerful Sound!</p>
+              <div className="text-5xl font-black mb-4 text-red-700 animate-bounce-gentle" style={{
+                textShadow: '0 4px 20px rgba(255,215,0,0.9)'
+              }}>
+                $220 - $1,800
+              </div>
+              <a 
+                href="/Categories/tech-audio"
+                className="inline-block bg-red-700 text-white px-8 py-4 rounded-full font-black text-xl hover:bg-white hover:text-red-700 transition-all shadow-2xl hover:scale-110"
+                onClick={() => setShowBanner(false)}
+              >
+                🎵 SHOP SPEAKERS →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Slide Indicators - Christmas Colors */}
+        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-3 z-20">
+          <button 
+            onClick={() => setCurrentSlide(0)}
+            className={`h-4 rounded-full transition-all ${
+              currentSlide === 0 
+                ? 'bg-red-600 w-10 shadow-lg shadow-red-500/50' 
+                : 'bg-white/70 w-4 hover:bg-white'
+            }`}
+          />
+          <button 
+            onClick={() => setCurrentSlide(1)}
+            className={`h-4 rounded-full transition-all ${
+              currentSlide === 1 
+                ? 'bg-yellow-400 w-10 shadow-lg shadow-yellow-500/50' 
+                : 'bg-white/70 w-4 hover:bg-white'
+            }`}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+
  {/* CSS for animations */}
 <style jsx>{`
   .ticker-content {
@@ -576,6 +787,65 @@ useEffect(() => {
   .animate-bounce-slow {
     animation: bounce-slow 2s ease-in-out infinite;
   }
+  @keyframes float {
+    0%, 100% { 
+      transform: translateY(0) rotate(0deg);
+      opacity: 0.7;
+    }
+    50% { 
+      transform: translateY(-20px) rotate(10deg);
+      opacity: 0.3;
+    }
+  }
+  @keyframes zoom-in {
+    0% { 
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    100% { 
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-right {
+    0% {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  .animate-zoom-in {
+    animation: zoom-in 1s ease-out;
+  }
+  .animate-slide-in-right {
+    animation: slide-in-right 0.8s ease-out;
+  }
+    @keyframes dramatic-popup {
+  0% { 
+    opacity: 0;
+    transform: scale(0.3) rotate(-15deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.1) rotate(5deg);
+  }
+  80% {
+    transform: scale(0.95) rotate(-2deg);
+  }
+  100% { 
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+.animate-dramatic-popup {
+  animation: dramatic-popup 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
 `}</style>
         
 {/* Category Section with HOVER ZOOM for images */}
