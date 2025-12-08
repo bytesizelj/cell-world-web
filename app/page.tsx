@@ -40,7 +40,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowBanner(true);
-    }, 100);
+    }, 3000);
     
     return () => clearTimeout(timer);
   }, []);
@@ -49,7 +49,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowPromo(true);
-    }, 3000);
+    }, 2000);
     
     return () => clearTimeout(timer);
   }, []);
@@ -496,15 +496,15 @@ END COMMENT */}
     
     {/* Right: Details */}
     <div className="w-1/2 text-white animate-slide-in-right">
-      <div className="bg-red-600 text-white px-6 py-3 rounded-full inline-block mb-4 font-bold animate-pulse shadow-xl">
-        🎄 CHRISTMAS SPECIAL 🎄
-      </div>
+      <div className="bg-red-600 text-white px-8 py-4 rounded-full inline-block mb-4 font-black text-2xl animate-pulse shadow-xl">
+  🎄 CHRISTMAS SPECIAL 🎄
+</div>
       <h2 className="text-6xl font-black mb-4 animate-glow-pulse" style={{
         textShadow: '0 0 20px rgba(255,255,255,1), 0 0 40px rgba(255,215,0,0.8)'
       }}>
         Samsung F05 • A05 • A06 • 
       </h2>
-      <p className="text-2xl mb-6 font-semibold">Best Priced Samsung Phones • Great Performance</p>
+      <p className="text-2xl mb-6 font-semibold">Does your phone need CPR every morning to turn on?” 😵‍💫🤲 • Tapping… shaking… begging… praying… 🙏 • That phone retired! Get a New One Now!</p>
       <div className="text-7xl font-black mb-6 animate-bounce-gentle" style={{
         textShadow: '0 4px 20px rgba(255,215,0,0.8)'
       }}>
@@ -521,105 +521,118 @@ END COMMENT */}
   </div>
 </div>
 
-        {/* Slide 2: Speakers - IT'S PARANG TIME - Gold & Red Festive */}
-        <div 
-          className={`absolute inset-0 transition-all duration-1000 ${
-            currentSlide === 1 
-              ? 'opacity-100 translate-x-0' 
-              : 'opacity-0 translate-x-full'
-          }`}
+{/* Slide 2: Speakers - IT'S PARANG TIME - Improved Colors */}
+<div 
+  className={`absolute inset-0 transition-all duration-1000 ${
+    currentSlide === 1 
+      ? 'opacity-100 translate-x-0' 
+      : 'opacity-0 translate-x-full'
+  }`}
+  style={{
+    background: 'radial-gradient(circle at center, rgba(29, 78, 216, 1) 0%, rgba(30, 58, 138, 1) 50%, rgba(17, 24, 39, 1) 100%)',
+  }}
+>
+  {/* Rotating Gradient Overlay - More Dramatic */}
+  <div className="absolute inset-0 animate-rotate-gradient opacity-60" style={{
+    background: 'conic-gradient(from 0deg at 50% 50%, rgba(59, 130, 246, 0.8) 0deg, transparent 60deg, rgba(139, 92, 246, 0.8) 120deg, transparent 180deg, rgba(59, 130, 246, 0.8) 240deg, transparent 300deg, rgba(139, 92, 246, 0.8) 360deg)',
+  }}></div>
+  
+  {/* Pulsing Circles Background - More Visible */}
+  <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-50">
+    <div className="absolute top-10 left-10 w-60 h-60 bg-blue-500 rounded-full animate-pulse-scale blur-3xl"></div>
+    <div className="absolute bottom-10 right-10 w-80 h-80 bg-purple-600 rounded-full animate-pulse-scale-delayed blur-3xl"></div>
+    <div className="absolute top-1/2 left-1/2 w-48 h-48 bg-cyan-500 rounded-full animate-pulse-scale blur-3xl" style={{animationDelay: '0.5s'}}></div>
+    <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-indigo-500 rounded-full animate-pulse-scale blur-3xl" style={{animationDelay: '1s'}}></div>
+  </div>
+
+  {/* Glowing Border Effect */}
+  <div className="absolute top-0 left-0 w-full h-3 bg-gradient-to-r from-blue-400 via-purple-500 to-blue-400"></div>
+  <div className="absolute bottom-0 left-0 w-full h-3 bg-gradient-to-r from-purple-500 via-blue-400 to-purple-500"></div>
+
+  <div className="relative h-full flex items-center justify-between px-16 z-10">
+    {/* Left: Speaker Collage - Cleaner Layout */}
+    <div className="w-1/2 grid grid-cols-2 gap-8 pr-8">
+      <div className="bg-white/20 backdrop-blur-md rounded-3xl p-6 flex items-center justify-center shadow-2xl border border-white/30">
+        <img 
+          src="/images/Products/more/rca-levelup-speaker.png" 
+          alt="RCA CrystalBeat" 
+          className="h-32 object-contain animate-slide-in-left" 
           style={{
-            background: 'linear-gradient(135deg, #FFD700 0%, #DC143C 50%, #FFD700 100%)',
+            animationDelay: '0.1s',
+            filter: 'drop-shadow(0 0 15px rgba(255, 255, 255, 0.8))'
           }}
-        >
-          {/* Animated Party Confetti */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-10 left-10 text-5xl animate-wiggle">🎉</div>
-            <div className="absolute top-20 right-20 text-4xl animate-wiggle-delayed">🎊</div>
-            <div className="absolute bottom-20 left-1/4 text-6xl animate-wiggle" style={{animationDelay: '0.8s'}}>🎵</div>
-            <div className="absolute top-1/3 right-1/3 text-4xl animate-wiggle-delayed">✨</div>
-            <div className="absolute bottom-10 right-10 text-5xl animate-wiggle">🎶</div>
-            <div className="absolute top-40 left-1/2 text-7xl animate-wiggle" style={{animationDelay: '1.2s'}}>🔊</div>
-          </div>
-
-          {/* Glowing Border Effect */}
-          <div className="absolute top-0 left-0 w-full h-3 bg-gradient-to-r from-yellow-300 via-red-500 to-yellow-300 animate-pulse"></div>
-          <div className="absolute bottom-0 left-0 w-full h-3 bg-gradient-to-r from-red-500 via-yellow-300 to-red-500 animate-pulse"></div>
-
-          <div className="relative h-full flex items-center justify-between px-12 z-10">
-            {/* Left: Speaker Collage with Stagger Animation */}
-            <div className="w-1/2 grid grid-cols-2 gap-6">
-              <img 
-                src="/images/Products/more/rca-levelup-speaker.png" 
-                alt="RCA CrystalBeat" 
-                className="h-36 object-contain animate-slide-in-left" 
-                style={{
-                  animationDelay: '0.1s',
-                  filter: 'drop-shadow(0 0 20px rgba(255, 215, 0, 0.6))'
-                }}
-              />
-              <img 
-                src="/images/Products/more/rca-tws-gamerbeat-speaker.png" 
-                alt="RCA GamerBeat" 
-                className="h-36 object-contain animate-slide-in-left" 
-                style={{
-                  animationDelay: '0.2s',
-                  filter: 'drop-shadow(0 0 20px rgba(220, 20, 60, 0.6))'
-                }}
-              />
-              <img 
-                src="/images/Products/more/rca-holosound-speaker.png" 
-                alt="RCA HoloSound" 
-                className="h-36 object-contain animate-slide-in-left" 
-                style={{
-                  animationDelay: '0.3s',
-                  filter: 'drop-shadow(0 0 20px rgba(255, 215, 0, 0.6))'
-                }}
-              />
-              <img 
-                src="/images/Products/more/skull-candy-barrel-speaker.png" 
-                alt="Skull Candy Barrel" 
-                className="h-36 object-contain animate-slide-in-left" 
-                style={{
-                  animationDelay: '0.4s',
-                  filter: 'drop-shadow(0 0 20px rgba(220, 20, 60, 0.6))'
-                }}
-              />
-              <img 
-                src="/images/Products/more/jbl-boombox3-camo.png" 
-                alt="JBL Boombox 3" 
-                className="h-36 col-span-2 object-contain animate-slide-in-left" 
-                style={{
-                  animationDelay: '0.5s',
-                  filter: 'drop-shadow(0 0 20px rgba(255, 215, 0, 0.8))'
-                }}
-              />
-            </div>
-            
-            {/* Right: Details */}
-            <div className="w-1/2 text-center animate-slide-in-right px-4">
-              <div className="text-7xl mb-3 animate-bounce-gentle">🎉</div>
-              <h2 className="text-6xl font-black mb-3 text-red-700 animate-glow-pulse" style={{
-                textShadow: '0 0 30px rgba(255,255,255,1), 0 0 50px rgba(255,215,0,1), 0 4px 20px rgba(220, 20, 60, 0.8)'
-              }}>
-                IT'S PARANG TIME!
-              </h2>
-              <p className="text-xl mb-4 font-bold text-red-800">Get Our Best-Selling Speakers for Clean, Powerful Sound!</p>
-              <div className="text-5xl font-black mb-4 text-red-700 animate-bounce-gentle" style={{
-                textShadow: '0 4px 20px rgba(255,215,0,0.9)'
-              }}>
-                $220 - $1,800
-              </div>
-              <a 
-                href="/Categories/tech-audio"
-                className="inline-block bg-red-700 text-white px-8 py-4 rounded-full font-black text-xl hover:bg-white hover:text-red-700 transition-all shadow-2xl hover:scale-110"
-                onClick={() => setShowBanner(false)}
-              >
-                🎵 SHOP SPEAKERS →
-              </a>
-            </div>
-          </div>
-        </div>
+        />
+      </div>
+      <div className="bg-white/20 backdrop-blur-md rounded-3xl p-6 flex items-center justify-center shadow-2xl border border-white/30">
+        <img 
+          src="/images/Products/more/rca-tws-gamerbeat-speaker.png" 
+          alt="RCA GamerBeat" 
+          className="h-32 object-contain animate-slide-in-left" 
+          style={{
+            animationDelay: '0.2s',
+            filter: 'drop-shadow(0 0 15px rgba(255, 255, 255, 0.8))'
+          }}
+        />
+      </div>
+      <div className="bg-white/20 backdrop-blur-md rounded-3xl p-6 flex items-center justify-center shadow-2xl border border-white/30">
+        <img 
+          src="/images/Products/more/rca-holosound-speaker.png" 
+          alt="RCA HoloSound" 
+          className="h-32 object-contain animate-slide-in-left" 
+          style={{
+            animationDelay: '0.3s',
+            filter: 'drop-shadow(0 0 15px rgba(255, 255, 255, 0.8))'
+          }}
+        />
+      </div>
+      <div className="bg-white/20 backdrop-blur-md rounded-3xl p-6 flex items-center justify-center shadow-2xl border border-white/30">
+        <img 
+          src="/images/Products/more/skull-candy-barrel-speaker.png" 
+          alt="Skull Candy Barrel" 
+          className="h-32 object-contain animate-slide-in-left" 
+          style={{
+            animationDelay: '0.4s',
+            filter: 'drop-shadow(0 0 15px rgba(255, 255, 255, 0.8))'
+          }}
+        />
+      </div>
+      <div className="col-span-2 bg-white/20 backdrop-blur-md rounded-3xl p-6 flex items-center justify-center shadow-2xl border border-white/30">
+        <img 
+          src="/images/Products/more/jbl-boombox3-camo.png" 
+          alt="JBL Boombox 3" 
+          className="h-36 object-contain animate-slide-in-left" 
+          style={{
+            animationDelay: '0.5s',
+            filter: 'drop-shadow(0 0 20px rgba(255, 255, 255, 0.9))'
+          }}
+        />
+      </div>
+    </div>
+    
+    {/* Right: Details */}
+    <div className="w-1/2 text-center animate-slide-in-right px-4">
+      <div className="text-8xl mb-4 animate-bounce-gentle">🔊</div>
+      <h2 className="text-7xl font-black mb-4 text-yellow-300 animate-glow-pulse" style={{
+        textShadow: '0 0 30px rgba(255,215,0,1), 0 0 50px rgba(255,255,255,1), 0 4px 30px rgba(0,0,0,1), -2px -2px 0 rgba(0,0,0,0.8), 2px -2px 0 rgba(0,0,0,0.8), -2px 2px 0 rgba(0,0,0,0.8), 2px 2px 0 rgba(0,0,0,0.8)'
+      }}>
+        IT'S PARANG TIME!
+      </h2>
+      <p className="text-2xl mb-6 font-bold text-white drop-shadow-lg">Get Our Best-Selling Speakers for Clean, Powerful Sound!</p>
+      <div className="text-6xl font-black mb-6 text-yellow-300 animate-bounce-gentle" style={{
+        textShadow: '0 4px 20px rgba(0,0,0,1), 0 0 40px rgba(255,215,0,0.8), 0 0 60px rgba(255,255,255,0.5), -2px -2px 0 rgba(0,0,0,0.8), 2px -2px 0 rgba(0,0,0,0.8), -2px 2px 0 rgba(0,0,0,0.8), 2px 2px 0 rgba(0,0,0,0.8)'
+      }}>
+        $220 - $1,800
+      </div>
+      <a 
+        href="/Categories/tech-audio"
+        className="inline-block bg-yellow-400 text-blue-900 px-10 py-5 rounded-full font-black text-2xl hover:bg-white hover:text-blue-700 transition-all shadow-2xl hover:scale-110"
+        onClick={() => setShowBanner(false)}
+      >
+        🎵 SHOP SPEAKERS →
+      </a>
+    </div>
+  </div>
+</div>
 
         {/* Slide Indicators - Christmas Colors */}
         <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-3 z-20">
