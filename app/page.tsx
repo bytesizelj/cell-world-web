@@ -508,7 +508,7 @@ END COMMENT */}
   <div className="text-3xl md:text-5xl font-black mb-3 md:mb-4 animate-bounce-gentle" style={{
     textShadow: '0 4px 20px rgba(255,215,0,0.8)'
   }}>
-    From $499
+    From $450
   </div>
   <a 
     href="/Categories/phones"
