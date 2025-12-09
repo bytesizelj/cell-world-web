@@ -504,7 +504,7 @@ END COMMENT */}
   }}>
     Samsung A06 • A05 • F05
   </h2>
-  <p className="text-sm md:text-lg mb-3 md:mb-4 font-semibold">Best Priced Samsung Phones • Great Performance</p>
+  <p className="text-sm md:text-lg mb-3 md:mb-4 font-semibold">Does your phone need CPR every morning to turn on?” 😵‍💫🤲 • Tapping… shaking… begging… praying… 🙏 • That phone retired! Buy Now!</p>
   <div className="text-3xl md:text-5xl font-black mb-3 md:mb-4 animate-bounce-gentle" style={{
     textShadow: '0 4px 20px rgba(255,215,0,0.8)'
   }}>
