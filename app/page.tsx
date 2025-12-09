@@ -447,7 +447,7 @@ END COMMENT */}
     }}
   >
     <div className="max-w-6xl w-full mx-4" onClick={(e) => e.stopPropagation()}>
-      <div className="relative overflow-hidden rounded-3xl shadow-2xl" style={{ height: 'auto', minHeight: '400px' }}>
+      <div className="relative overflow-hidden rounded-3xl shadow-2xl" style={{ height: 'auto', minHeight: '650px' }}>
         {/* Close Button */}
         <button
           onClick={() => setShowBanner(false)}
