@@ -55,8 +55,346 @@ export default function TechAudioCategory() {
     setImagePosition({ x: 0, y: 0 });
   };
 
+  
   // Enhanced product data with categories
   const products = [
+// RCA SPEAKERS
+{
+  id: 'rca-tws-gamerbeat-speaker',
+  name: 'RCA TWS GamerBeat Bluetooth Party Speaker',
+  image: '/images/Products/more/rca-tws-gamerbeat-speaker.png',
+  price: 220.00,
+  category: 'speakers',
+  availability: 'In Stock',
+  specs: {
+    features: 'Disco lights, FM Radio',
+    inputs: 'Aux input, Memory device',
+    battery: 'Long battery life'
+  }
+},
+{
+  id: 'rca-beatbox-speaker',
+  name: 'RCA BeatBox Bluetooth Speaker',
+  image: '/images/Products/more/rca-beatbox-speaker.png',
+  price: 200.00,
+  category: 'speakers',
+  availability: 'In Stock',
+  specs: {
+    features: 'Illuminated display, FM Radio, Disco lights',
+    inputs: 'Memory device, Mic port, Aux port',
+    extras: 'Remote control'
+  }
+},
+{
+  id: 'rca-holosound-speaker',
+  name: 'RCA HoloSound Bluetooth Speaker',
+  image: '/images/Products/more/rca-holosound-speaker.png',
+  price: 599.00,
+  category: 'speakers',
+  availability: 'In Stock',
+  specs: {
+    features: 'LED Color Flame, Karaoke mode',
+    display: 'Illuminated display',
+    inputs: 'Memory device, Mic port, Aux port',
+    extras: 'FM Radio, Remote control'
+  }
+},
+{
+  id: 'rca-beatwaves-speaker',
+  name: 'RCA BeatWaves Bluetooth Speaker with Wireless Mic',
+  image: '/images/Products/more/rca-beatwaves-speaker.png',
+  price: 499.00,
+  category: 'speakers',
+  availability: 'In Stock',
+  specs: {
+    includes: 'Wireless microphone',
+    features: 'Karaoke mode, FM Radio',
+    display: 'Illuminated display',
+    extras: 'Portable with back straps'
+  }
+},
+{
+  id: 'rca-levelup-speaker',
+  name: 'RCA CrystalBeat Bluetooth Speaker',
+  image: '/images/Products/more/rca-levelup-speaker.png',
+  price: 450.00,
+  category: 'speakers',
+  availability: 'In Stock',
+  specs: {
+    features: 'Illuminated, Karaoke mode',
+    inputs: 'Memory device, Mic port, Aux port',
+    extras: 'FM Radio, Remote control'
+  }
+},
+{
+  id: 'rca-shock-wave-speaker',
+  name: 'RCA Shock-Wave Bluetooth Speaker',
+  image: '/images/Products/more/rca-shock-wave-speaker.png',
+  price: 380.00,
+  category: 'speakers',
+  availability: 'In Stock',
+  specs: {
+    features: 'LED Color Flame Effect, High Fidelity',
+    modes: 'Karaoke mode, FM Radio',
+    inputs: 'Memory device, Mic port, Aux port'
+  }
+},
+//SKULLCANDY SPEAKERS)
+{
+  id: 'skullcandy-barrel',
+  name: 'Skull Candy Barrel Speaker',
+  image: '/images/Products/more/skull-candy-barrel-speaker.png',
+  price: 999.00,
+  category: 'speakers',
+  availability: 'In Stock',
+  color: 'Blue & Black (1), Orange & Black (1)',
+  specs: {
+    battery: '12 hours battery life',
+    waterproof: 'IPX5 water resistant',
+    features: 'Skull Candy multi-link',
+    lighting: 'LED light show'
+  }
+},
+{
+  id: 'skullcandy-stomp',
+  name: 'Skull Candy STOMP',
+  image: '/images/Products/more/skull-candy-stomp.png',
+  price: 950.00,
+  category: 'speakers',
+  availability: 'In Stock',
+  specs: {
+    battery: '12 hours battery life',
+    waterproof: 'IPX7 Waterproof',
+    features: 'Skull Candy multi-link',
+    lighting: 'LED light show'
+  }
+},
+ // JBL SPEAKERS (1-10)
+    {
+      id: 1,
+      name: "JBL GO 4 Portable Speaker - Navy Blue",
+      price: 220.00,
+      image: "/images/Products/more/jbl-go4-navy.png",
+      description: "Ultra-portable waterproof Bluetooth speaker with bold JBL Pro Sound. Features 7 hours playtime, IP67 waterproof and dustproof rating.",
+      category: "speakers",
+      specs: {
+        bluetooth: "Bluetooth 5.3",
+        battery: "7 hours battery life",
+        waterproof: "IP67 Waterproof",
+        design: "Compact with loop"
+      }
+    },
+    {
+      id: 2,
+      name: "JBL CLIP 4 Portable Speaker - Color Options",
+      price: 220.00,
+      image: "/images/Products/more/jbl-go4-colors.png",
+      description: "Choose your style! Ultra-portable waterproof speaker available in multiple vibrant colors including Camo, White, Red, and Blue.",
+      category: "speakers",
+      specs: {
+        bluetooth: "Bluetooth 5.3",
+        battery: "7 hours battery life",
+        waterproof: "IP67 Waterproof",
+        colors: "Multiple options"
+      }
+    },
+    {
+      id: 3,
+      name: "JBL GO 3 Portable Speaker Collection",
+      price: 199.00,
+      image: "/images/Products/more/jbl-go3-collection.png",
+      description: "Portable waterproof speaker with powerful audio and bold design. Available in Gray/Blue, Blue, Black, Teal/Green colors.",
+      category: "speakers",
+      specs: {
+        bluetooth: "Bluetooth 5.1",
+        battery: "5 hours playtime",
+        waterproof: "IP67 Waterproof",
+        colors: "Vibrant options"
+      }
+    },
+    {
+      id: 4,
+      name: "JBL Pulse 4 Portable Speaker",
+      price: 599.00,
+      image: "/images/Products/more/jbl-pulse5.png",
+      description: "360-degree sound with customizable lightshow. Features ambient light effects that sync with your music for an immersive audiovisual experience.",
+      category: "speakers",
+      specs: {
+        feature: "360° LED Lightshow",
+        battery: "12 hours playtime",
+        waterproof: "IP67 Waterproof",
+        connectivity: "PartyBoost compatible"
+      }
+    },
+    {
+      id: 5,
+      name: "JBL Flip 6 Waterproof Speaker - Multiple Colors",
+      price: 499.00,
+      image: "/images/Products/more/jbl-flip6-colors.png",
+      description: "Powerful portable Bluetooth speaker with 12 hours of playtime. IP67 waterproof and dustproof. Available in Red, Black, Teal, and Black/Red.",
+      category: "speakers",
+      specs: {
+        bluetooth: "Bluetooth 5.1",
+        battery: "12 hours battery life",
+        waterproof: "IP67 Waterproof & Dustproof",
+        feature: "PartyBoost & 2-way speakers"
+      }
+    },
+    {
+      id: 6,
+      name: "JBL Boombox 3 Portable Speaker - Black",
+      price: 1800.00,
+      image: "/images/Products/more/jbl-boombox3-black.png",
+      description: "Massive JBL Original Pro Sound with the deepest bass. 24 hours of playtime, IP67 waterproof, and built-in powerbank.",
+      category: "speakers",
+      specs: {
+        battery: "24 hours battery life",
+        waterproof: "IP67 Waterproof & Dustproof",
+        feature: "Built-in powerbank",
+        speakers: "3-way speakers"
+      }
+    },
+    {
+      id: 7,
+      name: "JBL Boombox 3 Portable Speaker - Squad Camo",
+      price: 1800.00,
+      image: "/images/Products/more/jbl-boombox3-camo.png",
+      description: "Limited edition Squad camouflage design. Massive sound, deepest bass, 24-hour battery life with military-inspired aesthetics.",
+      category: "speakers",
+      specs: {
+        battery: "24 hours battery life",
+        waterproof: "IP67 Waterproof & Dustproof",
+        design: "Squad Camo edition",
+        feature: "PartyBoost compatible"
+      }
+    },
+    {
+      id: 9,
+      name: "JBL Xtreme 4 Portable Speaker - Multiple Colors",
+      price: 1250.00,
+      image: "/images/Products/more/jbl-xtreme4-colors.png",
+      description: "Powerful portable speaker with shoulder strap. 24 hours playtime, IP67 waterproof. Available in Black, Blue, and Camo editions.",
+      category: "speakers",
+      specs: {
+        bluetooth: "Bluetooth 5.3",
+        battery: "24 hours battery life",
+        waterproof: "IP67 Waterproof & Dustproof",
+        feature: "Dual JBL Bass Radiators"
+      }
+    },
+    {
+      id: 10,
+      name: "JBL Charge 5 Portable Speaker Collection",
+      price: 599.00,
+      image: "/images/Products/more/jbl-charge5-colors.png",
+      description: "Bold JBL Original Pro Sound with IP67 waterproof rating. 20 hours playtime. Available in Gray, Black, Red, and Teal colors.",
+      category: "speakers",
+      specs: {
+        bluetooth: "Bluetooth 5.1",
+        battery: "20 hours battery life",
+        waterproof: "IP67 Waterproof & Dustproof",
+        feature: "Built-in powerbank"
+      }
+    },
+    {
+  id: 11,
+  name: "JBL Charge 6 Portable Speaker",
+  price: 720.00,
+  image: "/images/Products/tech-audio/jbl-charge-6.png",
+  description: "Portable Waterproof & Drop-Proof Bluetooth Speaker. Bold Pro Sound with AI Sound Boost, 28Hrs of Playtime, Built-in powerbank.",
+  category: "speakers",
+  specs: {
+    bluetooth: "Bluetooth with USB Connectivity",
+    battery: "28 hours battery life",
+    waterproof: "Waterproof & Drop-Proof",
+    power: "45W Maximum Output",
+    frequency: "20 KHz Frequency Response",
+    audio: "Stereo Audio Output Mode",
+    feature: "Built-in powerbank with AI Sound Boost"
+  }
+ },
+ // SPEAKERS - Additional Skull Candy
+{
+  id: 'skullcandy-ounce-red',
+  name: 'Skull Candy Ounce',
+  image: '/images/Products/more/skull-candy-ounce-red.png',
+  price: 160.00,
+  category: 'speakers',
+  availability: 'In Stock',
+  specs: {
+    battery: '16 hours battery',
+    waterproof: 'IPX7 waterproof'
+  }
+},
+{
+  id: 'skullcandy-kilo-black',
+  name: 'Skull Candy Kilo',
+  image: '/images/Products/more/skull-candy-kilo-black.png',
+  price: 210.00,
+  category: 'speakers',
+  availability: 'In Stock',
+  color: 'Black',
+  specs: {
+    battery: '24 hours battery',
+    waterproof: 'IPX7 waterproof'
+  }
+},
+{
+  id: 'skullcandy-terrain-mini',
+  name: 'Skull Candy Terrain Mini',
+  image: '/images/Products/more/skull-candy-terrain-mini.png',
+  price: 230.00,
+  category: 'speakers',
+  availability: 'In Stock',
+  color: 'Red',
+  specs: {
+    battery: '14 hours battery',
+    waterproof: 'IPX7 waterproof',
+    feature: 'Skull Candy Multi-link'
+  }
+},
+{
+  id: 'skullcandy-terrain-blue',
+  name: 'Skull Candy Terrain',
+  image: '/images/Products/more/skull-candy-terrain-blue.png',
+  price: 330.00,
+  category: 'speakers',
+  availability: 'Low Stock',
+  color: 'Blue',
+  specs: {
+    battery: '14 hours battery',
+    waterproof: 'IPX7 waterproof',
+    feature: 'Skull Candy Multi-link'
+  }
+},
+{
+  id: 'skullcandy-terrain-xl',
+  name: 'Skull Candy Terrain XL',
+  image: '/images/Products/more/skull-candy-terrain-xl.png',
+  price: 420.00,
+  category: 'speakers',
+  availability: 'In Stock',
+  color: 'Blue (2), Red (1)',
+  specs: {
+    battery: '18 hours battery',
+    waterproof: 'IPX7 waterproof',
+    feature: 'Skull Candy Multi-link'
+  }
+},
+{
+  id: 'fugoo-tough-speaker',
+  name: 'Fugoo Tough Bluetooth Speaker',
+  image: '/images/Products/more/fugoo-tough-bluetooth-speaker.png',
+  price: 200.00,
+  category: 'speakers',
+  availability: 'In Stock',
+  specs: {
+    waterproof: 'Waterproof design',
+    battery: '12 hours battery life',
+    sound: '360° sound'
+  }
+},
+// PLAYSTATION
 {
   id: 'ps5-digital-edition',
   name: 'PS5 Digital Edition',
@@ -111,6 +449,87 @@ export default function TechAudioCategory() {
     battery: 'Up to 30 Hours',
     mic: 'Noise Reduction',
     compatible: 'PC, MAC, PS4, PS5'
+  }
+},
+// Gaming)
+{
+  id: 'ps5-controller-camo',
+  name: 'PlayStation 5 DualSense Controller',
+  image: '/images/Products/more/playstation5-dualsense-controller.png',
+  price: 350.00,
+  category: 'gaming',
+  availability: 'In Stock',
+  color: 'Camouflage (1), Black (2)',
+  specs: {
+    type: 'Wireless Controller',
+    compatibility: 'PlayStation 5'
+  }
+},
+{
+  id: 'xbox-controller-pulse',
+  name: 'Xbox Controller - Pulse Red',
+  image: '/images/Products/more/xbox-series-pulsered.png',
+  price: 350.00,
+  category: 'gaming',
+  availability: 'In Stock',
+  color: 'Pulse Red',
+  specs: {
+    compatibility: 'Xbox Series X|S, Xbox One, Windows, Android & iOS',
+    type: 'Wireless Controller',
+    includes: 'AA Batteries'
+  }
+},
+{
+  id: 'xbox-controller-black',
+  name: 'Xbox Controller for Xbox Series X|S',
+  image: '/images/Products/more/xbox-seriesxs.png',
+  price: 350.00,
+  category: 'gaming',
+  availability: 'In Stock',
+  color: 'Black',
+  specs: {
+    compatibility: 'Xbox Series X|S, Xbox One, Windows, Android & iOS',
+    type: 'Wireless Controller'
+  }
+},
+{
+  id: 'steel-series-stratus',
+  name: 'SteelSeries Stratus+ Wireless Mobile Gaming Controller',
+  image: '/images/Products/more/steel-series-stratus-controller.png',
+  price: 160.00,
+  category: 'gaming',
+  availability: 'In Stock',
+  color: 'Black',
+  specs: {
+    compatibility: 'Android 4+ (wireless), Windows PC (wired)',
+    battery: '90 hours per charge',
+    includes: 'USB-C to USB-A cable & phone holder',
+    type: 'Wireless Mobile Gaming Controller'
+  }
+},
+{
+  id: 'ps4-dualshock',
+  name: 'PlayStation 4 DualShock Wireless Controller',
+  image: '/images/Products/more/sony-play-station-4-dual-shock.png',
+  price: 280.00,
+  category: 'gaming',
+  availability: 'In Stock',
+  color: 'Black',
+  specs: {
+    type: 'Wireless Controller',
+    compatibility: 'PlayStation 4'
+  }
+},
+{
+  id: 'razer-charging-stand',
+  name: 'Razer Legendary Duo Bundle - PS5 Charging Stand',
+  image: '/images/Products/more/razer-quick-charging-stand.png',
+  price: 399.00,
+  category: 'gaming',
+  availability: 'In Stock',
+    specs: {
+    type: 'Quick Charging Stand',
+    compatibility: 'PS5 DualSense Wireless Controller'
   }
 },
 // SMART WATCHES
@@ -299,88 +718,6 @@ export default function TechAudioCategory() {
     waterproof: 'IPX7 Waterproof',
     battery: '30 hours total',
     design: 'Secure wing fit'
-  }
-},
-
-// RCA SPEAKERS
-{
-  id: 'rca-tws-gamerbeat-speaker',
-  name: 'RCA TWS GamerBeat Bluetooth Party Speaker',
-  image: '/images/Products/more/rca-tws-gamerbeat-speaker.png',
-  price: 220.00,
-  category: 'speakers',
-  availability: 'In Stock',
-  specs: {
-    features: 'Disco lights, FM Radio',
-    inputs: 'Aux input, Memory device',
-    battery: 'Long battery life'
-  }
-},
-{
-  id: 'rca-beatbox-speaker',
-  name: 'RCA BeatBox Bluetooth Speaker',
-  image: '/images/Products/more/rca-beatbox-speaker.png',
-  price: 200.00,
-  category: 'speakers',
-  availability: 'In Stock',
-  specs: {
-    features: 'Illuminated display, FM Radio, Disco lights',
-    inputs: 'Memory device, Mic port, Aux port',
-    extras: 'Remote control'
-  }
-},
-{
-  id: 'rca-holosound-speaker',
-  name: 'RCA HoloSound Bluetooth Speaker',
-  image: '/images/Products/more/rca-holosound-speaker.png',
-  price: 599.00,
-  category: 'speakers',
-  availability: 'In Stock',
-  specs: {
-    features: 'LED Color Flame, Karaoke mode',
-    display: 'Illuminated display',
-    inputs: 'Memory device, Mic port, Aux port',
-    extras: 'FM Radio, Remote control'
-  }
-},
-{
-  id: 'rca-beatwaves-speaker',
-  name: 'RCA BeatWaves Bluetooth Speaker with Wireless Mic',
-  image: '/images/Products/more/rca-beatwaves-speaker.png',
-  price: 499.00,
-  category: 'speakers',
-  availability: 'In Stock',
-  specs: {
-    includes: 'Wireless microphone',
-    features: 'Karaoke mode, FM Radio',
-    display: 'Illuminated display',
-    extras: 'Portable with back straps'
-  }
-},
-{
-  id: 'rca-levelup-speaker',
-  name: 'RCA CrystalBeat Bluetooth Speaker',
-  image: '/images/Products/more/rca-levelup-speaker.png',
-  price: 450.00,
-  category: 'speakers',
-  availability: 'In Stock',
-  specs: {
-    features: 'Illuminated, Karaoke mode',
-    inputs: 'Memory device, Mic port, Aux port',
-    extras: 'FM Radio, Remote control'
-  }
-},
-{
-  id: 'rca-shock-wave-speaker',
-  name: 'RCA Shock-Wave Bluetooth Speaker',
-  image: '/images/Products/more/rca-shock-wave-speaker.png',
-  price: 380.00,
-  category: 'speakers',
-  availability: 'In Stock',
-  specs: {
-    features: 'LED Color Flame Effect, High Fidelity',
-    modes: 'Karaoke mode, FM Radio',
-    inputs: 'Memory device, Mic port, Aux port'
   }
 },
 
@@ -649,47 +986,6 @@ export default function TechAudioCategory() {
   }
 },
 
-// Gaming Controllers)
-{
-  id: 'steel-series-stratus',
-  name: 'SteelSeries Stratus+ Wireless Mobile Gaming Controller',
-  image: '/images/Products/more/steel-series-stratus-controller.png',
-  price: 160.00,
-  category: 'gaming',
-  availability: 'In Stock',
-  color: 'Black',
-  specs: {
-    compatibility: 'Android 4+ (wireless), Windows PC (wired)',
-    battery: '90 hours per charge',
-    includes: 'USB-C to USB-A cable & phone holder',
-    type: 'Wireless Mobile Gaming Controller'
-  }
-},
-{
-  id: 'ps4-dualshock',
-  name: 'PlayStation 4 DualShock Wireless Controller',
-  image: '/images/Products/more/sony-play-station-4-dual-shock.png',
-  price: 280.00,
-  category: 'gaming',
-  availability: 'In Stock',
-  color: 'Black',
-  specs: {
-    type: 'Wireless Controller',
-    compatibility: 'PlayStation 4'
-  }
-},
-{
-  id: 'razer-charging-stand',
-  name: 'Razer Legendary Duo Bundle - PS5 Charging Stand',
-  image: '/images/Products/more/razer-quick-charging-stand.png',
-  price: 399.00,
-  category: 'gaming',
-  availability: 'In Stock',
-    specs: {
-    type: 'Quick Charging Stand',
-    compatibility: 'PS5 DualSense Wireless Controller'
-  }
-},
 // TV Remotes)
 {
   id: 'universal-smart-remote',
@@ -775,222 +1071,8 @@ export default function TechAudioCategory() {
     compatibility: 'Android 11.0+ with 1.5GB+ memory'
   }
 },
-{
-  id: 'ps5-controller-camo',
-  name: 'PlayStation 5 DualSense Controller',
-  image: '/images/Products/more/playstation5-dualsense-controller.png',
-  price: 350.00,
-  category: 'gaming',
-  availability: 'In Stock',
-  color: 'Camouflage (1), Black (2)',
-  specs: {
-    type: 'Wireless Controller',
-    compatibility: 'PlayStation 5'
-  }
-},
-{
-  id: 'xbox-controller-pulse',
-  name: 'Xbox Controller - Pulse Red',
-  image: '/images/Products/more/xbox-series-pulsered.png',
-  price: 350.00,
-  category: 'gaming',
-  availability: 'In Stock',
-  color: 'Pulse Red',
-  specs: {
-    compatibility: 'Xbox Series X|S, Xbox One, Windows, Android & iOS',
-    type: 'Wireless Controller',
-    includes: 'AA Batteries'
-  }
-},
-{
-  id: 'xbox-controller-black',
-  name: 'Xbox Controller for Xbox Series X|S',
-  image: '/images/Products/more/xbox-seriesxs.png',
-  price: 350.00,
-  category: 'gaming',
-  availability: 'In Stock',
-  color: 'Black',
-  specs: {
-    compatibility: 'Xbox Series X|S, Xbox One, Windows, Android & iOS',
-    type: 'Wireless Controller'
-  }
-},
 
-//SKULLCANDY SPEAKERS)
-{
-  id: 'skullcandy-barrel',
-  name: 'Skull Candy Barrel Speaker',
-  image: '/images/Products/more/skull-candy-barrel-speaker.png',
-  price: 999.00,
-  category: 'speakers',
-  availability: 'In Stock',
-  color: 'Blue & Black (1), Orange & Black (1)',
-  specs: {
-    battery: '12 hours battery life',
-    waterproof: 'IPX5 water resistant',
-    features: 'Skull Candy multi-link',
-    lighting: 'LED light show'
-  }
-},
-{
-  id: 'skullcandy-stomp',
-  name: 'Skull Candy STOMP',
-  image: '/images/Products/more/skull-candy-stomp.png',
-  price: 950.00,
-  category: 'speakers',
-  availability: 'In Stock',
-  specs: {
-    battery: '12 hours battery life',
-    waterproof: 'IPX7 Waterproof',
-    features: 'Skull Candy multi-link',
-    lighting: 'LED light show'
-  }
-},
- // JBL SPEAKERS (1-10)
-    {
-      id: 1,
-      name: "JBL GO 4 Portable Speaker - Navy Blue",
-      price: 220.00,
-      image: "/images/Products/more/jbl-go4-navy.png",
-      description: "Ultra-portable waterproof Bluetooth speaker with bold JBL Pro Sound. Features 7 hours playtime, IP67 waterproof and dustproof rating.",
-      category: "speakers",
-      specs: {
-        bluetooth: "Bluetooth 5.3",
-        battery: "7 hours battery life",
-        waterproof: "IP67 Waterproof",
-        design: "Compact with loop"
-      }
-    },
-    {
-      id: 2,
-      name: "JBL CLIP 4 Portable Speaker - Color Options",
-      price: 220.00,
-      image: "/images/Products/more/jbl-go4-colors.png",
-      description: "Choose your style! Ultra-portable waterproof speaker available in multiple vibrant colors including Camo, White, Red, and Blue.",
-      category: "speakers",
-      specs: {
-        bluetooth: "Bluetooth 5.3",
-        battery: "7 hours battery life",
-        waterproof: "IP67 Waterproof",
-        colors: "Multiple options"
-      }
-    },
-    {
-      id: 3,
-      name: "JBL GO 3 Portable Speaker Collection",
-      price: 199.00,
-      image: "/images/Products/more/jbl-go3-collection.png",
-      description: "Portable waterproof speaker with powerful audio and bold design. Available in Gray/Blue, Blue, Black, Teal/Green colors.",
-      category: "speakers",
-      specs: {
-        bluetooth: "Bluetooth 5.1",
-        battery: "5 hours playtime",
-        waterproof: "IP67 Waterproof",
-        colors: "Vibrant options"
-      }
-    },
-    {
-      id: 4,
-      name: "JBL Pulse 4 Portable Speaker",
-      price: 599.00,
-      image: "/images/Products/more/jbl-pulse5.png",
-      description: "360-degree sound with customizable lightshow. Features ambient light effects that sync with your music for an immersive audiovisual experience.",
-      category: "speakers",
-      specs: {
-        feature: "360° LED Lightshow",
-        battery: "12 hours playtime",
-        waterproof: "IP67 Waterproof",
-        connectivity: "PartyBoost compatible"
-      }
-    },
-    {
-      id: 5,
-      name: "JBL Flip 6 Waterproof Speaker - Multiple Colors",
-      price: 499.00,
-      image: "/images/Products/more/jbl-flip6-colors.png",
-      description: "Powerful portable Bluetooth speaker with 12 hours of playtime. IP67 waterproof and dustproof. Available in Red, Black, Teal, and Black/Red.",
-      category: "speakers",
-      specs: {
-        bluetooth: "Bluetooth 5.1",
-        battery: "12 hours battery life",
-        waterproof: "IP67 Waterproof & Dustproof",
-        feature: "PartyBoost & 2-way speakers"
-      }
-    },
-    {
-      id: 6,
-      name: "JBL Boombox 3 Portable Speaker - Black",
-      price: 1800.00,
-      image: "/images/Products/more/jbl-boombox3-black.png",
-      description: "Massive JBL Original Pro Sound with the deepest bass. 24 hours of playtime, IP67 waterproof, and built-in powerbank.",
-      category: "speakers",
-      specs: {
-        battery: "24 hours battery life",
-        waterproof: "IP67 Waterproof & Dustproof",
-        feature: "Built-in powerbank",
-        speakers: "3-way speakers"
-      }
-    },
-    {
-      id: 7,
-      name: "JBL Boombox 3 Portable Speaker - Squad Camo",
-      price: 1800.00,
-      image: "/images/Products/more/jbl-boombox3-camo.png",
-      description: "Limited edition Squad camouflage design. Massive sound, deepest bass, 24-hour battery life with military-inspired aesthetics.",
-      category: "speakers",
-      specs: {
-        battery: "24 hours battery life",
-        waterproof: "IP67 Waterproof & Dustproof",
-        design: "Squad Camo edition",
-        feature: "PartyBoost compatible"
-      }
-    },
-    {
-      id: 9,
-      name: "JBL Xtreme 4 Portable Speaker - Multiple Colors",
-      price: 1250.00,
-      image: "/images/Products/more/jbl-xtreme4-colors.png",
-      description: "Powerful portable speaker with shoulder strap. 24 hours playtime, IP67 waterproof. Available in Black, Blue, and Camo editions.",
-      category: "speakers",
-      specs: {
-        bluetooth: "Bluetooth 5.3",
-        battery: "24 hours battery life",
-        waterproof: "IP67 Waterproof & Dustproof",
-        feature: "Dual JBL Bass Radiators"
-      }
-    },
-    {
-      id: 10,
-      name: "JBL Charge 5 Portable Speaker Collection",
-      price: 599.00,
-      image: "/images/Products/more/jbl-charge5-colors.png",
-      description: "Bold JBL Original Pro Sound with IP67 waterproof rating. 20 hours playtime. Available in Gray, Black, Red, and Teal colors.",
-      category: "speakers",
-      specs: {
-        bluetooth: "Bluetooth 5.1",
-        battery: "20 hours battery life",
-        waterproof: "IP67 Waterproof & Dustproof",
-        feature: "Built-in powerbank"
-      }
-    },
-    {
-  id: 11,
-  name: "JBL Charge 6 Portable Speaker",
-  price: 720.00,
-  image: "/images/Products/tech-audio/jbl-charge-6.png",
-  description: "Portable Waterproof & Drop-Proof Bluetooth Speaker. Bold Pro Sound with AI Sound Boost, 28Hrs of Playtime, Built-in powerbank.",
-  category: "speakers",
-  specs: {
-    bluetooth: "Bluetooth with USB Connectivity",
-    battery: "28 hours battery life",
-    waterproof: "Waterproof & Drop-Proof",
-    power: "45W Maximum Output",
-    frequency: "20 KHz Frequency Response",
-    audio: "Stereo Audio Output Mode",
-    feature: "Built-in powerbank with AI Sound Boost"
-  }
- },
-    // EARBUDS
+   // EARBUDS
     {
       id: 16,
       name: "Premium Wireless Earbuds Pro with ANC",
@@ -1143,88 +1225,7 @@ export default function TechAudioCategory() {
   }
 },
 
-// SPEAKERS - Additional Skull Candy
-{
-  id: 'skullcandy-ounce-red',
-  name: 'Skull Candy Ounce',
-  image: '/images/Products/more/skull-candy-ounce-red.png',
-  price: 160.00,
-  category: 'speakers',
-  availability: 'In Stock',
-  specs: {
-    battery: '16 hours battery',
-    waterproof: 'IPX7 waterproof'
-  }
-},
-{
-  id: 'skullcandy-kilo-black',
-  name: 'Skull Candy Kilo',
-  image: '/images/Products/more/skull-candy-kilo-black.png',
-  price: 210.00,
-  category: 'speakers',
-  availability: 'In Stock',
-  color: 'Black',
-  specs: {
-    battery: '24 hours battery',
-    waterproof: 'IPX7 waterproof'
-  }
-},
-{
-  id: 'skullcandy-terrain-mini',
-  name: 'Skull Candy Terrain Mini',
-  image: '/images/Products/more/skull-candy-terrain-mini.png',
-  price: 230.00,
-  category: 'speakers',
-  availability: 'In Stock',
-  color: 'Red',
-  specs: {
-    battery: '14 hours battery',
-    waterproof: 'IPX7 waterproof',
-    feature: 'Skull Candy Multi-link'
-  }
-},
-{
-  id: 'skullcandy-terrain-blue',
-  name: 'Skull Candy Terrain',
-  image: '/images/Products/more/skull-candy-terrain-blue.png',
-  price: 330.00,
-  category: 'speakers',
-  availability: 'Low Stock',
-  color: 'Blue',
-  specs: {
-    battery: '14 hours battery',
-    waterproof: 'IPX7 waterproof',
-    feature: 'Skull Candy Multi-link'
-  }
-},
-{
-  id: 'skullcandy-terrain-xl',
-  name: 'Skull Candy Terrain XL',
-  image: '/images/Products/more/skull-candy-terrain-xl.png',
-  price: 420.00,
-  category: 'speakers',
-  availability: 'In Stock',
-  color: 'Blue (2), Red (1)',
-  specs: {
-    battery: '18 hours battery',
-    waterproof: 'IPX7 waterproof',
-    feature: 'Skull Candy Multi-link'
-  }
-},
-{
-  id: 'fugoo-tough-speaker',
-  name: 'Fugoo Tough Bluetooth Speaker',
-  image: '/images/Products/more/fugoo-tough-bluetooth-speaker.png',
-  price: 200.00,
-  category: 'speakers',
-  availability: 'In Stock',
-  specs: {
-    waterproof: 'Waterproof design',
-    battery: '12 hours battery life',
-    sound: '360° sound'
-  }
-},
-  ];
+];
 
 const translations = {
   en: {
