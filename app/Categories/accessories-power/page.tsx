@@ -1687,7 +1687,7 @@ const translations = {
 </a>
                   
                   <a 
-  href={`https://wa.me/17844310777?text=Hi, I'm interested in ${selectedProduct.name}`}
+  href={`https://wa.me/17844310777?text=Hello!%20I%20placed%20my%20order%20using%20the%20Cell%20World%20app.%20Please%20confirm%20availability%20and%20pricing%20for%20the%20following%20item(s):%0A%0A${encodeURIComponent(selectedProduct.name)}`}
   target="_blank"
   rel="noopener noreferrer"
   onClick={() => trackEvent('whatsapp_click', { 

@@ -680,7 +680,7 @@ export default function MarineWorldPage() {
                     </a>
                     
                     <a 
-                      href={`https://wa.me/17844310777?text=Hi, I'm interested in ${selectedProduct.name}`}
+                      href={`https://wa.me/17844310777?text=Hello!%20I%20placed%20my%20order%20using%20the%20Cell%20World%20app.%20Please%20confirm%20availability%20and%20pricing%20for%20the%20following%20item(s):%0A%0A${encodeURIComponent(selectedProduct.name)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block w-full bg-gradient-to-r from-green-500 to-green-600 text-white font-bold py-3 rounded-lg text-center hover:from-green-400 hover:to-green-500 transition-all duration-300 shadow-lg"

@@ -181,7 +181,7 @@ export default function OrderPage() {
         <div className="mt-12 text-center">
           <p className="text-gray-400 mb-4">Know what you want?</p>
           <a 
-            href="https://wa.me/17844310777?text=Hi%20Cell%20World!%20I%20would%20like%20to%20place%20an%20order"
+            href="https://wa.me/17844310777?text=Hello!%20I%20placed%20my%20order%20using%20the%20Cell%20World%20app.%20Please%20confirm%20availability%20and%20pricing%20for%20the%20following%20item(s):"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
