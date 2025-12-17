@@ -27,15 +27,6 @@ export default function Home() {
     '/videos/cell-world-bg3.mp4'   // Add third video when available
   ];
   
-// Rotate videos every 10 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentVideoIndex((prev) => (prev + 1) % videos.length);
-    }, 10000);
-    
-    return () => clearInterval(interval);
-  }, [videos.length]);
-
   // Show banner after 1 second
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -57,7 +48,7 @@ export default function Home() {
   // Auto-rotate hot deals banner every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % 2);
+      setCurrentSlide((prev) => (prev + 1) % 3);
     }, 5000);
     
     return () => clearInterval(interval);
@@ -456,12 +447,74 @@ END COMMENT */}
           <X className="w-6 h-6 text-gray-700" />
         </button>
 
-        {/* Slide 1: Samsung Phones - Christmas Red & Green */}
+        {/* Slide 1: SUNDAY OPENING ANNOUNCEMENT - Gold/Yellow Theme */}
         <div 
           className={`absolute inset-0 transition-all duration-1000 ${
             currentSlide === 0 
               ? 'opacity-100 translate-x-0' 
               : 'opacity-0 -translate-x-full'
+          }`}
+          style={{
+            background: 'radial-gradient(circle at center, rgba(234, 179, 8, 1) 0%, rgba(202, 138, 4, 1) 50%, rgba(161, 98, 7, 1) 100%)',
+          }}
+        >
+          {/* Animated Shine Effects */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-10 left-10 w-60 h-60 bg-yellow-300/30 rounded-full animate-pulse-scale blur-3xl"></div>
+            <div className="absolute bottom-10 right-10 w-80 h-80 bg-orange-400/30 rounded-full animate-pulse-scale-delayed blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/2 w-48 h-48 bg-yellow-400/20 rounded-full animate-pulse-scale blur-3xl" style={{animationDelay: '0.5s'}}></div>
+          </div>
+
+          {/* Glowing Border Effect */}
+          <div className="absolute top-0 left-0 w-full h-3 bg-gradient-to-r from-yellow-300 via-orange-400 to-yellow-300 animate-shimmer"></div>
+          <div className="absolute bottom-0 left-0 w-full h-3 bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-400 animate-shimmer"></div>
+
+          <div className="relative h-full flex flex-col md:flex-row items-center justify-between p-6 md:px-12 z-10 min-h-[500px] md:min-h-[400px]">
+            
+            {/* Cell World Logo */}
+            <div className="w-full md:w-1/2 flex justify-center mb-6 md:mb-0">
+              <img 
+                src="/images/cell-world-logo.png"
+                alt="Cell World"
+                className="h-64 md:h-80 object-contain drop-shadow-2xl animate-zoom-in"
+                style={{
+                  filter: 'drop-shadow(0 0 40px rgba(255, 255, 255, 1)) drop-shadow(0 0 60px rgba(255, 215, 0, 0.8))'
+                }}
+              />
+            </div>
+            
+            {/* Sunday Opening Details */}
+            <div className="w-full md:w-1/2 text-white animate-slide-in-right text-center md:text-left">
+              <div className="text-5xl md:text-6xl mb-3">🎉</div>
+              <h2 className="text-3xl md:text-5xl font-black mb-3 animate-glow-pulse" style={{
+                textShadow: '0 0 30px rgba(255,255,255,1), 0 0 50px rgba(255,215,0,1), 0 4px 30px rgba(0,0,0,1)'
+              }}>
+                GREAT NEWS!
+              </h2>
+              <p className="text-xl md:text-2xl mb-4 font-bold">
+                Cell World is now open on Sundays! 🎉
+              </p>
+              <p className="text-lg md:text-xl mb-6 font-semibold">
+                Visit us 7 days a week for all your tech needs!<br/>
+                Same great service, more convenience!
+              </p>
+              <a 
+                href="/order"
+                className="inline-block bg-white text-yellow-700 px-8 py-4 rounded-full font-black text-xl hover:bg-yellow-100 transition-all shadow-2xl hover:scale-110"
+                onClick={() => setShowBanner(false)}
+              >
+                SHOP NOW →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Slide 2: Samsung Phones - Christmas Red & Green */}
+        <div 
+          className={`absolute inset-0 transition-all duration-1000 ${
+            currentSlide === 1 
+              ? 'opacity-100 translate-x-0' 
+              : 'opacity-0 translate-x-full'
           }`}
           style={{
             background: 'linear-gradient(135deg, #c41e3a 0%, #165b33 50%, #c41e3a 100%)',
@@ -482,51 +535,75 @@ END COMMENT */}
           <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-green-500 via-red-500 to-green-500 animate-shimmer"></div>
 
           <div className="relative h-full flex flex-col md:flex-row items-center justify-between p-6 md:px-12 z-10 min-h-[500px] md:min-h-[400px]">
-            {/* Image Section */}
-            <div className="w-full md:w-1/2 flex justify-center mb-6 md:mb-0">
-              <img 
-                src="/images/Products/phones/samsung2-galaxy-f05.png"
-                alt="Samsung F05"
-                className="h-64 md:h-96 object-contain drop-shadow-2xl animate-zoom-in"
-                style={{
-                  filter: 'drop-shadow(0 0 30px rgba(255, 255, 255, 0.8))'
-                }}
-              />
-            </div>
             
-            {/* Slide 1: Samsung Phones */}
-<div className="w-full md:w-1/2 text-white animate-slide-in-right text-center md:text-left">
-  <div className="bg-red-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-full inline-block mb-2 md:mb-3 font-black text-sm md:text-lg animate-pulse shadow-xl">
-    🎄 CHRISTMAS SPECIAL 🎄
+            {/* Image Section with DRAMATIC EFFECTS */}
+<div className="w-full md:w-1/2 flex justify-center mb-6 md:mb-0 relative">
+  {/* Pulsating Glow Rings */}
+  <div className="absolute inset-0 flex items-center justify-center">
+    <div className="w-72 h-72 md:w-96 md:h-96 rounded-full bg-white/20 animate-ping-slow"></div>
+    <div className="absolute w-64 h-64 md:w-80 md:h-80 rounded-full bg-red-500/30 animate-ping-slower"></div>
+    <div className="absolute w-56 h-56 md:w-72 md:h-72 rounded-full bg-green-500/30 animate-ping-slowest"></div>
   </div>
-  <h2 className="text-2xl md:text-4xl font-black mb-2 md:mb-3 animate-glow-pulse" style={{
-    textShadow: '0 0 20px rgba(255,255,255,1), 0 0 40px rgba(255,215,0,0.8)'
-  }}>
-    Samsung A06 • A05 • F05
-  </h2>
-  <p className="text-sm md:text-lg mb-3 md:mb-4 font-semibold">Does your phone need CPR every morning to turn on?” 😵‍💫🤲 • Tapping… shaking… begging… praying… 🙏 • That phone retired! Buy Now!</p>
-  <div className="text-3xl md:text-5xl font-black mb-3 md:mb-4 animate-bounce-gentle" style={{
-    textShadow: '0 4px 20px rgba(255,215,0,0.8)'
-  }}>
-    From $450
+  
+  {/* Rotating Gradient Ring */}
+  <div className="absolute inset-0 flex items-center justify-center">
+    <div className="w-80 h-80 md:w-[450px] md:h-[450px] rounded-full animate-spin-slow" style={{
+      background: 'conic-gradient(from 0deg, transparent, rgba(255, 0, 0, 0.4), transparent, rgba(0, 255, 0, 0.4), transparent)',
+    }}></div>
   </div>
-  <a 
-    href="/Categories/phones"
-    className="inline-block bg-white text-red-700 px-6 py-3 md:px-8 md:py-4 rounded-full font-black text-base md:text-xl hover:bg-yellow-400 hover:text-red-800 transition-all shadow-2xl hover:scale-110"
-    onClick={() => setShowBanner(false)}
-  >
-    🎁 SHOP NOW →
-            </a>
-          </div>
+  
+  {/* Phone Image with Multiple Animations */}
+  <img 
+    src="/images/Products/phones/samsung2-galaxy-f05.png"
+    alt="Samsung F05"
+    className="relative z-10 h-64 md:h-96 object-contain"
+    style={{
+      filter: 'drop-shadow(0 0 40px rgba(255, 255, 255, 1)) drop-shadow(0 0 80px rgba(255, 0, 0, 0.6)) drop-shadow(0 0 120px rgba(0, 255, 0, 0.4))',
+      animation: 'phone-dramatic 3s ease-in-out infinite, float-phone 4s ease-in-out infinite'
+    }}
+  />
+  
+  {/* Sparkle Effects */}
+  <div className="absolute top-10 right-10 text-4xl animate-sparkle">✨</div>
+  <div className="absolute bottom-10 left-10 text-3xl animate-sparkle-delayed">⭐</div>
+  <div className="absolute top-1/2 left-5 text-2xl animate-sparkle" style={{animationDelay: '1s'}}>💫</div>
+</div>
+            
+            {/* Samsung Phones Details */}
+            <div className="w-full md:w-1/2 text-white animate-slide-in-right text-center md:text-left">
+              <div className="bg-red-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-full inline-block mb-2 md:mb-3 font-black text-sm md:text-lg animate-pulse shadow-xl">
+                🎄 CHRISTMAS SPECIAL 🎄
+              </div>
+              <h2 className="text-2xl md:text-4xl font-black mb-2 md:mb-3 animate-glow-pulse" style={{
+                textShadow: '0 0 20px rgba(255,255,255,1), 0 0 40px rgba(255,215,0,0.8)'
+              }}>
+                Samsung A06 • A05 • F05
+              </h2>
+              <p className="text-sm md:text-lg mb-3 md:mb-4 font-semibold">Does your phone need CPR every morning to turn on?" 😵‍💫🤲 • Tapping… shaking… begging… praying… 🙏 • That phone retired! Buy Now!</p>
+              <div className="text-3xl md:text-5xl font-black mb-3 md:mb-4 animate-bounce-gentle" style={{
+                textShadow: '0 4px 20px rgba(255,215,0,0.8)'
+              }}>
+                From $450
+              </div>
+              <a 
+                href="/Categories/phones"
+                className="inline-block bg-white text-red-700 px-6 py-3 md:px-8 md:py-4 rounded-full font-black text-base md:text-xl hover:bg-yellow-400 hover:text-red-800 transition-all shadow-2xl hover:scale-110"
+                onClick={() => setShowBanner(false)}
+              >
+                🎁 SHOP NOW →
+              </a>
+            </div>
           </div>
         </div>
 
-        {/* Slide 2: Speakers - IT'S PARANG TIME */}
+        {/* Slide 3: Speakers - IT'S PARANG TIME */}
         <div 
           className={`absolute inset-0 transition-all duration-1000 ${
-            currentSlide === 1 
+            currentSlide === 2 
               ? 'opacity-100 translate-x-0' 
-              : 'opacity-0 translate-x-full'
+              : currentSlide < 2
+                ? 'opacity-0 translate-x-full'
+                : 'opacity-0 -translate-x-full'
           }`}
           style={{
             background: 'radial-gradient(circle at center, rgba(29, 78, 216, 1) 0%, rgba(30, 58, 138, 1) 50%, rgba(17, 24, 39, 1) 100%)',
@@ -551,80 +628,80 @@ END COMMENT */}
           <div className="relative h-full flex flex-col md:flex-row items-center justify-between p-6 md:px-16 z-10 min-h-[600px] md:min-h-[500px]">
             
             {/* Speaker Images - Pyramid Layout */}
-<div className="w-full md:w-1/2 mb-6 md:mb-0">
-  <div className="flex flex-col gap-4 md:gap-6 md:pr-8">
-    {/* Top Row - Hero Speaker (Centered) */}
-    <div className="flex justify-center">
-      <div className="bg-white/20 backdrop-blur-md rounded-2xl p-4 md:p-6 flex items-center justify-center shadow-2xl border border-white/30 w-48 md:w-64">
-        <img 
-          src="/images/Products/more/rca-levelup-speaker.png" 
-          alt="RCA CrystalBeat" 
-          className="h-28 md:h-40 object-contain" 
-          style={{
-            filter: 'drop-shadow(0 0 20px rgba(255, 215, 0, 0.9))'
-          }}
-        />
-      </div>
-    </div>
-    
-    {/* Bottom Row - 2 Speakers */}
-<div className="grid grid-cols-2 gap-4 md:gap-6">
-  <div className="bg-white/20 backdrop-blur-md rounded-2xl p-3 md:p-5 flex items-center justify-center shadow-2xl border border-white/30">
-    <img 
-      src="/images/Products/more/rca-holosound-speaker.png" 
-      alt="RCA HoloSound" 
-      className="h-20 md:h-28 object-contain" 
-      style={{
-        filter: 'drop-shadow(0 0 15px rgba(255, 255, 255, 0.8))'
-      }}
-    />
-  </div>
-  <div className="bg-white/20 backdrop-blur-md rounded-2xl p-3 md:p-5 flex items-center justify-center shadow-2xl border border-white/30">
-    <img 
-      src="/images/Products/more/skull-candy-barrel-speaker.png" 
-      alt="Skull Candy Barrel" 
-      className="h-20 md:h-28 object-contain" 
-      style={{
-        filter: 'drop-shadow(0 0 15px rgba(255, 255, 255, 0.8))'
-      }}
-    />
-  </div>
-</div>
-  </div>
-</div>
+            <div className="w-full md:w-1/2 mb-6 md:mb-0">
+              <div className="flex flex-col gap-4 md:gap-6 md:pr-8">
+                {/* Top Row - Hero Speaker (Centered) */}
+                <div className="flex justify-center">
+                  <div className="bg-white/20 backdrop-blur-md rounded-2xl p-4 md:p-6 flex items-center justify-center shadow-2xl border border-white/30 w-48 md:w-64">
+                    <img 
+                      src="/images/Products/more/rca-levelup-speaker.png" 
+                      alt="RCA CrystalBeat" 
+                      className="h-28 md:h-40 object-contain" 
+                      style={{
+                        filter: 'drop-shadow(0 0 20px rgba(255, 215, 0, 0.9))'
+                      }}
+                    />
+                  </div>
+                </div>
+                
+                {/* Bottom Row - 2 Speakers */}
+                <div className="grid grid-cols-2 gap-4 md:gap-6">
+                  <div className="bg-white/20 backdrop-blur-md rounded-2xl p-3 md:p-5 flex items-center justify-center shadow-2xl border border-white/30">
+                    <img 
+                      src="/images/Products/more/rca-holosound-speaker.png" 
+                      alt="RCA HoloSound" 
+                      className="h-20 md:h-28 object-contain" 
+                      style={{
+                        filter: 'drop-shadow(0 0 15px rgba(255, 255, 255, 0.8))'
+                      }}
+                    />
+                  </div>
+                  <div className="bg-white/20 backdrop-blur-md rounded-2xl p-3 md:p-5 flex items-center justify-center shadow-2xl border border-white/30">
+                    <img 
+                      src="/images/Products/more/skull-candy-barrel-speaker.png" 
+                      alt="Skull Candy Barrel" 
+                      className="h-20 md:h-28 object-contain" 
+                      style={{
+                        filter: 'drop-shadow(0 0 15px rgba(255, 255, 255, 0.8))'
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
             
-            {/* Slide 2: Speakers Details */}
-<div className="w-full md:w-1/2 text-center px-4">
-  <div className="text-4xl md:text-6xl mb-2 md:mb-3">🔊</div>
-  <h2 className="text-3xl md:text-5xl font-black mb-2 md:mb-3 text-yellow-300 animate-glow-pulse" style={{
-    textShadow: '0 0 30px rgba(255,215,0,1), 0 0 50px rgba(255,255,255,1), 0 4px 30px rgba(0,0,0,1), -2px -2px 0 rgba(0,0,0,0.8), 2px -2px 0 rgba(0,0,0,0.8), -2px 2px 0 rgba(0,0,0,0.8), 2px 2px 0 rgba(0,0,0,0.8)'
-  }}>
-    IT'S PARANG TIME!
-  </h2>
-  <p className="text-sm md:text-lg mb-3 md:mb-4 font-bold text-white drop-shadow-lg">Get Our Best-Selling Speakers for Clean, Powerful Sound!</p>
-  <div className="text-2xl md:text-4xl font-black mb-3 md:mb-4 text-yellow-300 animate-bounce-gentle" style={{
-    textShadow: '0 4px 20px rgba(0,0,0,1), 0 0 40px rgba(255,215,0,0.8), 0 0 60px rgba(255,255,255,0.5), -2px -2px 0 rgba(0,0,0,0.8), 2px -2px 0 rgba(0,0,0,0.8), -2px 2px 0 rgba(0,0,0,0.8), 2px 2px 0 rgba(0,0,0,0.8)'
-  }}>
-    $220 - $1,800
-  </div>
-  <a 
-    href="/Categories/tech-audio"
-    className="inline-block bg-yellow-400 text-blue-900 px-6 py-3 md:px-8 md:py-4 rounded-full font-black text-base md:text-xl hover:bg-white hover:text-blue-700 transition-all shadow-2xl hover:scale-110"
-    onClick={() => setShowBanner(false)}
-  >
-    🎵 SHOP SPEAKERS →
+            {/* Speakers Details */}
+            <div className="w-full md:w-1/2 text-center px-4">
+              <div className="text-4xl md:text-6xl mb-2 md:mb-3">🔊</div>
+              <h2 className="text-3xl md:text-5xl font-black mb-2 md:mb-3 text-yellow-300 animate-glow-pulse" style={{
+                textShadow: '0 0 30px rgba(255,215,0,1), 0 0 50px rgba(255,255,255,1), 0 4px 30px rgba(0,0,0,1), -2px -2px 0 rgba(0,0,0,0.8), 2px -2px 0 rgba(0,0,0,0.8), -2px 2px 0 rgba(0,0,0,0.8), 2px 2px 0 rgba(0,0,0,0.8)'
+              }}>
+                IT'S PARANG TIME!
+              </h2>
+              <p className="text-sm md:text-lg mb-3 md:mb-4 font-bold text-white drop-shadow-lg">Get Our Best-Selling Speakers for Clean, Powerful Sound!</p>
+              <div className="text-2xl md:text-4xl font-black mb-3 md:mb-4 text-yellow-300 animate-bounce-gentle" style={{
+                textShadow: '0 4px 20px rgba(0,0,0,1), 0 0 40px rgba(255,215,0,0.8), 0 0 60px rgba(255,255,255,0.5), -2px -2px 0 rgba(0,0,0,0.8), 2px -2px 0 rgba(0,0,0,0.8), -2px 2px 0 rgba(0,0,0,0.8), 2px 2px 0 rgba(0,0,0,0.8)'
+              }}>
+                $220 - $1,800
+              </div>
+              <a 
+                href="/Categories/tech-audio"
+                className="inline-block bg-yellow-400 text-blue-900 px-6 py-3 md:px-8 md:py-4 rounded-full font-black text-base md:text-xl hover:bg-white hover:text-blue-700 transition-all shadow-2xl hover:scale-110"
+                onClick={() => setShowBanner(false)}
+              >
+                🎵 SHOP SPEAKERS →
               </a>
             </div>
           </div>
         </div>
 
-        {/* Slide Indicators - Christmas Colors */}
+        {/* Slide Indicators - Updated for 3 slides */}
         <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-3 z-20">
           <button 
             onClick={() => setCurrentSlide(0)}
             className={`h-4 rounded-full transition-all ${
               currentSlide === 0 
-                ? 'bg-red-600 w-10 shadow-lg shadow-red-500/50' 
+                ? 'bg-yellow-400 w-10 shadow-lg shadow-yellow-500/50' 
                 : 'bg-white/70 w-4 hover:bg-white'
             }`}
           />
@@ -632,7 +709,15 @@ END COMMENT */}
             onClick={() => setCurrentSlide(1)}
             className={`h-4 rounded-full transition-all ${
               currentSlide === 1 
-                ? 'bg-yellow-400 w-10 shadow-lg shadow-yellow-500/50' 
+                ? 'bg-red-600 w-10 shadow-lg shadow-red-500/50' 
+                : 'bg-white/70 w-4 hover:bg-white'
+            }`}
+          />
+          <button 
+            onClick={() => setCurrentSlide(2)}
+            className={`h-4 rounded-full transition-all ${
+              currentSlide === 2 
+                ? 'bg-blue-400 w-10 shadow-lg shadow-blue-500/50' 
                 : 'bg-white/70 w-4 hover:bg-white'
             }`}
           />
@@ -842,6 +927,101 @@ END COMMENT */}
 }
 .animate-dramatic-popup {
   animation: dramatic-popup 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+  @keyframes ping-slow {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% { 
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+@keyframes ping-slower {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% { 
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+@keyframes ping-slowest {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% { 
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes phone-dramatic {
+  0%, 100% { 
+    transform: scale(1) rotateY(0deg);
+  }
+  25% {
+    transform: scale(1.1) rotateY(5deg);
+  }
+  50% { 
+    transform: scale(1.15) rotateY(0deg);
+  }
+  75% {
+    transform: scale(1.1) rotateY(-5deg);
+  }
+}
+@keyframes float-phone {
+  0%, 100% { 
+    transform: translateY(0px);
+  }
+  50% { 
+    transform: translateY(-20px);
+  }
+}
+@keyframes sparkle {
+  0%, 100% { 
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  50% { 
+    opacity: 0.3;
+    transform: scale(1.5) rotate(180deg);
+  }
+}
+@keyframes sparkle-delayed {
+  0%, 100% { 
+    opacity: 0.8;
+    transform: scale(1) rotate(0deg);
+  }
+  50% { 
+    opacity: 0.2;
+    transform: scale(1.3) rotate(-180deg);
+  }
+}
+
+.animate-ping-slow {
+  animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+.animate-ping-slower {
+  animation: ping-slower 3s cubic-bezier(0, 0, 0.2, 1) infinite 0.5s;
+}
+.animate-ping-slowest {
+  animation: ping-slowest 4s cubic-bezier(0, 0, 0.2, 1) infinite 1s;
+}
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+.animate-sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+.animate-sparkle-delayed {
+  animation: sparkle-delayed 2.5s ease-in-out infinite 0.5s;
 }
 `}</style>
         
