@@ -447,44 +447,67 @@ END COMMENT */}
           <X className="w-6 h-6 text-gray-700" />
         </button>
 
-        <div className="relative h-full flex flex-col md:flex-row items-center justify-between p-4 md:p-6 md:px-12 z-10 min-h-[600px] md:min-h-[450px]">
-  
-  {/* Cell World Logo */}
-  <div className="w-full md:w-1/2 flex justify-center mb-4 md:mb-0">
-    <img 
-      src="/images/cell-world-logo.png"
-      alt="Cell World"
-      className="h-40 md:h-80 object-contain drop-shadow-2xl animate-zoom-in"
-      style={{
-        filter: 'drop-shadow(0 0 40px rgba(255, 255, 255, 1)) drop-shadow(0 0 60px rgba(255, 215, 0, 0.8))'
-      }}
-    />
-  </div>
-  
-  {/* Sunday Opening Details */}
-  <div className="w-full md:w-1/2 text-white animate-slide-in-right text-center md:text-left px-2">
-    <div className="text-4xl md:text-6xl mb-2 md:mb-3">🎉</div>
-    <h2 className="text-2xl md:text-5xl font-black mb-2 md:mb-3 animate-glow-pulse" style={{
-      textShadow: '0 0 30px rgba(255,255,255,1), 0 0 50px rgba(255,215,0,1), 0 4px 30px rgba(0,0,0,1)'
-    }}>
-      GREAT NEWS!
-    </h2>
-    <p className="text-lg md:text-2xl mb-2 md:mb-4 font-bold">
-      Cell World is now open on Sundays! 🎉
-    </p>
-    <p className="text-sm md:text-xl mb-4 md:mb-6 font-semibold leading-relaxed">
-      Visit us 7 days a week for all your tech needs!<br/>
-      Same great service, more convenience!
-    </p>
-    <a 
-      href="/order"
-      className="inline-block bg-white text-yellow-700 px-6 py-3 md:px-8 md:py-4 rounded-full font-black text-base md:text-xl hover:bg-yellow-100 transition-all shadow-2xl hover:scale-110"
-      onClick={() => setShowBanner(false)}
-    >
-      SHOP NOW →
-    </a>
-  </div>
-</div>
+        {/* Slide 1: SUNDAY OPENING ANNOUNCEMENT - Gold/Yellow Theme */}
+        <div 
+          className={`absolute inset-0 transition-all duration-1000 ${
+            currentSlide === 0 
+              ? 'opacity-100 translate-x-0' 
+              : 'opacity-0 -translate-x-full'
+          }`}
+          style={{
+            background: 'radial-gradient(circle at center, rgba(234, 179, 8, 1) 0%, rgba(202, 138, 4, 1) 50%, rgba(161, 98, 7, 1) 100%)',
+          }}
+        >
+          {/* Animated Shine Effects */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-10 left-10 w-60 h-60 bg-yellow-300/30 rounded-full animate-pulse-scale blur-3xl"></div>
+            <div className="absolute bottom-10 right-10 w-80 h-80 bg-orange-400/30 rounded-full animate-pulse-scale-delayed blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/2 w-48 h-48 bg-yellow-400/20 rounded-full animate-pulse-scale blur-3xl" style={{animationDelay: '0.5s'}}></div>
+          </div>
+
+          {/* Glowing Border Effect */}
+          <div className="absolute top-0 left-0 w-full h-3 bg-gradient-to-r from-yellow-300 via-orange-400 to-yellow-300 animate-shimmer"></div>
+          <div className="absolute bottom-0 left-0 w-full h-3 bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-400 animate-shimmer"></div>
+
+          <div className="relative h-full flex flex-col md:flex-row items-center justify-between p-6 md:px-12 z-10 min-h-[500px] md:min-h-[400px]">
+            
+            {/* Cell World Logo */}
+            <div className="w-full md:w-1/2 flex justify-center mb-6 md:mb-0">
+              <img 
+                src="/images/cell-world-logo.png"
+                alt="Cell World"
+                className="h-64 md:h-80 object-contain drop-shadow-2xl animate-zoom-in"
+                style={{
+                  filter: 'drop-shadow(0 0 40px rgba(255, 255, 255, 1)) drop-shadow(0 0 60px rgba(255, 215, 0, 0.8))'
+                }}
+              />
+            </div>
+            
+            {/* Sunday Opening Details */}
+            <div className="w-full md:w-1/2 text-white animate-slide-in-right text-center md:text-left">
+              <div className="text-5xl md:text-6xl mb-3">🎉</div>
+              <h2 className="text-3xl md:text-5xl font-black mb-3 animate-glow-pulse" style={{
+                textShadow: '0 0 30px rgba(255,255,255,1), 0 0 50px rgba(255,215,0,1), 0 4px 30px rgba(0,0,0,1)'
+              }}>
+                GREAT NEWS!
+              </h2>
+              <p className="text-xl md:text-2xl mb-4 font-bold">
+                Cell World is now open on Sundays! 🎉
+              </p>
+              <p className="text-lg md:text-xl mb-6 font-semibold">
+                Visit us 7 days a week for all your tech needs!<br/>
+                Same great service, more convenience!
+              </p>
+              <a 
+                href="/order"
+                className="inline-block bg-white text-yellow-700 px-8 py-4 rounded-full font-black text-xl hover:bg-yellow-100 transition-all shadow-2xl hover:scale-110"
+                onClick={() => setShowBanner(false)}
+              >
+                SHOP NOW →
+              </a>
+            </div>
+          </div>
+        </div>
 
         {/* Slide 2: Samsung Phones - Christmas Red & Green */}
         <div 
@@ -560,7 +583,7 @@ END COMMENT */}
               <div className="text-3xl md:text-5xl font-black mb-3 md:mb-4 animate-bounce-gentle" style={{
                 textShadow: '0 4px 20px rgba(255,215,0,0.8)'
               }}>
-                From $450
+                From $420
               </div>
               <a 
                 href="/Categories/phones"
