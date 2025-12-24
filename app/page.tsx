@@ -46,13 +46,13 @@ export default function Home() {
   }, []);
 
   // Auto-rotate hot deals banner every 5 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % 3);
-    }, 5000);
-    
-    return () => clearInterval(interval);
-  }, []);
+useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrentSlide((prev) => (prev + 1) % 4); // Changed from % 3 to % 4
+  }, 15000);
+  
+  return () => clearInterval(interval);
+}, []);
 
   // IMPROVED: Faster loading with timeout fallback
   useEffect(() => {
@@ -447,10 +447,54 @@ END COMMENT */}
           <X className="w-6 h-6 text-gray-700" />
         </button>
 
+        {/* Slide 1: Merry Christmas Video */}
+<div 
+  className={`absolute inset-0 transition-all duration-1000 ${
+    currentSlide === 0 
+      ? 'opacity-100 translate-x-0' 
+      : 'opacity-0 -translate-x-full'
+  }`}
+  style={{
+    background: 'linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)',
+  }}
+>
+  {/* Video Container - Centered vertical video */}
+  <div className="relative h-full w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800">
+    <div className="relative" style={{ maxWidth: '400px', maxHeight: '550px', width: '100%' }}>
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="w-full h-auto rounded-2xl shadow-2xl"
+        style={{
+          filter: 'brightness(1.1) drop-shadow(0 0 40px rgba(255, 255, 255, 0.3))',
+          maxHeight: '550px',
+          objectFit: 'contain'
+        }}
+      >
+        <source src="/videos/christmas-greeting.mp4" type="video/mp4" />
+      </video>
+    </div>
+    
+    {/* Cell World logo overlay */}
+    <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+      <img 
+        src="/images/cell-world-logo.png"
+        alt="Cell World"
+        className="h-16 md:h-24 object-contain drop-shadow-2xl"
+        style={{
+          filter: 'drop-shadow(0 0 30px rgba(255, 255, 255, 0.8))'
+        }}
+      />
+    </div>
+  </div>
+</div>
+
         {/* Slide 1: SUNDAY OPENING ANNOUNCEMENT - Gold/Yellow Theme */}
         <div 
           className={`absolute inset-0 transition-all duration-1000 ${
-            currentSlide === 0 
+            currentSlide === 1 
               ? 'opacity-100 translate-x-0' 
               : 'opacity-0 -translate-x-full'
           }`}
@@ -512,7 +556,7 @@ END COMMENT */}
         {/* Slide 2: Samsung Phones - Christmas Red & Green */}
         <div 
           className={`absolute inset-0 transition-all duration-1000 ${
-            currentSlide === 1 
+            currentSlide === 2 
               ? 'opacity-100 translate-x-0' 
               : 'opacity-0 translate-x-full'
           }`}
@@ -597,14 +641,14 @@ END COMMENT */}
         </div>
 
         {/* Slide 3: Speakers - IT'S PARANG TIME */}
-        <div 
-          className={`absolute inset-0 transition-all duration-1000 ${
-            currentSlide === 2 
-              ? 'opacity-100 translate-x-0' 
-              : currentSlide < 2
-                ? 'opacity-0 translate-x-full'
-                : 'opacity-0 -translate-x-full'
-          }`}
+<div 
+  className={`absolute inset-0 transition-all duration-1000 ${
+    currentSlide === 3 
+      ? 'opacity-100 translate-x-0' 
+      : currentSlide < 3
+        ? 'opacity-0 translate-x-full'
+        : 'opacity-0 -translate-x-full'
+  }`}
           style={{
             background: 'radial-gradient(circle at center, rgba(29, 78, 216, 1) 0%, rgba(30, 58, 138, 1) 50%, rgba(17, 24, 39, 1) 100%)',
           }}
@@ -694,38 +738,48 @@ END COMMENT */}
             </div>
           </div>
         </div>
-
-        {/* Slide Indicators - Updated for 3 slides */}
-        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-3 z-20">
-          <button 
-            onClick={() => setCurrentSlide(0)}
-            className={`h-4 rounded-full transition-all ${
-              currentSlide === 0 
-                ? 'bg-yellow-400 w-10 shadow-lg shadow-yellow-500/50' 
-                : 'bg-white/70 w-4 hover:bg-white'
-            }`}
-          />
-          <button 
-            onClick={() => setCurrentSlide(1)}
-            className={`h-4 rounded-full transition-all ${
-              currentSlide === 1 
-                ? 'bg-red-600 w-10 shadow-lg shadow-red-500/50' 
-                : 'bg-white/70 w-4 hover:bg-white'
-            }`}
-          />
-          <button 
-            onClick={() => setCurrentSlide(2)}
-            className={`h-4 rounded-full transition-all ${
-              currentSlide === 2 
-                ? 'bg-blue-400 w-10 shadow-lg shadow-blue-500/50' 
-                : 'bg-white/70 w-4 hover:bg-white'
-            }`}
-          />
         </div>
-      </div>
     </div>
   </div>
 )}
+
+        
+
+        {/* Slide Indicators - Updated for 4 slides */}
+<div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-3 z-20">
+  <button 
+    onClick={() => setCurrentSlide(0)}
+    className={`h-4 rounded-full transition-all ${
+      currentSlide === 0 
+        ? 'bg-white w-10 shadow-lg shadow-white/50' 
+        : 'bg-white/70 w-4 hover:bg-white'
+    }`}
+  />
+  <button 
+    onClick={() => setCurrentSlide(1)}
+    className={`h-4 rounded-full transition-all ${
+      currentSlide === 1 
+        ? 'bg-yellow-400 w-10 shadow-lg shadow-yellow-500/50' 
+        : 'bg-white/70 w-4 hover:bg-white'
+    }`}
+  />
+  <button 
+    onClick={() => setCurrentSlide(2)}
+    className={`h-4 rounded-full transition-all ${
+      currentSlide === 2 
+        ? 'bg-red-600 w-10 shadow-lg shadow-red-500/50' 
+        : 'bg-white/70 w-4 hover:bg-white'
+    }`}
+  />
+  <button 
+    onClick={() => setCurrentSlide(3)}
+    className={`h-4 rounded-full transition-all ${
+      currentSlide === 3 
+        ? 'bg-blue-400 w-10 shadow-lg shadow-blue-500/50' 
+        : 'bg-white/70 w-4 hover:bg-white'
+    }`}
+  />
+</div>
 
  {/* CSS for animations */}
 <style jsx>{`
@@ -1355,5 +1409,4 @@ END COMMENT */}
 
 </div>
 );
-}     
-  
+}
