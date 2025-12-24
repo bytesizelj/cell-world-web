@@ -460,7 +460,7 @@ END COMMENT */}
 >
   {/* Video Container - Centered vertical video */}
   <div className="relative h-full w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800">
-    <div className="relative" style={{ maxWidth: '400px', maxHeight: '550px', width: '100%' }}>
+    <div className="relative" style={{ maxWidth: '500px', width: '100%' }}>
       <video
         autoPlay
         loop
@@ -468,9 +468,7 @@ END COMMENT */}
         playsInline
         className="w-full h-auto rounded-2xl shadow-2xl"
         style={{
-          filter: 'brightness(1.1) drop-shadow(0 0 40px rgba(255, 255, 255, 0.3))',
-          maxHeight: '550px',
-          objectFit: 'contain'
+          filter: 'brightness(1.1) drop-shadow(0 0 40px rgba(255, 255, 255, 0.3))'
         }}
       >
         <source src="/videos/christmas-greeting.mp4" type="video/mp4" />
