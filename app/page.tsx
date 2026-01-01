@@ -427,7 +427,7 @@ useEffect(() => {
 )}
 END COMMENT */}
 
-{/* AUTO-ROTATING HOT DEALS BANNER - CHRISTMAS EDITION POPUP */}
+{/* AUTO-ROTATING HOT DEALS BANNER - NEW YEAR EDITION */}
 {showBanner && (
   <div 
     className="fixed inset-0 z-[60] flex items-center justify-center animate-fade-in"
@@ -447,7 +447,7 @@ END COMMENT */}
           <X className="w-6 h-6 text-gray-700" />
         </button>
 
-        {/* Slide 1: Merry Christmas Video */}
+ {/* Slide 1: Happy New Year Video */}
 <div 
   className={`absolute inset-0 transition-all duration-1000 ${
     currentSlide === 0 
@@ -455,24 +455,40 @@ END COMMENT */}
       : 'opacity-0 -translate-x-full'
   }`}
   style={{
-    background: 'linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)',
+    background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
   }}
 >
-  {/* Video Container - Centered vertical video */}
-  <div className="relative h-full w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800">
-    <div className="relative" style={{ maxWidth: '500px', width: '100%' }}>
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="w-full h-auto rounded-2xl shadow-2xl"
-        style={{
-          filter: 'brightness(1.1) drop-shadow(0 0 40px rgba(255, 255, 255, 0.3))'
-        }}
-      >
-        <source src="/videos/christmas-greeting.mp4" type="video/mp4" />
-      </video>
+  {/* Video Container - Centered with slight padding */}
+  <div className="relative h-full w-full flex items-center justify-center overflow-hidden p-8">
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="rounded-2xl shadow-2xl cursor-pointer"
+      style={{
+        maxWidth: '85%',
+        maxHeight: '85%',
+        width: 'auto',
+        height: 'auto',
+        filter: 'brightness(1.1) drop-shadow(0 0 40px rgba(255, 255, 255, 0.3))'
+      }}
+      onClick={(e) => {
+        const video = e.currentTarget;
+        if (video.muted) {
+          video.muted = false;
+          video.play();
+        } else {
+          video.muted = true;
+        }
+      }}
+    >
+      <source src="/videos/cell-world-new-year.mp4" type="video/mp4" />
+    </video>
+    
+    {/* Unmute indicator */}
+    <div className="absolute top-20 right-20 bg-white/90 px-4 py-2 rounded-full shadow-lg animate-pulse">
+      <p className="text-sm font-bold text-gray-800">🔇 Click video to unmute</p>
     </div>
     
     {/* Cell World logo overlay */}
@@ -488,73 +504,11 @@ END COMMENT */}
     </div>
   </div>
 </div>
-
-        {/* Slide 1: SUNDAY OPENING ANNOUNCEMENT - Gold/Yellow Theme */}
-        <div 
-          className={`absolute inset-0 transition-all duration-1000 ${
-            currentSlide === 1 
-              ? 'opacity-100 translate-x-0' 
-              : 'opacity-0 -translate-x-full'
-          }`}
-          style={{
-            background: 'radial-gradient(circle at center, rgba(234, 179, 8, 1) 0%, rgba(202, 138, 4, 1) 50%, rgba(161, 98, 7, 1) 100%)',
-          }}
-        >
-          {/* Animated Shine Effects */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-10 left-10 w-60 h-60 bg-yellow-300/30 rounded-full animate-pulse-scale blur-3xl"></div>
-            <div className="absolute bottom-10 right-10 w-80 h-80 bg-orange-400/30 rounded-full animate-pulse-scale-delayed blur-3xl"></div>
-            <div className="absolute top-1/2 left-1/2 w-48 h-48 bg-yellow-400/20 rounded-full animate-pulse-scale blur-3xl" style={{animationDelay: '0.5s'}}></div>
-          </div>
-
-          {/* Glowing Border Effect */}
-          <div className="absolute top-0 left-0 w-full h-3 bg-gradient-to-r from-yellow-300 via-orange-400 to-yellow-300 animate-shimmer"></div>
-          <div className="absolute bottom-0 left-0 w-full h-3 bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-400 animate-shimmer"></div>
-
-          <div className="relative h-full flex flex-col md:flex-row items-center justify-between p-6 md:px-12 z-10 min-h-[500px] md:min-h-[400px]">
-            
-            {/* Cell World Logo */}
-            <div className="w-full md:w-1/2 flex justify-center mb-6 md:mb-0">
-              <img 
-                src="/images/cell-world-logo.png"
-                alt="Cell World"
-                className="h-64 md:h-80 object-contain drop-shadow-2xl animate-zoom-in"
-                style={{
-                  filter: 'drop-shadow(0 0 40px rgba(255, 255, 255, 1)) drop-shadow(0 0 60px rgba(255, 215, 0, 0.8))'
-                }}
-              />
-            </div>
-            
-            {/* Sunday Opening Details */}
-            <div className="w-full md:w-1/2 text-white animate-slide-in-right text-center md:text-left">
-              <div className="text-5xl md:text-6xl mb-3">🎉</div>
-              <h2 className="text-3xl md:text-5xl font-black mb-3 animate-glow-pulse" style={{
-                textShadow: '0 0 30px rgba(255,255,255,1), 0 0 50px rgba(255,215,0,1), 0 4px 30px rgba(0,0,0,1)'
-              }}>
-                GREAT NEWS!
-              </h2>
-              <p className="text-xl md:text-2xl mb-4 font-bold">
-                Cell World is now open on Sundays! 🎉
-              </p>
-              <p className="text-lg md:text-xl mb-6 font-semibold">
-                Visit us 7 days a week for all your tech needs!<br/>
-                Same great service, more convenience!
-              </p>
-              <a 
-                href="/order"
-                className="inline-block bg-white text-yellow-700 px-8 py-4 rounded-full font-black text-xl hover:bg-yellow-100 transition-all shadow-2xl hover:scale-110"
-                onClick={() => setShowBanner(false)}
-              >
-                SHOP NOW →
-              </a>
-            </div>
-          </div>
-        </div>
-
+</div>
         {/* Slide 2: Samsung Phones - Christmas Red & Green */}
         <div 
           className={`absolute inset-0 transition-all duration-1000 ${
-            currentSlide === 2 
+            currentSlide === 1 
               ? 'opacity-100 translate-x-0' 
               : 'opacity-0 translate-x-full'
           }`}
@@ -579,37 +533,37 @@ END COMMENT */}
           <div className="relative h-full flex flex-col md:flex-row items-center justify-between p-6 md:px-12 z-10 min-h-[500px] md:min-h-[400px]">
             
             {/* Image Section with DRAMATIC EFFECTS */}
-<div className="w-full md:w-1/2 flex justify-center mb-6 md:mb-0 relative">
-  {/* Pulsating Glow Rings */}
-  <div className="absolute inset-0 flex items-center justify-center">
-    <div className="w-72 h-72 md:w-96 md:h-96 rounded-full bg-white/20 animate-ping-slow"></div>
-    <div className="absolute w-64 h-64 md:w-80 md:h-80 rounded-full bg-red-500/30 animate-ping-slower"></div>
-    <div className="absolute w-56 h-56 md:w-72 md:h-72 rounded-full bg-green-500/30 animate-ping-slowest"></div>
-  </div>
-  
-  {/* Rotating Gradient Ring */}
-  <div className="absolute inset-0 flex items-center justify-center">
-    <div className="w-80 h-80 md:w-[450px] md:h-[450px] rounded-full animate-spin-slow" style={{
-      background: 'conic-gradient(from 0deg, transparent, rgba(255, 0, 0, 0.4), transparent, rgba(0, 255, 0, 0.4), transparent)',
-    }}></div>
-  </div>
-  
-  {/* Phone Image with Multiple Animations */}
-  <img 
-    src="/images/Products/phones/samsung2-galaxy-f05.png"
-    alt="Samsung F05"
-    className="relative z-10 h-64 md:h-96 object-contain"
-    style={{
-      filter: 'drop-shadow(0 0 40px rgba(255, 255, 255, 1)) drop-shadow(0 0 80px rgba(255, 0, 0, 0.6)) drop-shadow(0 0 120px rgba(0, 255, 0, 0.4))',
-      animation: 'phone-dramatic 3s ease-in-out infinite, float-phone 4s ease-in-out infinite'
-    }}
-  />
-  
-  {/* Sparkle Effects */}
-  <div className="absolute top-10 right-10 text-4xl animate-sparkle">✨</div>
-  <div className="absolute bottom-10 left-10 text-3xl animate-sparkle-delayed">⭐</div>
-  <div className="absolute top-1/2 left-5 text-2xl animate-sparkle" style={{animationDelay: '1s'}}>💫</div>
-</div>
+            <div className="w-full md:w-1/2 flex justify-center mb-6 md:mb-0 relative">
+              {/* Pulsating Glow Rings */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-72 h-72 md:w-96 md:h-96 rounded-full bg-white/20 animate-ping-slow"></div>
+                <div className="absolute w-64 h-64 md:w-80 md:h-80 rounded-full bg-red-500/30 animate-ping-slower"></div>
+                <div className="absolute w-56 h-56 md:w-72 md:h-72 rounded-full bg-green-500/30 animate-ping-slowest"></div>
+              </div>
+              
+              {/* Rotating Gradient Ring */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-80 h-80 md:w-[450px] md:h-[450px] rounded-full animate-spin-slow" style={{
+                  background: 'conic-gradient(from 0deg, transparent, rgba(255, 0, 0, 0.4), transparent, rgba(0, 255, 0, 0.4), transparent)',
+                }}></div>
+              </div>
+              
+              {/* Phone Image with Multiple Animations */}
+              <img 
+                src="/images/Products/phones/samsung2-galaxy-f05.png"
+                alt="Samsung F05"
+                className="relative z-10 h-64 md:h-96 object-contain"
+                style={{
+                  filter: 'drop-shadow(0 0 40px rgba(255, 255, 255, 1)) drop-shadow(0 0 80px rgba(255, 0, 0, 0.6)) drop-shadow(0 0 120px rgba(0, 255, 0, 0.4))',
+                  animation: 'phone-dramatic 3s ease-in-out infinite, float-phone 4s ease-in-out infinite'
+                }}
+              />
+              
+              {/* Sparkle Effects */}
+              <div className="absolute top-10 right-10 text-4xl animate-sparkle">✨</div>
+              <div className="absolute bottom-10 left-10 text-3xl animate-sparkle-delayed">⭐</div>
+              <div className="absolute top-1/2 left-5 text-2xl animate-sparkle" style={{animationDelay: '1s'}}>💫</div>
+            </div>
             
             {/* Samsung Phones Details */}
             <div className="w-full md:w-1/2 text-white animate-slide-in-right text-center md:text-left">
@@ -638,146 +592,29 @@ END COMMENT */}
           </div>
         </div>
 
-        {/* Slide 3: Speakers - IT'S PARANG TIME */}
-<div 
-  className={`absolute inset-0 transition-all duration-1000 ${
-    currentSlide === 3 
-      ? 'opacity-100 translate-x-0' 
-      : currentSlide < 3
-        ? 'opacity-0 translate-x-full'
-        : 'opacity-0 -translate-x-full'
-  }`}
-          style={{
-            background: 'radial-gradient(circle at center, rgba(29, 78, 216, 1) 0%, rgba(30, 58, 138, 1) 50%, rgba(17, 24, 39, 1) 100%)',
-          }}
-        >
-          {/* Rotating Gradient Overlay */}
-          <div className="absolute inset-0 animate-rotate-gradient opacity-60" style={{
-            background: 'conic-gradient(from 0deg at 50% 50%, rgba(59, 130, 246, 0.8) 0deg, transparent 60deg, rgba(139, 92, 246, 0.8) 120deg, transparent 180deg, rgba(59, 130, 246, 0.8) 240deg, transparent 300deg, rgba(139, 92, 246, 0.8) 360deg)',
-          }}></div>
-          
-          {/* Pulsing Circles Background */}
-          <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-50">
-            <div className="absolute top-10 left-10 w-60 h-60 bg-blue-500 rounded-full animate-pulse-scale blur-3xl"></div>
-            <div className="absolute bottom-10 right-10 w-80 h-80 bg-purple-600 rounded-full animate-pulse-scale-delayed blur-3xl"></div>
-            <div className="absolute top-1/2 left-1/2 w-48 h-48 bg-cyan-500 rounded-full animate-pulse-scale blur-3xl" style={{animationDelay: '0.5s'}}></div>
-          </div>
-
-          {/* Glowing Border Effect */}
-          <div className="absolute top-0 left-0 w-full h-3 bg-gradient-to-r from-blue-400 via-purple-500 to-blue-400"></div>
-          <div className="absolute bottom-0 left-0 w-full h-3 bg-gradient-to-r from-purple-500 via-blue-400 to-purple-500"></div>
-
-          <div className="relative h-full flex flex-col md:flex-row items-center justify-between p-6 md:px-16 z-10 min-h-[600px] md:min-h-[500px]">
-            
-            {/* Speaker Images - Pyramid Layout */}
-            <div className="w-full md:w-1/2 mb-6 md:mb-0">
-              <div className="flex flex-col gap-4 md:gap-6 md:pr-8">
-                {/* Top Row - Hero Speaker (Centered) */}
-                <div className="flex justify-center">
-                  <div className="bg-white/20 backdrop-blur-md rounded-2xl p-4 md:p-6 flex items-center justify-center shadow-2xl border border-white/30 w-48 md:w-64">
-                    <img 
-                      src="/images/Products/more/rca-levelup-speaker.png" 
-                      alt="RCA CrystalBeat" 
-                      className="h-28 md:h-40 object-contain" 
-                      style={{
-                        filter: 'drop-shadow(0 0 20px rgba(255, 215, 0, 0.9))'
-                      }}
-                    />
-                  </div>
-                </div>
-                
-                {/* Bottom Row - 2 Speakers */}
-                <div className="grid grid-cols-2 gap-4 md:gap-6">
-                  <div className="bg-white/20 backdrop-blur-md rounded-2xl p-3 md:p-5 flex items-center justify-center shadow-2xl border border-white/30">
-                    <img 
-                      src="/images/Products/more/rca-holosound-speaker.png" 
-                      alt="RCA HoloSound" 
-                      className="h-20 md:h-28 object-contain" 
-                      style={{
-                        filter: 'drop-shadow(0 0 15px rgba(255, 255, 255, 0.8))'
-                      }}
-                    />
-                  </div>
-                  <div className="bg-white/20 backdrop-blur-md rounded-2xl p-3 md:p-5 flex items-center justify-center shadow-2xl border border-white/30">
-                    <img 
-                      src="/images/Products/more/skull-candy-barrel-speaker.png" 
-                      alt="Skull Candy Barrel" 
-                      className="h-20 md:h-28 object-contain" 
-                      style={{
-                        filter: 'drop-shadow(0 0 15px rgba(255, 255, 255, 0.8))'
-                      }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Speakers Details */}
-            <div className="w-full md:w-1/2 text-center px-4">
-              <div className="text-4xl md:text-6xl mb-2 md:mb-3">🔊</div>
-              <h2 className="text-3xl md:text-5xl font-black mb-2 md:mb-3 text-yellow-300 animate-glow-pulse" style={{
-                textShadow: '0 0 30px rgba(255,215,0,1), 0 0 50px rgba(255,255,255,1), 0 4px 30px rgba(0,0,0,1), -2px -2px 0 rgba(0,0,0,0.8), 2px -2px 0 rgba(0,0,0,0.8), -2px 2px 0 rgba(0,0,0,0.8), 2px 2px 0 rgba(0,0,0,0.8)'
-              }}>
-                IT'S PARANG TIME!
-              </h2>
-              <p className="text-sm md:text-lg mb-3 md:mb-4 font-bold text-white drop-shadow-lg">Get Our Best-Selling Speakers for Clean, Powerful Sound!</p>
-              <div className="text-2xl md:text-4xl font-black mb-3 md:mb-4 text-yellow-300 animate-bounce-gentle" style={{
-                textShadow: '0 4px 20px rgba(0,0,0,1), 0 0 40px rgba(255,215,0,0.8), 0 0 60px rgba(255,255,255,0.5), -2px -2px 0 rgba(0,0,0,0.8), 2px -2px 0 rgba(0,0,0,0.8), -2px 2px 0 rgba(0,0,0,0.8), 2px 2px 0 rgba(0,0,0,0.8)'
-              }}>
-                $220 - $1,800
-              </div>
-              <a 
-                href="/Categories/tech-audio"
-                className="inline-block bg-yellow-400 text-blue-900 px-6 py-3 md:px-8 md:py-4 rounded-full font-black text-base md:text-xl hover:bg-white hover:text-blue-700 transition-all shadow-2xl hover:scale-110"
-                onClick={() => setShowBanner(false)}
-              >
-                🎵 SHOP SPEAKERS →
-              </a>
-            </div>
-          </div>
+        {/* Slide Indicators - Updated for 2 slides */}
+        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-3 z-20">
+          <button 
+            onClick={() => setCurrentSlide(0)}
+            className={`h-4 rounded-full transition-all ${
+              currentSlide === 0 
+                ? 'bg-blue-400 w-10 shadow-lg shadow-blue-500/50' 
+                : 'bg-white/70 w-4 hover:bg-white'
+            }`}
+          />
+          <button 
+            onClick={() => setCurrentSlide(1)}
+            className={`h-4 rounded-full transition-all ${
+              currentSlide === 1 
+                ? 'bg-red-600 w-10 shadow-lg shadow-red-500/50' 
+                : 'bg-white/70 w-4 hover:bg-white'
+            }`}
+          />
         </div>
-        </div>
+
+      </div>
     </div>
-  </div>
-)}
-
-        
-
-        {/* Slide Indicators - Updated for 4 slides */}
-<div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-3 z-20">
-  <button 
-    onClick={() => setCurrentSlide(0)}
-    className={`h-4 rounded-full transition-all ${
-      currentSlide === 0 
-        ? 'bg-white w-10 shadow-lg shadow-white/50' 
-        : 'bg-white/70 w-4 hover:bg-white'
-    }`}
-  />
-  <button 
-    onClick={() => setCurrentSlide(1)}
-    className={`h-4 rounded-full transition-all ${
-      currentSlide === 1 
-        ? 'bg-yellow-400 w-10 shadow-lg shadow-yellow-500/50' 
-        : 'bg-white/70 w-4 hover:bg-white'
-    }`}
-  />
-  <button 
-    onClick={() => setCurrentSlide(2)}
-    className={`h-4 rounded-full transition-all ${
-      currentSlide === 2 
-        ? 'bg-red-600 w-10 shadow-lg shadow-red-500/50' 
-        : 'bg-white/70 w-4 hover:bg-white'
-    }`}
-  />
-  <button 
-    onClick={() => setCurrentSlide(3)}
-    className={`h-4 rounded-full transition-all ${
-      currentSlide === 3 
-        ? 'bg-blue-400 w-10 shadow-lg shadow-blue-500/50' 
-        : 'bg-white/70 w-4 hover:bg-white'
-    }`}
-  />
-</div>
+  )}
 
  {/* CSS for animations */}
 <style jsx>{`
