@@ -31,7 +31,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowBanner(true);
-    }, 3000);
+    }, 2000);
     
     return () => clearTimeout(timer);
   }, []);
@@ -49,7 +49,7 @@ export default function Home() {
 useEffect(() => {
   const interval = setInterval(() => {
     setCurrentSlide((prev) => (prev + 1) % 4); // Changed from % 3 to % 4
-  }, 15000);
+  }, 20000);
   
   return () => clearInterval(interval);
 }, []);
@@ -447,7 +447,7 @@ END COMMENT */}
           <X className="w-6 h-6 text-gray-700" />
         </button>
 
- {/* Slide 1: Happy New Year Video */}
+{/* Slide 1: Happy New Year Video */}
 <div 
   className={`absolute inset-0 transition-all duration-1000 ${
     currentSlide === 0 
@@ -504,93 +504,98 @@ END COMMENT */}
     </div>
   </div>
 </div>
-</div>
-        {/* Slide 2: Samsung Phones - Christmas Red & Green */}
-        <div 
-          className={`absolute inset-0 transition-all duration-1000 ${
-            currentSlide === 1 
-              ? 'opacity-100 translate-x-0' 
-              : 'opacity-0 translate-x-full'
-          }`}
-          style={{
-            background: 'linear-gradient(135deg, #c41e3a 0%, #165b33 50%, #c41e3a 100%)',
-          }}
-        >
-          {/* Animated Snowflakes Background */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-10 left-10 text-white text-4xl animate-float opacity-70">❄️</div>
-            <div className="absolute top-20 right-20 text-white text-3xl animate-float opacity-60" style={{animationDelay: '0.5s'}}>❄️</div>
-            <div className="absolute bottom-20 left-1/4 text-white text-5xl animate-float opacity-50" style={{animationDelay: '1s'}}>❄️</div>
-            <div className="absolute top-1/3 right-1/3 text-white text-3xl animate-float opacity-70" style={{animationDelay: '1.5s'}}>❄️</div>
-            <div className="absolute bottom-10 right-10 text-white text-4xl animate-float opacity-60" style={{animationDelay: '2s'}}>❄️</div>
-            <div className="absolute top-40 left-1/2 text-white text-6xl animate-float opacity-40" style={{animationDelay: '0.8s'}}>❄️</div>
-          </div>
 
-          {/* Christmas Lights Border Effect */}
-          <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-500 via-green-500 to-red-500 animate-shimmer"></div>
-          <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-green-500 via-red-500 to-green-500 animate-shimmer"></div>
+        {/* Slide 2: Samsung Phones - Reduced to match video size */}
+<div 
+  className={`absolute inset-0 transition-all duration-1000 ${
+    currentSlide === 1 
+      ? 'opacity-100 translate-x-0' 
+      : 'opacity-0 translate-x-full'
+  }`}
+  style={{
+    background: 'linear-gradient(135deg, #c41e3a 0%, #165b33 50%, #c41e3a 100%)',
+  }}
+>
+  {/* Animated Snowflakes Background */}
+  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className="absolute top-10 left-10 text-white text-4xl animate-float opacity-70">❄️</div>
+    <div className="absolute top-20 right-20 text-white text-3xl animate-float opacity-60" style={{animationDelay: '0.5s'}}>❄️</div>
+    <div className="absolute bottom-20 left-1/4 text-white text-5xl animate-float opacity-50" style={{animationDelay: '1s'}}>❄️</div>
+    <div className="absolute top-1/3 right-1/3 text-white text-3xl animate-float opacity-70" style={{animationDelay: '1.5s'}}>❄️</div>
+    <div className="absolute bottom-10 right-10 text-white text-4xl animate-float opacity-60" style={{animationDelay: '2s'}}>❄️</div>
+    <div className="absolute top-40 left-1/2 text-white text-6xl animate-float opacity-40" style={{animationDelay: '0.8s'}}>❄️</div>
+  </div>
 
-          <div className="relative h-full flex flex-col md:flex-row items-center justify-between p-6 md:px-12 z-10 min-h-[500px] md:min-h-[400px]">
-            
-            {/* Image Section with DRAMATIC EFFECTS */}
-            <div className="w-full md:w-1/2 flex justify-center mb-6 md:mb-0 relative">
-              {/* Pulsating Glow Rings */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-72 h-72 md:w-96 md:h-96 rounded-full bg-white/20 animate-ping-slow"></div>
-                <div className="absolute w-64 h-64 md:w-80 md:h-80 rounded-full bg-red-500/30 animate-ping-slower"></div>
-                <div className="absolute w-56 h-56 md:w-72 md:h-72 rounded-full bg-green-500/30 animate-ping-slowest"></div>
-              </div>
-              
-              {/* Rotating Gradient Ring */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-80 h-80 md:w-[450px] md:h-[450px] rounded-full animate-spin-slow" style={{
-                  background: 'conic-gradient(from 0deg, transparent, rgba(255, 0, 0, 0.4), transparent, rgba(0, 255, 0, 0.4), transparent)',
-                }}></div>
-              </div>
-              
-              {/* Phone Image with Multiple Animations */}
-              <img 
-                src="/images/Products/phones/samsung2-galaxy-f05.png"
-                alt="Samsung F05"
-                className="relative z-10 h-64 md:h-96 object-contain"
-                style={{
-                  filter: 'drop-shadow(0 0 40px rgba(255, 255, 255, 1)) drop-shadow(0 0 80px rgba(255, 0, 0, 0.6)) drop-shadow(0 0 120px rgba(0, 255, 0, 0.4))',
-                  animation: 'phone-dramatic 3s ease-in-out infinite, float-phone 4s ease-in-out infinite'
-                }}
-              />
-              
-              {/* Sparkle Effects */}
-              <div className="absolute top-10 right-10 text-4xl animate-sparkle">✨</div>
-              <div className="absolute bottom-10 left-10 text-3xl animate-sparkle-delayed">⭐</div>
-              <div className="absolute top-1/2 left-5 text-2xl animate-sparkle" style={{animationDelay: '1s'}}>💫</div>
-            </div>
-            
-            {/* Samsung Phones Details */}
-            <div className="w-full md:w-1/2 text-white animate-slide-in-right text-center md:text-left">
-              <div className="bg-red-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-full inline-block mb-2 md:mb-3 font-black text-sm md:text-lg animate-pulse shadow-xl">
-                🎄 CHRISTMAS SPECIAL 🎄
-              </div>
-              <h2 className="text-2xl md:text-4xl font-black mb-2 md:mb-3 animate-glow-pulse" style={{
-                textShadow: '0 0 20px rgba(255,255,255,1), 0 0 40px rgba(255,215,0,0.8)'
-              }}>
-                Samsung A06 • A05 • F05
-              </h2>
-              <p className="text-sm md:text-lg mb-3 md:mb-4 font-semibold">Does your phone need CPR every morning to turn on?" 😵‍💫🤲 • Tapping… shaking… begging… praying… 🙏 • That phone retired! Buy Now!</p>
-              <div className="text-3xl md:text-5xl font-black mb-3 md:mb-4 animate-bounce-gentle" style={{
-                textShadow: '0 4px 20px rgba(255,215,0,0.8)'
-              }}>
-                From $420
-              </div>
-              <a 
-                href="/Categories/phones"
-                className="inline-block bg-white text-red-700 px-6 py-3 md:px-8 md:py-4 rounded-full font-black text-base md:text-xl hover:bg-yellow-400 hover:text-red-800 transition-all shadow-2xl hover:scale-110"
-                onClick={() => setShowBanner(false)}
-              >
-                🎁 SHOP NOW →
-              </a>
-            </div>
+  {/* Christmas Lights Border Effect */}
+  <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-500 via-green-500 to-red-500 animate-shimmer"></div>
+  <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-green-500 via-red-500 to-green-500 animate-shimmer"></div>
+
+  {/* Content Container - Sized to match video (85%) */}
+  <div className="relative h-full w-full flex items-center justify-center p-8">
+    <div className="bg-gradient-to-br from-red-900/30 to-green-900/30 backdrop-blur-sm rounded-3xl shadow-2xl p-6 md:p-12" style={{ maxWidth: '85%', maxHeight: '85%' }}>
+      <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        {/* Image Section with DRAMATIC EFFECTS */}
+        <div className="w-full md:w-1/2 flex justify-center relative">
+          {/* Pulsating Glow Rings */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-72 h-72 md:w-96 md:h-96 rounded-full bg-white/20 animate-ping-slow"></div>
+            <div className="absolute w-64 h-64 md:w-80 md:h-80 rounded-full bg-red-500/30 animate-ping-slower"></div>
+            <div className="absolute w-56 h-56 md:w-72 md:h-72 rounded-full bg-green-500/30 animate-ping-slowest"></div>
           </div>
+          
+          {/* Rotating Gradient Ring */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-80 h-80 md:w-[450px] md:h-[450px] rounded-full animate-spin-slow" style={{
+              background: 'conic-gradient(from 0deg, transparent, rgba(255, 0, 0, 0.4), transparent, rgba(0, 255, 0, 0.4), transparent)',
+            }}></div>
+          </div>
+          
+          {/* Phone Image with Multiple Animations */}
+          <img 
+            src="/images/Products/phones/samsung2-galaxy-f05.png"
+            alt="Samsung F05"
+            className="relative z-10 h-48 md:h-72 object-contain"
+            style={{
+              filter: 'drop-shadow(0 0 40px rgba(255, 255, 255, 1)) drop-shadow(0 0 80px rgba(255, 0, 0, 0.6)) drop-shadow(0 0 120px rgba(0, 255, 0, 0.4))',
+              animation: 'phone-dramatic 3s ease-in-out infinite, float-phone 4s ease-in-out infinite'
+            }}
+          />
+          
+          {/* Sparkle Effects */}
+          <div className="absolute top-10 right-10 text-4xl animate-sparkle">✨</div>
+          <div className="absolute bottom-10 left-10 text-3xl animate-sparkle-delayed">⭐</div>
+          <div className="absolute top-1/2 left-5 text-2xl animate-sparkle" style={{animationDelay: '1s'}}>💫</div>
         </div>
+        
+        {/* Samsung Phones Details */}
+        <div className="w-full md:w-1/2 text-white text-center md:text-left">
+          <div className="bg-red-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-full inline-block mb-2 md:mb-3 font-black text-sm md:text-base animate-pulse shadow-xl">
+            🎄 CHRISTMAS SPECIAL 🎄
+          </div>
+          <h2 className="text-xl md:text-3xl font-black mb-2 animate-glow-pulse" style={{
+            textShadow: '0 0 20px rgba(255,255,255,1), 0 0 40px rgba(255,215,0,0.8)'
+          }}>
+            Samsung A06 • A05 • F05
+          </h2>
+          <p className="text-xs md:text-base mb-2 md:mb-3 font-semibold">Does your phone need CPR every morning to turn on? 😵‍💫🤲 • Tapping… shaking… begging… praying… 🙏 • That phone retired! Buy Now!</p>
+          <div className="text-2xl md:text-4xl font-black mb-2 md:mb-3 animate-bounce-gentle" style={{
+            textShadow: '0 4px 20px rgba(255,215,0,0.8)'
+          }}>
+            From $420
+          </div>
+          <a 
+            href="/Categories/phones"
+            className="inline-block bg-white text-red-700 px-5 py-2 md:px-8 md:py-4 rounded-full font-black text-sm md:text-xl hover:bg-yellow-400 hover:text-red-800 transition-all shadow-2xl hover:scale-110"
+            onClick={() => setShowBanner(false)}
+          >
+            🎁 SHOP NOW →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
         {/* Slide Indicators - Updated for 2 slides */}
         <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-3 z-20">
@@ -614,7 +619,8 @@ END COMMENT */}
 
       </div>
     </div>
-  )}
+  </div>
+)}
 
  {/* CSS for animations */}
 <style jsx>{`
