@@ -20,6 +20,7 @@ export default function Home() {
   const [showPromo, setShowPromo] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showCelly, setShowCelly] = useState(false);
+  const [cellyMounted, setCellyMounted] = useState(false);
   
   // Array of video paths - add your video files here
   const videos = [
@@ -55,12 +56,14 @@ useEffect(() => {
   return () => clearInterval(interval);
 }, []);
 
-// Show Celly 2 seconds after banner is closed
+// Show Celly 3 seconds after banner is closed
 useEffect(() => {
   if (!showBanner) {
     const timer = setTimeout(() => {
       setShowCelly(true);
-    }, 2000); // Changed from 3000 to 2000 (2 seconds)
+      // Trigger animation after mounting
+      setTimeout(() => setCellyMounted(true), 50);
+    }, 3000);
     
     return () => clearTimeout(timer);
   }
@@ -473,17 +476,19 @@ END COMMENT */}
     background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
   }}
 >
-  {/* Video Container - Mobile Optimized */}
-  <div className="relative h-full w-full flex items-center justify-center overflow-hidden p-4 md:p-8">
+  {/* Video Container - Mobile fills more screen */}
+  <div className="relative h-full w-full flex items-center justify-center overflow-hidden p-2 md:p-8">
     <video
       autoPlay
       loop
       muted
       playsInline
-      className="rounded-xl md:rounded-2xl shadow-2xl cursor-pointer w-full h-auto"
+      className="rounded-xl md:rounded-2xl shadow-2xl cursor-pointer"
       style={{
-        maxWidth: '95%',
-        maxHeight: '90%',
+        width: '100%',
+        maxWidth: '100%',
+        height: 'auto',
+        maxHeight: '95%',
         objectFit: 'contain',
         filter: 'brightness(1.1) drop-shadow(0 0 40px rgba(255, 255, 255, 0.3))'
       }}
@@ -500,17 +505,17 @@ END COMMENT */}
       <source src="/videos/cell-world-new-year.mp4" type="video/mp4" />
     </video>
     
-    {/* Unmute indicator - Mobile responsive */}
-    <div className="absolute top-4 right-4 md:top-20 md:right-20 bg-white/90 px-3 py-1 md:px-4 md:py-2 rounded-full shadow-lg animate-pulse">
-      <p className="text-xs md:text-sm font-bold text-gray-800">🔇 Tap to unmute</p>
+    {/* Unmute indicator - Smaller on mobile */}
+    <div className="absolute top-4 right-4 bg-white/90 px-2 py-1 md:px-4 md:py-2 rounded-full shadow-lg animate-pulse">
+      <p className="text-xs font-bold text-gray-800">🔇 Tap</p>
     </div>
     
-    {/* Cell World logo overlay - Mobile responsive */}
-    <div className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+    {/* Cell World logo overlay - Smaller on mobile */}
+    <div className="absolute bottom-2 md:bottom-8 left-1/2 transform -translate-x-1/2 z-10">
       <img 
         src="/images/cell-world-logo.png"
         alt="Cell World"
-        className="h-12 md:h-16 lg:h-24 object-contain drop-shadow-2xl"
+        className="h-10 md:h-16 lg:h-24 object-contain drop-shadow-2xl"
         style={{
           filter: 'drop-shadow(0 0 30px rgba(255, 255, 255, 0.8))'
         }}
@@ -1258,19 +1263,26 @@ END COMMENT */}
   </div>
 </section>
   
-{/* Celly Assistant - Slide in from right with visible label */}
+{/* Celly Assistant - Slide in from right with label above */}
 {showCelly && (
-  <div className="fixed bottom-6 right-6 z-50 animate-slide-in-from-right flex items-center gap-3">
-    {/* Text label */}
-    <div className="bg-cyan-400 text-white px-4 py-2 rounded-full shadow-lg font-semibold animate-pulse">
-      Hi! I'm Celly - Ask Me Anything
+  <div 
+    className={`fixed bottom-6 right-6 z-50 transition-all duration-700 ease-out ${
+      cellyMounted ? 'translate-x-0 opacity-100' : 'translate-x-32 opacity-0'
+    }`}
+  >
+    <div className="flex flex-col items-end gap-2">
+      {/* Text label */}
+      <div className="bg-cyan-400 text-white px-4 py-2 rounded-full shadow-lg font-semibold animate-pulse whitespace-nowrap">
+        Hi! I'm Celly - Ask Me Anything
+      </div>
+      
+      {/* Celly icon */}
+      <CellyAssistant />
     </div>
-    
-    {/* Celly icon */}
-    <CellyAssistant />
   </div>
 )}
-
+      
+    0
 {/* Footer */}
 <footer className="relative z-10 bg-black/80 backdrop-blur-sm border-t border-gray-800 py-8 mt-20">
   <div className="container mx-auto px-4 text-center">
