@@ -19,6 +19,7 @@ export default function Home() {
   const [showBanner, setShowBanner] = useState(false);
   const [showPromo, setShowPromo] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [showCelly, setShowCelly] = useState(false);
   
   // Array of video paths - add your video files here
   const videos = [
@@ -54,15 +55,29 @@ useEffect(() => {
   return () => clearInterval(interval);
 }, []);
 
-  // IMPROVED: Faster loading with timeout fallback
-  useEffect(() => {
-    const criticalImages = [
-      '/images/cell-world-logo.png',
-      '/images/phones.jpg',
-      '/images/fishing.jpg',
-      '/images/more.jpg'
-    ];
+// Show Celly 2 seconds after banner is closed
+useEffect(() => {
+  if (!showBanner) {
+    const timer = setTimeout(() => {
+      setShowCelly(true);
+    }, 2000); // Changed from 3000 to 2000 (2 seconds)
     
+    return () => clearTimeout(timer);
+  }
+}, [showBanner]);
+
+// IMPROVED: Faster loading with timeout fallback
+useEffect(() => {
+  const criticalImages = [
+    '/images/cell-world-logo.png',
+    '/images/phones.jpg',
+    '/images/fishing.jpg',
+    '/images/more.jpg'
+  ];
+  
+  // ... rest of the code
+
+     
     // Set a maximum loading time of 2 seconds
     const loadingTimeout = setTimeout(() => {
       setIsLoading(false);
@@ -447,7 +462,7 @@ END COMMENT */}
           <X className="w-6 h-6 text-gray-700" />
         </button>
 
-{/* Slide 1: Happy New Year Video */}
+{/* Slide 1: Happy New Year Video - Mobile Optimized */}
 <div 
   className={`absolute inset-0 transition-all duration-1000 ${
     currentSlide === 0 
@@ -458,19 +473,18 @@ END COMMENT */}
     background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
   }}
 >
-  {/* Video Container - Centered with slight padding */}
-  <div className="relative h-full w-full flex items-center justify-center overflow-hidden p-8">
+  {/* Video Container - Mobile Optimized */}
+  <div className="relative h-full w-full flex items-center justify-center overflow-hidden p-4 md:p-8">
     <video
       autoPlay
       loop
       muted
       playsInline
-      className="rounded-2xl shadow-2xl cursor-pointer"
+      className="rounded-xl md:rounded-2xl shadow-2xl cursor-pointer w-full h-auto"
       style={{
-        maxWidth: '85%',
-        maxHeight: '85%',
-        width: 'auto',
-        height: 'auto',
+        maxWidth: '95%',
+        maxHeight: '90%',
+        objectFit: 'contain',
         filter: 'brightness(1.1) drop-shadow(0 0 40px rgba(255, 255, 255, 0.3))'
       }}
       onClick={(e) => {
@@ -486,17 +500,17 @@ END COMMENT */}
       <source src="/videos/cell-world-new-year.mp4" type="video/mp4" />
     </video>
     
-    {/* Unmute indicator */}
-    <div className="absolute top-20 right-20 bg-white/90 px-4 py-2 rounded-full shadow-lg animate-pulse">
-      <p className="text-sm font-bold text-gray-800">🔇 Click video to unmute</p>
+    {/* Unmute indicator - Mobile responsive */}
+    <div className="absolute top-4 right-4 md:top-20 md:right-20 bg-white/90 px-3 py-1 md:px-4 md:py-2 rounded-full shadow-lg animate-pulse">
+      <p className="text-xs md:text-sm font-bold text-gray-800">🔇 Tap to unmute</p>
     </div>
     
-    {/* Cell World logo overlay */}
-    <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+    {/* Cell World logo overlay - Mobile responsive */}
+    <div className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 z-10">
       <img 
         src="/images/cell-world-logo.png"
         alt="Cell World"
-        className="h-16 md:h-24 object-contain drop-shadow-2xl"
+        className="h-12 md:h-16 lg:h-24 object-contain drop-shadow-2xl"
         style={{
           filter: 'drop-shadow(0 0 30px rgba(255, 255, 255, 0.8))'
         }}
@@ -624,6 +638,20 @@ END COMMENT */}
 
  {/* CSS for animations */}
 <style jsx>{`
+@keyframes slide-in-from-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-from-right {
+  animation: slide-in-from-right 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
   .ticker-content {
     display: inline-block;
     animation: scroll-left 30s linear infinite;
@@ -1230,7 +1258,18 @@ END COMMENT */}
   </div>
 </section>
   
-<CellyAssistant />
+{/* Celly Assistant - Slide in from right with visible label */}
+{showCelly && (
+  <div className="fixed bottom-6 right-6 z-50 animate-slide-in-from-right flex items-center gap-3">
+    {/* Text label */}
+    <div className="bg-cyan-400 text-white px-4 py-2 rounded-full shadow-lg font-semibold animate-pulse">
+      Hi! I'm Celly - Ask Me Anything
+    </div>
+    
+    {/* Celly icon */}
+    <CellyAssistant />
+  </div>
+)}
 
 {/* Footer */}
 <footer className="relative z-10 bg-black/80 backdrop-blur-sm border-t border-gray-800 py-8 mt-20">
