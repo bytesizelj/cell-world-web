@@ -660,9 +660,9 @@ export default function Celly() {
 </span>
       </button>
 
-      {/* Chat Window */}
+      {/* Chat Window - Mobile Responsive */}
       {isOpen && (
-        <div className="fixed bottom-4 right-4 w-96 h-[500px] bg-white rounded-2xl shadow-2xl z-50 flex flex-col overflow-hidden animate-slideUp">
+        <div className="fixed bottom-0 right-0 left-0 md:bottom-4 md:right-4 md:left-auto w-full md:w-96 h-[600px] md:h-[500px] bg-white md:rounded-2xl shadow-2xl z-50 flex flex-col overflow-hidden animate-slideUp">
           {/* Header */}
           <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white p-4 flex items-center justify-between">
             <div className="flex items-center gap-3">

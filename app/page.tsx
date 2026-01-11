@@ -951,6 +951,13 @@ END COMMENT */}
 .animate-sparkle-delayed {
   animation: sparkle-delayed 2.5s ease-in-out infinite 0.5s;
 }
+/* Mobile: Adjust Celly chat window positioning */
+@media (max-width: 768px) {
+  /* This targets elements inside the Celly component to prevent overflow */
+  body {
+    overflow-x: hidden;
+  }
+}
 `}</style>
         
 {/* Category Section with HOVER ZOOM for images */}
