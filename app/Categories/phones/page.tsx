@@ -99,21 +99,20 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
 }
   },
   {
-  id: 'samsung-galaxy-f05',
-  name: 'Samsung F05',
-  image: '/images/Products/phones/samsung2-galaxy-f05.png',
+  id: 'samsung-galaxy-a11',
+  name: 'Samsung A11',
+  image: '/images/Products/phones/samsung-galaxy-a11.png',
   price: 420.00,
   category: 'samsung',
   availability: 'In Stock',
   isBestSeller: true,
-  description: 'Budget-friendly smartphone featuring 6.74" display, dual cameras, and massive 5000mAh battery. Great value with essential features for daily communication.',
+  description: 'Budget-friendly smartphone featuring 6.74" display, triple cameras, and massive 5000mAh battery. Great value with essential features for daily communication.',
   specs: {
     display: '6.74" HD+ LCD',
-    processor: 'MediaTek Helio P35',
-    camera: '50MP main + depth sensor',
+    camera: 'main, rear and front',
     battery: '5000mAh with 25W charging',
     storage: '64GB expandable',
-    ram: '4GB RAM'
+    ram: '8GB RAM'
   }
     },
     { 
@@ -353,7 +352,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
       image: '/images/Products/phones/cropped/samsung-f05.png',
       price: 420.00,
       category: 'budget',
-      availability: 'In Stock',
+      availability: 'Back Soon',
       color: 'Twilight Blue',
       specs: {
         ram: '4GB RAM',
