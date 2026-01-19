@@ -58,7 +58,7 @@ export default function TechAudioCategory() {
   
   // Enhanced product data with categories
   const products = [
-// PLAYSTATION
+// GAMING
 {
   id: 'ps5-digital-edition',
   name: 'PS5 Digital Edition',
@@ -506,13 +506,70 @@ export default function TechAudioCategory() {
   }
 },
 
-// SMART WATCHES
+// WATCHES
+// Add these to the products array in tech-audio/page.tsx
+
+{
+  id: 'casio-analog-1500wh-1bv',
+  name: 'Casio Analog Watch 1500WH-1BV',
+  image: '/images/Products/tech-audio/casio-analog-1500wh-1bv.png',
+  price: 200.00,
+  category: 'watches',
+  availability: 'In Stock',
+  color: 'Black',
+  description: 'Durable analog watch with 10-year battery life and 100m water resistance. Perfect for daily wear with reliable Casio quality.',
+  specs: {
+    battery: '10 Year Battery Life',
+    waterResistance: 'WR 100M (Water Resistant 100 Meters)',
+    type: 'Analog Display',
+    features: 'Date Display',
+    strap: 'Resin Band',
+    case: 'Resin Case'
+  }
+},
+{
+  id: 'casio-analog-1400wh-1av',
+  name: 'Casio Analog Watch 1400WH-1AV',
+  image: '/images/Products/tech-audio/casio-analog-1400wh-1av.png',
+  price: 200.00,
+  category: 'watches',
+  availability: 'In Stock',
+  color: 'Black',
+  description: 'Classic Casio analog watch featuring world time functionality and long-lasting battery. Ideal for travelers and daily use.',
+  specs: {
+    battery: 'World Time',
+    waterResistance: 'WR 100M (Water Resistant 100 Meters)',
+    type: 'Analog Display',
+    features: 'World Time, Date Display',
+    strap: 'Resin Band',
+    case: 'Resin Case with Stainless Steel Accents'
+  }
+},
+{
+  id: 'casio-analog-aeq-110w',
+  name: 'Casio AEQ-110W World Time',
+  image: '/images/Products/tech-audio/casio-analog-aeq-110w.png',
+  price: 250.00,
+  category: 'watches',
+  availability: 'In Stock',
+  color: 'Blue/Black',
+  description: 'Multi-function digital watch with world time, illuminator light, and 10-year battery. Built tough for outdoor activities and everyday adventures.',
+  specs: {
+    battery: '10 Year Battery Life',
+    waterResistance: 'WR 100M (Water Resistant 100 Meters)',
+    type: 'Digital Display',
+    features: 'World Time (48 cities), Illuminator, Stopwatch, Alarm',
+    strap: 'Resin Band',
+    case: 'Resin Case',
+    extras: 'LED Backlight, 5 Daily Alarms'
+  }
+},
 {
   id: 'peje-smartwatch-rose-gold',
   name: 'PEJE Smartwatch',
   image: '/images/Products/tech-audio/smartwatch1.png',
   price: 175.00,
-  category: 'smartwatch',
+  category: 'watches',
   inStock: true,
   specs: {
     display: '1.43" AMOLED',
@@ -527,7 +584,7 @@ export default function TechAudioCategory() {
   name: 'PEJE Classic Round Collection',
   image: '/images/Products/tech-audio/smartwatch2.png',
   price: 175.00,
-  category: 'smartwatch',
+  category: 'watches',
   inStock: true,
   specs: {
     display: 'AMOLED',
@@ -539,7 +596,7 @@ export default function TechAudioCategory() {
   name: 'PEJE Sport Smartwatch',
   image: '/images/Products/tech-audio/smartwatch3.png',
   price: 175.00,
-  category: 'smartwatch',
+  category: 'watches',
   inStock: true,
   specs: {
     display: '1.43" AMOLED',
@@ -554,7 +611,7 @@ export default function TechAudioCategory() {
   name: 'M900 Watch Pro',
   image: '/images/Products/tech-audio/smartwatch4.png',
   price: 175.00,
-  category: 'smartwatch',
+  category: 'watches',
   inStock: true,
   specs: {
     display: '2.21" AMOLED Infinite',
@@ -568,7 +625,7 @@ export default function TechAudioCategory() {
   name: 'PEJE ZW Series 10',
   image: '/images/Products/tech-audio/smartwatch5.png',
   price: 175.00,
-  category: 'smartwatch',
+  category: 'watches',
   inStock: true,
   specs: {
     waterproof: '1ATM',
@@ -582,7 +639,7 @@ export default function TechAudioCategory() {
   name: 'PEJE ZW Ultra X',
   image: '/images/Products/tech-audio/smartwatch6.png',
   price: 175.00,
-  category: 'smartwatch',
+  category: 'watches',
   inStock: true,
   specs: {
     display: '2.01" Sport Display',
@@ -598,7 +655,7 @@ export default function TechAudioCategory() {
   name: 'PEJE T800 Ultra 2 Max',
   image: '/images/Products/tech-audio/smartwatch7.png',
   price: 175.00,
-  category: 'smartwatch',
+  category: 'watches',
   inStock: true,
   specs: {
     display: '2.01 sport Display',
@@ -1247,6 +1304,7 @@ const translations = {
     headphones: "Headphones",
     filterBy: "Filter by:",
     gaming: "Gaming",
+    watches: "Watches",
     samsung: "Samsung",
     "tv-accessories": "TV & Streaming",
     apple: "Apple",
@@ -1272,6 +1330,7 @@ const translations = {
     headphones: "Casques",
     filterBy: "Filtrer par:",
     gaming: "Jeux",
+    watches: "Montres",
     samsung: "Samsung",
     power: "Alimentation",
     "tv-accessories": "TV et Streaming",
@@ -1295,6 +1354,7 @@ const translations = {
     headphones: "Audífonos",
     filterBy: "Filtrar por:",
     gaming: "Juegos",
+    watches: "Relojes",
     samsung: "Samsung",
     "tv-accessories": "TV y Streaming",
     apple: "Apple",
@@ -1394,7 +1454,7 @@ const translations = {
       <div className="relative z-10 flex justify-center mb-8 px-4">
         <div className="bg-black/50 backdrop-blur-sm rounded-full p-2 flex gap-2 flex-wrap justify-center">
           <span className="text-white px-3 py-2">{t.filterBy}</span>
-          {['all', 'apple', 'speakers', 'earbuds', 'headphones', 'gaming', 'tv-accessories', 'samsung', 'microphones', 'audio-interfaces'].map((cat) => (
+          {['all', 'apple', 'speakers', 'earbuds', 'headphones', 'gaming', 'watches','tv-accessories', 'samsung', 'microphones', 'audio-interfaces'].map((cat) => (
             <button
               key={cat}
               onClick={() => setFilterCategory(cat)}
@@ -1433,10 +1493,10 @@ const translations = {
   src={product.image}
   alt={product.name}
   fill
+  priority
   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
   className="object-contain transition-transform duration-700 hover:scale-125"
-  loading="lazy"
-/>
+  />
       
       {/* Category Badge */}
       <div className="absolute top-2 left-2 bg-purple-500/80 text-white text-xs font-bold px-2 py-1 rounded-full">

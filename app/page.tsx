@@ -483,12 +483,49 @@ END COMMENT */}
     <div className="absolute bottom-10 right-10 text-yellow-400 text-5xl animate-float opacity-60" style={{animationDelay: '2s'}}>🌟</div>
   </div>
 
-  {/* Pulsating light circles */}
-  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-    <div className="w-96 h-96 rounded-full bg-blue-500/20 animate-ping-slow"></div>
-    <div className="absolute w-80 h-80 rounded-full bg-purple-500/30 animate-ping-slower"></div>
-    <div className="absolute w-64 h-64 rounded-full bg-cyan-500/20 animate-ping-slowest"></div>
-  </div>
+  {/* Pulsating triangles spread across slide */}
+<div className="absolute inset-0 pointer-events-none overflow-hidden">
+  {/* Top Left */}
+  <div className="absolute top-10 left-10 w-32 h-32 animate-ping-slow" style={{
+    clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)',
+    background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(147, 51, 234, 0.2))'
+  }}></div>
+  
+  {/* Top Right */}
+  <div className="absolute top-20 right-20 w-40 h-40 animate-ping-slower" style={{
+    clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)',
+    background: 'linear-gradient(135deg, rgba(236, 72, 153, 0.3), rgba(59, 130, 246, 0.2))',
+    animationDelay: '0.5s'
+  }}></div>
+  
+  {/* Center */}
+  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 animate-ping-slowest" style={{
+    clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)',
+    background: 'linear-gradient(135deg, rgba(6, 182, 212, 0.3), rgba(147, 51, 234, 0.2))',
+    animationDelay: '1s'
+  }}></div>
+  
+  {/* Bottom Left */}
+  <div className="absolute bottom-20 left-1/4 w-36 h-36 animate-ping-slow" style={{
+    clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)',
+    background: 'linear-gradient(135deg, rgba(147, 51, 234, 0.3), rgba(236, 72, 153, 0.2))',
+    animationDelay: '1.5s'
+  }}></div>
+  
+  {/* Bottom Right */}
+  <div className="absolute bottom-10 right-1/3 w-44 h-44 animate-ping-slower" style={{
+    clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)',
+    background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(6, 182, 212, 0.2))',
+    animationDelay: '2s'
+  }}></div>
+  
+  {/* Mid Left */}
+  <div className="absolute top-1/3 left-1/5 w-28 h-28 animate-ping-slowest" style={{
+    clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)',
+    background: 'linear-gradient(135deg, rgba(236, 72, 153, 0.3), rgba(59, 130, 246, 0.2))',
+    animationDelay: '0.8s'
+  }}></div>
+</div>
 
   {/* Rotating gradient ring */}
   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
