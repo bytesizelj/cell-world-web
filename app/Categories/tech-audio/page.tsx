@@ -58,6 +58,117 @@ export default function TechAudioCategory() {
   
   // Enhanced product data with categories
   const products = [
+// PLAYSTATION
+{
+  id: 'ps5-digital-edition',
+  name: 'PS5 Digital Edition',
+  image: '/images/Products/tech-audio/ps5-digital.png',
+  price: 2600.00,
+  category: 'gaming',
+  inStock: true,
+  description: '1TB Disc-Free Console | Ultra-Fast SSD | Stunning Graphics | Immersive Gaming Experience',
+  specs: {
+    storage: '1TB',
+    type: 'Disc-Free Console',
+    features: 'Ultra-Fast SSD, 4K Gaming'
+  }
+},
+{
+  id: 'ps5-console-disc',
+  name: 'PS5 Console Disc Drive',
+  image: '/images/Products/tech-audio/ps5-disc.png',
+  price: 2900.00,
+  category: 'gaming',
+  inStock: true,
+  description: 'Disc Drive Attaches to Console | DualSense Wireless Controller | 4K Gaming | Ultra HD Blu-ray',
+  specs: {
+    disc: 'Disc Drive',
+    controller: 'DualSense Wireless',
+    features: '4K Gaming, Ultra HD Blu-ray'
+  }
+},
+{
+  id: 'ps5-controller-camo',
+  name: 'PlayStation 5 DualSense Controller',
+  image: '/images/Products/more/playstation5-dualsense-controller.png',
+  price: 350.00,
+  category: 'gaming',
+  availability: 'In Stock',
+  color: 'Camouflage (1), Black (2)',
+  specs: {
+    type: 'Wireless Controller',
+    compatibility: 'PlayStation 5'
+  }
+},
+{
+  id: 'xbox-controller-pulse',
+  name: 'Xbox Controller - Pulse Red',
+  image: '/images/Products/more/xbox-series-pulsered.png',
+  price: 350.00,
+  category: 'gaming',
+  availability: 'In Stock',
+  color: 'Pulse Red',
+  specs: {
+    compatibility: 'Xbox Series X|S, Xbox One, Windows, Android & iOS',
+    type: 'Wireless Controller',
+    includes: 'AA Batteries'
+  }
+},
+{
+  id: 'xbox-controller-black',
+  name: 'Xbox Controller for Xbox Series X|S',
+  image: '/images/Products/more/xbox-seriesxs.png',
+  price: 350.00,
+  category: 'gaming',
+  availability: 'In Stock',
+  color: 'Black',
+  specs: {
+    compatibility: 'Xbox Series X|S, Xbox One, Windows, Android & iOS',
+    type: 'Wireless Controller'
+  }
+},
+{
+  id: 'steel-series-stratus',
+  name: 'SteelSeries Stratus+ Wireless Mobile Gaming Controller',
+  image: '/images/Products/more/steel-series-stratus-controller.png',
+  price: 160.00,
+  category: 'gaming',
+  availability: 'In Stock',
+  color: 'Black',
+  specs: {
+    compatibility: 'Android 4+ (wireless), Windows PC (wired)',
+    battery: '90 hours per charge',
+    includes: 'USB-C to USB-A cable & phone holder',
+    type: 'Wireless Mobile Gaming Controller'
+  }
+},
+{
+  id: 'ps4-dualshock',
+  name: 'PlayStation 4 DualShock Wireless Controller',
+  image: '/images/Products/more/sony-play-station-4-dual-shock.png',
+  price: 280.00,
+  category: 'gaming',
+  availability: 'In Stock',
+  color: 'Black',
+  specs: {
+    type: 'Wireless Controller',
+    compatibility: 'PlayStation 4'
+  }
+},
+{
+  id: 'razer-charging-stand',
+  name: 'Razer Legendary Duo Bundle - PS5 Charging Stand',
+  image: '/images/Products/more/razer-quick-charging-stand.png',
+  price: 399.00,
+  category: 'gaming',
+  availability: 'In Stock',
+    specs: {
+    type: 'Quick Charging Stand',
+    compatibility: 'PS5 DualSense Wireless Controller'
+  }
+},
+
+
 // RCA SPEAKERS
 {
   id: 'rca-tws-gamerbeat-speaker',
@@ -394,144 +505,7 @@ export default function TechAudioCategory() {
     sound: '360° sound'
   }
 },
-// PLAYSTATION
-{
-  id: 'ps5-digital-edition',
-  name: 'PS5 Digital Edition',
-  image: '/images/Products/tech-audio/ps5-digital.png',
-  price: 2600.00,
-  category: 'gaming',
-  inStock: true,
-  description: '1TB Disc-Free Console | Ultra-Fast SSD | Stunning Graphics | Immersive Gaming Experience',
-  specs: {
-    storage: '1TB',
-    type: 'Disc-Free Console',
-    features: 'Ultra-Fast SSD, 4K Gaming'
-  }
-},
-{
-  id: 'ps5-console-disc',
-  name: 'PS5 Console Disc Drive',
-  image: '/images/Products/tech-audio/ps5-disc.png',
-  price: 2900.00,
-  category: 'gaming',
-  inStock: true,
-  description: 'Disc Drive Attaches to Console | DualSense Wireless Controller | 4K Gaming | Ultra HD Blu-ray',
-  specs: {
-    disc: 'Disc Drive',
-    controller: 'DualSense Wireless',
-    features: '4K Gaming, Ultra HD Blu-ray'
-  }
-},
-{
-  id: 'kotion-each-pro-headphones',
-  name: 'Kotion Each Pro Gaming Headphones',
-  image: '/images/Products/tech-audio/kotion-headset.png',
-  price: 175.00,
-  category: 'headphones',
-  inStock: true,
-  description: '2.4GHz Wireless Mode | Bluetooth Mode | Wired Mode | Pro Gaming Audio | Comfortable Design',
-  specs: {
-    connectivity: '2.4GHz Wireless, BT, Wired',
-    features: 'Pro Gaming Audio'
-  }
-},
-{
-  id: 'bl500-gaming-headphones',
-  name: 'BL500 Gaming Headphones',
-  image: '/images/Products/tech-audio/bl500-headset.png',
-  price: 150.00,
-  category: 'headphones',
-  inStock: true,
-  description: '2.4GHz Wireless Mode | Up to 30 Hours Battery | Noise Reduction Mic | For PC, MAC, PS4 & PS5',
-  specs: {
-    connectivity: '2.4GHz Wireless',
-    battery: 'Up to 30 Hours',
-    mic: 'Noise Reduction',
-    compatible: 'PC, MAC, PS4, PS5'
-  }
-},
-// Gaming)
-{
-  id: 'ps5-controller-camo',
-  name: 'PlayStation 5 DualSense Controller',
-  image: '/images/Products/more/playstation5-dualsense-controller.png',
-  price: 350.00,
-  category: 'gaming',
-  availability: 'In Stock',
-  color: 'Camouflage (1), Black (2)',
-  specs: {
-    type: 'Wireless Controller',
-    compatibility: 'PlayStation 5'
-  }
-},
-{
-  id: 'xbox-controller-pulse',
-  name: 'Xbox Controller - Pulse Red',
-  image: '/images/Products/more/xbox-series-pulsered.png',
-  price: 350.00,
-  category: 'gaming',
-  availability: 'In Stock',
-  color: 'Pulse Red',
-  specs: {
-    compatibility: 'Xbox Series X|S, Xbox One, Windows, Android & iOS',
-    type: 'Wireless Controller',
-    includes: 'AA Batteries'
-  }
-},
-{
-  id: 'xbox-controller-black',
-  name: 'Xbox Controller for Xbox Series X|S',
-  image: '/images/Products/more/xbox-seriesxs.png',
-  price: 350.00,
-  category: 'gaming',
-  availability: 'In Stock',
-  color: 'Black',
-  specs: {
-    compatibility: 'Xbox Series X|S, Xbox One, Windows, Android & iOS',
-    type: 'Wireless Controller'
-  }
-},
-{
-  id: 'steel-series-stratus',
-  name: 'SteelSeries Stratus+ Wireless Mobile Gaming Controller',
-  image: '/images/Products/more/steel-series-stratus-controller.png',
-  price: 160.00,
-  category: 'gaming',
-  availability: 'In Stock',
-  color: 'Black',
-  specs: {
-    compatibility: 'Android 4+ (wireless), Windows PC (wired)',
-    battery: '90 hours per charge',
-    includes: 'USB-C to USB-A cable & phone holder',
-    type: 'Wireless Mobile Gaming Controller'
-  }
-},
-{
-  id: 'ps4-dualshock',
-  name: 'PlayStation 4 DualShock Wireless Controller',
-  image: '/images/Products/more/sony-play-station-4-dual-shock.png',
-  price: 280.00,
-  category: 'gaming',
-  availability: 'In Stock',
-  color: 'Black',
-  specs: {
-    type: 'Wireless Controller',
-    compatibility: 'PlayStation 4'
-  }
-},
-{
-  id: 'razer-charging-stand',
-  name: 'Razer Legendary Duo Bundle - PS5 Charging Stand',
-  image: '/images/Products/more/razer-quick-charging-stand.png',
-  price: 399.00,
-  category: 'gaming',
-  availability: 'In Stock',
-    specs: {
-    type: 'Quick Charging Stand',
-    compatibility: 'PS5 DualSense Wireless Controller'
-  }
-},
+
 // SMART WATCHES
 {
   id: 'peje-smartwatch-rose-gold',
@@ -1144,7 +1118,7 @@ export default function TechAudioCategory() {
         colors: "Purple & White options"
       }
     },
-    // HEADPHONES - New additions
+  // HEADPHONES - New additions
   {
   id: 'motorola-kids-headphones',
   name: 'Motorola Kids Wireless Headphones',
@@ -1222,6 +1196,34 @@ export default function TechAudioCategory() {
     eq: '3 EQ Settings: Classic, Voice Boost, Bass Boost',
     audio: '4 modes: Bluetooth, 3.5mm aux, Micro SD, FM Radio',
     features: 'Adjustable headband, rotating ear cups'
+  }
+},
+{
+  id: 'kotion-each-pro-headphones',
+  name: 'Kotion Each Pro Gaming Headphones',
+  image: '/images/Products/tech-audio/kotion-headset.png',
+  price: 175.00,
+  category: 'headphones',
+  inStock: true,
+  description: '2.4GHz Wireless Mode | Bluetooth Mode | Wired Mode | Pro Gaming Audio | Comfortable Design',
+  specs: {
+    connectivity: '2.4GHz Wireless, BT, Wired',
+    features: 'Pro Gaming Audio'
+  }
+},
+{
+  id: 'bl500-gaming-headphones',
+  name: 'BL500 Gaming Headphones',
+  image: '/images/Products/tech-audio/bl500-headset.png',
+  price: 150.00,
+  category: 'headphones',
+  inStock: true,
+  description: '2.4GHz Wireless Mode | Up to 30 Hours Battery | Noise Reduction Mic | For PC, MAC, PS4 & PS5',
+  specs: {
+    connectivity: '2.4GHz Wireless',
+    battery: 'Up to 30 Hours',
+    mic: 'Noise Reduction',
+    compatible: 'PC, MAC, PS4, PS5'
   }
 },
 

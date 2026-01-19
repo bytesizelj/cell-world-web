@@ -50,7 +50,7 @@ export default function Home() {
   // Auto-rotate hot deals banner every 5 seconds
 useEffect(() => {
   const interval = setInterval(() => {
-    setCurrentSlide((prev) => (prev + 1) % 4); // Changed from % 3 to % 4
+    setCurrentSlide((prev) => (prev + 1) % 2); // PS5 + Samsung = 2 slides
   }, 20000);
   
   return () => clearInterval(interval);
@@ -78,9 +78,7 @@ useEffect(() => {
     '/images/more.jpg'
   ];
   
-  // ... rest of the code
-
-     
+    
     // Set a maximum loading time of 2 seconds
     const loadingTimeout = setTimeout(() => {
       setIsLoading(false);
@@ -445,7 +443,7 @@ useEffect(() => {
 )}
 END COMMENT */}
 
-{/* AUTO-ROTATING HOT DEALS BANNER - NEW YEAR EDITION */}
+{/* AUTO-ROTATING HOT DEALS BANNER - PS5 & SAMSUNG EDITION */}
 {showBanner && (
   <div 
     className="fixed inset-0 z-[60] flex items-center justify-center animate-fade-in"
@@ -465,7 +463,112 @@ END COMMENT */}
           <X className="w-6 h-6 text-gray-700" />
         </button>
 
-{/* Slide 1: Happy New Year Video - Mobile Optimized */}
+{/* Slide 1: PS5 Console - EPIC DYNAMIC VERSION */}
+<div 
+  className={`absolute inset-0 transition-all duration-1000 ${
+    currentSlide === 0 
+      ? 'opacity-100 translate-x-0' 
+      : 'opacity-0 -translate-x-full'
+  }`}
+  style={{
+    background: 'linear-gradient(135deg, #000428 0%, #004e92 100%)',
+  }}
+>
+  {/* Animated background effects - MORE DRAMATIC */}
+  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className="absolute top-10 left-10 text-blue-400 text-6xl animate-float opacity-70">✨</div>
+    <div className="absolute top-20 right-20 text-purple-400 text-5xl animate-float opacity-60" style={{animationDelay: '0.5s'}}>🎮</div>
+    <div className="absolute bottom-20 left-1/4 text-cyan-400 text-7xl animate-float opacity-50" style={{animationDelay: '1s'}}>⭐</div>
+    <div className="absolute top-1/3 right-1/3 text-pink-400 text-4xl animate-float opacity-70" style={{animationDelay: '1.5s'}}>💫</div>
+    <div className="absolute bottom-10 right-10 text-yellow-400 text-5xl animate-float opacity-60" style={{animationDelay: '2s'}}>🌟</div>
+  </div>
+
+  {/* Pulsating light circles */}
+  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+    <div className="w-96 h-96 rounded-full bg-blue-500/20 animate-ping-slow"></div>
+    <div className="absolute w-80 h-80 rounded-full bg-purple-500/30 animate-ping-slower"></div>
+    <div className="absolute w-64 h-64 rounded-full bg-cyan-500/20 animate-ping-slowest"></div>
+  </div>
+
+  {/* Rotating gradient ring */}
+  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+    <div className="w-[600px] h-[600px] rounded-full animate-spin-slow" style={{
+      background: 'conic-gradient(from 0deg, transparent, rgba(0, 150, 255, 0.3), transparent, rgba(147, 51, 234, 0.3), transparent)',
+    }}></div>
+  </div>
+
+  {/* Content Container */}
+  <div className="relative h-full w-full flex items-center justify-center p-4 md:p-8 z-10">
+    <div className="bg-gradient-to-br from-gray-900/40 to-blue-900/40 backdrop-blur-sm rounded-3xl shadow-2xl p-4 md:p-12 w-full border border-blue-500/30" style={{ maxWidth: '85%', maxHeight: '85%' }}>
+      <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
+        
+        {/* Image Section with DRAMATIC EFFECTS */}
+        <div className="w-full md:w-1/2 flex justify-center relative">
+          {/* Additional glow rings around PS5 */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-80 h-80 md:w-96 md:h-96 rounded-full bg-blue-400/20 animate-ping-slow"></div>
+            <div className="absolute w-64 h-64 md:w-80 md:h-80 rounded-full bg-purple-500/30 animate-ping-slower"></div>
+          </div>
+          
+          <img 
+            src="/images/Products/gaming/ps5-console.png"
+            alt="PS5 Console Disc Drive"
+            className="relative z-10 h-48 md:h-80 lg:h-96 object-contain"
+            style={{
+              filter: 'drop-shadow(0 0 60px rgba(0, 150, 255, 1)) drop-shadow(0 0 100px rgba(147, 51, 234, 0.8))',
+              animation: 'phone-dramatic 3s ease-in-out infinite, float-phone 4s ease-in-out infinite'
+            }}
+          />
+          
+          {/* Sparkle Effects */}
+          <div className="absolute top-10 right-10 text-5xl animate-sparkle">✨</div>
+          <div className="absolute bottom-10 left-10 text-4xl animate-sparkle-delayed">⭐</div>
+          <div className="absolute top-1/2 left-5 text-3xl animate-sparkle" style={{animationDelay: '1s'}}>💫</div>
+        </div>
+        
+        {/* PS5 Details */}
+        <div className="w-full md:w-1/2 text-white text-center md:text-left">
+          <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-3 py-1 md:px-6 md:py-3 rounded-full inline-block mb-2 font-black text-xs md:text-base shadow-xl animate-bounce-gentle">
+            🎮 GAMING POWERHOUSE
+          </div>
+          <h2 className="text-xl md:text-3xl lg:text-4xl font-black mb-2 animate-glow-pulse" style={{
+            textShadow: '0 0 20px rgba(255,255,255,1), 0 0 40px rgba(0,150,255,0.8), 0 0 60px rgba(147,51,234,0.6)'
+          }}>
+            PlayStation 5 Console
+          </h2>
+          <h3 className="text-lg md:text-2xl font-bold mb-2 md:mb-3 text-cyan-300 animate-pulse">
+            Disc Drive Edition
+          </h3>
+          <p className="text-xs md:text-sm lg:text-base mb-2 md:mb-3 font-semibold">
+            🚀 Lightning-fast loading • 4K gaming • Ray tracing • Immersive 3D audio
+          </p>
+          <div className="text-2xl md:text-4xl lg:text-5xl font-black mb-2 md:mb-3 animate-bounce-gentle" style={{
+            textShadow: '0 4px 20px rgba(255,215,0,0.8)',
+            background: 'linear-gradient(90deg, #FFD700, #FFA500, #FFD700)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundSize: '200% auto',
+            animation: 'shimmer 3s linear infinite'
+          }}>
+            $2900
+          </div>
+          <a 
+            href="/Categories/tech-audio"
+            className="inline-block bg-gradient-to-r from-pink-500 via-purple-600 to-blue-600 text-white px-4 py-2 md:px-8 md:py-4 rounded-full font-black text-xs md:text-base lg:text-xl hover:from-pink-400 hover:via-purple-500 hover:to-blue-500 transition-all shadow-2xl hover:scale-110 animate-pulse"
+            style={{
+              boxShadow: '0 0 30px rgba(236, 72, 153, 0.6), 0 0 60px rgba(147, 51, 234, 0.4)'
+            }}
+            onClick={() => setShowBanner(false)}
+          >
+            🎮 LEVEL UP NOW →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{/* COMMENTED OUT - Slide 1: Happy New Year Video 
 <div 
   className={`absolute inset-0 transition-all duration-1000 ${
     currentSlide === 0 
@@ -476,7 +579,6 @@ END COMMENT */}
     background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
   }}
 >
-  {/* Video Container - Mobile fills more screen */}
   <div className="relative h-full w-full flex items-center justify-center overflow-hidden p-2 md:p-8">
     <video
       autoPlay
@@ -505,12 +607,10 @@ END COMMENT */}
       <source src="/videos/cell-world-new-year.mp4" type="video/mp4" />
     </video>
     
-    {/* Unmute indicator - Smaller on mobile */}
     <div className="absolute top-4 right-4 bg-white/90 px-2 py-1 md:px-4 md:py-2 rounded-full shadow-lg animate-pulse">
       <p className="text-xs font-bold text-gray-800">🔇 Tap</p>
     </div>
     
-    {/* Cell World logo overlay - Smaller on mobile */}
     <div className="absolute bottom-2 md:bottom-8 left-1/2 transform -translate-x-1/2 z-10">
       <img 
         src="/images/cell-world-logo.png"
@@ -523,17 +623,19 @@ END COMMENT */}
     </div>
   </div>
 </div>
+END COMMENT */}
 
-        {/* Slide 2: Samsung Phones - Reduced to match video size */}
-<div 
-  className={`absolute inset-0 transition-all duration-1000 ${
-    currentSlide === 1 
-      ? 'opacity-100 translate-x-0' 
-      : 'opacity-0 translate-x-full'
-  }`}
-  style={{
-    background: 'linear-gradient(135deg, #c41e3a 0%, #165b33 50%, #c41e3a 100%)',
-  }}
+        {/* Slide 2: Samsung Phones - Reduced to match slide size */}
+        <div 
+          className={`absolute inset-0 transition-all duration-1000 ${
+            currentSlide === 1 
+              ? 'opacity-100 translate-x-0' 
+              : 'opacity-0 translate-x-full'
+          }`}
+          style={{
+            background: 'linear-gradient(135deg, #c41e3a 0%, #165b33 50%, #c41e3a 100%)',
+          }}
+        
 >
   {/* Animated Snowflakes Background */}
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -595,7 +697,7 @@ END COMMENT */}
           <h2 className="text-xl md:text-3xl font-black mb-2 animate-glow-pulse" style={{
             textShadow: '0 0 20px rgba(255,255,255,1), 0 0 40px rgba(255,215,0,0.8)'
           }}>
-            Samsung A06 • A05 • F05
+            Samsung A06 • A05 • A11
           </h2>
           <p className="text-xs md:text-base mb-2 md:mb-3 font-semibold">Does your phone need CPR every morning to turn on? 😵‍💫🤲 • Tapping… shaking… begging… praying… 🙏 • That phone retired! Buy Now!</p>
           <div className="text-2xl md:text-4xl font-black mb-2 md:mb-3 animate-bounce-gentle" style={{
@@ -951,13 +1053,6 @@ END COMMENT */}
 .animate-sparkle-delayed {
   animation: sparkle-delayed 2.5s ease-in-out infinite 0.5s;
 }
-/* Mobile: Adjust Celly chat window positioning */
-@media (max-width: 768px) {
-  /* This targets elements inside the Celly component to prevent overflow */
-  body {
-    overflow-x: hidden;
-  }
-}
 `}</style>
         
 {/* Category Section with HOVER ZOOM for images */}
@@ -1273,9 +1368,10 @@ END COMMENT */}
 {/* Celly Assistant - Slide in from right with label above */}
 {showCelly && (
   <div 
-    className={`fixed bottom-6 right-6 z-50 transition-all duration-700 ease-out ${
-      cellyMounted ? 'translate-x-0 opacity-100' : 'translate-x-32 opacity-0'
-    }`}
+    className="fixed bottom-6 right-6 z-50"
+    style={{
+      animation: 'slide-in-from-right 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards'
+    }}
   >
     <div className="flex flex-col items-end gap-2">
       {/* Text label */}
