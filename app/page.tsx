@@ -463,7 +463,7 @@ END COMMENT */}
           <X className="w-6 h-6 text-gray-700" />
         </button>
 
-{/* Slide 1: PS5 Console - EPIC DYNAMIC VERSION */}
+{/* Slide 1: Samsung Phones - DARK BLUE & GOLD THEME */}
 <div 
   className={`absolute inset-0 transition-all duration-1000 ${
     currentSlide === 0 
@@ -471,133 +471,119 @@ END COMMENT */}
       : 'opacity-0 -translate-x-full'
   }`}
   style={{
-    background: 'linear-gradient(135deg, #000428 0%, #004e92 100%)',
+    background: 'linear-gradient(135deg, #0a192f 0%, #112240 50%, #1e3a5f 100%)',
   }}
 >
-  {/* Animated background effects - MORE DRAMATIC */}
+  {/* Animated background effects */}
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
-    <div className="absolute top-10 left-10 text-blue-400 text-6xl animate-float opacity-70">✨</div>
-    <div className="absolute top-20 right-20 text-purple-400 text-5xl animate-float opacity-60" style={{animationDelay: '0.5s'}}>🎮</div>
-    <div className="absolute bottom-20 left-1/4 text-cyan-400 text-7xl animate-float opacity-50" style={{animationDelay: '1s'}}>⭐</div>
-    <div className="absolute top-1/3 right-1/3 text-pink-400 text-4xl animate-float opacity-70" style={{animationDelay: '1.5s'}}>💫</div>
+    <div className="absolute top-10 left-10 text-cyan-300 text-6xl animate-float opacity-70">📱</div>
+    <div className="absolute top-20 right-20 text-yellow-300 text-5xl animate-float opacity-60" style={{animationDelay: '0.5s'}}>✨</div>
+    <div className="absolute bottom-20 left-1/4 text-blue-300 text-7xl animate-float opacity-50" style={{animationDelay: '1s'}}>⭐</div>
+    <div className="absolute top-1/3 right-1/3 text-cyan-400 text-4xl animate-float opacity-70" style={{animationDelay: '1.5s'}}>💫</div>
     <div className="absolute bottom-10 right-10 text-yellow-400 text-5xl animate-float opacity-60" style={{animationDelay: '2s'}}>🌟</div>
+    <div className="absolute top-40 left-1/2 text-blue-400 text-6xl animate-float opacity-40" style={{animationDelay: '0.8s'}}>✨</div>
   </div>
 
-  {/* Pulsating triangles spread across slide */}
-<div className="absolute inset-0 pointer-events-none overflow-hidden">
-  {/* Top Left */}
-  <div className="absolute top-10 left-10 w-32 h-32 animate-ping-slow" style={{
-    clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)',
-    background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(147, 51, 234, 0.2))'
-  }}></div>
-  
-  {/* Top Right */}
-  <div className="absolute top-20 right-20 w-40 h-40 animate-ping-slower" style={{
-    clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)',
-    background: 'linear-gradient(135deg, rgba(236, 72, 153, 0.3), rgba(59, 130, 246, 0.2))',
-    animationDelay: '0.5s'
-  }}></div>
-  
-  {/* Center */}
-  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 animate-ping-slowest" style={{
-    clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)',
-    background: 'linear-gradient(135deg, rgba(6, 182, 212, 0.3), rgba(147, 51, 234, 0.2))',
-    animationDelay: '1s'
-  }}></div>
-  
-  {/* Bottom Left */}
-  <div className="absolute bottom-20 left-1/4 w-36 h-36 animate-ping-slow" style={{
-    clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)',
-    background: 'linear-gradient(135deg, rgba(147, 51, 234, 0.3), rgba(236, 72, 153, 0.2))',
-    animationDelay: '1.5s'
-  }}></div>
-  
-  {/* Bottom Right */}
-  <div className="absolute bottom-10 right-1/3 w-44 h-44 animate-ping-slower" style={{
-    clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)',
-    background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(6, 182, 212, 0.2))',
-    animationDelay: '2s'
-  }}></div>
-  
-  {/* Mid Left */}
-  <div className="absolute top-1/3 left-1/5 w-28 h-28 animate-ping-slowest" style={{
-    clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)',
-    background: 'linear-gradient(135deg, rgba(236, 72, 153, 0.3), rgba(59, 130, 246, 0.2))',
-    animationDelay: '0.8s'
-  }}></div>
-</div>
+  {/* Pulsating circles spread across slide */}
+  <div className="absolute inset-0 pointer-events-none overflow-hidden">
+    <div className="absolute top-10 left-10 w-32 h-32 rounded-full animate-ping-slow" style={{
+      background: 'radial-gradient(circle, rgba(6, 182, 212, 0.4), transparent)'
+    }}></div>
+    <div className="absolute top-20 right-20 w-40 h-40 rounded-full animate-ping-slower" style={{
+      background: 'radial-gradient(circle, rgba(251, 191, 36, 0.4), transparent)',
+      animationDelay: '0.5s'
+    }}></div>
+    <div className="absolute top-1/2 left-1/2 w-48 h-48 rounded-full animate-ping-slowest" style={{
+      background: 'radial-gradient(circle, rgba(59, 130, 246, 0.4), transparent)',
+      animationDelay: '1s'
+    }}></div>
+    <div className="absolute bottom-20 left-1/4 w-36 h-36 rounded-full animate-ping-slow" style={{
+      background: 'radial-gradient(circle, rgba(6, 182, 212, 0.4), transparent)',
+      animationDelay: '1.5s'
+    }}></div>
+  </div>
 
   {/* Rotating gradient ring */}
   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
     <div className="w-[600px] h-[600px] rounded-full animate-spin-slow" style={{
-      background: 'conic-gradient(from 0deg, transparent, rgba(0, 150, 255, 0.3), transparent, rgba(147, 51, 234, 0.3), transparent)',
+      background: 'conic-gradient(from 0deg, transparent, rgba(6, 182, 212, 0.3), transparent, rgba(251, 191, 36, 0.3), transparent)',
     }}></div>
   </div>
 
   {/* Content Container */}
-  <div className="relative h-full w-full flex items-center justify-center p-4 md:p-8 z-10">
-    <div className="bg-gradient-to-br from-gray-900/40 to-blue-900/40 backdrop-blur-sm rounded-3xl shadow-2xl p-4 md:p-12 w-full border border-blue-500/30" style={{ maxWidth: '85%', maxHeight: '85%' }}>
-      <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
+  <div className="relative h-full w-full flex items-center justify-center p-8">
+    <div className="bg-gradient-to-br from-blue-900/40 to-cyan-900/40 backdrop-blur-sm rounded-3xl shadow-2xl p-6 md:p-12 border border-cyan-500/30" style={{ maxWidth: '85%', maxHeight: '85%' }}>
+      <div className="flex flex-col md:flex-row items-center justify-between gap-6">
         
         {/* Image Section with DRAMATIC EFFECTS */}
         <div className="w-full md:w-1/2 flex justify-center relative">
-          {/* Additional glow rings around PS5 */}
+          {/* Pulsating Glow Rings */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-80 h-80 md:w-96 md:h-96 rounded-full bg-blue-400/20 animate-ping-slow"></div>
-            <div className="absolute w-64 h-64 md:w-80 md:h-80 rounded-full bg-purple-500/30 animate-ping-slower"></div>
+            <div className="w-72 h-72 md:w-96 md:h-96 rounded-full bg-cyan-400/20 animate-ping-slow"></div>
+            <div className="absolute w-64 h-64 md:w-80 md:h-80 rounded-full bg-blue-500/30 animate-ping-slower"></div>
+            <div className="absolute w-56 h-56 md:w-72 md:h-72 rounded-full bg-yellow-500/30 animate-ping-slowest"></div>
           </div>
           
+          {/* Rotating Gradient Ring */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-80 h-80 md:w-[450px] md:h-[450px] rounded-full animate-spin-slow" style={{
+              background: 'conic-gradient(from 0deg, transparent, rgba(6, 182, 212, 0.4), transparent, rgba(251, 191, 36, 0.4), transparent)',
+            }}></div>
+          </div>
+          
+          {/* Phone Image with Multiple Animations */}
           <img 
-            src="/images/Products/gaming/ps5-console.png"
-            alt="PS5 Console Disc Drive"
-            className="relative z-10 h-48 md:h-80 lg:h-96 object-contain"
+            src="/images/Products/phones/samsung-galaxy2-a11.png"
+            alt="Samsung A11"
+            className="relative z-10 h-48 md:h-72 object-contain"
             style={{
-              filter: 'drop-shadow(0 0 60px rgba(0, 150, 255, 1)) drop-shadow(0 0 100px rgba(147, 51, 234, 0.8))',
+              filter: 'drop-shadow(0 0 40px rgba(6, 182, 212, 1)) drop-shadow(0 0 80px rgba(59, 130, 246, 0.8)) drop-shadow(0 0 120px rgba(251, 191, 36, 0.6))',
               animation: 'phone-dramatic 3s ease-in-out infinite, float-phone 4s ease-in-out infinite'
             }}
           />
           
           {/* Sparkle Effects */}
-          <div className="absolute top-10 right-10 text-5xl animate-sparkle">✨</div>
-          <div className="absolute bottom-10 left-10 text-4xl animate-sparkle-delayed">⭐</div>
-          <div className="absolute top-1/2 left-5 text-3xl animate-sparkle" style={{animationDelay: '1s'}}>💫</div>
+          <div className="absolute top-10 right-10 text-4xl animate-sparkle">✨</div>
+          <div className="absolute bottom-10 left-10 text-3xl animate-sparkle-delayed">⭐</div>
+          <div className="absolute top-1/2 left-5 text-2xl animate-sparkle" style={{animationDelay: '1s'}}>💫</div>
         </div>
         
-        {/* PS5 Details */}
+        {/* Samsung Phones Details */}
         <div className="w-full md:w-1/2 text-white text-center md:text-left">
-          <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-3 py-1 md:px-6 md:py-3 rounded-full inline-block mb-2 font-black text-xs md:text-base shadow-xl animate-bounce-gentle">
-            🎮 GAMING POWERHOUSE
+          <div className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-full inline-block mb-2 md:mb-3 font-black text-sm md:text-base animate-pulse shadow-xl">
+            🔥 HOT DEALS!
           </div>
-          <h2 className="text-xl md:text-3xl lg:text-4xl font-black mb-2 animate-glow-pulse" style={{
-            textShadow: '0 0 20px rgba(255,255,255,1), 0 0 40px rgba(0,150,255,0.8), 0 0 60px rgba(147,51,234,0.6)'
+          <h2 className="text-xl md:text-3xl lg:text-5xl font-black mb-2" style={{
+            color: '#FFFFFF',
+            textShadow: '0 0 30px rgba(6, 182, 212, 1), 0 0 50px rgba(59, 130, 246, 0.8), 0 4px 20px rgba(0,0,0,0.8)',
+            fontWeight: '900'
           }}>
-            PlayStation 5 Console
+            Samsung A11 • A06 • A05
           </h2>
-          <h3 className="text-lg md:text-2xl font-bold mb-2 md:mb-3 text-cyan-300 animate-pulse">
-            Disc Drive Edition
-          </h3>
-          <p className="text-xs md:text-sm lg:text-base mb-2 md:mb-3 font-semibold">
-            🚀 Lightning-fast loading • 4K gaming • Ray tracing • Immersive 3D audio
-          </p>
-          <div className="text-2xl md:text-4xl lg:text-5xl font-black mb-2 md:mb-3 animate-bounce-gentle" style={{
-            textShadow: '0 4px 20px rgba(255,215,0,0.8)',
-            background: 'linear-gradient(90deg, #FFD700, #FFA500, #FFD700)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundSize: '200% auto',
-            animation: 'shimmer 3s linear infinite'
+          <p className="text-sm md:text-base lg:text-lg mb-2 md:mb-3 font-bold" style={{
+            color: '#FFD700',
+            textShadow: '0 2px 10px rgba(0,0,0,0.9)',
+            fontWeight: '700'
           }}>
-            $2900
+            Does your phone need CPR every morning? 😵‍💫🤲 • Tapping… shaking… begging… 🙏 • That phone retired! Buy Now!
+          </p>
+          <div className="text-3xl md:text-5xl lg:text-6xl font-black mb-2 md:mb-3 animate-bounce-gentle" style={{
+            color: '#FFD700',
+            textShadow: '0 0 40px rgba(251, 191, 36, 1), 0 4px 30px rgba(251, 191, 36, 0.8), 0 8px 20px rgba(0,0,0,0.9)',
+            fontWeight: '900'
+          }}>
+            From $420
           </div>
           <a 
-            href="/Categories/tech-audio"
-            className="inline-block bg-gradient-to-r from-pink-500 via-purple-600 to-blue-600 text-white px-4 py-2 md:px-8 md:py-4 rounded-full font-black text-xs md:text-base lg:text-xl hover:from-pink-400 hover:via-purple-500 hover:to-blue-500 transition-all shadow-2xl hover:scale-110 animate-pulse"
+            href="/Categories/phones"
+            className="inline-block bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-400 text-white px-4 py-2 md:px-8 md:py-4 rounded-full font-black text-xs md:text-base lg:text-xl hover:from-cyan-300 hover:via-blue-400 hover:to-cyan-300 transition-all shadow-2xl hover:scale-110 animate-pulse"
             style={{
-              boxShadow: '0 0 30px rgba(236, 72, 153, 0.6), 0 0 60px rgba(147, 51, 234, 0.4)'
+              boxShadow: '0 0 40px rgba(6, 182, 212, 0.8), 0 0 80px rgba(59, 130, 246, 0.6)',
+              fontWeight: '900'
             }}
             onClick={() => setShowBanner(false)}
           >
-            🎮 LEVEL UP NOW →
+            📱 SHOP NOW →
           </a>
         </div>
       </div>
@@ -662,98 +648,115 @@ END COMMENT */}
 </div>
 END COMMENT */}
 
-        {/* Slide 2: Samsung Phones - Reduced to match slide size */}
-        <div 
-          className={`absolute inset-0 transition-all duration-1000 ${
-            currentSlide === 1 
-              ? 'opacity-100 translate-x-0' 
-              : 'opacity-0 translate-x-full'
-          }`}
-          style={{
-            background: 'linear-gradient(135deg, #c41e3a 0%, #165b33 50%, #c41e3a 100%)',
-          }}
-        
+        {/* Slide 2: Wireless Earbuds */}
+<div 
+  className={`absolute inset-0 transition-all duration-1000 ${
+    currentSlide === 1 
+      ? 'opacity-100 translate-x-0' 
+      : 'opacity-0 translate-x-full'
+  }`}
+  style={{
+    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+  }}
 >
-  {/* Animated Snowflakes Background */}
+  {/* Animated background effects */}
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
-    <div className="absolute top-10 left-10 text-white text-4xl animate-float opacity-70">❄️</div>
-    <div className="absolute top-20 right-20 text-white text-3xl animate-float opacity-60" style={{animationDelay: '0.5s'}}>❄️</div>
-    <div className="absolute bottom-20 left-1/4 text-white text-5xl animate-float opacity-50" style={{animationDelay: '1s'}}>❄️</div>
-    <div className="absolute top-1/3 right-1/3 text-white text-3xl animate-float opacity-70" style={{animationDelay: '1.5s'}}>❄️</div>
-    <div className="absolute bottom-10 right-10 text-white text-4xl animate-float opacity-60" style={{animationDelay: '2s'}}>❄️</div>
-    <div className="absolute top-40 left-1/2 text-white text-6xl animate-float opacity-40" style={{animationDelay: '0.8s'}}>❄️</div>
+    <div className="absolute top-10 left-10 text-purple-300 text-6xl animate-float opacity-70">✨</div>
+    <div className="absolute top-20 right-20 text-pink-300 text-5xl animate-float opacity-60" style={{animationDelay: '0.5s'}}>🎵</div>
+    <div className="absolute bottom-20 left-1/4 text-cyan-300 text-7xl animate-float opacity-50" style={{animationDelay: '1s'}}>⭐</div>
+    <div className="absolute top-1/3 right-1/3 text-purple-400 text-4xl animate-float opacity-70" style={{animationDelay: '1.5s'}}>💫</div>
+    <div className="absolute bottom-10 right-10 text-pink-400 text-5xl animate-float opacity-60" style={{animationDelay: '2s'}}>🌟</div>
   </div>
 
-  {/* Christmas Lights Border Effect */}
-  <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-500 via-green-500 to-red-500 animate-shimmer"></div>
-  <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-green-500 via-red-500 to-green-500 animate-shimmer"></div>
+  {/* Pulsating circles */}
+  <div className="absolute inset-0 pointer-events-none overflow-hidden">
+    <div className="absolute top-10 left-10 w-32 h-32 rounded-full animate-ping-slow" style={{
+      background: 'radial-gradient(circle, rgba(147, 51, 234, 0.3), transparent)'
+    }}></div>
+    <div className="absolute top-20 right-20 w-40 h-40 rounded-full animate-ping-slower" style={{
+      background: 'radial-gradient(circle, rgba(236, 72, 153, 0.3), transparent)',
+      animationDelay: '0.5s'
+    }}></div>
+    <div className="absolute bottom-20 left-1/4 w-36 h-36 rounded-full animate-ping-slow" style={{
+      background: 'radial-gradient(circle, rgba(6, 182, 212, 0.3), transparent)',
+      animationDelay: '1.5s'
+    }}></div>
+  </div>
 
-  {/* Content Container - Sized to match video (85%) */}
-  <div className="relative h-full w-full flex items-center justify-center p-8">
-    <div className="bg-gradient-to-br from-red-900/30 to-green-900/30 backdrop-blur-sm rounded-3xl shadow-2xl p-6 md:p-12" style={{ maxWidth: '85%', maxHeight: '85%' }}>
-      <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+  {/* Content Container */}
+  <div className="relative h-full w-full flex items-center justify-center p-4 md:p-8 z-10">
+    <div className="bg-gradient-to-br from-purple-900/40 to-pink-900/40 backdrop-blur-sm rounded-3xl shadow-2xl p-4 md:p-12 w-full border border-purple-500/30" style={{ maxWidth: '85%', maxHeight: '85%' }}>
+      <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
         
         {/* Image Section with DRAMATIC EFFECTS */}
         <div className="w-full md:w-1/2 flex justify-center relative">
-          {/* Pulsating Glow Rings */}
+          {/* Glow rings around earbuds */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-72 h-72 md:w-96 md:h-96 rounded-full bg-white/20 animate-ping-slow"></div>
-            <div className="absolute w-64 h-64 md:w-80 md:h-80 rounded-full bg-red-500/30 animate-ping-slower"></div>
-            <div className="absolute w-56 h-56 md:w-72 md:h-72 rounded-full bg-green-500/30 animate-ping-slowest"></div>
+            <div className="w-80 h-80 md:w-96 md:h-96 rounded-full bg-purple-400/20 animate-ping-slow"></div>
+            <div className="absolute w-64 h-64 md:w-80 md:h-80 rounded-full bg-pink-500/30 animate-ping-slower"></div>
           </div>
           
-          {/* Rotating Gradient Ring */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-80 h-80 md:w-[450px] md:h-[450px] rounded-full animate-spin-slow" style={{
-              background: 'conic-gradient(from 0deg, transparent, rgba(255, 0, 0, 0.4), transparent, rgba(0, 255, 0, 0.4), transparent)',
-            }}></div>
-          </div>
-          
-          {/* Phone Image with Multiple Animations */}
           <img 
-            src="/images/Products/phones/samsung2-galaxy-f05.png"
-            alt="Samsung F05"
-            className="relative z-10 h-48 md:h-72 object-contain"
+            src="/images/Products/tech-audio/earbuds2-anc-white.png"
+            alt="Wireless Earbuds"
+            className="relative z-10 h-48 md:h-80 lg:h-96 object-contain"
             style={{
-              filter: 'drop-shadow(0 0 40px rgba(255, 255, 255, 1)) drop-shadow(0 0 80px rgba(255, 0, 0, 0.6)) drop-shadow(0 0 120px rgba(0, 255, 0, 0.4))',
+              filter: 'drop-shadow(0 0 60px rgba(147, 51, 234, 1)) drop-shadow(0 0 100px rgba(236, 72, 153, 0.8))',
               animation: 'phone-dramatic 3s ease-in-out infinite, float-phone 4s ease-in-out infinite'
             }}
           />
           
           {/* Sparkle Effects */}
-          <div className="absolute top-10 right-10 text-4xl animate-sparkle">✨</div>
-          <div className="absolute bottom-10 left-10 text-3xl animate-sparkle-delayed">⭐</div>
-          <div className="absolute top-1/2 left-5 text-2xl animate-sparkle" style={{animationDelay: '1s'}}>💫</div>
+          <div className="absolute top-10 right-10 text-5xl animate-sparkle">✨</div>
+          <div className="absolute bottom-10 left-10 text-4xl animate-sparkle-delayed">⭐</div>
+          <div className="absolute top-1/2 left-5 text-3xl animate-sparkle" style={{animationDelay: '1s'}}>💫</div>
         </div>
         
-        {/* Samsung Phones Details */}
-        <div className="w-full md:w-1/2 text-white text-center md:text-left">
-          <div className="bg-red-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-full inline-block mb-2 md:mb-3 font-black text-sm md:text-base animate-pulse shadow-xl">
-            🎄 CHRISTMAS SPECIAL 🎄
+        {/* Earbuds Details - VIBRANT & SOLID */}
+<div className="w-full md:w-1/2 text-white text-center md:text-left">
+  <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-3 py-1 md:px-6 md:py-3 rounded-full inline-block mb-2 font-black text-xs md:text-base shadow-xl animate-bounce-gentle">
+    🎵 FEEL THE VIBES!
+  </div>
+  <h2 className="text-xl md:text-3xl lg:text-5xl font-black mb-2" style={{
+    color: '#FFFFFF',
+    textShadow: '0 0 30px rgba(255,255,255,1), 0 0 50px rgba(255,215,0,1), 0 4px 20px rgba(0,0,0,0.8)',
+    fontWeight: '900'
+  }}>
+    Wireless Earbuds with ANC
+  </h2>
+  <p className="text-sm md:text-base lg:text-lg mb-2 md:mb-3 font-bold" style={{
+    color: '#FFD700',
+    textShadow: '0 2px 10px rgba(0,0,0,0.9)',
+    fontWeight: '700'
+  }}>
+    🎧 Active Noise Cancelling • High Quality Sound • Long Battery Life up to 24hrs
+  </p>
+  <div className="text-3xl md:text-5xl lg:text-6xl font-black mb-2 md:mb-3 animate-bounce-gentle" style={{
+    color: '#FFD700',
+    textShadow: '0 0 40px rgba(255,215,0,1), 0 4px 30px rgba(255,165,0,0.8), 0 8px 20px rgba(0,0,0,0.9)',
+    fontWeight: '900'
+  }}>
+    $99
+  </div>
+  <a 
+    href="/Categories/tech-audio"
+    className="inline-block bg-gradient-to-r from-yellow-400 via-orange-500 to-yellow-400 text-black px-4 py-2 md:px-8 md:py-4 rounded-full font-black text-xs md:text-base lg:text-xl hover:from-yellow-300 hover:via-orange-400 hover:to-yellow-300 transition-all shadow-2xl hover:scale-110 animate-pulse"
+    style={{
+      boxShadow: '0 0 40px rgba(255, 215, 0, 0.8), 0 0 80px rgba(255, 165, 0, 0.6)',
+      fontWeight: '900'
+    }}
+    onClick={() => setShowBanner(false)}
+  >
+    🎵 SHOP NOW →
+  </a>
           </div>
-          <h2 className="text-xl md:text-3xl font-black mb-2 animate-glow-pulse" style={{
-            textShadow: '0 0 20px rgba(255,255,255,1), 0 0 40px rgba(255,215,0,0.8)'
-          }}>
-            Samsung A06 • A05 • A11
-          </h2>
-          <p className="text-sm md:text-base mb-2 md:mb-3 font-semibold">Does your phone need CPR every morning to turn on? 😵‍💫🤲 • Tapping… shaking… begging… praying… 🙏 • That phone retired! Buy Now!</p>
-          <div className="text-2xl md:text-4xl font-black mb-2 md:mb-3 animate-bounce-gentle" style={{
-            textShadow: '0 4px 20px rgba(255,215,0,0.8)'
-          }}>
-            From $420
-          </div>
-          <a 
-            href="/Categories/phones"
-            className="inline-block bg-white text-red-700 px-5 py-2 md:px-8 md:py-4 rounded-full font-black text-sm md:text-xl hover:bg-yellow-400 hover:text-red-800 transition-all shadow-2xl hover:scale-110"
-            onClick={() => setShowBanner(false)}
-          >
-            🎁 SHOP NOW →
-          </a>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+{/* Slide Indicators - Updated for 2 slides */}
 
         {/* Slide Indicators - Updated for 2 slides */}
         <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-3 z-20">
@@ -777,8 +780,7 @@ END COMMENT */}
 
       </div>
     </div>
-  </div>
-)}
+  )}
 
  {/* CSS for animations */}
 <style jsx>{`

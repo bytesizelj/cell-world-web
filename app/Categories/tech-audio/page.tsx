@@ -83,12 +83,35 @@ export default function TechAudioCategory() {
   }
 },
 {
+  id: 'wireless-earbuds-anc-white',
+  name: 'Cell World Wireless Earbuds with ANC',
+  image: '/images/Products/tech-audio/earbuds-anc-white.png',
+  additionalImages: [
+    '/images/Products/tech-audio/earbuds2-anc-white.png'
+  ],
+  price: 99.00,
+  category: 'earbuds',
+  inStock: true,
+  description: 'Feel the vibes! Premium wireless earbuds with Active Noise Cancelling for immersive audio experience.',
+  specs: {
+    anc: 'Active Noise Cancelling',
+    sound: 'High Quality Sound - Deep Bass',
+    battery: 'Long Battery Life - Up to 24hrs with case',
+    bluetooth: 'Bluetooth 5.3 - Stable Connection',
+    waterproof: 'IPX4 Water Resistant',
+    charging: 'Fast Charging - USB-C',
+    controls: 'Touch Controls',
+    mic: 'Built-in Microphone for Calls'
+  }
+},
+{
   id: 'ps5-digital-edition',
   name: 'PS5 Digital Edition',
   image: '/images/Products/tech-audio/ps5-digital.png',
   price: 2600.00,
   category: 'gaming',
-  inStock: true,
+  availability: 'Back Soon',
+  inStock: false,
   description: '1TB Disc-Free Console | Ultra-Fast SSD | Stunning Graphics | Immersive Gaming Experience',
   specs: {
     storage: '1TB',
@@ -102,7 +125,8 @@ export default function TechAudioCategory() {
   image: '/images/Products/tech-audio/ps5-disc.png',
   price: 2900.00,
   category: 'gaming',
-  inStock: true,
+  availability: 'Back Soon',
+  inStock: false,
   description: 'Disc Drive Attaches to Console | DualSense Wireless Controller | 4K Gaming | Ultra HD Blu-ray',
   specs: {
     disc: 'Disc Drive',
@@ -730,28 +754,6 @@ export default function TechAudioCategory() {
 },
 
 // EARBUDS
-{
-  id: 'wireless-earbuds-anc-white',
-  name: 'Cell World Wireless Earbuds with ANC',
-  image: '/images/Products/tech-audio/earbuds-anc-white.png',
-  additionalImages: [
-    '/images/Products/tech-audio/earbuds2-anc-white.png'
-  ],
-  price: 99.00,
-  category: 'earbuds',
-  inStock: true,
-  description: 'Feel the vibes! Premium wireless earbuds with Active Noise Cancelling for immersive audio experience.',
-  specs: {
-    anc: 'Active Noise Cancelling',
-    sound: 'High Quality Sound - Deep Bass',
-    battery: 'Long Battery Life - Up to 24hrs with case',
-    bluetooth: 'Bluetooth 5.3 - Stable Connection',
-    waterproof: 'IPX4 Water Resistant',
-    charging: 'Fast Charging - USB-C',
-    controls: 'Touch Controls',
-    mic: 'Built-in Microphone for Calls'
-  }
-},
 {
   id: '2nd-gen-earpod',
   name: '2nd Generation EarPods with ANC',
