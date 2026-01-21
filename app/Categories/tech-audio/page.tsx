@@ -17,6 +17,7 @@ export default function TechAudioCategory() {
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const imageRef = useRef<HTMLDivElement>(null);
   const [filterCategory, setFilterCategory] = useState('all');
+  const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({});
 
   // Zoom handler functions
   const handleZoomIn = () => {
@@ -59,6 +60,28 @@ export default function TechAudioCategory() {
   // Enhanced product data with categories
   const products = [
 // GAMING
+{
+  id: 'gaming-kit-4in1',
+  name: 'Cell World 4-in-1 RGB Gaming Kit',
+  image: '/images/Products/tech-audio/audiogaming-kit-4in1.png',
+  additionalImages: [
+    '/images/Products/tech-audio/audiogaming-kit2-4in1.png'
+  ],
+  price: 350.00,
+  category: 'gaming',
+  inStock: true,
+  description: 'Complete RGB gaming setup! Includes Keyboard + Headset + Mouse + Mouse Pad. Plug & Play.',
+  specs: {
+    includes: 'RGB Gaming Keyboard + Headset + Mouse + Mouse Pad',
+    keyboard: 'Full-size RGB Mechanical Feel',
+    headset: 'Over-ear Gaming Headset with Mic',
+    mouse: 'High-precision RGB Gaming Mouse',
+    mousepad: 'Large Extended RGB Mouse Pad',
+    lighting: 'Customizable RGB Effects',
+    connectivity: 'Plug & Play - USB',
+    compatibility: 'PC, Laptop, PlayStation, Xbox'
+  }
+},
 {
   id: 'ps5-digital-edition',
   name: 'PS5 Digital Edition',
@@ -707,6 +730,28 @@ export default function TechAudioCategory() {
 },
 
 // EARBUDS
+{
+  id: 'wireless-earbuds-anc-white',
+  name: 'Cell World Wireless Earbuds with ANC',
+  image: '/images/Products/tech-audio/earbuds-anc-white.png',
+  additionalImages: [
+    '/images/Products/tech-audio/earbuds2-anc-white.png'
+  ],
+  price: 99.00,
+  category: 'earbuds',
+  inStock: true,
+  description: 'Feel the vibes! Premium wireless earbuds with Active Noise Cancelling for immersive audio experience.',
+  specs: {
+    anc: 'Active Noise Cancelling',
+    sound: 'High Quality Sound - Deep Bass',
+    battery: 'Long Battery Life - Up to 24hrs with case',
+    bluetooth: 'Bluetooth 5.3 - Stable Connection',
+    waterproof: 'IPX4 Water Resistant',
+    charging: 'Fast Charging - USB-C',
+    controls: 'Touch Controls',
+    mic: 'Built-in Microphone for Calls'
+  }
+},
 {
   id: '2nd-gen-earpod',
   name: '2nd Generation EarPods with ANC',
@@ -1490,13 +1535,46 @@ const translations = {
       )}
       
       <Image 
-  src={product.image}
+  src={
+    product.additionalImages && selectedImages[product.id as string] !== undefined
+      ? product.additionalImages[selectedImages[product.id as string]]
+      : product.image
+  }
   alt={product.name}
   fill
-  priority
   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
   className="object-contain transition-transform duration-700 hover:scale-125"
-  />
+  loading="lazy"
+/>
+
+{/* Image selector dots if there are additional images */}
+{product.additionalImages && (
+  <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-2 z-20">
+    <button
+      onClick={(e) => {
+        e.stopPropagation();
+        const newSelectedImages = {...selectedImages};
+        delete newSelectedImages[product.id as string];
+        setSelectedImages(newSelectedImages);
+      }}
+      className={`w-2 h-2 rounded-full ${
+        selectedImages[product.id as string] === undefined ? 'bg-purple-400' : 'bg-gray-400'
+      }`}
+    />
+    {product.additionalImages.map((_, index) => (
+      <button
+        key={index}
+        onClick={(e) => {
+          e.stopPropagation();
+          setSelectedImages({...selectedImages, [product.id as string]: index});
+        }}
+        className={`w-2 h-2 rounded-full ${
+          selectedImages[product.id as string] === index ? 'bg-purple-400' : 'bg-gray-400'
+        }`}
+      />
+    ))}
+  </div>
+)}
       
       {/* Category Badge */}
       <div className="absolute top-2 left-2 bg-purple-500/80 text-white text-xs font-bold px-2 py-1 rounded-full">

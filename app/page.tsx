@@ -736,7 +736,7 @@ END COMMENT */}
           }}>
             Samsung A06 • A05 • A11
           </h2>
-          <p className="text-xs md:text-base mb-2 md:mb-3 font-semibold">Does your phone need CPR every morning to turn on? 😵‍💫🤲 • Tapping… shaking… begging… praying… 🙏 • That phone retired! Buy Now!</p>
+          <p className="text-sm md:text-base mb-2 md:mb-3 font-semibold">Does your phone need CPR every morning to turn on? 😵‍💫🤲 • Tapping… shaking… begging… praying… 🙏 • That phone retired! Buy Now!</p>
           <div className="text-2xl md:text-4xl font-black mb-2 md:mb-3 animate-bounce-gentle" style={{
             textShadow: '0 4px 20px rgba(255,215,0,0.8)'
           }}>
