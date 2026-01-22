@@ -533,14 +533,14 @@ END COMMENT */}
           
           {/* Phone Image with Multiple Animations */}
           <img 
-            src="/images/Products/phones/samsung-galaxy2-a11.png"
-            alt="Samsung A11"
-            className="relative z-10 h-48 md:h-72 object-contain"
-            style={{
-              filter: 'drop-shadow(0 0 40px rgba(6, 182, 212, 1)) drop-shadow(0 0 80px rgba(59, 130, 246, 0.8)) drop-shadow(0 0 120px rgba(251, 191, 36, 0.6))',
-              animation: 'phone-dramatic 3s ease-in-out infinite, float-phone 4s ease-in-out infinite'
-            }}
-          />
+  src="/images/Products/phones/samsung-galaxy-a11.png"
+  alt="Samsung A11"
+  className="relative z-10 h-48 md:h-72 object-contain"
+  style={{
+    filter: 'drop-shadow(0 0 40px rgba(6, 182, 212, 1)) drop-shadow(0 0 80px rgba(59, 130, 246, 0.8)) drop-shadow(0 0 120px rgba(251, 191, 36, 0.6))',
+    animation: 'phone-dramatic 3s ease-in-out infinite, float-phone 4s ease-in-out infinite, rotate-360 8s linear infinite'
+  }}
+/>
           
           {/* Sparkle Effects */}
           <div className="absolute top-10 right-10 text-4xl animate-sparkle">✨</div>
@@ -565,7 +565,7 @@ END COMMENT */}
             textShadow: '0 2px 10px rgba(0,0,0,0.9)',
             fontWeight: '700'
           }}>
-            Does your phone need CPR every morning? 😵‍💫🤲 • Tapping… shaking… begging… 🙏 • That phone retired! Buy Now!
+            Does your phone need CPR every morning? 😵‍💫🤲 • Tapping… shaking… begging… 🙏 • That phone retired! Upgrade Today!
           </p>
           <div className="text-3xl md:text-5xl lg:text-6xl font-black mb-2 md:mb-3 animate-bounce-gentle" style={{
             color: '#FFD700',
@@ -784,6 +784,10 @@ END COMMENT */}
 
  {/* CSS for animations */}
 <style jsx>{`
+@keyframes rotate-360 {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
 @keyframes slide-in-from-right {
   0% {
     opacity: 0;
