@@ -277,7 +277,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/rca-levelup-speaker.png',
   price: 450.00,
   category: 'speakers',
-  availability: 'In Stock',
+  availability: 'Back Soon',
   specs: {
     features: 'Illuminated, Karaoke mode',
     inputs: 'Memory device, Mic port, Aux port',
@@ -554,8 +554,6 @@ export default function TechAudioCategory() {
 },
 
 // WATCHES
-// Add these to the products array in tech-audio/page.tsx
-
 {
   id: 'casio-analog-1500wh-1bv',
   name: 'Casio Analog Watch 1500WH-1BV',
@@ -598,7 +596,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/tech-audio/casio-analog-aeq-110w.png',
   price: 250.00,
   category: 'watches',
-  availability: 'In Stock',
+  availability: 'Back Soon',
   color: 'Blue/Black',
   description: 'Multi-function digital watch with world time, illuminator light, and 10-year battery. Built tough for outdoor activities and everyday adventures.',
   specs: {
@@ -1549,32 +1547,38 @@ const translations = {
   loading="lazy"
 />
 
-{/* Image selector dots if there are additional images */}
+{/* Image selector dots - IMPROVED VISIBILITY */}
 {product.additionalImages && (
-  <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-2 z-20">
-    <button
-      onClick={(e) => {
-        e.stopPropagation();
-        const newSelectedImages = {...selectedImages};
-        delete newSelectedImages[product.id as string];
-        setSelectedImages(newSelectedImages);
-      }}
-      className={`w-2 h-2 rounded-full ${
-        selectedImages[product.id as string] === undefined ? 'bg-purple-400' : 'bg-gray-400'
-      }`}
-    />
-    {product.additionalImages.map((_, index) => (
+  <div className="absolute bottom-2 left-0 right-0 flex justify-center z-20">
+    <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 px-3 py-2 rounded-full flex gap-2 shadow-lg">
       <button
-        key={index}
         onClick={(e) => {
           e.stopPropagation();
-          setSelectedImages({...selectedImages, [product.id as string]: index});
+          const newSelectedImages = {...selectedImages};
+          delete newSelectedImages[product.id as string];
+          setSelectedImages(newSelectedImages);
         }}
-        className={`w-2 h-2 rounded-full ${
-          selectedImages[product.id as string] === index ? 'bg-purple-400' : 'bg-gray-400'
+        className={`w-4 h-4 rounded-full transition-all duration-200 border-2 ${
+          selectedImages[product.id as string] === undefined 
+            ? 'bg-white border-white scale-110 shadow-md' 
+            : 'bg-black/30 border-black/50 hover:bg-black/50'
         }`}
       />
-    ))}
+      {product.additionalImages.map((_, index) => (
+        <button
+          key={index}
+          onClick={(e) => {
+            e.stopPropagation();
+            setSelectedImages({...selectedImages, [product.id as string]: index});
+          }}
+          className={`w-4 h-4 rounded-full transition-all duration-200 border-2 ${
+            selectedImages[product.id as string] === index 
+              ? 'bg-white border-white scale-110 shadow-md' 
+              : 'bg-black/30 border-black/50 hover:bg-black/50'
+          }`}
+        />
+      ))}
+    </div>
   </div>
 )}
       

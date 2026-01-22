@@ -720,35 +720,42 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
   loading="lazy"
 />
                 
-                {/* Image selector dots if there are additional images - TYPESCRIPT FIX */}
-                {product.additionalImages && (
-                  <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-2 z-20">
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        const newSelectedImages = {...selectedImages};
-                        delete newSelectedImages[product.id as string];
-                        setSelectedImages(newSelectedImages);
-                      }}
-                      className={`w-2 h-2 rounded-full ${
-                        selectedImages[product.id as string] === undefined ? 'bg-yellow-400' : 'bg-gray-400'
-                      }`}
-                    />
-                    {product.additionalImages.map((_, index) => (
-                      <button
-                        key={index}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setSelectedImages({...selectedImages, [product.id as string]: index});
-                        }}
-                        className={`w-2 h-2 rounded-full ${
-                          selectedImages[product.id as string] === index ? 'bg-yellow-400' : 'bg-gray-400'
-                        }`}
-                      />
-                    ))}
-                  </div>
-                )}
-              </div>
+{/* Image selector dots - IMPROVED VISIBILITY */}
+{product.additionalImages && (
+  <div className="absolute bottom-2 left-0 right-0 flex justify-center z-20">
+    <div className="bg-gradient-to-r from-yellow-500 via-orange-500 to-yellow-500 px-3 py-2 rounded-full flex gap-2 shadow-lg">
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          const newSelectedImages = {...selectedImages};
+          delete newSelectedImages[product.id as string];
+          setSelectedImages(newSelectedImages);
+        }}
+        className={`w-4 h-4 rounded-full transition-all duration-200 border-2 ${
+          selectedImages[product.id as string] === undefined 
+            ? 'bg-white border-white scale-110 shadow-md' 
+            : 'bg-black/30 border-black/50 hover:bg-black/50'
+        }`}
+      />
+      {product.additionalImages.map((_, index) => (
+        <button
+          key={index}
+          onClick={(e) => {
+            e.stopPropagation();
+            setSelectedImages({...selectedImages, [product.id as string]: index});
+          }}
+          className={`w-4 h-4 rounded-full transition-all duration-200 border-2 ${
+            selectedImages[product.id as string] === index 
+              ? 'bg-white border-white scale-110 shadow-md' 
+              : 'bg-black/30 border-black/50 hover:bg-black/50'
+          }`}
+        />
+      ))}
+    </div>
+  </div>
+)}
+
+</div>
 
               {/* Price Badge - Always show */}
               {product.price && (
