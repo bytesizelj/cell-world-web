@@ -891,7 +891,7 @@ export default function TechAudioCategory() {
 {
   id: 'audiopipe-2channel-transmission',
   name: 'Audiopipe 2 Channel Audio Interface',
-  image: '/images/Products/more/audiopipe-2channel-transmission.png',
+  image: '/images/Products/more/audiopipe-2-channel-transmission.png',
   price: 450.00,
   category: 'audio-interfaces',
   availability: 'In Stock',
@@ -1182,7 +1182,7 @@ export default function TechAudioCategory() {
       id: 18,
       name: "Yesido TWS32 Wireless Earbuds with ANC",
       price: 140.00,
-      image: "/images/Products/more/yesido-tws32-anc.png",
+      image: "/images/Products/more/yesidotws32-anc.png",
       description: "Premium wireless earbuds with active noise cancellation. Heavy bass effect, Bluetooth 5.4, ergonomic design.",
       category: "earbuds",
       specs: {
