@@ -414,18 +414,6 @@ export default function AccessoriesPowerCategory() {
 
 // SAMSUNG PRODUCTS
 {
-  id: 'samsung-galaxy-watch-7',
-  name: 'Samsung Galaxy Watch 7',
-  image: '/images/Products/more/samsung-galaxy-watch.png',
-  price: 1100.00,
-  category: 'samsung',
-  availability: 'In Stock',
-  specs: {
-    connectivity: 'Bluetooth, Wi-Fi & GPS',
-    compatibility: 'Android 11.0+ with 1.5GB+ memory'
-  }
-},
-{
   id: '65w-pd-power-trio',
   name: '65W PD Power Adapter Trio',
   image: '/images/Products/more/65w-pd-power-adapter.png',
@@ -708,83 +696,8 @@ export default function AccessoriesPowerCategory() {
     extra: 'Bluetooth music, MP3 support'
   }
 },
-{
-  id: 'pioneer-ts-s20',
-  name: 'Pioneer Dome Tweeter TS-S20',
-  image: '/images/Products/more/pioneer-ts-s20.png',
-  price: 300.00,
-  category: 'car-audio',
-  availability: "In Stock",
-  specs: {
-    size: '3/4" dome tweeter',
-    power: '200W Max, 50W Nominal',
-    impedance: '8 OHMS'
-  }
-},
-{
-  id: 'pipeman-car-audio-accessories',
-  name: 'Pipeman Speaker Grills - Multiple Sizes',
-  image: '/images/Products/more/pipeman-car-audio-accessories.png',
-  price: 25.00,
-  category: 'car-audio',
-  availability: 'In Stock',
-  specs: {
-    '8inch': '$25',
-    '10inch': '$35',
-    '12inch': '$40',
-    '15inch': '$45'
-  }
-},
-{
-  id: 'audiopipe-pvc-speaker-ring',
-  name: 'Audiopipe 8" PVC Speaker Ring',
-  image: '/images/Products/more/audiopipe-pvc-speaker-ring.png',
-  price: 55.00,
-  category: 'car-audio',
-  availability: "In Stock",
-  specs: {
-    size: '8 inch',
-    material: 'PVC'
-  }
-},
-{
-  id: 'pipeman-speaker-kit',
-  name: "Pipeman's Speaker Kit Bulk Package",
-  image: '/images/Products/more/pipeman-speaker-kit.png',
-  price: 50.00,
-  category: 'car-audio',
-  availability: 'In Stock',
-  specs: {
-    includes: '10×12 inch sheets',
-    type: 'Bulk package'
-  }
-},
-{
-  id: 'pipeman-trunk-kit',
-  name: "Pipeman's Trunk Kit Bulk Package",
-  image: '/images/Products/more/pipeman-trunk-kit.png',
-  price: 200.00,
-  category: 'car-audio',
-  availability: 'In Stock',
-  specs: {
-    includes: 'Ten 12×24 inch sheets',
-    feature: 'Eliminates road noise'
-  }
-},
 
 // NETWORK
-{
-  id: 'na-indoor-tv-antenna',
-  name: 'Indoor TV Antenna (Push On)',
-  image: '/images/Products/more/na-indoor-tv-antenna.png',
-  price: 20.00,
-  category: 'tv-accessories',
-  availability: "In Stock",
-  specs: {
-    type: 'UHF/VHF Antenna',
-    includes: 'Coaxial cable & quick connect plug'
-  }
-},
 {
   id: 'cat5-patch-cord',
   name: 'Nippon America CAT5 Patch Cord - Multiple Lengths',
