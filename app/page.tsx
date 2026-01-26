@@ -29,14 +29,26 @@ export default function Home() {
     '/videos/cell-world-bg3.mp4'   // Add third video when available
   ];
   
-  // Show banner after 1 second
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowBanner(true);
-    }, 2000);
+ // Show banner after 1 second, stays for 3 seconds minimum
+useEffect(() => {
+  const showTimer = setTimeout(() => {
+    setShowBanner(true);
+  }, 12000);
+  
+  return () => clearTimeout(showTimer);
+}, []);
+
+// Prevent closing banner for first 8 seconds
+const [canCloseBanner, setCanCloseBanner] = useState(false);
+useEffect(() => {
+  if (showBanner) {
+    const closeTimer = setTimeout(() => {
+      setCanCloseBanner(true);
+    }, 8000); // 8 seconds after banner shows
     
-    return () => clearTimeout(timer);
-  }, []);
+    return () => clearTimeout(closeTimer);
+  }
+}, [showBanner]);
 
   // Show iPhone promo after 1 second
   useEffect(() => {
@@ -327,6 +339,137 @@ useEffect(() => {
           </div>
         </div>
       )}
+
+{!showBanner && (
+  <div 
+    className="relative w-full overflow-hidden z-30"
+    style={{
+      background: 'linear-gradient(135deg, #dc2626 0%, #991b1b 25%, #b91c1c 50%, #991b1b 75%, #dc2626 100%)',
+      animation: 'slideInFromLeft 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards'
+    }}
+  >
+    <div className="absolute inset-0 animate-gradient-shift" style={{
+      background: 'linear-gradient(45deg, rgba(220, 38, 38, 0.4), rgba(153, 27, 27, 0.4), rgba(185, 28, 28, 0.4))',
+      backgroundSize: '200% 200%'
+    }}></div>
+
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute text-white text-4xl animate-fall" style={{left: '10%', animationDelay: '0s'}}>💕</div>
+      <div className="absolute text-pink-200 text-3xl animate-fall" style={{left: '25%', animationDelay: '0.5s'}}>❤️</div>
+      <div className="absolute text-white text-4xl animate-fall" style={{left: '40%', animationDelay: '1s'}}>💖</div>
+      <div className="absolute text-pink-200 text-3xl animate-fall" style={{left: '55%', animationDelay: '1.5s'}}>💝</div>
+      <div className="absolute text-white text-4xl animate-fall" style={{left: '70%', animationDelay: '2s'}}>💕</div>
+      <div className="absolute text-pink-200 text-3xl animate-fall" style={{left: '85%', animationDelay: '2.5s'}}>❤️</div>
+      <div className="absolute text-white text-4xl animate-fall" style={{left: '15%', animationDelay: '3s'}}>💖</div>
+      <div className="absolute text-pink-200 text-3xl animate-fall" style={{left: '60%', animationDelay: '3.5s'}}>💝</div>
+      <div className="absolute text-white text-3xl animate-fall" style={{left: '5%', animationDelay: '4s'}}>💗</div>
+      <div className="absolute text-pink-200 text-4xl animate-fall" style={{left: '90%', animationDelay: '4.5s'}}>💕</div>
+    </div>
+
+    <div className="relative z-10 container mx-auto px-4 py-6">
+      <div className="flex flex-col items-center gap-4">
+        
+        <div className="w-full flex justify-start">
+          <div className="inline-block bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 text-red-600 px-8 py-3 rounded-full text-xl md:text-3xl font-black animate-bounce shadow-2xl border-4 border-white">
+            🎁 VALENTINE'S DAY SPECIAL 🎁
+          </div>
+        </div>
+
+        <div className="text-center">
+          <h2 className="text-3xl md:text-5xl font-black text-white mb-2 drop-shadow-2xl animate-glow-pulse">
+            Order via App & WIN Prizes!
+          </h2>
+          <p className="text-lg md:text-2xl text-white font-bold drop-shadow-lg mb-4">
+            25th • 50th • 100th customers win! 🏆
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-4xl mb-2">
+          
+          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 text-center shadow-2xl transform hover:scale-105 transition-all">
+            <div className="text-3xl md:text-4xl font-black text-yellow-500 mb-2">#25</div>
+            <img 
+              src="/images/Products/accessories-power/digipower-quikpod.png"
+              alt="Selfie Stick"
+              className="h-24 md:h-32 w-auto mx-auto mb-2 object-contain"
+              style={{
+                filter: 'drop-shadow(0 4px 10px rgba(0,0,0,0.2))'
+              }}
+            />
+            <div className="text-xs md:text-sm font-bold text-gray-800">Selfie Stick</div>
+             <div className="text-xs text-yellow-600 font-bold mt-1">🎉 1ST PRIZE!</div>
+          </div>
+
+          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 text-center shadow-2xl transform hover:scale-105 transition-all border-4 border-yellow-400">
+            <div className="text-3xl md:text-4xl font-black text-red-600 mb-2">#50</div>
+            <img 
+              src="/images/Products/tech-audio/earbuds2-anc-white.png"
+              alt="Wireless Earbuds ANC"
+              className="h-24 md:h-32 w-auto mx-auto mb-2 object-contain"
+              style={{
+                filter: 'drop-shadow(0 4px 10px rgba(0,0,0,0.2))'
+              }}
+            />
+            <div className="text-xs md:text-sm font-bold text-gray-800">Wireless Earbuds</div>
+             <div className="text-xs text-red-600 font-bold mt-1">⭐ 2ND PRIZE!</div>
+          </div>
+
+          {/* Prize 3: Power Pack + Samsung A11 COMBO - MOBILE OPTIMIZED */}
+<div className="bg-gradient-to-br from-purple-50 to-pink-50 backdrop-blur-sm rounded-2xl p-4 text-center shadow-2xl transform hover:scale-105 transition-all border-4 border-purple-500">
+  <div className="text-3xl md:text-4xl font-black text-purple-600 mb-2 text-center">#100</div>
+  
+  {/* RESPONSIVE: Column on mobile, Row on desktop */}
+  <div className="flex flex-row justify-center items-center gap-2 mb-2 w-full">
+    <img 
+      src="/images/Products/more/hyper-gear-power-pack-mini.png"
+      alt="Power Pack Mini"
+      className="h-16 md:h-20 w-auto object-contain mx-auto"
+      style={{
+        filter: 'drop-shadow(0 4px 10px rgba(0,0,0,0.2))'
+      }}
+    />
+    <div className="text-2xl font-black text-purple-600">+</div>
+    <img 
+      src="/images/Products/phones/samsung-galaxy-a11.png"
+      alt="Samsung A11"
+      className="h-16 md:h-20 w-auto object-contain mx-auto"
+      style={{
+        filter: 'drop-shadow(0 4px 10px rgba(0,0,0,0.2))'
+      }}
+    />
+  </div>
+  
+  <div className="text-xs md:text-sm font-bold text-gray-800 text-center">Power Pack + Samsung A11</div>
+  <div className="text-xs text-purple-600 font-black mt-1 text-center">💥 GRAND PRIZE!</div>
+</div>
+        </div>
+
+        <div className="w-full flex flex-col md:flex-row items-center justify-between gap-4">
+          
+          <div className="flex-1 overflow-hidden bg-white/20 backdrop-blur-sm rounded-full py-2 px-4">
+            <div className="ticker-wrapper">
+              <div className="ticker-content text-white font-bold text-sm md:text-base whitespace-nowrap">
+                🎉 Promo ends February 14, 2026 • In-store pickup only • Don't miss out! • Order now for a chance to win! • 
+                🎉 Promo ends February 14, 2026 • In-store pickup only • Don't miss out! • Order now for a chance to win! •
+              </div>
+            </div>
+          </div>
+
+          <div className="flex-shrink-0">
+            <Link
+              href="/valentine-order"
+              className="group relative inline-flex items-center gap-3 bg-white text-red-600 px-8 py-4 rounded-full font-black text-lg md:text-xl hover:bg-yellow-300 hover:text-red-700 transition-all duration-300 shadow-2xl hover:shadow-white/50 hover:scale-110 animate-pulse"
+            >
+              <span className="text-3xl">💝</span>
+              <span>ORDER NOW</span>
+              <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
       
 {/* Hero Content */}
 <div className="relative z-20 flex flex-col items-start justify-start min-h-screen px-3 pt-4">
@@ -447,7 +590,7 @@ END COMMENT */}
 {showBanner && (
   <div 
     className="fixed inset-0 z-[60] flex items-center justify-center animate-fade-in"
-    onClick={() => setShowBanner(false)}
+    onClick={() => canCloseBanner && setShowBanner(false)}
     style={{
       background: 'radial-gradient(circle at center, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.95))',
       backdropFilter: 'blur(10px)'
@@ -784,40 +927,135 @@ END COMMENT */}
 
  {/* CSS for animations */}
 <style jsx>{`
-@keyframes rotate-360 {
-  0% { transform: rotateY(0deg); }
-  100% { transform: rotateY(360deg); }
-}
-@keyframes slide-in-from-right {
-  0% {
-    opacity: 0;
-    transform: translateX(100px);
+  @keyframes ticker-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
   }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
 
-.animate-slide-in-from-right {
-  animation: slide-in-from-right 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
+  .ticker-wrapper {
+    overflow: hidden;
+  }
+
+  .ticker-content {
+    display: inline-block;
+    animation: ticker-scroll 20s linear infinite;
+  }
+
+  @keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fall {
+    0% {
+      top: -10%;
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+    100% {
+      top: 110%;
+      opacity: 0.3;
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes shimmer-border {
+    0% {
+      background-position: -200% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% {
+      text-shadow: 0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.6);
+    }
+    50% {
+      text-shadow: 0 0 30px rgba(255,255,255,1), 0 0 60px rgba(255,255,255,0.8);
+    }
+  }
+
+  .animate-fall {
+    animation: fall 4s linear infinite;
+  }
+
+  .animate-gradient-shift {
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .animate-shimmer-border {
+    background-size: 200% 100%;
+    animation: shimmer-border 2s linear infinite;
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes rotate-360 {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+  }
+
+  @keyframes slide-in-from-right {
+    0% {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-slide-in-from-right {
+    animation: slide-in-from-right 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
   .ticker-content {
     display: inline-block;
     animation: scroll-left 30s linear infinite;
   }
+
   @keyframes scroll-left {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
+
   @keyframes slide-up {
     from { transform: translateY(100%); }
     to { transform: translateY(0); }
   }
+
   @keyframes fade-in {
     from { opacity: 0; }
     to { opacity: 1; }
   }
+
   @keyframes zoom-bounce {
     0% { 
       opacity: 0;
@@ -831,10 +1069,12 @@ END COMMENT */}
       transform: scale(1) rotate(0deg);
     }
   }
+
   @keyframes rotate-gradient {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+
   @keyframes pulse-scale {
     0%, 100% { 
       transform: scale(1);
@@ -845,6 +1085,7 @@ END COMMENT */}
       opacity: 0.1;
     }
   }
+
   @keyframes pulse-scale-delayed {
     0%, 100% { 
       transform: scale(1);
@@ -855,24 +1096,19 @@ END COMMENT */}
       opacity: 0.1;
     }
   }
+
   @keyframes wiggle {
     0%, 100% { transform: rotate(0deg); }
     25% { transform: rotate(-10deg); }
     75% { transform: rotate(10deg); }
   }
+
   @keyframes wiggle-delayed {
     0%, 100% { transform: rotate(0deg); }
     25% { transform: rotate(10deg); }
     75% { transform: rotate(-10deg); }
   }
-  @keyframes glow-pulse {
-    0%, 100% {
-      text-shadow: 0 0 20px rgba(255,255,255,1), 0 0 40px rgba(255,215,0,0.8), 0 0 60px rgba(255,165,0,0.6);
-    }
-    50% {
-      text-shadow: 0 0 30px rgba(255,255,255,1), 0 0 60px rgba(255,215,0,1), 0 0 90px rgba(255,165,0,0.8);
-    }
-  }
+
   @keyframes slide-in-left {
     from {
       opacity: 0;
@@ -883,65 +1119,79 @@ END COMMENT */}
       transform: translateX(0);
     }
   }
+
   @keyframes shimmer {
     0% { transform: translateX(-100%); }
     100% { transform: translateX(200%); }
   }
+
   @keyframes flash {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.5; }
   }
+
   @keyframes bounce-gentle {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-5px); }
   }
+
   @keyframes bounce-slow {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.1); }
   }
-  
+
   .animate-slide-up {
     animation: slide-up 1s ease-out forwards;
   }
+
   .animate-fade-in {
     animation: fade-in 0.4s ease-out;
   }
+
   .animate-zoom-bounce {
     animation: zoom-bounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
+
   .animate-rotate-gradient {
     animation: rotate-gradient 8s linear infinite;
   }
+
   .animate-pulse-scale {
     animation: pulse-scale 3s ease-in-out infinite;
   }
+
   .animate-pulse-scale-delayed {
     animation: pulse-scale-delayed 3s ease-in-out infinite 1s;
   }
+
   .animate-wiggle {
     animation: wiggle 1s ease-in-out infinite;
   }
+
   .animate-wiggle-delayed {
     animation: wiggle-delayed 1s ease-in-out infinite 0.2s;
   }
-  .animate-glow-pulse {
-    animation: glow-pulse 2s ease-in-out infinite;
-  }
+
   .animate-slide-in-left {
     animation: slide-in-left 0.6s ease-out 0.2s both;
   }
+
   .animate-shimmer {
     animation: shimmer 2s ease-in-out infinite;
   }
+
   .animate-flash {
     animation: flash 1.5s ease-in-out infinite;
   }
+
   .animate-bounce-gentle {
     animation: bounce-gentle 2s ease-in-out infinite;
   }
+
   .animate-bounce-slow {
     animation: bounce-slow 2s ease-in-out infinite;
   }
+
   @keyframes float {
     0%, 100% { 
       transform: translateY(0) rotate(0deg);
@@ -952,6 +1202,7 @@ END COMMENT */}
       opacity: 0.3;
     }
   }
+
   @keyframes zoom-in {
     0% { 
       transform: scale(0.5);
@@ -962,140 +1213,144 @@ END COMMENT */}
       opacity: 1;
     }
   }
-  @keyframes slide-in-right {
-    0% {
-      opacity: 0;
-      transform: translateX(100px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
+
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
+
   .animate-zoom-in {
     animation: zoom-in 1s ease-out;
   }
-  .animate-slide-in-right {
-    animation: slide-in-right 0.8s ease-out;
-  }
-    @keyframes dramatic-popup {
-  0% { 
-    opacity: 0;
-    transform: scale(0.3) rotate(-15deg);
-  }
-  60% {
-    opacity: 1;
-    transform: scale(1.1) rotate(5deg);
-  }
-  80% {
-    transform: scale(0.95) rotate(-2deg);
-  }
-  100% { 
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-  }
-}
-.animate-dramatic-popup {
-  animation: dramatic-popup 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-  @keyframes ping-slow {
-  0%, 100% { 
-    transform: scale(1);
-    opacity: 0.3;
-  }
-  50% { 
-    transform: scale(1.3);
-    opacity: 0;
-  }
-}
-@keyframes ping-slower {
-  0%, 100% { 
-    transform: scale(1);
-    opacity: 0.4;
-  }
-  50% { 
-    transform: scale(1.5);
-    opacity: 0;
-  }
-}
-@keyframes ping-slowest {
-  0%, 100% { 
-    transform: scale(1);
-    opacity: 0.5;
-  }
-  50% { 
-    transform: scale(1.8);
-    opacity: 0;
-  }
-}
-@keyframes spin-slow {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-@keyframes phone-dramatic {
-  0%, 100% { 
-    transform: scale(1) rotateY(0deg);
-  }
-  25% {
-    transform: scale(1.1) rotateY(5deg);
-  }
-  50% { 
-    transform: scale(1.15) rotateY(0deg);
-  }
-  75% {
-    transform: scale(1.1) rotateY(-5deg);
-  }
-}
-@keyframes float-phone {
-  0%, 100% { 
-    transform: translateY(0px);
-  }
-  50% { 
-    transform: translateY(-20px);
-  }
-}
-@keyframes sparkle {
-  0%, 100% { 
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-  }
-  50% { 
-    opacity: 0.3;
-    transform: scale(1.5) rotate(180deg);
-  }
-}
-@keyframes sparkle-delayed {
-  0%, 100% { 
-    opacity: 0.8;
-    transform: scale(1) rotate(0deg);
-  }
-  50% { 
-    opacity: 0.2;
-    transform: scale(1.3) rotate(-180deg);
-  }
-}
 
-.animate-ping-slow {
-  animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-.animate-ping-slower {
-  animation: ping-slower 3s cubic-bezier(0, 0, 0.2, 1) infinite 0.5s;
-}
-.animate-ping-slowest {
-  animation: ping-slowest 4s cubic-bezier(0, 0, 0.2, 1) infinite 1s;
-}
-.animate-spin-slow {
-  animation: spin-slow 8s linear infinite;
-}
-.animate-sparkle {
-  animation: sparkle 2s ease-in-out infinite;
-}
-.animate-sparkle-delayed {
-  animation: sparkle-delayed 2.5s ease-in-out infinite 0.5s;
-}
+  @keyframes dramatic-popup {
+    0% { 
+      opacity: 0;
+      transform: scale(0.3) rotate(-15deg);
+    }
+    60% {
+      opacity: 1;
+      transform: scale(1.1) rotate(5deg);
+    }
+    80% {
+      transform: scale(0.95) rotate(-2deg);
+    }
+    100% { 
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+  }
+
+  .animate-dramatic-popup {
+    animation: dramatic-popup 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  @keyframes ping-slow {
+    0%, 100% { 
+      transform: scale(1);
+      opacity: 0.3;
+    }
+    50% { 
+      transform: scale(1.3);
+      opacity: 0;
+    }
+  }
+
+  @keyframes ping-slower {
+    0%, 100% { 
+      transform: scale(1);
+      opacity: 0.4;
+    }
+    50% { 
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
+
+  @keyframes ping-slowest {
+    0%, 100% { 
+      transform: scale(1);
+      opacity: 0.5;
+    }
+    50% { 
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }
+
+  @keyframes spin-slow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes phone-dramatic {
+    0%, 100% { 
+      transform: scale(1) rotateY(0deg);
+    }
+    25% {
+      transform: scale(1.1) rotateY(5deg);
+    }
+    50% { 
+      transform: scale(1.15) rotateY(0deg);
+    }
+    75% {
+      transform: scale(1.1) rotateY(-5deg);
+    }
+  }
+
+  @keyframes float-phone {
+    0%, 100% { 
+      transform: translateY(0px);
+    }
+    50% { 
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes sparkle {
+    0%, 100% { 
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+    50% { 
+      opacity: 0.3;
+      transform: scale(1.5) rotate(180deg);
+    }
+  }
+
+  @keyframes sparkle-delayed {
+    0%, 100% { 
+      opacity: 0.8;
+      transform: scale(1) rotate(0deg);
+    }
+    50% { 
+      opacity: 0.2;
+      transform: scale(1.3) rotate(-180deg);
+    }
+  }
+
+  .animate-ping-slow {
+    animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  .animate-ping-slower {
+    animation: ping-slower 3s cubic-bezier(0, 0, 0.2, 1) infinite 0.5s;
+  }
+
+  .animate-ping-slowest {
+    animation: ping-slowest 4s cubic-bezier(0, 0, 0.2, 1) infinite 1s;
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 8s linear infinite;
+  }
+
+  .animate-sparkle {
+    animation: sparkle 2s ease-in-out infinite;
+  }
+
+  .animate-sparkle-delayed {
+    animation: sparkle-delayed 2.5s ease-in-out infinite 0.5s;
+  }
 `}</style>
         
 {/* Category Section with HOVER ZOOM for images */}
