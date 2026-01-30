@@ -241,7 +241,7 @@ ${milestone ? '⚠️ SHOW THIS MESSAGE TO CLAIM PRIZE!' : 'Thank you for orderi
           </h1>
           
           <p className="text-lg text-gray-700 mb-6">
-            25th • 50th • 100th customers win amazing prizes! ❤️
+            You could be our Grand Prize Winner! ❤️
           </p>
 
           {/* Order Counter - HIDDEN FROM CUSTOMERS */}
@@ -275,24 +275,65 @@ ${milestone ? '⚠️ SHOW THIS MESSAGE TO CLAIM PRIZE!' : 'Thank you for orderi
             )}
           </div>
 
-          {/* Prizes Display */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-            <div className={`bg-white rounded-xl p-4 shadow-lg border-2 ${orderCount >= 25 ? 'border-gray-300 opacity-50' : 'border-yellow-400'}`}>
-              <div className="text-4xl font-black text-yellow-600">#25</div>
-              <div className="text-sm font-semibold text-gray-700">Selfie Stick</div>
-              {orderCount >= 25 && <p className="text-xs text-gray-500 mt-1">✓ Claimed</p>}
-            </div>
-            <div className={`bg-white rounded-xl p-4 shadow-lg border-2 ${orderCount >= 50 ? 'border-gray-300 opacity-50' : 'border-pink-400'}`}>
-              <div className="text-4xl font-black text-pink-600">#50</div>
-              <div className="text-sm font-semibold text-gray-700">Wireless Earbuds</div>
-              {orderCount >= 50 && <p className="text-xs text-gray-500 mt-1">✓ Claimed</p>}
-            </div>
-            <div className={`bg-white rounded-xl p-4 shadow-lg border-2 ${orderCount >= 100 ? 'border-gray-300 opacity-50' : 'border-red-400'}`}>
-              <div className="text-4xl font-black text-red-600">#100</div>
-              <div className="text-sm font-semibold text-gray-700">Power Pack Mini + Samsung A11</div>
-              {orderCount >= 100 && <p className="text-xs text-gray-500 mt-1">✓ Claimed</p>}
-            </div>
-          </div>
+          {/* Prizes Display - WITH IMAGES */}
+<div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+  
+  {/* Prize 1: Selfie Stick */}
+  <div className={`bg-white rounded-xl p-4 shadow-lg border-2 text-center ${orderCount >= 25 ? 'border-gray-300 opacity-50' : 'border-yellow-400'}`}>
+    <img 
+      src="/images/Products/accessories-power/digipower-quikpod.png"
+      alt="Selfie Stick"
+      className="h-24 md:h-32 w-auto mx-auto mb-2 object-contain"
+      style={{
+        filter: 'drop-shadow(0 4px 10px rgba(0,0,0,0.2))'
+      }}
+    />
+    <div className="text-sm font-semibold text-gray-700">Selfie Stick</div>
+    <div className="text-xs text-yellow-600 font-bold mt-1">🎉 FIRST TO WIN!</div>
+    {orderCount >= 25 && <p className="text-xs text-gray-500 mt-1">✓ Claimed</p>}
+  </div>
+
+  {/* Prize 2: Wireless Earbuds */}
+  <div className={`bg-white rounded-xl p-4 shadow-lg border-2 text-center ${orderCount >= 50 ? 'border-gray-300 opacity-50' : 'border-pink-400'}`}>
+    <img 
+      src="/images/Products/tech-audio/earbuds2-anc-white.png"
+      alt="Wireless Earbuds"
+      className="h-24 md:h-32 w-auto mx-auto mb-2 object-contain"
+      style={{
+        filter: 'drop-shadow(0 4px 10px rgba(0,0,0,0.2))'
+      }}
+    />
+    <div className="text-sm font-semibold text-gray-700">Wireless Earbuds</div>
+    <div className="text-xs text-red-600 font-bold mt-1">⭐ TOP PRIZE!</div>
+    {orderCount >= 50 && <p className="text-xs text-gray-500 mt-1">✓ Claimed</p>}
+  </div>
+
+  {/* Prize 3: Power Pack + Samsung A11 */}
+  <div className={`bg-white rounded-xl p-4 shadow-lg border-2 text-center ${orderCount >= 100 ? 'border-gray-300 opacity-50' : 'border-purple-400'}`}>
+    <div className="flex flex-row justify-center items-center gap-2 mb-2">
+      <img 
+        src="/images/Products/more/hyper-gear-power-pack-mini.png"
+        alt="Power Pack Mini"
+        className="h-16 md:h-20 w-auto object-contain"
+        style={{
+          filter: 'drop-shadow(0 4px 10px rgba(0,0,0,0.2))'
+        }}
+      />
+      <div className="text-xl font-black text-purple-600">+</div>
+      <img 
+        src="/images/Products/phones/samsung-galaxy-a11.png"
+        alt="Samsung A11"
+        className="h-16 md:h-20 w-auto object-contain"
+        style={{
+          filter: 'drop-shadow(0 4px 10px rgba(0,0,0,0.2))'
+        }}
+      />
+    </div>
+    <div className="text-sm font-semibold text-gray-700">Power Pack + Samsung A11</div>
+    <div className="text-xs text-purple-600 font-bold mt-1">💥 GRAND PRIZE!</div>
+    {orderCount >= 100 && <p className="text-xs text-gray-500 mt-1">✓ Claimed</p>}
+  </div>
+</div>
         </div>
 
         {/* Order Form */}

@@ -379,15 +379,14 @@ useEffect(() => {
           <h2 className="text-3xl md:text-5xl font-black text-white mb-2 drop-shadow-2xl animate-glow-pulse">
             Order via App & WIN Prizes!
           </h2>
-          <p className="text-lg md:text-2xl text-white font-bold drop-shadow-lg mb-4">
-            25th • 50th • 100th customers win! 🏆
+          <p className="text-lg md:text-1xl text-white font-bold drop-shadow-lg mb-4">
+            Walk-In orders DO NOT count. App purchases only! 🏆
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-4xl mb-2">
           
           <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 text-center shadow-2xl transform hover:scale-105 transition-all">
-            <div className="text-3xl md:text-4xl font-black text-yellow-500 mb-2">#25</div>
             <img 
               src="/images/Products/accessories-power/digipower-quikpod.png"
               alt="Selfie Stick"
@@ -401,7 +400,6 @@ useEffect(() => {
           </div>
 
           <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 text-center shadow-2xl transform hover:scale-105 transition-all border-4 border-yellow-400">
-            <div className="text-3xl md:text-4xl font-black text-red-600 mb-2">#50</div>
             <img 
               src="/images/Products/tech-audio/earbuds2-anc-white.png"
               alt="Wireless Earbuds ANC"
@@ -416,8 +414,7 @@ useEffect(() => {
 
           {/* Prize 3: Power Pack + Samsung A11 COMBO - MOBILE OPTIMIZED */}
 <div className="bg-gradient-to-br from-purple-50 to-pink-50 backdrop-blur-sm rounded-2xl p-4 text-center shadow-2xl transform hover:scale-105 transition-all border-4 border-purple-500">
-  <div className="text-3xl md:text-4xl font-black text-purple-600 mb-2 text-center">#100</div>
-  
+    
   {/* RESPONSIVE: Column on mobile, Row on desktop */}
   <div className="flex flex-row justify-center items-center gap-2 mb-2 w-full">
     <img 
