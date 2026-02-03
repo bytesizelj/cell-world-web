@@ -103,47 +103,46 @@ export default function ValentineOrderPage() {
     return null;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  
+  if (promoEnded) {
+    alert('Valentine\'s Promo has ended. Thank you for your interest!');
+    return;
+  }
+
+  setIsSubmitting(true);
+
+  try {
+    // Save to database
+    const response = await fetch('/api/valentine-orders', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    });
+
+    const data = await response.json();
     
-    if (promoEnded) {
-      alert('Valentine\'s Promo has ended. Thank you for your interest!');
-      return;
+    if (!data.success) {
+      throw new Error('Failed to save order');
     }
 
-    setIsSubmitting(true);
-
-    // Increment counter
-    const newCount = orderCount + 1;
-    setOrderCount(newCount);
-    setSubmittedOrderNumber(newCount);
-    localStorage.setItem('valentineOrderCount', newCount.toString());
-    localStorage.setItem(`order_${newCount}`, JSON.stringify({
-      ...formData,
-      orderNumber: newCount,
-      timestamp: new Date().toISOString()
-    }));
+    const newOrderNumber = data.orderNumber;
+    setSubmittedOrderNumber(newOrderNumber);
+    setOrderCount(newOrderNumber);
 
     // Check if winner
-    const milestone = getMilestoneInfo(newCount);
-    if (milestone) {
-      setPrizeWon(milestone.prize);
-      setShowWinner(true);
-      
-      // Store winner info
-      localStorage.setItem(`winner_${milestone.milestone}`, JSON.stringify({
-        ...formData,
-        orderNumber: newCount,
-        prize: milestone.prize,
-        timestamp: new Date().toISOString()
-      }));
-    } else {
-      // Show confirmation for non-winners
-      setShowConfirmation(true);
-    }
+const milestone = getMilestoneInfo(newOrderNumber);
+if (milestone) {
+  setPrizeWon(milestone.prize);
+  setShowWinner(true);
+} else {
+  // Show confirmation for non-winners
+  setShowConfirmation(true);
+}
 
     // Generate WhatsApp message
-    const message = `🎉 VALENTINE'S ORDER #${newCount}
+    const message = `🎉 VALENTINE'S ORDER #${newOrderNumber}
     
 📱 Cell World App Order
 ${milestone ? `🏆 WINNER - ${milestone.milestone} Customer!
@@ -151,7 +150,7 @@ ${milestone ? `🏆 WINNER - ${milestone.milestone} Customer!
 
 👤 Name: ${formData.name}
 📞 Phone: ${formData.phone}
-📧 Email: ${formData.email}
+${formData.email ? `📧 Email: ${formData.email}` : ''}
 🛍️ Category: ${formData.category}
 📦 Product: ${formData.product}
 ${formData.notes ? `📝 Notes: ${formData.notes}` : ''}
@@ -165,10 +164,23 @@ ${milestone ? '⚠️ SHOW THIS MESSAGE TO CLAIM PRIZE!' : 'Thank you for orderi
     const whatsappUrl = `https://wa.me/17844310777?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-    }, 1000);
-  };
+    // Reset form
+    setFormData({
+      name: '',
+      phone: '',
+      email: '',
+      category: '',
+      product: '',
+      notes: ''
+    });
+
+  } catch (error) {
+    console.error('Error submitting order:', error);
+    alert('Failed to submit order. Please try again.');
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   const getNextMilestone = () => {
     if (orderCount < 25) return { count: 25, remaining: 25 - orderCount };
@@ -382,13 +394,13 @@ ${milestone ? '⚠️ SHOW THIS MESSAGE TO CLAIM PRIZE!' : 'Thank you for orderi
                 Email Address *
               </label>
               <input
-                type="email"
-                required
-                value={formData.email}
+              type="email"
+               required={false}
+               value={formData.email}
                 onChange={(e) => setFormData({...formData, email: e.target.value})}
-                className="w-full px-4 py-3 border-2 border-pink-200 rounded-lg focus:border-pink-500 focus:outline-none"
-                placeholder="your@email.com"
-              />
+                 className="w-full px-4 py-3 border-2 border-pink-200 rounded-lg focus:border-pink-500 focus:outline-none"
+                  placeholder="your@email.com (optional)"
+                />
             </div>
 
             {/* Category */}
@@ -525,11 +537,8 @@ ${milestone ? '⚠️ SHOW THIS MESSAGE TO CLAIM PRIZE!' : 'Thank you for orderi
               <h2 className="text-3xl font-black text-gray-800 mb-2">
                 Order Placed!
               </h2>
-              <p className="text-xl font-bold text-gray-700 mb-4">
-                You are customer #{submittedOrderNumber}
-              </p>
-              <div className="bg-white rounded-xl p-6 mb-6 shadow-lg border-2 border-green-200">
-                <p className="text-sm text-gray-600 mb-2">Your order has been sent to Cell World via WhatsApp</p>
+               <div className="bg-white rounded-xl p-6 mb-6 shadow-lg border-2 border-green-200">
+                <p className="text-sm text-gray-600 mb-2">Your order has been sent to Cell World</p>
                 <p className="text-lg font-semibold text-green-600">We'll confirm availability shortly!</p>
               </div>
               <p className="text-sm text-gray-600 mb-6">
