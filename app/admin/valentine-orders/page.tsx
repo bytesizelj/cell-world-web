@@ -32,39 +32,41 @@ export default function ValentineAdminPage() {
     setMounted(true);
   }, []);
 
-  // Load all orders from localStorage
-  useEffect(() => {
-    if (isAuthenticated && mounted) {
-      loadOrders();
+ // Load all orders from MongoDB API
+useEffect(() => {
+  if (isAuthenticated && mounted) {
+    loadOrders();
+  }
+}, [isAuthenticated, mounted]);
+
+const loadOrders = async () => {
+  try {
+    const response = await fetch('/api/valentine-orders');
+    const data = await response.json();
+    
+    if (data.orders) {
+      const formattedOrders = data.orders.map((order: any) => ({
+        orderNumber: order.orderNumber,
+        name: order.name,
+        phone: order.phone,
+        email: order.email || '',
+        category: order.category,
+        product: order.product,
+        notes: order.notes || '',
+        timestamp: order.timestamp,
+        isWinner: order.orderNumber === 25 || order.orderNumber === 50 || order.orderNumber === 100,
+        prize: order.orderNumber === 25 ? 'Selfie Stick' : 
+               order.orderNumber === 50 ? 'Wireless Earbuds (ANC)' : 
+               order.orderNumber === 100 ? 'Power Pack Mini + Samsung Galaxy A11' : ''
+      }));
+      
+      setOrders(formattedOrders);
     }
-  }, [isAuthenticated, mounted]);
-
-  const loadOrders = () => {
-    const orderCount = parseInt(localStorage.getItem('valentineOrderCount') || '0');
-    const loadedOrders: Order[] = [];
-
-    for (let i = 1; i <= orderCount; i++) {
-      const orderData = localStorage.getItem(`order_${i}`);
-      if (orderData) {
-        const order = JSON.parse(orderData);
-        
-        // Check if winner
-        const isWinner = i === 25 || i === 50 || i === 100;
-        let prize = '';
-        if (i === 25) prize = 'Selfie Stick';
-        if (i === 50) prize = 'Wireless Earbuds (ANC)';
-        if (i === 100) prize = 'Power Pack Mini + Samsung Galaxy A11';
-
-        loadedOrders.push({
-          ...order,
-          isWinner,
-          prize
-        });
-      }
-    }
-
-    setOrders(loadedOrders);
-  };
+  } catch (error) {
+    console.error('Error loading orders:', error);
+    alert('Failed to load orders. Please refresh the page.');
+  }
+};
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
