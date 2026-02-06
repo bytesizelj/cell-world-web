@@ -473,7 +473,7 @@ ${milestone ? '⚠️ SHOW THIS MESSAGE TO CLAIM PRIZE!' : 'Thank you for orderi
               ) : (
                 <>
                   <Heart className="w-5 h-5" />
-                  Place Order via WhatsApp
+                  Place Order
                   <Heart className="w-5 h-5" />
                 </>
               )}
@@ -481,7 +481,7 @@ ${milestone ? '⚠️ SHOW THIS MESSAGE TO CLAIM PRIZE!' : 'Thank you for orderi
           </form>
 
           <p className="text-xs text-center text-gray-500 mt-4">
-            🏪 All orders are for in-store pickup only • Valid until Feb 14, 2026
+            🏪 All orders are for in-store pickup only • Make ALL payments in-store • Valid until Feb 14, 2026
           </p>
         </div>
       </div>
