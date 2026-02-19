@@ -2,7 +2,6 @@ import Script from 'next/script'
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import ImageDebugger from '@/components/ImageDebugger';
 import { Analytics } from '@vercel/analytics/react';
 
 const geistSans = Geist({
