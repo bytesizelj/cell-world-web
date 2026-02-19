@@ -33,7 +33,7 @@ export default function Home() {
 useEffect(() => {
   const showTimer = setTimeout(() => {
     setShowBanner(true);
-  }, 12000);
+  }, 3000);
   
   return () => clearTimeout(showTimer);
 }, []);
@@ -323,7 +323,7 @@ useEffect(() => {
   <a href="/Categories/tech-audio" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
     🎵 Tech & Audio
   </a>
-  <a href="/Categories/accessories-power" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+  <a href="/Categories/Accessories & Power" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
     🔌 Accessories & Power
   </a>
   <a href="/reviews" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
@@ -614,10 +614,10 @@ END COMMENT */}
         </button>
 
         <div 
-          className="absolute inset-0 transition-all duration-1000 opacity-100"
-          style={{
-            background: 'linear-gradient(135deg, #1a237e 0%, #0d47a1 25%, #01579b 50%, #006064 75%, #004d40 100%)',
-          }}
+  className="relative transition-all duration-1000 opacity-100"
+  style={{
+    background: 'linear-gradient(135deg, #1a237e 0%, #0d47a1 25%, #01579b 50%, #006064 75%, #004d40 100%)',
+  }}
         >
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute top-5 left-[5%] text-yellow-400 text-2xl md:text-4xl animate-pulse opacity-80">⭐</div>
@@ -763,9 +763,9 @@ END COMMENT */}
 
             <div className="mt-4 md:mt-8">
               <a 
-                href="/Categories/accessories-power"
+                href="/Categories/tech-audio"
                 className="inline-block bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 text-blue-900 px-6 py-2 md:px-10 md:py-4 rounded-full font-black text-sm md:text-xl hover:from-yellow-300 hover:to-yellow-200 transition-all shadow-2xl hover:scale-110 transform"
-                onClick={() => setShowBanner(false)}
+                onClick={(e) => { e.preventDefault(); window.location.href = '/Categories/tech-audio'; }}
                 style={{
                   boxShadow: '0 0 30px rgba(255, 215, 0, 0.5), 0 10px 40px rgba(0, 0, 0, 0.3)'
                 }}
