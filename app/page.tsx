@@ -951,7 +951,7 @@ END COMMENT */}
                     color: '#FFD700',
                     textShadow: '0 0 40px rgba(255,215,0,1), 0 4px 30px rgba(255,165,0,0.8)'
                   }}>
-                    $99
+                    $89
                   </div>
                   <a 
                     href="/Categories/tech-audio"
