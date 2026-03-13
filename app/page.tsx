@@ -62,8 +62,8 @@ useEffect(() => {
   // Auto-rotate hot deals banner every 5 seconds
 useEffect(() => {
   const interval = setInterval(() => {
-    setCurrentSlide((prev) => (prev + 1) % 2); // PS5 + Samsung = 2 slides
-  }, 20000);
+    setCurrentSlide((prev) => (prev + 1) % 3); // PS5 + Samsung = 2 slides
+  }, 5000);
   
   return () => clearInterval(interval);
 }, []);
@@ -594,7 +594,7 @@ END COMMENT */}
 </div>
 END COMMENT */}
 
-{/* AUTO-ROTATING HOT DEALS BANNER - NATIONAL HEROES DAY EDITION */}
+{/* AUTO-ROTATING HOT DEALS BANNER - 3 SLIDES */}
 {showBanner && (
   <div 
     className="fixed inset-0 z-[60] flex items-center justify-center animate-fade-in"
@@ -605,7 +605,7 @@ END COMMENT */}
     }}
   >
     <div className="max-w-6xl w-full mx-4" onClick={(e) => e.stopPropagation()}>
-      <div className="relative overflow-hidden rounded-3xl shadow-2xl" style={{ height: 'auto', maxHeight: '85vh', overflowY: 'auto' }}>
+      <div className="relative overflow-hidden rounded-3xl shadow-2xl" style={{ height: 'auto', minHeight: '650px' }}>
         <button
           onClick={() => setShowBanner(false)}
           className="absolute top-4 right-4 bg-white hover:bg-gray-100 p-3 rounded-full transition-all z-30 shadow-xl hover:scale-110"
@@ -613,11 +613,16 @@ END COMMENT */}
           <X className="w-6 h-6 text-gray-700" />
         </button>
 
+        {/* SLIDE 1: National Heroes Day */}
         <div 
-  className="relative transition-all duration-1000 opacity-100"
-  style={{
-    background: 'linear-gradient(135deg, #1a237e 0%, #0d47a1 25%, #01579b 50%, #006064 75%, #004d40 100%)',
-  }}
+          className={`absolute inset-0 transition-all duration-1000 ${
+            currentSlide === 0 
+              ? 'opacity-100 translate-x-0' 
+              : 'opacity-0 -translate-x-full'
+          }`}
+          style={{
+            background: 'linear-gradient(135deg, #1a237e 0%, #0d47a1 25%, #01579b 50%, #006064 75%, #004d40 100%)',
+          }}
         >
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute top-5 left-[5%] text-yellow-400 text-2xl md:text-4xl animate-pulse opacity-80">⭐</div>
@@ -763,9 +768,9 @@ END COMMENT */}
 
             <div className="mt-4 md:mt-8">
               <a 
-                href="/Categories/tech-audio"
+                href="/Categories/accessories-power"
                 className="inline-block bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 text-blue-900 px-6 py-2 md:px-10 md:py-4 rounded-full font-black text-sm md:text-xl hover:from-yellow-300 hover:to-yellow-200 transition-all shadow-2xl hover:scale-110 transform"
-                onClick={(e) => { e.preventDefault(); window.location.href = '/Categories/tech-audio'; }}
+                onClick={() => setShowBanner(false)}
                 style={{
                   boxShadow: '0 0 30px rgba(255, 215, 0, 0.5), 0 10px 40px rgba(0, 0, 0, 0.3)'
                 }}
@@ -785,6 +790,208 @@ END COMMENT */}
               />
             </div>
           </div>
+        </div>
+
+        {/* SLIDE 2: Samsung Phones */}
+        <div 
+          className={`absolute inset-0 transition-all duration-1000 ${
+            currentSlide === 1 
+              ? 'opacity-100 translate-x-0' 
+              : currentSlide === 0 ? 'opacity-0 translate-x-full' : 'opacity-0 -translate-x-full'
+          }`}
+          style={{
+            background: 'linear-gradient(135deg, #0a192f 0%, #112240 50%, #1e3a5f 100%)',
+          }}
+        >
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-10 left-10 text-cyan-300 text-6xl animate-float opacity-70">📱</div>
+            <div className="absolute top-20 right-20 text-yellow-300 text-5xl animate-float opacity-60" style={{animationDelay: '0.5s'}}>✨</div>
+            <div className="absolute bottom-20 left-1/4 text-blue-300 text-7xl animate-float opacity-50" style={{animationDelay: '1s'}}>⭐</div>
+            <div className="absolute top-1/3 right-1/3 text-cyan-400 text-4xl animate-float opacity-70" style={{animationDelay: '1.5s'}}>💫</div>
+            <div className="absolute bottom-10 right-10 text-yellow-400 text-5xl animate-float opacity-60" style={{animationDelay: '2s'}}>🌟</div>
+          </div>
+
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            <div className="absolute top-10 left-10 w-32 h-32 rounded-full animate-ping-slow" style={{
+              background: 'radial-gradient(circle, rgba(6, 182, 212, 0.4), transparent)'
+            }}></div>
+            <div className="absolute top-20 right-20 w-40 h-40 rounded-full animate-ping-slower" style={{
+              background: 'radial-gradient(circle, rgba(251, 191, 36, 0.4), transparent)',
+              animationDelay: '0.5s'
+            }}></div>
+          </div>
+
+          <div className="relative h-full w-full flex items-center justify-center p-8">
+            <div className="bg-gradient-to-br from-blue-900/40 to-cyan-900/40 backdrop-blur-sm rounded-3xl shadow-2xl p-6 md:p-12 border border-cyan-500/30" style={{ maxWidth: '85%', maxHeight: '85%' }}>
+              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                
+                <div className="w-full md:w-1/2 flex justify-center relative">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-72 h-72 md:w-96 md:h-96 rounded-full bg-cyan-400/20 animate-ping-slow"></div>
+                    <div className="absolute w-64 h-64 md:w-80 md:h-80 rounded-full bg-blue-500/30 animate-ping-slower"></div>
+                  </div>
+                  
+                  <img 
+                    src="/images/Products/phones/samsung-galaxy-a11.png"
+                    alt="Samsung A11"
+                    className="relative z-10 h-48 md:h-72 object-contain"
+                    style={{
+                      filter: 'drop-shadow(0 0 40px rgba(6, 182, 212, 1)) drop-shadow(0 0 80px rgba(59, 130, 246, 0.8))',
+                      animation: 'phone-dramatic 3s ease-in-out infinite, float-phone 4s ease-in-out infinite'
+                    }}
+                  />
+                  
+                  <div className="absolute top-10 right-10 text-4xl animate-sparkle">✨</div>
+                  <div className="absolute bottom-10 left-10 text-3xl animate-sparkle-delayed">⭐</div>
+                </div>
+                
+                <div className="w-full md:w-1/2 text-white text-center md:text-left">
+                  <div className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-full inline-block mb-2 md:mb-3 font-black text-sm md:text-base animate-pulse shadow-xl">
+                    🔥 HOT DEALS!
+                  </div>
+                  <h2 className="text-xl md:text-3xl lg:text-5xl font-black mb-2" style={{
+                    color: '#FFFFFF',
+                    textShadow: '0 0 30px rgba(6, 182, 212, 1), 0 0 50px rgba(59, 130, 246, 0.8), 0 4px 20px rgba(0,0,0,0.8)'
+                  }}>
+                    Samsung A11 • A06 • A05
+                  </h2>
+                  <p className="text-sm md:text-base lg:text-lg mb-2 md:mb-3 font-bold" style={{
+                    color: '#FFD700',
+                    textShadow: '0 2px 10px rgba(0,0,0,0.9)'
+                  }}>
+                    Does your phone need CPR every morning? 😵‍💫 That phone retired! Upgrade Today!
+                  </p>
+                  <div className="text-3xl md:text-5xl lg:text-6xl font-black mb-2 md:mb-3 animate-bounce-gentle" style={{
+                    color: '#FFD700',
+                    textShadow: '0 0 40px rgba(251, 191, 36, 1), 0 4px 30px rgba(251, 191, 36, 0.8)'
+                  }}>
+                    From $420
+                  </div>
+                  <a 
+                    href="/Categories/phones"
+                    className="inline-block bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-400 text-white px-4 py-2 md:px-8 md:py-4 rounded-full font-black text-xs md:text-base lg:text-xl hover:from-cyan-300 hover:via-blue-400 hover:to-cyan-300 transition-all shadow-2xl hover:scale-110 animate-pulse"
+                    onClick={() => setShowBanner(false)}
+                  >
+                    📱 SHOP NOW →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* SLIDE 3: Wireless Earbuds */}
+        <div 
+          className={`absolute inset-0 transition-all duration-1000 ${
+            currentSlide === 2 
+              ? 'opacity-100 translate-x-0' 
+              : 'opacity-0 translate-x-full'
+          }`}
+          style={{
+            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          }}
+        >
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-10 left-10 text-purple-300 text-6xl animate-float opacity-70">✨</div>
+            <div className="absolute top-20 right-20 text-pink-300 text-5xl animate-float opacity-60" style={{animationDelay: '0.5s'}}>🎵</div>
+            <div className="absolute bottom-20 left-1/4 text-cyan-300 text-7xl animate-float opacity-50" style={{animationDelay: '1s'}}>⭐</div>
+            <div className="absolute top-1/3 right-1/3 text-purple-400 text-4xl animate-float opacity-70" style={{animationDelay: '1.5s'}}>💫</div>
+          </div>
+
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            <div className="absolute top-10 left-10 w-32 h-32 rounded-full animate-ping-slow" style={{
+              background: 'radial-gradient(circle, rgba(147, 51, 234, 0.3), transparent)'
+            }}></div>
+            <div className="absolute top-20 right-20 w-40 h-40 rounded-full animate-ping-slower" style={{
+              background: 'radial-gradient(circle, rgba(236, 72, 153, 0.3), transparent)'
+            }}></div>
+          </div>
+
+          <div className="relative h-full w-full flex items-center justify-center p-4 md:p-8 z-10">
+            <div className="bg-gradient-to-br from-purple-900/40 to-pink-900/40 backdrop-blur-sm rounded-3xl shadow-2xl p-4 md:p-12 w-full border border-purple-500/30" style={{ maxWidth: '85%', maxHeight: '85%' }}>
+              <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
+                
+                <div className="w-full md:w-1/2 flex justify-center relative">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-80 h-80 md:w-96 md:h-96 rounded-full bg-purple-400/20 animate-ping-slow"></div>
+                    <div className="absolute w-64 h-64 md:w-80 md:h-80 rounded-full bg-pink-500/30 animate-ping-slower"></div>
+                  </div>
+                  
+                  <img 
+                    src="/images/Products/tech-audio/earbuds2-anc-white.png"
+                    alt="Wireless Earbuds"
+                    className="relative z-10 h-48 md:h-80 lg:h-96 object-contain"
+                    style={{
+                      filter: 'drop-shadow(0 0 60px rgba(147, 51, 234, 1)) drop-shadow(0 0 100px rgba(236, 72, 153, 0.8))',
+                      animation: 'phone-dramatic 3s ease-in-out infinite, float-phone 4s ease-in-out infinite'
+                    }}
+                  />
+                  
+                  <div className="absolute top-10 right-10 text-5xl animate-sparkle">✨</div>
+                  <div className="absolute bottom-10 left-10 text-4xl animate-sparkle-delayed">⭐</div>
+                </div>
+                
+                <div className="w-full md:w-1/2 text-white text-center md:text-left">
+                  <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-3 py-1 md:px-6 md:py-3 rounded-full inline-block mb-2 font-black text-xs md:text-base shadow-xl animate-bounce-gentle">
+                    🎵 FEEL THE VIBES!
+                  </div>
+                  <h2 className="text-xl md:text-3xl lg:text-5xl font-black mb-2" style={{
+                    color: '#FFFFFF',
+                    textShadow: '0 0 30px rgba(255,255,255,1), 0 0 50px rgba(255,215,0,1), 0 4px 20px rgba(0,0,0,0.8)'
+                  }}>
+                    Wireless Earbuds with ANC
+                  </h2>
+                  <p className="text-sm md:text-base lg:text-lg mb-2 md:mb-3 font-bold" style={{
+                    color: '#FFD700',
+                    textShadow: '0 2px 10px rgba(0,0,0,0.9)'
+                  }}>
+                    🎧 Active Noise Cancelling • High Quality Sound • 24hrs Battery
+                  </p>
+                  <div className="text-3xl md:text-5xl lg:text-6xl font-black mb-2 md:mb-3 animate-bounce-gentle" style={{
+                    color: '#FFD700',
+                    textShadow: '0 0 40px rgba(255,215,0,1), 0 4px 30px rgba(255,165,0,0.8)'
+                  }}>
+                    $99
+                  </div>
+                  <a 
+                    href="/Categories/tech-audio"
+                    className="inline-block bg-gradient-to-r from-yellow-400 via-orange-500 to-yellow-400 text-black px-4 py-2 md:px-8 md:py-4 rounded-full font-black text-xs md:text-base lg:text-xl hover:from-yellow-300 hover:via-orange-400 hover:to-yellow-300 transition-all shadow-2xl hover:scale-110 animate-pulse"
+                    onClick={() => setShowBanner(false)}
+                  >
+                    🎵 SHOP NOW →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Slide Indicators - 3 dots */}
+        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-3 z-20">
+          <button 
+            onClick={() => setCurrentSlide(0)}
+            className={`h-4 rounded-full transition-all ${
+              currentSlide === 0 
+                ? 'bg-yellow-400 w-10 shadow-lg shadow-yellow-500/50' 
+                : 'bg-white/70 w-4 hover:bg-white'
+            }`}
+          />
+          <button 
+            onClick={() => setCurrentSlide(1)}
+            className={`h-4 rounded-full transition-all ${
+              currentSlide === 1 
+                ? 'bg-cyan-400 w-10 shadow-lg shadow-cyan-500/50' 
+                : 'bg-white/70 w-4 hover:bg-white'
+            }`}
+          />
+          <button 
+            onClick={() => setCurrentSlide(2)}
+            className={`h-4 rounded-full transition-all ${
+              currentSlide === 2 
+                ? 'bg-purple-500 w-10 shadow-lg shadow-purple-500/50' 
+                : 'bg-white/70 w-4 hover:bg-white'
+            }`}
+          />
         </div>
 
       </div>

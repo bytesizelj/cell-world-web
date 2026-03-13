@@ -89,7 +89,7 @@ export default function TechAudioCategory() {
   additionalImages: [
     '/images/Products/tech-audio/earbuds2-anc-white.png'
   ],
-  price: 99.00,
+  price: 89.00,
   category: 'earbuds',
   inStock: true,
   description: 'Feel the vibes! Premium wireless earbuds with Active Noise Cancelling for immersive audio experience.',
