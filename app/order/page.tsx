@@ -371,6 +371,7 @@ export default function OrderPage() {
                   <option value="Tech & Audio">Tech & Audio</option>
                   <option value="Accessories & Power">Accessories & Power</option>
                   <option value="Phones">Phones</option>
+                <option value="Marine World">Marine World</option>
                 </select>
               )}
             </div>
