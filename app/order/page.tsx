@@ -8,7 +8,7 @@ const PROMO_ACTIVE = false;
 const PROMO_LABEL = 'Limited Time Offer';
 const PROMO_END_DATE = new Date('2026-12-31T23:59:59');
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import {
   ArrowLeft, ShoppingCart, ShoppingBag,
   Phone, Mail, User, MessageCircle, Package, Check, Zap
@@ -28,7 +28,20 @@ export default function OrderPage() {
   const [mounted, setMounted] = useState(false);
   const [submittedOrderNumber, setSubmittedOrderNumber] = useState(0);
 
-  useEffect(() => { setMounted(true); }, []);
+  useEffect(() => {
+    setMounted(true);
+    const params = new URLSearchParams(window.location.search);
+    const productParam = params.get('product');
+    const categoryParam = params.get('category');
+    if (productParam || categoryParam) {
+      setFormData(prev => ({
+        ...prev,
+        product: productParam || '',
+        category: categoryParam || '',
+        notes: productParam || ''
+      }));
+    }
+  }, []);
 
   useEffect(() => {
     if (!PROMO_ACTIVE) return;
