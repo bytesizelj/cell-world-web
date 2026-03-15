@@ -1599,10 +1599,8 @@ const translations = {
   {t.callToOrder}: 1-784-451-2261
 </a>
                   
-                  <a 
-  href={`https://wa.me/17844310777?text=Hello!%20I%20placed%20my%20order%20using%20the%20Cell%20World%20app.%20Please%20confirm%20availability%20and%20pricing%20for%20the%20following%20item(s):%0A%0A${encodeURIComponent(selectedProduct.name)}`}
-  target="_blank"
-  rel="noopener noreferrer"
+                  <Link
+  href={`/order?product=${encodeURIComponent(selectedProduct.name)}&category=Accessories%20%26%20Power`}
   onClick={() => trackEvent('whatsapp_click', { 
     product: selectedProduct.name, 
     price: selectedProduct.price,
@@ -1611,8 +1609,8 @@ const translations = {
   className="block w-full bg-green-500 text-white font-bold py-3 rounded-lg text-center hover:bg-green-400 transition-all duration-300 shadow-lg"
 >
   <MessageCircle className="inline w-5 h-5 mr-2" />
-  {t.whatsappOrder}: 1-784-431-0777
-</a>
+  {t.whatsappOrder}
+</Link>
                 </div>
               </div>
             </div>
