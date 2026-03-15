@@ -27,6 +27,7 @@ export default function OrderPage() {
   const [promoEnded, setPromoEnded] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [submittedOrderNumber, setSubmittedOrderNumber] = useState(0);
+  const [isPreFilled, setIsPreFilled] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -34,6 +35,7 @@ export default function OrderPage() {
     const productParam = params.get('product');
     const categoryParam = params.get('category');
     if (productParam || categoryParam) {
+      setIsPreFilled(true);
       setFormData(prev => ({
         ...prev,
         product: productParam || '',
@@ -351,32 +353,54 @@ export default function OrderPage() {
               <label className="flex items-center text-sm font-semibold mb-2 gap-2" style={{ color: '#94a3b8' }}>
                 <ShoppingBag className="w-4 h-4" style={{ color: '#60a5fa' }} />Product Category *
               </label>
-              <select required value={formData.category}
-                onChange={(e) => setFormData({ ...formData, category: e.target.value, product: '' })}
-                className="w-full px-4 py-3 rounded-lg focus:outline-none"
-                style={{ background: 'rgba(2,11,24,0.95)', border: '1px solid rgba(59,130,246,0.25)', color: '#e2e8f0' }}>
-                <option value="">Select a category</option>
-                <option value="Tech & Audio">Tech & Audio</option>
-                <option value="Accessories & Power">Accessories & Power</option>
-                <option value="Phones">Phones</option>
-              </select>
+              {isPreFilled ? (
+                <div className="w-full px-4 py-3 rounded-lg flex items-center justify-between" style={{
+                  background: 'rgba(59,130,246,0.08)',
+                  border: '1px solid rgba(59,130,246,0.4)',
+                  color: '#e2e8f0'
+                }}>
+                  <span>{formData.category}</span>
+                  <span className="text-xs px-2 py-1 rounded-full" style={{ background: 'rgba(59,130,246,0.2)', color: '#60a5fa' }}>Auto-filled</span>
+                </div>
+              ) : (
+                <select required value={formData.category}
+                  onChange={(e) => setFormData({ ...formData, category: e.target.value, product: '' })}
+                  className="w-full px-4 py-3 rounded-lg focus:outline-none"
+                  style={{ background: 'rgba(2,11,24,0.95)', border: '1px solid rgba(59,130,246,0.25)', color: '#e2e8f0' }}>
+                  <option value="">Select a category</option>
+                  <option value="Tech & Audio">Tech & Audio</option>
+                  <option value="Accessories & Power">Accessories & Power</option>
+                  <option value="Phones">Phones</option>
+                </select>
+              )}
             </div>
 
             {/* Product */}
-            {formData.category && (
+            {(formData.category || isPreFilled) && (
               <div>
                 <label className="flex items-center text-sm font-semibold mb-2 gap-2" style={{ color: '#94a3b8' }}>
-                  <Package className="w-4 h-4" style={{ color: '#60a5fa' }} />Select Product *
+                  <Package className="w-4 h-4" style={{ color: '#60a5fa' }} />Selected Product *
                 </label>
-                <select required value={formData.product}
-                  onChange={(e) => setFormData({ ...formData, product: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg focus:outline-none"
-                  style={{ background: 'rgba(2,11,24,0.95)', border: '1px solid rgba(59,130,246,0.25)', color: '#e2e8f0' }}>
-                  <option value="">Select a product</option>
-                  {productsByCategory[formData.category as keyof typeof productsByCategory].map((p) => (
-                    <option key={p} value={p}>{p}</option>
-                  ))}
-                </select>
+                {isPreFilled ? (
+                  <div className="w-full px-4 py-3 rounded-lg flex items-center justify-between" style={{
+                    background: 'rgba(59,130,246,0.08)',
+                    border: '1px solid rgba(59,130,246,0.4)',
+                    color: '#e2e8f0'
+                  }}>
+                    <span>{formData.product}</span>
+                    <span className="text-xs px-2 py-1 rounded-full" style={{ background: 'rgba(59,130,246,0.2)', color: '#60a5fa' }}>Auto-filled</span>
+                  </div>
+                ) : (
+                  <select required value={formData.product}
+                    onChange={(e) => setFormData({ ...formData, product: e.target.value })}
+                    className="w-full px-4 py-3 rounded-lg focus:outline-none"
+                    style={{ background: 'rgba(2,11,24,0.95)', border: '1px solid rgba(59,130,246,0.25)', color: '#e2e8f0' }}>
+                    <option value="">Select a product</option>
+                    {productsByCategory[formData.category as keyof typeof productsByCategory].map((p) => (
+                      <option key={p} value={p}>{p}</option>
+                    ))}
+                  </select>
+                )}
               </div>
             )}
 
