@@ -361,7 +361,7 @@ useEffect(() => {
   {/* Shop Now CTA Button */}
 <button 
   onClick={() => {
-    window.location.href = '/Categories/tech-audio';
+    document.getElementById('products-section')?.scrollIntoView({ behavior: 'smooth' });
   }}
   className="ml-8 opacity-0 animate-fade-up animation-delay-300 inline-flex items-center px-12 py-4 text-xl font-bold text-black bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full hover:from-yellow-300 hover:to-yellow-400 transform hover:scale-105 transition-all duration-300 shadow-lg animate-pulse"
 >
