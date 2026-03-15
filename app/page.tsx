@@ -599,7 +599,7 @@ END COMMENT */}
                     color: '#FFD700',
                     textShadow: '0 2px 10px rgba(0,0,0,0.9)'
                   }}>
-                    Does your phone need CPR every morning? 😵‍💫 That phone retired! Upgrade Today!
+                    Does your phone need CPR every morning? 😵‍💫 shaking, tapping, praying over it 🙏 That phone retired! Upgrade Today!
                   </p>
                   <div className="text-3xl md:text-5xl lg:text-6xl font-black mb-2 md:mb-3 animate-bounce-gentle" style={{
                     color: '#FFD700',
