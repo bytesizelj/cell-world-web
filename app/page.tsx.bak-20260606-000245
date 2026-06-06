@@ -563,7 +563,7 @@ END COMMENT */}
                     <a
                       href="/Categories/tech-audio"
                       onClick={() => setShowVideoPopup(false)}
-                      className="absolute bottom-8 md:bottom-14 left-1/2 -translate-x-1/2 inline-block bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-4 py-1.5 text-xs md:px-8 md:py-3 md:text-lg rounded-full font-black shadow-2xl hover:scale-110 transition-all animate-pulse z-20"
+                      className="absolute bottom-14 left-1/2 -translate-x-1/2 inline-block bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-8 py-3 rounded-full font-black text-lg shadow-2xl hover:scale-110 transition-all animate-pulse z-20"
                     >
                       SHOP NOW
                     </a>
@@ -578,7 +578,7 @@ END COMMENT */}
                     <a
                       href="/Categories/tech-audio"
                       onClick={() => setShowVideoPopup(false)}
-                      className="absolute bottom-8 md:bottom-14 left-1/2 -translate-x-1/2 inline-block bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-4 py-1.5 text-xs md:px-8 md:py-3 md:text-lg rounded-full font-black shadow-2xl hover:scale-110 transition-all animate-pulse z-20"
+                      className="absolute bottom-14 left-1/2 -translate-x-1/2 inline-block bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-8 py-3 rounded-full font-black text-lg shadow-2xl hover:scale-110 transition-all animate-pulse z-20"
                     >
                       SHOP NOW
                     </a>
