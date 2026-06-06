@@ -21,8 +21,6 @@ export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showCelly, setShowCelly] = useState(false);
   const [cellyMounted, setCellyMounted] = useState(false);
-  const [showVideoPopup, setShowVideoPopup] = useState(false);
-  const [videoSlide, setVideoSlide] = useState(0);
   
   // Array of video paths - add your video files here
   const videos = [
@@ -69,18 +67,6 @@ useEffect(() => {
 
     return () => clearInterval(videoInterval);
   }, []);
-  // Video promo pop-up: show after 3s, then rotate the 2 promo videos
-  useEffect(() => {
-    const showTimer = setTimeout(() => setShowVideoPopup(true), 3000);
-    return () => clearTimeout(showTimer);
-  }, []);
-
-  useEffect(() => {
-    if (!showVideoPopup) return;
-    const rot = setInterval(() => setVideoSlide((p) => (p + 1) % 2), 6000);
-    return () => clearInterval(rot);
-  }, [showVideoPopup]);
-
   // Auto-rotate hot deals banner every 5 seconds
 useEffect(() => {
   const interval = setInterval(() => {
@@ -257,7 +243,7 @@ useEffect(() => {
               width: '100%',
               height: '100%',
               objectFit: 'cover',
-              filter: 'brightness(1.3) saturate(1.2) contrast(1.05)',
+              filter: 'brightness(1.6) saturate(1.2) contrast(1.08)',
               opacity: currentVideoIndex === index ? 1 : 0,
               transition: 'opacity 2s ease-in-out'
             }}
@@ -535,70 +521,6 @@ END COMMENT */}
   </div>
 </div>
 END COMMENT */}
-
-        {/* ===== VIDEO PROMO POP-UP (earbuds + keyboard) ===== */}
-        {showVideoPopup && (
-          <div
-            className="fixed inset-0 z-[60] flex items-center justify-center animate-fade-in"
-            onClick={() => setShowVideoPopup(false)}
-            style={{
-              background: 'radial-gradient(circle at center, rgba(0,0,0,0.85), rgba(0,0,0,0.95))',
-              backdropFilter: 'blur(10px)'
-            }}
-          >
-            <div className="max-w-3xl w-full mx-4" onClick={(e) => e.stopPropagation()}>
-              <div className="relative overflow-hidden rounded-3xl shadow-2xl bg-black">
-                <button
-                  onClick={() => setShowVideoPopup(false)}
-                  className="absolute top-4 right-4 bg-white hover:bg-gray-100 p-3 rounded-full transition-all z-30 shadow-xl hover:scale-110"
-                >
-                  <X className="w-6 h-6 text-gray-700" />
-                </button>
-
-                {videoSlide === 0 && (
-                  <div className="relative">
-                    <video autoPlay loop muted playsInline className="w-full h-auto block rounded-3xl" style={{ maxHeight: '75vh' }}>
-                      <source src="/videos/ear-buds-promo.mp4" type="video/mp4" />
-                    </video>
-                    <a
-                      href="/Categories/tech-audio"
-                      onClick={() => setShowVideoPopup(false)}
-                      className="absolute bottom-14 left-1/2 -translate-x-1/2 inline-block bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-8 py-3 rounded-full font-black text-lg shadow-2xl hover:scale-110 transition-all animate-pulse z-20"
-                    >
-                      SHOP NOW
-                    </a>
-                  </div>
-                )}
-
-                {videoSlide === 1 && (
-                  <div className="relative">
-                    <video autoPlay loop muted playsInline className="w-full h-auto block rounded-3xl" style={{ maxHeight: '75vh' }}>
-                      <source src="/videos/gaming-kit.mp4" type="video/mp4" />
-                    </video>
-                    <a
-                      href="/Categories/tech-audio"
-                      onClick={() => setShowVideoPopup(false)}
-                      className="absolute bottom-14 left-1/2 -translate-x-1/2 inline-block bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-8 py-3 rounded-full font-black text-lg shadow-2xl hover:scale-110 transition-all animate-pulse z-20"
-                    >
-                      SHOP NOW
-                    </a>
-                  </div>
-                )}
-
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-3 z-20">
-                  <button
-                    onClick={() => setVideoSlide(0)}
-                    className={videoSlide === 0 ? 'h-3 w-8 rounded-full bg-yellow-400 transition-all' : 'h-3 w-3 rounded-full bg-white/70 transition-all'}
-                  />
-                  <button
-                    onClick={() => setVideoSlide(1)}
-                    className={videoSlide === 1 ? 'h-3 w-8 rounded-full bg-yellow-400 transition-all' : 'h-3 w-3 rounded-full bg-white/70 transition-all'}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
 
 {/* AUTO-ROTATING HOT DEALS BANNER - 3 SLIDES */}
 {showBanner && (

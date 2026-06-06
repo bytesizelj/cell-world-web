@@ -60,55 +60,6 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
 
   // Enhanced product data with categories
   const products = [
-    { 
-      id: 'itel-a100c', 
-      name: 'itel A100C', 
-      image: '/images/Products/phones/itel-a100c.png',
-      price: 440.00,
-      category: 'budget',
-      availability: 'In Stock',
-      specs: {
-        display: '6.6" 90Hz Super Clear Display',
-        ram: '8GB RAM (3GB + 5GB Extended)',
-        storage: '64GB ROM',
-        audio: 'DTS Audio',
-        durability: 'MIL-STD 810H Certified'
-      }
-    },
-    { 
-      id: 'samsung-a07', 
-      name: 'Samsung A07', 
-      image: '/images/Products/phones/samsung-a07.png',
-      price: 499.00,
-      category: 'budget',
-      availability: 'In Stock',
-      specs: {
-        display: '6.7" HD+ 90Hz Display',
-        mainCamera: '50MP Main Camera',
-        selfieCamera: '8MP Front Camera',
-        battery: '5000mAh Battery',
-        charging: '25W Fast Charging',
-        storage: '64GB ROM'
-      }
-    },
-    { 
-      id: 'samsung-a42', 
-      name: 'Samsung A42 5G', 
-      image: '/images/Products/phones/samsung-a42.png',
-      price: 720.00,
-      category: 'midrange',
-      availability: 'In Stock',
-      color: 'Black',
-      specs: {
-        display: '6.6" HD+ Super AMOLED',
-        network: '5G',
-        mainCamera: '48MP Quad Camera',
-        selfieCamera: '20MP Front Camera',
-        battery: '5000mAh Battery',
-        charging: '15W Fast Charging',
-        storage: '128GB ROM'
-      }
-    },
       { 
       id: 'samsung-a06', 
       name: 'Samsung A06', 
