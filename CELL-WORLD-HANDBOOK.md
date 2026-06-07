@@ -15,6 +15,8 @@ When starting a new chat for Cell World:
 
 > **[CONFIRM] items** = facts Claude reconstructed from past chats that you should verify and correct once, then they're locked in.
 
+> 🔒 **Secrets live in a separate file, `CELL-WORLD-SECRETS.md`.** This handbook holds NO passwords or private keys, so it is safe to commit to Git. Keep `CELL-WORLD-SECRETS.md` out of Git (see its own header for the `.gitignore` line) and store it only in your local `Projects\` folder + the private Claude project.
+
 ---
 
 ## 1. PROJECT OVERVIEW
@@ -69,7 +71,7 @@ When starting a new chat for Cell World:
 
 ## 4. PROJECT FILE STRUCTURE
 
-> **[CONFIRM] Project folder path.** Older chats reference `C:\Users\ictcl\OneDrive\Desktop\cell-world-web`, but the current HighMark standard is `C:\Users\ictcl\Projects\`. Confirm which is the live working copy so all `code path\to\file` commands point to the right place. (Assumed standard: `C:\Users\ictcl\Projects\cell-world-web`.)
+> **✅ CONFIRMED — working path is `C:\Users\ictcl\Projects\cell-world-web`.** Moved off OneDrive (`...\OneDrive\Desktop\...`) because it was constantly buffering/syncing. All `code path\to\file` commands use the `Projects\` base.
 
 ```
 cell-world-web/
@@ -81,15 +83,20 @@ cell-world-web/
 │  │  ├─ marine-world/
 │  │  │  ├─ page.tsx           ← Marine + fishing + boat-parts
 │  │  │  └─ boat-parts/page.tsx ← Dedicated SEO subpage
-│  │  └─ more/page.tsx         ← "More coming soon" items
+│  │  ├─ more/page.tsx         ← RETIRED (split into tech-audio + accessories-power) [CONFIRM route names/paths]
+│  │  ├─ tech-audio/page.tsx   ← split from "more" — authoritative source for audio prices [CONFIRM]
+│  │  ├─ accessories-power/page.tsx ← split from "more" — power/accessories [CONFIRM]
+│  │  └─ repair-service/page.tsx ← Phone repair services [CONFIRM exact route name]
 │  ├─ contact/
 │  ├─ reviews/                 ← Google Reviews
 │  └─ order/                   ← Valentine order form (promo — see §8)
 ├─ components/
-│  ├─ CellyAssistant.tsx       ← AI chat assistant ("Celly")
+│  ├─ CellyAssistant.tsx       ← Celly chat UI (renders only — logic lives in lib/cellyRules.ts)
 │  ├─ HeroCarousel.tsx
 │  ├─ NavigationMenu.tsx
 │  └─ GoogleAnalytics.tsx
+├─ lib/
+│  └─ cellyRules.ts            ← Celly's brain: CATALOG (~150 items) + REPAIRS + getCellyReply()
 └─ public/
    ├─ cell-world-logo.png
    ├─ manifest.json, sitemap.xml, robots.txt
@@ -114,12 +121,15 @@ cell-world-web/
 
 | | |
 |---|---|
-| File | `components/CellyAssistant.tsx` |
+| UI component | `components/CellyAssistant.tsx` (chat window + bubble only) |
+| **Logic / brain** | **`lib/cellyRules.ts`** — single source of Celly's answers (rebuilt June 2026). Exports one `getCellyReply()` function. Contains a single `CATALOG` array (~150 items across all categories) + a full `REPAIRS` list. Uses a `CAT_MAP` for category routing, brand matching, and a specific-item lookup that runs **before** category/brand logic (so "fuel clip?" or "jbl flip 6" returns one precise answer, not the whole category). |
+| Handoff / fallback | When Celly can't confirm something it returns the `[[CONTACT]]` sentinel, which the chat UI renders as tappable **WhatsApp + Call** buttons. Fallback wording: *"I'm not able to confirm that one from here, but the store team can help you out directly. Tap below:"* |
 | Load pattern | `dynamic(() => import('@/components/CellyAssistant'), { ssr: false })` on pages |
 | **Appearance (locked / original look)** | Floating orange circular avatar button (`border-4 border-orange-500`, white bg) with a green pulsing "online" dot. Click → 400×600 chat window, orange header, "Celly Assistant • Online • Cell World Expert", quick-question buttons, teal send button. |
 | Avatar image | `/images/celly/celly-avatar-icon.png` |
-| Knows | Real product list + prices, store hours, closing time, location |
-| Known past issue | Was giving generic responses; corrected by feeding it the actual product DB. If it regresses, re-check the product data block in the component. |
+| Knows | Full shop catalog + prices, repairs, store hours, closing time, location, email |
+| Editing rule | To change what Celly says, edit `lib/cellyRules.ts` (CATALOG / REPAIRS / rule order) — **not** the component. The component only renders. |
+| Known past issues (resolved) | (1) Unknown items ("do you sell drones") were swallowed by an over-broad generic-overview regex — tightened so they fall through to the handoff. (2) "email address" hit the location rule because "address" matched — added a dedicated email handler before location. (3) Specific-item lookup added ahead of all category/brand logic; later stripped category plural words (speakers, chargers, cases…) from token matching so "speakers" no longer resolved to the single BLAUPUNKT item. |
 
 ---
 
@@ -145,9 +155,13 @@ cell-world-web/
 - Fuel Line Kit (Yamaha OEM) — **$250**
 - Fishing Reels YoYo — $6 (+ other fishing lures)
 
-**More** — placeholder "more coming soon" items.
+**"More" — RETIRED.** Split into **tech-audio** and **accessories-power** categories, which are now the **authoritative price sources** (this resolved old price conflicts, e.g. JBL Flip 6 listed at both $299 and $499). [CONFIRM exact routes.]
 
-> Product data lives inline in each category `page.tsx` as card objects (`id, name, image, price, priceRange, category, availability, description, specs`). Image cache-busting via `?v=N` query suffix is used when swapping images.
+**Repair Service** — dedicated repairs category page; repair items also live in the `REPAIRS` list inside `lib/cellyRules.ts` so Celly can quote them. [CONFIRM page route + current repair pricing.]
+
+**Celly catalog coverage** — the `CATALOG` in `lib/cellyRules.ts` spans: phones, tablets, laptop, gaming, earbuds, headphones, speakers, watches, microphones, audio interfaces, car audio, car accessories, TV/streaming, keyboards, mouse, selfie/gimbals, chargers, cables, cases, power banks, power/surge, emergency, storage, networking, marine, fishing, and misc — plus REPAIRS.
+
+> Per-page product data still lives inline in each category `page.tsx` as card objects (`id, name, image, price, priceRange, category, availability, description, specs`). **Celly's answers are now separate** — they come from `lib/cellyRules.ts`, not the page files. Keep the two in sync when prices change. Image cache-busting via `?v=N` query suffix is used when swapping images.
 
 ---
 
@@ -155,7 +169,7 @@ cell-world-web/
 
 Complete promotional order system. **Now historical** — controlled by a `PROMO_ACTIVE` flag.
 
-> **[CONFIRM] Is `PROMO_ACTIVE` currently `false`?** Promo ended Feb 14, 2026, so it should be toggled off (banner hidden). Confirm so we don't accidentally re-ship it.
+> **✅ CONFIRMED — `PROMO_ACTIVE` is `false` (promo OFF, banner hidden).** Ended Feb 14, 2026. Do not re-ship active.
 
 | | |
 |---|---|
@@ -165,7 +179,7 @@ Complete promotional order system. **Now historical** — controlled by a `PROMO
 | Prizes | #25 Selfie Stick ($60) · #50 Wireless Earbuds ($99) · #100 Power Pack + Samsung A11 ($519) |
 | Submit flow | Builds WhatsApp message → opens `wa.me/17844310777`; winners flagged 🏆 with "show this message to claim" |
 | Homepage banner | Red sliding banner, falling-hearts animation, product images, ticker |
-| Admin dashboard | Password **`cellworld2026`**, real-time order table, winner ID, search/filter, **CSV export** |
+| Admin dashboard | Password **→ see `CELL-WORLD-SECRETS.md`**, real-time order table, winner ID, search/filter, **CSV export** |
 
 ---
 
@@ -173,8 +187,8 @@ Complete promotional order system. **Now historical** — controlled by a `PROMO
 
 | | |
 |---|---|
-| **Google Analytics** | `G-E9RDJE166F` (via `GoogleAnalytics.tsx`) |
-| **Google Maps API key** | `AIzaSyB6XxgZF7jeGL6uAv-_E33JWDWg9QsO3wU` |
+| **Google Analytics** | `G-E9RDJE166F` (via `GoogleAnalytics.tsx`) — measurement ID, public by nature (ships in client), not a secret |
+| **Google Maps API key** | **→ see `CELL-WORLD-SECRETS.md`** (client-side key; restrict by HTTP referrer in Google Cloud) |
 | **Google Places** | Autocomplete used (country bias `vc`) |
 | **Multilingual** | EN / FR / ES / PT language switcher + Google Translate redirect |
 | **Google Reviews** | `/reviews` page |
@@ -186,9 +200,9 @@ Complete promotional order system. **Now historical** — controlled by a `PROMO
 
 > **[CONFIRM] — this is the main thing to update at the start of our next session.**
 
-Reconstructed status: the app is **live and stable** at cellworldsvg.com. Last major work was the **Valentine's promo** (shipped end of Jan 2026; period closed Feb 14, 2026). No active Cell World sprint has been recorded since — recent build energy has been on Pirates Pub and the HighMark website.
+Reconstructed status: the app is **live and stable** at cellworldsvg.com. The **most recent recorded Cell World work (June 2026)** was the **Celly rebuild** — moving Celly's logic out of `CellyAssistant.tsx` into `lib/cellyRules.ts` (single `CATALOG` of ~150 items + `REPAIRS`, `getCellyReply()`, specific-item lookup, `[[CONTACT]]` WhatsApp/Call handoff). All four post-rebuild fixes tested and confirmed passing. Before that, the **Valentine's promo** (shipped end of Jan 2026; period closed Feb 14, 2026). Other recent build energy has been on Pirates Pub and the HighMark website.
 
-**Tell me at the start of the next chat:** what (if anything) is the current Cell World task — promo teardown, new products, Celly upgrade, new category, or something else?
+**Tell me at the start of the next chat:** what (if anything) is the current Cell World task — promo teardown, new products, Celly tuning, new category, or something else?
 
 ---
 
@@ -231,7 +245,7 @@ Historical open items + obvious next moves (confirm priority):
 
 ### Common commands (Windows / PowerShell)
 ```powershell
-# Navigate (CONFIRM correct base path — see §4)
+# Navigate (confirmed base path — see §4)
 cd C:\Users\ictcl\Projects\cell-world-web
 
 # Dev (no turbopack)

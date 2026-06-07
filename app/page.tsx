@@ -1,5 +1,4 @@
 'use client';
-import NavigationMenu from '@/components/NavigationMenu';
 import dynamic from 'next/dynamic';
 const CellyAssistant = dynamic(() => 
 import('@/components/CellyAssistant'), { ssr: 
@@ -346,7 +345,7 @@ useEffect(() => {
   <a href="/Categories/tech-audio" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
     🎵 Tech & Audio
   </a>
-  <a href="/Categories/Accessories & Power" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+  <a href="/Categories/accessories-power" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
     🔌 Accessories & Power
   </a>
   <a href="/reviews" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
