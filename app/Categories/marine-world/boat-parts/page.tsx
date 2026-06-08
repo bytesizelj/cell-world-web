@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ArrowLeft, Globe, Phone, MessageCircle } from 'lucide-react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
@@ -9,6 +9,13 @@ const CellyAssistant = dynamic(() => import('@/components/CellyAssistant'), { ss
 
 export default function BoatPartsPage() {
   const [language, setLanguage] = useState('en');
+
+  const heroImages = ['/images/marine-1.jpg', '/images/marine-2.jpg', '/images/marine-3.jpg'];
+  const [bgIndex, setBgIndex] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setBgIndex((p) => (p + 1) % heroImages.length), 3500);
+    return () => clearInterval(id);
+  }, []);
 
   const translations = {
     en: {
@@ -270,7 +277,7 @@ export default function BoatPartsPage() {
 
       <div className="min-h-screen bg-gradient-to-br from-blue-950 via-blue-900 to-teal-950">
         {/* Navigation */}
-        <nav className="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b-2 border-teal-400">
+        <nav className="absolute top-0 left-0 right-0 z-50 bg-gradient-to-b from-black/60 to-transparent">
           <div className="max-w-7xl mx-auto px-4 py-4">
             <div className="flex justify-between items-center">
               <div className="flex items-center space-x-4">
@@ -310,24 +317,33 @@ export default function BoatPartsPage() {
 
         {/* Hero Section */}
         <section 
-          className="relative py-12 md:py-20 px-4 bg-cover bg-center bg-no-repeat"
-          style={{
-  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('/images/boat-page.jpg')`,
-  minHeight: '500px'
-}}
+          className="relative pt-24 md:pt-28 pb-12 md:pb-20 px-4 overflow-hidden"
+          style={{ minHeight: '100vh' }}
         >
+          {heroImages.map((src, i) => {
+            const isActive = bgIndex === i;
+            const isPrev = i === (bgIndex - 1 + heroImages.length) % heroImages.length;
+            return (
+              <div
+                key={src}
+                className="absolute inset-0 bg-cover bg-center"
+                style={{
+                  backgroundImage: `url('${src}')`,
+                  opacity: isActive || isPrev ? 1 : 0,
+                  zIndex: isActive ? 3 : isPrev ? 2 : 1,
+                  animation: isActive ? 'dramaticReveal 1.3s ease-out forwards' : 'none',
+                }}
+              />
+            );
+          })}
+          <div
+            className="absolute inset-0"
+            style={{ zIndex: 3, background: 'linear-gradient(rgba(3,18,30,0.55), rgba(3,18,30,0.7))' }}
+          />
+
+          
           <div className="max-w-6xl mx-auto text-center relative z-10">
-            {/* Logo */}
-            <div className="mb-8 flex justify-center">
-              <img 
-  src="/images/marine-logo.png"
-  alt="Marine World"
-  className="h-32 md:h-40 w-auto"
-  style={{ 
-    filter: 'drop-shadow(0 0 20px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 35px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 50px rgba(255, 255, 255, 0.5))'
-  }}
-/>
-            </div>
+            
             
             <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-teal-400 to-yellow-400 bg-clip-text text-transparent">
               {t.title}
@@ -336,44 +352,36 @@ export default function BoatPartsPage() {
    style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.4)' }}>
               {t.subtitle}
             </p>
-            <p className="text-lg font-medium text-white max-w-4xl mx-auto mb-8"
-   style={{ textShadow: '2px 2px 6px rgba(0, 0, 0, 0.9), 0 0 10px rgba(0, 0, 0, 0.5)' }}>
-              Cell World is St Vincent and the Grenadines' trusted source for premium boat parts and marine equipment. 
-              From outboard engines to propellers, electronics to safety gear, we supply everything you need 
-              to keep your vessel running smoothly.
-            </p>
+                        
+            {/* Explore Full Range CTA */}
+            <div className="mt-2 mb-4 flex justify-center">
+              <Link
+                href="/Categories/marine-world"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-400 to-yellow-400 text-black font-bold text-sm md:text-base px-6 py-2.5 rounded-full"
+                style={{ animation: 'exploreThrob 1.3s ease-in-out infinite' }}
+              >
+                Explore Our Full Marine Range
+                <span className="inline-block text-lg" style={{ animation: 'exploreArrow 1.3s ease-in-out infinite' }}>→</span>
+              </Link>
+            </div>
+
+            <style jsx global>{`
+              @keyframes exploreThrob {
+                0%, 100% { transform: scale(1); box-shadow: 0 0 22px rgba(45,212,191,0.6); }
+                50% { transform: scale(1.09); box-shadow: 0 0 50px rgba(250,204,21,0.95), 0 0 80px rgba(45,212,191,0.6); }
+              }
+              @keyframes exploreArrow {
+                0%, 100% { transform: translateX(0); }
+                50% { transform: translateX(8px); }
+              }
+              @keyframes dramaticReveal {
+                0% { opacity: 0; transform: scale(1.35); }
+                60% { opacity: 1; }
+                100% { opacity: 1; transform: scale(1); }
+              }
+            `}</style>
+
             
-            {/* Trust Badges */}
-<div className="flex justify-center flex-wrap gap-6 md:gap-12 mt-8">
-  <div className="text-center">
-    <div className="text-4xl mb-2 bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto">🚚</div>
-    <div className="text-sm font-bold text-yellow-400" 
-         style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.9)' }}>
-      Island-wide<br/>Delivery
-    </div>
-  </div>
-  <div className="text-center">
-    <div className="text-4xl mb-2 bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto">✓</div>
-    <div className="text-sm font-bold text-yellow-400" 
-         style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.9)' }}>
-      Genuine OEM<br/>Parts
-    </div>
-  </div>
-  <div className="text-center">
-    <div className="text-4xl mb-2 bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto">📍</div>
-    <div className="text-sm font-bold text-yellow-400" 
-         style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.9)' }}>
-      Kingstown<br/>Location
-    </div>
-  </div>
-  <div className="text-center">
-    <div className="text-4xl mb-2 bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto">🔧</div>
-    <div className="text-sm font-bold text-yellow-400" 
-         style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.9)' }}>
-      Quality Marine<br/>Products
-    </div>
-  </div>
-</div>
 </div>  
         </section>
 
@@ -466,6 +474,28 @@ export default function BoatPartsPage() {
                   {island}
                 </span>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Trust Badges */}
+        <section className="py-12 px-4">
+          <div className="max-w-5xl mx-auto flex justify-center flex-wrap gap-6 md:gap-12">
+            <div className="text-center">
+              <div className="text-2xl mb-2 bg-white rounded-full w-12 h-12 flex items-center justify-center mx-auto">🚚</div>
+              <div className="text-sm font-bold text-yellow-400">Island-wide<br/>Delivery</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl mb-2 bg-white rounded-full w-12 h-12 flex items-center justify-center mx-auto">✓</div>
+              <div className="text-sm font-bold text-yellow-400">Genuine OEM<br/>Parts</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl mb-2 bg-white rounded-full w-12 h-12 flex items-center justify-center mx-auto">📍</div>
+              <div className="text-sm font-bold text-yellow-400">Kingstown<br/>Location</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl mb-2 bg-white rounded-full w-12 h-12 flex items-center justify-center mx-auto">🔧</div>
+              <div className="text-sm font-bold text-yellow-400">Quality Marine<br/>Products</div>
             </div>
           </div>
         </section>

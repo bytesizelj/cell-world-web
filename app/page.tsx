@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react';
 import { ChevronDown, Globe, Phone, Menu, ArrowRight, X, Mail, MessageCircle } from 'lucide-react';
 import Link from 'next/link';
 import HeroCarousel from '@/components/HeroCarousel';
+import MarineWorldPopup from '@/components/MarineWorldPopup';
 
 export default function Home() {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
@@ -70,7 +71,7 @@ useEffect(() => {
   }, []);
   // Video promo pop-up: show after 3s, then rotate the 2 promo videos
   useEffect(() => {
-    const showTimer = setTimeout(() => setShowVideoPopup(true), 3000);
+    const showTimer = setTimeout(() => { /* setShowVideoPopup(true); -- disabled, reuse later */ }, 3000);
     return () => clearTimeout(showTimer);
   }, []);
 
@@ -339,7 +340,7 @@ useEffect(() => {
   <a href="/Categories/phones" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
     📱 Phones
   </a>
-  <a href="/Categories/marine-world" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+  <a href="/Categories/marine-world/boat-parts" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
     🚤 Marine World
   </a>
   <a href="/Categories/tech-audio" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
@@ -1286,7 +1287,7 @@ END COMMENT */}
 
       {/* Fishing Gear Category with HOVER ZOOM */}
       <Link 
-        href="/Categories/marine-world"
+        href="/Categories/marine-world/boat-parts"
         className="group relative overflow-hidden rounded-xl shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-3xl cursor-pointer block"
       >
         <div className="aspect-[4/3] relative overflow-hidden">
@@ -1555,6 +1556,8 @@ END COMMENT */}
   </div>
 </section>
   
+<MarineWorldPopup />
+
 {/* Celly Assistant - Slide in from right with label above */}
 {showCelly && (
   <div 
