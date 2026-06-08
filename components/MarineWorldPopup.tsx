@@ -21,15 +21,13 @@ export default function MarineWorldPopup() {
 
   useEffect(() => {
     if (!PROMO_ACTIVE) return;
-    if (ONCE_PER_SESSION && sessionStorage.getItem('mwPopupSeen')) return;
-    const t = setTimeout(() => setShow(true), 1200);
+    if (ONCE_PER_SESSION && localStorage.getItem('mwPopupSeen')) return;    const t = setTimeout(() => setShow(true), 1200);
     return () => clearTimeout(t);
   }, []);
 
   const close = () => {
     setShow(false);
-    if (ONCE_PER_SESSION) sessionStorage.setItem('mwPopupSeen', '1');
-  };
+    if (ONCE_PER_SESSION) localStorage.setItem('mwPopupSeen', '1');  };
 
   if (!show) return null;
 

@@ -19,7 +19,7 @@ export default function BoatPartsPage() {
 
   const translations = {
     en: {
-      backToMarine: "Back to Marine World",
+      backToMarine: "Back to Home",
       title: "Boat Parts St Vincent & Grenadines",
       subtitle: "Your Premier Marine Parts Supplier in SVG",
       // Categories
@@ -45,7 +45,7 @@ export default function BoatPartsPage() {
       servingAll: "Serving All of St Vincent & The Grenadines"
     },
     fr: {
-      backToMarine: "Retour au Monde Marin",
+      backToMarine: "Retour à l'Accueil",
       title: "Pièces de Bateau St Vincent & Grenadines",
       subtitle: "Votre Premier Fournisseur de Pièces Marines à SVG",
       engineParts: "Pièces de Moteur Hors-bord",
@@ -68,7 +68,7 @@ export default function BoatPartsPage() {
       servingAll: "Desservant tout St Vincent et les Grenadines"
     },
     es: {
-      backToMarine: "Volver al Mundo Marino",
+      backToMarine: "Volver al Inicio",
       title: "Partes de Barco San Vicente y Granadinas",
       subtitle: "Su Principal Proveedor de Partes Marinas en SVG",
       engineParts: "Partes de Motor Fuera de Borda",
@@ -282,7 +282,7 @@ export default function BoatPartsPage() {
             <div className="flex justify-between items-center">
               <div className="flex items-center space-x-4">
                 <Link 
-                  href="/Categories/marine-world"
+                  href="/"
                   className="flex items-center space-x-2 text-teal-400 hover:text-yellow-400 transition-colors"
                 >
                   <ArrowLeft className="w-5 h-5" />
