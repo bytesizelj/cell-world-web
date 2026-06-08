@@ -1586,11 +1586,11 @@ END COMMENT */}
       © 2025 Cell World SVG. All Rights Reserved.
     </p>
     <p className="text-gray-500 text-xs mb-1">
-      Website by <span className="text-yellow-400 font-semibold">Designs by LJ</span>
+      App powered by <span className="text-yellow-400 font-semibold">Highmark Business Systems</span>
     </p>
     <p className="text-gray-500 text-xs">
       Contact: <a href="tel:+17844977245" className="text-blue-400 hover:text-blue-300">+1 (784) 497-7245</a> | 
-      <a href="mailto:bytesofknowledgelj@gmail.com" className="text-blue-400 hover:text-blue-300 ml-1">bytesofknowledgelj@gmail.com</a>
+      <a href="mailto:admin@highmark-business-systems.com" className="text-blue-400 hover:text-blue-300 ml-1">admin@highmark-business-systems.com</a>
     </p>
   </div>
 </footer>

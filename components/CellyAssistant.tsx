@@ -736,7 +736,7 @@ export default function Celly() {
                       <p className="text-sm whitespace-pre-line">{message.text.replace('[[CONTACT]]', '').trim()}</p>
                       {message.isBot && message.text.includes('[[CONTACT]]') && (
                         <div className="flex gap-2 mt-3">
-                          <a href="https://wa.me/17844310777" target="_blank" rel="noopener noreferrer" className="flex-1 text-center bg-green-500 hover:bg-green-600 text-white text-xs font-bold py-2 px-3 rounded-lg transition-colors">WhatsApp</a>
+                          
                           <a href="tel:+17844512261" className="flex-1 text-center bg-blue-500 hover:bg-blue-600 text-white text-xs font-bold py-2 px-3 rounded-lg transition-colors">Call</a>
                         </div>
                       )}

@@ -347,7 +347,7 @@ export function getCellyReply(rawInput: string): string {
   // repairs / unlocking / services
   if (/(repair|fix|fixing|broken|cracked|unlock|frp|screen replace|battery replace|water damage|diagnostic|service)/.test(q)) {
     const body = REPAIRS.map((r) => `\u2022 ${r.n} \u2014 ${r.p} (${r.t})`).join('\n');
-    return `\ud83d\udd27 Repair & unlocking services:\n${body}\n\nBring-your-own-parts install: simple $120+, moderate $60\u2013100, complex $150+.\nFor a firm quote, reach the store:\n${CONTACT}`;
+    return `\ud83d\udd27 Repair & unlocking services:\n${body}\n\nBring-your-own-parts install: from $20 to $120, moderate $60\u2013100, complex $150+.\nFor a firm quote, reach the store:\n${CONTACT}`;
   }
 
   // SPECIFIC ITEM lookup - answer the one product, not the whole list
