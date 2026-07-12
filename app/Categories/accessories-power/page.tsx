@@ -438,7 +438,7 @@ export default function AccessoriesPowerCategory() {
   image: '/images/Products/more/samsung-super-fast-wireless-charger.png',
   price: 220.00,
   category: 'samsung',
-  availability: "In Stock",
+  availability: "Back Soon",
   specs: {
     power: '15W',
     includes: 'Power Adapter',
@@ -553,7 +553,7 @@ export default function AccessoriesPowerCategory() {
   image: '/images/Products/more/rca-car-holder.png',
   price: 60.00,
   category: 'car-accessories',
-  availability: "In Stock",
+  availability: "Back Soon",
   specs: {
     mount: 'Suction Dashboard & Windshield',
     features: 'Adjust to any angle, 360° rotation',
@@ -566,7 +566,7 @@ export default function AccessoriesPowerCategory() {
   image: '/images/Products/more/hypergear-universal-phone-holder.png',
   price: 80.00,
   category: 'car-accessories',
-  availability: "In Stock",
+  availability: "Back Soon",
   specs: {
     mount: 'Suction Dashboard, Vent & Windshield',
     attachment: 'Easy magnetic attachment',
@@ -580,7 +580,7 @@ export default function AccessoriesPowerCategory() {
   image: '/images/Products/more/yesido-car-holder-c267.png',
   price: 50.00,
   category: 'car-accessories',
-  availability: 'In Stock',
+  availability: 'Back Soon',
   specs: {
     mount: 'Suction cup & windshield',
     features: 'Press to unlock, Horizontal & vertical',
@@ -594,7 +594,7 @@ export default function AccessoriesPowerCategory() {
   image: '/images/Products/more/yesido-car-holder-c173.png',
   price: 60.00,
   category: 'car-accessories',
-  availability: 'In Stock',
+  availability: 'Back Soon',
   specs: {
     mount: 'Suction cup & windshield',
     features: 'Horizontal & vertical',
@@ -608,7 +608,7 @@ export default function AccessoriesPowerCategory() {
   image: '/images/Products/more/yesido-car-holder-c261.png',
   price: 60.00,
   category: 'car-accessories',
-  availability: 'In Stock',
+  availability: 'Back Soon',
   specs: {
     features: 'One hand operation',
     mount: 'Suction cup & windshield',
@@ -753,6 +753,7 @@ export default function AccessoriesPowerCategory() {
       image: "/images/Products/more/pocketjuice-air-10000.png",
       description: "Magnetic wireless charger with built-in stand. 10000mAh capacity provides up to 6 full charges. Magnetically attaches to any phone.",
       category: "powerbanks",
+      availability: 'Back Soon',
       specs: {
         capacity: "10000mAh capacity",
         charging: "Wireless charging",
@@ -767,6 +768,7 @@ export default function AccessoriesPowerCategory() {
       image: "/images/Products/more/anker-powercore-10000.png",
       description: "High-speed portable charger with 10000mAh capacity. Provides 46+ hours of extra power with 12W high-speed charging.",
       category: "powerbanks",
+      availability: 'Back Soon',
       specs: {
         capacity: "10000mAh capacity",
         charging: "12W high-speed charging",
@@ -796,6 +798,7 @@ export default function AccessoriesPowerCategory() {
       image: "/images/Products/more/anker-pocket-10k.png",
       description: "Ultra-compact power bank with 22.5W max output. Perfect pocket size for Apple, Samsung, and more devices.",
       category: "powerbanks",
+      availability: 'Back Soon',
       specs: {
         capacity: "10000mAh capacity",
         output: "22.5W MAX output",
@@ -810,6 +813,7 @@ export default function AccessoriesPowerCategory() {
       image: "/images/Products/more/yesido-wireless-10000.png",
       description: "All-in-one power bank with wireless charging pad and two built-in cables. Digital display shows battery level.",
       category: "powerbanks",
+      availability: 'Back Soon',
       specs: {
         capacity: "10000mAh capacity",
         wireless: "Wireless charging pad",
@@ -823,7 +827,7 @@ export default function AccessoriesPowerCategory() {
   image: '/images/Products/more/hyper-gear-power-pack-mini.png',
   price: 99.00,
   category: 'powerbanks',
-  availability: "In Stock",
+  availability: "Back Soon",
   specs: {
     capacity: '5000mAh',
     output: '20W USB-C PD Fast Charge, 18W USB Fast Charge'
@@ -835,7 +839,7 @@ export default function AccessoriesPowerCategory() {
   image: '/images/Products/more/hyper-gear-clear-charge-power-bank.png',
   price: 180.00,
   category: 'powerbanks',
-  availability: 'In Stock',
+  availability: 'Back Soon',
   specs: {
     capacity: '20000mAh',
     battery: '48+ hours extra battery life',
@@ -849,7 +853,7 @@ export default function AccessoriesPowerCategory() {
   image: '/images/Products/more/pocket-juice-power-bank-with-flashlight.png', // You'll need to add this image
   price: 100.00,
   category: 'powerbanks',
-  availability: 'In Stock',
+  availability: 'Back Soon',
   specs: {
     capacity: '2600mAh',
     charging: 'Up to 1X charge',
@@ -1051,7 +1055,7 @@ export default function AccessoriesPowerCategory() {
   image: '/images/Products/more/yesido-4in1-cable.png',
   price: 50.00,
   category: 'cables',
-  availability: 'In Stock',
+  availability: 'Back Soon',
   specs: {
     type: 'USB-A/Type-C to USB-C/Lightning',
     charging: '3A Fast Charge'

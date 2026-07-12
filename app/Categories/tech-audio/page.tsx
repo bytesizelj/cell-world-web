@@ -153,7 +153,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/xbox-series-pulsered.png',
   price: 350.00,
   category: 'gaming',
-  availability: 'In Stock',
+  availability: 'Back Soon',
   color: 'Pulse Red',
   specs: {
     compatibility: 'Xbox Series X|S, Xbox One, Windows, Android & iOS',
@@ -208,7 +208,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/razer-quick-charging-stand.png',
   price: 399.00,
   category: 'gaming',
-  availability: 'In Stock',
+  availability: 'Back Soon',
     specs: {
     type: 'Quick Charging Stand',
     compatibility: 'PS5 DualSense Wireless Controller'
@@ -221,7 +221,8 @@ export default function TechAudioCategory() {
   id: 'rca-tws-gamerbeat-speaker',
   name: 'RCA TWS GamerBeat Bluetooth Party Speaker',
   image: '/images/Products/more/rca-tws-gamerbeat-speaker.png',
-  price: 220.00,
+  price: 200.00,
+  priceDropped: true,
   category: 'speakers',
   availability: 'In Stock',
   specs: {
@@ -236,7 +237,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/rca-beatbox-speaker.png',
   price: 200.00,
   category: 'speakers',
-  availability: 'In Stock',
+  availability: 'Back Soon',
   specs: {
     features: 'Illuminated display, FM Radio, Disco lights',
     inputs: 'Memory device, Mic port, Aux port',
@@ -249,7 +250,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/rca-holosound-speaker.png',
   price: 599.00,
   category: 'speakers',
-  availability: 'In Stock',
+  availability: 'Back Soon',
   specs: {
     features: 'LED Color Flame, Karaoke mode',
     display: 'Illuminated display',
@@ -290,7 +291,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/rca-shock-wave-speaker.png',
   price: 380.00,
   category: 'speakers',
-  availability: 'In Stock',
+  availability: 'Back Soon',
   specs: {
     features: 'LED Color Flame Effect, High Fidelity',
     modes: 'Karaoke mode, FM Radio',
@@ -319,7 +320,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/skull-candy-stomp.png',
   price: 950.00,
   category: 'speakers',
-  availability: 'In Stock',
+  availability: 'Back Soon',
   specs: {
     battery: '12 hours battery life',
     waterproof: 'IPX7 Waterproof',
@@ -391,6 +392,7 @@ export default function TechAudioCategory() {
       image: "/images/Products/more/jbl-flip6-colors.png",
       description: "Powerful portable Bluetooth speaker with 12 hours of playtime. IP67 waterproof and dustproof. Available in Red, Black, Teal, and Black/Red.",
       category: "speakers",
+      availability: 'Back Soon',
       specs: {
         bluetooth: "Bluetooth 5.1",
         battery: "12 hours battery life",
@@ -416,6 +418,7 @@ export default function TechAudioCategory() {
       id: 7,
       name: "JBL Boombox 3 Portable Speaker - Squad Camo",
       price: 1800.00,
+      availability: 'Back Soon',
       image: "/images/Products/more/jbl-boombox3-camo.png",
       description: "Limited edition Squad camouflage design. Massive sound, deepest bass, 24-hour battery life with military-inspired aesthetics.",
       category: "speakers",
@@ -430,6 +433,7 @@ export default function TechAudioCategory() {
       id: 9,
       name: "JBL Xtreme 4 Portable Speaker - Multiple Colors",
       price: 1250.00,
+      availability: 'Back Soon',
       image: "/images/Products/more/jbl-xtreme4-colors.png",
       description: "Powerful portable speaker with shoulder strap. 24 hours playtime, IP67 waterproof. Available in Black, Blue, and Camo editions.",
       category: "speakers",
@@ -478,7 +482,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/skull-candy-ounce-red.png',
   price: 160.00,
   category: 'speakers',
-  availability: 'In Stock',
+  availability: 'Back Soon',
   specs: {
     battery: '16 hours battery',
     waterproof: 'IPX7 waterproof'
@@ -545,7 +549,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/fugoo-tough-bluetooth-speaker.png',
   price: 200.00,
   category: 'speakers',
-  availability: 'In Stock',
+  availability: 'Back Soon',
   specs: {
     waterproof: 'Waterproof design',
     battery: '12 hours battery life',
@@ -615,7 +619,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/tech-audio/smartwatch1.png',
   price: 175.00,
   category: 'watches',
-  inStock: true,
+  availability: 'Back Soon',
   specs: {
     display: '1.43" AMOLED',
     waterproof: 'IP68',
@@ -630,7 +634,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/tech-audio/smartwatch2.png',
   price: 175.00,
   category: 'watches',
-  inStock: true,
+  availability: 'Back Soon',
   specs: {
     display: 'AMOLED',
     features: 'Fitness Tracking, Customizable'
@@ -642,7 +646,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/tech-audio/smartwatch3.png',
   price: 175.00,
   category: 'watches',
-  inStock: true,
+  availability: 'Back Soon',
   specs: {
     display: '1.43" AMOLED',
     waterproof: 'IP68',
@@ -657,7 +661,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/tech-audio/smartwatch4.png',
   price: 175.00,
   category: 'watches',
-  inStock: true,
+  availability: 'Back Soon',
   specs: {
     display: '2.21" AMOLED Infinite',
     features: 'Bluetooth Calling, Water Resistant',
@@ -671,7 +675,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/tech-audio/smartwatch5.png',
   price: 175.00,
   category: 'watches',
-  inStock: true,
+  availability: 'Back Soon',
   specs: {
     waterproof: '1ATM',
     nfc: 'NFC Support',
@@ -685,7 +689,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/tech-audio/smartwatch6.png',
   price: 175.00,
   category: 'watches',
-  inStock: true,
+  availability: 'Back Soon',
   specs: {
     display: '2.01" Sport Display',
     waterproof: 'IP68',
@@ -701,7 +705,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/tech-audio/smartwatch7.png',
   price: 175.00,
   category: 'watches',
-  inStock: true,
+  availability: 'Back Soon',
   specs: {
     display: '2.01 sport Display',
     charging: 'Wireless'
@@ -728,7 +732,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/apple-airpod-3rd-gen.png',
   price: 650.00,
   category: 'apple',
-  availability: 'In Stock',
+  availability: 'Back Soon',
   specs: {
     generation: '3rd Gen',
     battery: '6 hours listening time',
@@ -855,7 +859,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/dolphin-mcx11-rechargeable-mic.png',
   price: 200.00,
   category: 'microphones',
-  availability: 'In Stock',
+  availability: 'Back Soon',
   color: 'Black (2), Blue (2), Red (2)',
   specs: {
     channels: '50 Channel UHF',
@@ -869,7 +873,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/studioz-wired-wireless-microphone.png',
   price: 80.00,
   category: 'microphones',
-  availability: 'In Stock',
+  availability: 'Back Soon',
   specs: {
     type: 'Dual mode - wired & wireless'
   }
@@ -894,7 +898,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/audiopipe-2-channel-transmission.png',
   price: 450.00,
   category: 'audio-interfaces',
-  availability: 'In Stock',
+  availability: 'Back Soon',
   specs: {
     channels: '2 Channel interface',
     power: '+48V Phantom Power',
@@ -908,7 +912,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/audiopipe-2channel-guitar-singer-mixing-console.png',
   price: 350.00,
   category: 'audio-interfaces',
-  availability: 'In Stock',
+  availability: 'Back Soon',
   specs: {
     input: 'XLR input',
     converter: '16 bit delta sigma',
@@ -922,7 +926,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/wave-mixer-multi-channel-interface-audioeq-soundeffects.png',
   price: 75.00,
   category: 'audio-interfaces',
-  availability: 'In Stock',
+  availability: 'Back Soon',
   specs: {
     compatibility: 'Mobile devices, microphones, instruments',
     inputs: 'Micro USB, Aux 3.5mm',
@@ -937,7 +941,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/pioneer-ts-s20.png',
   price: 300.00,
   category: 'car-audio',
-  availability: 'Low Stock',
+  availability: 'Back Soon',
   specs: {
     size: '3/4" dome tweeter',
     power: '200W Max, 50W Nominal',
@@ -950,7 +954,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/pioneer-speaker-ts-f1034r.png',
   price: 155.00,
   category: 'car-audio',
-  availability: 'In Stock',
+  availability: 'Back Soon',
   specs: {
     size: '4 inch',
     power: '150W MAX',
@@ -963,7 +967,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/pioneer-speaker-2-wayspeaker.png',
   price: 160.00,
   category: 'car-audio',
-  availability: 'Low Stock',
+  availability: 'Back Soon',
   specs: {
     size: '5 1/4 inch',
     power: '35W Nominal',
@@ -1067,7 +1071,7 @@ export default function TechAudioCategory() {
   id: 'universal-smart-remote',
   name: 'Universal Smart TV Remote',
   image: '/images/Products/more/universal-remote.png',
-  price: 65.00,
+  price: 40.00,
   category: 'tv-accessories',
   availability: 'In Stock',
   specs: {
@@ -1156,6 +1160,7 @@ export default function TechAudioCategory() {
       image: "/images/Products/more/airpods-pro-style.png",
       description: "High-quality wireless earbuds with active noise cancellation. Premium sound quality with charging case.",
       category: "earbuds",
+      availability: 'Back Soon',
       specs: {
         feature: "Active Noise Cancellation",
         mode: "Transparency mode",
@@ -1185,6 +1190,7 @@ export default function TechAudioCategory() {
       image: "/images/Products/more/yesidotws32-anc.png",
       description: "Premium wireless earbuds with active noise cancellation. Heavy bass effect, Bluetooth 5.4, ergonomic design.",
       category: "earbuds",
+      availability: 'Back Soon',
       specs: {
         anc: "Active Noise Cancellation",
         sound: "Heavy Bass Effect",
@@ -1199,6 +1205,7 @@ export default function TechAudioCategory() {
       image: "/images/Products/more/2000series-headphones-pink.png",
       description: "Stylish wireless headphones with IPX4 water resistance. Perfect for workouts with 18 hours playtime.",
       category: "earbuds",
+      availability: 'Back Soon',
       specs: {
         waterproof: "IPX4 splash & sweat resistant",
         battery: "18 hours play time",
@@ -1213,6 +1220,7 @@ export default function TechAudioCategory() {
       image: "/images/Products/more/buds2-pro-colors.png",
       description: "Premium wireless earbuds with studio-quality sound. Available in elegant Purple and classic White colors.",
       category: "earbuds",
+      availability: 'Back Soon',
       specs: {
         sound: "Premium sound quality",
         charging: "Wireless charging case",
@@ -1317,7 +1325,7 @@ export default function TechAudioCategory() {
   id: 'bl500-gaming-headphones',
   name: 'BL500 Gaming Headphones',
   image: '/images/Products/tech-audio/bl500-headset.png',
-  price: 150.00,
+  price: 175.00,
   category: 'headphones',
   inStock: true,
   description: '2.4GHz Wireless Mode | Up to 30 Hours Battery | Noise Reduction Mic | For PC, MAC, PS4 & PS5',

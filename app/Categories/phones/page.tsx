@@ -114,7 +114,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
       id: 'samsung-a06', 
       name: 'Samsung A06', 
       image: '/images/Products/phones/cropped/samsung-a06.png',
-      price: 460.00,
+      price: 450.00,
       priceDropped: true,
       category: 'budget',
       availability: 'In Stock',
@@ -260,7 +260,8 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
   {
   id: 'samsung-galaxy-a17',
   name: "Samsung A17",
-  price: 900,
+  price: 749,
+  priceDropped: true,
   category: 'midrange',
   image: "/images/Products/phones/samsung-galaxy-a17.png",
   inStock: 'true',
@@ -420,7 +421,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
       image: '/images/Products/phones/cropped/ipad-9th-gen.png',
       price: 1500.00,
       category: 'tablet',
-      availability: 'In Stock',
+      availability: 'Back Soon',
       color: 'Space Grey',
       specs: {
         display: '10.2 inch Display',
@@ -454,7 +455,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
       image: '/images/Products/phones/cropped/lenovo-laptop.png',
       price: 1800.00,
       category: 'laptop',
-      availability: 'In Stock',
+      availability: 'Back Soon',
       color: 'Silver',
       specs: {
         display: '15.8 inch Display',
@@ -538,7 +539,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
       image: '/images/Products/phones/cropped/itel-a90.png',
       price: 475.00,
       category: 'budget',
-      availability: 'In Stock',
+      availability: 'Back Soon',
       color: 'Starlit Black',
       specs: {
         ram: '12GB RAM',
