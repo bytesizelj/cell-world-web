@@ -160,6 +160,30 @@ export default function AccessoriesPowerCategory() {
   },
   tags: ['senimo', 'wireless', 'keyboard', 'mouse', 'bluetooth', 'combo', 'green', 'white']
 },
+{
+  id: 'usb-keyboard',
+  name: 'USB Keyboard',
+  image: '/images/Products/accessories-power/usb-keyboard.png',
+  price: 40.00,
+  category: 'keyboards',
+  availability: 'In Stock',
+  specs: {
+    connectivity: 'USB Wired',
+    type: 'Standard Keyboard'
+  }
+},
+{
+  id: 'nipponamerica-wireless-keyboard-mouse-combo',
+  name: 'Nipponamerica Wireless Keyboard & Mouse Combo',
+  image: '/images/Products/accessories-power/nipponamerica-wireless-keyboard-mouse-combo.png',
+  price: 150.00,
+  category: 'keyboards',
+  availability: 'In Stock',
+  specs: {
+    connectivity: 'Wireless',
+    combo: 'Keyboard + Mouse included'
+  }
+},
 // SELFIE Sticks
 {
   id: 'smart-m2-pro-selfie-stick',
@@ -167,7 +191,8 @@ export default function AccessoriesPowerCategory() {
   image: '/images/Products/accessories-power/smart-m2-pro.png',
   price: 250.00,
   category: 'selfie-sticks',
-  inStock: true,
+  inStock: false,
+  availability: 'Back Soon',
   description: 'All-in-One Selfie Stick | Bluetooth Remote | Extendable | Portable | Perfect for Photos & Videos',
   specs: {
     type: 'All-in-One',
@@ -221,7 +246,8 @@ export default function AccessoriesPowerCategory() {
   image: '/images/Products/accessories-power/r16k-selfie.png',
   price: 75.00,
   category: 'selfie-sticks',
-  inStock: true,
+  inStock: false,
+  availability: 'Back Soon',
   description: 'Grip Handle & Tripod Included | Versatile Design | Stable Shots | Perfect for Group Photos',
   specs: {
     features: 'Grip Handle, Tripod Included'
@@ -257,7 +283,7 @@ export default function AccessoriesPowerCategory() {
   price: 40,
   image: '/images/Products/more/jeweled-red-butterfly.png',
   category: 'cases',
-  description: 'iPhone 16 Pro • Jeweled Red Butterfly • Ornate Jeweled Design • High-Gloss Finish • Scratch-Resistant',
+  description: 'iPhone 16 Pro ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Jeweled Red Butterfly ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Ornate Jeweled Design ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ High-Gloss Finish ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Scratch-Resistant',
   inStock: true
 },
 {
@@ -266,7 +292,7 @@ export default function AccessoriesPowerCategory() {
   price: 40,
   image: '/images/Products/more/transparent-magsafe-case.png',
   category: 'cases',
-  description: 'iPhone 16 Pro Max • Frosted Clear • MagSafe Compatible • Anti-Yellowing • Shock Absorption • Slim Design',
+  description: 'iPhone 16 Pro Max ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Frosted Clear ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ MagSafe Compatible ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Anti-Yellowing ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Shock Absorption ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Slim Design',
   inStock: true
 },
 {
@@ -275,7 +301,7 @@ export default function AccessoriesPowerCategory() {
   price: 40,
   image: '/images/Products/more/carbon-fiber-magsafe-case.png',
   category: 'cases',
-  description: 'iPhone 16 Pro • Dark Grey Carbon Fiber • MagSafe Compatible • Integrated Kickstand • Durable • Scratch-Resistant • Slim Design',
+  description: 'iPhone 16 Pro ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Dark Grey Carbon Fiber ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ MagSafe Compatible ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Integrated Kickstand ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Durable ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Scratch-Resistant ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Slim Design',
   inStock: true
 },
 {
@@ -284,7 +310,7 @@ export default function AccessoriesPowerCategory() {
   price: 40,
   image: '/images/Products/more/rugged-camera-slide.png',  // Note: You'll need to add this image
   category: 'cases',
-  description: 'iPhone 16 Pro • Matte Black • Sliding Camera Cover for Privacy • Military-Grade Drop Protection • Anti-Slip Grip • Raised Edges',
+  description: 'iPhone 16 Pro ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Matte Black ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Sliding Camera Cover for Privacy ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Military-Grade Drop Protection ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Anti-Slip Grip ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Raised Edges',
   inStock: true
 },
 {
@@ -524,7 +550,7 @@ export default function AccessoriesPowerCategory() {
   image: '/images/Products/more/philips-m344-wireless-mouse.png',
   price: 75.00,
   category: 'mouse',
-  availability: "In Stock",
+  availability: "Back Soon",
   specs: {
     buttons: '3 buttons',
     frequency: '2.4GHz wireless',
@@ -538,7 +564,7 @@ export default function AccessoriesPowerCategory() {
   image: '/images/Products/more/philips-m413-wireless-mouse.png',
   price: 75.00,
   category: 'mouse',
-  availability: "In Stock",
+  availability: "Back Soon",
   specs: {
     buttons: '4 buttons',
     battery: 'Rechargeable',
@@ -556,7 +582,7 @@ export default function AccessoriesPowerCategory() {
   availability: "Back Soon",
   specs: {
     mount: 'Suction Dashboard & Windshield',
-    features: 'Adjust to any angle, 360° rotation',
+    features: 'Adjust to any angle, 360Ãƒâ€šÃ‚Â° rotation',
     adjustment: 'Telescopic adjustment'
   }
 },
@@ -599,7 +625,7 @@ export default function AccessoriesPowerCategory() {
     mount: 'Suction cup & windshield',
     features: 'Horizontal & vertical',
     arm: 'Adjustable telescopic arm',
-    rotation: '360° rotation suction cup'
+    rotation: '360Ãƒâ€šÃ‚Â° rotation suction cup'
   }
 },
 {
@@ -614,7 +640,7 @@ export default function AccessoriesPowerCategory() {
     mount: 'Suction cup & windshield',
     orientation: 'Horizontal & vertical',
     arm: 'Adjustable telescopic arm',
-    rotation: '360° rotation'
+    rotation: '360Ãƒâ€šÃ‚Â° rotation'
   }
 },
 {
@@ -636,7 +662,7 @@ export default function AccessoriesPowerCategory() {
   image: '/images/Products/more/yesido-audio-adapter.png',
   price: 60.00,
   category: 'car-accessories',
-  availability: "In Stock",
+  availability: "Back Soon",
   specs: {
     type: 'Rechargeable audio transmitter & receiver',
     features: 'Hands-free calls, 10hrs music time',
@@ -663,7 +689,7 @@ export default function AccessoriesPowerCategory() {
   image: '/images/Products/more/car-mp3-player-c15.png',
   price: 100.00,
   category: 'car-accessories',
-  availability: 'In Stock',
+  availability: 'Back Soon',
   specs: {
     compatibility: 'iPad, iPhone, MP3, MP4, PSP & camera',
     bluetooth: 'BT 5.0 with noise reduction',
@@ -676,7 +702,7 @@ export default function AccessoriesPowerCategory() {
   image: '/images/Products/more/car-f2-transmitter.png',
   price: 100.00,
   category: 'car-accessories',
-  availability: "In Stock",
+  availability: "Back Soon",
   specs: {
     frequency: '87.5-108.0 MHz',
     supports: 'U Disk, TF Card, MP3 format',
@@ -689,7 +715,7 @@ export default function AccessoriesPowerCategory() {
   image: '/images/Products/more/audiobox-fm-transmitter.png',
   price: 100.00,
   category: 'car-accessories',
-  availability: "In Stock",
+  availability: "Back Soon",
   specs: {
     charging: 'USB Fast charge, 3.1A output',
     features: 'Hands-free calls, TF card support',
@@ -997,7 +1023,7 @@ export default function AccessoriesPowerCategory() {
     charging: '20-24 hours charge time',
     duration: '1 tube: 5hrs, 2 tubes: 2.5hrs, Radio: 18hrs',
     battery: '4V 4000mAh Lead Acid',
-    features: '360° light, FM scan radio, Overcharge protection'
+    features: '360Ãƒâ€šÃ‚Â° light, FM scan radio, Overcharge protection'
   }
 },
 {
@@ -1012,7 +1038,7 @@ export default function AccessoriesPowerCategory() {
     battery: '4V 6Ah sealed lead-acid',
     charging: '20-24 hours',
     duration: '8-10hrs strong light, >25hrs weak light',
-    features: '360° light, DC 12V input, USB 5V charger, Solar panel, 36x0.5W LED'
+    features: '360Ãƒâ€šÃ‚Â° light, DC 12V input, USB 5V charger, Solar panel, 36x0.5W LED'
   }
 },
 
@@ -1091,7 +1117,7 @@ export default function AccessoriesPowerCategory() {
   image: '/images/Products/more/sandisk-cruzer-blade-usb-2.0-16gb.png',
   price: 50.00,
   category: 'storage',
-  availability: 'In Stock',
+  availability: 'Back Soon',
   specs: {
     capacity: '16GB',
     interface: 'USB 2.0',
@@ -1104,7 +1130,7 @@ export default function AccessoriesPowerCategory() {
   image: '/images/Products/more/adata-usb-3.2-flash-drive-32gb.png',
   price: 80.00,
   category: 'storage',
-  availability: 'In Stock',
+  availability: 'Back Soon',
   specs: {
     capacity: '32GB',
     interface: 'USB 3.2',
@@ -1115,7 +1141,7 @@ export default function AccessoriesPowerCategory() {
   id: 'sandisk-64gb',
   name: 'SanDisk Cruzer Blade USB 2.0 - 64GB',
   image: '/images/Products/more/sandisk-cruzer-blade-usb-2.0-64gb.png',
-  price: 100.00,
+  price: 70.00,
   category: 'storage',
   availability: 'In Stock',
   specs: {
@@ -1128,9 +1154,9 @@ export default function AccessoriesPowerCategory() {
   id: 'sandisk-dual-64gb',
   name: 'SanDisk Ultra Dual Drive Go USB 3.1 - 64GB',
   image: '/images/Products/more/sandisk-ultra-dual-drive-go-usb-3.1-4gb.png',
-  price: 100.00,
+  price: 70.00,
   category: 'storage',
-  availability: "In Stock",
+  availability: "Back Soon",
   specs: {
     capacity: '64GB',
     interface: 'USB 3.1',
@@ -1141,7 +1167,7 @@ export default function AccessoriesPowerCategory() {
   id: 'sandisk-128gb',
   name: 'SanDisk Cruzer Blade USB 2.0 - 128GB',
   image: '/images/Products/more/sandisk-cruzer-blade-usb-2.0-128gb.png',
-  price: 120.00,
+  price: 90.00,
   category: 'storage',
   availability: 'In Stock',
   specs: {
@@ -1180,7 +1206,7 @@ export default function AccessoriesPowerCategory() {
   id: 'memory-card-64gb',
   name: 'SanDisk Ultra Memory Card - 64GB',
   image: '/images/Products/more/sandisk-ultra memory-card-64gb.png',
-  price: 100.00,
+  price: 70.00,
   category: 'storage',
   availability: 'In Stock',
   specs: {
@@ -1193,7 +1219,7 @@ export default function AccessoriesPowerCategory() {
   id: 'memory-card-128gb',
   name: 'SanDisk Ultra Memory Card - 128GB',
   image: '/images/Products/more/sandisk-ultra-memory-card-128gb.png',
-  price: 120.00,
+  price: 90.00,
   category: 'storage',
   availability: 'In Stock',
   specs: {
@@ -1213,6 +1239,118 @@ export default function AccessoriesPowerCategory() {
     capacity: '256GB',
     speed: 'Up to 100 MB/s',
     type: 'Memory Card'
+  }
+},
+
+// SELFIE STICKS & RING LIGHTS - New arrivals
+{
+  id: 'tt22-mini-selfie-stick',
+  name: 'TT22 Mini Selfie Stick',
+  image: '/images/Products/accessories-power/tt22-mini-selfie-stick.png',
+  price: 100.00,
+  category: 'selfie-sticks',
+  availability: 'In Stock',
+  specs: {
+    type: 'Mini Selfie Stick',
+    features: 'Compact, Portable'
+  }
+},
+{
+  id: 'f07-mini-selfie-stick',
+  name: 'F07 Mini Selfie Stick',
+  image: '/images/Products/accessories-power/f07-mini-selfie-stick.png',
+  price: 80.00,
+  category: 'selfie-sticks',
+  availability: 'In Stock',
+  specs: {
+    type: 'Mini Selfie Stick',
+    features: 'Compact, Portable'
+  }
+},
+{
+  id: 'jc32-2in1-selfie-stick',
+  name: 'JC-32 2-in-1 Selfie Stick',
+  image: '/images/Products/accessories-power/jc32-2in1-selfie-stick.png',
+  price: 85.00,
+  category: 'selfie-sticks',
+  availability: 'In Stock',
+  specs: {
+    type: '2-in-1 Selfie Stick',
+    features: 'Dual-function design'
+  }
+},
+{
+  id: 'rgb-led-soft-ring-light',
+  name: 'RGB LED Soft Ring Light',
+  image: '/images/Products/accessories-power/rgb-led-soft-ring-light.png',
+  price: 160.00,
+  category: 'selfie-sticks',
+  availability: 'In Stock',
+  specs: {
+    lighting: 'RGB LED, Soft Light',
+    use: 'Photography & Streaming'
+  }
+},
+{
+  id: 'ym200-rgb-lighting',
+  name: 'YM200 RGB Lighting',
+  image: '/images/Products/accessories-power/ym200-rgb-lighting.png',
+  price: 130.00,
+  category: 'selfie-sticks',
+  availability: 'In Stock',
+  specs: {
+    lighting: 'RGB LED',
+    use: 'Photography & Streaming'
+  }
+},
+{
+  id: 'mj18-rgb-led-soft-ring-light',
+  name: 'MJ18 RGB LED Soft Ring Light',
+  image: '/images/Products/accessories-power/mj18-rgb-led-soft-ring-light.png',
+  price: 190.00,
+  category: 'selfie-sticks',
+  availability: 'In Stock',
+  specs: {
+    lighting: 'RGB LED, Soft Light',
+    use: 'Photography & Streaming'
+  }
+},
+
+// BATTERY PACKS - New arrivals
+{
+  id: 'magsafe-battery-pack-5000mah',
+  name: 'MagSafe Battery Pack 5000mAh',
+  image: '/images/Products/accessories-power/magsafe-battery-pack-5000mah.png',
+  price: 90.00,
+  category: 'powerbanks',
+  availability: 'In Stock',
+  specs: {
+    capacity: '5000mAh',
+    charging: 'MagSafe Wireless'
+  }
+},
+{
+  id: 'magsafe-battery-pack-10000mah',
+  name: 'MagSafe Battery Pack 10000mAh',
+  image: '/images/Products/accessories-power/magsafe-battery-pack-10000mah.png',
+  price: 130.00,
+  category: 'powerbanks',
+  availability: 'In Stock',
+  specs: {
+    capacity: '10000mAh',
+    charging: 'MagSafe Wireless'
+  }
+},
+{
+  id: 'apple-iphone-air-battery-pack',
+  name: 'Apple iPhone Air Battery Pack',
+  image: '/images/Products/accessories-power/apple-iphone-air-battery-pack.png',
+  price: 180.00,
+  category: 'powerbanks',
+  availability: 'In Stock',
+  specs: {
+    type: 'Original Apple Battery Pack',
+    compatibility: 'iPhone Air'
   }
 },
   ];
@@ -1247,34 +1385,34 @@ const translations = {
     "selfie-sticks": "Selfie Sticks",
   },
   fr: {
-    title: "Électronique et Accessoires",
+    title: "ÃƒÆ’Ã¢â‚¬Â°lectronique et Accessoires",
     subtitle: "Audio Premium, Solutions d'Alimentation et Plus",
-    backToHome: "Retour à l'Accueil",
-    viewDetails: "Voir Détails",
-    specifications: "Spécifications",
-    availability: "Disponibilité",
+    backToHome: "Retour ÃƒÆ’Ã‚Â  l'Accueil",
+    viewDetails: "Voir DÃƒÆ’Ã‚Â©tails",
+    specifications: "SpÃƒÆ’Ã‚Â©cifications",
+    availability: "DisponibilitÃƒÆ’Ã‚Â©",
     callToOrder: "Appeler pour Commander",
     whatsappOrder: "Commander via WhatsApp",
     closeModal: "Fermer",
     inStock: "En Stock",
     all: "Tous les Produits",
     powerbanks: "Batteries Portables",
-    earbuds: "Écouteurs",
+    earbuds: "ÃƒÆ’Ã¢â‚¬Â°couteurs",
     filterBy: "Filtrer par:",
     emergency: "Urgence",
-    cables: "Câbles",
+    cables: "CÃƒÆ’Ã‚Â¢bles",
     power: "Alimentation",
-    "network": "Réseau",
+    "network": "RÃƒÆ’Ã‚Â©seau",
     "car-accessories": "Accessoires Auto",
     "mouse": "Souris",
     "storage": "Stocrage",
-    cases: "Étuis de Téléphone",
+    cases: "ÃƒÆ’Ã¢â‚¬Â°tuis de TÃƒÆ’Ã‚Â©lÃƒÆ’Ã‚Â©phone",
       keyboards: "Claviers",
-    "selfie-sticks": "Bâtons à Selfie",
+    "selfie-sticks": "BÃƒÆ’Ã‚Â¢tons ÃƒÆ’Ã‚Â  Selfie",
   },
   es: {
-    title: "Electrónica y Accesorios",
-    subtitle: "Audio Premium, Soluciones de Energía y Más",
+    title: "ElectrÃƒÆ’Ã‚Â³nica y Accesorios",
+    subtitle: "Audio Premium, Soluciones de EnergÃƒÆ’Ã‚Â­a y MÃƒÆ’Ã‚Â¡s",
     backToHome: "Volver al Inicio",
     viewDetails: "Ver Detalles",
     specifications: "Especificaciones",
@@ -1284,16 +1422,16 @@ const translations = {
     closeModal: "Cerrar",
     inStock: "En Stock",
     all: "Todos los Productos",
-    powerbanks: "Baterías Portátiles",
+    powerbanks: "BaterÃƒÆ’Ã‚Â­as PortÃƒÆ’Ã‚Â¡tiles",
     filterBy: "Filtrar por:",
     emergency: "Emergencia",
     cables: "Cables",
-    power: "Energía",
+    power: "EnergÃƒÆ’Ã‚Â­a",
     "network": "Red",
     "car-accessories": "Accesorios para Auto",
-    "mouse": "Ratón",
+    "mouse": "RatÃƒÆ’Ã‚Â³n",
     "storage": "Almacenamiento",
-    cases: "Fundas de Teléfono",
+    cases: "Fundas de TelÃƒÆ’Ã‚Â©fono",
        keyboards: "Teclados",
     "selfie-sticks": "Palos de Selfie",
   }
@@ -1585,7 +1723,7 @@ const translations = {
 {selectedProduct.availability === 'Back Soon' && (
   <div className="bg-yellow-100 border-l-4 border-yellow-400 p-4 mb-6 rounded-r-lg">
     <p className="text-yellow-700 font-semibold">
-      📦 This item is sold out, but will be coming back soon! Check back later or contact us for updates.
+      ÃƒÂ°Ã…Â¸Ã¢â‚¬Å“Ã‚Â¦ This item is sold out, but will be coming back soon! Check back later or contact us for updates.
     </p>
   </div>
 )}
