@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { X, Phone, Mail, Radio, Wrench, Cog, BatteryCharging, Anchor } from 'lucide-react';
 
 // Flip to false to turn the Marine World announcement OFF (keep the file for next time)
-const PROMO_ACTIVE = true;
+const PROMO_ACTIVE = false;
 // Show at most once per browser session. Set to false while testing so it shows on every refresh.
 const ONCE_PER_SESSION = true;
 

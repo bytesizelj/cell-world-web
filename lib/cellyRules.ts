@@ -98,6 +98,10 @@ const CATALOG: Item[] = [
   { n: 'Skull Candy STOMP', p: 950, c: 'speakers', s: true },
   { n: 'Skull Candy Barrel', p: 999, c: 'speakers' },
   { n: 'Fugoo Tough', p: 200, c: 'speakers', s: true },
+  { n: 'Urbanista Brisbane Portable Speaker', p: 180, c: 'speakers' },
+  { n: 'Braven HD Bluetooth Speaker', p: 150, c: 'speakers' },
+  { n: 'RCA ZyloPulse Flame Party Speaker', p: 260, c: 'speakers' },
+  { n: 'RCA LUMI CORE LED Sound Blaster', p: 165, c: 'speakers' },
   // ---- WATCHES ----
   { n: 'Casio Analog 1500WH-1BV', p: 200, c: 'watches' },
   { n: 'Casio Analog 1400WH-1AV', p: 200, c: 'watches' },
@@ -110,6 +114,11 @@ const CATALOG: Item[] = [
   { n: 'PEJE T800 Ultra 2 Max', p: 175, c: 'watches', s: true },
   { n: 'Samsung Galaxy Watch 7', p: 1100, c: 'watches' },
   { n: 'Casio AEQ-110W World Time', p: 250, c: 'watches', s: true },
+  { n: 'Smart Watch - Waterproof ($199)', p: 199, c: 'watches' },
+  { n: 'Smart Watch - Waterproof ($230)', p: 230, c: 'watches' },
+  { n: 'Watch Ultra 7', p: 160, c: 'watches' },
+  { n: 'PEJE GPS Smart Watch', p: 200, c: 'watches' },
+  { n: 'JS Watch 7 Mini Smart Watch', p: 150, c: 'watches' },
   // ---- MICROPHONES ----
   { n: 'StudioZ Mic (Mono to XLR)', p: 80, c: 'microphones' },
   { n: 'StudioZ Wired & Wireless Mic', p: 80, c: 'microphones', s: true },

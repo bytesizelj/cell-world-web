@@ -164,7 +164,7 @@ export default function AccessoriesPowerCategory() {
   id: 'usb-keyboard',
   name: 'USB Keyboard',
   image: '/images/Products/accessories-power/usb-keyboard.png',
-  price: 40.00,
+  price: 45.00,
   category: 'keyboards',
   availability: 'In Stock',
   specs: {

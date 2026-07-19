@@ -379,7 +379,7 @@ export default function TechAudioCategory() {
       description: "360-degree sound with customizable lightshow. Features ambient light effects that sync with your music for an immersive audiovisual experience.",
       category: "speakers",
       specs: {
-        feature: "360° LED Lightshow",
+        feature: "360Â° LED Lightshow",
         battery: "12 hours playtime",
         waterproof: "IP67 Waterproof",
         connectivity: "PartyBoost compatible"
@@ -553,11 +553,67 @@ export default function TechAudioCategory() {
   specs: {
     waterproof: 'Waterproof design',
     battery: '12 hours battery life',
-    sound: '360° sound'
+    sound: '360Â° sound'
   }
 },
 
 // WATCHES
+{
+  id: 'urbanista-brisbane-speaker',
+  name: 'Urbanista Brisbane Portable Speaker',
+  image: '/images/Products/tech-audio/urbanista-brisbane-speaker.png',
+  price: 180.00,
+  category: 'speakers',
+  availability: 'In Stock',
+  specs: {
+    compatibility: 'Android and iOS',
+    connectivity: 'Bluetooth',
+    type: 'Portable Speaker'
+  }
+},
+{
+  id: 'braven-hd-bluetooth-speaker',
+  name: 'Braven HD Bluetooth Speaker',
+  image: '/images/Products/tech-audio/braven-hd-bluetooth-speaker.png',
+  price: 150.00,
+  category: 'speakers',
+  availability: 'In Stock',
+  specs: {
+    battery: '2100mAh Battery',
+    range: 'Bluetooth up to 33 feet',
+    mics: 'Dual Mics for Clear Calls',
+    design: 'Slim, Portable Power Bank Function'
+  }
+},
+{
+  id: 'rca-zylopulse-flame-party-speaker',
+  name: 'RCA ZyloPulse Flame Party Speaker',
+  image: '/images/Products/tech-audio/rca-zylopulse-flame-party-speaker.png',
+  price: 260.00,
+  category: 'speakers',
+  availability: 'In Stock',
+  specs: {
+    lighting: 'Flame Effect Lights, Disco Lights',
+    modes: 'Karaoke Mode',
+    inputs: 'Mic Port, Aux Port, Memory Devices',
+    features: 'Bluetooth Wireless, FM Radio, High Fidelity Speaker',
+    includes: 'Microphone Included'
+  }
+},
+{
+  id: 'rca-lumi-core-led-sound-blaster',
+  name: 'RCA LUMI CORE LED Sound Blaster',
+  image: '/images/Products/tech-audio/rca-lumi-core-led-sound-blaster.png',
+  price: 165.00,
+  category: 'speakers',
+  availability: 'In Stock',
+  specs: {
+    lighting: '7 Vibrant Light Modes, LED Color Flame Effect',
+    modes: 'Karaoke Mode',
+    inputs: 'Aux Port, Memory Devices Input',
+    features: 'Extra Bass, Bluetooth Wireless, FM Radio'
+  }
+},
 {
   id: 'casio-analog-1500wh-1bv',
   name: 'Casio Analog Watch 1500WH-1BV',
@@ -713,6 +769,70 @@ export default function TechAudioCategory() {
   },
   
   // EARPODS 
+{
+  id: 'smartwatch-waterproof-199',
+  name: 'Smart Watch - Waterproof ($199)',
+  image: '/images/Products/tech-audio/smartwatch-waterproof-199.png',
+  price: 199.00,
+  category: 'watches',
+  availability: 'In Stock',
+  specs: {
+    waterproof: 'Waterproof',
+    display: 'Digital Display',
+    buttons: 'Power & Menu Buttons'
+  }
+},
+{
+  id: 'smartwatch-waterproof-230',
+  name: 'Smart Watch - Waterproof ($230)',
+  image: '/images/Products/tech-audio/smartwatch-waterproof-230.png',
+  price: 230.00,
+  category: 'watches',
+  availability: 'In Stock',
+  specs: {
+    waterproof: 'Waterproof',
+    display: 'Digital Display'
+  }
+},
+{
+  id: 'watch-ultra-7',
+  name: 'Watch Ultra 7',
+  image: '/images/Products/tech-audio/watch-ultra-7.png',
+  price: 160.00,
+  category: 'watches',
+  availability: 'In Stock',
+  specs: {
+    display: 'Digital Display with Compass & Weather',
+    features: 'Heart Rate, Step Counter',
+    strap: 'Silicone Band'
+  }
+},
+{
+  id: 'peje-gps-smartwatch',
+  name: 'PEJE GPS Smart Watch',
+  image: '/images/Products/tech-audio/peje-gps-smartwatch.png',
+  price: 200.00,
+  category: 'watches',
+  availability: 'In Stock',
+  specs: {
+    display: '1.39" Display',
+    gps: 'Built-in GPS',
+    waterproof: '1ATM Water Resistant',
+    battery: '7 Days Working'
+  }
+},
+{
+  id: 'js-watch-7-mini-smartwatch',
+  name: 'JS Watch 7 Mini Smart Watch',
+  image: '/images/Products/tech-audio/js-watch-7-mini-smartwatch.png',
+  price: 150.00,
+  category: 'watches',
+  availability: 'In Stock',
+  specs: {
+    type: 'Smart Watch',
+    size: 'Mini'
+  }
+},
   {
   id: 'apple-usb-c-earphone',
   name: 'Apple USB-C EarPods',
@@ -989,13 +1109,13 @@ export default function TechAudioCategory() {
 },
 {
   id: 'blaupunkt-4-way-coaxial-speaker',
-  name: 'BLAUPUNKT 4-Way 6"×9" Coaxial Speakers',
+  name: 'BLAUPUNKT 4-Way 6"Ã—9" Coaxial Speakers',
   image: '/images/Products/more/blaupunkt-4-way-coaxial-speaker.png',
   price: 320.00,
   category: 'car-audio',
   availability: 'In Stock',
   specs: {
-    size: '6×9 inch',
+    size: '6Ã—9 inch',
     power: '450W MAX',
     impedance: '4 OHM',
     type: '4-Way Coaxial'
@@ -1035,7 +1155,7 @@ export default function TechAudioCategory() {
   category: 'car-audio',
   availability: 'In Stock',
   specs: {
-    includes: '10×12 inch sheets',
+    includes: '10Ã—12 inch sheets',
     type: 'Bulk package'
   }
 },
@@ -1047,7 +1167,7 @@ export default function TechAudioCategory() {
   category: 'car-audio',
   availability: 'In Stock',
   specs: {
-    includes: 'Ten 12×24 inch sheets',
+    includes: 'Ten 12Ã—24 inch sheets',
     feature: 'Eliminates road noise'
   }
 },
@@ -1173,12 +1293,12 @@ export default function TechAudioCategory() {
       name: "HyperGear AeroFlex 360 Open-Ear Wireless Earbuds",
       price: 160.00,
       image: "/images/Products/more/hypergear-aeroflex-360.png",
-      description: "Revolutionary open-ear design for 360° situational awareness. Enjoy music while staying aware of surroundings. 25 hours extended playtime.",
+      description: "Revolutionary open-ear design for 360Â° situational awareness. Enjoy music while staying aware of surroundings. 25 hours extended playtime.",
       category: "earbuds",
       availability: 'Back Soon',
       specs: {
         design: "Open-ear design",
-        awareness: "360° awareness",
+        awareness: "360Â° awareness",
         battery: "25 hours playtime",
         comfort: "Rests on ears"
       }
@@ -1367,19 +1487,19 @@ const translations = {
     
   },
   fr: {
-    title: "Électronique et Accessoires",
+    title: "Ã‰lectronique et Accessoires",
     subtitle: "Audio Premium, Solutions d'Alimentation et Plus",
-    backToHome: "Retour à l'Accueil",
-    viewDetails: "Voir Détails",
-    specifications: "Spécifications",
-    availability: "Disponibilité",
+    backToHome: "Retour Ã  l'Accueil",
+    viewDetails: "Voir DÃ©tails",
+    specifications: "SpÃ©cifications",
+    availability: "DisponibilitÃ©",
     callToOrder: "Appeler pour Commander",
     whatsappOrder: "Commander via WhatsApp",
     closeModal: "Fermer",
     inStock: "En Stock",
     all: "Tous les Produits",
     speakers: "Haut-parleurs",
-    earbuds: "Écouteurs",
+    earbuds: "Ã‰couteurs",
     headphones: "Casques",
     filterBy: "Filtrer par:",
     gaming: "Jeux",
@@ -1391,8 +1511,8 @@ const translations = {
     
   },
   es: {
-    title: "Electrónica y Accesorios",
-    subtitle: "Audio Premium, Soluciones de Energía y Más",
+    title: "ElectrÃ³nica y Accesorios",
+    subtitle: "Audio Premium, Soluciones de EnergÃ­a y MÃ¡s",
     backToHome: "Volver al Inicio",
     viewDetails: "Ver Detalles",
     specifications: "Especificaciones",
@@ -1404,7 +1524,7 @@ const translations = {
     all: "Todos los Productos",
     speakers: "Altavoces",
     earbuds: "Auriculares",
-    headphones: "Audífonos",
+    headphones: "AudÃ­fonos",
     filterBy: "Filtrar por:",
     gaming: "Juegos",
     watches: "Relojes",
@@ -1739,7 +1859,7 @@ const translations = {
 {selectedProduct.availability === 'Back Soon' && (
   <div className="bg-yellow-100 border-l-4 border-yellow-400 p-4 mb-6 rounded-r-lg">
     <p className="text-yellow-700 font-semibold">
-      📦 This item is sold out, but will be coming back soon! Check back later or contact us for updates.
+      ðŸ“¦ This item is sold out, but will be coming back soon! Check back later or contact us for updates.
     </p>
   </div>
 )}
