@@ -31,7 +31,7 @@ export default function ContactPage() {
   const contactInfo = {
     phone: '+1-784-451-2261',
     whatsapp: '+1-784-431-0777',
-    email: 'musicworld@vincysurf.com',
+    email: 'info@cellworldsvg.com',
     hours: {
       weekday: 'Monday - Friday: 8:00 AM - 5:00 PM',
       saturday: 'Saturday: 8:00 AM - 2:00 PM',
