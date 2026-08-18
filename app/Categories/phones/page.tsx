@@ -63,10 +63,11 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
     { 
       id: 'itel-a100c', 
       name: 'itel A100C', 
-      image: '/images/Products/phones/itel-a100c.png',
+      image: '/images/Products/phones/new/itel-a100c-64gb.jpg',
       price: 440.00,
       category: 'budget',
       availability: 'In Stock',
+      color: 'Green',
       specs: {
         display: '6.6" 90Hz Super Clear Display',
         ram: '8GB RAM (3GB + 5GB Extended)',
@@ -94,8 +95,8 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
     { 
       id: 'samsung-a42', 
       name: 'Samsung A42 5G', 
-      image: '/images/Products/phones/samsung-a42.png',
-      price: 600.00,
+      image: '/images/Products/phones/new/samsung-galaxy-a42-5g.jpg',
+      price: 550.00,
       priceDropped: true,
       category: 'midrange',
       availability: 'In Stock',
@@ -110,25 +111,6 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
         storage: '128GB ROM'
       }
     },
-      { 
-      id: 'samsung-a06', 
-      name: 'Samsung A06', 
-      image: '/images/Products/phones/cropped/samsung-a06.png',
-      price: 450.00,
-      priceDropped: true,
-      category: 'budget',
-      availability: 'In Stock',
-      color: 'Silver and Black',
-      specs: {
-        ram: '4GB RAM',
-        storage: '64GB ROM',
-        camera: 'Dual Camera',
-        mainCamera: '50MP Main Camera',
-        selfieCamera: '8MP Front Camera',
-        charging: '25W Fast Charging',
-        sim: 'Dual SIM'
-}
-}, 
   {
   id: 'samsung-galaxy-a05',
   name: 'Samsung A05',
@@ -216,7 +198,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
   image: "/images/Products/phones/iphone-12.png",
   availability: 'Back Soon',
   isDeal: true,
-  colors: 'Black',
+  color: 'Black',
   specs: {
     display: '6.1\ Super Retina XDR Display',
     chipset: 'A14 Bionic Chip | 5G Enabled', 
@@ -228,17 +210,13 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
   id: 'iphone-13-pro-max',
   name: "iPhone 13 Pro Max",
   category: 'flagship',
-  price: 2300,
-  image: "/images/Products/phones/iphone-13-pro-max.png",
-  availability: 'Back Soon',
+  price: 2250,
+  image: "/images/Products/phones/new/iphone-13-pro-max-128gb.jpg",
+  availability: 'In Stock',
   isDeal: true,
-  colors: 'Green',
+  color: 'Green',
   specs: {
-    display: '6.7\ ProMotion 120Hz Display',
-    chipset: 'A15 Bionic',
-    camera: 'Pro Camera System',
-    storage: 'TB Storage',
-    other: 'Cinematic Mode | All-Day Battery | 5G Ultra Fast'  
+    storage: '128GB'
 }
 },
   {
@@ -249,7 +227,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
   image: "/images/Products/phones/iphone-14.png",
   availability: 'Back Soon',
   isDeal: true,
-  colors: 'Black',
+  color: 'Black',
   specs: {
     display: '6.1\" Super Retina XDR',
     chipset: 'A15 Bionic Chip',
@@ -265,7 +243,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
   category: 'midrange',
   image: "/images/Products/phones/samsung-galaxy-a17.png",
   inStock: 'true',
-  colors: 'Blue',
+  color: 'Blue',
   specs: {
      display: '6.7\ HD+ Display', 
      camera: '50MP Camera', 
@@ -281,7 +259,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
   price: 1500,
   image: "/images/Products/phones/samsung-a36.png",
   availability: 'Back Soon',
-  colors: 'Black',
+  color: 'Black',
   specs: {
     display: '6.6\ Super AMOLED Display', 
     camera: '50MP Triple Camera', 
@@ -297,7 +275,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
   price: 1800,
   image: "/images/Products/phones/samsung-a56.png",
   availability: 'Back Soon',
-  colors: 'Light Grey',
+  color: 'Light Grey',
   specs: {
     display: '6.7\ Super AMOLED 120Hz',
     camera: '50MP OIS Camera',
@@ -549,6 +527,141 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
         selfieCamera: '5MP Selfie Camera',
         charging: '15W Fast Charging',
         protection: 'IP54 Dust and Water Resistance'
+      }
+    },
+    {
+      id: 'iphone-15-pro-max',
+      name: 'iPhone 15 Pro Max',
+      image: '/images/Products/phones/new/iphone-15-pro-max-256gb.jpg',
+      price: 2800.00,
+      category: 'flagship',
+      availability: 'In Stock',
+      specs: {
+        storage: '256GB'
+      }
+    },
+    {
+      id: 'iphone-15-pro',
+      name: 'iPhone 15 Pro',
+      image: '/images/Products/phones/new/iphone-15-pro-128gb.jpg',
+      price: 2500.00,
+      category: 'flagship',
+      availability: 'In Stock',
+      specs: {
+        storage: '128GB'
+      }
+    },
+    {
+      id: 'iphone-13',
+      name: 'iPhone 13',
+      image: '/images/Products/phones/new/iphone-13-256gb.jpg',
+      price: 1900.00,
+      category: 'flagship',
+      availability: 'In Stock',
+      specs: {
+        storage: '256GB'
+      }
+    },
+    {
+      id: 'samsung-m07',
+      name: 'Samsung Galaxy M07',
+      image: '/images/Products/phones/new/samsung-galaxy-m07-64gb.jpg',
+      price: 540.00,
+      category: 'budget',
+      availability: 'In Stock',
+      specs: {
+        storage: '64GB'
+      }
+    },
+    {
+      id: 'samsung-f07-new',
+      name: 'Samsung Galaxy F07',
+      image: '/images/Products/phones/new/samsung-galaxy-f07-64gb.jpg',
+      price: 540.00,
+      category: 'budget',
+      availability: 'In Stock',
+      color: 'Green only',
+      specs: {
+        storage: '64GB'
+      }
+    },
+    {
+      id: 'alcatel-1041',
+      name: 'Alcatel 1041',
+      image: '/images/Products/phones/new/alcatel-1041.jpg',
+      price: 160.00,
+      category: 'basic',
+      availability: 'In Stock'
+    },
+    {
+      id: 'techview-s15-pro',
+      name: 'TechView S15 Pro',
+      image: '/images/Products/phones/new/techview-s15-pro-64gb.jpg',
+      price: 430.00,
+      category: 'budget',
+      availability: 'In Stock',
+      specs: {
+        storage: '64GB'
+      }
+    },
+    {
+      id: 'techview-s16-pro',
+      name: 'TechView S16 Pro',
+      image: '/images/Products/phones/new/techview-s16-pro-128gb.jpg',
+      price: 499.00,
+      category: 'budget',
+      availability: 'In Stock',
+      color: 'White, Navy Blue, Green',
+      specs: {
+        storage: '128GB'
+      }
+    },
+    {
+      id: 'techview-s17-pro-white',
+      name: 'TechView S17 Pro',
+      image: '/images/Products/phones/new/techview-s17-pro-white.jpg',
+      price: 499.00,
+      category: 'budget',
+      availability: 'In Stock',
+      color: 'White',
+      specs: {
+        storage: '128GB'
+      }
+    },
+    {
+      id: 'techview-s17-pro-orange',
+      name: 'TechView S17 Pro',
+      image: '/images/Products/phones/new/techview-s17-pro-orange.jpg',
+      price: 499.00,
+      category: 'budget',
+      availability: 'In Stock',
+      color: 'Orange',
+      specs: {
+        storage: '128GB'
+      }
+    },
+    {
+      id: 'samsung-a06-black',
+      name: 'Samsung Galaxy A06',
+      image: '/images/Products/phones/new/samsung-galaxy-a06-64gb.jpg',
+      price: 530.00,
+      category: 'budget',
+      availability: 'In Stock',
+      color: 'Black',
+      specs: {
+        storage: '64GB'
+      }
+    },
+    {
+      id: 'samsung-a06-light-blue',
+      name: 'Samsung Galaxy A06',
+      image: '/images/Products/phones/new/samsung-galaxy-a06-light-blue.jpg',
+      price: 530.00,
+      category: 'budget',
+      availability: 'In Stock',
+      color: 'Light Blue',
+      specs: {
+        storage: '64GB'
       }
     }
   ];

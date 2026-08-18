@@ -16,15 +16,24 @@ type Item = { n: string; p: number; c: string; s?: boolean; f?: boolean }; // s=
 const CATALOG: Item[] = [
   // ---- PHONES (in stock) ----
   { n: 'itel A100C', p: 440, c: 'phone' },
-  { n: 'Samsung A06', p: 460, c: 'phone' },
+  { n: 'Samsung Galaxy A06', p: 530, c: 'phone' },
   { n: 'itel A90', p: 475, c: 'phone', s: true },
   { n: 'Samsung A07', p: 499, c: 'phone' },
   { n: 'Samsung A16', p: 649, c: 'phone' },
-  { n: 'Samsung A42 5G', p: 720, c: 'phone' },
+  { n: 'Samsung A42 5G', p: 550, c: 'phone' },
   { n: 'Samsung A17', p: 900, c: 'phone' },
+  { n: 'Alcatel 1041', p: 160, c: 'phone' },
+  { n: 'TechView S15 Pro', p: 430, c: 'phone' },
+  { n: 'TechView S16 Pro', p: 499, c: 'phone' },
+  { n: 'TechView S17 Pro', p: 499, c: 'phone' },
+  { n: 'Samsung Galaxy M07', p: 540, c: 'phone' },
+  { n: 'Samsung Galaxy F07', p: 540, c: 'phone' },
+  { n: 'iPhone 13', p: 1900, c: 'phone' },
+  { n: 'iPhone 13 Pro Max', p: 2250, c: 'phone' },
+  { n: 'iPhone 15 Pro', p: 2500, c: 'phone' },
+  { n: 'iPhone 15 Pro Max', p: 2800, c: 'phone' },
   // ---- PHONES (back soon) ----
   { n: 'iPhone 12', p: 1100, c: 'phone', s: true },
-  { n: 'iPhone 13 Pro Max', p: 2300, c: 'phone', s: true },
   { n: 'iPhone 14', p: 2100, c: 'phone', s: true },
   { n: 'Samsung A05', p: 450, c: 'phone', s: true },
   { n: 'Samsung A11', p: 420, c: 'phone', s: true },
@@ -389,6 +398,14 @@ export function getCellyReply(rawInput: string): string {
       if (tokens.length >= 1 && tokens.length <= 4) {
         const hits = CATALOG.filter((it) => tokens.every((t) => it.n.toLowerCase().includes(t)));
         if (hits.length === 1) found = hits[0];
+        // A bare model code (f07, a06) can hit a phone and an accessory that share
+        // the code - the phone is the one the customer means. Restricted to single
+        // letter+digit tokens so brand-only queries (samsung, itel) stay ambiguous
+        // and keep falling through to the category listing below.
+        else if (hits.length > 1 && tokens.length === 1 && /^(?=.*[a-z])(?=.*[0-9])[a-z0-9]+$/.test(tokens[0])) {
+          const phones = hits.filter((it) => it.c === 'phone');
+          if (phones.length === 1) found = phones[0];
+        }
       }
     }
     if (found) {
