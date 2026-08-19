@@ -215,8 +215,18 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
   availability: 'In Stock',
   isDeal: true,
   color: 'Green',
+  description: 'Apple flagship with the A15 Bionic chip and the Pro camera system, including a 3x telephoto lens and ProMotion 120Hz. Built for photography, gaming and all-day battery life.',
   specs: {
-    storage: '128GB'
+    chipset: 'A15 Bionic Chip',
+    ram: '6GB RAM',
+    storage: '128GB',
+    mainCamera: '12MP Pro Camera System | Wide, Ultra Wide & 3x Telephoto',
+    selfieCamera: '12MP TrueDepth Front Camera',
+    charging: 'Lightning | 20W Fast Charging | MagSafe',
+    network: '5G',
+    sim: 'Nano-SIM + eSIM',
+    protection: 'IP68 Water & Dust Resistant',
+    other: 'ProMotion 120Hz | Cinematic Mode | All-Day Battery'
 }
 },
   {
@@ -536,8 +546,18 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
       price: 2800.00,
       category: 'flagship',
       availability: 'In Stock',
+      description: 'Apple flagship in aerospace-grade titanium, powered by the A17 Pro chip with a 48MP main camera and 5x telephoto zoom. Adds the customisable Action Button and USB-C.',
       specs: {
-        storage: '256GB'
+        chipset: 'A17 Pro Chip',
+        ram: '8GB RAM',
+        storage: '256GB',
+        mainCamera: '48MP Main | 12MP Ultra Wide | 12MP 5x Telephoto',
+        selfieCamera: '12MP TrueDepth Front Camera',
+        charging: 'USB-C | 20W Fast Charging | MagSafe',
+        network: '5G',
+        sim: 'Nano-SIM + eSIM',
+        protection: 'IP68 Water & Dust Resistant',
+        other: 'Titanium Design | Action Button'
       }
     },
     {
@@ -547,8 +567,18 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
       price: 2500.00,
       category: 'flagship',
       availability: 'In Stock',
+      description: 'Apple flagship in aerospace-grade titanium, powered by the A17 Pro chip with a 48MP main camera and 3x telephoto zoom. Adds the customisable Action Button and USB-C.',
       specs: {
-        storage: '128GB'
+        chipset: 'A17 Pro Chip',
+        ram: '8GB RAM',
+        storage: '128GB',
+        mainCamera: '48MP Main | 12MP Ultra Wide | 12MP 3x Telephoto',
+        selfieCamera: '12MP TrueDepth Front Camera',
+        charging: 'USB-C | 20W Fast Charging | MagSafe',
+        network: '5G',
+        sim: 'Nano-SIM + eSIM',
+        protection: 'IP68 Water & Dust Resistant',
+        other: 'Titanium Design | Action Button'
       }
     },
     {
@@ -558,8 +588,18 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
       price: 1900.00,
       category: 'flagship',
       availability: 'In Stock',
+      description: 'Apple flagship with the A15 Bionic chip and a dual 12MP camera system with Cinematic Mode. Ceramic Shield front and IP68 water resistance for everyday durability.',
       specs: {
-        storage: '256GB'
+        chipset: 'A15 Bionic Chip',
+        ram: '4GB RAM',
+        storage: '256GB',
+        mainCamera: '12MP Dual Camera | Wide & Ultra Wide',
+        selfieCamera: '12MP TrueDepth Front Camera',
+        charging: 'Lightning | 20W Fast Charging | MagSafe',
+        network: '5G',
+        sim: 'Nano-SIM + eSIM',
+        protection: 'IP68 Water & Dust Resistant',
+        other: 'Ceramic Shield | Cinematic Mode'
       }
     },
     {
@@ -569,8 +609,15 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
       price: 540.00,
       category: 'budget',
       availability: 'In Stock',
+      description: 'Entry-level Samsung smartphone with a 50MP main camera and a long-lasting 5000mAh battery. Built for everyday calls, messaging and photos.',
       specs: {
-        storage: '64GB'
+        ram: '4GB RAM',
+        storage: '64GB',
+        mainCamera: '50MP Main Camera',
+        selfieCamera: '8MP Front Camera',
+        battery: '5000mAh Battery',
+        network: '4G',
+        sim: 'Dual SIM'
       }
     },
     {
@@ -581,8 +628,15 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
       category: 'budget',
       availability: 'In Stock',
       color: 'Green only',
+      description: 'Entry-level Samsung smartphone with a 50MP main camera and a long-lasting 5000mAh battery. Built for everyday calls, messaging and photos.',
       specs: {
-        storage: '64GB'
+        ram: '4GB RAM',
+        storage: '64GB',
+        mainCamera: '50MP Main Camera',
+        selfieCamera: '8MP Front Camera',
+        battery: '5000mAh Battery',
+        network: '4G',
+        sim: 'Dual SIM'
       }
     },
     {
@@ -591,7 +645,8 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
       image: '/images/Products/phones/new/alcatel-1041.jpg',
       price: 160.00,
       category: 'basic',
-      availability: 'In Stock'
+      availability: 'In Stock',
+      description: 'Straightforward basic handset built for calls and texts. Easy to use and pocket-friendly. Contact us for full specifications.'
     },
     {
       id: 'techview-s15-pro',
@@ -600,6 +655,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
       price: 430.00,
       category: 'budget',
       availability: 'In Stock',
+      description: 'Budget smartphone with 64GB of storage. Contact us for full specifications.',
       specs: {
         storage: '64GB'
       }
@@ -612,6 +668,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
       category: 'budget',
       availability: 'In Stock',
       color: 'White, Navy Blue, Green',
+      description: 'Budget smartphone with 128GB of storage, available in White, Navy Blue and Green. Contact us for full specifications.',
       specs: {
         storage: '128GB'
       }
@@ -624,6 +681,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
       category: 'budget',
       availability: 'In Stock',
       color: 'White',
+      description: 'Budget smartphone with 128GB of storage, available in White. Contact us for full specifications.',
       specs: {
         storage: '128GB'
       }
@@ -636,6 +694,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
       category: 'budget',
       availability: 'In Stock',
       color: 'Orange',
+      description: 'Budget smartphone with 128GB of storage, available in Orange. Contact us for full specifications.',
       specs: {
         storage: '128GB'
       }
@@ -648,8 +707,17 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
       category: 'budget',
       availability: 'In Stock',
       color: 'Black',
+      description: 'Everyday Samsung smartphone with a 50MP dual camera, 5000mAh battery and 25W fast charging. Dependable performance for calls, messaging, social media and photos.',
       specs: {
-        storage: '64GB'
+        ram: '4GB RAM',
+        storage: '64GB',
+        camera: 'Dual Camera',
+        mainCamera: '50MP Main Camera',
+        selfieCamera: '8MP Front Camera',
+        battery: '5000mAh Battery',
+        charging: '25W Fast Charging',
+        network: '4G',
+        sim: 'Dual SIM'
       }
     },
     {
@@ -660,8 +728,17 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
       category: 'budget',
       availability: 'In Stock',
       color: 'Light Blue',
+      description: 'Everyday Samsung smartphone with a 50MP dual camera, 5000mAh battery and 25W fast charging. Dependable performance for calls, messaging, social media and photos.',
       specs: {
-        storage: '64GB'
+        ram: '4GB RAM',
+        storage: '64GB',
+        camera: 'Dual Camera',
+        mainCamera: '50MP Main Camera',
+        selfieCamera: '8MP Front Camera',
+        battery: '5000mAh Battery',
+        charging: '25W Fast Charging',
+        network: '4G',
+        sim: 'Dual SIM'
       }
     }
   ];
