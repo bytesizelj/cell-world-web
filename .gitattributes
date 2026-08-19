@@ -1,0 +1,4 @@
+# Git hooks must keep LF endings - a CRLF shell script fails to execute with
+# "bad interpreter: /bin/sh^M" once checked out.
+.githooks/** text eol=lf
+*.sh        text eol=lf

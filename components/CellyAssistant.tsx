@@ -292,13 +292,13 @@ const generateResponse = (input: string): string => {
     case 'CHEAP_PHONES':
     case 'CHEAPEST_PHONE': {
       const cheapPhones = getCheapestProducts('phones', 3);
-      let response = `ðŸ’° **Cheapest Phones in Stock:**\n\n`;
+      let response = `💰 **Cheapest Phones in Stock:**\n\n`;
       cheapPhones.forEach((phone, index) => {
-        const medal = index === 0 ? "ðŸ¥‡" : index === 1 ? "ðŸ¥ˆ" : "ðŸ¥‰";
+        const medal = index === 0 ? "🥇" : index === 1 ? "🥈" : "🥉";
         response += `${medal} **${phone.name}** - $${phone.price}\n`;
-        response += `   â€¢ ${phone.availability || 'In Stock'}\n\n`;
+        response += `   • ${phone.availability || 'In Stock'}\n\n`;
       });
-      response += `ðŸ”“ All phones are factory unlocked!\n\nðŸ’¡ The **${cheapPhones[0].name}** at **$${cheapPhones[0].price}** is our absolute cheapest option!`;
+      response += `🔓 All phones are factory unlocked!\n\n💡 The **${cheapPhones[0].name}** at **$${cheapPhones[0].price}** is our absolute cheapest option!`;
       return response;
     }
     
@@ -308,18 +308,18 @@ const generateResponse = (input: string): string => {
         .sort((a, b) => a.price - b.price)
         .slice(0, 3);
       
-      let response = `ðŸ“± **Most Affordable Samsung Phones:**\n\n`;
+      let response = `📱 **Most Affordable Samsung Phones:**\n\n`;
       samsungPhones.forEach((phone, index) => {
-        const medal = index === 0 ? "ðŸ’Ž" : index === 1 ? "â­" : "âœ¨";
+        const medal = index === 0 ? "💎" : index === 1 ? "⭐" : "✨";
         response += `${medal} **${phone.name}** - $${phone.price}\n`;
-        response += `   â€¢ ${phone.availability || 'In Stock'}\n\n`;
+        response += `   • ${phone.availability || 'In Stock'}\n\n`;
       });
-      response += `ðŸ”“ All unlocked!\n\nðŸ’¡ The **${samsungPhones[0].name}** at **$${samsungPhones[0].price}** is our best Samsung deal!`;
+      response += `🔓 All unlocked!\n\n💡 The **${samsungPhones[0].name}** at **$${samsungPhones[0].price}** is our best Samsung deal!`;
       return response;
     }
     
     case 'CHEAP_IPHONE': {
-      return `ðŸ“± **iPhone Pricing:**\n\nHonestly? iPhones aren't "cheap" - but here's what we have:\n\nðŸ’Ž Our iPhone selection starts at premium prices.\n\nðŸ’¡ **Want something budget-friendly?**\nCheck our Samsung or Motorola options starting at **$120!**\n\nWant me to show you affordable alternatives?`;
+      return `📱 **iPhone Pricing:**\n\nHonestly? iPhones aren't "cheap" - but here's what we have:\n\n💎 Our iPhone selection starts at premium prices.\n\n💡 **Want something budget-friendly?**\nCheck our Samsung or Motorola options starting at **$120!**\n\nWant me to show you affordable alternatives?`;
     }
     
     // ========== BRAND QUERIES ==========
@@ -328,17 +328,17 @@ const generateResponse = (input: string): string => {
         .filter(p => p.category === 'phones')
         .sort((a, b) => a.price - b.price);
       
-      let response = `ðŸ“± **Samsung Phones in Stock:**\n\n`;
+      let response = `📱 **Samsung Phones in Stock:**\n\n`;
       samsungPhones.forEach(phone => {
-        const status = phone.availability === 'More Coming Soon' ? 'ðŸ“¦ More Coming Soon' : 'âœ… In Stock';
-        response += `â€¢ **${phone.name}** - $${phone.price}\n  ${status}\n`;
+        const status = phone.availability === 'More Coming Soon' ? '📦 More Coming Soon' : '✅ In Stock';
+        response += `• **${phone.name}** - $${phone.price}\n  ${status}\n`;
       });
-      response += `\nðŸ”“ All phones are factory unlocked!\n\nWhich Samsung model interests you?`;
+      response += `\n🔓 All phones are factory unlocked!\n\nWhich Samsung model interests you?`;
       return response;
     }
     
     case 'IPHONE_PHONES': {
-      return `ðŸ“± **iPhone Models:**\n\nContact us for current iPhone availability and pricing!\n\nðŸ“ž Visit us in store or call for the latest stock.\n\nðŸ”“ All phones are factory unlocked!`;
+      return `📱 **iPhone Models:**\n\nContact us for current iPhone availability and pricing!\n\n📞 Visit us in store or call for the latest stock.\n\n🔓 All phones are factory unlocked!`;
     }
     
     case 'JBL_SPEAKERS': {
@@ -346,71 +346,71 @@ const generateResponse = (input: string): string => {
         .filter(p => p.subcategory === 'speakers')
         .sort((a, b) => a.price - b.price);
       
-      let response = `ðŸ”Š **JBL Speakers Available:**\n\n`;
+      let response = `🔊 **JBL Speakers Available:**\n\n`;
       jblSpeakers.slice(0, 6).forEach(speaker => {
-        response += `â€¢ **${speaker.name}** - $${speaker.price}\n`;
+        response += `• **${speaker.name}** - $${speaker.price}\n`;
       });
-      response += `\nðŸŽµ Premium sound quality guaranteed!\n\nWhich JBL speaker interests you?`;
+      response += `\n🎵 Premium sound quality guaranteed!\n\nWhich JBL speaker interests you?`;
       return response;
     }
     
     // ========== STORE HOURS ==========
     case 'SUNDAY_HOURS': {
-      return `âŒ **Sorry, we're CLOSED on Sundays!**\n\nðŸ“… **Our Schedule:**\nâ€¢ Monday-Friday: 8:00 AM - 5:00 PM\nâ€¢ Saturday: 8:00 AM - 2:00 PM\nâ€¢ Sunday: CLOSED\n\nSee you Monday through Saturday! ðŸ›ï¸`;
+      return `❌ **Sorry, we're CLOSED on Sundays!**\n\n📅 **Our Schedule:**\n• Monday-Friday: 8:00 AM - 5:00 PM\n• Saturday: 8:00 AM - 2:00 PM\n• Sunday: CLOSED\n\nSee you Monday through Saturday! 🛍️`;
     }
     
     case 'OPENING_TIME': {
       const currentDay = new Date().toLocaleDateString('en-US', { weekday: 'long' });
-      return `ðŸ• **Opening Times:**\n\nðŸ“… **Monday-Friday:** 8:00 AM\nðŸ“… **Saturday:** 8:00 AM\nðŸ“… **Sunday:** CLOSED\n\nâœ¨ **Today (${currentDay}):** ${currentDay === 'Sunday' ? 'CLOSED' : '8:00 AM'}\n\nWe open early to serve you better!`;
+      return `🕐 **Opening Times:**\n\n📅 **Monday-Friday:** 8:00 AM\n📅 **Saturday:** 8:00 AM\n📅 **Sunday:** CLOSED\n\n✨ **Today (${currentDay}):** ${currentDay === 'Sunday' ? 'CLOSED' : '8:00 AM'}\n\nWe open early to serve you better!`;
     }
     
     case 'CLOSING_TIME': {
       const currentDay = new Date().toLocaleDateString('en-US', { weekday: 'long' });
       const closingTime = currentDay === 'Saturday' ? '2:00 PM' : currentDay === 'Sunday' ? 'CLOSED' : '5:00 PM';
-      return `ðŸ•• **Closing Times:**\n\nðŸ“… **Monday-Friday:** 5:00 PM\nðŸ“… **Saturday:** 2:00 PM\nðŸ“… **Sunday:** CLOSED\n\nâœ¨ **Today (${currentDay}):** ${closingTime}`;
+      return `🕕 **Closing Times:**\n\n📅 **Monday-Friday:** 5:00 PM\n📅 **Saturday:** 2:00 PM\n📅 **Sunday:** CLOSED\n\n✨ **Today (${currentDay}):** ${closingTime}`;
     }
     
     case 'STORE_HOURS': {
       const currentDay = new Date().toLocaleDateString('en-US', { weekday: 'long' });
       const todayHours = currentDay === 'Sunday' ? 'CLOSED' : currentDay === 'Saturday' ? '8:00 AM - 2:00 PM' : '8:00 AM - 5:00 PM';
-      return `ðŸ• **Cell World Store Hours:**\n\nðŸ“… **Monday-Friday:** 8:00 AM - 5:00 PM\nðŸ“… **Saturday:** 8:00 AM - 2:00 PM\nðŸ“… **Sunday:** CLOSED âŒ\n\nâœ¨ **Today (${currentDay}):** ${todayHours}`;
+      return `🕐 **Cell World Store Hours:**\n\n📅 **Monday-Friday:** 8:00 AM - 5:00 PM\n📅 **Saturday:** 8:00 AM - 2:00 PM\n📅 **Sunday:** CLOSED ❌\n\n✨ **Today (${currentDay}):** ${todayHours}`;
     }
     
     // ========== SERVICES ==========
     case 'SERVICES': {
-      return `ðŸ”§ **Cell World Services:**\n\nðŸ“± **Unlocking Services:**\nâ€¢ âœ… Google Unlock (FRP removal)\nâ€¢ âœ… Network Unlock (any carrier)\n\nðŸ› ï¸ **Repair Services:**\nâ€¢ âœ… Phone repairs\nâ€¢ âœ… Screen replacement\nâ€¢ âœ… Battery replacement\n\nðŸ›¡ï¸ **Protection Services:**\nâ€¢ âœ… Screen protector installation (FREE with purchase)\nâ€¢ âœ… Bring your own protector - $5 installation\n\nBring your device for a FREE assessment!`;
+      return `🔧 **Cell World Services:**\n\n📱 **Unlocking Services:**\n• ✅ Google Unlock (FRP removal)\n• ✅ Network Unlock (any carrier)\n\n🛠️ **Repair Services:**\n• ✅ Phone repairs\n• ✅ Screen replacement\n• ✅ Battery replacement\n\n🛡️ **Protection Services:**\n• ✅ Screen protector installation (FREE with purchase)\n• ✅ Bring your own protector - $5 installation\n\nBring your device for a FREE assessment!`;
     }
     
     // ========== CONTACT/LOCATION ==========
     case 'CONTACT': {
-      return `ðŸ“ž **Contact Cell World:**\n\nðŸ“§ **Email:** info@cellworldsvg.com\nðŸ“ **Location:** St. Vincent and the Grenadines\n\nðŸ• **Store Hours:**\nâ€¢ Monday-Friday: 8:00 AM - 5:00 PM\nâ€¢ Saturday: 8:00 AM - 2:00 PM\nâ€¢ Sunday: CLOSED\n\nVisit us in-store or email us anytime!`;
+      return `📞 **Contact Cell World:**\n\n📧 **Email:** info@cellworldsvg.com\n📍 **Location:** St. Vincent and the Grenadines\n\n🕐 **Store Hours:**\n• Monday-Friday: 8:00 AM - 5:00 PM\n• Saturday: 8:00 AM - 2:00 PM\n• Sunday: CLOSED\n\nVisit us in-store or email us anytime!`;
     }
     
     // ========== AVAILABILITY CHECKS ==========
     case 'HAVE_CHARGERS': {
-      return `âœ… **Yes! Chargers in stock:**\n\n**Original Chargers:**\nâ€¢ Samsung: $75 - $200\nâ€¢ Apple/iPhone: $75 - $130\n\n**Generic Options:**\nâ€¢ Cables: $40\nâ€¢ Charging bricks: $60\n\nWhich brand do you need?`;
+      return `✅ **Yes! Chargers in stock:**\n\n**Original Chargers:**\n• Samsung: $75 - $200\n• Apple/iPhone: $75 - $130\n\n**Generic Options:**\n• Cables: $40\n• Charging bricks: $60\n\nWhich brand do you need?`;
     }
     
     case 'HAVE_PHONES': {
       const phoneCount = getCheapestProducts('phones', 100).length;
-      return `âœ… **Yes! We sell phones!**\n\nðŸ“± **${phoneCount}+ models available**\nðŸ”“ **All factory unlocked**\nðŸ’° **Prices from $120 - $4,999**\n\n**Brands:** Samsung, Motorola, Nokia, Blu, Logic & more!\n\nLooking for something specific? Tell me your budget!`;
+      return `✅ **Yes! We sell phones!**\n\n📱 **${phoneCount}+ models available**\n🔓 **All factory unlocked**\n💰 **Prices from $120 - $4,999**\n\n**Brands:** Samsung, Motorola, Nokia, Blu, Logic & more!\n\nLooking for something specific? Tell me your budget!`;
     }
     
     case 'HAVE_PROTECTORS': {
-      return `âœ… **Yes! Screen protectors in stock:**\n\nðŸ›¡ï¸ **Clear Protection:** $40\nâ€¢ Hydro-gel or Tempered glass\n\nðŸ”’ **Privacy Protection:** $50\nâ€¢ Hydro-gel or Tempered glass\n\nâœ¨ **FREE installation** with purchase!\nðŸ’¡ Bring your own? Just $5 to install.\n\nWhich type would you prefer?`;
+      return `✅ **Yes! Screen protectors in stock:**\n\n🛡️ **Clear Protection:** $40\n• Hydro-gel or Tempered glass\n\n🔒 **Privacy Protection:** $50\n• Hydro-gel or Tempered glass\n\n✨ **FREE installation** with purchase!\n💡 Bring your own? Just $5 to install.\n\nWhich type would you prefer?`;
     }
     
     case 'HAVE_MARINE': {
-      return `âœ… **Yes! Fishing & boat supplies available:**\n\nðŸŽ£ **Fishing Gear:**\nâ€¢ Hooks, lures, reels\nâ€¢ Prices from $6\n\nðŸš¤ **Boat Parts:**\nâ€¢ Engine parts, gaskets, fuel systems\nâ€¢ Electrical & navigation\n\nâš“ **Anchoring:**\nâ€¢ Anchors from $120\n\nWhat are you looking for?`;
+      return `✅ **Yes! Fishing & boat supplies available:**\n\n🎣 **Fishing Gear:**\n• Hooks, lures, reels\n• Prices from $6\n\n🚤 **Boat Parts:**\n• Engine parts, gaskets, fuel systems\n• Electrical & navigation\n\n⚓ **Anchoring:**\n• Anchors from $120\n\nWhat are you looking for?`;
     }
     
     case 'HAVE_SPEAKERS': {
       const speakerCount = getProductsByBrand('JBL').length + getProductsByBrand('RCA').length + getProductsByBrand('SkullCandy').length;
-      return `âœ… **Yes! Speakers in stock:**\n\nðŸ”Š **${speakerCount}+ speakers available!**\n\n**Brands:**\nâ€¢ JBL (GO, Flip, Charge, Boombox, Xtreme)\nâ€¢ SkullCandy (Barrel, Terrain, Kilo)\nâ€¢ RCA (Party speakers with lights)\n\nðŸ’° **Prices from $160 - $999**\n\nWant to see a specific brand?`;
+      return `✅ **Yes! Speakers in stock:**\n\n🔊 **${speakerCount}+ speakers available!**\n\n**Brands:**\n• JBL (GO, Flip, Charge, Boombox, Xtreme)\n• SkullCandy (Barrel, Terrain, Kilo)\n• RCA (Party speakers with lights)\n\n💰 **Prices from $160 - $999**\n\nWant to see a specific brand?`;
     }
     
     case 'AVAILABILITY_GENERAL': {
-      return `ðŸ›ï¸ **We carry:**\n\nðŸ“± Phones & Tablets\nðŸ”Œ Chargers & Cables\nðŸ›¡ï¸ Screen Protectors\nðŸ”Š Speakers & Audio\nðŸŽ® Gaming Controllers\nâŒš Smartwatches\nðŸŽ£ Fishing Gear\nðŸš¤ Boat Parts\n\nWhat are you looking for?`;
+      return `🛍️ **We carry:**\n\n📱 Phones & Tablets\n🔌 Chargers & Cables\n🛡️ Screen Protectors\n🔊 Speakers & Audio\n🎮 Gaming Controllers\n⌚ Smartwatches\n🎣 Fishing Gear\n🚤 Boat Parts\n\nWhat are you looking for?`;
     }
     
     // ========== BEST CAMERA ==========
@@ -420,29 +420,29 @@ const generateResponse = (input: string): string => {
         .sort((a, b) => b.price - a.price)
         .slice(0, 3);
       
-      let response = `ðŸ“¸ **Best Camera Phones:**\n\n`;
+      let response = `📸 **Best Camera Phones:**\n\n`;
       flagships.forEach((phone, index) => {
-        const medal = index === 0 ? "ðŸ¥‡" : index === 1 ? "ðŸ¥ˆ" : "ðŸ¥‰";
+        const medal = index === 0 ? "🥇" : index === 1 ? "🥈" : "🥉";
         response += `${medal} **${phone.name}** - $${phone.price}\n`;
       });
-      response += `\nðŸ’¡ The flagship Samsung S24 series has the best cameras in our store!\n\nWant to test the camera in-store?`;
+      response += `\n💡 The flagship Samsung S24 series has the best cameras in our store!\n\nWant to test the camera in-store?`;
       return response;
     }
     
     // ========== GREETINGS & THANKS ==========
     case 'GREETING': {
       const greetings = [
-        "Hey there! ðŸ‘‹ Welcome to Cell World! What can I help you find today?",
-        "Hello! ðŸ˜Š I'm Celly! Looking for phones, speakers, or marine gear?",
+        "Hey there! 👋 Welcome to Cell World! What can I help you find today?",
+        "Hello! 😊 I'm Celly! Looking for phones, speakers, or marine gear?",
         "Hi! Ready to find your perfect phone? Or maybe some fishing equipment?",
-        "Welcome! ðŸŒŸ How can I help you today?"
+        "Welcome! 🌟 How can I help you today?"
       ];
       return greetings[Math.floor(Math.random() * greetings.length)];
     }
     
     case 'THANKS': {
       const thanks = [
-        "You're welcome! ðŸ˜Š Anything else I can help with?",
+        "You're welcome! 😊 Anything else I can help with?",
         "Happy to help! Need anything else?",
         "No problem! Don't hesitate to ask more questions!"
       ];
@@ -452,39 +452,39 @@ const generateResponse = (input: string): string => {
     // ========== MORE PRODUCT AVAILABILITY ==========
     case 'HAVE_CASES': {
       const cases = searchProducts('cases');
-      return `âœ… **Yes! Phone cases in stock:**\n\nðŸ“± **Available:**\nâ€¢ i-Like MagSafe Cases for iPhone - $50\nâ€¢ i-Like Cases for Samsung - $40\n\nâœ¨ **Features:**\nâ€¢ MagSafe compatible\nâ€¢ Drop protection\nâ€¢ Multiple colors\n\n**Compatible with:** iPhone 11-16, Samsung S24/S25 series\n\nWhich phone do you need a case for?`;
+      return `✅ **Yes! Phone cases in stock:**\n\n📱 **Available:**\n• i-Like MagSafe Cases for iPhone - $50\n• i-Like Cases for Samsung - $40\n\n✨ **Features:**\n• MagSafe compatible\n• Drop protection\n• Multiple colors\n\n**Compatible with:** iPhone 11-16, Samsung S24/S25 series\n\nWhich phone do you need a case for?`;
     }
     
     case 'HAVE_POWERBANKS': {
       const powerbanks = searchProducts('powerbank').slice(0, 5);
-      let response = `âœ… **Yes! Power banks in stock:**\n\nðŸ”‹ **Options:**\n`;
+      let response = `✅ **Yes! Power banks in stock:**\n\n🔋 **Options:**\n`;
       powerbanks.forEach(pb => {
-        response += `â€¢ **${pb.name}** - $${pb.price}\n`;
+        response += `• **${pb.name}** - $${pb.price}\n`;
       });
-      response += `\nðŸ’¡ Capacities from 2,600mAh to 20,000mAh!\n\nHow much battery capacity do you need?`;
+      response += `\n💡 Capacities from 2,600mAh to 20,000mAh!\n\nHow much battery capacity do you need?`;
       return response;
     }
     
     case 'HAVE_EARBUDS': {
       const earbuds = searchProducts('earbuds').slice(0, 5);
-      let response = `âœ… **Yes! Earbuds & headphones in stock:**\n\nðŸŽ§ **Options:**\n`;
+      let response = `✅ **Yes! Earbuds & headphones in stock:**\n\n🎧 **Options:**\n`;
       earbuds.forEach(eb => {
-        const status = eb.availability === 'More Coming Soon' ? 'ðŸ“¦ Coming Soon' : 'âœ…';
-        response += `â€¢ **${eb.name}** - $${eb.price} ${status}\n`;
+        const status = eb.availability === 'More Coming Soon' ? '📦 Coming Soon' : '✅';
+        response += `• **${eb.name}** - $${eb.price} ${status}\n`;
       });
       response += `\n**Brands:** Apple, JBL, HyperGear, Yesido\n\nLooking for wired or wireless?`;
       return response;
     }
     
     case 'HAVE_WATCHES': {
-      return `âœ… **Yes! Regular and Smartwatches available:**\n\nâŒš **Samsung Galaxy Watch 7** - $1,100\nâ€¢ Bluetooth, Wi-Fi & GPS\nâ€¢ Android 11.0+ compatible\n\nðŸ’¡ Perfect for fitness tracking, notifications & more!\n\nWant to see it in store?`;
+      return `✅ **Yes! Regular and Smartwatches available:**\n\n⌚ **Samsung Galaxy Watch 7** - $1,100\n• Bluetooth, Wi-Fi & GPS\n• Android 11.0+ compatible\n\n💡 Perfect for fitness tracking, notifications & more!\n\nWant to see it in store?`;
     }
     
     case 'HAVE_GAMING': {
       const gaming = searchProducts('gaming').filter(p => p.subcategory === 'gaming').slice(0, 5);
-      let response = `âœ… **Yes! Gaming gear in stock:**\n\nðŸŽ® **Controllers:**\n`;
+      let response = `✅ **Yes! Gaming gear in stock:**\n\n🎮 **Controllers:**\n`;
       gaming.forEach(g => {
-        response += `â€¢ **${g.name}** - $${g.price}\n`;
+        response += `• **${g.name}** - $${g.price}\n`;
       });
       response += `\n**Brands:** Sony PlayStation, Xbox, SteelSeries, Razer\n\nWhich console do you have?`;
       return response;
@@ -492,16 +492,16 @@ const generateResponse = (input: string): string => {
     
     case 'HAVE_MICROPHONES': {
       const mics = searchProducts('microphone').slice(0, 5);
-      let response = `âœ… **Yes! Microphones in stock:**\n\nðŸŽ¤ **Options:**\n`;
+      let response = `✅ **Yes! Microphones in stock:**\n\n🎤 **Options:**\n`;
       mics.forEach(m => {
-        response += `â€¢ **${m.name}** - $${m.price}\n`;
+        response += `• **${m.name}** - $${m.price}\n`;
       });
       response += `\n**Types:** Condenser, Lavalier, Wireless, Dynamic\n\nWhat will you use it for? (Streaming, recording, karaoke?)`;
       return response;
     }
     
     case 'HAVE_CABLES': {
-      return `âœ… **Yes! Cables in stock:**\n\nðŸ”Œ **Original Cables:**\nâ€¢ Apple Lightning/USB-C: $75-$80\nâ€¢ Samsung Type-C: $75\n\nðŸ’¡ **Generic Cables:** $40\n\n**Types available:**\nâ€¢ Lightning to USB\nâ€¢ USB-C to USB-C\nâ€¢ Micro USB\nâ€¢ Type-C to Lightning\n\nWhich type do you need?`;
+      return `✅ **Yes! Cables in stock:**\n\n🔌 **Original Cables:**\n• Apple Lightning/USB-C: $75-$80\n• Samsung Type-C: $75\n\n💡 **Generic Cables:** $40\n\n**Types available:**\n• Lightning to USB\n• USB-C to USB-C\n• Micro USB\n• Type-C to Lightning\n\nWhich type do you need?`;
     }
     
     case 'PRICE_INQUIRY': {
@@ -510,25 +510,25 @@ const generateResponse = (input: string): string => {
       
       if (searchResults.length > 0) {
         const product = searchResults[0];
-        return `ðŸ’° **${product.name}**\n\nðŸ“± Price: **$${product.price}**\n${product.availability ? `âœ… ${product.availability}` : 'âœ… In Stock'}\n\nWant more details or ready to purchase?`;
+        return `💰 **${product.name}**\n\n📱 Price: **$${product.price}**\n${product.availability ? `✅ ${product.availability}` : '✅ In Stock'}\n\nWant more details or ready to purchase?`;
       }
-      return `ðŸ¤” Which product would you like the price for?\n\nTry asking:\nâ€¢ "How much is Samsung A15?"\nâ€¢ "Price of JBL Flip 6"\nâ€¢ "What does the AirTag cost?"`;
+      return `🤔 Which product would you like the price for?\n\nTry asking:\n• "How much is Samsung A15?"\n• "Price of JBL Flip 6"\n• "What does the AirTag cost?"`;
     }
     
     case 'UNLOCKED_INFO': {
-      return `ðŸ”“ **All Our Phones Are Factory Unlocked!**\n\nâœ… Works with ANY carrier\nâœ… Use any SIM card\nâœ… No restrictions\nâœ… International compatible\nâœ… Switch carriers anytime\n\nðŸ’¡ Freedom to choose your network!\n\nEvery phone we sell comes unlocked - guaranteed!`;
+      return `🔓 **All Our Phones Are Factory Unlocked!**\n\n✅ Works with ANY carrier\n✅ Use any SIM card\n✅ No restrictions\n✅ International compatible\n✅ Switch carriers anytime\n\n💡 Freedom to choose your network!\n\nEvery phone we sell comes unlocked - guaranteed!`;
     }
     
     case 'DELIVERY_INFO': {
-      return `ðŸšš **Delivery Information:**\n\nðŸ“ We're located in **St. Vincent**\n\nâœ… In-store pickup available\nâœ… Local delivery options\n\nðŸ“ž Contact us for delivery arrangements:\nðŸ“§ info@cellworldsvg.com\n\nVisit us or call for details!`;
+      return `🚚 **Delivery Information:**\n\n📍 We're located in **St. Vincent**\n\n✅ In-store pickup available\n✅ Local delivery options\n\n📞 Contact us for delivery arrangements:\n📧 info@cellworldsvg.com\n\nVisit us or call for details!`;
     }
 
     case 'HAVE_HEADPHONES': {
       const headphones = searchProducts('headphone').slice(0, 5);
-      let response = `âœ… **Yes! Headphones in stock:**\n\nðŸŽ§ **Options:**\n`;
+      let response = `✅ **Yes! Headphones in stock:**\n\n🎧 **Options:**\n`;
       headphones.forEach(hp => {
-        const status = hp.availability === 'More Coming Soon' ? 'ðŸ“¦ Coming Soon' : 'âœ…';
-        response += `â€¢ **${hp.name}** - $${hp.price} ${status}\n`;
+        const status = hp.availability === 'More Coming Soon' ? '📦 Coming Soon' : '✅';
+        response += `• **${hp.name}** - $${hp.price} ${status}\n`;
       });
       response += `\n**Brands:** JBL, HyperGear, SkullCandy\n\nWired or wireless preference?`;
       return response;
@@ -536,9 +536,9 @@ const generateResponse = (input: string): string => {
     
     case 'HAVE_WATCHES': {
       const watches = searchProducts('watch').slice(0, 5);
-      let response = `âœ… **Yes! Watches in stock:**\n\nâŒš **Options:**\n`;
+      let response = `✅ **Yes! Watches in stock:**\n\n⌚ **Options:**\n`;
       watches.forEach(w => {
-        response += `â€¢ **${w.name}** - $${w.price}\n`;
+        response += `• **${w.name}** - $${w.price}\n`;
       });
       response += `\nLooking for smartwatch or regular watch?`;
       return response;
@@ -550,9 +550,9 @@ const generateResponse = (input: string): string => {
       const searchResults = searchProducts(lowerInput);
       
       if (searchResults.length > 0) {
-        let response = `ðŸ” **Found ${searchResults.length} result(s):**\n\n`;
+        let response = `🔍 **Found ${searchResults.length} result(s):**\n\n`;
         searchResults.slice(0, 5).forEach(product => {
-          response += `â€¢ **${product.name}** - $${product.price}\n`;
+          response += `• **${product.name}** - $${product.price}\n`;
         });
         if (searchResults.length > 5) {
           response += `\n...and ${searchResults.length - 5} more!\n`;
@@ -561,7 +561,7 @@ const generateResponse = (input: string): string => {
         return response;
       }
       
-      return `ðŸ¤– **I'm Celly, your Cell World assistant!**\n\nI can help you with:\n\nðŸ“± **Phones** - "Show me cheap phones" or "Samsung phones"\nðŸ”Š **Speakers** - "JBL speakers" or "What speakers do you have?"\nðŸ”§ **Services** - "Do you do repairs?" or "Unlock services"\nðŸ“ **Store Info** - "What are your hours?" or "Are you open Sunday?"\nðŸŽ£ **Marine** - "Fishing gear" or "Boat parts"\n\nWhat would you like to know? ðŸ˜Š`;
+      return `🤖 **I'm Celly, your Cell World assistant!**\n\nI can help you with:\n\n📱 **Phones** - "Show me cheap phones" or "Samsung phones"\n🔊 **Speakers** - "JBL speakers" or "What speakers do you have?"\n🔧 **Services** - "Do you do repairs?" or "Unlock services"\n📍 **Store Info** - "What are your hours?" or "Are you open Sunday?"\n🎣 **Marine** - "Fishing gear" or "Boat parts"\n\nWhat would you like to know? 😊`;
     }
   }
 };
@@ -570,7 +570,7 @@ export default function Celly() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Array<{text: string, isBot: boolean, timestamp: Date}>>([
     {
-      text: "ðŸ‘‹ Welcome to Cell World St. Vincent! I'm Celly, your personal shopping assistant. How can I help you today?",
+      text: "👋 Welcome to Cell World St. Vincent! I'm Celly, your personal shopping assistant. How can I help you today?",
       isBot: true,
       timestamp: new Date()
     }
@@ -692,7 +692,7 @@ export default function Celly() {
               </div>
               <div>
                 <h3 className="font-bold text-lg">Celly Assistant</h3>
-                <p className="text-xs text-white/80">ðŸŸ¢ Online â€¢ Cell World Expert</p>
+                <p className="text-xs text-white/80">🟢 Online • Cell World Expert</p>
               </div>
             </div>
             <button
@@ -803,7 +803,7 @@ export default function Celly() {
               </button>
             </div>
             <p className="text-xs text-gray-400 text-center mt-2">
-              Powered by Cell World AI âœ¨
+              Powered by Cell World AI ✨
             </p>
           </div>
         </div>

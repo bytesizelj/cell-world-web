@@ -283,7 +283,7 @@ export default function AccessoriesPowerCategory() {
   price: 40,
   image: '/images/Products/more/jeweled-red-butterfly.png',
   category: 'cases',
-  description: 'iPhone 16 Pro ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Jeweled Red Butterfly ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Ornate Jeweled Design ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ High-Gloss Finish ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Scratch-Resistant',
+  description: 'iPhone 16 Pro • Jeweled Red Butterfly • Ornate Jeweled Design • High-Gloss Finish • Scratch-Resistant',
   inStock: true
 },
 {
@@ -292,7 +292,7 @@ export default function AccessoriesPowerCategory() {
   price: 40,
   image: '/images/Products/more/transparent-magsafe-case.png',
   category: 'cases',
-  description: 'iPhone 16 Pro Max ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Frosted Clear ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ MagSafe Compatible ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Anti-Yellowing ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Shock Absorption ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Slim Design',
+  description: 'iPhone 16 Pro Max • Frosted Clear • MagSafe Compatible • Anti-Yellowing • Shock Absorption • Slim Design',
   inStock: true
 },
 {
@@ -301,7 +301,7 @@ export default function AccessoriesPowerCategory() {
   price: 40,
   image: '/images/Products/more/carbon-fiber-magsafe-case.png',
   category: 'cases',
-  description: 'iPhone 16 Pro ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Dark Grey Carbon Fiber ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ MagSafe Compatible ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Integrated Kickstand ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Durable ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Scratch-Resistant ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Slim Design',
+  description: 'iPhone 16 Pro • Dark Grey Carbon Fiber • MagSafe Compatible • Integrated Kickstand • Durable • Scratch-Resistant • Slim Design',
   inStock: true
 },
 {
@@ -310,7 +310,7 @@ export default function AccessoriesPowerCategory() {
   price: 40,
   image: '/images/Products/more/rugged-camera-slide.png',  // Note: You'll need to add this image
   category: 'cases',
-  description: 'iPhone 16 Pro ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Matte Black ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Sliding Camera Cover for Privacy ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Military-Grade Drop Protection ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Anti-Slip Grip ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Raised Edges',
+  description: 'iPhone 16 Pro • Matte Black • Sliding Camera Cover for Privacy • Military-Grade Drop Protection • Anti-Slip Grip • Raised Edges',
   inStock: true
 },
 {
@@ -582,7 +582,7 @@ export default function AccessoriesPowerCategory() {
   availability: "Back Soon",
   specs: {
     mount: 'Suction Dashboard & Windshield',
-    features: 'Adjust to any angle, 360Ãƒâ€šÃ‚Â° rotation',
+    features: 'Adjust to any angle, 360° rotation',
     adjustment: 'Telescopic adjustment'
   }
 },
@@ -625,7 +625,7 @@ export default function AccessoriesPowerCategory() {
     mount: 'Suction cup & windshield',
     features: 'Horizontal & vertical',
     arm: 'Adjustable telescopic arm',
-    rotation: '360Ãƒâ€šÃ‚Â° rotation suction cup'
+    rotation: '360° rotation suction cup'
   }
 },
 {
@@ -640,7 +640,7 @@ export default function AccessoriesPowerCategory() {
     mount: 'Suction cup & windshield',
     orientation: 'Horizontal & vertical',
     arm: 'Adjustable telescopic arm',
-    rotation: '360Ãƒâ€šÃ‚Â° rotation'
+    rotation: '360° rotation'
   }
 },
 {
@@ -1023,7 +1023,7 @@ export default function AccessoriesPowerCategory() {
     charging: '20-24 hours charge time',
     duration: '1 tube: 5hrs, 2 tubes: 2.5hrs, Radio: 18hrs',
     battery: '4V 4000mAh Lead Acid',
-    features: '360Ãƒâ€šÃ‚Â° light, FM scan radio, Overcharge protection'
+    features: '360° light, FM scan radio, Overcharge protection'
   }
 },
 {
@@ -1038,7 +1038,7 @@ export default function AccessoriesPowerCategory() {
     battery: '4V 6Ah sealed lead-acid',
     charging: '20-24 hours',
     duration: '8-10hrs strong light, >25hrs weak light',
-    features: '360Ãƒâ€šÃ‚Â° light, DC 12V input, USB 5V charger, Solar panel, 36x0.5W LED'
+    features: '360° light, DC 12V input, USB 5V charger, Solar panel, 36x0.5W LED'
   }
 },
 {
@@ -1406,34 +1406,34 @@ const translations = {
     "selfie-sticks": "Selfie Sticks",
   },
   fr: {
-    title: "ÃƒÆ’Ã¢â‚¬Â°lectronique et Accessoires",
+    title: "Électronique et Accessoires",
     subtitle: "Audio Premium, Solutions d'Alimentation et Plus",
-    backToHome: "Retour ÃƒÆ’Ã‚Â  l'Accueil",
-    viewDetails: "Voir DÃƒÆ’Ã‚Â©tails",
-    specifications: "SpÃƒÆ’Ã‚Â©cifications",
-    availability: "DisponibilitÃƒÆ’Ã‚Â©",
+    backToHome: "Retour à l'Accueil",
+    viewDetails: "Voir Détails",
+    specifications: "Spécifications",
+    availability: "Disponibilité",
     callToOrder: "Appeler pour Commander",
     whatsappOrder: "Commander via WhatsApp",
     closeModal: "Fermer",
     inStock: "En Stock",
     all: "Tous les Produits",
     powerbanks: "Batteries Portables",
-    earbuds: "ÃƒÆ’Ã¢â‚¬Â°couteurs",
+    earbuds: "Écouteurs",
     filterBy: "Filtrer par:",
     emergency: "Urgence",
-    cables: "CÃƒÆ’Ã‚Â¢bles",
+    cables: "Câbles",
     power: "Alimentation",
-    "network": "RÃƒÆ’Ã‚Â©seau",
+    "network": "Réseau",
     "car-accessories": "Accessoires Auto",
     "mouse": "Souris",
     "storage": "Stocrage",
-    cases: "ÃƒÆ’Ã¢â‚¬Â°tuis de TÃƒÆ’Ã‚Â©lÃƒÆ’Ã‚Â©phone",
+    cases: "Étuis de Téléphone",
       keyboards: "Claviers",
-    "selfie-sticks": "BÃƒÆ’Ã‚Â¢tons ÃƒÆ’Ã‚Â  Selfie",
+    "selfie-sticks": "Bâtons à Selfie",
   },
   es: {
-    title: "ElectrÃƒÆ’Ã‚Â³nica y Accesorios",
-    subtitle: "Audio Premium, Soluciones de EnergÃƒÆ’Ã‚Â­a y MÃƒÆ’Ã‚Â¡s",
+    title: "Electrónica y Accesorios",
+    subtitle: "Audio Premium, Soluciones de Energía y Más",
     backToHome: "Volver al Inicio",
     viewDetails: "Ver Detalles",
     specifications: "Especificaciones",
@@ -1443,16 +1443,16 @@ const translations = {
     closeModal: "Cerrar",
     inStock: "En Stock",
     all: "Todos los Productos",
-    powerbanks: "BaterÃƒÆ’Ã‚Â­as PortÃƒÆ’Ã‚Â¡tiles",
+    powerbanks: "Baterías Portátiles",
     filterBy: "Filtrar por:",
     emergency: "Emergencia",
     cables: "Cables",
-    power: "EnergÃƒÆ’Ã‚Â­a",
+    power: "Energía",
     "network": "Red",
     "car-accessories": "Accesorios para Auto",
-    "mouse": "RatÃƒÆ’Ã‚Â³n",
+    "mouse": "Ratón",
     "storage": "Almacenamiento",
-    cases: "Fundas de TelÃƒÆ’Ã‚Â©fono",
+    cases: "Fundas de Teléfono",
        keyboards: "Teclados",
     "selfie-sticks": "Palos de Selfie",
   }
@@ -1744,7 +1744,7 @@ const translations = {
 {selectedProduct.availability === 'Back Soon' && (
   <div className="bg-yellow-100 border-l-4 border-yellow-400 p-4 mb-6 rounded-r-lg">
     <p className="text-yellow-700 font-semibold">
-      ÃƒÂ°Ã…Â¸Ã¢â‚¬Å“Ã‚Â¦ This item is sold out, but will be coming back soon! Check back later or contact us for updates.
+      📦 This item is sold out, but will be coming back soon! Check back later or contact us for updates.
     </p>
   </div>
 )}

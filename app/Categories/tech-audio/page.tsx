@@ -379,7 +379,7 @@ export default function TechAudioCategory() {
       description: "360-degree sound with customizable lightshow. Features ambient light effects that sync with your music for an immersive audiovisual experience.",
       category: "speakers",
       specs: {
-        feature: "360Â° LED Lightshow",
+        feature: "360° LED Lightshow",
         battery: "12 hours playtime",
         waterproof: "IP67 Waterproof",
         connectivity: "PartyBoost compatible"
@@ -553,7 +553,7 @@ export default function TechAudioCategory() {
   specs: {
     waterproof: 'Waterproof design',
     battery: '12 hours battery life',
-    sound: '360Â° sound'
+    sound: '360° sound'
   }
 },
 
@@ -1190,13 +1190,13 @@ export default function TechAudioCategory() {
 },
 {
   id: 'blaupunkt-4-way-coaxial-speaker',
-  name: 'BLAUPUNKT 4-Way 6"Ã—9" Coaxial Speakers',
+  name: 'BLAUPUNKT 4-Way 6"×9" Coaxial Speakers',
   image: '/images/Products/more/blaupunkt-4-way-coaxial-speaker.png',
   price: 320.00,
   category: 'car-audio',
   availability: 'In Stock',
   specs: {
-    size: '6Ã—9 inch',
+    size: '6×9 inch',
     power: '450W MAX',
     impedance: '4 OHM',
     type: '4-Way Coaxial'
@@ -1236,7 +1236,7 @@ export default function TechAudioCategory() {
   category: 'car-audio',
   availability: 'In Stock',
   specs: {
-    includes: '10Ã—12 inch sheets',
+    includes: '10×12 inch sheets',
     type: 'Bulk package'
   }
 },
@@ -1248,7 +1248,7 @@ export default function TechAudioCategory() {
   category: 'car-audio',
   availability: 'In Stock',
   specs: {
-    includes: 'Ten 12Ã—24 inch sheets',
+    includes: 'Ten 12×24 inch sheets',
     feature: 'Eliminates road noise'
   }
 },
@@ -1374,12 +1374,12 @@ export default function TechAudioCategory() {
       name: "HyperGear AeroFlex 360 Open-Ear Wireless Earbuds",
       price: 160.00,
       image: "/images/Products/more/hypergear-aeroflex-360.png",
-      description: "Revolutionary open-ear design for 360Â° situational awareness. Enjoy music while staying aware of surroundings. 25 hours extended playtime.",
+      description: "Revolutionary open-ear design for 360° situational awareness. Enjoy music while staying aware of surroundings. 25 hours extended playtime.",
       category: "earbuds",
       availability: 'Back Soon',
       specs: {
         design: "Open-ear design",
-        awareness: "360Â° awareness",
+        awareness: "360° awareness",
         battery: "25 hours playtime",
         comfort: "Rests on ears"
       }
@@ -1568,19 +1568,19 @@ const translations = {
     
   },
   fr: {
-    title: "Ã‰lectronique et Accessoires",
+    title: "Électronique et Accessoires",
     subtitle: "Audio Premium, Solutions d'Alimentation et Plus",
-    backToHome: "Retour Ã  l'Accueil",
-    viewDetails: "Voir DÃ©tails",
-    specifications: "SpÃ©cifications",
-    availability: "DisponibilitÃ©",
+    backToHome: "Retour à l'Accueil",
+    viewDetails: "Voir Détails",
+    specifications: "Spécifications",
+    availability: "Disponibilité",
     callToOrder: "Appeler pour Commander",
     whatsappOrder: "Commander via WhatsApp",
     closeModal: "Fermer",
     inStock: "En Stock",
     all: "Tous les Produits",
     speakers: "Haut-parleurs",
-    earbuds: "Ã‰couteurs",
+    earbuds: "Écouteurs",
     headphones: "Casques",
     filterBy: "Filtrer par:",
     gaming: "Jeux",
@@ -1592,8 +1592,8 @@ const translations = {
     
   },
   es: {
-    title: "ElectrÃ³nica y Accesorios",
-    subtitle: "Audio Premium, Soluciones de EnergÃ­a y MÃ¡s",
+    title: "Electrónica y Accesorios",
+    subtitle: "Audio Premium, Soluciones de Energía y Más",
     backToHome: "Volver al Inicio",
     viewDetails: "Ver Detalles",
     specifications: "Especificaciones",
@@ -1605,7 +1605,7 @@ const translations = {
     all: "Todos los Productos",
     speakers: "Altavoces",
     earbuds: "Auriculares",
-    headphones: "AudÃ­fonos",
+    headphones: "Audífonos",
     filterBy: "Filtrar por:",
     gaming: "Juegos",
     watches: "Relojes",
@@ -1940,7 +1940,7 @@ const translations = {
 {selectedProduct.availability === 'Back Soon' && (
   <div className="bg-yellow-100 border-l-4 border-yellow-400 p-4 mb-6 rounded-r-lg">
     <p className="text-yellow-700 font-semibold">
-      ðŸ“¦ This item is sold out, but will be coming back soon! Check back later or contact us for updates.
+      📦 This item is sold out, but will be coming back soon! Check back later or contact us for updates.
     </p>
   </div>
 )}

@@ -1,0 +1,11 @@
+#!/bin/sh
+# Blocks commits containing UTF-8-read-as-Windows-1252 mojibake.
+# Enabled with: git config core.hooksPath .githooks
+# Bypass once with: git commit --no-verify
+
+if ! command -v node >/dev/null 2>&1; then
+  echo "pre-commit: node not found, skipping encoding check" >&2
+  exit 0
+fi
+
+exec node "$(git rev-parse --show-toplevel)/scripts/check-encoding.js" --staged
