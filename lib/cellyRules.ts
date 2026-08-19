@@ -51,6 +51,7 @@ const CATALOG: Item[] = [
   // ---- TABLETS / LAPTOP ----
   { n: 'iPad 9th Generation', p: 1500, c: 'tablet', s: true },
   { n: 'FANGOR Tablet 8"', p: 250, c: 'tablet' },
+  { n: 'GS Pad 11 Pro', p: 550, c: 'tablet' },
   { n: 'Lenovo IdeaPad Slim 3', p: 1800, c: 'laptop', s: true },
   // ---- GAMING ----
   { n: 'Cell World 4-in-1 RGB Gaming Kit', p: 350, c: 'gaming' },
@@ -74,6 +75,12 @@ const CATALOG: Item[] = [
   { n: '2nd Gen EarPods (ANC)', p: 140, c: 'earbuds', s: true },
   { n: 'JBL Endurance Race', p: 280, c: 'earbuds', s: true },
   { n: 'HyperGear AeroFlex 360', p: 160, c: 'earbuds', s: true },
+  { n: 'Belkin SoundForm Rhythm', p: 175, c: 'earbuds' },
+  { n: 'Belkin SoundForm Anywhere', p: 175, c: 'earbuds' },
+  { n: 'Skullcandy Dime 2 XT', p: 165, c: 'earbuds' },
+  { n: 'JBL Vibe Beam 2', p: 280, c: 'earbuds' },
+  { n: 'JBL Vibe Buds 2', p: 260, c: 'earbuds' },
+  { n: 'JBL Tune Flex', p: 250, c: 'earbuds' },
   // ---- HEADPHONES ----
   { n: 'Kotion Each Pro Gaming Headphones', p: 175, c: 'headphones' },
   { n: 'BL500 Gaming Headphones', p: 150, c: 'headphones' },
@@ -244,6 +251,8 @@ const CATALOG: Item[] = [
   { n: 'LUDGER Emergency Lantern EL-536USV (Blue)', p: 120, c: 'emergency' },
   { n: 'LUDGER Lantern EL-1830LED (Cream)', p: 125, c: 'emergency' },
   { n: 'LUDGER Rechargeable Fan EL-8210F', p: 220, c: 'emergency' },
+  { n: 'Audio Box Solar Emergency Flashlight', p: 75, c: 'emergency' },
+  { n: 'LUDGER Rechargeable Handy Light (Black)', p: 75, c: 'emergency' },
   // ---- STORAGE ----
   { n: 'SanDisk Cruzer 16GB', p: 50, c: 'storage', s: true },
   { n: 'SanDisk Memory Card 16GB', p: 50, c: 'storage' },
@@ -406,6 +415,27 @@ export function getCellyReply(rawInput: string): string {
           const phones = hits.filter((it) => it.c === 'phone');
           if (phones.length === 1) found = phones[0];
         }
+        // A variant carries the base name plus a suffix, so a short query hits both -
+        // "vibe buds" matches JBL Vibe Buds and JBL Vibe Buds 2. When one candidate's
+        // whole name is the opening of every other candidate's, that one is the base
+        // model being asked for; naming the variant takes extra words the customer
+        // would have said. Deliberately narrow: unrelated products that merely share
+        // a word (itel A90 / itel A100C, the selfie sticks) are not prefixes of each
+        // other, so they stay ambiguous and fall through to their category listing.
+        else if (hits.length > 1) {
+          const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
+          const base = hits.filter((h) => hits.every((o) => o === h || norm(o.n).startsWith(norm(h.n) + ' ')));
+          if (base.length === 1) {
+            // Short suffixes like "xl" are dropped by the token filter above, so
+            // "terrain xl" would otherwise be answered with the cheaper base Terrain.
+            // If the customer used a word that only a longer variant carries, stay
+            // ambiguous rather than quote the wrong model's price.
+            const baseWords = norm(base[0].n).split(' ');
+            const askedForVariant = hits.some((o) => o !== base[0] && stripped.split(' ').some(
+              (w) => w && !baseWords.includes(w) && norm(o.n).split(' ').includes(w)));
+            if (!askedForVariant) found = base[0];
+          }
+        }
       }
     }
     if (found) {
@@ -417,7 +447,12 @@ export function getCellyReply(rawInput: string): string {
 
   // PHONES (only when it's about phones, not accessories that mention a brand)
   if (/iphone/.test(q) && !ACCESSORY_HINT.test(q)) {
-    return `We don't have any iPhones in stock right now \u2014 they're expected back. In stock now we have Samsung and itel phones \u2014 want to see those? Or check with the store:\n${CONTACT}`;
+    // Driven off the catalog rather than hard-coded, so this stays true as stock
+    // moves - the "expected back" line is now only the genuinely-sold-out path.
+    const iphones = inStock('phone').filter((i) => i.n.toLowerCase().includes('iphone'));
+    return iphones.length
+      ? `\ud83d\udcf1 iPhones in stock:\n${list(iphones)}\n\nTo order:\n${CONTACT}`
+      : `We don't have any iPhones in stock right now \u2014 they're expected back. In stock now we have Samsung and itel phones \u2014 want to see those? Or check with the store:\n${CONTACT}`;
   }
   if (/\bitel\b/.test(q)) {
     return `\ud83d\udcf1 itel phones in stock:\n${list(brandIn('itel').filter((i) => i.c === 'phone'))}\n\nTo order:\n${CONTACT}`;

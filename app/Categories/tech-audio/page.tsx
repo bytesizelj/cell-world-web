@@ -894,11 +894,11 @@ export default function TechAudioCategory() {
 {
   id: 'jbl-vibe-buds',
   name: 'JBL Vibe Buds',
-  image: '/images/Products/more/jbl-vibe-bud.png',
+  image: '/images/Products/tech-audio/jbl-vibe-earbuds-white.jpg',
   price: 220.00,
   category: 'earbuds',
   availability: 'In Stock',
-  color: 'Black & White',
+  color: 'White only',
   specs: {
     battery: 'Up to 32 hours',
     features: 'Hands-free calls with Voice Aware',
@@ -918,6 +918,87 @@ export default function TechAudioCategory() {
     waterproof: 'IPX7 Waterproof',
     battery: '30 hours total',
     design: 'Secure wing fit'
+  }
+},
+{
+  id: 'belkin-soundform-rhythm',
+  name: 'Belkin SoundForm Rhythm',
+  image: '/images/Products/tech-audio/belkin-sound-form-white.jpg',
+  price: 175.00,
+  category: 'earbuds',
+  availability: 'In Stock',
+  color: 'White only',
+  specs: {
+    type: 'Wireless Earbuds',
+    colors: 'White'
+  }
+},
+{
+  id: 'belkin-soundform-anywhere',
+  name: 'Belkin SoundForm Anywhere',
+  image: '/images/Products/tech-audio/belkin-sound-form-blkngreen.jpg',
+  price: 175.00,
+  category: 'earbuds',
+  availability: 'In Stock',
+  color: 'Black with green accents',
+  specs: {
+    type: 'Wireless Earbuds',
+    colors: 'Black with green accents'
+  }
+},
+{
+  id: 'skullcandy-dime-2-xt',
+  name: 'Skullcandy Dime 2 XT',
+  image: '/images/Products/tech-audio/dime2-earbuds-blue-grey.jpg',
+  price: 165.00,
+  category: 'earbuds',
+  availability: 'In Stock',
+  color: 'Blue, Green',
+  specs: {
+    type: 'Wireless Earbuds',
+    colors: 'Blue, Green'
+  }
+},
+{
+  id: 'jbl-vibe-beam-2',
+  name: 'JBL Vibe Beam 2',
+  image: '/images/Products/tech-audio/jbl-beam2-earbuds.jpg',
+  price: 280.00,
+  category: 'earbuds',
+  availability: 'In Stock',
+  color: 'Blue, White',
+  specs: {
+    type: 'Wireless Earbuds',
+    colors: 'Blue, White'
+  }
+},
+{
+  id: 'jbl-vibe-buds-2',
+  name: 'JBL Vibe Buds 2',
+  image: '/images/Products/tech-audio/jbl-vibe-earbuds-blk.jpg',
+  price: 260.00,
+  category: 'earbuds',
+  availability: 'In Stock',
+  color: 'Black only',
+  specs: {
+    type: 'Wireless Earbuds',
+    colors: 'Black'
+  }
+},
+{
+  id: 'jbl-tune-flex',
+  name: 'JBL Tune Flex',
+  image: '/images/Products/tech-audio/jbl-tune-flex-blk.jpg',
+  additionalImages: [
+    '/images/Products/tech-audio/jbl-tune-flex-earbuds-blue.jpg'
+  ],
+  price: 250.00,
+  category: 'earbuds',
+  availability: 'In Stock',
+  color: 'Black, Navy Blue',
+  specs: {
+    type: 'Wireless Earbuds',
+    colors: 'Black, Navy Blue'
   }
 },
 

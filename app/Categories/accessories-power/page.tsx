@@ -1000,7 +1000,7 @@ export default function AccessoriesPowerCategory() {
 {
   id: 'ludger-rechargeable-handy-light-7005',
   name: 'LUDGER Rechargeable Handy Light EL-7005L',
-  image: '/images/Products/more/ludger-rechargeable-handy-light.png',
+  image: '/images/Products/accessories-power/ludger-power-handy-light.jpg',
   price: 50.00,
   category: 'emergency',
   availability: "In Stock",
@@ -1014,7 +1014,7 @@ export default function AccessoriesPowerCategory() {
 {
   id: 'ludger-lantern-cream-1830',
   name: 'LUDGER Lantern EL-1830LED (Cream)',
-  image: '/images/Products/more/ludger-rechargeable-lantern-cream.png',
+  image: '/images/Products/accessories-power/ludger-power-light-lantern-yellow.jpg',
   price: 125.00,
   category: 'emergency',
   availability: "In Stock",
@@ -1029,7 +1029,7 @@ export default function AccessoriesPowerCategory() {
 {
   id: 'ludger-lantern-blue-536',
   name: 'LUDGER Emergency Lantern EL-536USV (Blue)',
-  image: '/images/Products/more/ludger-rechargeable-lantern-blue.png',
+  image: '/images/Products/accessories-power/ludger-power-light-lantern-blue.jpg',
   price: 120.00,
   category: 'emergency',
   availability: "In Stock",
@@ -1040,6 +1040,27 @@ export default function AccessoriesPowerCategory() {
     duration: '8-10hrs strong light, >25hrs weak light',
     features: '360Ãƒâ€šÃ‚Â° light, DC 12V input, USB 5V charger, Solar panel, 36x0.5W LED'
   }
+},
+{
+  id: 'audio-box-emergency-flashlight',
+  name: 'Audio Box Solar Emergency Flashlight',
+  image: '/images/Products/accessories-power/audio-box-emergency-light.jpg',
+  price: 75.00,
+  category: 'emergency',
+  availability: "In Stock",
+  specs: {
+    connectivity: 'Bluetooth',
+    radio: 'FM Radio',
+    charging: 'Solar Rechargeable'
+  }
+},
+{
+  id: 'ludger-handy-light-black',
+  name: 'LUDGER Rechargeable Handy Light (Black)',
+  image: '/images/Products/accessories-power/ludger-handy-light.jpg',
+  price: 75.00,
+  category: 'emergency',
+  availability: "In Stock"
 },
 
 // CABLES

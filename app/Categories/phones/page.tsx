@@ -420,9 +420,19 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
         security: 'Fingerprint Sensor'
       }
     },
-    { 
-      id: 'fangor-tablet', 
-      name: 'FANGOR Tablet 8"', 
+    {
+      id: 'gs-pad-11-pro',
+      name: 'GS Pad 11 Pro',
+      image: '/images/Products/accessories-power/gs-pad-11-pro.jpg',
+      price: 550.00,
+      category: 'tablet',
+      availability: 'In Stock',
+      color: 'Blue, Silver, Black',
+      description: 'Tablet bundle that comes ready to work — wireless keyboard, mouse and stylus are all included. Available in Blue, Silver and Black.'
+    },
+    {
+      id: 'fangor-tablet',
+      name: 'FANGOR Tablet 8"',
       image: '/images/Products/phones/cropped/fangor-tablet.png',
       price: 250.00,
       category: 'tablet',
