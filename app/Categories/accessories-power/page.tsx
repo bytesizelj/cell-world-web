@@ -901,6 +901,55 @@ export default function AccessoriesPowerCategory() {
     settings: '5 speed settings, charging dock'
   }
 },
+{
+  id: 'wireless-magnetic-power-bank-10000',
+  name: 'Wireless Fast Charging Power Bank 10,000mAh',
+  image: '/images/Products/accessories-power/wireless-power-bank.png',
+  price: 130.00,
+  category: 'powerbanks',
+  availability: 'In Stock',
+  specs: {
+    capacity: '10,000mAh',
+    charging: 'Magnetic wireless, 120W',
+    cables: '2-in-1 built-in Lightning and Type-C'
+  }
+},
+{
+  id: 'samsung-galaxy-battery-pack',
+  name: 'Samsung Galaxy Battery Pack',
+  image: '/images/Products/accessories-power/samsung-galaxy-power-bank.png',
+  price: 160.00,
+  category: 'powerbanks',
+  availability: 'In Stock',
+  specs: {
+    type: 'Battery Pack'
+  }
+},
+{
+  id: 'anker-power-bank-20000',
+  name: 'Anker Power Bank 20,000mAh',
+  image: '/images/Products/accessories-power/anker-power-bank.png',
+  price: 200.00,
+  category: 'powerbanks',
+  availability: 'In Stock',
+  specs: {
+    capacity: '20,000mAh',
+    compatibility: 'Apple, Samsung, Google and more'
+  }
+},
+{
+  id: 'jimzy-power-bank-10000',
+  name: 'Jimzy Power Bank 10,000mAh',
+  image: '/images/Products/accessories-power/jimzy-power-bank.png',
+  price: 150.00,
+  category: 'powerbanks',
+  availability: 'In Stock',
+  specs: {
+    capacity: '10,000mAh',
+    features: 'Solar charging, LED light',
+    cables: '4 built-in cords'
+  }
+},
 
 // POWER
 {
@@ -1130,6 +1179,65 @@ export default function AccessoriesPowerCategory() {
     type: 'Fast Charge Cable'
   }
 },
+{
+  id: 'otg-usb-to-typec-adapter',
+  name: 'OTG USB (Male) to Type-C (Female) Adapter',
+  image: '/images/Products/accessories-power/fashion-usb2usbc-adapter.png',
+  price: 25.00,
+  category: 'cables',
+  availability: 'In Stock',
+  specs: {
+    type: 'OTG Adapter',
+    connection: 'USB Male to Type-C Female'
+  }
+},
+{
+  id: 'yesido-otg-2in1-adapter',
+  name: 'YESIDO OTG 2-in-1 Adapter',
+  image: '/images/Products/accessories-power/yesido-otg-2in1-adapter.png',
+  price: 35.00,
+  category: 'cables',
+  availability: 'In Stock',
+  specs: {
+    type: 'OTG Adapter',
+    feature: '2-in-1'
+  }
+},
+{
+  id: 'yesido-otg-adapter',
+  name: 'YESIDO OTG Adapter',
+  image: '/images/Products/accessories-power/yesido-otg-adapter.png',
+  price: 25.00,
+  category: 'cables',
+  availability: 'In Stock',
+  specs: {
+    type: 'OTG Adapter'
+  }
+},
+{
+  id: 'yesido-otg-male-to-female-adapter',
+  name: 'YESIDO OTG Adapter USB-L Male to USB-A Female',
+  image: '/images/Products/accessories-power/yesido-otg-male-to-female-2.0-adapter.png',
+  price: 40.00,
+  category: 'cables',
+  availability: 'In Stock',
+  specs: {
+    type: 'OTG Adapter',
+    connection: 'USB-L Male to USB-A Female'
+  }
+},
+{
+  id: 'yesido-ip-to-typec-adapter',
+  name: 'YESIDO IP to Type-C Adapter',
+  image: '/images/Products/accessories-power/yesido-ip-to-typec-adapter.png',
+  price: 30.00,
+  category: 'cables',
+  availability: 'In Stock',
+  specs: {
+    type: 'Adapter',
+    connection: 'IP to Type-C'
+  }
+},
 
 // STORAGE - New category
 {
@@ -1260,6 +1368,64 @@ export default function AccessoriesPowerCategory() {
     capacity: '256GB',
     speed: 'Up to 100 MB/s',
     type: 'Memory Card'
+  }
+},
+{
+  id: 'otg-tfcard-sd-reader',
+  name: 'OTG Type-C (Male) to USB, TF Card and SD Card Reader (Female)',
+  image: '/images/Products/accessories-power/otg-tfcard-sd-reader.png',
+  price: 50.00,
+  category: 'storage',
+  availability: 'In Stock',
+  specs: {
+    type: 'Card Reader',
+    supports: 'USB, TF Card, SD Card',
+    connection: 'Type-C Male'
+  }
+},
+{
+  id: 'yesido-g18-card-reader',
+  name: 'YESIDO G18 Card Reader',
+  image: '/images/Products/accessories-power/yesido-g18-card-reader.png',
+  price: 40.00,
+  category: 'storage',
+  availability: 'In Stock',
+  specs: {
+    type: 'Card Reader'
+  }
+},
+{
+  id: 'yesido-g19-card-reader',
+  name: 'YESIDO G19 Card Reader',
+  image: '/images/Products/accessories-power/yesido-g19-card-reader.png',
+  price: 40.00,
+  category: 'storage',
+  availability: 'In Stock',
+  specs: {
+    type: 'Card Reader'
+  }
+},
+{
+  id: 'yesido-card-reader-typec-2',
+  name: 'YESIDO Type-C and 2.0 Card Reader',
+  image: '/images/Products/accessories-power/yesido-card-reader-2.0.png',
+  price: 40.00,
+  category: 'storage',
+  availability: 'In Stock',
+  specs: {
+    type: 'Card Reader',
+    connection: 'Type-C and USB 2.0'
+  }
+},
+{
+  id: 'yesido-gs37-card-reader',
+  name: 'YESIDO GS37 Card Reader',
+  image: '/images/Products/accessories-power/yesido-gs37-card-reader.png',
+  price: 40.00,
+  category: 'storage',
+  availability: 'In Stock',
+  specs: {
+    type: 'Card Reader'
   }
 },
 

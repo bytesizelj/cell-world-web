@@ -205,6 +205,11 @@ const CATALOG: Item[] = [
   { n: 'Apple Lightning to USB Cable', p: 80, c: 'cables' },
   { n: '3-in-1 HDTV Streaming Cable', p: 95, c: 'cables' },
   { n: '3-in-1 Phone to HDTV Cable', p: 100, c: 'cables' },
+  { n: 'OTG USB (Male) to Type-C (Female) Adapter', p: 25, c: 'cables' },
+  { n: 'YESIDO OTG 2-in-1 Adapter', p: 35, c: 'cables' },
+  { n: 'YESIDO OTG Adapter', p: 25, c: 'cables' },
+  { n: 'YESIDO OTG Adapter USB-L Male to USB-A Female', p: 40, c: 'cables' },
+  { n: 'YESIDO IP to Type-C Adapter', p: 30, c: 'cables' },
   // ---- CASES ----
   { n: 'Premium MagSafe Case (Deep Blue)', p: 40, c: 'cases' },
   { n: 'Jeweled Butterfly Case', p: 40, c: 'cases' },
@@ -239,6 +244,10 @@ const CATALOG: Item[] = [
   { n: 'MagSafe Battery Pack 5000mAh', p: 90, c: 'powerbanks' },
   { n: 'MagSafe Battery Pack 10000mAh', p: 130, c: 'powerbanks' },
   { n: 'Apple iPhone Air Battery Pack', p: 180, c: 'powerbanks' },
+  { n: 'Wireless Fast Charging Power Bank 10,000mAh', p: 130, c: 'powerbanks' },
+  { n: 'Samsung Galaxy Battery Pack', p: 160, c: 'powerbanks' },
+  { n: 'Anker Power Bank 20,000mAh', p: 200, c: 'powerbanks' },
+  { n: 'Jimzy Power Bank 10,000mAh', p: 150, c: 'powerbanks' },
   // ---- POWER / SURGE ----
   { n: 'Nipponamerica 6-Outlet Power Strip', p: 35, c: 'power' },
   { n: 'LDNIO Power Socket 3.1A (USB)', p: 70, c: 'power' },
@@ -264,6 +273,11 @@ const CATALOG: Item[] = [
   { n: 'SanDisk Cruzer 128GB', p: 90, c: 'storage' },
   { n: 'SanDisk Memory Card 128GB', p: 90, c: 'storage' },
   { n: 'SanDisk Memory Card 256GB', p: 160, c: 'storage' },
+  { n: 'OTG Type-C (Male) to USB, TF Card and SD Card Reader (Female)', p: 50, c: 'storage' },
+  { n: 'YESIDO G18 Card Reader', p: 40, c: 'storage' },
+  { n: 'YESIDO G19 Card Reader', p: 40, c: 'storage' },
+  { n: 'YESIDO Type-C and 2.0 Card Reader', p: 40, c: 'storage' },
+  { n: 'YESIDO GS37 Card Reader', p: 40, c: 'storage' },
   // ---- NETWORK ----
   { n: 'Nippon America CAT5 Patch Cord', p: 10, c: 'network', f: true },
   { n: 'Nippon America Wireless Repeater', p: 135, c: 'network' },
@@ -318,6 +332,11 @@ const brandIn = (brand: string) =>
 
 // keyword -> catalog category
 const CAT_MAP: [RegExp, string][] = [
+  // First match wins, so these two sit ahead of the generic adapter/charger rule
+  // below - otherwise "otg adapter" lands on wall chargers and shows none of the
+  // OTG adapters, which live under cables.
+  [/\botg\b/, 'cables'],
+  [/(card reader|cardreader|sd reader|tf card)/, 'storage'],
   [/\b(case|cases|cover|casing)\b/, 'cases'],
   [/(charger|charging|adapter|adaptor|brick|wall plug)/, 'chargers'],
   [/(cable|cord|lightning cable|usb cable|type.?c cable|micro.?usb)/, 'cables'],
