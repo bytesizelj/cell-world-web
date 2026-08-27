@@ -40,6 +40,27 @@
 .animation-delay-600 {
   animation-delay: 600ms;
 }
+/* PRICE DROP badge pulse.
+   Opacity only, so the Tailwind rotate utility on the badge survives, and a
+   class rather than an inline style so the reduced-motion query below can
+   actually switch it off (an inline style would outrank it). */
+@keyframes price-drop-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+.price-drop-badge {
+  animation: price-drop-pulse 0.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .price-drop-badge {
+    animation: none;
+  }
+}
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;

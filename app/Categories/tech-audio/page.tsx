@@ -1756,7 +1756,16 @@ const translations = {
           </span>
         </div>
       )}
-      
+
+      {/* Price Drop Badge */}
+      {product.priceDropped && product.availability !== 'Back Soon' && (
+        <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
+          <span className="price-drop-badge text-white font-bold text-xl rotate-[-15deg] bg-red-500 px-4 py-2 rounded shadow-lg">
+            PRICE DROP!
+          </span>
+        </div>
+      )}
+
       <Image 
   src={
     product.additionalImages && selectedImages[product.id as string] !== undefined
