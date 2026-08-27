@@ -3,6 +3,8 @@
 import { useState, useRef } from 'react';
 import { ArrowLeft, Globe, Phone, MessageCircle, X, Check, ZoomIn, ZoomOut, Package } from 'lucide-react';
 import TickerStrip from '../../../components/TickerStrip';
+import CategoryBanner from '../../../components/CategoryBanner';
+import CategoryFilter from '../../../components/CategoryFilter';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { trackEvent } from '@/lib/analytics';
@@ -1603,6 +1605,8 @@ const translations = {
     samsung: "Samsung",
     power: "Alimentation",
     "tv-accessories": "TV et Streaming",
+    microphones: "Microphones",
+    "audio-interfaces": "Interfaces Audio",
     apple: "Apple",
     
   },
@@ -1626,6 +1630,8 @@ const translations = {
     watches: "Relojes",
     samsung: "Samsung",
     "tv-accessories": "TV y Streaming",
+    microphones: "Micrófonos",
+    "audio-interfaces": "Interfaces de Audio",
     apple: "Apple",
   }
 };
@@ -1664,30 +1670,56 @@ const translations = {
     </div>
 
       {/* Navigation */}
-      <nav className="relative z-20 flex justify-between items-center p-6 bg-black/50 backdrop-blur-sm">
-        <div className="flex items-center space-x-4">
-          <Link 
-            href="/" 
-            className="flex items-center space-x-2 text-white hover:text-yellow-400 transition-colors duration-300"
-          >
-            <ArrowLeft className="w-5 h-5" />
-            <span>{t.backToHome}</span>
-          </Link>
-          
-          <img 
+      <nav
+        className="relative z-20"
+        style={{
+          /* the tint dissolves too, so nothing paints a hard bottom edge;
+             what shows through at the bottom is the page background itself */
+          backgroundImage:
+            'linear-gradient(to bottom, rgba(0,0,0,0.58) 0%, rgba(0,0,0,0.54) 42%, rgba(0,0,0,0.34) 68%, rgba(0,0,0,0.12) 87%, rgba(0,0,0,0) 100%)',
+        }}
+      >
+        <div className="absolute top-3 left-4 z-30 flex items-center gap-3 pointer-events-none">
+          <img
             src="/images/cell-world-logo.png"
             alt="Cell World"
-            style={{ 
-              height: '80px',
-              width: 'auto', 
+            className="pointer-events-auto"
+            style={{
+              height: '40px',
+              width: 'auto',
               objectFit: 'contain',
-              filter: 'drop-shadow(0 0 2px rgba(255,255,255,0.8))'
+              filter: 'drop-shadow(0 0 3px rgba(0,0,0,0.9))'
             }}
           />
+          <Link
+            href="/"
+            className="pointer-events-auto flex items-center space-x-2 text-white hover:text-[#FFD700] transition-colors duration-300 bg-black/45 backdrop-blur-sm rounded-full px-3 py-1.5 text-sm"
+            style={{ textShadow: '0 1px 6px rgba(0,0,0,0.9)' }}
+          >
+            <ArrowLeft className="w-4 h-4" />
+            <span>{t.backToHome}</span>
+          </Link>
         </div>
-        
+
+        {/* Banner spans the full width of the bar */}
+        <div className="w-full">
+          <CategoryBanner
+            products={products}
+            categoryName={t.title}
+            onSelect={(cat) => {
+              setFilterCategory(cat);
+              document.getElementById('category-grid')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }}
+            slides={[
+              { headline: 'Speakers', categories: ['speakers'], hero: '/images/Products/more/jbl-boombox3-black.png' },
+              { headline: 'Earbuds & headphones', categories: ['earbuds', 'headphones'], hero: '/images/Products/tech-audio/jbl-beam2-earbuds.jpg' },
+              { headline: 'Gaming', categories: ['gaming'], hero: '/images/Products/tech-audio/ps5-disc.png' },
+            ]}
+          />
+        </div>
+
         <button 
-          className="group flex items-center space-x-2 text-white bg-gradient-to-r from-yellow-600/20 to-orange-600/20 backdrop-blur-md px-4 py-2.5 rounded-full hover:from-yellow-600/30 hover:to-orange-600/30 border border-yellow-500/30 transition-all duration-300"
+          className="group absolute top-3 right-4 z-30 flex items-center space-x-2 text-white bg-black/55 backdrop-blur-md px-4 py-2 rounded-full hover:bg-black/75 border border-[#FFD700]/50 transition-all duration-300"
           onClick={() => {
             const langs = ['en', 'fr', 'es'];
             const currentIndex = langs.indexOf(language);
@@ -1700,45 +1732,36 @@ const translations = {
       </nav>
 
       {/* Header */}
-      <div className="relative z-10 text-center py-8 px-4">
+      <div className="relative z-10 text-center py-4 px-4">
         <div className="flex justify-center items-center mb-4">
           <h1 className="text-4xl md:text-5xl font-bold text-center"
               style={{
-                color: '#f47b20',
-                textShadow: '0 4px 20px rgba(244, 123, 32, 0.5), 0 2px 8px rgba(0,0,0,0.9)'
+                color: '#FFD700',
+                textShadow: '0 4px 20px rgba(255, 215, 0, 0.45), 0 2px 8px rgba(0,0,0,0.9)'
               }}>
             {t.title}
           </h1>
         </div>
         <TickerStrip
           text={t.subtitle}
-          className="text-lg font-semibold text-orange-300/90"
+          className="text-lg font-semibold text-[#FFD700]/85"
           style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}
         />
       </div>
 
       {/* Category Filter */}
-      <div className="relative z-10 flex justify-center mb-8 px-4">
-        <div className="bg-black/50 backdrop-blur-sm rounded-full p-2 flex gap-2 flex-wrap justify-center">
-          <span className="text-white px-3 py-2">{t.filterBy}</span>
-          {['all', 'apple', 'speakers', 'earbuds', 'headphones', 'gaming', 'watches','tv-accessories', 'samsung', 'microphones', 'audio-interfaces'].map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setFilterCategory(cat)}
-              className={`px-4 py-2 rounded-full transition-all duration-300 ${
-                filterCategory === cat 
-                  ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white' 
-                  : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50'
-              }`}
-            >
-              {t[cat as keyof typeof t]}
-            </button>
-          ))}
-        </div>
+      <div className="relative z-30 flex justify-center mb-3 px-4">
+        <CategoryFilter
+          options={['all', 'apple', 'speakers', 'earbuds', 'headphones', 'gaming', 'watches','tv-accessories', 'samsung', 'microphones', 'audio-interfaces']}
+          value={filterCategory}
+          onChange={setFilterCategory}
+          labels={t}
+          filterByLabel={t.filterBy}
+        />
       </div>
 
       {/* Products Grid */}
-      <div className="relative z-10 container mx-auto px-4 pb-20">
+      <div id="category-grid" className="relative z-10 container mx-auto px-4 pb-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {filteredProducts.map((product) => (
   <div 

@@ -8,6 +8,8 @@ const CellyAssistant = dynamic(() => import('../../../components/CellyAssistant'
 import { useState, useRef } from 'react';
 import { ArrowLeft, Globe, Phone, MessageCircle, X, Check, ZoomIn, ZoomOut, Flame, Zap, Package } from 'lucide-react';
 import TickerStrip from '../../../components/TickerStrip';
+import CategoryBanner from '../../../components/CategoryBanner';
+import CategoryFilter from '../../../components/CategoryFilter';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -848,30 +850,56 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
     </div>
 
       {/* Navigation */}
-      <nav className="relative z-20 flex justify-between items-center p-6 bg-black/50 backdrop-blur-sm">
-        <div className="flex items-center space-x-4">
-          <Link 
-            href="/" 
-            className="flex items-center space-x-2 text-white hover:text-yellow-400 transition-colors duration-300"
-          >
-            <ArrowLeft className="w-5 h-5" />
-            <span>{t.backToHome}</span>
-          </Link>
-          
-          <img 
+      <nav
+        className="relative z-20"
+        style={{
+          /* the tint dissolves too, so nothing paints a hard bottom edge;
+             what shows through at the bottom is the page background itself */
+          backgroundImage:
+            'linear-gradient(to bottom, rgba(0,0,0,0.58) 0%, rgba(0,0,0,0.54) 42%, rgba(0,0,0,0.34) 68%, rgba(0,0,0,0.12) 87%, rgba(0,0,0,0) 100%)',
+        }}
+      >
+        <div className="absolute top-3 left-4 z-30 flex items-center gap-3 pointer-events-none">
+          <img
             src="/images/cell-world-logo.png"
             alt="Cell World"
-            style={{ 
-              height: '80px',
-              width: 'auto', 
+            className="pointer-events-auto"
+            style={{
+              height: '40px',
+              width: 'auto',
               objectFit: 'contain',
-              filter: 'drop-shadow(0 0 2px rgba(255,255,255,0.8))'
+              filter: 'drop-shadow(0 0 3px rgba(0,0,0,0.9))'
             }}
           />
+          <Link
+            href="/"
+            className="pointer-events-auto flex items-center space-x-2 text-white hover:text-[#FFD700] transition-colors duration-300 bg-black/45 backdrop-blur-sm rounded-full px-3 py-1.5 text-sm"
+            style={{ textShadow: '0 1px 6px rgba(0,0,0,0.9)' }}
+          >
+            <ArrowLeft className="w-4 h-4" />
+            <span>{t.backToHome}</span>
+          </Link>
         </div>
-        
-        <button 
-          className="group flex items-center space-x-2 text-white bg-gradient-to-r from-yellow-600/20 to-orange-600/20 backdrop-blur-md px-4 py-2.5 rounded-full hover:from-yellow-600/30 hover:to-orange-600/30 border border-yellow-500/30 transition-all duration-300"
+
+        {/* Banner spans the full width of the bar */}
+        <div className="w-full">
+          <CategoryBanner
+            products={products}
+            categoryName={t.title}
+            onSelect={(cat) => {
+              setFilterCategory(cat);
+              document.getElementById('category-grid')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }}
+            slides={[
+              { headline: 'Flagship phones', categories: ['flagship'], hero: '/images/Products/phones/new/iphone-15-pro-max-256gb.jpg' },
+              { headline: 'Everyday phones', categories: ['budget', 'midrange', 'basic'], hero: '/images/Products/phones/new/itel-a100c-64gb.jpg' },
+              { headline: 'Tablets', categories: ['tablet'], hero: '/images/Products/accessories-power/gs-pad-11-pro.jpg' },
+            ]}
+          />
+        </div>
+
+        <button
+          className="group absolute top-3 right-4 z-30 flex items-center space-x-2 text-white bg-black/55 backdrop-blur-md px-4 py-2 rounded-full hover:bg-black/75 border border-[#FFD700]/50 transition-all duration-300"
           onClick={() => {
             const langs = ['en', 'fr', 'es'];
             const currentIndex = langs.indexOf(language);
@@ -884,7 +912,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
       </nav>
 
       {/* Header */}
-      <div className="relative z-10 text-center py-6 px-4">
+      <div className="relative z-10 text-center py-4 px-4">
         <h1 className="text-3xl md:text-5xl font-bold mb-2 text-center"
             style={{ 
               color: '#FFD700',
@@ -895,33 +923,24 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
         </h1>
         <TickerStrip
           text={t.subtitle}
-          className="text-sm md:text-base text-yellow-400/80"
+          className="text-sm md:text-base font-semibold text-[#FFD700]/85"
           style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}
         />
       </div>
 
       {/* Category Filter */}
-      <div className="relative z-10 flex justify-center mb-8 px-4">
-        <div className="bg-black/50 backdrop-blur-sm rounded-full p-2 flex gap-2 flex-wrap justify-center">
-          <span className="text-white px-3 py-2">{t.filterBy}</span>
-          {['all', 'flagship', 'midrange', 'budget', 'tablet', 'basic'].map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setFilterCategory(cat)}
-              className={`px-4 py-2 rounded-full transition-all duration-300 ${
-                filterCategory === cat 
-                  ? 'bg-gradient-to-r from-yellow-500 to-orange-500 text-black font-bold' 
-                  : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50'
-              }`}
-            >
-              {t[cat as keyof typeof t]}
-            </button>
-          ))}
-        </div>
+      <div className="relative z-30 flex justify-center mb-3 px-4">
+        <CategoryFilter
+          options={['all', 'flagship', 'midrange', 'budget', 'tablet', 'basic']}
+          value={filterCategory}
+          onChange={setFilterCategory}
+          labels={t}
+          filterByLabel={t.filterBy}
+        />
       </div>
 
       {/* Products Grid */}
-      <div className="relative z-10 container mx-auto px-3 pb-20">
+      <div id="category-grid" className="relative z-10 container mx-auto px-3 pb-20">
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-5">
           {filteredProducts.map((product) => (
             <div 

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ArrowLeft, Globe, Phone, MessageCircle, X, Check, ShoppingBag, Sparkles } from 'lucide-react';
+import CategoryBanner from '../../../components/CategoryBanner';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { trackEvent } from '@/lib/analytics';
@@ -2122,7 +2123,7 @@ const translations = {
       </div>
 
       {/* Navigation */}
-      <nav className="relative z-20 flex justify-between items-center p-6 bg-black/50 backdrop-blur-sm">
+      <nav className="relative z-20 flex flex-wrap items-center gap-x-4 gap-y-3 px-6 py-4 bg-black/50 backdrop-blur-sm">
         <div className="flex items-center space-x-4">
           <Link 
             href="/" 
@@ -2136,16 +2137,21 @@ const translations = {
             src="/images/cell-world-logo.png"
             alt="Cell World"
             style={{ 
-              height: '80px',
+              height: '48px',
               width: 'auto', 
               objectFit: 'contain',
               filter: 'drop-shadow(0 0 2px rgba(255,255,255,0.8))'
             }}
           />
         </div>
+
+        {/* Banner fills the gap on desktop; drops to its own full-width row on mobile */}
+        <div className="order-last w-full min-w-0 md:order-none md:w-auto md:flex-1">
+          <CategoryBanner products={products} categoryName={t.title} />
+        </div>
         
         <button 
-          className="group flex items-center space-x-2 text-white bg-gradient-to-r from-yellow-600/20 to-orange-600/20 backdrop-blur-md px-4 py-2.5 rounded-full hover:from-yellow-600/30 hover:to-orange-600/30 border border-yellow-500/30 transition-all duration-300"
+          className="group flex items-center space-x-2 text-white bg-gradient-to-r from-yellow-600/20 to-orange-600/20 backdrop-blur-md px-4 py-2.5 rounded-full hover:from-yellow-600/30 hover:to-orange-600/30 border border-yellow-500/30 transition-all duration-300 shrink-0 ml-auto md:ml-0"
           onClick={() => {
             const langs = ['en', 'fr', 'es'];
             const currentIndex = langs.indexOf(language);
@@ -2158,7 +2164,7 @@ const translations = {
       </nav>
 
       {/* Header */}
-      <div className="relative z-10 text-center py-8 px-4">
+      <div className="relative z-10 text-center py-5 px-4">
         <div className="flex justify-center items-center gap-3 mb-4">
           <ShoppingBag className="w-10 h-10 text-purple-400" />
           <h1 className="text-4xl md:text-5xl font-bold"
@@ -2178,8 +2184,8 @@ const translations = {
       </div>
 
       {/* Category Filter */}
-      <div className="relative z-10 flex justify-center mb-8 px-4">
-        <div className="bg-black/50 backdrop-blur-sm rounded-full p-2 flex gap-2 flex-wrap justify-center">
+      <div className="relative z-10 flex justify-center mb-5 px-4">
+        <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-full p-2 flex gap-2 flex-wrap justify-center">
           <span className="text-white px-3 py-2">{t.filterBy}</span>
           {['all', 'speakers', 'powerbanks', 'earbuds', 'headphones', 'gaming', 'emergency', 'cables', 'samsung', 'apple', 'cases', 'power', 'tv-accessories', 'network', 'car-accessories', 'mouse', 'storage', 'microphones', 'audio-interfaces', 'car-audio', 'power-strips'].map((cat) => (
             <button
@@ -2187,8 +2193,8 @@ const translations = {
               onClick={() => setFilterCategory(cat)}
               className={`px-4 py-2 rounded-full transition-all duration-300 ${
                 filterCategory === cat 
-                  ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white' 
-                  : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50'
+                  ? 'bg-[#f47b20] text-white font-semibold shadow-md shadow-[#f47b20]/30' 
+                  : 'bg-white/10 text-white/80 border border-white/15 hover:bg-white/20 hover:text-white'
               }`}
             >
               {t[cat as keyof typeof t]}

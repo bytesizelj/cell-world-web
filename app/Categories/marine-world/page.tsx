@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { ArrowLeft, Globe, Phone, MessageCircle, X, Check, Anchor, ArrowRight } from 'lucide-react';
 import TickerStrip from '../../../components/TickerStrip';
+import CategoryBanner from '../../../components/CategoryBanner';
+import CategoryFilter from '../../../components/CategoryFilter';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
@@ -443,7 +445,15 @@ export default function MarineWorldPage() {
   </div>
 
         {/* Navigation */}
-        <nav className="relative z-20 flex justify-between items-center p-6 bg-black/50 backdrop-blur-sm">
+        <nav
+          className="relative z-20 flex flex-wrap items-center gap-x-4 gap-y-3 px-6 py-4"
+          style={{
+            /* no banner on this page yet, but the bar still met the page with a
+               hard line - same dissolve so the edge is not perceptible */
+            backgroundImage:
+              'linear-gradient(to bottom, rgba(0,0,0,0.58) 0%, rgba(0,0,0,0.54) 42%, rgba(0,0,0,0.34) 68%, rgba(0,0,0,0.12) 87%, rgba(0,0,0,0) 100%)',
+          }}
+        >
           <div className="flex items-center space-x-4">
             <Link 
               href="/" 
@@ -457,16 +467,21 @@ export default function MarineWorldPage() {
               src="/images/marine-logo.png"
               alt="Marine World"
               style={{ 
-                height: '80px',
+                height: '48px',
                 width: 'auto', 
                 objectFit: 'contain',
                 filter: 'drop-shadow(0 0 10px rgba(255,255,255,0.5)) drop-shadow(0 0 20px rgba(64, 224, 208, 0.4))'
               }}
             />
           </div>
+
+          {/* Banner fills the gap on desktop; drops to its own full-width row on mobile */}
+          <div className="order-last w-full min-w-0 md:order-none md:w-auto md:flex-1">
+            <CategoryBanner products={products} categoryName={t.title} />
+          </div>
           
           <button 
-            className="group flex items-center space-x-2 text-white bg-gradient-to-r from-yellow-600/20 to-orange-600/20 backdrop-blur-md px-4 py-2.5 rounded-full hover:from-yellow-600/30 hover:to-orange-600/30 border border-yellow-500/30 transition-all duration-300"
+            className="group flex items-center space-x-2 text-white bg-gradient-to-r from-yellow-600/20 to-orange-600/20 backdrop-blur-md px-4 py-2.5 rounded-full hover:from-yellow-600/30 hover:to-orange-600/30 border border-yellow-500/30 transition-all duration-300 shrink-0 ml-auto md:ml-0"
             onClick={() => {
               const langs = ['en', 'fr', 'es'];
               const currentIndex = langs.indexOf(language);
@@ -479,19 +494,19 @@ export default function MarineWorldPage() {
         </nav>
 
         {/* Header with marine theme */}
-<div className="relative z-10 text-center py-8 px-4">
+<div className="relative z-10 text-center py-4 px-4">
   <div className="flex justify-center items-center mb-4">
     <h1 className="text-4xl md:text-5xl font-bold text-center"
         style={{
-          color: '#40E0D0',
-          textShadow: '0 4px 20px rgba(64, 224, 208, 0.4), 0 2px 8px rgba(0,0,0,0.9)'
+          color: '#FFD700',
+          textShadow: '0 4px 20px rgba(255, 215, 0, 0.45), 0 2px 8px rgba(0,0,0,0.9)'
         }}>
       {t.title}
     </h1>
   </div>
   <TickerStrip
     text={t.subtitle}
-    className="text-xl font-semibold text-white"
+    className="text-xl font-semibold text-[#FFD700]/85"
     style={{ textShadow: '0 0 20px rgba(0,0,0,0.9), 0 4px 15px rgba(64, 224, 208, 0.6)' }}
   />
 </div>
@@ -525,23 +540,14 @@ export default function MarineWorldPage() {
         </div>
 
         {/* Category Filter */}
-        <div className="relative z-10 flex justify-center mb-8 px-4">
-          <div className="bg-black/50 backdrop-blur-sm rounded-full p-2 flex flex-wrap gap-2 justify-center">
-            <span className="text-white px-3 py-2">{t.filterBy}</span>
-            {['all', 'boat-parts', 'boat-accessories', 'fishing-lures', 'fishing-gear', 'electrical', 'anchoring'].map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setFilterCategory(cat)}
-                className={`px-4 py-2 rounded-full transition-all duration-300 ${
-                  filterCategory === cat 
-                    ? 'bg-teal-500 text-white' 
-                    : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50'
-                }`}
-              >
-                {t[cat as keyof typeof t]}
-              </button>
-            ))}
-          </div>
+        <div className="relative z-30 flex justify-center mb-3 px-4">
+          <CategoryFilter
+            options={['all', 'boat-parts', 'boat-accessories', 'fishing-lures', 'fishing-gear', 'electrical', 'anchoring']}
+            value={filterCategory}
+            onChange={setFilterCategory}
+            labels={t}
+            filterByLabel={t.filterBy}
+          />
         </div>
 
         {/* Products Grid */}
