@@ -728,7 +728,7 @@ export default function AccessoriesPowerCategory() {
 {
   id: 'cat5-patch-cord',
   name: 'Nippon America CAT5 Patch Cord - Multiple Lengths',
-  image: '/images/Products/more/cat5-patch-cord.png',
+  image: '/images/Products/accessories-power/cat5-patch-cord.png',
   price: 10.00, // Starting price
   category: 'network',
   availability: 'In Stock',
@@ -745,8 +745,8 @@ export default function AccessoriesPowerCategory() {
 },
 {
   id: 'nippon-wifi-repeater',
-  name: 'Nippon America Wireless Repeater',
-  image: '/images/Products/more/nippon-america-wireless-repeater.png',
+  name: 'Wireless Repeater/WIFI Extender',
+  image: '/images/Products/accessories-power/nippon-america-wireless-repeater.png',
   price: 135.00,
   category: 'network',
   availability: 'In Stock',
