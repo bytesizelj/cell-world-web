@@ -692,7 +692,10 @@ export default function Celly() {
               </div>
               <div>
                 <h3 className="font-bold text-lg">Celly Assistant</h3>
-                <p className="text-xs text-white/80">🟢 Online • Cell World Expert</p>
+                <p className="text-xs text-white/80 flex items-center gap-1.5">
+                  <span className="inline-block w-2 h-2 rounded-full bg-green-400 shrink-0" aria-hidden="true"></span>
+                  Online • Cell World Expert
+                </p>
               </div>
             </div>
             <button
@@ -802,8 +805,9 @@ export default function Celly() {
                 <Send className="w-5 h-5" />
               </button>
             </div>
-            <p className="text-xs text-gray-400 text-center mt-2">
-              Powered by Cell World AI ✨
+            <p className="text-xs text-gray-400 text-center mt-2 flex items-center justify-center gap-1.5">
+              Powered by Cell World AI
+              <Sparkles className="w-3 h-3 shrink-0" aria-hidden="true" />
             </p>
           </div>
         </div>

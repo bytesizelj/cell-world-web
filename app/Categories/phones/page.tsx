@@ -6,7 +6,8 @@ const CellyAssistant = dynamic(() => import('../../../components/CellyAssistant'
 });
 
 import { useState, useRef } from 'react';
-import { ArrowLeft, Globe, Phone, MessageCircle, X, Check, ZoomIn, ZoomOut } from 'lucide-react';
+import { ArrowLeft, Globe, Phone, MessageCircle, X, Check, ZoomIn, ZoomOut, Flame, Zap, Package } from 'lucide-react';
+import TickerStrip from '../../../components/TickerStrip';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -892,13 +893,11 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
             }}>
           {t.title}
         </h1>
-        <p className="text-sm md:text-base text-yellow-400/80 text-center" 
-           style={{ 
-             textShadow: '0 2px 8px rgba(0,0,0,0.8)',
-             textAlign: 'center'
-           }}>
-          {t.subtitle}
-        </p>
+        <TickerStrip
+          text={t.subtitle}
+          className="text-sm md:text-base text-yellow-400/80"
+          style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}
+        />
       </div>
 
       {/* Category Filter */}
@@ -938,14 +937,16 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
             >
               {/* Best Seller Badge */}
               {product.isBestSeller && product.availability !== 'Back Soon' && (
-                <div className="absolute top-2 left-2 z-30 bg-gradient-to-r from-red-500 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg animate-pulse">
-                  🔥 BEST SELLER
+                <div className="absolute top-2 left-2 z-30 bg-gradient-to-r from-red-500 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg animate-pulse inline-flex items-center gap-1">
+                  <Flame className="w-4 h-4" aria-hidden="true" />
+                  BEST SELLER
                 </div>
               )}
               {/* Deal Badge */}
 {product.isDeal && product.availability !== 'Back Soon' && (
-  <div className="absolute top-2 left-2 z-30 bg-gradient-to-r from-yellow-400 to-orange-400 text-black px-3 py-1 rounded-full text-xs font-bold shadow-lg animate-pulse">
-    💥 HOT DEAL
+  <div className="absolute top-2 left-2 z-30 bg-gradient-to-r from-yellow-400 to-orange-400 text-black px-3 py-1 rounded-full text-xs font-bold shadow-lg animate-pulse inline-flex items-center gap-1">
+    <Zap className="w-4 h-4" aria-hidden="true" />
+    HOT DEAL
   </div>
 )}
               
@@ -1204,8 +1205,9 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
                   {/* Back Soon Message */}
                   {selectedProduct.availability === 'Back Soon' && (
                     <div className="bg-yellow-100 border-l-4 border-yellow-400 p-4 mb-6 rounded-r-lg">
-                      <p className="text-yellow-700 font-semibold">
-                        📦 This item is coming back soon! Check back later or contact us for updates.
+                      <p className="text-yellow-700 font-semibold flex items-start gap-2">
+                        <Package className="w-5 h-5 shrink-0 mt-0.5" aria-hidden="true" />
+                        <span>This item is coming back soon! Check back later or contact us for updates.</span>
                       </p>
                     </div>
                   )}

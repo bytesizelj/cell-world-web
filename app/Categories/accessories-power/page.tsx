@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { ArrowLeft, Globe, Phone, MessageCircle, X, Check, ShoppingBag, Sparkles, ZoomIn, ZoomOut } from 'lucide-react';
+import { ArrowLeft, Globe, Phone, MessageCircle, X, Check, ZoomIn, ZoomOut, Package } from 'lucide-react';
+import TickerStrip from '../../../components/TickerStrip';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { trackEvent } from '@/lib/analytics';
@@ -1573,7 +1574,7 @@ const translations = {
   },
   fr: {
     title: "Électronique et Accessoires",
-    subtitle: "Audio Premium, Solutions d'Alimentation et Plus",
+    subtitle: "Coques, Câbles, Batteries Externes et Accessoires Auto",
     backToHome: "Retour à l'Accueil",
     viewDetails: "Voir Détails",
     specifications: "Spécifications",
@@ -1599,7 +1600,7 @@ const translations = {
   },
   es: {
     title: "Electrónica y Accesorios",
-    subtitle: "Audio Premium, Soluciones de Energía y Más",
+    subtitle: "Fundas, Cables, Baterías Externas y Accesorios para Auto",
     backToHome: "Volver al Inicio",
     viewDetails: "Ver Detalles",
     specifications: "Especificaciones",
@@ -1695,22 +1696,22 @@ const translations = {
 
       {/* Header */}
       <div className="relative z-10 text-center py-8 px-4">
-        <div className="flex justify-center items-center gap-3 mb-4">
-          <ShoppingBag className="w-10 h-10 text-purple-400" />
-          <h1 className="text-4xl md:text-5xl font-bold"
-              style={{ 
+        <div className="flex justify-center items-center mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-center"
+              style={{
                 background: 'linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                textShadow: '0 4px 20px rgba(255, 107, 107, 0.3)' 
+                textShadow: '0 4px 20px rgba(255, 107, 107, 0.3)'
               }}>
             {t.title}
           </h1>
-          <Sparkles className="w-10 h-10 text-pink-400" />
         </div>
-        <p className="text-lg text-gray-300" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>
-          {t.subtitle}
-        </p>
+        <TickerStrip
+          text={t.subtitle}
+          className="text-lg text-gray-300"
+          style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}
+        />
       </div>
 
       {/* Category Filter */}
@@ -1909,8 +1910,9 @@ const translations = {
                 {/* Back Soon Message */}
 {selectedProduct.availability === 'Back Soon' && (
   <div className="bg-yellow-100 border-l-4 border-yellow-400 p-4 mb-6 rounded-r-lg">
-    <p className="text-yellow-700 font-semibold">
-      📦 This item is sold out, but will be coming back soon! Check back later or contact us for updates.
+    <p className="text-yellow-700 font-semibold flex items-start gap-2">
+      <Package className="w-5 h-5 shrink-0 mt-0.5" aria-hidden="true" />
+      <span>This item is sold out, but will be coming back soon! Check back later or contact us for updates.</span>
     </p>
   </div>
 )}

@@ -5,7 +5,8 @@ import('@/components/CellyAssistant'), { ssr:
 false });
 
 import { useState, useEffect } from 'react';
-import { ChevronDown, Globe, Phone, Menu, ArrowRight, X, Mail, MessageCircle } from 'lucide-react';
+// Home is aliased: the page's own default export is already called Home.
+import { ChevronDown, Globe, Phone, Menu, ArrowRight, X, Mail, MessageCircle, Home as HomeIcon, Smartphone, Anchor, Headphones, Plug, Star, ShoppingCart, Sparkles, Flame, AlertTriangle, VolumeX, Music } from 'lucide-react';
 import Link from 'next/link';
 import HeroCarousel from '@/components/HeroCarousel';
 import MarineWorldPopup from '@/components/MarineWorldPopup';
@@ -334,29 +335,37 @@ useEffect(() => {
             </button>
             
             <div className="space-y-2">
-  <a href="/" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
-    🏠 Home
+  <a href="/" className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+    <HomeIcon className="w-5 h-5 shrink-0" aria-hidden="true" />
+    Home
   </a>
-  <a href="/Categories/phones" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
-    📱 Phones
+  <a href="/Categories/phones" className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+    <Smartphone className="w-5 h-5 shrink-0" aria-hidden="true" />
+    Phones
   </a>
-  <a href="/Categories/marine-world/boat-parts" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
-    🚤 Marine World
+  <a href="/Categories/marine-world/boat-parts" className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+    <Anchor className="w-5 h-5 shrink-0" aria-hidden="true" />
+    Marine World
   </a>
-  <a href="/Categories/tech-audio" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
-    🎵 Tech & Audio
+  <a href="/Categories/tech-audio" className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+    <Headphones className="w-5 h-5 shrink-0" aria-hidden="true" />
+    Tech &amp; Audio
   </a>
-  <a href="/Categories/accessories-power" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
-    🔌 Accessories & Power
+  <a href="/Categories/accessories-power" className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+    <Plug className="w-5 h-5 shrink-0" aria-hidden="true" />
+    Accessories &amp; Power
   </a>
-  <a href="/reviews" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
-    ⭐ Reviews
+  <a href="/reviews" className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+    <Star className="w-5 h-5 shrink-0" aria-hidden="true" />
+    Reviews
   </a>
-  <a href="/contact" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
-    📞 Contact
+  <a href="/contact" className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+    <Phone className="w-5 h-5 shrink-0" aria-hidden="true" />
+    Contact
   </a>
-  <a href="/order" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
-    🛒 Order
+  <a href="/order" className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+    <ShoppingCart className="w-5 h-5 shrink-0" aria-hidden="true" />
+    Order
   </a>
 </div>
           </div>
@@ -431,20 +440,22 @@ useEffect(() => {
       <div className="relative z-10 text-center text-white">
         <div className="flex justify-center gap-6 mb-6">
           <div className="p-4 bg-white/30 rounded-2xl backdrop-blur-md animate-wiggle shadow-lg">
-            <span className="text-5xl">📱</span>
+            <Smartphone className="w-12 h-12" aria-hidden="true" />
           </div>
           <div className="p-4 bg-white/30 rounded-2xl backdrop-blur-md animate-wiggle-delayed shadow-lg">
-            <span className="text-5xl">✨</span>
+            <Sparkles className="w-12 h-12" aria-hidden="true" />
           </div>
           <div className="p-4 bg-white/30 rounded-2xl backdrop-blur-md animate-wiggle" style={{animationDelay: '0.4s'}}>
-            <span className="text-5xl">🔥</span>
+            <Flame className="w-12 h-12" aria-hidden="true" />
           </div>
         </div>
         
         <h2 className="text-5xl md:text-6xl font-black mb-4 animate-glow-pulse" style={{
           textShadow: '0 0 20px rgba(255,255,255,1), 0 0 40px rgba(255,215,0,0.8), 0 0 60px rgba(255,165,0,0.6), 0 4px 20px rgba(0,0,0,0.5)'
         }}>
-          🔥 HOT DEALS! 🔥
+          <Flame className="inline-block w-10 h-10 md:w-12 md:h-12 align-middle" aria-hidden="true" />
+          <span className="align-middle mx-3">HOT DEALS!</span>
+          <Flame className="inline-block w-10 h-10 md:w-12 md:h-12 align-middle" aria-hidden="true" />
         </h2>
         
         <p className="text-3xl md:text-4xl font-bold mb-4 animate-slide-in-left">
@@ -459,8 +470,10 @@ useEffect(() => {
           </div>
         </div>
         
-        <p className="text-2xl font-bold mb-6 animate-flash">
-          ⚠️ GOING FAST - GET YOURS NOW! ⚠️
+        <p className="text-2xl font-bold mb-6 animate-flash flex items-center justify-center gap-3">
+          <AlertTriangle className="w-6 h-6 shrink-0" aria-hidden="true" />
+          GOING FAST - GET YOURS NOW!
+          <AlertTriangle className="w-6 h-6 shrink-0" aria-hidden="true" />
         </p>
         
         <a 
@@ -519,7 +532,10 @@ END COMMENT */}
     </video>
     
     <div className="absolute top-4 right-4 bg-white/90 px-2 py-1 md:px-4 md:py-2 rounded-full shadow-lg animate-pulse">
-      <p className="text-xs font-bold text-gray-800">🔇 Tap</p>
+      <p className="text-xs font-bold text-gray-800 flex items-center gap-1">
+        <VolumeX className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+        Tap
+      </p>
     </div>
     
     <div className="absolute bottom-2 md:bottom-8 left-1/2 transform -translate-x-1/2 z-10">
@@ -631,11 +647,11 @@ END COMMENT */}
           }}
         >
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-10 left-10 text-cyan-300 text-6xl animate-float opacity-70">📱</div>
-            <div className="absolute top-20 right-20 text-yellow-300 text-5xl animate-float opacity-60" style={{animationDelay: '0.5s'}}>✨</div>
-            <div className="absolute bottom-20 left-1/4 text-blue-300 text-7xl animate-float opacity-50" style={{animationDelay: '1s'}}>⭐</div>
-            <div className="absolute top-1/3 right-1/3 text-cyan-400 text-4xl animate-float opacity-70" style={{animationDelay: '1.5s'}}>💫</div>
-            <div className="absolute bottom-10 right-10 text-yellow-400 text-5xl animate-float opacity-60" style={{animationDelay: '2s'}}>🌟</div>
+            <div className="absolute top-10 left-10 text-cyan-300 animate-float opacity-70"><Smartphone className="w-16 h-16" aria-hidden="true" /></div>
+            <div className="absolute top-20 right-20 text-yellow-300 animate-float opacity-60" style={{animationDelay: '0.5s'}}><Sparkles className="w-12 h-12" aria-hidden="true" /></div>
+            <div className="absolute bottom-20 left-1/4 text-blue-300 animate-float opacity-50" style={{animationDelay: '1s'}}><Star className="w-20 h-20" aria-hidden="true" /></div>
+            <div className="absolute top-1/3 right-1/3 text-cyan-400 animate-float opacity-70" style={{animationDelay: '1.5s'}}><Sparkles className="w-9 h-9" aria-hidden="true" /></div>
+            <div className="absolute bottom-10 right-10 text-yellow-400 animate-float opacity-60" style={{animationDelay: '2s'}}><Star className="w-12 h-12" aria-hidden="true" /></div>
           </div>
 
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -668,13 +684,14 @@ END COMMENT */}
                     }}
                   />
                   
-                  <div className="absolute top-10 right-10 text-4xl animate-sparkle">✨</div>
-                  <div className="absolute bottom-10 left-10 text-3xl animate-sparkle-delayed">⭐</div>
+                  <div className="absolute top-10 right-10 text-yellow-300 animate-sparkle"><Sparkles className="w-9 h-9" aria-hidden="true" /></div>
+                  <div className="absolute bottom-10 left-10 text-yellow-300 animate-sparkle-delayed"><Star className="w-8 h-8" aria-hidden="true" /></div>
                 </div>
                 
                 <div className="w-full md:w-1/2 text-white text-center md:text-left">
-                  <div className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-full inline-block mb-2 md:mb-3 font-black text-sm md:text-base animate-pulse shadow-xl">
-                    🔥 HOT DEALS!
+                  <div className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-full inline-flex items-center gap-2 mb-2 md:mb-3 font-black text-sm md:text-base animate-pulse shadow-xl">
+                    <Flame className="w-5 h-5 shrink-0" aria-hidden="true" />
+                    HOT DEALS!
                   </div>
                   <h2 className="text-xl md:text-3xl lg:text-5xl font-black mb-2" style={{
                     color: '#FFFFFF',
@@ -686,7 +703,7 @@ END COMMENT */}
                     color: '#FFD700',
                     textShadow: '0 2px 10px rgba(0,0,0,0.9)'
                   }}>
-                    Does your phone need CPR every morning? 😵‍💫 shaking, tapping, praying over it 🙏 That phone retired! Upgrade Today!
+                    Does your phone need CPR every morning? Shaking, tapping, praying over it. That phone retired! Upgrade Today!
                   </p>
                   <div className="text-3xl md:text-5xl lg:text-6xl font-black mb-2 md:mb-3 animate-bounce-gentle" style={{
                     color: '#FFD700',
@@ -699,7 +716,11 @@ END COMMENT */}
                     className="inline-block bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-400 text-white px-4 py-2 md:px-8 md:py-4 rounded-full font-black text-xs md:text-base lg:text-xl hover:from-cyan-300 hover:via-blue-400 hover:to-cyan-300 transition-all shadow-2xl hover:scale-110 animate-pulse"
                     onClick={() => setShowBanner(false)}
                   >
-                    📱 SHOP NOW →
+                    <span className="inline-flex items-center gap-2">
+                      <Smartphone className="w-5 h-5 shrink-0" aria-hidden="true" />
+                      SHOP NOW
+                      <ArrowRight className="w-5 h-5 shrink-0" aria-hidden="true" />
+                    </span>
                   </a>
                 </div>
               </div>
@@ -719,10 +740,10 @@ END COMMENT */}
           }}
         >
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-10 left-10 text-purple-300 text-6xl animate-float opacity-70">✨</div>
-            <div className="absolute top-20 right-20 text-pink-300 text-5xl animate-float opacity-60" style={{animationDelay: '0.5s'}}>🎵</div>
-            <div className="absolute bottom-20 left-1/4 text-cyan-300 text-7xl animate-float opacity-50" style={{animationDelay: '1s'}}>⭐</div>
-            <div className="absolute top-1/3 right-1/3 text-purple-400 text-4xl animate-float opacity-70" style={{animationDelay: '1.5s'}}>💫</div>
+            <div className="absolute top-10 left-10 text-purple-300 animate-float opacity-70"><Sparkles className="w-16 h-16" aria-hidden="true" /></div>
+            <div className="absolute top-20 right-20 text-pink-300 animate-float opacity-60" style={{animationDelay: '0.5s'}}><Music className="w-12 h-12" aria-hidden="true" /></div>
+            <div className="absolute bottom-20 left-1/4 text-cyan-300 animate-float opacity-50" style={{animationDelay: '1s'}}><Star className="w-20 h-20" aria-hidden="true" /></div>
+            <div className="absolute top-1/3 right-1/3 text-purple-400 animate-float opacity-70" style={{animationDelay: '1.5s'}}><Sparkles className="w-9 h-9" aria-hidden="true" /></div>
           </div>
 
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -754,13 +775,14 @@ END COMMENT */}
                     }}
                   />
                   
-                  <div className="absolute top-10 right-10 text-5xl animate-sparkle">✨</div>
-                  <div className="absolute bottom-10 left-10 text-4xl animate-sparkle-delayed">⭐</div>
+                  <div className="absolute top-10 right-10 text-yellow-300 animate-sparkle"><Sparkles className="w-12 h-12" aria-hidden="true" /></div>
+                  <div className="absolute bottom-10 left-10 text-yellow-300 animate-sparkle-delayed"><Star className="w-9 h-9" aria-hidden="true" /></div>
                 </div>
                 
                 <div className="w-full md:w-1/2 text-white text-center md:text-left">
-                  <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-3 py-1 md:px-6 md:py-3 rounded-full inline-block mb-2 font-black text-xs md:text-base shadow-xl animate-bounce-gentle">
-                    🎵 FEEL THE VIBES!
+                  <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-3 py-1 md:px-6 md:py-3 rounded-full inline-flex items-center gap-2 mb-2 font-black text-xs md:text-base shadow-xl animate-bounce-gentle">
+                    <Music className="w-4 h-4 md:w-5 md:h-5 shrink-0" aria-hidden="true" />
+                    FEEL THE VIBES!
                   </div>
                   <h2 className="text-xl md:text-3xl lg:text-5xl font-black mb-2" style={{
                     color: '#FFFFFF',
@@ -772,7 +794,10 @@ END COMMENT */}
                     color: '#FFD700',
                     textShadow: '0 2px 10px rgba(0,0,0,0.9)'
                   }}>
-                    🎧 Active Noise Cancelling • High Quality Sound • 24hrs Battery
+                    <span className="inline-flex items-center gap-2">
+                      <Headphones className="w-5 h-5 shrink-0" aria-hidden="true" />
+                      Active Noise Cancelling • High Quality Sound • 24hrs Battery
+                    </span>
                   </p>
                   <div className="text-3xl md:text-5xl lg:text-6xl font-black mb-2 md:mb-3 animate-bounce-gentle" style={{
                     color: '#FFD700',
@@ -785,7 +810,11 @@ END COMMENT */}
                     className="inline-block bg-gradient-to-r from-yellow-400 via-orange-500 to-yellow-400 text-black px-4 py-2 md:px-8 md:py-4 rounded-full font-black text-xs md:text-base lg:text-xl hover:from-yellow-300 hover:via-orange-400 hover:to-yellow-300 transition-all shadow-2xl hover:scale-110 animate-pulse"
                     onClick={() => setShowBanner(false)}
                   >
-                    🎵 SHOP NOW →
+                    <span className="inline-flex items-center gap-2">
+                      <Music className="w-5 h-5 shrink-0" aria-hidden="true" />
+                      SHOP NOW
+                      <ArrowRight className="w-5 h-5 shrink-0" aria-hidden="true" />
+                    </span>
                   </a>
                 </div>
               </div>

@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { ArrowLeft, Globe, Phone, MessageCircle, X, Check, Waves, Fish, Anchor, ArrowRight } from 'lucide-react';
+import { ArrowLeft, Globe, Phone, MessageCircle, X, Check, Anchor, ArrowRight } from 'lucide-react';
+import TickerStrip from '../../../components/TickerStrip';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
@@ -479,23 +480,20 @@ export default function MarineWorldPage() {
 
         {/* Header with marine theme */}
 <div className="relative z-10 text-center py-8 px-4">
-  <div className="flex justify-center items-center gap-3 mb-4">
-    <Fish className="w-10 h-10 text-teal-400" />
-    <h1 className="text-4xl md:text-5xl font-bold"
-        style={{ 
+  <div className="flex justify-center items-center mb-4">
+    <h1 className="text-4xl md:text-5xl font-bold text-center"
+        style={{
           color: '#40E0D0',
-          textShadow: '0 4px 20px rgba(64, 224, 208, 0.4), 0 2px 8px rgba(0,0,0,0.9)' 
+          textShadow: '0 4px 20px rgba(64, 224, 208, 0.4), 0 2px 8px rgba(0,0,0,0.9)'
         }}>
       {t.title}
     </h1>
-    <Waves className="w-10 h-10 text-teal-400" />
   </div>
-  <p className="text-xl font-semibold text-white" 
-     style={{ 
-       textShadow: '0 0 20px rgba(0,0,0,0.9), 0 4px 15px rgba(64, 224, 208, 0.6)' 
-     }}>
-    {t.subtitle}
-  </p>
+  <TickerStrip
+    text={t.subtitle}
+    className="text-xl font-semibold text-white"
+    style={{ textShadow: '0 0 20px rgba(0,0,0,0.9), 0 4px 15px rgba(64, 224, 208, 0.6)' }}
+  />
 </div>
 
         {/* NEW: Boat Parts Hero Banner */}
