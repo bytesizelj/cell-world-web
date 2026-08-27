@@ -62,7 +62,7 @@ const CATALOG: Item[] = [
   { n: 'PlayStation 4 DualShock Controller', p: 280, c: 'gaming' },
   { n: 'Razer PS5 Quick Charging Stand', p: 399, c: 'gaming', s: true },
   { n: 'PS5 Digital Edition', p: 2600, c: 'gaming', s: true },
-  { n: 'PS5 Console Disc Drive', p: 2900, c: 'gaming', s: true },
+  { n: 'PS5 Console Disc Drive', p: 2500, c: 'gaming' },
   // ---- EARBUDS ----
   { n: 'Cell World Wireless Earbuds (ANC)', p: 89, c: 'earbuds' },
   { n: 'Apple USB-C EarPods', p: 120, c: 'earbuds' },
@@ -87,6 +87,7 @@ const CATALOG: Item[] = [
   { n: 'Motorola Kids Wireless Headphones', p: 150, c: 'headphones', s: true },
   { n: 'JBL TUNE 525', p: 225, c: 'headphones', s: true },
   { n: 'JBL TUNE 520', p: 199, c: 'headphones', s: true },
+  { n: 'JBL Tune 530', p: 220, c: 'headphones' },
   { n: 'HyperGear VIBE', p: 90, c: 'headphones', s: true },
   { n: 'HyperGear 2-in-1', p: 110, c: 'headphones', s: true },
   // ---- SPEAKERS ----
@@ -104,7 +105,7 @@ const CATALOG: Item[] = [
   { n: 'RCA TWS GamerBeat', p: 220, c: 'speakers' },
   { n: 'RCA Shock-Wave', p: 380, c: 'speakers', s: true },
   { n: 'RCA BeatWaves (w/ wireless mic)', p: 499, c: 'speakers' },
-  { n: 'RCA HoloSound', p: 599, c: 'speakers', s: true },
+  { n: 'RCA HoloSound', p: 599, c: 'speakers' },
   { n: 'RCA CrystalBeat', p: 450, c: 'speakers', s: true },
   { n: 'Skull Candy Ounce', p: 160, c: 'speakers', s: true },
   { n: 'Skull Candy Kilo', p: 210, c: 'speakers' },
@@ -405,6 +406,37 @@ export function getCellyReply(rawInput: string): string {
   if (/(repair|fix|fixing|broken|cracked|unlock|frp|screen replace|battery replace|water damage|diagnostic|service)/.test(q)) {
     const body = REPAIRS.map((r) => `\u2022 ${r.n} \u2014 ${r.p} (${r.t})`).join('\n');
     return `\ud83d\udd27 Repair & unlocking services:\n${body}\n\nBring-your-own-parts install: from $20 to $120, moderate $60\u2013100, complex $150+.\nFor a firm quote, reach the store:\n${CONTACT}`;
+  }
+
+  // BEST CAMERA - the quick-question button sends "Which phone has the best camera?".
+  // Ranked by hand, not by megapixels: the Samsung A06 at $530 has a 50MP main and
+  // the iPhone 15 Pro Max at $2800 has 48MP, so a numeric sort answers wrongly. The
+  // order is fixed but filtered against live stock, so anything that sells out drops
+  // out of the answer on its own. Reasons come from the specs on the phones page.
+  if (
+    /(best|good|top|great).{0,15}(camera|pictures?|photos?)|camera.{0,15}(best|good|quality)|photography/.test(q) &&
+    !ACCESSORY_HINT.test(q)
+  ) {
+    const CAMERA_RANK: [string, string][] = [
+      ['iPhone 15 Pro Max', '48MP main, 12MP ultra wide and 12MP 5x telephoto'],
+      ['iPhone 15 Pro', 'same 48MP main sensor, 3x telephoto instead of 5x'],
+      ['iPhone 13 Pro Max', '12MP Pro system - wide, ultra wide and 3x telephoto'],
+      ['Samsung A16', '50MP main camera with a 13MP selfie camera'],
+      ['Samsung A42 5G', '48MP quad camera with a 20MP front camera'],
+    ];
+    const live = inStock('phone');
+    const picks: { it: Item; why: string }[] = [];
+    for (const [n, why] of CAMERA_RANK) {
+      const it = live.find((i) => i.n === n);
+      if (it) picks.push({ it, why });
+      if (picks.length === 3) break;
+    }
+    if (picks.length) {
+      const body = picks.map(({ it, why }) => `• ${it.n} — ${price(it)}\n  ${why}`).join('\n');
+      return `📷 Best cameras we have in stock:\n${body}\n\nWant a closer look at one of these?\n${CONTACT}`;
+    }
+    if (live.length)
+      return `📱 Phones in stock right now:\n${list(live)}\n\nWe also have the iPad 9th Gen, a FANGOR tablet and a Lenovo laptop. To order:\n${CONTACT}`;
   }
 
   // SPECIFIC ITEM lookup - answer the one product, not the whole list

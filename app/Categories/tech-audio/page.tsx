@@ -123,10 +123,11 @@ export default function TechAudioCategory() {
   id: 'ps5-console-disc',
   name: 'PS5 Console Disc Drive',
   image: '/images/Products/tech-audio/ps5-disc.png',
-  price: 2900.00,
+  price: 2500.00,
+  priceDropped: true,
   category: 'gaming',
-  availability: 'Back Soon',
-  inStock: false,
+  availability: 'In Stock',
+  inStock: true,
   description: 'Disc Drive Attaches to Console | DualSense Wireless Controller | 4K Gaming | Ultra HD Blu-ray',
   specs: {
     disc: 'Disc Drive',
@@ -250,7 +251,7 @@ export default function TechAudioCategory() {
   image: '/images/Products/more/rca-holosound-speaker.png',
   price: 599.00,
   category: 'speakers',
-  availability: 'Back Soon',
+  availability: 'In Stock',
   specs: {
     features: 'LED Color Flame, Karaoke mode',
     display: 'Illuminated display',
@@ -1475,6 +1476,19 @@ export default function TechAudioCategory() {
     connection: 'Multi-point connection',
     feature: 'Voice aware',
     battery: '57 hours battery life'
+  }
+},
+{
+  id: 'jbl-tune-530',
+  name: 'JBL Tune 530',
+  image: '/images/Products/tech-audio/jbl-tune-530.png',
+  price: 220.00,
+  category: 'headphones',
+  availability: 'In Stock',
+  color: 'Black, Purple, Navy Blue, White',
+  specs: {
+    type: 'Wireless Headphones',
+    colors: 'Black, Purple, Navy Blue, White'
   }
 },
 {
