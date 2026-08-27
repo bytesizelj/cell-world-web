@@ -1699,17 +1699,15 @@ const translations = {
         <div className="flex justify-center items-center mb-4">
           <h1 className="text-4xl md:text-5xl font-bold text-center"
               style={{
-                background: 'linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                textShadow: '0 4px 20px rgba(255, 107, 107, 0.3)'
+                color: '#f47b20',
+                textShadow: '0 4px 20px rgba(244, 123, 32, 0.5), 0 2px 8px rgba(0,0,0,0.9)'
               }}>
             {t.title}
           </h1>
         </div>
         <TickerStrip
           text={t.subtitle}
-          className="text-lg text-gray-300"
+          className="text-lg font-semibold text-orange-300/90"
           style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}
         />
       </div>
