@@ -7,8 +7,8 @@
 // Superseded by the AI hybrid (app/api/celly) once the API key is set; this
 // then becomes the offline fallback.
 //
-// Messages that should show tappable WhatsApp/Call buttons end with the
-// sentinel [[CONTACT]] - the chat window turns that into the two buttons.
+// Messages that should show a tappable Call button end with the sentinel
+// [[CONTACT]] - the chat window turns that into the button.
 // -----------------------------------------------------------------------------
 
 type Item = { n: string; p: number; c: string; s?: boolean; f?: boolean }; // s=back soon, f=from/price-range
@@ -16,7 +16,7 @@ type Item = { n: string; p: number; c: string; s?: boolean; f?: boolean }; // s=
 const CATALOG: Item[] = [
   // ---- PHONES (in stock) ----
   { n: 'itel A100C', p: 440, c: 'phone' },
-  { n: 'Samsung Galaxy A06', p: 530, c: 'phone' },
+  { n: 'Samsung Galaxy A06', p: 499, c: 'phone' },
   { n: 'itel A90', p: 475, c: 'phone', s: true },
   { n: 'Samsung A07', p: 499, c: 'phone' },
   { n: 'Samsung A16', p: 649, c: 'phone' },
@@ -320,7 +320,11 @@ const REPAIRS = [
   { n: 'Diagnostic (free with any repair)', p: '$40', t: '30 min' },
 ];
 
-const CONTACT = '[[CONTACT]]'; // chat window renders WhatsApp + Call buttons here
+// WhatsApp is deliberately excluded from Celly's replies at the owner's request
+// (they don't want to be reached across too many channels). The chat window
+// renders a Call button only here - do not add a WhatsApp button or mention
+// WhatsApp in any reply text.
+const CONTACT = '[[CONTACT]]'; // chat window renders a Call button here
 
 const price = (i: Item) => (i.f ? `from $${i.p}` : `$${i.p}`);
 const list = (items: Item[], max = 8) => {
@@ -396,11 +400,11 @@ export function getCellyReply(rawInput: string): string {
 
   // email
   if (/(email|e-mail|gmail)/.test(q))
-    return `The quickest way to reach us is WhatsApp or a call. Tap below.\n${CONTACT}`;
+    return `📧 Email us at info@cellworldsvg.com — we reply during store hours.\n📞 Call: 1-784-451-2261\n📍 Kingstown, St. Vincent\n\nTap below to call us now:\n${CONTACT}`;
 
   // location / contact
   if (/(where|location|address|find you|contact|reach|phone number|whatsapp)/.test(q))
-    return `You'll find us in Kingstown, St. Vincent.\n${CONTACT}`;
+    return `📍 You'll find us in Kingstown, St. Vincent.\n📧 Email: info@cellworldsvg.com\n📞 Call: 1-784-451-2261\n\nTap below to call us now:\n${CONTACT}`;
 
   // repairs / unlocking / services
   if (/(repair|fix|fixing|broken|cracked|unlock|frp|screen replace|battery replace|water damage|diagnostic|service)/.test(q)) {
@@ -409,7 +413,7 @@ export function getCellyReply(rawInput: string): string {
   }
 
   // BEST CAMERA - the quick-question button sends "Which phone has the best camera?".
-  // Ranked by hand, not by megapixels: the Samsung A06 at $530 has a 50MP main and
+  // Ranked by hand, not by megapixels: the Samsung A06 at $499 has a 50MP main and
   // the iPhone 15 Pro Max at $2800 has 48MP, so a numeric sort answers wrongly. The
   // order is fixed but filtered against live stock, so anything that sells out drops
   // out of the answer on its own. Reasons come from the specs on the phones page.
