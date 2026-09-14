@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Cell World St. Vincent",  // UPDATE THIS
-  description: "Cell World - Your trusted mobile technology partner in St. Vincent. Latest phones, repairs, and accessories.",  // UPDATE THIS
+  description: "Cell World - Your trusted mobile technology partner in St. Vincent. Latest phones, accessories, power banks and emergency lighting.",  // UPDATE THIS
 };
 
 export default function RootLayout({

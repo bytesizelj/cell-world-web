@@ -2,7 +2,7 @@
 // -----------------------------------------------------------------------------
 // Interim brain for Celly. ONE catalog (single source of truth) + a generic
 // search. Mirrors the live category pages (phones, tech-audio,
-// accessories-power, marine-world) and the repair-service menu.
+// accessories-power, power-and-light, marine-world). Repairs are retired.
 // The "more" page is retired and intentionally excluded.
 // Superseded by the AI hybrid (app/api/celly) once the API key is set; this
 // then becomes the offline fallback.
@@ -307,19 +307,6 @@ const CATALOG: Item[] = [
   { n: 'Fishing Reel Spinner / Lures', p: 65, c: 'fishing' },
 ];
 
-const REPAIRS = [
-  { n: 'Google Account Unlock (FRP)', p: 'from $100', t: '1-3 hrs' },
-  { n: 'Network / Carrier Unlock', p: 'from $100', t: '1-24 hrs' },
-  { n: 'LCD Screen Replacement (free install if bought from us)', p: 'from $200', t: '1-2 hrs' },
-  { n: 'Charging Port Repair', p: 'from $120', t: '1-2 hrs' },
-  { n: 'Battery Replacement', p: 'from $120', t: '30-45 min' },
-  { n: 'Water Damage Repair', p: 'from $40', t: '24-48 hrs' },
-  { n: 'Laptop Repair', p: 'from $100', t: '1-3 days' },
-  { n: 'Tablet Repair', p: 'from $75', t: '1-2 days' },
-  { n: 'Software & System Repair', p: 'from $100', t: '1-3 hrs' },
-  { n: 'Diagnostic (free with any repair)', p: '$40', t: '30 min' },
-];
-
 // WhatsApp is deliberately excluded from Celly's replies at the owner's request
 // (they don't want to be reached across too many channels). The chat window
 // renders a Call button only here - do not add a WhatsApp button or mention
@@ -389,7 +376,7 @@ export function getCellyReply(rawInput: string): string {
 
   // greetings / thanks / short affirmations
   if (/^(hi|hey|hello|good (morning|afternoon|evening)|yo|hiya)\b/.test(q))
-    return "Hi! \ud83d\udc4b I'm Celly. Ask me about anything in the shop \u2014 phones, tablets, speakers, earbuds, chargers, gaming, marine gear, repairs, prices, hours or location.";
+    return "Hi! \ud83d\udc4b I'm Celly. Ask me about anything in the shop \u2014 phones, tablets, speakers, earbuds, chargers, gaming, marine gear, power banks, lanterns, prices, hours or location.";
   if (q.includes('thank')) return "You're welcome! Anything else I can help with?";
   if (/^(yes|yeah|yep|ok|okay|sure|no|nope)\b/.test(q))
     return 'Sure! What would you like \u2014 a product, a price, store hours, services, or our location?';
@@ -406,11 +393,13 @@ export function getCellyReply(rawInput: string): string {
   if (/(where|location|address|find you|contact|reach|phone number|whatsapp)/.test(q))
     return `📍 You'll find us in Kingstown, St. Vincent.\n📧 Email: info@cellworldsvg.com\n📞 Call: 1-784-451-2261\n\nTap below to call us now:\n${CONTACT}`;
 
-  // repairs / unlocking / services
-  if (/(repair|fix|fixing|broken|cracked|unlock|frp|screen replace|battery replace|water damage|diagnostic|service)/.test(q)) {
-    const body = REPAIRS.map((r) => `\u2022 ${r.n} \u2014 ${r.p} (${r.t})`).join('\n');
-    return `\ud83d\udd27 Repair & unlocking services:\n${body}\n\nBring-your-own-parts install: from $20 to $120, moderate $60\u2013100, complex $150+.\nFor a firm quote, reach the store:\n${CONTACT}`;
-  }
+  // repairs / unlocking / services - Cell World no longer repairs devices.
+  // The trigger regex stays so these questions get a clear answer instead of
+  // the generic fallback; customers will keep asking for a while. Replacement
+  // screens are still SOLD, just not fitted - the reply must keep that
+  // distinction or people who could buy a screen get turned away.
+  if (/(repair|fix|fixing|broken|cracked|unlock|frp|screen replace|battery replace|water damage|diagnostic|service)/.test(q))
+    return `Cell World no longer offers repair, unlocking or screen replacement services.\n\nWe do still sell replacement screens and accessories if you have someone to fit them \u2014 ask me about a specific model, or reach the store:\n${CONTACT}`;
 
   // BEST CAMERA - the quick-question button sends "Which phone has the best camera?".
   // Ranked by hand, not by megapixels: the Samsung A06 at $499 has a 50MP main and
@@ -549,7 +538,7 @@ export function getCellyReply(rawInput: string): string {
 
   // generic "what do you have / in stock"
   if (/(what (do|can|all)|what.*(have|sell|carry|offer)|your (catalog|products|range|inventory)|everything you|full (catalog|list))/.test(q)) {
-    return 'We carry phones, tablets & laptops, speakers, earbuds & headphones, smartwatches, gaming gear, chargers, cables, cases, power banks, car accessories, storage, marine & fishing gear, plus repairs & unlocking. What are you after?';
+    return 'We carry phones, tablets & laptops, speakers, earbuds & headphones, smartwatches, gaming gear, chargers, cables, cases, power banks, car accessories, storage, marine & fishing gear, lanterns & emergency lights. What are you after?';
   }
 
   // not in catalog - honest handoff with buttons

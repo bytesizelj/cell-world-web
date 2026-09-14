@@ -6,7 +6,7 @@ false });
 
 import { useState, useEffect } from 'react';
 // Home is aliased: the page's own default export is already called Home.
-import { ChevronDown, Globe, Phone, Menu, ArrowRight, X, Mail, MessageCircle, Home as HomeIcon, Smartphone, Anchor, Headphones, Plug, Star, ShoppingCart, Sparkles, Flame, AlertTriangle, VolumeX, Music } from 'lucide-react';
+import { ChevronDown, Globe, Phone, Menu, ArrowRight, X, Mail, MessageCircle, Home as HomeIcon, Smartphone, Anchor, Headphones, Plug, BatteryCharging, Star, ShoppingCart, Sparkles, Flame, AlertTriangle, VolumeX, Music } from 'lucide-react';
 import Link from 'next/link';
 import HeroCarousel from '@/components/HeroCarousel';
 import MarineWorldPopup from '@/components/MarineWorldPopup';
@@ -161,7 +161,7 @@ useEffect(() => {
       mobile: "Mobile",
       email: "Email",
       clickToView: "Click to View",
-      repairService: "Repair Service"
+      powerAndLight: "Power & Light"
     },
     fr: {
       welcome: "Bienvenue chez Cell World St. Vincent",
@@ -187,7 +187,7 @@ useEffect(() => {
       mobile: "Mobile",
       email: "Courriel",
       clickToView: "Cliquez pour Voir",
-      repairService: "Service de Réparation"
+      powerAndLight: "Énergie et Éclairage"
     },
     es: {
       welcome: "Bienvenido a Cell World St. Vincent",
@@ -213,7 +213,7 @@ useEffect(() => {
       mobile: "Móvil",
       email: "Correo",
       clickToView: "Haz Clic para Ver",
-      repairService: "Servicio de Reparación"
+      powerAndLight: "Energía e Iluminación"
     }
   };
 
@@ -353,7 +353,11 @@ useEffect(() => {
   </a>
   <a href="/Categories/accessories-power" className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
     <Plug className="w-5 h-5 shrink-0" aria-hidden="true" />
-    Accessories &amp; Power
+    Accessories
+  </a>
+  <a href="/Categories/power-and-light" className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+    <BatteryCharging className="w-5 h-5 shrink-0" aria-hidden="true" />
+    Power &amp; Light
   </a>
   <a href="/reviews" className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
     <Star className="w-5 h-5 shrink-0" aria-hidden="true" />
@@ -1381,23 +1385,23 @@ END COMMENT */}
   </div>
 </Link>
 
-{/* Accessories & Power Category */}
-<Link 
+{/* Accessories Category */}
+<Link
   href="/Categories/accessories-power"
   className="group relative overflow-hidden rounded-xl shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-3xl cursor-pointer block"
 >
   <div className="aspect-[4/3] relative overflow-hidden">
-    <img 
-      src="/images/accessories-power.jpg" 
-      alt="Accessories & Power"
+    <img
+      src="/images/accessories-power.jpg"
+      alt="Accessories"
       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125"
     />
     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
     <div className="absolute inset-0 flex flex-col items-center justify-center">
   <h3 className="text-white text-3xl font-bold mb-2 drop-shadow-2xl">
-    Accessories & Power
+    Accessories
   </h3>
-  <p className="text-gray-200 mb-4 drop-shadow-lg">Cases, Cables, Power Solutions</p>
+  <p className="text-gray-200 mb-4 drop-shadow-lg">Cases, Cables, Storage & Car Accessories</p>
   <div 
     className="bg-purple-600/90 backdrop-blur-sm px-8 py-4 rounded-full transform group-hover:scale-110 transition-all duration-300 shadow-2xl"
     style={{
@@ -1414,23 +1418,23 @@ END COMMENT */}
   </div>
 </Link>
 
-      {/* NEW: Repair Service Category with HOVER ZOOM */}
-      <Link 
-        href="/Categories/repair-service"
+      {/* Power & Light Category with HOVER ZOOM */}
+      <Link
+        href="/Categories/power-and-light"
         className="group relative overflow-hidden rounded-xl shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-3xl cursor-pointer block"
       >
         <div className="aspect-[4/3] relative overflow-hidden">
-          <img 
-            src="/images/repair-service.jpg" 
-            alt="Repair Service"
+          <img
+            src="/images/Products/accessories-power/ludger-power-light-lantern-blue.jpg"
+            alt="Power & Light"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
-          
+
           {/* Center Call to Action - Enhanced */}
           <div className="absolute inset-0 flex flex-col items-center justify-center">
             <h3 className="text-white text-3xl font-bold mb-4 drop-shadow-2xl">
-              {t.repairService}
+              {t.powerAndLight}
             </h3>
             <div 
               className="bg-orange-600/90 backdrop-blur-sm px-8 py-4 rounded-full transform group-hover:scale-110 transition-all duration-300 shadow-2xl"

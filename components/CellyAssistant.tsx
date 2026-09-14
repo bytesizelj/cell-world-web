@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { MessageCircle, X, Send, Bot, User, Clock, Phone, Shield, HelpCircle, MapPin, Mail, Sparkles, Headphones } from 'lucide-react';
+import { MessageCircle, X, Send, Bot, User, Clock, Phone, Zap, HelpCircle, MapPin, Mail, Sparkles, Headphones } from 'lucide-react';
 import { searchProducts, getCheapestProducts, getProductsInPriceRange, getProductsByBrand } from '@/utils/productDatabase';
 import { getCellyReply } from '@/lib/cellyRules';
 
@@ -600,7 +600,7 @@ export default function Celly() {
   const quickActions = [
     { icon: <Clock className="w-4 h-4" />, text: "Store Hours", query: "What are your store hours?" },
     { icon: <Phone className="w-4 h-4" />, text: "Best Camera", query: "Which phone has the best camera?" },
-    { icon: <Shield className="w-4 h-4" />, text: "Services", query: "What services do you offer?" },
+    { icon: <Zap className="w-4 h-4" />, text: "Power Banks", query: "Do you have power banks?" },
     { icon: <MapPin className="w-4 h-4" />, text: "Contact", query: "What's your email address?" },
   ];
 

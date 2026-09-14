@@ -39,7 +39,7 @@ export default function MoreCategory() {
   id: 'transparent-magsafe',
   name: 'Transparent MagSafe Case',
   price: 40,
-  image: '/images/Products/more/transparent-magsafe-case.png',
+  image: '/images/Products/more/transparent-magsafe-case.jpg',
   category: 'cases',
   description: 'iPhone 16 Pro Max • Frosted Clear • MagSafe Compatible • Anti-Yellowing • Shock Absorption • Slim Design',
   inStock: true
@@ -125,7 +125,7 @@ export default function MoreCategory() {
 {
   id: 'ldnio-4u-power-strip',
   name: 'LDNIO 4U Power Strip with 4 USB',
-  image: '/images/Products/more/ldnio-4u-power-strip.png',
+  image: '/images/Products/more/ldnio-4u-power-strip.jpg',
   price: 70.00,
   category: 'power-strips',
   availability: 'In Stock',
@@ -968,7 +968,7 @@ export default function MoreCategory() {
 {
   id: 'ludger-rechargeable-fan',
   name: 'LUDGER Rechargeable Fan EL-8210F',
-  image: '/images/Products/more/ludger-power-light-rechargeable-fan.png',
+  image: '/images/Products/more/ludger-power-light-rechargeable-fan.jpg',
   price: 220.00,
   category: 'emergency',
   availability: 'Low Stock',

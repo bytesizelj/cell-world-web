@@ -45,7 +45,7 @@ const HEROES = [
   // Accessories & Power page
   'accessories-power/anker-power-bank.png',
   'accessories-power/m02-gimbal.png',
-  'more/ludger-power-light-rechargeable-fan.png',
+  'more/ludger-power-light-rechargeable-fan.jpg',
 ];
 
 const PRODUCTS_ROOT = path.join(__dirname, '..', 'public', 'images', 'Products');

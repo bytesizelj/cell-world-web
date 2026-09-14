@@ -256,20 +256,6 @@ export default function AccessoriesPowerCategory() {
     features: 'Grip Handle, Tripod Included'
   }
 },
-{
-  id: 'multi-function-violent-fan',
-  name: 'Multi-Function Violent Fan',
-  image: '/images/Products/accessories-power/violent-fan.png',
-  price: 250.00,
-  category: 'power',
-  inStock: true,
-  description: 'Super Strong Wind | Super High Speed | Magic Vacuum Cleaner Function | Over Temperature Protection',
-  specs: {
-    power: 'Super Strong Wind',
-    speed: 'Super High Speed',
-    features: 'Vacuum Cleaner, Temperature Protection'
-  }
-},
 // PHONE CASES
 {
   id: 'magsafe-deep-blue',
@@ -293,7 +279,7 @@ export default function AccessoriesPowerCategory() {
   id: 'transparent-magsafe',
   name: 'Transparent MagSafe Case',
   price: 40,
-  image: '/images/Products/more/transparent-magsafe-case.png',
+  image: '/images/Products/more/transparent-magsafe-case.jpg',
   category: 'cases',
   description: 'iPhone 16 Pro Max • Frosted Clear • MagSafe Compatible • Anti-Yellowing • Shock Absorption • Slim Design',
   inStock: true
@@ -344,7 +330,6 @@ export default function AccessoriesPowerCategory() {
     protection: 'Drop protection'
   }
 },
-
 // APPLE PRODUCTS
 {
   id: 'apple-type-c-brick',
@@ -359,7 +344,6 @@ export default function AccessoriesPowerCategory() {
     type: 'USB-C Power Adapter'
   }
 },
-
 {
   id: 'apple-usb-c-cable',
   name: 'Apple USB-C Cable',
@@ -440,7 +424,6 @@ export default function AccessoriesPowerCategory() {
     description: 'Keep track of personal belongings'
   }
 },
-
 // SAMSUNG PRODUCTS
 {
   id: '65w-pd-power-trio',
@@ -520,8 +503,7 @@ export default function AccessoriesPowerCategory() {
   category: 'samsung',
   availability: 'In Stock'
 },
-
-// MOUSE 
+// MOUSE
 {
   id: 'nippon-usb-mouse',
   name: 'Nipponamerica USB Mouse',
@@ -574,7 +556,6 @@ export default function AccessoriesPowerCategory() {
     surface: 'Alloy surface'
   }
 },
-
 // CAR ACCESSORIES
 {
   id: 'rca-car-holder',
@@ -725,7 +706,6 @@ export default function AccessoriesPowerCategory() {
     extra: 'Bluetooth music, MP3 support'
   }
 },
-
 // NETWORK
 {
   id: 'cat5-patch-cord',
@@ -759,362 +739,6 @@ export default function AccessoriesPowerCategory() {
     speed: '300mbps'
   }
 },
-
-// POWER BANKS
-{
-      id: 8,
-      name: "Mophie Juice Pack Connect 5000mAh",
-      price: 125.00,
-      image: "/images/Products/more/mophie-juicepack-5000.png",
-      description: "Compact wireless charging battery pack with 5000mAh capacity. Detachable design works with wireless phones. Includes stand.",
-      category: "powerbanks",
-      specs: {
-        capacity: "5000mAh capacity",
-        charging: "Wireless charging",
-        battery: "70% extra battery",
-        design: "Detachable with stand"
-      }
-    },
-    {
-      id: 11,
-      name: "Pocket Juice Air Plus Wireless Power Bank 10000mAh",
-      price: 99.00,
-      image: "/images/Products/more/pocketjuice-air-10000.png",
-      description: "Magnetic wireless charger with built-in stand. 10000mAh capacity provides up to 6 full charges. Magnetically attaches to any phone.",
-      category: "powerbanks",
-      availability: 'Back Soon',
-      specs: {
-        capacity: "10000mAh capacity",
-        charging: "Wireless charging",
-        attachment: "Magnetic attachment",
-        feature: "6X charges"
-      }
-    },
-    {
-      id: 12,
-      name: "Anker PowerCore Select 10000mAh Power Bank",
-      price: 85.00,
-      image: "/images/Products/more/anker-powercore-10000.png",
-      description: "High-speed portable charger with 10000mAh capacity. Provides 46+ hours of extra power with 12W high-speed charging.",
-      category: "powerbanks",
-      availability: 'Back Soon',
-      specs: {
-        capacity: "10000mAh capacity",
-        charging: "12W high-speed charging",
-        battery: "46+ hours extra power",
-        ports: "Dual USB-A ports"
-      }
-    },
-    {
-      id: 13,
-      name: "Boss Bar Wireless Power Bank 10000mAh",
-      price: 110.00,
-      image: "/images/Products/more/bossbar-wireless-10000.png",
-      description: "Premium wireless power bank with digital display. Features 15W wireless fast charging, 22.5W super fast charge output.",
-      category: "powerbanks",
-      availability: 'Back Soon',
-      specs: {
-        capacity: "10000mAh capacity",
-        wireless: "15W Wireless charging",
-        wired: "22.5W PD Fast Charge",
-        display: "Digital LED display"
-      }
-    },
-    {
-      id: 14,
-      name: "Anker Pocket-Sized Power Bank 10000mAh",
-      price: 75.00,
-      image: "/images/Products/more/anker-pocket-10k.png",
-      description: "Ultra-compact power bank with 22.5W max output. Perfect pocket size for Apple, Samsung, and more devices.",
-      category: "powerbanks",
-      availability: 'Back Soon',
-      specs: {
-        capacity: "10000mAh capacity",
-        output: "22.5W MAX output",
-        design: "Ultra-compact",
-        compatibility: "Universal"
-      }
-    },
-    {
-      id: 15,
-      name: "Yesido Wireless Power Bank with Built-in Cables",
-      price: 95.00,
-      image: "/images/Products/more/yesido-wireless-10000.png",
-      description: "All-in-one power bank with wireless charging pad and two built-in cables. Digital display shows battery level.",
-      category: "powerbanks",
-      availability: 'Back Soon',
-      specs: {
-        capacity: "10000mAh capacity",
-        wireless: "Wireless charging pad",
-        cables: "Two built-in cables",
-        display: "Digital display"
-      }
-    },
-{
-  id: 'hypergear-powerpack-mini',
-  name: 'HyperGear PowerPack Mini',
-  image: '/images/Products/more/hyper-gear-power-pack-mini.png',
-  price: 99.00,
-  category: 'powerbanks',
-  availability: "Back Soon",
-  specs: {
-    capacity: '5000mAh',
-    output: '20W USB-C PD Fast Charge, 18W USB Fast Charge'
-  }
-},
-{
-  id: 'hypergear-clearcharge-xl',
-  name: 'HyperGear ClearCharge XL Power Bank',
-  image: '/images/Products/more/hyper-gear-clear-charge-power-bank.png',
-  price: 180.00,
-  category: 'powerbanks',
-  availability: 'Back Soon',
-  specs: {
-    capacity: '20000mAh',
-    battery: '48+ hours extra battery life',
-    charging: 'Charges 3 devices simultaneously',
-    ports: '2 USB Fast Charge, 1 USB-C 20W input/output'
-  }
-},
-{
-  id: 'pocket-juice-flashlight',
-  name: 'Pocket Juice Power Bank with Flashlight',
-  image: '/images/Products/more/pocket-juice-power-bank-with-flashlight.png', // You'll need to add this image
-  price: 100.00,
-  category: 'powerbanks',
-  availability: 'Back Soon',
-  specs: {
-    capacity: '2600mAh',
-    charging: 'Up to 1X charge',
-    ports: '1 USB port',
-    feature: 'Weather proof with flashlight'
-  }
-},
-{
-  id: 'airbro-portable-fan-2600',
-  name: 'Airbro ONE Portable Fan with Powerbank',
-  image: '/images/Products/more/airbro-one-portable-fan-powerbank.png',
-  price: 140.00,
-  category: 'powerbanks',
-  availability: "In Stock",
-  specs: {
-    battery: '2600mAh lithium-ion',
-    duration: '3hrs high speed, 9hrs low speed',
-    features: 'Detachable powerbank, 6 blade design',
-    settings: '5 speed settings, charging dock'
-  }
-},
-{
-  id: 'wireless-magnetic-power-bank-10000',
-  name: 'Wireless Fast Charging Power Bank 10,000mAh',
-  image: '/images/Products/accessories-power/wireless-power-bank.png',
-  price: 130.00,
-  category: 'powerbanks',
-  availability: 'In Stock',
-  specs: {
-    capacity: '10,000mAh',
-    charging: 'Magnetic wireless, 120W',
-    cables: '2-in-1 built-in Lightning and Type-C'
-  }
-},
-{
-  id: 'samsung-galaxy-battery-pack',
-  name: 'Samsung Galaxy Battery Pack',
-  image: '/images/Products/accessories-power/samsung-galaxy-power-bank.png',
-  price: 160.00,
-  category: 'powerbanks',
-  availability: 'In Stock',
-  specs: {
-    type: 'Battery Pack'
-  }
-},
-{
-  id: 'anker-power-bank-20000',
-  name: 'Anker Power Bank 20,000mAh',
-  image: '/images/Products/accessories-power/anker-power-bank.png',
-  price: 200.00,
-  category: 'powerbanks',
-  availability: 'In Stock',
-  specs: {
-    capacity: '20,000mAh',
-    compatibility: 'Apple, Samsung, Google and more'
-  }
-},
-{
-  id: 'jimzy-power-bank-10000',
-  name: 'Jimzy Power Bank 10,000mAh',
-  image: '/images/Products/accessories-power/jimzy-power-bank.png',
-  price: 150.00,
-  category: 'powerbanks',
-  availability: 'In Stock',
-  specs: {
-    capacity: '10,000mAh',
-    features: 'Solar charging, LED light',
-    cables: '4 built-in cords'
-  }
-},
-
-// POWER
-{
-  id: 'nipponamerica-power-strip',
-  name: 'Nipponamerica 6-Outlet AC Power Strip',
-  image: '/images/Products/more/nipponamerica-6outlet-power-strip.png',
-  price: 35.00,
-  category: 'power',
-  availability: 'In Stock',
-  specs: {
-    outlets: '6 grounded outlets',
-    power: '110v',
-    surge: '90 Joules surge protection',
-    cable: '6ft heavy-duty cord',
-    safety: 'Fire-retardant housing, UL listed'
-  }
-},
-{
-  id: 'ldnio-power-socket',
-  name: 'LDNIO Power Socket 3.1A with USB',
-  image: '/images/Products/more/ldnio-power-socket-usb.png',
-  price: 70.00,
-  category: 'power',
-  availability: 'In Stock',
-  specs: {
-    outlets: '3 universal outlets + 3 USB ports',
-    output: '3.1A USB charging',
-    power: '220v',
-    safety: 'Child safety shutters',
-    feature: 'Anti-static protection'
-  }
-},
-{
-  id: 'ldnio-4u-power-strip',
-  name: 'LDNIO 4U Power Strip with 4 USB',
-  image: '/images/Products/more/ldnio-4u-power-strip.png',
-  price: 70.00,
-  category: 'power',
-  availability: 'In Stock',
-  specs: {
-    outlets: '4 universal outlets + 4 USB ports',
-    output: '2.4A per USB port',
-    power: '220v',
-    feature: 'Smart IC chip technology'
-  }
-},
-{
-  id: 'ludger-battery-charger-6a',
-  name: 'LUDGER Battery Charger LBCG-612-6',
-  image: '/images/Products/more/ledger-power-light-battery-charger-LBCG-612-6.png',
-  price: 375.00,
-  category: 'power',
-  availability: "In Stock",
-  specs: {
-    input: '120V AC / 60Hz',
-    battery: '6/12V Lead-acid',
-    power: '<130W',
-    modes: '12V/2A, 12V/6A, 6V/2A',
-    protection: 'Built-in circuit protection',
-    weight: '2.7kg (5.9lbs)'
-  }
-},
-{
-  id: 'ludger-battery-charger-100a',
-  name: 'LUDGER Battery Charger LBCG-12-100',
-  image: '/images/Products/more/ledger-power-light-battery-charger.png',
-  price: 600.00,
-  category: 'power',
-  availability: "In Stock",
-  specs: {
-    input: '120V AC / 60Hz',
-    battery: '12V Lead-acid',
-    power: '<330W',
-    modes: '12V/2A, 12V/15A, 12V/100A engine start',
-    features: 'LED display, Regular & AGM settings',
-    weight: '7.3kg (16.1lbs)'
-  }
-},
-
-// EMERGENCY
-{
-  id: 'ludger-rechargeable-fan',
-  name: 'LUDGER Rechargeable Fan EL-8210F',
-  image: '/images/Products/more/ludger-power-light-rechargeable-fan.png',
-  price: 220.00,
-  category: 'emergency',
-  availability: "In Stock",
-  specs: {
-    power: '110-240V, 50/60Hz, 17W',
-    battery: '6V 4.5Ah lead acid',
-    features: '10" 2-speed fan, 4 LED lights, Radio',
-    charging: '10-15 hours charge time',
-    runtime: 'High: 3hrs, Low: 4.5hrs, LED: 90hrs, Radio: 15hrs',
-    extras: 'DC Input & USB output'
-  }
-},
-{
-  id: 'ludger-rechargeable-handy-light-7005',
-  name: 'LUDGER Rechargeable Handy Light EL-7005L',
-  image: '/images/Products/accessories-power/ludger-power-handy-light.jpg',
-  price: 50.00,
-  category: 'emergency',
-  availability: "In Stock",
-  specs: {
-    power: 'AC 110-220V',
-    charging: '20-24 hours charge time',
-    duration: 'Approx. 4 hours',
-    battery: '4V 0.4AH Sealed Lead-Acid'
-  }
-},
-{
-  id: 'ludger-lantern-cream-1830',
-  name: 'LUDGER Lantern EL-1830LED (Cream)',
-  image: '/images/Products/accessories-power/ludger-power-light-lantern-yellow.jpg',
-  price: 125.00,
-  category: 'emergency',
-  availability: "In Stock",
-  specs: {
-    power: 'AC 110-220V/60Hz',
-    charging: '20-24 hours charge time',
-    duration: '1 tube: 5hrs, 2 tubes: 2.5hrs, Radio: 18hrs',
-    battery: '4V 4000mAh Lead Acid',
-    features: '360° light, FM scan radio, Overcharge protection'
-  }
-},
-{
-  id: 'ludger-lantern-blue-536',
-  name: 'LUDGER Emergency Lantern EL-536USV (Blue)',
-  image: '/images/Products/accessories-power/ludger-power-light-lantern-blue.jpg',
-  price: 120.00,
-  category: 'emergency',
-  availability: "In Stock",
-  specs: {
-    power: '110-220V/60Hz',
-    battery: '4V 6Ah sealed lead-acid',
-    charging: '20-24 hours',
-    duration: '8-10hrs strong light, >25hrs weak light',
-    features: '360° light, DC 12V input, USB 5V charger, Solar panel, 36x0.5W LED'
-  }
-},
-{
-  id: 'audio-box-emergency-flashlight',
-  name: 'Audio Box Solar Emergency Flashlight',
-  image: '/images/Products/accessories-power/audio-box-emergency-light.jpg',
-  price: 75.00,
-  category: 'emergency',
-  availability: "In Stock",
-  specs: {
-    connectivity: 'Bluetooth',
-    radio: 'FM Radio',
-    charging: 'Solar Rechargeable'
-  }
-},
-{
-  id: 'ludger-handy-light-black',
-  name: 'LUDGER Rechargeable Handy Light (Black)',
-  image: '/images/Products/accessories-power/ludger-handy-light.jpg',
-  price: 75.00,
-  category: 'emergency',
-  availability: "In Stock"
-},
-
 // CABLES
 {
   id: 'generic-type-c-lightning',
@@ -1241,7 +865,6 @@ export default function AccessoriesPowerCategory() {
     connection: 'IP to Type-C'
   }
 },
-
 // STORAGE - New category
 {
   id: 'sandisk-16gb',
@@ -1431,7 +1054,6 @@ export default function AccessoriesPowerCategory() {
     type: 'Card Reader'
   }
 },
-
 // SELFIE STICKS & RING LIGHTS - New arrivals
 {
   id: 'tt22-mini-selfie-stick',
@@ -1504,51 +1126,13 @@ export default function AccessoriesPowerCategory() {
     lighting: 'RGB LED, Soft Light',
     use: 'Photography & Streaming'
   }
-},
-
-// BATTERY PACKS - New arrivals
-{
-  id: 'magsafe-battery-pack-5000mah',
-  name: 'MagSafe Battery Pack 5000mAh',
-  image: '/images/Products/accessories-power/magsafe-battery-pack-5000mah.png',
-  price: 90.00,
-  category: 'powerbanks',
-  availability: 'In Stock',
-  specs: {
-    capacity: '5000mAh',
-    charging: 'MagSafe Wireless'
-  }
-},
-{
-  id: 'magsafe-battery-pack-10000mah',
-  name: 'MagSafe Battery Pack 10000mAh',
-  image: '/images/Products/accessories-power/magsafe-battery-pack-10000mah.png',
-  price: 130.00,
-  category: 'powerbanks',
-  availability: 'In Stock',
-  specs: {
-    capacity: '10000mAh',
-    charging: 'MagSafe Wireless'
-  }
-},
-{
-  id: 'apple-iphone-air-battery-pack',
-  name: 'Apple iPhone Air Battery Pack',
-  image: '/images/Products/accessories-power/apple-iphone-air-battery-pack.png',
-  price: 180.00,
-  category: 'powerbanks',
-  availability: 'In Stock',
-  specs: {
-    type: 'Original Apple Battery Pack',
-    compatibility: 'iPhone Air'
-  }
-},
+}
   ];
 
 const translations = {
   en: {
-    title: "Accessories & Power",
-    subtitle: "Cases, Cables, Power Banks & Car Accessories",
+    title: "Accessories",
+    subtitle: "Cases, Cables, Storage, Keyboards & Car Accessories",
     backToHome: "Back to Home",
     viewDetails: "View Details",
     specifications: "Specifications",
@@ -1560,11 +1144,8 @@ const translations = {
     all: "All Products",
     apple: "Apple Products",
     samsung: "Samsung Products",
-    powerbanks: "Power Banks",
     filterBy: "Filter by:",
-    emergency: "Emergency",
     cables: "Cables",
-    power: "Power",
     "network": "Network",
     "car-accessories": "Car Accessories",
     "mouse": "Mouse",
@@ -1575,8 +1156,8 @@ const translations = {
     "selfie-sticks": "Selfie Sticks",
   },
   fr: {
-    title: "Électronique et Accessoires",
-    subtitle: "Coques, Câbles, Batteries Externes et Accessoires Auto",
+    title: "Accessoires",
+    subtitle: "Coques, Câbles, Stockage, Claviers et Accessoires Auto",
     backToHome: "Retour à l'Accueil",
     viewDetails: "Voir Détails",
     specifications: "Spécifications",
@@ -1586,12 +1167,9 @@ const translations = {
     closeModal: "Fermer",
     inStock: "En Stock",
     all: "Tous les Produits",
-    powerbanks: "Batteries Portables",
     earbuds: "Écouteurs",
     filterBy: "Filtrer par:",
-    emergency: "Urgence",
     cables: "Câbles",
-    power: "Alimentation",
     "network": "Réseau",
     samsung: "Produits Samsung",
     apple: "Produits Apple",
@@ -1603,8 +1181,8 @@ const translations = {
     "selfie-sticks": "Bâtons à Selfie",
   },
   es: {
-    title: "Electrónica y Accesorios",
-    subtitle: "Fundas, Cables, Baterías Externas y Accesorios para Auto",
+    title: "Accesorios",
+    subtitle: "Fundas, Cables, Almacenamiento, Teclados y Accesorios para Auto",
     backToHome: "Volver al Inicio",
     viewDetails: "Ver Detalles",
     specifications: "Especificaciones",
@@ -1614,11 +1192,8 @@ const translations = {
     closeModal: "Cerrar",
     inStock: "En Stock",
     all: "Todos los Productos",
-    powerbanks: "Baterías Portátiles",
     filterBy: "Filtrar por:",
-    emergency: "Emergencia",
     cables: "Cables",
-    power: "Energía",
     "network": "Red",
     samsung: "Productos Samsung",
     apple: "Productos Apple",
@@ -1706,9 +1281,9 @@ const translations = {
               document.getElementById('category-grid')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }}
             slides={[
-              { headline: 'Power banks', categories: ['powerbanks'], hero: '/images/Products/accessories-power/anker-power-bank.png' },
               { headline: 'Cables & adapters', categories: ['cables'], hero: '/images/Products/accessories-power/yesido-otg-2in1-adapter.png' },
-              { headline: 'Emergency lights', categories: ['emergency'], hero: '/images/Products/more/ludger-power-light-rechargeable-fan.png' },
+              { headline: 'Phone cases', categories: ['cases'], hero: '/images/Products/more/transparent-magsafe-case.jpg' },
+              { headline: 'Selfie sticks & gimbals', categories: ['selfie-sticks'], hero: '/images/Products/accessories-power/transparent/m02-gimbal.webp' },
             ]}
           />
         </div>
@@ -1747,7 +1322,7 @@ const translations = {
       {/* Category Filter */}
       <div className="relative z-30 flex justify-center mb-3 px-4">
         <CategoryFilter
-          options={['all', 'keyboards', 'selfie-sticks','powerbanks', 'emergency', 'cables', 'samsung', 'apple', 'cases', 'power', 'network', 'car-accessories', 'mouse', 'storage']}
+          options={['all', 'keyboards', 'selfie-sticks', 'cables', 'samsung', 'apple', 'cases', 'network', 'car-accessories', 'mouse', 'storage']}
           value={filterCategory}
           onChange={setFilterCategory}
           labels={t}
