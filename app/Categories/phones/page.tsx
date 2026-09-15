@@ -82,7 +82,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
     { 
       id: 'samsung-a07', 
       name: 'Samsung A07', 
-      image: '/images/Products/phones/samsung-a07.png',
+      image: '/images/Products/phones/samsung-a07.jpg',
       price: 499.00,
       category: 'budget',
       availability: 'In Stock',
@@ -117,7 +117,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
   {
   id: 'samsung-galaxy-a05',
   name: 'Samsung A05',
-  image: '/images/Products/phones/samsung1-galaxy-a05.png',
+  image: '/images/Products/phones/samsung1-galaxy-a05.jpg',
   price: 450.00,
   priceDropped: true,
   category: 'samsung',
@@ -136,7 +136,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
   {
   id: 'samsung-galaxy-a11',
   name: 'Samsung A11',
-  image: '/images/Products/phones/samsung-galaxy-a11.png',
+  image: '/images/Products/phones/samsung-galaxy-a11.jpg',
   price: 420.00,
   category: 'samsung',
   availability: 'Back Soon',
@@ -153,7 +153,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
     { 
       id: 'blu-a140', 
       name: 'BLU A140', 
-      image: '/images/Products/phones/cropped/blu-a140.png',
+      image: '/images/Products/phones/cropped/blu-a140.jpg',
       price: 120.00,
       category: 'basic',
       availability: 'Back Soon',
@@ -166,7 +166,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
     { 
       id: 'logic-z1l', 
       name: 'Logic Z1L Flip Phone', 
-      image: '/images/Products/phones/cropped/logic-z1l.png',
+      image: '/images/Products/phones/cropped/logic-z1l.jpg',
       price: 199.00,
       category: 'basic',
       availability: 'Back Soon',
@@ -180,7 +180,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
     { 
       id: 'nokia-110', 
       name: 'Nokia 110 4G', 
-      image: '/images/Products/phones/cropped/nokia-110.png',
+      image: '/images/Products/phones/cropped/nokia-110.jpg',
       price: 199.00,
       category: 'basic',
       availability: 'Back Soon',
@@ -198,7 +198,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
   name: "iPhone 12",
   category: 'midrange',
   price: 1100,
-  image: "/images/Products/phones/iphone-12.png",
+  image: "/images/Products/phones/iphone-12.jpg",
   availability: 'Back Soon',
   isDeal: true,
   color: 'Black',
@@ -237,7 +237,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
   name: "iPhone 14",
   category: 'flagship',
   price: 2100,
-  image: "/images/Products/phones/iphone-14.png",
+  image: "/images/Products/phones/iphone-14.jpg",
   availability: 'Back Soon',
   isDeal: true,
   color: 'Black',
@@ -254,7 +254,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
   price: 749,
   priceDropped: true,
   category: 'midrange',
-  image: "/images/Products/phones/samsung-galaxy-a17.png",
+  image: "/images/Products/phones/samsung-galaxy-a17.jpg",
   inStock: 'true',
   color: 'Blue',
   specs: {
@@ -270,7 +270,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
   name: "Samsung A36",
   category: 'midrange',
   price: 1500,
-  image: "/images/Products/phones/samsung-a36.png",
+  image: "/images/Products/phones/samsung-a36.jpg",
   availability: 'Back Soon',
   color: 'Black',
   specs: {
@@ -286,7 +286,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
   name: "Samsung A56",
   category: 'midrange',
   price: 1800,
-  image: "/images/Products/phones/samsung-a56.png",
+  image: "/images/Products/phones/samsung-a56.jpg",
   availability: 'Back Soon',
   color: 'Light Grey',
   specs: {
@@ -316,9 +316,9 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
     { 
       id: 'samsung-a25', 
       name: 'Samsung A25', 
-      image: '/images/Products/phones/cropped/samsung-a25.png',
+      image: '/images/Products/phones/cropped/samsung-a25.jpg',
       additionalImages: [
-    '/images/Products/phones/cropped/samsung-a25-angle2.png',
+    '/images/Products/phones/cropped/samsung-a25-angle2.jpg',
     '/images/Products/phones/cropped/samsung-a25-angle3.png'
   ],
       price: 1199.00,
@@ -338,7 +338,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
     { 
       id: 'samsung-a16', 
       name: 'Samsung A16', 
-      image: '/images/Products/phones/cropped/samsung-a16.png',
+      image: '/images/Products/phones/cropped/samsung-a16.jpg',
       price: 649.00,
       category: 'budget',
       availability: 'In Stock',
@@ -356,7 +356,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
     { 
       id: 'samsung-a05s', 
       name: 'Samsung A05s', 
-      image: '/images/Products/phones/cropped/samsung-a05s.png',
+      image: '/images/Products/phones/cropped/samsung-a05s.jpg',
       price: 549.00,
       category: 'budget',
       availability: 'Back Soon',
@@ -372,7 +372,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
     { 
       id: 'samsung-a26', 
       name: 'Samsung A26 5G', 
-      image: '/images/Products/phones/cropped/samsung-a26.png',
+      image: '/images/Products/phones/cropped/samsung-a26.jpg',
       price: 1250.00,
       category: 'midrange',
       availability: 'Back Soon',
@@ -391,7 +391,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
     { 
       id: 'samsung-f05', 
       name: 'Samsung F05', 
-      image: '/images/Products/phones/cropped/samsung-f05.png',
+      image: '/images/Products/phones/cropped/samsung-f05.jpg',
       price: 420.00,
       category: 'budget',
       availability: 'Back Soon',
@@ -436,7 +436,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
     {
       id: 'fangor-tablet',
       name: 'FANGOR Tablet 8"',
-      image: '/images/Products/phones/cropped/fangor-tablet.png',
+      image: '/images/Products/phones/cropped/fangor-tablet.jpg',
       price: 250.00,
       category: 'tablet',
       availability: 'In Stock',

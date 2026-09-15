@@ -679,7 +679,7 @@ END COMMENT */}
                   </div>
                   
                   <img 
-                    src="/images/Products/phones/samsung-galaxy-a11.png"
+                    src="/images/Products/phones/samsung-galaxy-a11.jpg"
                     alt="Samsung A11"
                     className="relative z-10 h-48 md:h-72 object-contain"
                     style={{

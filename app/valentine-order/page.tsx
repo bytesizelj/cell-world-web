@@ -333,7 +333,7 @@ ${milestone ? '⚠️ SHOW THIS MESSAGE TO CLAIM PRIZE!' : 'Thank you for orderi
       />
       <div className="text-xl font-black text-purple-600">+</div>
       <img 
-        src="/images/Products/phones/samsung-galaxy-a11.png"
+        src="/images/Products/phones/samsung-galaxy-a11.jpg"
         alt="Samsung A11"
         className="h-16 md:h-20 w-auto object-contain"
         style={{

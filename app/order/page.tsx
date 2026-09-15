@@ -272,7 +272,7 @@ export default function OrderPage() {
               <div className="flex justify-center items-center gap-2 mb-2">
                 <img src="/images/Products/more/hyper-gear-power-pack-mini.jpg" alt="Power Pack" className="h-16 md:h-20 w-auto object-contain" />
                 <div className="text-xl font-black text-white">+</div>
-                <img src="/images/Products/phones/samsung-galaxy-a11.png" alt="Samsung A11" className="h-16 md:h-20 w-auto object-contain" />
+                <img src="/images/Products/phones/samsung-galaxy-a11.jpg" alt="Samsung A11" className="h-16 md:h-20 w-auto object-contain" />
               </div>
               <div className="text-sm font-semibold text-white">Power Pack + Samsung A11</div>
               <div className="text-xs font-bold mt-1" style={{ color: '#22d3ee' }}>💥 GRAND PRIZE!</div>
