@@ -324,7 +324,7 @@ ${milestone ? '⚠️ SHOW THIS MESSAGE TO CLAIM PRIZE!' : 'Thank you for orderi
   <div className={`bg-white rounded-xl p-4 shadow-lg border-2 text-center ${orderCount >= 100 ? 'border-gray-300 opacity-50' : 'border-purple-400'}`}>
     <div className="flex flex-row justify-center items-center gap-2 mb-2">
       <img 
-        src="/images/Products/more/hyper-gear-power-pack-mini.png"
+        src="/images/Products/more/hyper-gear-power-pack-mini.jpg"
         alt="Power Pack Mini"
         className="h-16 md:h-20 w-auto object-contain"
         style={{

@@ -270,7 +270,7 @@ export default function OrderPage() {
               boxShadow: orderCount >= 100 ? 'none' : '0 0 20px rgba(34,211,238,0.13)'
             }}>
               <div className="flex justify-center items-center gap-2 mb-2">
-                <img src="/images/Products/more/hyper-gear-power-pack-mini.png" alt="Power Pack" className="h-16 md:h-20 w-auto object-contain" />
+                <img src="/images/Products/more/hyper-gear-power-pack-mini.jpg" alt="Power Pack" className="h-16 md:h-20 w-auto object-contain" />
                 <div className="text-xl font-black text-white">+</div>
                 <img src="/images/Products/phones/samsung-galaxy-a11.png" alt="Samsung A11" className="h-16 md:h-20 w-auto object-contain" />
               </div>

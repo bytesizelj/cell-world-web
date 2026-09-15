@@ -95,7 +95,7 @@ export default function MoreCategory() {
 {
   id: 'nipponamerica-power-strip',
   name: 'Nipponamerica 6-Outlet AC Power Strip',
-  image: '/images/Products/more/nipponamerica-6outlet-power-strip.png',
+  image: '/images/Products/more/nipponamerica-6outlet-power-strip.jpg',
   price: 35.00,
   category: 'power-strips',
   availability: 'In Stock',
@@ -110,7 +110,7 @@ export default function MoreCategory() {
 {
   id: 'ldnio-power-socket',
   name: 'LDNIO Power Socket 3.1A with USB',
-  image: '/images/Products/more/ldnio-power-socket-usb.png',
+  image: '/images/Products/more/ldnio-power-socket-usb.jpg',
   price: 70.00,
   category: 'power-strips',
   availability: 'In Stock',
@@ -819,7 +819,7 @@ export default function MoreCategory() {
 {
   id: 'pocket-juice-flashlight',
   name: 'Pocket Juice Power Bank with Flashlight',
-  image: '/images/Products/more/pocket-juice-power-bank-with-flashlight.png', // You'll need to add this image
+  image: '/images/Products/more/pocket-juice-power-bank-with-flashlight.jpg', // You'll need to add this image
   price: 100.00,
   category: 'powerbanks',
   availability: 'Limited Stock',
@@ -985,7 +985,7 @@ export default function MoreCategory() {
 {
   id: 'ludger-battery-charger-100a',
   name: 'LUDGER Battery Charger LBCG-12-100',
-  image: '/images/Products/more/ledger-power-light-battery-charger.png',
+  image: '/images/Products/more/ledger-power-light-battery-charger.jpg',
   price: 600.00,
   category: 'power',
   availability: 'Low Stock',
@@ -1002,7 +1002,7 @@ export default function MoreCategory() {
 {
   id: 'ludger-battery-charger-6a',
   name: 'LUDGER Battery Charger LBCG-612-6',
-  image: '/images/Products/more/ledger-power-light-battery-charger-LBCG-612-6.png',
+  image: '/images/Products/more/ledger-power-light-battery-charger-LBCG-612-6.jpg',
   price: 375.00,
   category: 'power',
   availability: 'Low Stock',
@@ -1066,7 +1066,7 @@ export default function MoreCategory() {
 {
   id: 'airbro-portable-fan-2600',
   name: 'Airbro ONE Portable Fan with Powerbank',
-  image: '/images/Products/more/airbro-one-portable-fan-powerbank.png',
+  image: '/images/Products/more/airbro-one-portable-fan-powerbank.jpg',
   price: 140.00,
   category: 'powerbanks',
   availability: 'Low Stock',
@@ -1283,7 +1283,7 @@ export default function MoreCategory() {
 {
   id: 'hypergear-powerpack-mini',
   name: 'HyperGear PowerPack Mini',
-  image: '/images/Products/more/hyper-gear-power-pack-mini.png',
+  image: '/images/Products/more/hyper-gear-power-pack-mini.jpg',
   price: 99.00,
   category: 'powerbanks',
   availability: 'Low Stock',
@@ -1296,7 +1296,7 @@ export default function MoreCategory() {
 {
   id: 'hypergear-clearcharge-xl',
   name: 'HyperGear ClearCharge XL Power Bank',
-  image: '/images/Products/more/hyper-gear-clear-charge-power-bank.png',
+  image: '/images/Products/more/hyper-gear-clear-charge-power-bank.jpg',
   price: 180.00,
   category: 'powerbanks',
   availability: 'Limited Stock',
@@ -1546,7 +1546,7 @@ export default function MoreCategory() {
       id: 8,
       name: "Mophie Juice Pack Connect 5000mAh",
       price: 125.00,
-      image: "/images/Products/more/mophie-juicepack-5000.png",
+      image: "/images/Products/more/mophie-juicepack-5000.jpg",
       description: "Compact wireless charging battery pack with 5000mAh capacity. Detachable design works with wireless phones. Includes stand.",
       category: "powerbanks",
       specs: {
@@ -1560,7 +1560,7 @@ export default function MoreCategory() {
       id: 11,
       name: "Pocket Juice Air Plus Wireless Power Bank 10000mAh",
       price: 99.00,
-      image: "/images/Products/more/pocketjuice-air-10000.png",
+      image: "/images/Products/more/pocketjuice-air-10000.jpg",
       description: "Magnetic wireless charger with built-in stand. 10000mAh capacity provides up to 6 full charges. Magnetically attaches to any phone.",
       category: "powerbanks",
       specs: {
@@ -1574,7 +1574,7 @@ export default function MoreCategory() {
       id: 12,
       name: "Anker PowerCore Select 10000mAh Power Bank",
       price: 85.00,
-      image: "/images/Products/more/anker-powercore-10000.png",
+      image: "/images/Products/more/anker-powercore-10000.jpg",
       description: "High-speed portable charger with 10000mAh capacity. Provides 46+ hours of extra power with 12W high-speed charging.",
       category: "powerbanks",
       specs: {
@@ -1588,7 +1588,7 @@ export default function MoreCategory() {
       id: 13,
       name: "Boss Bar Wireless Power Bank 10000mAh",
       price: 110.00,
-      image: "/images/Products/more/bossbar-wireless-10000.png",
+      image: "/images/Products/more/bossbar-wireless-10000.jpg",
       description: "Premium wireless power bank with digital display. Features 15W wireless fast charging, 22.5W super fast charge output.",
       category: "powerbanks",
       availability: 'Back Soon',
@@ -1603,7 +1603,7 @@ export default function MoreCategory() {
       id: 14,
       name: "Anker Pocket-Sized Power Bank 10000mAh",
       price: 75.00,
-      image: "/images/Products/more/anker-pocket-10k.png",
+      image: "/images/Products/more/anker-pocket-10k.jpg",
       description: "Ultra-compact power bank with 22.5W max output. Perfect pocket size for Apple, Samsung, and more devices.",
       category: "powerbanks",
       specs: {
@@ -1617,7 +1617,7 @@ export default function MoreCategory() {
       id: 15,
       name: "Yesido Wireless Power Bank with Built-in Cables",
       price: 95.00,
-      image: "/images/Products/more/yesido-wireless-10000.png",
+      image: "/images/Products/more/yesido-wireless-10000.jpg",
       description: "All-in-one power bank with wireless charging pad and two built-in cables. Digital display shows battery level.",
       category: "powerbanks",
       specs: {
