@@ -1425,7 +1425,7 @@ END COMMENT */}
       >
         <div className="aspect-[4/3] relative overflow-hidden">
           <img
-            src="/images/Products/accessories-power/ludger-power-light-lantern-blue.jpg"
+            src="/images/power-and-light.jpg"
             alt="Power & Light"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125"
           />
