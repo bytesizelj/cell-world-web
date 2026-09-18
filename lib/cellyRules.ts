@@ -18,7 +18,7 @@ const CATALOG: Item[] = [
   { n: 'itel A100C', p: 440, c: 'phone' },
   { n: 'Samsung Galaxy A06', p: 499, c: 'phone' },
   { n: 'itel A90', p: 475, c: 'phone', s: true },
-  { n: 'Samsung A07', p: 499, c: 'phone' },
+  { n: 'Samsung A07', p: 540, c: 'phone' },
   { n: 'Samsung A16', p: 649, c: 'phone' },
   { n: 'Samsung A42 5G', p: 550, c: 'phone' },
   { n: 'Samsung A17', p: 900, c: 'phone' },

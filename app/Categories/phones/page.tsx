@@ -83,7 +83,7 @@ const [selectedImages, setSelectedImages] = useState<{[key: string]: number}>({}
       id: 'samsung-a07', 
       name: 'Samsung A07', 
       image: '/images/Products/phones/samsung-a07.jpg',
-      price: 499.00,
+      price: 540.00,
       category: 'budget',
       availability: 'In Stock',
       specs: {
